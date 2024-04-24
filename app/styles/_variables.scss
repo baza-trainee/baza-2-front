@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap");
 // Primary colors
 $primary-footer: #441534;
 $primary-primary: #702156;
@@ -33,12 +34,11 @@ $counter-font: (
   "letter-spacing": 1%,
   "font-weight": 600,
   "line-height": 150%,
-);
-
+); 
 $h1-font: (
-  "font-family": "OpenSansFont, Arial, sans-serif",
+  "font-family": ("Open Sans", Arial, sans-serif),
   "font-size": 40px,
-  "letter-spacing": 1%,
+  "letter-spacing": 1px,
   "font-weight": 600,
   "line-height": 150%,
 );
