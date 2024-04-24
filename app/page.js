@@ -1,3 +1,7 @@
+import History from "./components/History/page";
+
 export default function Home() {
-  return <main></main>;
+  return <main>
+      <History></History>
+  </main>;
 }
