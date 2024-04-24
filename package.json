@@ -13,7 +13,8 @@
     "rc-collapse": "^3.7.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-multi-carousel": "^2.8.5"
+    "react-multi-carousel": "^2.8.5",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
     "sass": "^1.75.0"
