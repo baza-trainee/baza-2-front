@@ -4,7 +4,7 @@ export default function History() {
   return (
     <div className={styles.box}>
         <div className={styles.container}>
-        <h1> Історія проєкту </h1>
+        <h1 className={styles.h1}> Історія проєкту </h1>
           <p>
           Наш проєкт розпочався у квітні 2023 року з метою підтримки та розвитку творчих ініціатив. 
           За короткий проміжок часу ми досягли значних успіхів:  
