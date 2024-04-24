@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.link {
+  @include apply-font-styles($h3-font);
+  color: $secondary-black;
+
+  padding: 10px;
+
+  text-decoration: none;
+}
