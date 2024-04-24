@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap");
+
 // Primary colors
 $primary-footer: #441534;
 $primary-primary: #702156;
@@ -28,7 +30,9 @@ $secondary-error: #f94949;
 
 // Fonts
 $counter-font: (
-  "font-family": "OpenSansFont, Arial, sans-serif",
+  "font-family": (
+    "Open Sans, sans-serif",
+  ),
   "font-size": 48px,
   "letter-spacing": 1%,
   "font-weight": 600,
@@ -36,7 +40,10 @@ $counter-font: (
 );
 
 $h1-font: (
-  "font-family": "OpenSansFont, Arial, sans-serif",
+  "font-family": (
+    "Open Sans",
+    "sans-serif",
+  ),
   "font-size": 40px,
   "letter-spacing": 1%,
   "font-weight": 600,
@@ -44,7 +51,10 @@ $h1-font: (
 );
 
 $h2-font: (
-  "font-family": "MontserratFont, Arial, sans-serif",
+  "font-family": (
+    "Montserrat",
+    "sans-serif",
+  ),
   "font-size": 24px,
   "letter-spacing": 1%,
   "font-weight": 500,
@@ -52,7 +62,10 @@ $h2-font: (
 );
 
 $h3-font: (
-  "font-family": "OpenSansFont, Arial, sans-serif",
+  "font-family": (
+    "Open Sans",
+    "sans-serif",
+  ),
   "font-size": 18px,
   "letter-spacing": 1%,
   "font-weight": 600,
@@ -63,7 +76,10 @@ $button: $h3-font;
 $menu: $h3-font;
 
 $text-20-font: (
-  "font-family": "MontserratFont, Arial, sans-serif",
+  "font-family": (
+    "Montserrat",
+    "sans-serif",
+  ),
   "font-size": 20px,
   "letter-spacing": 1%,
   "font-weight": 400,
@@ -71,14 +87,16 @@ $text-20-font: (
 );
 
 $text-16-font: (
-  "font-family": "MontserratFont, Arial, sans-serif",
+  "font-family": (
+    "Montserrat",
+    "sans-serif",
+  ),
   "font-size": 16px,
   "letter-spacing": 1%,
   "font-weight": 400,
   "line-height": 150%,
 );
 
-// Mixin to apply the header font styles
 @mixin apply-font-styles($font-map) {
   font-family: map-get($font-map, "font-family");
   font-size: map-get($font-map, "font-size");
