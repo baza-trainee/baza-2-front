@@ -1,8 +1,8 @@
 import MainLink from "../MainLink/MainLink";
 import { navigationLinks } from "./constants";
-import styles from "./HeaderLinks.module.scss";
+import styles from "./FooterLinks.module.scss";
 
-const NavLinks = () => {
+const FooterLinks = () => {
   return (
     <div className={styles.list}>
       {navigationLinks.map(({ url, name }) => (
@@ -14,4 +14,4 @@ const NavLinks = () => {
   );
 };
 
-export default NavLinks;
+export default FooterLinks;

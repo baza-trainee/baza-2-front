@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.list > *:not(:last-child) {
+  margin-right: 24px;
+}
