@@ -1,3 +1,4 @@
+import NavLinks from "./components/NavLinks/NavLinks";
 import "./styles/global.scss";
 
 export const metadata = {
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ua">
-      <body>{children}</body>
+      <body>
+        <NavLinks />
+        {children}
+      </body>
     </html>
   );
 }

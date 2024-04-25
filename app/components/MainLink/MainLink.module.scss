@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.link {
+  @include apply-font-styles($h3-font);
+  letter-spacing: 0.01em;
+  color: $secondary-white;
+
+  padding: 10px;
+
+  text-decoration: none;
+}

@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.list {
+  display: flex;
+  align-items: center;
+  background-color: $primary-footer; //delete later
+}
+
+.list > *:not(:last-child) {
+  margin-right: 24px;
+}
