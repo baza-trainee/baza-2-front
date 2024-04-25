@@ -1,0 +1,39 @@
+@use "../../styles/variables" as var;
+
+.scrollToTopBtn {
+  display: none;
+}
+
+.scrollToTopBtnActive {
+  display: none;
+  background-color: inherit;
+}
+
+@media only screen and (min-width: 1366px) {
+  .scrollToTopBtnActive {
+    display: block;
+    position: fixed;
+    bottom: 388px;
+    right: 64px;
+    z-index: 99;
+
+    width: 53px;
+    height: 53px;
+
+    padding-top: 6px;
+
+    border: 2px solid var.$secondary-black;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+  }
+}
+
+.scrollToTopBtnActive:hover {
+  background-color: var.$secondary-hover;
+}
+
+.iconArrow {
+  fill: var.$secondary-black;
+}
