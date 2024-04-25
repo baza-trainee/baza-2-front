@@ -1,1 +1,29 @@
+@import "./styles/variables";
 
+.section {
+  background-color: #000;
+  color: #fff;
+}
+.container {
+  max-width: 1258px;
+  margin: 0 auto;
+}
+.title {
+  @include apply-font-styles($h2-font);
+}
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.prevEl {
+  transform: rotate(180deg);
+}

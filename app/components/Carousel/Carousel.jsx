@@ -1,19 +1,20 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Navigation } from "swiper/modules"
-import clsx from "clsx"
+import { useCallback } from "react"
 import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import styles from "./Carousel.module.scss"
-import { useRef, useCallback } from "react"
 
-const DEFAULT_MODULES = [Navigation]
-
-const Carousel = ({ modules, className, options, slideClassName, renderItem, items }) => {
-  const prevElRef = useRef(null)
-  const nextElRef = useRef(null)
-
+const Carousel = ({
+  modules,
+  className,
+  options,
+  slideClassName,
+  renderItem,
+  items,
+  prevEl,
+  nextEl,
+  paginationEl,
+}) => {
   const renderSlides = useCallback(
     items =>
       items?.map((item, i) => (
@@ -24,13 +25,20 @@ const Carousel = ({ modules, className, options, slideClassName, renderItem, ite
     [slideClassName, renderItem]
   )
 
+  const DEFAULT_MODULES = [Navigation]
+
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
       modules={[...(modules ?? DEFAULT_MODULES)]}
-      navigation
-      className={clsx(styles.slider, className)}
+      navigation={{
+        prevEl: prevEl,
+        nextEl: nextEl,
+      }}
+      pagination={{
+        el: paginationEl ?? null,
+        clickable: true,
+      }}
+      className={className}
       {...options}
     >
       {renderSlides(items)}
