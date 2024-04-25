@@ -2,7 +2,8 @@
 
 .link {
   @include apply-font-styles($h3-font);
-  color: $secondary-black;
+  letter-spacing: 0.01em;
+  color: $secondary-white;
 
   padding: 10px;
 
