@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './card.module.scss';
+import styles from './StructureCard.module.scss';
 
 export default function StructureCard({header, text, image}) {
   
