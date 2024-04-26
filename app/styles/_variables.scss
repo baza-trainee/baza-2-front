@@ -33,18 +33,18 @@ $secondary-error: #f94949;
 // Fonts
 $counter-font: (
   "font-family": (
-    "Open Sans, sans-serif",
+    "Open Sans",
+    sans-serif,
   ),
   "font-size": 48px,
   "letter-spacing": 0.01em,
   "font-weight": 600,
   "line-height": 150%,
 );
-
 $h1-font: (
   "font-family": (
     "Open Sans",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 40px,
   "letter-spacing": 0.01em,
@@ -55,7 +55,7 @@ $h1-font: (
 $h2-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 24px,
   "letter-spacing": 0.01em,
@@ -66,7 +66,7 @@ $h2-font: (
 $h3-font: (
   "font-family": (
     "Open Sans",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 18px,
   "letter-spacing": 0.01em,
@@ -80,7 +80,7 @@ $menu: $h3-font;
 $text-20-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 20px,
   "letter-spacing": 0.01em,
@@ -91,7 +91,7 @@ $text-20-font: (
 $text-16-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 16px,
   "letter-spacing": 0.01em,
