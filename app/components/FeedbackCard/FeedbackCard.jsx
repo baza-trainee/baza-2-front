@@ -2,11 +2,11 @@ import Image from "next/image";
 import photo from "./images/Img.jpg";
 import styles from "./FeedbackCard.module.scss";
 
-const FeedbackCard = ({ name, role, date, text }) => {
+const FeedbackCard = ({ image, name, role, date, text }) => {
   return (
     <div className={styles.card}>
       <div className={styles.person}>
-        <Image src={photo} className={styles.photo} />
+        <Image src={photo} className={styles.photo} alt="avatar" />
         <div className={styles.profile}>
           <p className={styles.name}>Олена</p>
           <p className={styles.role}>учасниця, QA</p>
