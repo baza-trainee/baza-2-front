@@ -1,4 +1,5 @@
 import FeedbackCard from "./components/FeedbackCard/FeedbackCard";
+import CarouselTestSection from "./components/CarouselTestSection/CarouselTestSection"
 import { ScrollToTopBtn } from "./components/ScrollToTopBtn/ScrollToTopBtn";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <ScrollToTopBtn />
       <FeedbackCard />
+      <CarouselTestSection />
     </main>
   );
 }
