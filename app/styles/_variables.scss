@@ -12,13 +12,7 @@ $color2: #e231a8;
 $color3: #8c2e6d;
 $color4: #741e58;
 
-$primary-gradient: linear-gradient(
-  90deg,
-  $color1 0%,
-  $color2 37%,
-  $color3 76%,
-  $color4 100%
-);
+$primary-gradient: linear-gradient(90deg, $color1 0%, $color2 37%, $color3 76%, $color4 100%);
 
 // Secondary colors
 $secondary-black: #030110;
@@ -31,21 +25,21 @@ $secondary-error: #f94949;
 // Fonts
 $counter-font: (
   "font-family": (
-    "Open Sans, sans-serif",
+    "Open Sans",
+    sans-serif,
   ),
   "font-size": 48px,
   "letter-spacing": 1%,
   "font-weight": 600,
   "line-height": 150%,
 );
-
 $h1-font: (
   "font-family": (
     "Open Sans",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 40px,
-  "letter-spacing": 1%,
+  "letter-spacing": 1px,
   "font-weight": 600,
   "line-height": 150%,
 );
@@ -53,7 +47,7 @@ $h1-font: (
 $h2-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 24px,
   "letter-spacing": 1%,
@@ -64,7 +58,7 @@ $h2-font: (
 $h3-font: (
   "font-family": (
     "Open Sans",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 18px,
   "letter-spacing": 1%,
@@ -78,7 +72,7 @@ $menu: $h3-font;
 $text-20-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 20px,
   "letter-spacing": 1%,
@@ -89,7 +83,7 @@ $text-20-font: (
 $text-16-font: (
   "font-family": (
     "Montserrat",
-    "sans-serif",
+    sans-serif,
   ),
   "font-size": 16px,
   "letter-spacing": 1%,
