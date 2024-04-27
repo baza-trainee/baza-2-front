@@ -1,3 +1,4 @@
+import NavLinks from "@/src/components/NavLinks/NavLinks";
 import "@/src/styles/global.scss";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -18,7 +19,10 @@ export default async function LocaleLayout({
         <body>
           <NextIntlClientProvider locale={locale}
           messages={messages}>
-            {children}
+            <div className="wrapper">
+            <NavLinks />
+             {children}
+            </div>
           </NextIntlClientProvider>
           
           </body>
