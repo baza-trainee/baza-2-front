@@ -16,8 +16,6 @@ import style from './iconns.module.scss';
 // 	}
 // })
 
-
-
 const Icon = ({className, children, ...props }) => {
 	return (
 		<svg
