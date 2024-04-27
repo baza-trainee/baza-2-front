@@ -20,12 +20,12 @@ export default async function LocaleLayout({
           <NextIntlClientProvider locale={locale}
           messages={messages}>
             <div className="wrapper">
-            <NavLinks />
-             {children}
+              <NavLinks />
+              {children}
             </div>
           </NextIntlClientProvider>
           
-          </body>
+        </body>
       </html>
     );
-  }
+}

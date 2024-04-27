@@ -11,5 +11,5 @@ export default function Home() {
     <LangDropdown/>
     <ExampleButtons />
     <h1>{t('title')}</h1>;
-    </main> 
+  </main> 
 }
