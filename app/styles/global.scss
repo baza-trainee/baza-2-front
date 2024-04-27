@@ -1,9 +1,10 @@
-@import "~normalize.css/normalize";
 @import "./_variables.scss";
+@import "./null";
 
 body {
-  font-family: "Open Sans", sans-serif;
+  background-color: $primary-fon;
 }
+
 .wrapper {
   min-height: 100%;
   display: flex;

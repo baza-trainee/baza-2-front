@@ -2,8 +2,9 @@
 import Image from "next/image"
 import { useState } from "react"
 import styles from "./RoleCard.module.scss"
+import clsx from "clsx"
 
-const RoleCard = ({ imgSrc, shortDesc, title, fullDesc }) => {
+const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
   const [readMore, setReadMore] = useState(false)
 
   return (
@@ -20,11 +21,26 @@ const RoleCard = ({ imgSrc, shortDesc, title, fullDesc }) => {
           Читати далі
         </button>
       </div>
-      {readMore && (
-        <div onClick={() => setReadMore(false)} className={styles.fullDesc}>
-          <p>{fullDesc}</p>
-        </div>
-      )}
+      <div className={clsx(styles.fullDesc, readMore && styles.showFullDesc)}>
+        <button onClick={() => setReadMore(false)} className={styles.fullDescClose}>
+          <svg
+            width="24"
+            height="17"
+            viewBox="0 0 24 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.15231 2L2 8.50081L8.15385 15M22 8.50244H2"
+              stroke="#FCFCFC"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        {children}
+      </div>
     </article>
   )
 }
