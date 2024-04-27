@@ -6,7 +6,7 @@ import NavLinks from '@/src/components/NavLinks/NavLinks';
 import LangDropdown from '@/src/components/LangDropdown/LangDropdown';
 
  
-export default function Index() {
+export default function Home() {
   const t = useTranslations('Index');
   return <main>
     <NavLinks/>
