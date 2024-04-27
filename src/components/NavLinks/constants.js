@@ -1,5 +1,5 @@
 export const navigationLinks = [
-  { name: "Головна", url: "/main" },
+  { name: "Головна", url: "/" },
   { name: "Стажування", url: "/internship" },
   { name: "Проєкти", url: "/projects" },
   { name: "Блог", url: "/blog" },
