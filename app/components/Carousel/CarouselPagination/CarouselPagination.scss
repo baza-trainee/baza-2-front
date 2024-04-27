@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.sliderPagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  & > span {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $secondary-white;
+    transition: all 0.3s ease 0s;
+    &.swiper-pagination-bullet-active {
+      background-color: $primary-primary;
+    }
+  }
+}
