@@ -3,31 +3,53 @@
 
 .box {
   @include apply-font-styles($menu);
-  background-color: #2e0535;
+  // background-color: #2e0535;
   color: $secondary-white;
-  width: 65px;
+  // width: 65px;
   // height: 52px;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
-  border: 1px solid black;
+  // border: 1px solid black;
   cursor: pointer;
+  position: relative;
+  transition: all .3s;
 
   .btn_lang {
+    width: 65px;
+    padding: 8px;
     display: flex;
     align-items: center;
-
-    gap: 5px;
   }
-  .btn_icon {
+  .btn_icon_up{
+    height: 24px;
     transform: rotate(180deg);
   }
+  .btn_icon {
+    height: 24px;
+  }
+  .btn_lang:focus,
+  .btn_lang:hover{
+    opacity: .7;
+  }
+
   .options {
     display: flex;
     flex-direction: column;
-
-    justify-content: center;
-    gap: 5px;
+    background-color: $primary-primary;
+    width: 65px;
+    padding: 0 8px 8px 8px;
+    border-radius: 2px;
+    // justify-content: center;
+    position: absolute;
+    bottom: -62px;
+    left: 0;
+    z-index: 2;
+    //gap: 1px;
+  }
+  .options span:hover{
+    opacity: .7;
+    transition: all .3s;
   }
 }
