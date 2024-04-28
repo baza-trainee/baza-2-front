@@ -1,7 +1,7 @@
 'use client';
 import styles from './exampleButtons.module.scss';
 import { useState } from 'react';
-import MainButton from '../MainButton';
+import MainButton from '../shared/MainButton/MainButton';
 import {useTranslations} from 'next-intl';
 // !!! Видалити після тестування
 export default function ExampleButtons() {

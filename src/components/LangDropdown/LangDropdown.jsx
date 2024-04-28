@@ -56,7 +56,7 @@ export default function LangDropdown (){
         <span>
         {currentLocale.toUpperCase()}
         </span>
-        <span className={isOpen && style.btn_icon}>
+        <span className={isOpen ? style.btn_icon:''}>
           <HeaderCaretDown/>
         </span>
       </div>
@@ -66,12 +66,14 @@ export default function LangDropdown (){
           className={style.options}
         >
           {locales.map((item) => (
+            item !==currentLocale ?
             <span
               key={item}
               onClick={() => handleCheckLocale(item)}
             >
               {item.toUpperCase()}
-            </span>
+            </span>:
+            null
           ))}
         </div>
       )}

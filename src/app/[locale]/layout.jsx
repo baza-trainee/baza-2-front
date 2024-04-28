@@ -15,7 +15,7 @@ export default async function LocaleLayout({
   }) {
   const messages = await getMessages(); 
     return (
-      <html lang={locale}>
+      <html lang={locale==='ua' ? 'uk': locale}>
         <body>
           <NextIntlClientProvider locale={locale}
           messages={messages}>
