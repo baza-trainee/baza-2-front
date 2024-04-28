@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+$color1: #6c2276;
+$color2: #682d78;
+$color3: #643579;
+$color4: #613b7a;
+$color5: #5d447c;
+
+$main-button-gradient: linear-gradient(131deg,
+  $color1 0%,
+  $color2 32.28%,
+  $color3 56.25%,
+  $color4 75.15%,
+  $color5 90.88%,
+);
+
+.btn {
+  @include apply-font-styles($button);
+  color: $secondary-white;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: $main-button-gradient;
+  box-shadow: none;
+  border: none;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(0deg, $primary-hover, $primary-hover);
+    color: $secondary-black;
+  }
+
+  &:disabled {
+    background: $secondary-gray;
+    color: $secondary-text;
+    cursor: default;
+  }
+}
