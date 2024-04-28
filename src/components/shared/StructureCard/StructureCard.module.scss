@@ -1,4 +1,5 @@
-@use '../../styles/variables';
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .cardStyle {
   width: 1236px;
@@ -13,11 +14,11 @@
 }
 
 .textCard {
-  h2 { 
-    @include variables.apply-font-styles(variables.$h2-font)
-  };
+  h2 {
+    @include mixins.apply-font-styles(variables.$h2-font);
+  }
   p {
-    @include variables.apply-font-styles(variables.$text-20-font);
+    @include mixins.apply-font-styles(variables.$text-20-font);
   }
   width: 712px;
   height: fit-content;

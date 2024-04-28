@@ -1,4 +1,5 @@
-@import "../../styles/variables";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
 
 $color1: #6c2276;
 $color2: #682d78;
@@ -6,12 +7,13 @@ $color3: #643579;
 $color4: #613b7a;
 $color5: #5d447c;
 
-$main-button-gradient: linear-gradient(131deg,
+$main-button-gradient: linear-gradient(
+  131deg,
   $color1 0%,
   $color2 32.28%,
   $color3 56.25%,
   $color4 75.15%,
-  $color5 90.88%,
+  $color5 90.88%
 );
 
 .btn {

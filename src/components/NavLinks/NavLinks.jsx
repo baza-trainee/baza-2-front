@@ -1,4 +1,4 @@
-import MainLink from "../MainLink/MainLink";
+import MainLink from "../shared/MainLink/MainLink";
 import { navigationLinks } from "./constants";
 import styles from "./NavLinks.module.scss";
 

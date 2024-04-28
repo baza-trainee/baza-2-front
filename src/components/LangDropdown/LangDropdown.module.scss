@@ -1,34 +1,33 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
-.box{
-    @include apply-font-styles($menu);
-    background-color: #2E0535;
-    color: $secondary-white;
-    width: 65px;
-    // height: 52px;
+.box {
+  @include apply-font-styles($menu);
+  background-color: #2e0535;
+  color: $secondary-white;
+  width: 65px;
+  // height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+
+  .btn_lang {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+  }
+  .btn_icon {
+    transform: rotate(180deg);
+  }
+  .options {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+
     justify-content: center;
-    border: 1px solid black;
-    cursor: pointer;
-
-    .btn_lang{
-        display: flex;
-        align-items: center;
-        
-        
-        gap: 5px;
-    }
-    .btn_icon{
-        transform: rotate(180deg);
-    }
-    .options{
-        display: flex;
-        flex-direction: column;
-    
-        justify-content: center;
-        gap: 5px;
-    }
-
+    gap: 5px;
+  }
 }
