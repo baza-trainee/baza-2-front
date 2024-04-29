@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap");
+
+$fontFamily: ("Open Sans", sans-serif);
+
+// Primary colors
+$primary-footer: #240529;
+$primary-primary: #2e0535;
+$primary-hover: #c0a4b7;
+$primary-fon: #0f031f;
+
+// Gradient
+$color1: #6c2276;
+$color2: #682d78;
+$color3: #643579;
+$color4: #613b7a;
+$color5: #5d447c;
+
+$primary-gradient: linear-gradient(
+  90deg,
+  $color1 100%,
+  $color2 32%,
+  $color3 56%,
+  $color4 75%,
+  $color5 91%
+);
+
+// Secondary colors
+$secondary-black: #030110;
+$secondary-white: #fcfcfc;
+$secondary-text: #363636;
+$secondary-gray: #9a9a9a;
+$secondary-hover: #ededed;
+$secondary-error: #f94949;
+
+// Fonts
+$counter-font: (
+  "font-family": (
+    "Open Sans",
+    sans-serif,
+  ),
+  "font-size": 48px,
+  "letter-spacing": 0.01em,
+  "font-weight": 600,
+  "line-height": 150%,
+);
+$h1-font: (
+  "font-family": (
+    "Open Sans",
+    sans-serif,
+  ),
+  "font-size": 40px,
+  "letter-spacing": 0.01em,
+  "font-weight": 600,
+  "line-height": 150%,
+);
+
+$h2-font: (
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-size": 24px,
+  "letter-spacing": 0.01em,
+  "font-weight": 500,
+  "line-height": 150%,
+);
+
+$h3-font: (
+  "font-family": (
+    "Open Sans",
+    sans-serif,
+  ),
+  "font-size": 18px,
+  "letter-spacing": 0.01em,
+  "font-weight": 600,
+  "line-height": 150%,
+);
+
+$button: $h3-font;
+$menu: $h3-font;
+
+$text-20-font: (
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-size": 20px,
+  "letter-spacing": 0.01em,
+  "font-weight": 400,
+  "line-height": 150%,
+);
+
+$text-16-font: (
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-size": 16px,
+  "letter-spacing": 0.01em,
+  "font-weight": 400,
+  "line-height": 150%,
+);

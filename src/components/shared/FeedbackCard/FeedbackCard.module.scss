@@ -1,0 +1,71 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.photo {
+  border-radius: 68px;
+  width: 114px;
+  height: 120px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    122deg,
+    #ae8ba3 0%,
+    #f351be 22.5%,
+    #b7318a 45.71%,
+    #702156 78.5%,
+    #500239 100%
+  );
+  width: 1028px;
+  gap: 48px;
+
+  margin: 0 51px;
+}
+
+.person {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 18px 0;
+  height: 84px;
+
+  p:not(:last-child) {
+    margin: 0;
+  }
+}
+
+.name {
+  @include apply-font-styles($text-20-font);
+  letter-spacing: 0.01em;
+
+  color: $secondary-white;
+}
+
+.role {
+  @include apply-font-styles($text-16-font);
+  letter-spacing: 0.01em;
+  color: $secondary-white;
+}
+
+.date {
+  @include apply-font-styles($text-16-font);
+  letter-spacing: 0.01em;
+  color: #585858;
+  margin-top: 8px;
+}
+
+.text {
+  @include apply-font-styles($text-16-font);
+  letter-spacing: 0.01em;
+  color: $secondary-white;
+  width: 516px;
+}

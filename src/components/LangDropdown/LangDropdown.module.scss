@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.box {
+  @include apply-font-styles($menu);
+  color: $secondary-white;
+  position: relative;
+  
+  .btn_lang {
+    width: 65px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  .btn_icon_up{
+    height: 24px;
+    transform: rotate(180deg);
+  }
+  .btn_icon {
+    height: 24px;
+  }
+  .btn_lang:focus,
+  .btn_lang:hover{
+    opacity: .7;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-primary;
+    width: 65px;
+    padding: 0 8px 8px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -58px;
+    left: 0;
+    z-index: 2;
+  }
+
+  .options span:focus,
+  .options span:hover{
+    opacity: .7;
+    transition: all .3s;
+  }
+}

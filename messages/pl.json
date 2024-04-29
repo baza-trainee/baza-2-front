@@ -1,0 +1,158 @@
+{
+  "main":{
+    "headerButton":"Wesprzyj projekt"
+    },
+  "Main": {
+    "hero_section": {
+      "search": "Znajdź kandydata",
+      "country": "Kraj",
+      "speciality": "Specjalność",
+      "ukraine": "Ukraina",
+      "poland": "Polska",
+      "germany": "Niemcy",
+      "title": {
+        "main": "Znajdź swojego",
+        "specialist": "ІТ-fachowce",
+        "designer": "projektanta",
+        "developer": "dewelopera",
+        "qa": "testera",
+        "pm": "PMa"
+      }
+    },
+    "counters": {
+      "live_projects": "projektów na żywo",
+      "participants": "zaangażowanych uczestników",
+      "employed": "zatrudnionych",
+      "technologies": "technologii",
+      "libraries": "bibliotek"
+    },
+    "help": {
+      "title": "Pomożemy Ci znaleźć godnego specjalistę",
+      "paragraph_1": "Platforma Baza Skill pomoże Ci znaleźć doświadczonego specjalistę w dziedzinie IT, gdyż każdy z naszych kandydatów ma już za sobą poważną praktykę w Baza Trainee Ukraine.",
+      "paragraph_2": "Każdy przedstawiony tutaj specjalista potrafi pracować zespołowo, ma doświadczenie w realizacji projektów, zna wymagania, zna trudności i sukcesy na wszystkich etapach życia projektu.",
+      "paragraph_3": "Dajemy Ci wykwalifikowanych młodszych specjalistów, którzy kochają to, co robią. Przynajmniej tak mówią."
+    },
+    "candidates": {
+      "title": "Nasi kandydaci",
+      "paragraph_1": "Przestrzegają zasad korzystania z udostępnionych narzędzi",
+      "paragraph_2": "Trzymają się terminów",
+      "paragraph_3": "Przestrzegają obowiązku gromadzenia dokumentacji",
+      "paragraph_4": "Zajmują dobrze uargumentowanych stanowiska w sporach i sytuacjach konfliktowych, skuteczność, chęć osiągnięcia wspólnego celu",
+      "paragraph_5": "Gotowi do dzielenia się informacjami",
+      "paragraph_6": "Wyrażają postawę wsparcia dla kolegów w zespole, gotowość do zastąpienia kolegi w przypadku wystąpienia siły wyższej",
+      "paragraph_7": "Interesują się nowościami",
+      "paragraph_8": "Skłonni do aktywności",
+      "paragraph_9": "Bezwarunkowo przestrzegają przepisów prawa, w szczególności w zakresie praw autorskich, ochrony danych osobowych, RODO, NDA",
+      "paragraph_10": "Bezwarunkowo przestrzegają przepisów prawa"
+    },
+    "partners": {
+      "title": "Nasi partnerzy"
+    },
+    "articles": {
+      "title": "Artykuły i porady"
+    },
+    "testimonials": {
+      "title": "Opinie"
+    },
+    "contacts": {
+      "title": "Kontakty"
+    },
+    "footer": {
+      "offer": "Za krok do oferty",
+      "about_us": "O nas",
+      "to_become_hr": "Zostań naszym HR",
+      "to_become_partner": "Zostań naszym partnerem",
+      "internship": "Staż w Bazie Educat",
+      "poligon": "Rozwój Bazy Poligon",
+      "development": "Development",
+      "rights": "Wszelkie prawa zastrzeżone",
+      "privacy_policy": "Polityka prywatności",
+      "terms_of_use": "Warunki korzystania z serwisu",
+      "support_1": "Firma przekazuje 10% zysków na wsparcie",
+      "support_2": "59 brygady",
+      "support_3": "im. Jakowa Handziuka"
+    },
+    "forms": {
+      "to_become_hr": "Zostań naszym HR",
+      "to_become_partner": "Zostań naszym partnerem",
+      "first_name": "Imię",
+      "last_name": "Nazwisko",
+      "phone": "Telefon",
+      "company": "Firma",
+      "company_name": "Nazwa firmy",
+      "name": "Nazwa",
+      "company_website": "Strona internetowa firmy",
+      "website": "Strona internetowa",
+      "position_name": "Stanowisko przedstawiciela",
+      "position": "Stanowisko",
+      "country": "Kraj",
+      "ukraine": "Ukraina",
+      "poland": "Polska",
+      "germany": "Niemcy",
+      "czech": "Republika Czeska",
+      "france": "Francja",
+      "spain": "Hiszpania",
+      "speciality": "Specjalność",
+      "search": "Szukam",
+      "comment": "Komentarz",
+      "recruitment_contract": "Prosimy o przesłanie umowy rekrutacyjnej do wglądu",
+      "partner_contract": "Prosimy o przesłanie umowy partnerskiej do wglądu",
+      "agreement": "Wyrażam zgodę na przetwarzanie danych osobowych",
+      "send": "Wysłać",
+      "processing": "Przetworzenie żądania...",
+      "errors": {
+        "firstname_empty": "Wpisz swoje imię",
+        "firstname_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "firstname_max": "Nazwa nie może przekraczać 30 znaków",
+        "incorrect_firstname": "Proszę wpisać prawidłowe imię",
+        "lastname_empty": "Wpisz swoje nazwisko",
+        "lastname_min": "Nazwisko musi mieć co najmniej 2 znaki",
+        "lastname_max": "Nazwisko nie może przekraczać 50 znaków",
+        "incorrect_lastname": "Wpisz prawidłowe nazwisko",
+        "companyname_empty": "Wpisz nazwę swojej firmy",
+        "companyname_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "companyname_max": "Nazwa nie może mieć więcej niż 30 znaków",
+        "incorrect_companyname": "Wpisz poprawną nazwę firmy",
+        "required_field": "To pole jest wymagane",
+        "incorrect_phone": "Wprowadź prawidłowy numer telefonu w formacie międzynarodowym",
+        "phone_max": "Numer telefonu nie może zawierać więcej niż 13 cyfr",
+        "incorrect_email": "Wpisz poprawny email",
+        "invalid_ru": "Domeny .ru i .by są niedozwolone",
+        "company": "Wpisz prawidłową nazwę lub pozostaw pole puste",
+        "company_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "company_max": "Nazwa nie może mieć więcej niż 300 znaków",
+        "agreement": "Proszę potwierdzić swoją zgodę",
+        "comment": "Wpisz prawidłowy komentarz o długości nie większej niż 300 znaków",
+        "website": "Wprowadź prawidłowy adres URL witryny firmy",
+        "position": "Tylko litery i spacje (bez znaków specjalnych)",
+        "position_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "position_max": "Nazwa nie może mieć więcej niż 300 znaków"
+      }
+    },
+    "cookies": {
+      "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
+      "privacy_policy": "Polityka prywatności"
+    }
+  },
+  "Error": {
+    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta",
+    "button": "Przejdź do strony głównej"
+  },
+  "Candidate": {
+    "about": "O mnie",
+    "name": "Vlad",
+    "stack": "Stos",
+    "education": "Edukacja",
+    "courses": "Kursy",
+    "baza_experience": "Doświadczenie zawodowe w Bazie",
+    "out_baza_experience": "Doświadczenie w pracy poza Bazą",
+    "projects": "{count, plural, =0 {jeszcze żadnych projektów} =1 {# project} =2 {# projecty} =3 {# projecty} other {# projektów}}",
+    "recomendation_from": "Rekomendacje od",
+    "ask_data": "Zażądaj danych",
+    "candidate_project": {
+      "duration": "Duration",
+      "weeks": "{count, plural,  =2 {# tygodnie} =3 {# tygodnie} =4 {# tygodnie} other {# tygodni}}",
+      "role": "Zespół ołowiu"
+    }
+  }
+}
