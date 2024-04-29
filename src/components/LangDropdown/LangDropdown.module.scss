@@ -11,7 +11,7 @@
     padding: 8px;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    //cursor: pointer;
     transition: all .3s;
   }
   .btn_icon_up{
@@ -33,16 +33,18 @@
     width: 65px;
     padding: 0 8px 8px 8px;
     border-radius: 2px;
-    cursor: pointer;
+   // cursor: pointer;
     position: absolute;
     bottom: -58px;
     left: 0;
     z-index: 2;
   }
-
-  .options span:focus,
-  .options span:hover{
-    opacity: .7;
+  .options_item_btn{
+    text-align: start;
     transition: all .3s;
+  }
+  .options_item_btn:focus,
+  .options_item_btn:hover{
+    opacity: .7;
   }
 }
