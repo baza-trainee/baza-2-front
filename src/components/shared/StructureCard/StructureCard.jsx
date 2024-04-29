@@ -9,7 +9,7 @@ export default function StructureCard({header, text, image}) {
         <div className={styles.textCard}>
           <div>
             <h2>{header}BAZA TRAINEE UKRAINE</h2>
-            <p>{text}Lorem ipsum dolor sit amet consectetur. Semper sed nulla donec a amet eget egestas.Lorem ipsum dolor sit amet consectetur. Semper sed nulla donec a amet eget egestas.Lorem ipsum dolor sit amet.{text}</p>        
+            <p>{text}Громадський проєкт для джуніорів і  світчерів ІТ, який побудований на створенні цифрових проєктів для соціальної сфери України</p>        
           </div>
         </div>
       </div>
