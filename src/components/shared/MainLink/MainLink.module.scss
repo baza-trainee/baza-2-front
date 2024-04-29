@@ -26,7 +26,6 @@
 
   &--default {
     color: $secondary-white;
-
     &::before {
       content: "";
       width: 0;
@@ -44,6 +43,13 @@
           width: 100%;
         }
       }
+      &:active {
+        color: $secondary-white;
+        &::before {
+          width: 100%;
+          background-color: $secondary-white;
+        }
+      }
     }
   }
 
@@ -52,6 +58,9 @@
     @media (any-hover: hover) {
       &:hover {
         border-bottom: 1px solid $primary-hover;
+      }
+      &:active {
+        border-bottom: 1px solid $secondary-white;
       }
     }
   }
