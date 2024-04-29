@@ -1,7 +1,17 @@
 {
-  "main":{
-    "headerButton":"Wesprzyj projekt"
-    },
+  "NavLinks":{
+    "main":"Головна",
+    "internship":"Стажування",
+    "projects":"Проєкти",
+    "blog":"Блог",
+    "contacts":"Контакти"
+  },
+  "Buttons":{
+    "supportProject":"Підтримати проєкт",
+    "mentor":"Стати ментором",
+    "send":"Відправити"
+  },
+
   "Main": {
     "hero_section": {
       "search": "Znajdź kandydata",

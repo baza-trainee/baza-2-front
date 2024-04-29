@@ -1,5 +1,5 @@
-import Link from "next/link";
 import styles from "./MainLink.module.scss";
+import Link from "next/link";
 
 const MainLink = ({ url, children }) => {
   return (

@@ -5,10 +5,10 @@ export default createMiddleware({
   locales: ['ua','en', 'pl'],
  
   // Used when no locale matches
-  lng: 'ua',
+  //lng: 'ua',
   defaultLocale: 'ua',
-  debugger: true,
-  // localeDetection: false,
+  //debugger: true,
+  //localeDetection: false,
 });
  
 export const config = {

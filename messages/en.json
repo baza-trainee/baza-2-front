@@ -1,9 +1,14 @@
 {
-  "main":{
-  "headerButton":"Support the project"
+  "NavLinks":{
+    "main":"Main",
+    "internship":"Internship",
+    "projects":"Projects",
+    "blog":"Blog",
+    "contacts":"Contacts"
   },
-
-  "Index": {
-    "title": "Hello world!"
+  "Buttons":{
+    "supportProject":"Support the project",
+    "mentor":"Become a mentor",
+    "send":"Send"
   }
 }
