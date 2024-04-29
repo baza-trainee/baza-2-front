@@ -5,6 +5,7 @@ import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTe
 import ExampleButtons from "@/src/components/ExampleButtons/ExampleButtons";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import FeedbackCard from "@/src/components/shared/FeedbackCard/FeedbackCard";
+import FooterLinks from "@/src/components/FooterLinks/FooterLinks";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <FeedbackCard />
       <CarouselTestSection />
       <RoleCardTestSection />
+      <FooterLinks />
     </main>
   );
 }

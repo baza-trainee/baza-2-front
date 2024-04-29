@@ -1,4 +1,3 @@
-import FooterLinks from "@/src/components/FooterLinks/FooterLinks";
 import NavLinks from "@/src/components/NavLinks/NavLinks";
 import TestExampleLangDropdown from "@/src/components/TestExampleLangDropdown/TestExampleLangDropdown";
 import "@/src/styles/global.scss";
@@ -18,7 +17,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="wrapper">
             <NavLinks />
-            <FooterLinks />
             <TestExampleLangDropdown />
             {children}
           </div>
