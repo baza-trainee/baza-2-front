@@ -1,10 +1,11 @@
 "use client";
-import Carousel from "./shared/Carousel/Carousel";
-import CarouselButton from "./shared/Carousel/CarouselButton/CarouselButton";
-import CarouselPagination from "./shared/Carousel/CarouselPagination/CarouselPagination";
+// import Carousel from "./shared/Carousel/Carousel";
+import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
+import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import { Navigation, Pagination } from "swiper/modules";
 import styles from "./CarouselTestSection.module.scss";
 import clsx from "clsx";
+import Carousel from "../shared/Carousel/Carousel";
 
 const CarouselTestSection = () => {
   const items = [

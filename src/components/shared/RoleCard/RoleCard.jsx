@@ -33,9 +33,9 @@ const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
             <path
               d="M8.15231 2L2 8.50081L8.15385 15M22 8.50244H2"
               stroke="#FCFCFC"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
