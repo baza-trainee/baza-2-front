@@ -100,3 +100,11 @@ $text-16-font: (
   "font-weight": 400,
   "line-height": 150%,
 );
+
+$breakpoints: (
+  "sm": 375px,
+  "md": 768px,
+  "lg": 1200px,
+  "xl": 1440px,
+  "xxl": 1920px,
+);
