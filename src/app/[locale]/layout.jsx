@@ -22,6 +22,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             {children}
           </div>
         </NextIntlClientProvider>
+        <ContactLinks />
       </body>
     </html>
   );
