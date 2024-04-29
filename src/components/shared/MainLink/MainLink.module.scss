@@ -11,7 +11,8 @@
 
   transition: all 0.3s ease 0s;
   @media (any-hover: hover) {
-    &:hover {
+    &:hover,
+    &:focus {
       color: $primary-hover;
     }
   }
@@ -37,7 +38,8 @@
       transition: all 0.3s ease 0s;
     }
     @media (any-hover: hover) {
-      &:hover {
+      &:hover,
+      &:focus {
         color: $primary-hover;
         &::before {
           width: 100%;
@@ -56,7 +58,8 @@
   &--help {
     border-bottom: 1px solid $secondary-white;
     @media (any-hover: hover) {
-      &:hover {
+      &:hover,
+      &:focus {
         border-bottom: 1px solid $primary-hover;
       }
       &:active {
