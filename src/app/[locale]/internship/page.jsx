@@ -6,7 +6,7 @@ export default function Internship () {
   return <main>
     Тут буде контент сторінки - Стажування
       {/* Видалити після тестів */}
-    <h1>Internship page {t('title')}</h1>
+    <h1>{t('title')}</h1>
     <p>{t('text')}</p>
   </main>
 }
