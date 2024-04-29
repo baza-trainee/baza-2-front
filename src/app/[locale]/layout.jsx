@@ -1,5 +1,6 @@
 import NavLinks from "@/src/components/NavLinks/NavLinks";
 import TestExampleLangDropdown from "@/src/components/TestExampleLangDropdown/TestExampleLangDropdown";
+import ContactLinks from "@/src/components/shared/ContactLinks/ContactLinks";
 import "@/src/styles/global.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
