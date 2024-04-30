@@ -21,10 +21,6 @@
   .btn_icon {
     height: 24px;
   }
-  .btn_lang:focus,
-  .btn_lang:hover{
-    opacity: .7;
-  }
 
   .options {
     display: flex;
@@ -42,8 +38,11 @@
     text-align: start;
     transition: all .3s;
   }
+  .btn_lang:focus,
+  .btn_lang:hover,
   .options_item_btn:focus,
   .options_item_btn:hover{
-    opacity: .7;
+     // color:#C0A4B7;
+    opacity: .6;
   }
 }

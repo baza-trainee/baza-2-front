@@ -4,6 +4,7 @@ import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTe
 export default function Home() {
   return (
     <main>
+      <input placeholder=""/>
       <CarouselTestSection />
       <RoleCardTestSection />
     </main>

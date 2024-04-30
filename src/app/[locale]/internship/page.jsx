@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 
 export default function Internship () {
   // Видалити після тестів
-  const t = useTranslations('Main.hero_сarousel.slide_1');
+  const t = useTranslations('Main.hero_сarousel_section.slide_1');
   return <main>
     Тут буде контент сторінки - Стажування
       {/* Видалити після тестів */}
