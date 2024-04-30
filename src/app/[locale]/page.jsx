@@ -2,13 +2,15 @@ import CarouselTestSection from "@/src/components/CarouselTestSection/CarouselTe
 import Counter from "@/src/components/Counter/Counter";
 
 import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTestSection";
+import Timeline from "@/src/components/Timeline/Timeline";
 
 export default function Home() {
   return (
     <main>
       <CarouselTestSection />
       <RoleCardTestSection />
-      <Counter/>
+      <Counter />
+      <Timeline/>
     </main>
   );
 }
