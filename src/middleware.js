@@ -8,7 +8,7 @@ export default createMiddleware({
   //lng: 'ua',
   defaultLocale: 'ua',
   //debugger: true,
-  //localeDetection: false,
+  //localeDetection: false
 });
  
 export const config = {
