@@ -1,1 +1,19 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins.scss" as mx;
 
+.mainErr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  p {
+    @include mx.apply-font-styles(var.$h2-font);
+
+    font-weight: 700;
+    color: var.$secondary-white;
+
+    margin-bottom: 48px;
+  }
+}
