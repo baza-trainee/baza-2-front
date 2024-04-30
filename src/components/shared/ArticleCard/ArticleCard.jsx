@@ -2,7 +2,7 @@ import styles from "./ArticleCard.module.scss";
 import Image from "next/image";
 
 export const ArticleCard = ({ img, title, desc, link, alt }) => {
-  console.log(img);
+  // console.log(img);
   return (
     <div className={styles.container}>
       <Image
