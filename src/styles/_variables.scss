@@ -100,3 +100,15 @@ $text-16-font: (
   "font-weight": 400,
   "line-height": 150%,
 );
+
+$breakpoints: (
+  "tn": 320px,
+  "sm": 420px,
+  "md": 768px,
+  "lg": 1280px,
+  "xl": 1366px,
+  "xxl": 1920px,
+);
+
+$transition-duration-base: 0.3s;
+$transition-timing-base: ease;

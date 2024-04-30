@@ -1,15 +1,24 @@
 import MainLink from "../shared/MainLink/MainLink";
-import { navigationLinks } from "./constants";
+import { helpLinks, navigationLinks } from "./constants";
 import styles from "./FooterLinks.module.scss";
 
 const FooterLinks = () => {
   return (
-    <div className={styles.list}>
-      {navigationLinks.map(({ url, name }) => (
-        <MainLink url={url} key={url}>
-          {name}
-        </MainLink>
-      ))}
+    <div className={styles.footerLinks}>
+      <div className={styles.list}>
+        {navigationLinks.map(({ url, name, type }) => (
+          <MainLink url={url} key={url} type={type}>
+            {name}
+          </MainLink>
+        ))}
+      </div>
+      <div className={styles.helpList}>
+        {helpLinks.map(({ url, name, type }) => (
+          <MainLink url={url} key={url} type={type}>
+            {name}
+          </MainLink>
+        ))}
+      </div>
     </div>
   );
 };
