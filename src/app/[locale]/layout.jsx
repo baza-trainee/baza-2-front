@@ -20,9 +20,9 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             <NavLinks />
             <TestExampleLangDropdown />
             {children}
+            <ContactLinks />
           </div>
         </NextIntlClientProvider>
-        <ContactLinks />
       </body>
     </html>
   );
