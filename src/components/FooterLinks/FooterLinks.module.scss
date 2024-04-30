@@ -1,9 +1,23 @@
+.footerLinks {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+
 .list {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 180px;
+  *:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }
-
-.list > *:not(:last-child) {
-  margin-bottom: 8px;
+.helpList {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }

@@ -1,0 +1,31 @@
+@mixin apply-font-styles($font-map) {
+  font-family: map-get($font-map, "font-family");
+  font-size: map-get($font-map, "font-size");
+  letter-spacing: map-get($font-map, "letter-spacing");
+  font-weight: map-get($font-map, "font-weight");
+  line-height: map-get($font-map, "line-height");
+}
+
+@mixin media-q($bp: sm, $type: min, $is-retina: false) {
+  @if map.has-key(var.$breakpoints, $bp) {
+    $width: map.get(var.$breakpoints, $bp);
+
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @if $is-retina {
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } @else {
+    @error "";
+  }
+}
