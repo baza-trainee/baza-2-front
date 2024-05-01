@@ -5,6 +5,6 @@ export default function Internship () {
   const t = useTranslations('Index');
   return <main>
       {/* Видалити після тестів */}
-    <h1>Internship page {t('title')}</h1>;
+    <h1>Internship page {t('title')}</h1>
   </main>
 }
