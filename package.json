@@ -9,11 +9,15 @@
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",
-		"next": "^14.2.2",
+		"next": "^14.2.3",
 		"next-intl": "^3.12.0",
 		"rc-collapse": "^3.7.3",
 		"react": "^18",
+		"react-countup": "^6.5.3",
 		"react-dom": "^18",
+		"react-multi-carousel": "^2.8.5",
+		"react-scrollspy": "^3.4.3",
+		"react-visibility-sensor": "^5.1.1",
 		"swiper": "^11.1.1"
 	},
 	"devDependencies": {

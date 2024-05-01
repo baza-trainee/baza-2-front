@@ -12,7 +12,7 @@ export default getRequestConfig(async ({locale}) => {
     messages: (await import(`../messages/${locale}.json`)).default
   };
 });
-export const localePrefix = undefined;
+//export const localePrefix = undefined;
 
 export const pathnames = {
   '/': '/',

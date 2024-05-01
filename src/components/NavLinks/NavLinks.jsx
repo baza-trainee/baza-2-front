@@ -5,8 +5,8 @@ import styles from "./NavLinks.module.scss";
 const NavLinks = () => {
   return (
     <div className={styles.list}>
-      {navigationLinks.map(({ url, name }) => (
-        <MainLink url={url} key={url}>
+      {navigationLinks.map(({ url, name, type }) => (
+        <MainLink url={url} key={url} type={type}>
           {name}
         </MainLink>
       ))}

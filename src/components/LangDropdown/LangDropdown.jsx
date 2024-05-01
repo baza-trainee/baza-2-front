@@ -30,25 +30,57 @@ export default function LangDropdown() {
       setIsOpen(false)
     }
   }
+
   useEffect(() => {
     window.addEventListener("click", handleOutsideClick)
     return () => window.removeEventListener("click", handleOutsideClick)
   }, [isOpen])
+
+  const ariaLabelsText = locale => {
+    const labels = {
+      ua: {
+        btn_lang: "для зміни мови сторінки. вибрана мова",
+        btn_item: "обрати мову",
+      },
+      en: {
+        btn_lang: "switch language pages. selected language",
+        btn_item: "select the language",
+      },
+      pl: {
+        btn_lang: "zmień język strony. wybrany język",
+        btn_item: "wybierz język",
+      },
+    }
+    return labels[locale]
+  }
+
   return (
     <div className={style.box}>
-      <div ref={menuRef} onClick={() => setIsOpen(!isOpen)} className={style.btn_lang}>
+      <button
+        ref={menuRef}
+        onClick={() => setIsOpen(!isOpen)}
+        className={style.btn_lang}
+        type="button"
+        aria-label={ariaLabelsText(currentLocale).btn_lang}
+      >
         <span>{currentLocale.toUpperCase()}</span>
-        <span className={clsx(style.btn_icon, isOpen && style.btn_icon_up)}>
-          <Icon name="intl-select-arrow" />
+        <span className={isOpen ? style.btn_icon_up : style.btn_icon}>
+          <HeaderCaretDown />
         </span>
-      </div>
+      </button>
       {isOpen && (
         <div ref={submenuRef} className={style.options}>
           {locales.map(item =>
             item !== currentLocale ? (
-              <span key={item} onClick={() => handleCheckLocale(item)}>
+              <button
+                className={style.options_item_btn}
+                key={item}
+                onClick={() => handleCheckLocale(item)}
+                type="button"
+                aria-label={ariaLabelsText(currentLocale).btn_item}
+              >
                 {item.toUpperCase()}
-              </span>
+              </button>
             ) : null
           )}
         </div>

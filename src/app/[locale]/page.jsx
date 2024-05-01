@@ -1,19 +1,17 @@
-import style from "./page.module.scss";
-
 import CarouselTestSection from "@/src/components/CarouselTestSection/CarouselTestSection";
+import Counter from "@/src/components/Counter/Counter";
+
 import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTestSection";
-import ExampleButtons from "@/src/components/ExampleButtons/ExampleButtons";
-import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
-import FeedbackCard from "@/src/components/shared/FeedbackCard/FeedbackCard";
+import Timeline from "@/src/components/Timeline/Timeline";
 
 export default function Home() {
   return (
     <main>
-      <ExampleButtons />
-      <ScrollToTopBtn />
-      <FeedbackCard />
+      <input placeholder=""/>
       <CarouselTestSection />
       <RoleCardTestSection />
+      <Counter />
+      <Timeline/>
     </main>
   );
 }
