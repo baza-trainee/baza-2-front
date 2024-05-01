@@ -13,9 +13,7 @@
     cursor: default;
   }
   & > svg {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 19px;
     height: 30px;
   }
