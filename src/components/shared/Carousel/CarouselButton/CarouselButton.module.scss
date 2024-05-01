@@ -12,4 +12,11 @@
     opacity: 0.1;
     cursor: default;
   }
+  & > svg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 30px;
+  }
 }
