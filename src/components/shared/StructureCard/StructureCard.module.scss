@@ -1,28 +1,61 @@
-@use "../../../styles/variables";
-@use "../../../styles/mixins";
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
 
 .cardStyle {
   width: 1236px;
   height: fit-content;
-  padding: 0px 32px 0px 32px;
+  padding: 0px 32px 8px 48px;
   border: 0px 0px 1px 0px;
-  border-bottom: 1px solid rgba(3, 1, 16, 1);
+  border-bottom: 1px solid rgba(46, 5, 53, 1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgba(242, 200, 228, 1);
+  align-items: center;
+  background: linear-gradient(127.17deg, #DB97C5 -15.12%, #CC4FA3 5.17%, #A03A7E 32.37%, #6D2656 79.03%, #490735 104.82%);
 }
 
+.header {
+  @include apply-font-styles($h2-font);
+  color: $secondary-white;
+}
+.text {
+  color: $secondary-white;
+  @include apply-font-styles($text-20-font);
+}
 .textCard {
-  h2 {
-    @include mixins.apply-font-styles(variables.$h2-font);
-  }
-  p {
-    @include mixins.apply-font-styles(variables.$text-20-font);
-  }
   width: 712px;
   height: fit-content;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  gap: 12px;
+  
+}
+
+.svgWrapper {
+  width: 300px;
+  height: 157px;
+  border-radius: 50%;
+  overflow: hidden; 
+  position: relative; 
+  background: linear-gradient(
+    122deg,
+    #ae8ba3 0%,
+    #f351be 22.5%,
+    #b7318a 45.71%,
+    #702156 78.5%,
+    #500239 100%
+  );
+
+
+}
+.imageWrapper {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 100%; 
+  height: 120px;
+  width: 120px;
 }
