@@ -64,8 +64,8 @@ export default function LangDropdown() {
         aria-label={ariaLabelsText(currentLocale).btn_lang}
       >
         <span>{currentLocale.toUpperCase()}</span>
-        <span className={isOpen ? style.btn_icon_up : style.btn_icon}>
-          <HeaderCaretDown />
+        <span className={clsx(style.btn_icon, isOpen && style.btn_icon_up)}>
+          <Icon name="intl-select-arrow" />
         </span>
       </button>
       {isOpen && (
