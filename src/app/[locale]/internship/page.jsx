@@ -8,5 +8,6 @@ export default function Internship () {
       {/* Видалити після тестів */}
     <h1>{t('title')}</h1>
     <p>{t('text')}</p>
+
   </main>
 }
