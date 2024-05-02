@@ -18,7 +18,7 @@ export interface SpritesMap {
     | "mail"
     | "phone"
     | "scroll-top-arrow"
-    | "telegram"
+    | "telegram";
 }
 export const SPRITES_META: {
   sprite: Array<
@@ -41,7 +41,7 @@ export const SPRITES_META: {
     | "phone"
     | "scroll-top-arrow"
     | "telegram"
-  >
+  >;
 } = {
   sprite: [
     "arrow-back",
@@ -64,4 +64,4 @@ export const SPRITES_META: {
     "scroll-top-arrow",
     "telegram",
   ],
-}
+};

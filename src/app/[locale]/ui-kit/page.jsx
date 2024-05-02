@@ -15,7 +15,7 @@ export default function UiKit() {
       <FooterLinks />
       <StructureCard />
       <PartnerCard />
-      <Logo variant="footer"/>
+      <Logo variant="footer" />
     </main>
   );
 }

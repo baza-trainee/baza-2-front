@@ -7,11 +7,11 @@ import Timeline from "@/src/components/Timeline/Timeline";
 export default function Home() {
   return (
     <main>
-      <input placeholder=""/>
+      <input placeholder="" />
       <CarouselTestSection />
       <RoleCardTestSection />
       <Counter />
-      <Timeline/>
+      <Timeline />
     </main>
   );
 }

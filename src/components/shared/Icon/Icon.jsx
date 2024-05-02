@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from "clsx";
 
 export function Icon({ name, className, viewBox, width, height, ...props }) {
   return (
@@ -13,5 +13,5 @@ export function Icon({ name, className, viewBox, width, height, ...props }) {
     >
       <use href={`/sprite/sprite.svg#${name}`} />
     </svg>
-  )
+  );
 }

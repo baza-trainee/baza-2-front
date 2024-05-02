@@ -1,7 +1,6 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-
 .cardStyle {
   width: 1236px;
   height: fit-content;
@@ -12,7 +11,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(127.17deg, #DB97C5 -15.12%, #CC4FA3 5.17%, #A03A7E 32.37%, #6D2656 79.03%, #490735 104.82%);
+  background: linear-gradient(
+    127.17deg,
+    #db97c5 -15.12%,
+    #cc4fa3 5.17%,
+    #a03a7e 32.37%,
+    #6d2656 79.03%,
+    #490735 104.82%
+  );
 }
 
 .header {
@@ -30,15 +36,14 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 12px;
-  
 }
 
 .svgWrapper {
   width: 300px;
   height: 157px;
   border-radius: 50%;
-  overflow: hidden; 
-  position: relative; 
+  overflow: hidden;
+  position: relative;
   background: linear-gradient(
     122deg,
     #ae8ba3 0%,
@@ -47,15 +52,13 @@
     #702156 78.5%,
     #500239 100%
   );
-
-
 }
 .imageWrapper {
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; 
+  width: 100%;
   height: 120px;
   width: 120px;
 }

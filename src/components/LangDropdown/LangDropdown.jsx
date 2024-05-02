@@ -1,42 +1,45 @@
-"use client"
-import style from "./LangDropdown.module.scss"
-import { useEffect, useRef, useState } from "react"
-import { useLocale } from "next-intl"
-import { locales } from "@/src/i18n"
-import { usePathname, useRouter } from "@/src/navigation"
-import { Icon } from "../shared/Icon/Icon"
-import clsx from "clsx"
+"use client";
+import style from "./LangDropdown.module.scss";
+import { useEffect, useRef, useState } from "react";
+import { useLocale } from "next-intl";
+import { locales } from "@/src/i18n";
+import { usePathname, useRouter } from "@/src/navigation";
+import { Icon } from "../shared/Icon/Icon";
+import clsx from "clsx";
 
 export default function LangDropdown() {
-  const router = useRouter()
-  const path = usePathname()
-  const locale = useLocale()
-  const [currentLocale, setCurrentLocale] = useState(locale)
-  const [isOpen, setIsOpen] = useState(false)
-  const menuRef = useRef(null)
-  const submenuRef = useRef(null)
+  const router = useRouter();
+  const path = usePathname();
+  const locale = useLocale();
+  const [currentLocale, setCurrentLocale] = useState(locale);
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const submenuRef = useRef(null);
 
-  const handleCheckLocale = item => {
-    setIsOpen(!isOpen)
-    setCurrentLocale(item)
-    router.replace(path, { locale: item })
-  }
+  const handleCheckLocale = (item) => {
+    setIsOpen(!isOpen);
+    setCurrentLocale(item);
+    router.replace(path, { locale: item });
+  };
 
-  const handleOutsideClick = event => {
+  const handleOutsideClick = (event) => {
     if (
       !submenuRef.current?.contains(event.target) &&
-      !(event.target === menuRef.current || menuRef.current?.contains(event.target))
+      !(
+        event.target === menuRef.current ||
+        menuRef.current?.contains(event.target)
+      )
     ) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener("click", handleOutsideClick)
-    return () => window.removeEventListener("click", handleOutsideClick)
-  }, [isOpen])
+    window.addEventListener("click", handleOutsideClick);
+    return () => window.removeEventListener("click", handleOutsideClick);
+  }, [isOpen]);
 
-  const ariaLabelsText = locale => {
+  const ariaLabelsText = (locale) => {
     const labels = {
       ua: {
         btn_lang: "для зміни мови сторінки. вибрана мова",
@@ -50,9 +53,9 @@ export default function LangDropdown() {
         btn_lang: "zmień język strony. wybrany język",
         btn_item: "wybierz język",
       },
-    }
-    return labels[locale]
-  }
+    };
+    return labels[locale];
+  };
 
   return (
     <div className={style.box}>
@@ -70,7 +73,7 @@ export default function LangDropdown() {
       </button>
       {isOpen && (
         <div ref={submenuRef} className={style.options}>
-          {locales.map(item =>
+          {locales.map((item) =>
             item !== currentLocale ? (
               <button
                 className={style.options_item_btn}
@@ -86,5 +89,5 @@ export default function LangDropdown() {
         </div>
       )}
     </div>
-  )
+  );
 }
