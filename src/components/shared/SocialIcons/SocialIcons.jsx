@@ -1,18 +1,20 @@
-import Link from "next/link";
 import { Icon } from "../Icon/Icon";
 import styles from "./SocialIcons.module.scss";
 
 const SocialIcons = () => {
   return (
-    <div>
-      <a href="https://www.linkedin.com/company/baza-trainee-ukraine/">
-        <Icon name="linkedin" className={styles.icon} />
+    <div className={styles.list}>
+      <a
+        href="https://www.linkedin.com/company/baza-trainee-ukraine/"
+        className={styles.link}
+      >
+        <Icon name="linkedin" width={48} height={48} className={styles.icon} />
       </a>
       <a href="https://www.facebook.com/BazaIT/">
-        <Icon name="facebook" className={styles.icon} />
+        <Icon name="facebook" width={48} height={48} className={styles.icon} />
       </a>
-      <a href="https://www.facebook.com/BazaIT/" className={styles.link}>
-        <Icon name="telegram" className={styles.icon} />
+      <a href="https://www.facebook.com/BazaIT/">
+        <Icon name="telegram" width={48} height={48} className={styles.icon} />
       </a>
     </div>
   );
