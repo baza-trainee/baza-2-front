@@ -38,22 +38,24 @@
   gap: 12px;
 }
 
+.substrateWrapper {
+  display: flex;
+  align-content: center;
+  justify-self:center;
+  width: 261px;
+  height: 190px;
+
+
+}
 .svgWrapper {
-  width: 300px;
-  height: 157px;
-  border-radius: 50%;
+  width: 261px;
+  height: 190px;
+
   overflow: hidden;
   position: relative;
-  background: linear-gradient(
-    122deg,
-    #ae8ba3 0%,
-    #f351be 22.5%,
-    #b7318a 45.71%,
-    #702156 78.5%,
-    #500239 100%
-  );
+  
 }
-.imageWrapper {
+.logoWrapper {
   position: absolute;
   top: 50%;
   left: 50%;
