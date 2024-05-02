@@ -13,7 +13,7 @@ const SocialIcons = () => {
       <a href="https://www.facebook.com/BazaIT/">
         <Icon name="facebook" width={48} height={48} className={styles.icon} />
       </a>
-      <a href="https://www.facebook.com/BazaIT/">
+      <a href="https://t.me/+CBXkAJlsCy83ZDYy">
         <Icon name="telegram" width={48} height={48} className={styles.icon} />
       </a>
     </div>
