@@ -12,4 +12,9 @@
     opacity: 0.1;
     cursor: default;
   }
+  & > svg {
+    display: block;
+    width: 19px;
+    height: 30px;
+  }
 }

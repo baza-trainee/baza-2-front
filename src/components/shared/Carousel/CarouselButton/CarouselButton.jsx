@@ -1,17 +1,11 @@
 import clsx from "clsx"
-import Image from "next/image"
 import styles from "./CarouselButton.module.scss"
+import { Icon } from "../../Icon/Icon"
 
 const CarouselButton = ({ className, ...props }) => {
   return (
     <button className={clsx(styles.sliderButton, className)} {...props}>
-      <Image
-        quality={100}
-        width={19}
-        height={30}
-        alt="arrow"
-        src="/images/icons/carousel-arrow.svg"
-      />
+      <Icon name="carousel-arrow" />
     </button>
   )
 }
