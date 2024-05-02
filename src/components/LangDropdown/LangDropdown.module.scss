@@ -6,20 +6,33 @@
   line-height: normal;
   color: $secondary-white;
   position: relative;
-  
+
   .btn_lang {
     width: 65px;
     padding: 14px 8px;
     display: flex;
     align-items: center;
-    transition: all .3s;
+    transition: all 0.3s;
   }
-  .btn_icon_up{
-    height: 24px;
+  .btn_icon_up {
     transform: rotate(180deg);
   }
   .btn_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
     height: 24px;
+    transition: all 0.2s ease 0s;
+    & > svg {
+      display: block;
+      width: 15px;
+      height: 9px;
+    }
+  }
+  .btn_lang:focus,
+  .btn_lang:hover {
+    opacity: 0.7;
   }
 
   .options {
@@ -33,16 +46,16 @@
     left: 0;
     z-index: 2;
   }
-  .options_item_btn{
+  .options_item_btn {
     padding: 8px;
     text-align: start;
-    transition: all .3s;
+    transition: all 0.3s;
   }
   .btn_lang:focus,
   .btn_lang:hover,
   .options_item_btn:focus,
-  .options_item_btn:hover{
-     // color:#C0A4B7;
-    opacity: .6;
+  .options_item_btn:hover {
+    // color:#C0A4B7;
+    opacity: 0.6;
   }
 }

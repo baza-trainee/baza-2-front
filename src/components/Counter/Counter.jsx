@@ -2,7 +2,6 @@
 import CountUp from "react-countup";
 import styles from "./counter.module.scss";
 
-
 const data = [
   {
     id: 1,

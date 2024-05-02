@@ -1,8 +1,8 @@
-import clsx from "clsx"
-import "./CarouselPagination.scss"
+import clsx from "clsx";
+import "./CarouselPagination.scss";
 
 const CarouselPagination = ({ className, ...props }) => {
-  return <div className={clsx("sliderPagination", className)} {...props}></div>
-}
+  return <div className={clsx("sliderPagination", className)} {...props}></div>;
+};
 
-export default CarouselPagination
+export default CarouselPagination;

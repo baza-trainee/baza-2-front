@@ -17,7 +17,7 @@ export default function UiKit() {
       <StructureCard />
       <PartnerCard />
       <Logo variant="footer" />
-      <SocialIcons />
+      <SocialIcons  />
     </main>
   );
 }
