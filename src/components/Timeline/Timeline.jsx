@@ -1,10 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
-import Scrollspy from "react-scrollspy";
+
+import { useEffect, useRef, useState } from "react";
+
+import clsx from "clsx";
+
+import { useInView } from "react-intersection-observer";
+import { useScrollIndicator } from "./useScrollIndicator";
+
+import data from "./data";
+
 import styles from "./timeline.module.scss";
 
 const Timeline = () => {
   const [isScrollDown, setIsScrollDown] = useState(false);
+  const timelineRef = useRef(null);
+  const timelineDrawRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,42 +29,7 @@ const Timeline = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const timeline = document.querySelector(`.${styles.timeline}`);
-    const timelineDraw = document.querySelector(`.${styles.timeline__draw}`);
-    const timelineElements = document.querySelectorAll(
-      `.${styles.timeline__list__element}`
-    );
-    const bodyRect = document.body.getBoundingClientRect();
-
-    if (!timeline || !timelineDraw || !timelineElements.length) {
-      return;
-    }
-
-    const timelineOffset = timeline.getBoundingClientRect().top - bodyRect.top;
-
-    var moveIndicator = function () {
-      var viewportHeight = window.innerHeight;
-      var hasScrolled = window.pageYOffset;
-      const scrolledFurther =
-        hasScrolled - timelineOffset + viewportHeight / 1.3;
-
-      if (scrolledFurther && scrolledFurther > 0) {
-        if (scrolledFurther > timeline.clientHeight) {
-          timelineDraw.style.height = `${timeline.clientHeight}px`;
-          return;
-        }
-
-        timelineDraw.style.height = `${scrolledFurther}px`;
-        return;
-      }
-
-      timelineDraw.style.height = "0px";
-    };
-
-    window.addEventListener("scroll", moveIndicator);
-    window.addEventListener("resize", moveIndicator);
-  }, []);
+  useScrollIndicator(timelineRef, timelineDrawRef);
 
   return (
     <div className={styles.wrapper}>
@@ -64,52 +39,36 @@ const Timeline = () => {
         </div>
       </div>
       <div className="placeholder"></div>
-      <div className={styles.timeline}>
+      <div className={styles.timeline} ref={timelineRef}>
         <div className={styles.timeline__initial}></div>
-        <div className={styles.timeline__draw}></div>
+        <div
+          ref={timelineDrawRef}
+          className={clsx(styles.timeline__draw, {
+            [styles.active]: isScrollDown,
+          })}
+        ></div>
 
-        <div className={styles.timeline__list}>
-          <Scrollspy
-            items={["item1", "item2", "item3", "item4", "item5"]}
-            currentClassName={isScrollDown ? styles.active : ""}
-            className={styles.timeline__list}
-            offset={-700}
-          >
-            <div className={styles.timeline__list__element} id="item1">
-              <p className={styles.title}>Квітень 2023: </p>
-              <p className={styles.text}>Старт проєкту Baza Trainee Ukraine</p>
-            </div>
-            <div className={styles.timeline__list__element} id="item2">
-              <p className={styles.title}>Серпень 2023: </p>
-              <p className={styles.text}>
-                Перша тисяча заявок від учасників загалом на 17 різноманітних
-                проєктів, 8 менторів
-              </p>
-            </div>
-            <div className={styles.timeline__list__element} id="item3">
-              <p className={styles.title}>Листопад 2023: </p>
-              <p className={styles.text}>
-                Чотири лендінги з військових зборів закумулювали понад 200 тис
-                грн, більше 50 працевлаштованих джунів{" "}
-              </p>
-            </div>
-            <div className={styles.timeline__list__element} id="item4">
-              <p className={styles.title}>Грудень 2023: </p>
-              <p className={styles.text}>
-                Кількість учасників зросла до 1700. Успішно завершено 35
-                проєктів.
-              </p>
-            </div>
-            <div className={styles.timeline__list__element} id="item5">
-              <p className={styles.title}>Березень 2024: </p>
-              <p className={styles.text}>
-                Під час нашої роботи ми спостерігаємо ускладнення рівню проєктів
-                — від простих лендінгів до повноцінних сайтів з складними
-                внутрішніми блоками{" "}
-              </p>
-            </div>
-          </Scrollspy>
-        </div>
+        <ul className={styles.timeline__list}>
+          {data.map((item) => {
+            const [ref, inView] = useInView({
+              threshold: 0.9,
+            });
+
+            return (
+              <li
+                ref={ref}
+                className={clsx(styles.timeline__list__element, {
+                  [styles.active]: inView,
+                })}
+                id={item.id}
+                key={item.id}
+              >
+                <p className={styles.title}>{item.title}</p>
+                <p className={styles.text}>{item.text}</p>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
