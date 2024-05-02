@@ -1,158 +1,161 @@
 {
-  "main":{
-    "headerButton":"Wesprzyj projekt"
-    },
+  "Header": {
+    "main": "Główny",
+    "internship": "Praktyka",
+    "projects": "Projektowanie",
+    "blog": "Blog",
+    "contacts": "Łączność",
+    "btn_support_project": "Wesprzyj projekt"
+  },
+
   "Main": {
-    "hero_section": {
-      "search": "Znajdź kandydata",
-      "country": "Kraj",
-      "speciality": "Specjalność",
-      "ukraine": "Ukraina",
-      "poland": "Polska",
-      "germany": "Niemcy",
-      "title": {
-        "main": "Znajdź swojego",
-        "specialist": "ІТ-fachowce",
-        "designer": "projektanta",
-        "developer": "dewelopera",
-        "qa": "testera",
-        "pm": "PMa"
+    "hero_сarousel_section": {
+      "slide_1": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+      },
+      "slide_2": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+      },
+      "slide_3": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+      },
+      "slide_4": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+      },
+      "slide_5": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
       }
     },
-    "counters": {
-      "live_projects": "projektów na żywo",
-      "participants": "zaangażowanych uczestników",
-      "employed": "zatrudnionych",
-      "technologies": "technologii",
-      "libraries": "bibliotek"
-    },
-    "help": {
-      "title": "Pomożemy Ci znaleźć godnego specjalistę",
-      "paragraph_1": "Platforma Baza Skill pomoże Ci znaleźć doświadczonego specjalistę w dziedzinie IT, gdyż każdy z naszych kandydatów ma już za sobą poważną praktykę w Baza Trainee Ukraine.",
-      "paragraph_2": "Każdy przedstawiony tutaj specjalista potrafi pracować zespołowo, ma doświadczenie w realizacji projektów, zna wymagania, zna trudności i sukcesy na wszystkich etapach życia projektu.",
-      "paragraph_3": "Dajemy Ci wykwalifikowanych młodszych specjalistów, którzy kochają to, co robią. Przynajmniej tak mówią."
-    },
-    "candidates": {
-      "title": "Nasi kandydaci",
-      "paragraph_1": "Przestrzegają zasad korzystania z udostępnionych narzędzi",
-      "paragraph_2": "Trzymają się terminów",
-      "paragraph_3": "Przestrzegają obowiązku gromadzenia dokumentacji",
-      "paragraph_4": "Zajmują dobrze uargumentowanych stanowiska w sporach i sytuacjach konfliktowych, skuteczność, chęć osiągnięcia wspólnego celu",
-      "paragraph_5": "Gotowi do dzielenia się informacjami",
-      "paragraph_6": "Wyrażają postawę wsparcia dla kolegów w zespole, gotowość do zastąpienia kolegi w przypadku wystąpienia siły wyższej",
-      "paragraph_7": "Interesują się nowościami",
-      "paragraph_8": "Skłonni do aktywności",
-      "paragraph_9": "Bezwarunkowo przestrzegają przepisów prawa, w szczególności w zakresie praw autorskich, ochrony danych osobowych, RODO, NDA",
-      "paragraph_10": "Bezwarunkowo przestrzegają przepisów prawa"
-    },
-    "partners": {
-      "title": "Nasi partnerzy"
-    },
-    "articles": {
-      "title": "Artykuły i porady"
-    },
-    "testimonials": {
-      "title": "Opinie"
-    },
-    "contacts": {
-      "title": "Kontakty"
-    },
-    "footer": {
-      "offer": "Za krok do oferty",
-      "about_us": "O nas",
-      "to_become_hr": "Zostań naszym HR",
-      "to_become_partner": "Zostań naszym partnerem",
-      "internship": "Staż w Bazie Educat",
-      "poligon": "Rozwój Bazy Poligon",
-      "development": "Development",
-      "rights": "Wszelkie prawa zastrzeżone",
-      "privacy_policy": "Polityka prywatności",
-      "terms_of_use": "Warunki korzystania z serwisu",
-      "support_1": "Firma przekazuje 10% zysków na wsparcie",
-      "support_2": "59 brygady",
-      "support_3": "im. Jakowa Handziuka"
-    },
-    "forms": {
-      "to_become_hr": "Zostań naszym HR",
-      "to_become_partner": "Zostań naszym partnerem",
-      "first_name": "Imię",
-      "last_name": "Nazwisko",
-      "phone": "Telefon",
-      "company": "Firma",
-      "company_name": "Nazwa firmy",
-      "name": "Nazwa",
-      "company_website": "Strona internetowa firmy",
-      "website": "Strona internetowa",
-      "position_name": "Stanowisko przedstawiciela",
-      "position": "Stanowisko",
-      "country": "Kraj",
-      "ukraine": "Ukraina",
-      "poland": "Polska",
-      "germany": "Niemcy",
-      "czech": "Republika Czeska",
-      "france": "Francja",
-      "spain": "Hiszpania",
-      "speciality": "Specjalność",
-      "search": "Szukam",
-      "comment": "Komentarz",
-      "recruitment_contract": "Prosimy o przesłanie umowy rekrutacyjnej do wglądu",
-      "partner_contract": "Prosimy o przesłanie umowy partnerskiej do wglądu",
-      "agreement": "Wyrażam zgodę na przetwarzanie danych osobowych",
-      "send": "Wysłać",
-      "processing": "Przetworzenie żądania...",
-      "errors": {
-        "firstname_empty": "Wpisz swoje imię",
-        "firstname_min": "Nazwa musi mieć co najmniej 2 znaki",
-        "firstname_max": "Nazwa nie może przekraczać 30 znaków",
-        "incorrect_firstname": "Proszę wpisać prawidłowe imię",
-        "lastname_empty": "Wpisz swoje nazwisko",
-        "lastname_min": "Nazwisko musi mieć co najmniej 2 znaki",
-        "lastname_max": "Nazwisko nie może przekraczać 50 znaków",
-        "incorrect_lastname": "Wpisz prawidłowe nazwisko",
-        "companyname_empty": "Wpisz nazwę swojej firmy",
-        "companyname_min": "Nazwa musi mieć co najmniej 2 znaki",
-        "companyname_max": "Nazwa nie może mieć więcej niż 30 znaków",
-        "incorrect_companyname": "Wpisz poprawną nazwę firmy",
-        "required_field": "To pole jest wymagane",
-        "incorrect_phone": "Wprowadź prawidłowy numer telefonu w formacie międzynarodowym",
-        "phone_max": "Numer telefonu nie może zawierać więcej niż 13 cyfr",
-        "incorrect_email": "Wpisz poprawny email",
-        "invalid_ru": "Domeny .ru i .by są niedozwolone",
-        "company": "Wpisz prawidłową nazwę lub pozostaw pole puste",
-        "company_min": "Nazwa musi mieć co najmniej 2 znaki",
-        "company_max": "Nazwa nie może mieć więcej niż 300 znaków",
-        "agreement": "Proszę potwierdzić swoją zgodę",
-        "comment": "Wpisz prawidłowy komentarz o długości nie większej niż 300 znaków",
-        "website": "Wprowadź prawidłowy adres URL witryny firmy",
-        "position": "Tylko litery i spacje (bez znaków specjalnych)",
-        "position_min": "Nazwa musi mieć co najmniej 2 znaki",
-        "position_max": "Nazwa nie może mieć więcej niż 300 znaków"
+    "history_project_section": {
+      "title": "Історія проєкту",
+      "text": "Наш проєкт розпочався у квітні 2023 року з метою підтримки та професійного розвитку джунів та світчерів до сфери ІТ. За рік ми досягли значних успіхів:",
+      "history": {
+        "history_item_1": {
+          "date": "Квітень 2023:",
+          "text": "Старт проєкту Baza Trainee Ukraine"
+        },
+        "history_item_2": {
+          "date": "Серпень 2023:",
+          "text": "Перша тисяча заявок від учасників загалом на 17 різноманітних проєктів, 8 менторів"
+        },
+        "history_item_3": {
+          "date": "Листопад 2023:",
+          "text": "Чотири лендінги з військових зборів закумулювали понад 200 тис грн, більше 50 працевлаштованих джунів "
+        },
+        "history_item_4": {
+          "date": "Грудень 2023:",
+          "text": "Кількість учасників зросла до 1700. Успішно завершено 35 проєктів."
+        },
+        "history_item_5": {
+          "date": "Березень 2024:",
+          "text": "Під час нашої роботи ми спостерігаємо ускладнення рівню проєктів — від простих лендінгів до повноцінних сайтів з складними внутрішніми блоками"
+        }
       }
     },
-    "cookies": {
-      "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
-      "privacy_policy": "Polityka prywatności"
+    "counter_section": {
+      "title": "Наш прогрес",
+      "active_projects": "активних проєктів",
+      "involved_participants": "залучених учасників",
+      "employed": "працевлаштовано"
+    },
+    "mentor_section": {
+      "title": "Ментору",
+      "paragraph_1": "Ментор - це колега на два рівні вищий за менторі, який слідкує за виконанням задач і допомагає порадою або роз`ясненням, коли учасник не впевнений в рішенні",
+      "paragraph_2": "Наші ментори - практики провідних ІТ-компаній України, які прагнуть підтримати новачків знаннями і розширити власні управлінські навички.",
+      "paragraph_3": "На Baza Trainee Ukraine ментор направляє команду одразу з декількох осіб, спряючи їхньому професійному розвитку.",
+      "btn_mentor": "Стати ментором"
+    },
+    "our_structure_section": {
+      "title": "Наша структура",
+      "item_1": {
+        "title": "BAZA TRAINEE UKRAINE",
+        "text": "Громадський проєкт для джуніорів і  світчерів ІТ, який побудований на створенні цифрових проєктів для соціальної сфери України"
+      },
+      "item_2": {
+        "title": "BAZA SKILL",
+        "text": "Власна рекрутингова агенція для наших випускників. База даних перевірених джунів з досвідом командної розробки"
+      },
+      "item_3": {
+        "title": "BAZA EDUCAT",
+        "text": "Учбові курси різних рівнів складності для розробників, де навчають спільній роботі і командній розробці. Додай софт скіли до технічних знань і отримай додаткову підтримку на ринку праці"
+      },
+      "item_4": {
+        "title": "BAZA POLIGON",
+        "text": "Веб агенція для малого і середнього бізнесу.  Створені в 2023 в Україні і для України."
+      }
+    },
+    "FAQ_section": {
+      "title": "FAQ",
+      "question_1": {
+        "title": "Які проєкти ми виконуємо?",
+        "text": "Ми створюємо справжні цифрові проєкти на соціальну тематику для конкретних замовників або внутрішні. Всі вони будуть присутні в мережі протягом року, і ви зможете продемонструвати їх в портфоліо . Це не абстрактні блоки, а реальні продукти, які мають соціальний вплив."
+      },
+      "question_2": {
+        "title": "Як подати заявку?",
+        "text": "На нашому сайті на сторінці Стажування під кнопкою Приєднатись до спільноти розташована анкета на участь в роботі організації. Для участі вам знадобиться акаунт в соціальній мережі Discord. Якщо його немає, відкрийте будь ласка і будьте з нами на зв`язку."
+      },
+      "question_3": {
+        "title": "Де можна ознайомитися з  умовами участі?",
+        "text": "Деталі на сторінці Стажування"
+      },
+      "question_4": {
+        "title": "Чи можна побачити проєкти організації?",
+        "text": "Всі проєкти, на стадії збору команди, в процесі виконання або випущені розміщені на сторінці Проєкти. Там же можна побачити склад команди, яка його виконувала."
+      },
+      "question_5": {
+        "title": "Чи можна обрати потрібну мову програмування для участі?",
+        "text": "Так. Якщо є дваі і більше програмістів, що хочуть попрактикувати Vue.js або Angular або Flask, ми підберемо проєкт під обрану технологію. Приходьте з друзями, буде весело!"
+      },
+      "btn_support_project": "Підтримати проєкт"
+    },
+    "reviews_section": {
+      "title": "Відгуки"
+    },
+    "press_about_section": {
+      "title": "Преса про нас"
+    },
+    "partners_section": {
+      "title": "Партнери"
+    },
+    "feedback_form": {
+      "title": "Форма зворотного зв’язку",
+      "name": "Ім’я",
+      "email": "Електронна пошта",
+      "message": "Повідомлення",
+      "message_placeholder": "Ваше повідомлення",
+      "btn_send": "Відправити"
     }
   },
-  "Error": {
-    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta",
-    "button": "Przejdź do strony głównej"
+
+  "Footer": {
+    "main": "Головна",
+    "internship": "Стажування",
+    "projects": "Проєкти",
+    "blog": "Блог",
+    "privacy_policy": "Політика конфіденційності",
+    "site_use_policy": "Політика Користування сайтом",
+    "regulations": "Статут",
+    "reporting": "Звітність",
+    "development": "Розробка",
+    "rights": "Усі права захищені"
   },
-  "Candidate": {
-    "about": "O mnie",
-    "name": "Vlad",
-    "stack": "Stos",
-    "education": "Edukacja",
-    "courses": "Kursy",
-    "baza_experience": "Doświadczenie zawodowe w Bazie",
-    "out_baza_experience": "Doświadczenie w pracy poza Bazą",
-    "projects": "{count, plural, =0 {jeszcze żadnych projektów} =1 {# project} =2 {# projecty} =3 {# projecty} other {# projektów}}",
-    "recomendation_from": "Rekomendacje od",
-    "ask_data": "Zażądaj danych",
-    "candidate_project": {
-      "duration": "Duration",
-      "weeks": "{count, plural,  =2 {# tygodnie} =3 {# tygodnie} =4 {# tygodnie} other {# tygodni}}",
-      "role": "Zespół ołowiu"
-    }
+
+  "Page_404": {
+    "title": "Вибачте, сторінка, яку ви шукаєте, переміщена або видалена.",
+    "btn_home": "Повернутись на головну"
+  },
+
+  "Modal": {
+    "amount": "Сума поповнення",
+    "UAH": "грн",
+    "another_amount": "Інша сума",
+    "btn_support": "Підтримати",
+    "thanks_support": "Дякуємо за підтримку!",
+    "btn_home": "Повернутись на головну"
   }
 }

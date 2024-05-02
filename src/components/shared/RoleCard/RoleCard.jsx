@@ -1,17 +1,22 @@
-"use client"
-import Image from "next/image"
-import { useState } from "react"
-import styles from "./RoleCard.module.scss"
-import clsx from "clsx"
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import styles from "./RoleCard.module.scss";
+import clsx from "clsx";
 
 const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
-  const [readMore, setReadMore] = useState(false)
+  const [readMore, setReadMore] = useState(false);
 
   return (
     <article className={styles.article}>
       {imgSrc && (
         <div className={styles.imageContainer}>
-          <Image sizes="100%" fill alt={title ?? "Описание отсутсвует"} src={imgSrc} />
+          <Image
+            sizes="100%"
+            fill
+            alt={title ?? "Описание отсутсвует"}
+            src={imgSrc}
+          />
         </div>
       )}
       <div className={styles.content}>
@@ -22,7 +27,10 @@ const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
         </button>
       </div>
       <div className={clsx(styles.fullDesc, readMore && styles.showFullDesc)}>
-        <button onClick={() => setReadMore(false)} className={styles.fullDescClose}>
+        <button
+          onClick={() => setReadMore(false)}
+          className={styles.fullDescClose}
+        >
           <svg
             width="24"
             height="17"
@@ -42,7 +50,7 @@ const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
         {children}
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default RoleCard
+export default RoleCard;

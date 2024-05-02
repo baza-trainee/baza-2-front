@@ -1,0 +1,25 @@
+.counter {
+  padding: 65px 0;
+  background: linear-gradient(
+    to bottom,
+    #db97c5 0%,
+    #cc4fa3 25%,
+    #a03a7e 50%,
+    #6d2656 75%,
+    #490735 100%
+  );
+}
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 164px;
+}
+.item {
+  font-size: 56px;
+  line-height: 84px;
+  text-align: center;
+}
+.title {
+  font-size: 24px;
+  line-height: 36px;
+}
