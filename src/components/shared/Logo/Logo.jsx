@@ -1,14 +1,16 @@
 "use client";
 import styles from "./Logo.module.scss";
-import Image from "next/image";
+import clsx from "clsx";
 import { Link } from "@/src/navigation";
+import { Icon } from "../Icon/Icon";
 
 const logoConfig = {
   HEADER: "header",
   FOOTER: "footer",
+  URL:'/'
 };
 // variant - 'header' або 'footer' за замовчуванням 'header'. ariaLabel - для посилання
-export default function Logo({ variant = logoConfig.HEADER, ariaLabel }) {
+export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel }) {
   const logoClass = `${
     styles[
       variant === logoConfig.HEADER || variant === logoConfig.FOOTER
@@ -29,17 +31,12 @@ export default function Logo({ variant = logoConfig.HEADER, ariaLabel }) {
 
   return (
     <Link
-      href={"/"}
-      className={logoClass}
+      href={logoConfig.URL}
+      className={clsx(logoClass,className)}
       onClick={scrollToTop}
       aria-label={ariaLabel}
     >
-      <Image
-        src="/images/main_logo.svg"
-        alt="Logo Baza Trainee Ukraine"
-        fill={true}
-        priority
-      />
+      <Icon name="logo"/>
     </Link>
   );
 }
