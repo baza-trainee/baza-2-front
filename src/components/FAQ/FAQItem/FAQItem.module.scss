@@ -4,11 +4,7 @@
 
 .faqItem {
   position: relative;
-  cursor: pointer;
   overflow: hidden;
-  @media (any-hover: none) {
-    cursor: default;
-  }
   &::before {
     content: "";
     position: absolute;
@@ -32,6 +28,10 @@
   justify-content: space-between;
   padding: 16px 0 16px 10px;
   gap: 20px;
+  cursor: pointer;
+  @media (any-hover: none) {
+    cursor: default;
+  }
 }
 .title {
   @include mixins.apply-font-styles(var.$h3-font);
@@ -43,6 +43,7 @@
   width: 48px;
   height: 48px;
   padding: 10px;
+  flex-shrink: 0;
   & > span {
     display: block;
     width: 100%;
@@ -66,14 +67,13 @@
 
 .desc {
   @include mixins.apply-font-styles(var.$text-16-font);
-  padding: 0 10px;
+  padding: 10px;
   font-size: 18px;
-  height: 0;
-  width: calc(100% - 48px);
-  transition: height var.$transition-duration-base var.$transition-timing-base
-    0s;
 }
-
-.descActive {
-  height: 80px;
+.descWrapper {
+  max-height: 0;
+  transition: max-height var.$transition-duration-base
+    var.$transition-timing-base 0s;
+}
+.descWrapperActive {
 }

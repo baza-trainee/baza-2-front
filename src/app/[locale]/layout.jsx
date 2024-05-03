@@ -19,7 +19,6 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           <div className="wrapper">
             <NavLinks />
             <TestExampleLangDropdown />
-
             {children}
             <ContactLinks />
           </div>

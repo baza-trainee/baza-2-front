@@ -1,0 +1,13 @@
+@use "../../styles/mixins" as mixins;
+@use "../../styles/variables" as var;
+
+.title {
+  text-align: center;
+  @include mixins.apply-font-styles(var.$h1-font);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
