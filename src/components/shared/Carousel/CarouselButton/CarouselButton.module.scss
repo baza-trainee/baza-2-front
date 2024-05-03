@@ -1,10 +1,13 @@
+@use "../../../../styles/variables" as var;
+
 .sliderButton {
   width: 40px;
   height: 60px;
   background-color: transparent;
   outline: none;
   border: none;
-  transition: opacity 0.3s ease 0s;
+  transition: opacity var.$transition-duration-base var.$transition-timing-base
+    0s;
   display: inline-flex;
   align-items: center;
   justify-content: center;

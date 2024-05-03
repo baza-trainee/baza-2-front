@@ -1,8 +1,8 @@
 import FAQItem from "./FAQItem/FAQItem";
 import { useTranslations } from "next-intl";
-import styles from "./FAQ.module.scss";
 import { items } from "./items";
 import MainButton from "../shared/MainButton/MainButton";
+import styles from "./FAQ.module.scss";
 
 const FAQ = () => {
   const t = useTranslations("Main.FAQ_section");
