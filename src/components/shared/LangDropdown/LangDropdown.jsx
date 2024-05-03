@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { locales } from "@/src/i18n";
 import { usePathname, useRouter } from "@/src/navigation";
-import { Icon } from "../shared/Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import clsx from "clsx";
 
 export default function LangDropdown() {

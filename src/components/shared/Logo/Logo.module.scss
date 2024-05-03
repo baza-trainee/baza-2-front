@@ -1,12 +1,14 @@
 .header {
-  display: block;
-  width: 60px;
-  height: 60px;
-  position: relative;
+  & > svg {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
 }
 .footer {
-  display: block;
-  width: 120px;
-  height: 120px;
-  position: relative;
+  & > svg {
+    display: block;
+    width: 120px;
+    height: 120px;
+  }
 }
