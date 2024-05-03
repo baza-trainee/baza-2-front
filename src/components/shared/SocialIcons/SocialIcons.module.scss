@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  gap: 32px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  fill: #fcfcfc;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    fill: #a03a7e;
+  }
+}
