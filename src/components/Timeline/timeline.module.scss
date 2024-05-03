@@ -61,6 +61,7 @@
     &:nth-child(even) {
       left: 400px;
       max-width: 440px;
+      min-height: 180px;
     }
   }
 
@@ -91,12 +92,12 @@
   }
   .timeline__list__element.active:nth-child(odd)::before {
     background-color: #ff62ce;
-    box-shadow: 0 0 10px rgba(255, 98, 206, 0.9);
+    box-shadow: 0 0 20px rgba(255, 98, 206, 0.9);
   }
 
   .timeline__list__element.active:nth-child(even)::before {
     background-color: #ff62ce;
-    box-shadow: 0 0 10px rgba(255, 98, 206, 0.9);
+    box-shadow: 0 0 20px rgba(255, 98, 206, 0.9);
   }
 
   .timeline__list__element.active {
