@@ -5,6 +5,12 @@ body {
   background-color: $primary-fon;
 }
 
+[class*="container"] {
+  max-width: 1238px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .wrapper {
   min-height: 100%;
   display: flex;

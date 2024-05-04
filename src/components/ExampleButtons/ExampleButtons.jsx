@@ -8,6 +8,7 @@ export default function ExampleButtons() {
   const [res1, setRes1] = useState(false);
   const t = useTranslations("Main");
   const b = useTranslations("Header");
+  const d = useTranslations("Modal");
   //const t = useTranslations('Index');
   return (
     <ul className={styles.list}>
@@ -23,6 +24,9 @@ export default function ExampleButtons() {
       </li>
       <li>
         <MainButton>{t("mentor_section.btn_mentor")}</MainButton>
+      </li>
+      <li>
+        <MainButton variant="modal">+ {d('another_amount')}</MainButton>
       </li>
       <li>
         <MainButton type="submit" ariaLabel={"Відправити"}>
