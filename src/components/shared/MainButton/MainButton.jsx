@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./mainbutton.module.scss";
 
 export default function MainButton({
@@ -11,7 +12,6 @@ export default function MainButton({
   return (
     <button
       onClick={onClick}
-      className={styles.btn}
       disabled={disabled}
       type={type}
       aria-label={ariaLabel}
