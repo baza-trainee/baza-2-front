@@ -8,8 +8,10 @@ export default function ContactFormSection() {
 
   return(
     <section className={styles.section}>
-      <h2 className={styles.title}> {t("title")}</h2>
-      <ContactForm/>
+      <div className={styles.wrapper}>
+        <h2 className={styles.title}> {t("title")}</h2>
+        <ContactForm/>
+      </div>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 "use client";
 import styles from "./ContactForm.module.scss";
+import clsx from "clsx";
 import { useForm } from "react-hook-form"
 import { useTranslations } from "next-intl";
 import MainButton from "../../shared/MainButton/MainButton";
@@ -9,55 +10,64 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data)
+    formState: { errors, isValid, isDirty},
+    reset
+  } = useForm({ defaultValues: { firstName: "", email:'', message:''} });
 
+  const onSubmit = (data) => {
+    console.log(data)
+    reset()
+  }
+const formІcheme={
+  firstName:{
+    required: true, 
+    minLength:2, 
+    maxLength:30, 
+    pattern: /^[A-zіІїЇЄє']+$/i
+  },
+  email:{
+    required: true,
+    minLength:2 
+  },
+  message:{
+    required: true, 
+    minLength:2, 
+    maxLength:30
+  }
+
+}
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
+        
         <li className={styles.item}>
-          <label>{t('name')} <span>*</span></label>
-          <input {...register('firstName', { required: true, minLength:2, maxLength:30, pattern: /^[A-zіІїЇЄє']+$/i })} placeholder={t('name')}/>
-          {/* {errors.firstName && <p>first name is required.</p>} */}
+          <label htmlFor="firstName">{t('name')} <span>*</span></label>
+          <input id="firstName" 
+          className={clsx(errors.firstName && styles._error, isValid && styles._success)}
+          {...register('firstName', { ...formІcheme.firstName })}
+           placeholder={t('name')}/>
         </li>
 
         <li className={styles.item}>
-          <label>{t('email')} <span>*</span></label>
-          <input type="mail" {...register('email', { required: true, minLength:2, maxLength:30, pattern: /^[A-zіІїЇЄє']+$/i })} placeholder={'email@gmail.com'}/>
-          {/* {errors.firstName && <p>first name is required.</p>} */}
+          <label htmlFor="email">{t('email')} <span>*</span></label>
+          <input type="email"  
+          id="email"
+          className={clsx(errors.email && styles._error, isValid && styles._success)}
+          {...register('email', { ...formІcheme.email })} 
+          placeholder={'email@gmail.com'}/>
         </li>    
 
         <li className={styles.item}>
-          <label>{t('message')} <span>*</span></label>
-          <textarea {...register('message', { required: true, minLength:2, maxLength:30})} placeholder={t('message_placeholder')} />
-          {/* {errors.firstName && <p>first name is required.</p>} */}
+          <label htmlFor="message">{t('message')} <span>*</span></label>
+          <textarea id="message" 
+           className={clsx(errors.message && styles._error, isValid && styles._success)}
+          {...register('message', {...formІcheme.message})}
+          placeholder={t('message_placeholder')} />
         </li>  
+
       </ul>
-      {/* <input {...register('lastName', { required: true })} />
-      {errors.lastName && <p>Last name is required.</p>}
-      <input {...register('age', { pattern: /\d+/ })} />
-      {errors.age && <p>Please enter number for age.</p>} */}
-      <MainButton type="submit" className={styles.submit}>{t("btn_send")}</MainButton>
+      <MainButton type="submit" disabled={isDirty && !isValid} className={styles.submit}>{t("btn_send")}</MainButton>
     </form>
   )
 }
-
-// import { useForm } from "react-hook-form"
-
-
-// export default function App() {
-//   const { register, handleSubmit } = useForm()
-//   const onSubmit = (data) => console.log(data)
-
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input {...register("firstName", { required: true, maxLength: 20 })} />
-//       <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-//       <input type="number" {...register("age", { min: 18, max: 99 })} />
-//       <input type="submit" />
-//     </form>
-//   )
-// }
