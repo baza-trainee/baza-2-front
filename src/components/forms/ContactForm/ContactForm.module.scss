@@ -45,6 +45,7 @@
   & > input{
     @include apply-font-styles($text-16-font);
     color: secondary-black;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: 10px;
     outline: 0;
@@ -54,6 +55,7 @@
   & > textarea{
     @include apply-font-styles($text-16-font);
     color: secondary-black;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: 10px;
     outline: 0;
