@@ -4,11 +4,11 @@ export const formScheme={
     required: true, 
     minLength:2, 
     maxLength:30, 
-    pattern: /^[A-zіІїЇЄє']+$/i
+    pattern: /^[A-zіІїЇЄє _']+$/i
   },
   email:{
     required: true,
-    minLength:2 
+    minLength:2
   },
   message:{
     required: true, 

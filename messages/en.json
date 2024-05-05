@@ -124,10 +124,10 @@
     },
     "feedback_form": {
       "title": "Feedback form",
-      "name": "Ім’я",
-      "email": "Електронна пошта",
-      "message": "Повідомлення",
-      "message_placeholder": "Ваше повідомлення",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "message_placeholder": "Your message",
       "btn_send": "Send"
     }
   },

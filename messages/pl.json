@@ -123,12 +123,12 @@
       "title": "Партнери"
     },
     "feedback_form": {
-      "title": "Форма зворотного зв’язку",
-      "name": "Ім’я",
-      "email": "Електронна пошта",
-      "message": "Повідомлення",
-      "message_placeholder": "Ваше повідомлення",
-      "btn_send": "Відправити"
+      "title": "Formularz zwrotny",
+      "name": "Nazwa",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "message_placeholder": "Twoja wiadomość",
+      "btn_send": "Wysłać"
     }
   },
 
