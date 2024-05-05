@@ -16,9 +16,9 @@ $button-gradient3: #643579;
 $button-gradient4: #613b7a;
 $button-gradient5: #5d447c;
 
-$primary-gradient: linear-gradient(
-  90deg,
-  $button-gradient1 100%,
+$button-gradient: linear-gradient(
+  131deg,
+  $button-gradient1 0%,
   $button-gradient2 32%,
   $button-gradient3 56%,
   $button-gradient4 75%,

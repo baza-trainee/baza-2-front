@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import MainButton from "../../shared/MainButton/MainButton";
 
 export default function ContactForm() {
+  const t = useTranslations("Main.feedback_form");
   const {
     register,
     handleSubmit,
@@ -13,19 +14,32 @@ export default function ContactForm() {
   const onSubmit = (data) => console.log(data)
 
 
-  const t = useTranslations("Main.feedback_form");
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>name</label>
-        <input type="text"/>
-      </div>
-      <input {...register('firstName')} />
-      <input {...register('lastName', { required: true })} />
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <label>{t('name')} <span>*</span></label>
+          <input {...register('firstName', { required: true, minLength:2, maxLength:30, pattern: /^[A-zіІїЇЄє']+$/i })} placeholder={t('name')}/>
+          {/* {errors.firstName && <p>first name is required.</p>} */}
+        </li>
+
+        <li className={styles.item}>
+          <label>{t('email')} <span>*</span></label>
+          <input type="mail" {...register('email', { required: true, minLength:2, maxLength:30, pattern: /^[A-zіІїЇЄє']+$/i })} placeholder={'email@gmail.com'}/>
+          {/* {errors.firstName && <p>first name is required.</p>} */}
+        </li>    
+
+        <li className={styles.item}>
+          <label>{t('message')} <span>*</span></label>
+          <textarea {...register('message', { required: true, minLength:2, maxLength:30})} placeholder={t('message_placeholder')} />
+          {/* {errors.firstName && <p>first name is required.</p>} */}
+        </li>  
+      </ul>
+      {/* <input {...register('lastName', { required: true })} />
       {errors.lastName && <p>Last name is required.</p>}
       <input {...register('age', { pattern: /\d+/ })} />
-      {errors.age && <p>Please enter number for age.</p>}
-      <MainButton type="submit">{t("btn_send")}</MainButton>
+      {errors.age && <p>Please enter number for age.</p>} */}
+      <MainButton type="submit" className={styles.submit}>{t("btn_send")}</MainButton>
     </form>
   )
 }
