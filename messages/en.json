@@ -157,5 +157,19 @@
     "btn_support": "Підтримати",
     "thanks_support": "Дякуємо за підтримку!",
     "btn_home": "Повернутись на головну"
+  },
+  "Modal_form": {
+    "title": "Registration for participation in the Baza Trainee Ukraine project",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "specialization": "Specialization",
+    "email": "Email",
+    "phone": "Phone",
+    "discord": "Nick on Discord",
+    "linkedin": "Linkedin profile",
+    "linkedin_placeholder": "Link to profile",
+    "convenient_time": "A convenient time for consultation",
+    "agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
+    "btn_send": "Send"
   }
 }
