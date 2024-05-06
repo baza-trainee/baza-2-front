@@ -6,6 +6,7 @@ import StructureCard from "@/src/components/shared/StructureCard/StructureCard";
 import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
 import Logo from "@/src/components/shared/Logo/Logo";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
+import { HeroCard } from "@/src/components/shared/HeroCard/HeroCard";
 
 export default function UiKit() {
   return (
@@ -17,7 +18,12 @@ export default function UiKit() {
       <StructureCard />
       <PartnerCard />
       <Logo variant="footer" />
-      <SocialIcons  />
+      <SocialIcons />
+      <HeroCard
+        title="Baza Trainee Ukraine"
+        desc="Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+        img="/images/img-hero.jpg"
+      />
     </main>
   );
 }

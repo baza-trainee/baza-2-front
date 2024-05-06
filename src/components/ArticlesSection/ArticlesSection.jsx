@@ -8,7 +8,6 @@ import Carousel from "../shared/Carousel/Carousel";
 import { Navigation } from "swiper/modules";
 import clsx from "clsx";
 import { items } from "./items";
-import "swiper/css";
 
 export const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");

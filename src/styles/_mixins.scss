@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "./variables" as var;
+
 @mixin apply-font-styles($font-map) {
   font-family: map-get($font-map, "font-family");
   font-size: map-get($font-map, "font-size");
