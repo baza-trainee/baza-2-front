@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.section{
+  padding: 0px 120px;
+  width: 1920px;
+  height: 860px;
+ // background: rgba(0, 0, 0, 0.4), url("path_to_image");
+  background: rgba(0, 0, 0, 0.4);
+}
