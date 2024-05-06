@@ -20,7 +20,6 @@ export default function ContactForm() {
     reset()
   }
 
-
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
@@ -61,4 +60,3 @@ export default function ContactForm() {
     </form>
   )
 }
-// disabled={isDirty && !isValid}
