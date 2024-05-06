@@ -1,14 +1,14 @@
 import Image from "next/image";
 import styles from "./StructureCard.module.scss";
-import logo from "./images/logo.svg";
 import substrate from './images/substrate.svg';
+import { Icon } from "../Icon/Icon";
 
 export default function StructureCard({ header, text}) {
   return (
     <div className={styles.cardStyle}>
       <div className={styles.svgWrapper}>
-        <Image className={styles.substrateWrapper} src={substrate} alt="Card Image" />
-        <Image className={styles.logoWrapper} src={logo}  alt="Card Image" />
+        <Image className={styles.substrateWrapper} src={substrate} alt="substrate svg" />
+        <Icon className={styles.logoWrapper} name="logo-black" />
       </div>
       <div className={styles.textCard}>
         <p className={styles.header}> {header}BAZA TRAINEE UKRAINE</p>

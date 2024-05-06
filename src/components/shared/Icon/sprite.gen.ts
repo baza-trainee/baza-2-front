@@ -14,6 +14,7 @@ export interface SpritesMap {
     | "internship-benefits-6"
     | "intl-select-arrow"
     | "linkedin"
+    | "logo-black"
     | "logo"
     | "mail"
     | "phone"
@@ -36,6 +37,7 @@ export const SPRITES_META: {
     | "internship-benefits-6"
     | "intl-select-arrow"
     | "linkedin"
+    | "logo-black"
     | "logo"
     | "mail"
     | "phone"
@@ -58,6 +60,7 @@ export const SPRITES_META: {
     "internship-benefits-6",
     "intl-select-arrow",
     "linkedin",
+    "logo-black",
     "logo",
     "mail",
     "phone",
