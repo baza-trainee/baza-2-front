@@ -8,7 +8,7 @@ export default function StructureCard({ header, text}) {
     <div className={styles.cardStyle}>
       <div className={styles.svgWrapper}>
         <Image className={styles.substrateWrapper} src={substrate} alt="substrate svg" />
-        <Icon className={styles.logoWrapper} name="logo-black" />
+        <Icon className={styles.logoWrapper} name="logo-black" width={120} height={120} />
       </div>
       <div className={styles.textCard}>
         <p className={styles.header}> {header}BAZA TRAINEE UKRAINE</p>
