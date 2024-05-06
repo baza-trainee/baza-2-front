@@ -7,6 +7,7 @@ import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
 import Logo from "@/src/components/shared/Logo/Logo";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
 import { HeroCard } from "@/src/components/shared/HeroCard/HeroCard";
+import RegistrationForm from "@/src/components/shared/RegistrationFormTEST/RegistrationForm";
 
 export default function UiKit() {
   return (
@@ -24,6 +25,8 @@ export default function UiKit() {
         desc="Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
         img="/images/img-hero.jpg"
       />
+      <RegistrationForm></RegistrationForm>
+      <SocialIcons  />
     </main>
   );
 }

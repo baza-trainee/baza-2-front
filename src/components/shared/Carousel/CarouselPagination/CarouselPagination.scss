@@ -1,4 +1,4 @@
-@import "../../../../styles/variables";
+@use "../../../../styles/variables" as var;
 
 .sliderPagination {
   display: flex;
@@ -10,10 +10,10 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: $secondary-white;
-    transition: all 0.3s ease 0s;
+    background-color: var.$secondary-white;
+    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
     &.swiper-pagination-bullet-active {
-      background-color: $primary-primary;
+      background-color: var.$primary-primary;
     }
   }
 }

@@ -1,14 +1,14 @@
-@import "../../../styles/mixins";
-@import "../../../styles/variables";
+@use "../../../styles/mixins" as mixin;
+@use "../../../styles/variables" as var;
 
 .article {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background: #180530;
+  background: var.$primary-fon-card;
   position: relative;
   overflow: hidden;
-  border: 1px solid #ff62ce;
+  border: 1px solid var.$primary-border;
 }
 .imageContainer {
   position: relative;
@@ -23,18 +23,18 @@
   padding: 24px;
 }
 .title {
-  @include apply-font-styles($h2-font);
+  @include mixin.apply-font-styles(var.$h2-font);
   margin-bottom: 16px;
 }
 .shortDesc {
-  @include apply-font-styles($text-20-font);
+  @include mixin.apply-font-styles(var.$text-20-font);
   margin-bottom: 24px;
 }
 .readMore {
   position: relative;
   align-self: end;
   padding: 10px 0;
-  transition: all 0.3s ease 0s;
+  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   &::before {
     content: "";
     width: 0;
@@ -42,12 +42,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: $primary-hover;
-    transition: all 0.3s ease 0s;
+    background-color: var.$primary-hover;
+    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   }
   @media (any-hover: hover) {
     &:hover {
-      color: $primary-hover;
+      color: var.$primary-hover;
       &::before {
         width: 100%;
       }
@@ -63,13 +63,13 @@
   height: 100%;
   z-index: 10;
   overflow-y: auto;
-  background: #180530;
+  background: var.$primary-fon-card;
   padding: 24px 16px 16px 16px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease 0s;
+  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   border-radius: 8px;
-  border: 1px solid #ff62ce;
+  border: 1px solid var.$primary-border;
   &.showFullDesc {
     opacity: 1;
     visibility: visible;
@@ -85,7 +85,7 @@
     background-color: rgba(139, 139, 139, 0.452);
   }
   & > p {
-    @include apply-font-styles($text-20-font);
+    @include mixin.apply-font-styles(var.$text-20-font);
     &:not(:last-child) {
       margin-bottom: 15px;
     }
@@ -97,12 +97,12 @@
   height: 24px;
   margin-bottom: 16px;
   & > svg {
-    transition: all 0.3s ease 0s;
+    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   }
   @media (any-hover: hover) {
     &:hover {
       & > svg {
-        stroke: $primary-hover;
+        stroke: var.$primary-hover;
       }
     }
   }
