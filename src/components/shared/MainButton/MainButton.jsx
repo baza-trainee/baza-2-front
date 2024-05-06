@@ -1,4 +1,5 @@
 import styles from "./mainbutton.module.scss";
+import clsx from "clsx";
 
 const buttonConfig = {
   MAIN: "main",

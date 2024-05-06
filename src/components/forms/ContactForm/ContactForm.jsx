@@ -30,6 +30,7 @@ export default function ContactForm() {
           <input id="firstName" 
           className={clsx(errors.firstName && styles._error, isValid && styles._success)}
           {...register('firstName', { ...formScheme.firstName })}
+          
            placeholder={t('name')}/>
         </li>
 
@@ -51,7 +52,13 @@ export default function ContactForm() {
         </li>  
 
       </ul>
-      <MainButton type="submit" disabled={isDirty && !isValid} className={styles.submit}>{t("btn_send")}</MainButton>
+      <MainButton 
+        type="submit" 
+        disabled={isDirty && !isValid} 
+        className={styles.submit}>
+          {t("btn_send")}
+      </MainButton>
     </form>
   )
 }
+// disabled={isDirty && !isValid}

@@ -9,7 +9,7 @@ export default function ContactFormSection() {
   return(
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}> {t("title")}</h2>
+        <h2>{t("title")}</h2>
         <ContactForm/>
       </div>
     </section>

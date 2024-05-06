@@ -2,17 +2,9 @@
 @import "../../../styles/mixins";
 
 .form{
-  //width: 625px;
-  //height: 601px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  //gap: 40px;
-  //border-radius: 12px;
-  //padding: 24px;
-  //box-shadow: inset 0 2px 16px 0 rgba(154, 149, 153, 0.6);
-  //background: rgba(210, 210, 210, 0.5); 
-
   & :hover input,
   & :hover textarea{
     background: $secondary-hover;
@@ -24,13 +16,10 @@
 }
 
 .list{
-  //width: 100%;
   display: flex;
   flex-direction: column;
- // align-items: center;
   gap: 24px;
   margin-bottom: 40px;
- 
 }
 .item{
   width: 625px;
