@@ -6,7 +6,7 @@
   line-height: map-get($font-map, "line-height");
 }
 
-@mixin media-q($bp: sm, $type: min, $is-retina: false) {
+@mixin media-q($bp: tn, $type: min, $is-retina: false) {
   @if map.has-key(var.$breakpoints, $bp) {
     $width: map.get(var.$breakpoints, $bp);
 
@@ -26,6 +26,6 @@
       }
     }
   } @else {
-    @error "";
+    @error "Sorry, something went wrong";
   }
 }

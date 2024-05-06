@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./ScrollToTopBtn.module.scss";
 import Image from "next/image";
+import { Icon } from "../Icon/Icon";
 
 export const ScrollToTopBtn = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,12 +40,11 @@ export const ScrollToTopBtn = () => {
         }
         type="button"
       >
-        <Image
-          className={styles.iconArrow}
+        <Icon
+          name="scroll-top-arrow"
           width={25}
           height={29}
           alt="button to top"
-          src="/images/arrow.svg"
         />
       </button>
     </>

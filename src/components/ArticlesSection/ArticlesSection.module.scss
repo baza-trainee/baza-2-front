@@ -1,0 +1,29 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mx;
+
+.wrapperAll {
+  position: relative;
+}
+
+.title {
+  @include mx.apply-font-styles(var.$h2-font);
+
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 64px;
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.prevEl {
+  transform: rotate(180deg);
+}
+.nextEl {
+}
