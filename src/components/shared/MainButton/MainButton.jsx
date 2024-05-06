@@ -1,14 +1,13 @@
 import clsx from "clsx";
 import styles from "./mainbutton.module.scss";
-import clsx from "clsx";
 
 const buttonConfig = {
   MAIN: "main",
-  MODAL: "modal"
+  MODAL: "modal",
 };
 
 export default function MainButton({
-  variant=buttonConfig.MAIN,
+  variant = buttonConfig.MAIN,
   className,
   onClick,
   disabled,
@@ -18,10 +17,12 @@ export default function MainButton({
   ...props
 }) {
   const btnClass = `${
-    styles[`btn_${
-      variant === buttonConfig.MAIN || variant === buttonConfig.MODAL
-        ? variant
-        : buttonConfig.MAIN}`
+    styles[
+      `btn_${
+        variant === buttonConfig.MAIN || variant === buttonConfig.MODAL
+          ? variant
+          : buttonConfig.MAIN
+      }`
     ]
   }`;
 
