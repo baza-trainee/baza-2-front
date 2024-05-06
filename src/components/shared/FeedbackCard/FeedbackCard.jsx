@@ -8,17 +8,13 @@ const FeedbackCard = ({ image, name, role, date, text }) => {
       <div className={styles.person}>
         <Image src={photo} className={styles.photo} alt="avatar" />
         <div className={styles.profile}>
-          <p className={styles.name}>Олена</p>
-          <p className={styles.role}>учасниця, QA</p>
-          <p className={styles.date}>червень 2023</p>
+          <p className={styles.name}>{name}</p>
+          <p className={styles.role}>{role}</p>
+          <p className={styles.date}>{date}</p>
         </div>
       </div>
       <div>
-        <p className={styles.text}>
-          “Я останні два тижні щодня думаю про те, що на Базу варто було прийти
-          мінімум для того, щоб усвідомити значущість роботи дизайнера в
-          розробці ПЗ”
-        </p>
+        <p className={styles.text}>“{text}”</p>
       </div>
     </div>
   );

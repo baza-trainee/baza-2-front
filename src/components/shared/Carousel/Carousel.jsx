@@ -7,13 +7,13 @@ import "swiper/css";
 const Carousel = ({
   modules,
   className,
-  options,
   slideClassName,
   renderItem,
   items,
   prevEl,
   nextEl,
   paginationEl,
+  ...options
 }) => {
   const renderSlides = useCallback(
     (items) =>

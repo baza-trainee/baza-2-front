@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.section {
+  background-image: $primary-gradient;
+  color: #fff;
+}
+.container {
+  max-width: 1258px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  padding-top: 60px;
+}
+
+.title {
+  margin-bottom: 48px;
+  @include apply-font-styles($h1-font);
+}
+.prevBtn {
+  transform: rotate(180deg);
+}
+
+.navigation {
+  // position: absolute;
+  right: 15px;
+  display: flex;
+  gap: 32px;
+}
