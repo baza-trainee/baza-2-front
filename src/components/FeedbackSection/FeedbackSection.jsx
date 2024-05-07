@@ -42,21 +42,28 @@ const FeedbackSection = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Учасники про нас</h2>
-        <div className={styles.navigation}>
-          <CarouselButton className={clsx("prevBtn", styles.prevBtn)} />
-          <CarouselButton className="nextBtn" />
+        <div className={styles.titleRow}>
+          <h2 className={styles.title}>Учасники про нас</h2>
+          <div className={styles.navigation}>
+            <CarouselButton
+              className={clsx("feedback-prevBtn", styles.prevBtn)}
+            />
+            <CarouselButton className="feedback-nextBtn" />
+          </div>
         </div>
-
-        <Carousel
-          modules={[Navigation, Pagination]}
-          paginationEl={".custom-pagination1"}
-          items={items}
-          prevEl={".prevBtn"}
-          nextEl={".nextBtn"}
-          renderItem={(item) => <FeedbackCard {...item} />}
+        <div className={styles.sliderContainer}>
+          <Carousel
+            modules={[Navigation, Pagination]}
+            paginationEl={".feedback-custom-pagination"}
+            items={items}
+            prevEl={".feedback-prevBtn"}
+            nextEl={".feedback-nextBtn"}
+            renderItem={(item) => <FeedbackCard {...item} />}
+          />
+        </div>
+        <CarouselPagination
+          className={clsx("feedback-custom-pagination", styles.pagination)}
         />
-        <CarouselPagination className="custom-pagination1" />
       </div>
     </section>
   );

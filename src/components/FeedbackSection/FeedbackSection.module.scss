@@ -2,31 +2,35 @@
 @import "../../styles/mixins";
 .section {
   background-image: $primary-gradient;
-  color: #fff;
+  color: $secondary-white;
+  padding: 60px 0;
 }
 .container {
-  max-width: 1258px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: relative;
-  padding-top: 60px;
+  text-align: center;
 }
 
 .title {
-  margin-bottom: 48px;
   @include apply-font-styles($h1-font);
 }
+
+.sliderContainer {
+  margin-bottom: 48px;
+}
+
+.titleRow {
+  position: relative;
+  margin-bottom: 48px;
+}
+
 .prevBtn {
   transform: rotate(180deg);
 }
 
 .navigation {
-  // position: absolute;
-  right: 15px;
-  display: flex;
-  gap: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.pagination {
+  display: inline-flex;
 }

@@ -1,44 +1,46 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-.photo {
-  border-radius: 10px;
-  width: 173px;
-  height: 173px;
-}
-
 .card {
   display: flex;
-  width: 1192px;
+  justify-content: center;
+  gap: 64px;
 }
 
 .person {
   display: flex;
-  gap: 48px;
-  align-items: center;
+  align-items: start;
+}
+
+.imageContainer {
   position: relative;
+  width: 173px;
+  height: 173px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  & > img {
+    object-fit: cover;
+  }
 }
 
 .profile {
-  position: absolute;
+  transform: translateX(-20%);
+  flex-shrink: 0;
   min-width: 154px;
-  left: 144px;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  padding: 6px 28px 6px 12px;
+  padding: 6px 12px;
   border-radius: 12px;
   background: rgba(210, 210, 210, 0.5);
+  text-align: left;
+}
 
-  p:not(:last-child) {
-    margin: 0;
-  }
+.personInfo {
+  margin-bottom: 8px;
 }
 
 .name {
   @include apply-font-styles($h3-font);
   letter-spacing: 0.01em;
-
   color: $secondary-black;
 }
 
@@ -52,13 +54,11 @@
   @include apply-font-styles($text-16-font);
   letter-spacing: 0.01em;
   color: $secondary-text;
-  margin-top: 8px;
 }
 
 .text {
   @include apply-font-styles($text-16-font);
-  display: inline-block;
-  width: 747px;
   color: $secondary-white;
-  margin: 19px 83px 0 189px;
+  max-width: 600px;
+  text-align: left;
 }

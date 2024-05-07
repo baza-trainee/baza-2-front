@@ -6,10 +6,14 @@ const FeedbackCard = ({ image, name, role, date, text }) => {
   return (
     <div className={styles.card}>
       <div className={styles.person}>
-        <Image src={photo} className={styles.photo} alt="avatar" />
+        <div className={styles.imageContainer}>
+          <Image fill sizes="100%" src={photo} alt="avatar" />
+        </div>
         <div className={styles.profile}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.role}>{role}</p>
+          <div className={styles.personInfo}>
+            <p className={styles.name}>{name}</p>
+            <p className={styles.role}>{role}</p>
+          </div>
           <p className={styles.date}>{date}</p>
         </div>
       </div>
