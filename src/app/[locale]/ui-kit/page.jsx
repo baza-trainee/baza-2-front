@@ -14,7 +14,6 @@ export default function UiKit() {
     <main>
       <ExampleButtons />
       <ScrollToTopBtn />
-      <FeedbackCard />
       <FooterLinks />
       <StructureCard />
       <PartnerCard />

@@ -6,11 +6,11 @@ import { Navigation, Pagination } from "swiper/modules";
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-import styles from "./FeedbackSection.module.scss";
+import styles from "./ReviewsSection.module.scss";
 import { items } from "./data";
 import { useTranslations } from "next-intl";
 
-const FeedbackSection = () => {
+const ReviewsSection = () => {
   const t = useTranslations("Main.reviews_section");
 
   return (
@@ -43,4 +43,4 @@ const FeedbackSection = () => {
   );
 };
 
-export default FeedbackSection;
+export default ReviewsSection;

@@ -114,7 +114,7 @@
       "btn_support_project": "Підтримати проєкт"
     },
     "reviews_section": {
-      "title": "Відгуки"
+      "title": "Reviews"
     },
     "press_about_section": {
       "title": "Преса про нас",
@@ -176,7 +176,7 @@
     "thanks_support": "Дякуємо за підтримку!",
     "btn_home": "Повернутись на головну"
   },
-  
+
   "Modal_form": {
     "title": "Registration for participation in the Baza Trainee Ukraine project",
     "firstName": "First Name",
