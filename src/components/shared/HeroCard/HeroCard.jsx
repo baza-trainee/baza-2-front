@@ -6,7 +6,7 @@ export const HeroCard = ({ title, desc, img }) => {
   const t = useTranslations("Main.hero_сarousel_section");
   return (
     <div className={styles.card}>
-      <Image fill sizes="100%" src={img} alt={title} className={styles.image} />
+      <Image fill sizes="100vw" src={img} alt={title} className={styles.image} priority/>
       <div className={styles.wrapper}>
         <h2>{t(title)}</h2>
         <p>{t(desc)}</p>
