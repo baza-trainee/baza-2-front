@@ -15,9 +15,17 @@
   height: 242px;
   //   background: rgba(112, 33, 86, 0.2), url("path_to_image");
 }
+
 .wrapper {
   padding: 32px 24px 24px 24px;
 }
+
+.content {
+  width: 349px;
+  height: 148px;
+  margin-bottom: 24px;
+}
+
 .title {
   @include mx.apply-font-styles(var.$h2-font);
   font-weight: 700;
@@ -29,8 +37,8 @@
 
 .text {
   @include mx.apply-font-styles(var.$text-16-font);
-  margin: 0;
-  margin-bottom: 24px;
+  // margin: 0;
+  // margin-bottom: 24px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -45,11 +53,11 @@
   @include mx.apply-font-styles(var.$text-16-font);
 
   display: block;
-  padding: 10px 0;
+  padding: 14px 4;
   margin-left: auto;
   margin-right: 0;
 
-  width: 120px;
+  width: 147px;
 
   color: var.$secondary-white;
 
