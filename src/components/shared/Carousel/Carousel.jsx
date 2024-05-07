@@ -24,7 +24,6 @@ const Carousel = ({
       )),
     [slideClassName, renderItem]
   );
-
   const DEFAULT_MODULES = [Navigation];
 
   return (

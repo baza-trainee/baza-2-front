@@ -1,0 +1,41 @@
+@use "../../styles/mixins" as mixins;
+@use "../../styles/variables" as var;
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 60px;
+  margin-bottom: 48px;
+  @include mixins.apply-font-styles(var.$h1-font);
+}
+.container {
+  padding: 70px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.text {
+  background-color: rgba(210, 210, 210, 0.5);
+  padding: 20px;
+  width: 607px;
+  height: 400px;
+  border-radius: 16px;
+  position: relative;
+  translate: 100px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  @include mixins.apply-font-styles(var.$text-20-font);
+
+  & p {
+    margin-bottom: 32px;
+  }
+}
+.image {
+  border-radius: 10px;
+}
