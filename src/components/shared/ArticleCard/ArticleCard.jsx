@@ -1,8 +1,12 @@
 import styles from "./ArticleCard.module.scss";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-export const ArticleCard = ({ img, title, desc, link, alt }) => {
-  // console.log(img);
+export const ArticleCard = ({ item }) => {
+  const { img, title, description, link } = item;
+  const t = useTranslations("Main.press_about_section");
+
   return (
     <div className={styles.container}>
       <Image
@@ -10,15 +14,21 @@ export const ArticleCard = ({ img, title, desc, link, alt }) => {
         src={img}
         width={397}
         height={242}
-        alt={alt}
+        alt={t(title)}
       />
       <div className={styles.wrapper}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.text}>{desc}</p>
-        <a className={styles.linkRead} href={link}>
-          Читати статтю
-        </a>
-        {/* <Link/> ??*/}
+        <div className={styles.content}>
+          <h3 className={styles.title}>{t(title)}</h3>
+          <p className={styles.text}>{t(description)}</p>
+        </div>
+        <Link
+          className={styles.linkRead}
+          href={link}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {t("btn_read_article")}
+        </Link>
       </div>
     </div>
   );

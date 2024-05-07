@@ -1,19 +1,37 @@
 @use "../../../styles/variables" as var;
 @use "../../../styles/mixins.scss" as mx;
+
 .container {
   position: relative;
   margin: 0 auto;
-  width: 1366px;
-  height: 600px;
+  width: 768px;
+  height: 478px;
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
-    width: 1366px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  }
+
+  @include mx.media-q("lg") {
+    width: 1280px;
+  }
+
+  @include mx.media-q("xl") {
+    width: 1366px;
+  }
+
+  @include mx.media-q("xxl") {
+    width: 1440px;
+  }
+
+  @include mx.media-q("xxxl") {
+    width: 1920px;
+    height: 860px;
   }
 }
 
@@ -33,11 +51,15 @@
 
   z-index: 10;
   padding: 24px;
-  width: 818px;
+  width: 766px;
   height: 315px;
 
   color: var.$secondary-white;
   text-align: center;
+
+  @include mx.media-q("lg") {
+    width: 818px;
+  }
 
   h2 {
     @include mx.apply-font-styles(var.$h2-font);

@@ -57,7 +57,7 @@ const Timeline = () => {
             return (
               <li
                 ref={ref}
-                className={clsx(styles.timeline__list__element, {
+                className={clsx(styles.timeline__list__element, styles.marker, {
                   [styles.active]: inView,
                 })}
                 id={item.id}
