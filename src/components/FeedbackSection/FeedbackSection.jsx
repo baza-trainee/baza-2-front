@@ -7,43 +7,17 @@ import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
 import styles from "./FeedbackSection.module.scss";
+import { items } from "./data";
+import { useTranslations } from "next-intl";
 
-const items = [
-  {
-    name: "Олена",
-    image: "../shared/FeedbackCard/images/Img.jpg",
-    role: "учасниця, QA",
-    date: "червень 2023",
-    text: "Я останні два тижні щодня думаю про те, що на Базу варто було прийти мінімум для того, щоб усвідомити значущість роботи дизайнера в розробці ПЗ",
-  },
-  {
-    name: "Марина",
-    image: "../shared/FeedbackCard/images/Img.jpg",
-    role: "учасниця, QA",
-    date: "червень 2023",
-    text: "Я останні два тижні щодня думаю про те, що на Базу варто було прийти мінімум для того, щоб усвідомити значущість роботи дизайнера в розробці ПЗ",
-  },
-  {
-    name: "Катерина",
-    image: "../shared/FeedbackCard/images/Img.jpg",
-    role: "учасниця, QA",
-    date: "червень 2023",
-    text: "Я останні два тижні щодня думаю про те, що на Базу варто було прийти мінімум для того, щоб усвідомити значущість роботи дизайнера в розробці ПЗ",
-  },
-  {
-    name: "Єлізавета",
-    image: "../shared/FeedbackCard/images/Img.jpg",
-    role: "учасниця, QA",
-    date: "червень 2023",
-    text: "Я останні два тижні щодня думаю про те, що на Базу варто було прийти мінімум для того, щоб усвідомити значущість роботи дизайнера в розробці ПЗ",
-  },
-];
 const FeedbackSection = () => {
+  const t = useTranslations("Main.reviews_section");
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleRow}>
-          <h2 className={styles.title}>Учасники про нас</h2>
+          <h2 className={styles.title}>{t("title")}</h2>
           <div className={styles.navigation}>
             <CarouselButton
               className={clsx("feedback-prevBtn", styles.prevBtn)}

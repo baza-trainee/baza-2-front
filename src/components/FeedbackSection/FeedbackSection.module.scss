@@ -28,8 +28,10 @@
 
 .navigation {
   position: absolute;
+  display: flex;
   top: 0;
   right: 0;
+  gap: 32px;
 }
 .pagination {
   display: inline-flex;

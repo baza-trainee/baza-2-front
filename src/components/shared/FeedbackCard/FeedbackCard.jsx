@@ -1,5 +1,4 @@
 import Image from "next/image";
-import photo from "./images/Img.jpg";
 import styles from "./FeedbackCard.module.scss";
 
 const FeedbackCard = ({ image, name, role, date, text }) => {
@@ -7,7 +6,7 @@ const FeedbackCard = ({ image, name, role, date, text }) => {
     <div className={styles.card}>
       <div className={styles.person}>
         <div className={styles.imageContainer}>
-          <Image fill sizes="100%" src={photo} alt="avatar" />
+          <Image fill sizes="100%" src={image} alt="avatar" />
         </div>
         <div className={styles.profile}>
           <div className={styles.personInfo}>

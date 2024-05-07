@@ -4,7 +4,8 @@
 .card {
   display: flex;
   justify-content: center;
-  gap: 64px;
+  gap: 33px;
+  padding: 12px 0;
 }
 
 .person {
@@ -17,7 +18,7 @@
   width: 173px;
   height: 173px;
   flex-shrink: 0;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   & > img {
     object-fit: cover;
@@ -61,4 +62,5 @@
   color: $secondary-white;
   max-width: 600px;
   text-align: left;
+  padding: 10px 0;
 }
