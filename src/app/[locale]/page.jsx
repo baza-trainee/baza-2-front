@@ -1,5 +1,6 @@
 import { ArticlesSection } from "@/src/components/ArticlesSection/ArticlesSection";
 import CarouselTestSection from "@/src/components/CarouselTestSection/CarouselTestSection";
+import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
 import Counter from "@/src/components/Counter/Counter";
 import FAQ from "@/src/components/FAQ/FAQ";
 import HistorySection from "@/src/components/HistorySection/HistorySection";
@@ -18,6 +19,7 @@ export default function Home() {
       <Counter />
       <MentorSection />
       <Timeline />
+      <ContactFormSection/>
       <ArticlesSection />
       <ScrollToTopBtn />
       <FAQ />
