@@ -37,6 +37,10 @@ const Carousel = ({
         el: paginationEl ?? null,
         clickable: true,
       }}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false
+      }}
       className={className}
       {...options}
     >

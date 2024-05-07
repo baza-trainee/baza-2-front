@@ -1,38 +1,43 @@
 @use "../../../styles/variables" as var;
 @use "../../../styles/mixins.scss" as mx;
 
-.container {
+.card {
   position: relative;
   margin: 0 auto;
-  width: 768px;
-  height: 478px;
+  //width: 768px;
+ // height: 478px;
+  //width: 100%;
+  //height: 860px;
+   //height: 87vh;
+  min-height: 400px; 
+  height: 87vh;
+  max-height: 860px;
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  }
+  // @include mx.media-q("lg") {
+  //   width: 1280px;
+  // }
 
-  @include mx.media-q("lg") {
-    width: 1280px;
-  }
+  // @include mx.media-q("xl") {
+  //   width: 1366px;
+  // }
 
-  @include mx.media-q("xl") {
-    width: 1366px;
-  }
+  // @include mx.media-q("xxl") {
+  //   width: 1440px;
+  // }
 
-  @include mx.media-q("xxl") {
-    width: 1440px;
-  }
-
-  @include mx.media-q("xxxl") {
-    width: 1920px;
-    height: 860px;
-  }
+  // @include mx.media-q("xxxl") {
+  //   width: 1920px;
+  //   height: 860px;
+  // }
 }
 
 .image {
@@ -41,6 +46,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: brightness(60%);
 }
 
 .wrapper {
@@ -49,7 +55,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  z-index: 10;
+  z-index: 3;
   padding: 24px;
   width: 766px;
   height: 315px;

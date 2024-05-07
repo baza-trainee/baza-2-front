@@ -1,11 +1,12 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "../../styles/variables" as var;
+@use "../../styles/mixins.scss" as mx;
 
 .section{
   //padding: 0px 120px;
   //width: 1920px;
-  height: 860px;
-  //min-height: 100vh;
+  //height: 860px;
+  margin-top: 29px;
+ // min-height: 87vh;
   position: relative;
  // background: rgba(0, 0, 0, 0.4), url("path_to_image");
   //background: rgb(255, 255, 255);
@@ -15,8 +16,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 400px;
-    padding-bottom: 72px;
+    padding-top: 40vh;
+    padding-bottom: 5vh;
     justify-content: space-between;
     height: 100%;
     //background-color: rgb(33, 34, 34);
@@ -38,15 +39,15 @@
     }
   }
 }
-.item{
-  width: 100%;
-  height: 860px;
-  padding-top: 150px;
-  display: flex;
-  //align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 255, 255, 0.589);
-}
+// .item{
+//   width: 100%;
+//   height: 860px;
+//   padding-top: 150px;
+//   display: flex;
+//   //align-items: center;
+//   justify-content: center;
+//   background-color: rgba(0, 255, 255, 0.589);
+// }
 .prevEl {
   transform: rotate(180deg);
 }

@@ -1,35 +1,56 @@
 "use client";
 import styles from './HeroSection.module.scss'
 import clsx from "clsx";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination,Autoplay } from "swiper/modules";
 import Carousel from '../shared/Carousel/Carousel';
 import CarouselButton from '../shared/Carousel/CarouselButton/CarouselButton';
 import CarouselPagination from '../shared/Carousel/CarouselPagination/CarouselPagination';
-
+import { HeroCard } from '../shared/HeroCard/HeroCard';
+//title, desc, img 
 export default function HeroSection(){
   const items = [
-    { content: "slide 1" },
-    { content: "slide 2" },
-    { content: "slide 3" },
-    { content: "slide 4" },
-    { content: "slide 5" }
+    { 
+      title: "slide_1.title", 
+      desc:'slide_1.text',
+      img:'/images/hero_section/hero.png'
+    },
+    { 
+      title: "slide_2.title", 
+      desc:'slide_2.text',
+      img:'/images/hero_section/hero.png'
+    },
+    { 
+      title: "slide_3.title", 
+      desc:'slide_3.text',
+      img:'/images/hero_section/hero.png'
+    },
+    { 
+      title: "slide_4.title", 
+      desc:'slide_4.text',
+      img:'/images/hero_section/hero.png'
+    },
+    { 
+      title: "slide_5.title", 
+      desc:'slide_5.text',
+      img:'/images/hero_section/hero.png'
+    },
   ];
 
   return(
     <section className={styles.section}>
 
         <Carousel
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination,Autoplay]}
           paginationEl={".custom-pagination1"}
           items={items}
-          prevEl={".prevEl"}
-          nextEl={".nextEl"}
-          renderItem={(item) => <div className={styles.item}>{item.content}</div>}
+          prevEl={".prevEl1"}
+          nextEl={".nextEl1"}
+          renderItem={(item) => <HeroCard title={item.title} desc={item.desc} img={item.img}/>}
         />
         <div className={styles.navigation}>
           <div className={styles.buttons}>
-            <CarouselButton className={clsx("prevEl", styles.prevEl)} />
-            <CarouselButton className="nextEl" />
+            <CarouselButton className={clsx("prevEl1", styles.prevEl)} />
+            <CarouselButton className="nextEl1" />
           </div>
           <CarouselPagination className={clsx("custom-pagination1", styles.pagination)}/>
         </div>
