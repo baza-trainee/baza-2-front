@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "./variables" as var;
+
 @mixin apply-font-styles($font-map) {
   font-family: map-get($font-map, "font-family");
   font-size: map-get($font-map, "font-size");
@@ -6,7 +9,7 @@
   line-height: map-get($font-map, "line-height");
 }
 
-@mixin media-q($bp: sm, $type: min, $is-retina: false) {
+@mixin media-q($bp: tn, $type: min, $is-retina: false) {
   @if map.has-key(var.$breakpoints, $bp) {
     $width: map.get(var.$breakpoints, $bp);
 
@@ -26,6 +29,6 @@
       }
     }
   } @else {
-    @error "";
+    @error "Sorry, something went wrong";
   }
 }
