@@ -1,35 +1,45 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-$color1: #6c2276;
-$color2: #682d78;
-$color3: #643579;
-$color4: #613b7a;
-$color5: #5d447c;
-
-$main-button-gradient: linear-gradient(
-  131deg,
-  $color1 0%,
-  $color2 32.28%,
-  $color3 56.25%,
-  $color4 75.15%,
-  $color5 90.88%
-);
-
-.btn {
+.btn_main {
   @include apply-font-styles($button);
   color: $secondary-white;
   padding: 14px 24px;
   border-radius: 8px;
   cursor: pointer;
-  background: $main-button-gradient;
+  background: $button-gradient;
   box-shadow: none;
   border: none;
-  transition: all 0.3s;
+  transition: all $transition-duration-base $transition-timing-base;
 
   &:hover,
   &:focus {
     background: linear-gradient(0deg, $primary-hover, $primary-hover);
+    color: $secondary-black;
+  }
+
+  &:disabled {
+    background: $secondary-gray;
+    color: $secondary-text;
+    cursor: default;
+  }
+}
+
+.btn_modal {
+  @include apply-font-styles($text-20-font);
+  color: $secondary-white;
+  padding: 15px 32px;
+  border: 1px solid $secondary-white;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+  transition: all $transition-duration-base $transition-timing-base;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
+    background: $secondary-hover;
     color: $secondary-black;
   }
 

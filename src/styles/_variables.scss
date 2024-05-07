@@ -16,9 +16,9 @@ $button-gradient3: #643579;
 $button-gradient4: #613b7a;
 $button-gradient5: #5d447c;
 
-$primary-gradient: linear-gradient(
-  90deg,
-  $button-gradient1 100%,
+$button-gradient: linear-gradient(
+  130deg,
+  $button-gradient1 0%,
   $button-gradient2 32%,
   $button-gradient3 56%,
   $button-gradient4 75%,
@@ -30,7 +30,7 @@ $icon-gradient2: #e231a8;
 $icon-gradient3: #9d2f79;
 $icon-gradient4: #851a62;
 
-$primary-gradient: linear-gradient(
+$icons-gradient: linear-gradient(
   90deg,
   $icon-gradient1 0%,
   $icon-gradient2 37%,
@@ -135,7 +135,8 @@ $breakpoints: (
   "md": 768px,
   "lg": 1280px,
   "xl": 1366px,
-  "xxl": 1920px,
+  "xxl": 1440px,
+  "xxxl": 1920px,
 );
 
 //===Other=====================================================================================================================================================
