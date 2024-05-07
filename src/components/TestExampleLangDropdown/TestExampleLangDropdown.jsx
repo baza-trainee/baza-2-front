@@ -6,7 +6,7 @@ export default function TestExampleLangDropdown() {
   return (
     <div className={styles.box}>
       <Logo />
-      Хедер
+       Тимчасовий Хедер для налаштувань
       <LangDropdown />
     </div>
   );

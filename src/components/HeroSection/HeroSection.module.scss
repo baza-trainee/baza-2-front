@@ -2,42 +2,51 @@
 @use "../../styles/mixins.scss" as mx;
 
 .section{
-  //padding: 0px 120px;
-  //width: 1920px;
-  //height: 860px;
-  margin-top: 29px;
- // min-height: 87vh;
+  //компенсує висоту хедер
+  margin-top: 80px;
   position: relative;
- // background: rgba(0, 0, 0, 0.4), url("path_to_image");
-  //background: rgb(255, 255, 255);
-  .navigation{
-    width: 100%;
-    //padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40vh;
-    padding-bottom: 5vh;
-    justify-content: space-between;
-    height: 100%;
-    //background-color: rgb(33, 34, 34);
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    //margin: 0 auto;
-    left: 0;
 
-    .buttons{
+  .buttons{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    padding: 0 4.4%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+
+    @include mx.media-q("md") {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90vw;
-      //background-color: black;
+      padding: 0 4.4%;
     }
-    // .pagination{
-    //   //background-color: black;
+
+    @include mx.media-q("xxl") {
+      padding: 0 6.25%;
+    }
+  }
+  .pagination{
+    position: absolute;
+    bottom: 8.36%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 3;
+
+    @include mx.media-q("md") {
+      bottom: 8.36%;
+    }
+
+    // @include mx.media-q("lg") {
+    //   bottom: 10.6%;
+    // }
+
+    // @include mx.media-q("xxl") {
+    //   bottom: 8.37%;
     // }
   }
+  
 }
 // .item{
 //   width: 100%;

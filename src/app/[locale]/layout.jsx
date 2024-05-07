@@ -1,4 +1,4 @@
-import NavLinks from "@/src/components/NavLinks/NavLinks";
+//import NavLinks from "@/src/components/NavLinks/NavLinks";
 import TestExampleLangDropdown from "@/src/components/TestExampleLangDropdown/TestExampleLangDropdown";
 import ContactLinks from "@/src/components/shared/ContactLinks/ContactLinks";
 import "@/src/styles/global.scss";
@@ -17,7 +17,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="wrapper">
-            <NavLinks />
+            {/* <NavLinks /> */}
             <TestExampleLangDropdown />
             {children}
             <ContactLinks />
