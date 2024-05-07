@@ -1,11 +1,11 @@
 {
   "Header": {
-    "main": "Główna",
+    "main": "Strona główna",
     "internship": "Praktyka",
     "projects": "Projekty",
     "blog": "Blog",
     "contacts": "Kontakty",
-    "btn_support_project": "Wesprzyj projekt"
+    "btn_support_project": "Wspierać projekt"
   },
 
   "Main": {
@@ -58,20 +58,20 @@
       }
     },
     "counter_section": {
-      "title": "Наш прогрес",
-      "active_projects": "активних проєктів",
-      "involved_participants": "залучених учасників",
-      "employed": "працевлаштовано"
+      "title": "Nasze postępy",
+      "active_projects": "aktywnych projektów",
+      "involved_participants": "zaangażowanych uczestników",
+      "employed": "zatrudniono"
     },
     "mentor_section": {
-      "title": "Ментору",
-      "paragraph_1": "Ментор - це колега на два рівні вищий за менторі, який слідкує за виконанням задач і допомагає порадою або роз`ясненням, коли учасник не впевнений в рішенні",
+      "title": "Mentorowi",
+      "paragraph_1": "Mentor - це колега на два рівні вищий за менторі, який слідкує за виконанням задач і допомагає порадою або роз`ясненням, коли учасник не впевнений в рішенні",
       "paragraph_2": "Наші ментори - практики провідних ІТ-компаній України, які прагнуть підтримати новачків знаннями і розширити власні управлінські навички.",
       "paragraph_3": "На Baza Trainee Ukraine ментор направляє команду одразу з декількох осіб, спряючи їхньому професійному розвитку.",
-      "btn_mentor": "Стати ментором"
+      "btn_mentor": "Zostać mentorem"
     },
     "our_structure_section": {
-      "title": "Наша структура",
+      "title": "Nasza struktura",
       "item_1": {
         "title": "BAZA TRAINEE UKRAINE",
         "text": "Громадський проєкт для джуніорів і  світчерів ІТ, який побудований на створенні цифрових проєктів для соціальної сфери України"
@@ -114,26 +114,26 @@
       "btn_support_project": "Wesprzyj projekt"
     },
     "reviews_section": {
-      "title": "Відгуки"
+      "title": "Opinie"
     },
     "press_about_section": {
-      "title": "Преса про нас"
+      "title": "Prasa o nas"
     },
     "partners_section": {
-      "title": "Партнери"
+      "title": "Partnerzy"
     },
     "feedback_form": {
       "title": "Форма зворотного зв’язку",
       "name": "Imię",
       "email": "E-mail",
-      "message": "Повідомлення",
-      "message_placeholder": "Ваше повідомлення",
-      "btn_send": "Wyślij"
+      "message": "Wiadomość",
+      "message_placeholder": "Twoja wiadomość",
+      "btn_send": "Wyślać"
     }
   },
 
   "Footer": {
-    "main": "Główna",
+    "main": "Strona główna",
     "internship": "Praktyka",
     "projects": "Projekty",
     "blog": "Blog",
@@ -142,20 +142,20 @@
     "regulations": "Статут",
     "reporting": "Звітність",
     "development": "Розробка",
-    "rights": "Усі права захищені"
+    "rights": "Wszelkie prawa zastrzeżone"
   },
 
   "Page_404": {
-    "title": "Вибачте, сторінка, яку ви шукаєте, переміщена або видалена.",
-    "btn_home": "Повернутись на головну"
+    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
+    "btn_home": "Powrót do strony głównej"
   },
 
   "Modal": {
-    "amount": "Сума поповнення",
-    "UAH": "грн",
-    "another_amount": "Інша сума",
-    "btn_support": "Підтримати",
-    "thanks_support": "Дякуємо за підтримку!",
-    "btn_home": "Повернутись на головну"
+    "amount": "Kwota doładowania",
+    "UAH": "UAN",
+    "another_amount": "Inna kwota",
+    "btn_support": "Wspierać",
+    "thanks_support": "Dziękujemy za wsparcie!",
+    "btn_home": "Powrót do strony głównej"
   }
 }
