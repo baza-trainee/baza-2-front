@@ -1,12 +1,14 @@
-.logo_header{
-  display: block;
-  width: 60px;
-  height: 60px;
-  position: relative;
+.header {
+  & > svg {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
 }
-.logo_footer{
-  display: block;
-  width: 120px;
-  height: 120px;
-  position: relative;
+.footer {
+  & > svg {
+    display: block;
+    width: 120px;
+    height: 120px;
+  }
 }

@@ -2,37 +2,65 @@
 
 $fontFamily: ("Open Sans", sans-serif);
 
-// Primary colors
+//=Primary colors=======================================================================================================================================================
 $primary-footer: #240529;
 $primary-primary: #2e0535;
 $primary-hover: #c0a4b7;
 $primary-fon: #0f031f;
+$primary-fon-card: #180530;
+$primary-border: #ff62ce;
+//====Gradient Button====================================================================================================================================================
+$button-gradient1: #6c2276;
+$button-gradient2: #682d78;
+$button-gradient3: #643579;
+$button-gradient4: #613b7a;
+$button-gradient5: #5d447c;
 
-// Gradient
-$color1: #6c2276;
-$color2: #682d78;
-$color3: #643579;
-$color4: #613b7a;
-$color5: #5d447c;
+$button-gradient: linear-gradient(
+  130deg,
+  $button-gradient1 0%,
+  $button-gradient2 32%,
+  $button-gradient3 56%,
+  $button-gradient4 75%,
+  $button-gradient5 91%
+);
+//=Gradient Icons=======================================================================================================================================================
+$icon-gradient1: #e37cc1;
+$icon-gradient2: #e231a8;
+$icon-gradient3: #9d2f79;
+$icon-gradient4: #851a62;
+
+$icons-gradient: linear-gradient(
+  90deg,
+  $icon-gradient1 0%,
+  $icon-gradient2 37%,
+  $icon-gradient3 76%,
+  $icon-gradient4 100%
+);
+//=Gradient Fon=======================================================================================================================================================
+$fon-gradient1: #db97c5;
+$fon-gradient2: #cc4fa3;
+$fon-gradient3: #a03a7e;
+$fon-gradient4: #6d2656;
+$fon-gradient4: #490735;
 
 $primary-gradient: linear-gradient(
   90deg,
-  $color1 100%,
-  $color2 32%,
-  $color3 56%,
-  $color4 75%,
-  $color5 91%
+  $fon-gradient1 0%,
+  $fon-gradient2 17%,
+  $fon-gradient3 40%,
+  $fon-gradient4 79%,
+  $fon-gradient4 100%
 );
-
-// Secondary colors
+//=Secondary colors=======================================================================================================================================================
 $secondary-black: #030110;
 $secondary-white: #fcfcfc;
 $secondary-text: #363636;
 $secondary-gray: #9a9a9a;
 $secondary-hover: #ededed;
 $secondary-error: #f94949;
-
-// Fonts
+$secondary-positive: #1ba161;
+//=Fonts=======================================================================================================================================================
 $counter-font: (
   "font-family": (
     "Open Sans",
@@ -107,8 +135,10 @@ $breakpoints: (
   "md": 768px,
   "lg": 1280px,
   "xl": 1366px,
-  "xxl": 1920px,
+  "xxl": 1440px,
+  "xxxl": 1920px,
 );
 
+//===Other=====================================================================================================================================================
 $transition-duration-base: 0.3s;
 $transition-timing-base: ease;

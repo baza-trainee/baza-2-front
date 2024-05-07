@@ -114,21 +114,39 @@
       "btn_support_project": "Підтримати проєкт"
     },
     "reviews_section": {
-      "title": "Reviews"
+     "title": "Reviews"
     },
     "press_about_section": {
-      "title": "Press about us"
+      "title": "Press about us",
+      "article_1": {
+        "title": "Ми в MC Today",
+        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+      },
+      "article_2": {
+        "title": "Ми на Dev ua",
+        "text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
+      },
+      "article_3": {
+        "title": "Ми на Hostiq.ua",
+        "text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
+      },
+      "article_4": {
+        "title": "",
+        "text": ""
+      },
+
+      "btn_read_article": "Читати матеріал"
     },
     "partners_section": {
       "title": "Partners"
     },
     "feedback_form": {
-      "title": "Форма зворотного зв’язку",
-      "name": "Ім’я",
-      "email": "Електронна пошта",
-      "message": "Повідомлення",
-      "message_placeholder": "Ваше повідомлення",
-      "btn_send": "Відправити"
+      "title": "Feedback form",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "message_placeholder": "Your message",
+      "btn_send": "Send"
     }
   },
 
@@ -157,5 +175,20 @@
     "btn_support": "To support",
     "thanks_support": "Thanks for your support",
     "btn_home": "Return to the home page"
+  
+  "Modal_form": {
+    "title": "Registration for participation in the Baza Trainee Ukraine project",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "specialization": "Specialization",
+    "email": "Email",
+    "phone": "Phone",
+    "discord": "Nick on Discord",
+    "linkedin": "Linkedin profile",
+    "linkedin_placeholder": "Link to profile",
+    "convenient_time": "A convenient time for consultation",
+    "agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
+    "btn_send": "Send"
+
   }
 }

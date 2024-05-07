@@ -117,13 +117,30 @@
       "title": "Opinie"
     },
     "press_about_section": {
-      "title": "Prasa o nas"
+      "title": "Prasa o nas",
+      "article_1": {
+        "title": "Ми в MC Today",
+        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+      },
+      "article_2": {
+        "title": "Ми на Dev ua",
+        "text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
+      },
+      "article_3": {
+        "title": "Ми на Hostiq.ua",
+        "text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
+      },
+      "article_4": {
+        "title": "",
+        "text": ""
+      },
+      "btn_read_article": "Читати матеріал"
     },
     "partners_section": {
       "title": "Partnerzy"
     },
     "feedback_form": {
-      "title": "Форма зворотного зв’язку",
+      "title": "Formularz zwrotny",
       "name": "Imię",
       "email": "E-mail",
       "message": "Wiadomość",
@@ -157,5 +174,20 @@
     "btn_support": "Wspierać",
     "thanks_support": "Dziękujemy za wsparcie!",
     "btn_home": "Powrót do strony głównej"
+  },
+  
+  "Modal_form": {
+    "title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "specialization": "Спеціалізація",
+    "email": "Електронна пошта",
+    "phone": "Телефон",
+    "discord": "Нік в Discord",
+    "linkedin": "Профіль в Linkedin",
+    "linkedin_placeholder": "Лінк на профіль",
+    "convenient_time": "Зручний час для консультації",
+    "agree": "Надаю згоду на обробку персональних даних відповідно до Закону України «Про захист персональних даних»",
+    "btn_send": "Відправити"
   }
 }

@@ -1,0 +1,57 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.box {
+  color: $secondary-white;
+  position: relative;
+  .btn_lang {
+    @include apply-font-styles($menu);
+    width: 65px;
+    padding: 14px 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  .btn_icon_up {
+    transform: rotate(180deg);
+  }
+  .btn_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease 0s;
+    & > svg {
+      display: block;
+      width: 15px;
+      height: 9px;
+    }
+  }
+  .btn_lang:focus,
+  .btn_lang:hover {
+    opacity: 0.65;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-primary;
+    width: 65px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    z-index: 2;
+  }
+  .options_item_btn {
+    @include apply-font-styles($menu);
+    padding: 8px;
+    text-align: start;
+    transition: all 0.3s;
+  }
+  .options_item_btn:focus,
+  .options_item_btn:hover {
+    color:$primary-hover;
+  }
+}

@@ -1,31 +1,30 @@
-"use client"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
-import { useCallback } from "react"
-import "swiper/css"
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { useCallback } from "react";
+import "swiper/css";
 
 const Carousel = ({
   modules,
   className,
-  options,
   slideClassName,
   renderItem,
   items,
   prevEl,
   nextEl,
   paginationEl,
+  ...options
 }) => {
   const renderSlides = useCallback(
-    items =>
+    (items) =>
       items?.map((item, i) => (
         <SwiperSlide className={slideClassName} key={i}>
           {renderItem(item, i)}
         </SwiperSlide>
       )),
     [slideClassName, renderItem]
-  )
-
-  const DEFAULT_MODULES = [Navigation]
+  );
+  const DEFAULT_MODULES = [Navigation];
 
   return (
     <Swiper
@@ -43,7 +42,7 @@ const Carousel = ({
     >
       {renderSlides(items)}
     </Swiper>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;
