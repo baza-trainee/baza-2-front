@@ -1,0 +1,13 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  gap: 80px;
+  padding: 16px 64px 16px 64px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
