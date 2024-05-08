@@ -1,0 +1,27 @@
+@import "/src/styles/variables";
+
+.section {
+  background-color: $primary-footer;
+}
+
+.container {
+  max-width: 1258px;
+}
+
+.footer {
+  margin: 68px auto 56px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  padding: 0 73px 52px 0;
+}
+
+.contacts {
+  width: 397px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

@@ -1,0 +1,10 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.copyrights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  @include apply-font-styles($h3-font);
+}

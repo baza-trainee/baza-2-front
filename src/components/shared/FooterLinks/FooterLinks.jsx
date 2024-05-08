@@ -1,4 +1,4 @@
-import MainLink from "../shared/MainLink/MainLink";
+import MainLink from "../MainLink/MainLink";
 import { helpLinks, navigationLinks } from "./constants";
 import styles from "./FooterLinks.module.scss";
 

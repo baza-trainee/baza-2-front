@@ -115,6 +115,7 @@
     },
     "reviews_section": {
       "title": "Opinie"
+
     },
     "press_about_section": {
       "title": "Prasa o nas",
@@ -175,7 +176,7 @@
     "thanks_support": "Dziękujemy za wsparcie!",
     "btn_home": "Powrót do strony głównej"
   },
-  
+
   "Modal_form": {
     "title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
     "firstName": "Imię",

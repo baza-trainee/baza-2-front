@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.section {
+  background-image: $primary-gradient;
+  color: $secondary-white;
+  padding: 60px 0;
+}
+.container {
+  text-align: center;
+}
+
+.title {
+  @include apply-font-styles($h1-font);
+}
+
+.sliderContainer {
+  margin-bottom: 48px;
+}
+
+.titleRow {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.prevBtn {
+  transform: rotate(180deg);
+}
+
+.navigation {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  gap: 32px;
+}
+.pagination {
+  display: inline-flex;
+}
