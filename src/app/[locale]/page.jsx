@@ -3,6 +3,7 @@ import CarouselTestSection from "@/src/components/CarouselTestSection/CarouselTe
 import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
 import Counter from "@/src/components/Counter/Counter";
 import FAQ from "@/src/components/FAQ/FAQ";
+import ReviewsSection from "@/src/components/ReviewsSection/ReviewsSection";
 import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTestSection";
@@ -19,10 +20,11 @@ export default function Home() {
       <Counter />
       <MentorSection />
       <Timeline />
-      <ContactFormSection/>
+      <ContactFormSection />
       <ArticlesSection />
       <ScrollToTopBtn />
       <FAQ />
+      <ReviewsSection />
     </main>
   );
 }
