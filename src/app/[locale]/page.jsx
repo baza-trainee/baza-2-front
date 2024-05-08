@@ -10,13 +10,12 @@ import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTe
 import Timeline from "@/src/components/Timeline/Timeline";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import StructureSectionTest from "@/src/components/StructureSectionTest/StructureSectionTest";
-import Header from "@/src/components/shared/Header/Header";
+
 
 export default function Home() {
   return (
     <main>
       <input placeholder="" />
-      <Header></Header>
       <CarouselTestSection />
       <RoleCardTestSection />
       <HistorySection />
