@@ -1,14 +1,16 @@
 @use "../../../styles/variables" as var;
 @use "../../../styles/mixins" as mx;
 
-.container {
+.containerForCard {
+  display: block;
   width: 397px;
   height: 514px;
 
   border-radius: 8px;
-  border: 2px solid #ff62ce;
-  background-color: #180530;
+  border: 2px solid var.$primary-border;
+  background-color: var.$primary-fon-card;
   overflow: hidden;
+  padding: 0;
 }
 .image {
   width: 397px;
@@ -28,7 +30,7 @@
 
 .title {
   @include mx.apply-font-styles(var.$h2-font);
-  font-weight: 700;
+  font-weight: 600;
 
   margin-bottom: 16px;
 
@@ -53,7 +55,7 @@
   @include mx.apply-font-styles(var.$text-16-font);
 
   display: block;
-  padding: 14px 4;
+  padding: 14px 4px;
   margin-left: auto;
   margin-right: 0;
 
@@ -62,6 +64,6 @@
   color: var.$secondary-white;
 
   &:hover {
-    border-bottom: 1px solid #ff62ce;
+    border-bottom: 1px solid var.$primary-border;
   }
 }

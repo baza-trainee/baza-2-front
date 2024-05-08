@@ -114,7 +114,7 @@
       "btn_support_project": "Підтримати проєкт"
     },
     "reviews_section": {
-     "title": "Reviews"
+      "title": "Reviews"
     },
     "press_about_section": {
       "title": "Press about us",
@@ -175,7 +175,7 @@
     "btn_support": "To support",
     "thanks_support": "Thanks for your support",
     "btn_home": "Return to the home page"
-  
+  },
   "Modal_form": {
     "title": "Registration for participation in the Baza Trainee Ukraine project",
     "firstName": "First Name",
@@ -189,6 +189,5 @@
     "convenient_time": "A convenient time for consultation",
     "agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
     "btn_send": "Send"
-
   }
 }
