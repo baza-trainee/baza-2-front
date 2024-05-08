@@ -114,10 +114,10 @@
       "btn_support_project": "Підтримати проєкт"
     },
     "reviews_section": {
-      "title": "Відгуки"
+     "title": "Reviews"
     },
     "press_about_section": {
-      "title": "Преса про нас",
+      "title": "Press about us",
       "article_1": {
         "title": "Ми в MC Today",
         "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
@@ -138,7 +138,7 @@
       "btn_read_article": "Читати матеріал"
     },
     "partners_section": {
-      "title": "Партнери"
+      "title": "Partners"
     },
     "feedback_form": {
       "title": "Feedback form",
@@ -151,31 +151,30 @@
   },
 
   "Footer": {
-    "main": "Головна",
+    "main": "Home",
     "internship": "Стажування",
-    "projects": "Проєкти",
-    "blog": "Блог",
+    "projects": "Projects",
+    "blog": "Blog",
     "privacy_policy": "Політика конфіденційності",
     "site_use_policy": "Політика Користування сайтом",
     "regulations": "Статут",
     "reporting": "Звітність",
     "development": "Розробка",
-    "rights": "Усі права захищені"
+    "rights": "All rights reserved"
   },
 
   "Page_404": {
     "title": "Вибачте, сторінка, яку ви шукаєте, переміщена або видалена.",
-    "btn_home": "Повернутись на головну"
+    "btn_home": "Return to the home page"
   },
 
   "Modal": {
     "amount": "Сума поповнення",
-    "UAH": "грн",
-    "another_amount": "Інша сума",
-    "btn_support": "Підтримати",
-    "thanks_support": "Дякуємо за підтримку!",
-    "btn_home": "Повернутись на головну"
-  },
+    "UAH": "UAH",
+    "another_amount": "Another amount",
+    "btn_support": "To support",
+    "thanks_support": "Thanks for your support",
+    "btn_home": "Return to the home page"
   
   "Modal_form": {
     "title": "Registration for participation in the Baza Trainee Ukraine project",
@@ -190,5 +189,6 @@
     "convenient_time": "A convenient time for consultation",
     "agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
     "btn_send": "Send"
+
   }
 }
