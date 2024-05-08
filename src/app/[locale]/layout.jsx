@@ -1,6 +1,5 @@
-import Footer from "@/src/components/Footer/Footer";
-import NavLinks from "@/src/components/NavLinks/NavLinks";
-import TestExampleLangDropdown from "@/src/components/TestExampleLangDropdown/TestExampleLangDropdown";
+import Footer from "@/src/components/shared/Footer/Footer";
+import Header from "@/src/components/shared/Header/Header";
 import "@/src/styles/global.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -17,8 +16,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="wrapper">
-            <NavLinks />
-            <TestExampleLangDropdown />
+            <Header />
             {children}
             <Footer />
           </div>

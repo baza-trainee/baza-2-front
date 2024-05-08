@@ -1,0 +1,35 @@
+@use "../../../styles/variables" as var;
+
+.header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: var.$primary-primary;
+  padding: 12.5px 0;
+  transition: transform var.$transition-duration-base
+    var.$transition-timing-base 0s;
+  &.fixed {
+    transform: translateY(-100%);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  & > {
+    flex-shrink: 0;
+  }
+  @media (max-width: 1010px) {
+    gap: 20px;
+  }
+}
