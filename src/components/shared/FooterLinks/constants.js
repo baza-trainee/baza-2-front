@@ -1,4 +1,4 @@
-import linkTypes from "../shared/MainLink/constants";
+import linkTypes from "../MainLink/constants";
 
 export const navigationLinks = [
   { name: "Головна", url: "/", type: linkTypes.FOOTER },
