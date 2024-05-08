@@ -1,6 +1,6 @@
 "use client";
 import styles from "./exampleButtons.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MainButton from "../shared/MainButton/MainButton";
 import { useTranslations } from "next-intl";
 import RegistrationFormModal from "../RegistrationFormModal/RegistrationFormModal";
@@ -8,7 +8,12 @@ import RegistrationFormModal from "../RegistrationFormModal/RegistrationFormModa
 export default function ExampleButtons() {
   const [res1, setRes1] = useState(false);
   const [isRegistrationModalOpen, setRegistrationModalOpen] = useState(false);
-
+  useEffect(() => {
+    if (isRegistrationModalOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => (document.body.style.overflow = "unset");
+  }, [isRegistrationModalOpen]);
   const t = useTranslations("Main");
   const b = useTranslations("Header");
   const d = useTranslations("Modal");
@@ -49,10 +54,7 @@ export default function ExampleButtons() {
       <RegistrationFormModal
         isOpen={isRegistrationModalOpen}
         onClose={() => setRegistrationModalOpen(false)}
-      >
-        <h2>Modal Title</h2>
-        <p>This is a registration form window. Click outside to close it.</p>
-      </RegistrationFormModal>
+      />
     </>
   );
 }

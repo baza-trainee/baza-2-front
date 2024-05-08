@@ -1,3 +1,6 @@
+@use "../../styles/mixins" as mix;
+@use "../../styles/variables" as var;
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -9,64 +12,38 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 .modal {
-  background: #fff;
+  background: #180530;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff62ce;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 600px;
+  margin-top: 95vh;
+  margin-bottom: 5vh;
+  padding: 48px, 32px, 32px, 32px;
+  gap: 40px;
+  width: 690px;
+  height: 1400px;
   display: flex;
   flex-direction: column;
-  color: black;
 
   h2 {
-    color: #6200ee;
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="url"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-
-  .checkbox-group {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px 0;
-
-    label {
-      flex: 1 1 50%;
-      margin-bottom: 10px;
-
-      input {
-        margin-right: 10px;
-      }
-    }
+    @include mix.apply-font-styles(var.$h1-font);
+    color: #fcfcfc;
   }
 
   button {
-    background-color: #6200ee;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #7f39fb;
-    }
+    width: 200px;
   }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
 }
