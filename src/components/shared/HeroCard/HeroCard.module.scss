@@ -41,7 +41,7 @@
   //height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(60%);
+  filter: grayscale(90%) brightness(60%);
 }
 
 .wrapper {
@@ -63,7 +63,7 @@
   }
 
   h2 {
-    @include mx.apply-font-styles(var.$h2-font);
+    @include mx.apply-font-styles(var.$h1-font);
     margin-bottom: 60px;
 
     font-weight: 700;

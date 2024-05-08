@@ -12,7 +12,7 @@
     "hero_сarousel_section": {
       "slide_1": {
         "title": "Baza Trainee Ukraine",
-        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+        "text": "A public organization whose goal is to get the first experience of work by those who are starting their way in IT"
       },
       "slide_2": {
         "title": "Baza Trainee Ukraine",
@@ -176,7 +176,7 @@
     "thanks_support": "Thanks for your support",
     "btn_home": "Return to the home page"
   },
-  
+
   "Modal_form": {
     "title": "Registration for participation in the Baza Trainee Ukraine project",
     "firstName": "First Name",
@@ -190,6 +190,5 @@
     "convenient_time": "A convenient time for consultation",
     "agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
     "btn_send": "Send"
-
   }
 }
