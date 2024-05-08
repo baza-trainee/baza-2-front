@@ -15,7 +15,6 @@
 .image {
   width: 397px;
   height: 242px;
-  //   background: rgba(112, 33, 86, 0.2), url("path_to_image");
 }
 
 .wrapper {
@@ -39,8 +38,6 @@
 
 .text {
   @include mx.apply-font-styles(var.$text-16-font);
-  // margin: 0;
-  // margin-bottom: 24px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -55,13 +52,15 @@
   @include mx.apply-font-styles(var.$text-16-font);
 
   display: block;
-  padding: 14px 4px;
+  padding: 10px 4px;
   margin-left: auto;
   margin-right: 0;
 
   width: 147px;
 
   color: var.$secondary-white;
+
+  transition: border-bottom var.$transition-timing-base;
 
   &:hover {
     border-bottom: 1px solid var.$primary-border;

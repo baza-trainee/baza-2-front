@@ -26,17 +26,18 @@ export const ArticlesSection = () => {
       </div>
 
       <Carousel
-        className={clsx("swiper", styles.mySwiper)}
-        slideClassName={(clsx("swiper-slide"), styles.mySwiperItem)}
+        slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
         modules={[Navigation]}
         prevEl={".prevElArticle"}
         nextEl={".nextElArticle"}
         slidesPerView={1}
+        spaceBetween={24}
         breakpoints={{
           1280: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           1920: {
+            spaceBetween: 30,
             slidesPerView: 4,
           },
         }}
