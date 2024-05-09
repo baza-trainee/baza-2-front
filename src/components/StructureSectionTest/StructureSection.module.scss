@@ -1,0 +1,28 @@
+@use '/src/styles/variables' as var;
+@use '/src/styles/mixins' as mixin;
+
+.mainContainer {
+  gap: 48px;
+  display: grid;
+  direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 64px 60px 64px;
+  background: 
+  linear-gradient(127.17deg, #DB97C5 -15.12%, #CC4FA3 5.17%, #A03A7E 32.37%, #6D2656 79.03%, #490735 104.82%);;
+}
+
+.cardContainer {
+  display: grid;
+  flex-direction: column;
+  gap: 24px;
+
+}
+
+.text {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  @include mixin.apply-font-styles(var.$h1-font);
+}
+

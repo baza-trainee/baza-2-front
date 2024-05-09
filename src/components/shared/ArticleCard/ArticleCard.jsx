@@ -8,7 +8,7 @@ export const ArticleCard = ({ item }) => {
   const t = useTranslations("Main.press_about_section");
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerForCard}>
       <Image
         className={styles.image}
         src={img}

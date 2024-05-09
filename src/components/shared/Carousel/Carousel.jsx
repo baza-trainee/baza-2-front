@@ -13,6 +13,7 @@ const Carousel = ({
   prevEl,
   nextEl,
   paginationEl,
+  delay,
   ...options
 }) => {
   const renderSlides = useCallback(
@@ -36,6 +37,10 @@ const Carousel = ({
       pagination={{
         el: paginationEl ?? null,
         clickable: true,
+      }}
+      autoplay={{
+        delay: delay,
+        disableOnInteraction: false
       }}
       className={className}
       {...options}

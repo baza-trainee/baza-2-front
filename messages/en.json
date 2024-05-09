@@ -11,7 +11,7 @@
 		"hero_сarousel_section": {
 			"slide_1": {
 				"title": "Baza Trainee Ukraine",
-				"text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+				"text": "A public organization whose goal is to get the first experience of work by those who are starting their way in IT"
 			},
 			"slide_2": {
 				"title": "Baza Trainee Ukraine",
@@ -149,14 +149,14 @@
 	},
 	"Footer": {
 		"main": "Home",
-		"internship": "Стажування",
+		"internship": "Internship",
 		"projects": "Projects",
 		"blog": "Blog",
-		"privacy_policy": "Політика конфіденційності",
-		"site_use_policy": "Політика Користування сайтом",
-		"regulations": "Статут",
-		"reporting": "Звітність",
-		"development": "Розробка",
+		"privacy_policy": "Privacy Policy",
+		"site_use_policy": "Website Usage Policy",
+		"regulations": "Regulations",
+		"reporting": "Reporting",
+		"development": "Development",
 		"rights": "All rights reserved"
 	},
 	"Page_404": {
