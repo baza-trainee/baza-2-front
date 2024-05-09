@@ -1,23 +1,22 @@
-export const structureCardItmes = [
+export const items = [
   {
     title: "item_1.title",
     text: 'item_1.text',
-    img: '/images/logoblack.svg'
+    img: '/images/logoblack.svg',
   },
   {
     title: "item_2.title",
     text: 'item_2.text',
-    img: './images/skill.svg'
+    img: '/images/skill.svg',
   },
   {
     title: "item_3.title",
     text: 'item_3.text',
-    img: './images/educat.svg'
+    img: '/images/educate/svg',
   },
   {
     title: "item_4.title",
     text: 'item_4.text',
-    img: '/images/logoblack.svg'
-
+    img: "/images/logoblack.svg",
   },
 ];
