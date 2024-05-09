@@ -1,0 +1,63 @@
+@use "../../../../../../styles/variables" as var;
+
+.burgerMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.903);
+  padding: 100px 40px 40px 40px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease 0s,
+    visibility 0.3s ease 0s;
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+  }
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+.burgerList {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.burgerMenuItem {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease 0s,
+    transform 0.3s ease 0s;
+  &.Done {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.burgerMenuLink {
+  position: relative;
+  display: block;
+  font-weight: 700;
+  line-height: 1.2;
+  padding-left: 14px;
+  height: 100%;
+  &.active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var.$secondary-white;
+    }
+  }
+}

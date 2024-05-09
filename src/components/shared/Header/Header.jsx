@@ -9,6 +9,7 @@ import Menu from "./ui/Menu/Menu";
 import clsx from "clsx";
 import useHeaderFixed from "./lib/useHeaderFixed";
 import styles from "./Header.module.scss";
+import Burger from "./ui/Burger/Burger";
 
 const Header = () => {
   const t = useTranslations("Header");
@@ -22,6 +23,7 @@ const Header = () => {
         <div className={styles.actions}>
           <MainButton>{t("btn_support_project")}</MainButton>
           <LangDropdown />
+          <Burger />
         </div>
       </div>
     </header>

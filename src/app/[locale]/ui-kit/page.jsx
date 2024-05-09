@@ -1,6 +1,4 @@
-import ExampleButtons from "@/src/components/ExampleButtons/ExampleButtons";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
-import FeedbackCard from "@/src/components/shared/FeedbackCard/FeedbackCard";
 import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
 import StructureCard from "@/src/components/shared/StructureCard/StructureCard";
 import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
@@ -12,7 +10,6 @@ import RegistrationForm from "@/src/components/shared/RegistrationFormTEST/Regis
 export default function UiKit() {
   return (
     <main>
-      <ExampleButtons />
       <ScrollToTopBtn />
       <FooterLinks />
       <StructureCard />
