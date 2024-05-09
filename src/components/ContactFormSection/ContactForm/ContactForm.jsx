@@ -26,7 +26,6 @@ export default function ContactForm() {
       return true;
     } else return false;
   };
-  console.log(errors.firstName);
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
@@ -35,7 +34,7 @@ export default function ContactForm() {
           placeholder={t("name")}
           registerOptions={register("firstName", { ...formScheme.firstName })}
           isError={errors.firstName}
-          isValid
+          isValid={isValid}
           version={"input"}
           label={t("name")}
         />
@@ -44,7 +43,7 @@ export default function ContactForm() {
           placeholder={"email@gmail.com"}
           registerOptions={register("email", { ...formScheme.email })}
           isError={errors.email}
-          isValid
+          isValid={isValid}
           version={"input"}
           label={t("email")}
         />
@@ -53,12 +52,12 @@ export default function ContactForm() {
           placeholder={t("message_placeholder")}
           registerOptions={register("message", { ...formScheme.message })}
           isError={errors.message}
-          isValid
+          isValid={isValid}
           version={"textArea"}
           label={t("message")}
         />
       </ul>
-      <MainButton type="submit" disabled={isDisabled} className={styles.submit}>
+      <MainButton type="submit" disabled={isDisabled()}>
         {t("btn_send")}
       </MainButton>
     </form>

@@ -2,7 +2,8 @@
 @import "../../../styles/mixins";
 
 .item {
-  width: 625px;
+  //width: 625px;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   & > label {
@@ -29,15 +30,19 @@
     padding: 10px;
     outline: 0;
     background: $secondary-white;
-    height: 132px;
+    min-height: 132px;
     resize: none;
     transition: all $transition-duration-base $transition-timing-base;
   }
+  @include media-q("md") {
+    //bottom: 8.36%;
+    width: 625px;
+  }
 }
-._error {
+.input._error {
   border: 2px solid $secondary-error;
 }
-._success {
+.input._success {
   border: 2px solid $secondary-positive;
 }
 

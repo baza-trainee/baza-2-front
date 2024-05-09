@@ -68,7 +68,7 @@ export default function InputField({
         </label>
         <textarea
           id={id}
-          className={clsx(isError && styles._error, isValid && styles._success)}
+          className={clsx(styles.input, isError && styles._error, isValid && styles._success)}
           {...registerOptions}
           placeholder={placeholder}
         />
@@ -83,7 +83,7 @@ export default function InputField({
         </label>
         <input
           id={id}
-          className={clsx(isError && styles._error, isValid && styles._success)}
+          className={clsx(styles.input,isError && styles._error, isValid && styles._success)}
           {...registerOptions}
           placeholder={placeholder}
         />
