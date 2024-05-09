@@ -6,7 +6,7 @@
 
 .scrollToTopBtnActive {
   display: none;
-  background-color: inherit;
+  background-color: var.$primary-fon-card;
 }
 
 @media only screen and (min-width: 768px) {
@@ -22,7 +22,7 @@
 
     padding-top: 6px;
 
-    border: 2px solid #ff62ce;
+    border: 2px solid var.$primary-border;
     border-radius: 50%;
 
     cursor: pointer;

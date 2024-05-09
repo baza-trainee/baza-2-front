@@ -1,19 +1,20 @@
 @use "../../../styles/variables" as var;
 @use "../../../styles/mixins" as mx;
 
-.container {
+.containerForCard {
+  display: block;
   width: 397px;
   height: 514px;
 
   border-radius: 8px;
-  border: 2px solid #ff62ce;
-  background-color: #180530;
+  border: 2px solid var.$primary-border;
+  background-color: var.$primary-fon-card;
   overflow: hidden;
+  padding: 0;
 }
 .image {
   width: 397px;
   height: 242px;
-  //   background: rgba(112, 33, 86, 0.2), url("path_to_image");
 }
 
 .wrapper {
@@ -28,7 +29,7 @@
 
 .title {
   @include mx.apply-font-styles(var.$h2-font);
-  font-weight: 700;
+  font-weight: 600;
 
   margin-bottom: 16px;
 
@@ -37,8 +38,6 @@
 
 .text {
   @include mx.apply-font-styles(var.$text-16-font);
-  // margin: 0;
-  // margin-bottom: 24px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,7 +52,7 @@
   @include mx.apply-font-styles(var.$text-16-font);
 
   display: block;
-  padding: 14px 4;
+  padding: 10px 4px;
   margin-left: auto;
   margin-right: 0;
 
@@ -61,7 +60,9 @@
 
   color: var.$secondary-white;
 
+  transition: border-bottom var.$transition-timing-base;
+
   &:hover {
-    border-bottom: 1px solid #ff62ce;
+    border-bottom: 1px solid var.$primary-border;
   }
 }
