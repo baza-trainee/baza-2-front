@@ -1,3 +1,5 @@
+// StructureCardTest.module.scss
+
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
@@ -11,6 +13,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* добавляем позиционирование для псевдоэлемента */
+}
+
+.cardStyle:nth-child(odd) {
+  .ellipseWrapper {
+    background-color: rgba(226, 185, 213, 1); /* меняем цвет фона для четных элементов */
+    fill: #e2b9d5;
+  }
 }
 
 .header {
@@ -34,7 +44,7 @@
   width: 300px;
   height: 157px;
   position: absolute;
-  background-color: rgba(226, 185, 213, 1);
+  background-color: rgba(226, 185, 213, 0); /* делаем прозрачным для нечетных элементов */
   border-radius: 100%;
   fill: #e2b9d5;
   filter: blur(30px);
@@ -52,5 +62,3 @@
   justify-content: center;
   align-items: center;
 }
-
-
