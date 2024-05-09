@@ -3,8 +3,11 @@ import styles from "./StructureCardTest.module.scss";
 import educat from './images/educat.svg';
 import skill from './images/skill.svg';
 import logoblack from './images/logoblack.svg';
+import { useTranslations } from "next-intl";
 
-export default function StructureCardTest() {
+export default function StructureCardTest(title, text) {
+  const t = useTranslations("Main.our_structure_section");
+
   return (
     <>
       <div className={styles.cardStyle}>
@@ -13,37 +16,32 @@ export default function StructureCardTest() {
           <Image  className={styles.svgWrapper} src={logoblack} alt="baza logo" />
         </div>
         <div className={styles.textCard}>
-          <p className={styles.header}> BAZA TRAINEE UKRAINE</p>
+          <p className={styles.header}>{t(title)}</p>
           <p className={styles.text}>
-            Громадський проєкт для джуніорів і світчерів ІТ, який
-            побудований на створенні цифрових проєктів для соціальної сфери
-            України
+          {t(text)}
           </p>
         </div>
       </div>
       <div className={styles.cardStyle}>
-        <div className={styles.skillWrapper}>
+        <div className={styles.cardWrapper}>
         <Image src={skill} alt="skill logo" />
         </div>
         <div className={styles.textCard}>
-          <p className={styles.header}>BAZA SKILL</p>
+          <p className={styles.header}>{t(title)}</p>
           <p className={styles.text}>
-            Власна рекрутингова агенція для наших випускників. 
-            База даних перевірених джунів з досвідом командної розробки
+          {t(text)}
           </p>
         </div>
       </div>
       <div className={styles.cardStyle}>
         <div className={styles.eduCardWrapper}>
-          <div className={styles.eduEllipseWrapper}></div>
+          <div className={styles.ellipseWrapper}></div>
           <Image className={styles.svgWrapper} src={educat} alt="educate logo" />
         </div>
         <div className={styles.textCard}>
-          <p className={styles.header}>BAZA EDUCAT</p>
+          <p className={styles.header}>{t(title)}</p>
           <p className={styles.text}>
-            Учбові курси різних рівнів складності для розробників, 
-            де навчають спільній роботі і командній розробці. 
-            Додай софт скіли до технічних знань і отримай додаткову підтримку на ринку праці 
+          {t(text)}
           </p>
         </div>
       </div>
@@ -52,10 +50,9 @@ export default function StructureCardTest() {
         <Image  className={styles.svgWrapper} src={logoblack} alt="edu logo svg" />
         </div>
         <div className={styles.textCard}>
-          <p className={styles.header}>BAZA POLIGON</p>
+          <p className={styles.header}>{t(title)}</p>
           <p className={styles.text}>
-            Веб агенція для малого і середнього бізнесу.  
-            Створені в 2023 в Україні і для України.
+          {t(text)}
           </p>
         </div>
       </div>

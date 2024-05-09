@@ -30,54 +30,27 @@
   gap: 12px;
 }
 
-.cardWrapper {
-  width: 261px;
-  height: 190px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .ellipseWrapper {
-  width: 261px;
-  height: 190px;
+  width: 300px;
+  height: 157px;
   position: absolute;
   background-color: rgba(226, 185, 213, 1);
   border-radius: 100%;
   fill: #e2b9d5;
-  filter: blur(50px);
+  filter: blur(30px);
 }
 
 .svgWrapper {
   position: relative;
  }
 
-.skillWrapper {
+.cardWrapper {
   width: 300px;
   height: 157px;
-  overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.eduCardWrapper {
-  width: 414px;
-  height: 190px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.eduEllipseWrapper {
-  width: 414px;
-  height: 190px;
-  position: absolute;
-  background-color: rgba(226, 185, 213, 1);
-  border-radius: 100%;
-  fill: #e2b9d5;
-  filter: blur(50px);
 }
 
 
