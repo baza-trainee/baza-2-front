@@ -5,15 +5,16 @@ import Image from "next/image";
 // import logoblack from './images/logoblack.svg';
 import { useTranslations } from "next-intl";
 
+
 export default function StructureCardTest({ item }) {
   const t = useTranslations("Main.our_structure_section");
-  const { img, title, text } = item;
+  const { img, title, text, width, height } = item;
 
   return (
       <div className={styles.cardStyle}>
         <div className={styles.cardWrapper}>
           <div className={styles.ellipseWrapper}></div>
-          <Image className={styles.svgWrapper}  src={img}  width={100} height={100} alt={t(title)} />
+          <img className={styles.svgWrapper}  src={img} width={width} height={height} alt={t(title)} />
         </div>
         <div className={styles.textCard}>
           <p className={styles.header}>{t(title)}</p>
