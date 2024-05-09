@@ -19,7 +19,14 @@ export default function ContactForm() {
     console.log(data)
     reset()
   }
-
+  const isDisabled =()=>{
+    if(errors.firstName||errors.email||errors.message ){
+      return true
+    }else if(isDirty && !isValid){
+      return true
+    }else return false
+  }
+  console.log(errors.firstName)
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
@@ -29,7 +36,7 @@ export default function ContactForm() {
           <input id="firstName" 
           className={clsx(errors.firstName && styles._error, isValid && styles._success)}
           {...register('firstName', { ...formScheme.firstName })}
-          
+          aria-invalid={errors.firstName ? "true" : "false"} 
            placeholder={t('name')}/>
         </li>
 
@@ -45,7 +52,7 @@ export default function ContactForm() {
         <li className={styles.item}>
           <label htmlFor="message">{t('message')} <span>*</span></label>
           <textarea id="message" 
-           className={clsx(errors.message && styles._error, isValid && styles._success)}
+           className={clsx( isValid && styles._success, errors.message &&!isValid && styles._error)}
           {...register('message', {...formScheme.message})}
           placeholder={t('message_placeholder')} />
         </li>  
@@ -53,7 +60,7 @@ export default function ContactForm() {
       </ul>
       <MainButton 
         type="submit" 
-        disabled={isDirty && !isValid} 
+        disabled={isDisabled()}
         className={styles.submit}>
           {t("btn_send")}
       </MainButton>
