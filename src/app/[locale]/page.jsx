@@ -6,7 +6,6 @@ import ReviewsSection from "@/src/components/ReviewsSection/ReviewsSection";
 import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
-import StructureSectionTest from "@/src/components/StructureSectionTest/StructureSectionTest";
 
 export default function Home() {
   return (

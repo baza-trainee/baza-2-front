@@ -1,4 +1,5 @@
 @use "../../../../../../styles/variables" as var;
+@use "../../../../../../styles/mixins" as mx;
 
 .burgerMenu {
   position: absolute;
@@ -6,8 +7,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.903);
-  padding: 100px 40px 40px 40px;
+  background: var.$primary-fon-card;
+  padding: 120px 40px 40px 40px;
   z-index: 10;
   opacity: 0;
   visibility: hidden;
@@ -28,6 +29,8 @@
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .burgerMenuItem {
@@ -43,6 +46,7 @@
 }
 
 .burgerMenuLink {
+  @include mx.apply-font-styles(var.$text-20-font);
   position: relative;
   display: block;
   font-weight: 700;

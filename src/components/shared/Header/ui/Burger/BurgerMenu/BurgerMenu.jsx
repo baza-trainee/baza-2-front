@@ -5,12 +5,14 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useCallback, useEffect } from "react";
 import { links } from "./links";
-import styles from "./BurgerMenu.module.scss";
 import { usePathname, useRouter } from "next/navigation";
+import { transformUrl } from "../../../lib/transformUrl";
+import styles from "./BurgerMenu.module.scss";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const pathnameWithoutLang = transformUrl(pathname);
 
   const handleRouteChange = useCallback(() => {
     setMenuOpened((prev) => !prev);
@@ -31,7 +33,7 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
     <nav className={clsx(styles.burgerMenu, menuOpened && styles.opened)}>
       <ul className={styles.burgerList}>
         {links.map((link, i) => {
-          const isCurrentPage = pathname === link.href;
+          const isCurrentPage = pathnameWithoutLang === link.href;
 
           return (
             <CSSTransition
