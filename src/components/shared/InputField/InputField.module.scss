@@ -1,0 +1,95 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.item {
+  width: 625px;
+  display: flex;
+  flex-direction: column;
+  & > label {
+    @include apply-font-styles($text-20-font);
+    & > span {
+      color: $secondary-error;
+    }
+  }
+  & > input {
+    @include apply-font-styles($text-16-font);
+    color: secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    outline: 0;
+    background: $secondary-white;
+    transition: all $transition-duration-base $transition-timing-base;
+  }
+  & > textarea {
+    @include apply-font-styles($text-16-font);
+    color: secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    outline: 0;
+    background: $secondary-white;
+    height: 132px;
+    resize: none;
+    transition: all $transition-duration-base $transition-timing-base;
+  }
+}
+._error {
+  border: 2px solid $secondary-error;
+}
+._success {
+  border: 2px solid $secondary-positive;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  gap: 30px;
+  color: #fcfcfc;
+}
+
+.boxInput {
+  min-width: 24px;
+  min-height: 24px;
+  margin-right: 10px;
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+
+  &:checked {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      display: block;
+      width: 10px;
+      height: 15px;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+      border: solid white;
+      border-width: 0 4px 4px 0;
+      background: transparent;
+    }
+  }
+}
+.boxLabel1 {
+  @include apply-font-styles($button);
+  cursor: pointer;
+  position: flex;
+  justify-content: center;
+}
+
+.boxLabel2 {
+  @include apply-font-styles($text-16-font);
+  cursor: pointer;
+  position: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}

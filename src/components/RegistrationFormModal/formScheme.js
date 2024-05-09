@@ -1,0 +1,20 @@
+export const formScheme = {
+  defaultValues: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    discord: "",
+    linkedin: "",
+    uiuxDesigner: false,
+    backend: false,
+    qaManualEngineer: false,
+    frontend: false,
+    fullstackEngineer: false,
+    projectManager: false,
+    t9001200: false,
+    t18002100: false,
+    t12001500: false,
+    anytime: false,
+    agree: false,
+  },
+};
