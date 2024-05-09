@@ -1,8 +1,9 @@
-@import "./_variables.scss";
-@import "./null";
+@use "./_variables.scss" as var;
+@use "./mixins" as mx;
+@use "./null";
 
 body {
-  background-color: $primary-fon;
+  background-color: var.$primary-fon;
 }
 
 [class*="container"] {
