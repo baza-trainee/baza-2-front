@@ -19,7 +19,14 @@ export default function ContactForm() {
     console.log(data);
     reset();
   };
-
+  const isDisabled = () => {
+    if (errors.firstName || errors.email || errors.message) {
+      return true;
+    } else if (isDirty && !isValid) {
+      return true;
+    } else return false;
+  };
+  console.log(errors.firstName);
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
@@ -51,11 +58,7 @@ export default function ContactForm() {
           label={t("message")}
         />
       </ul>
-      <MainButton
-        type="submit"
-        disabled={isDirty && !isValid}
-        className={styles.submit}
-      >
+      <MainButton type="submit" disabled={isDisabled} className={styles.submit}>
         {t("btn_send")}
       </MainButton>
     </form>
