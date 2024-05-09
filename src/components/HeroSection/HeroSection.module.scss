@@ -1,0 +1,62 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins.scss" as mx;
+
+.section{
+  //компенсує висоту хедер
+  margin-top: 80px;
+  position: relative;
+
+  .buttons{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    padding: 0 4.4%;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+
+    @include mx.media-q("md") {
+      display: flex;
+      padding: 0 4.4%;
+    }
+
+    @include mx.media-q("xxl") {
+      padding: 0 6.25%;
+    }
+  }
+  .pagination{
+    position: absolute;
+    bottom: 8.36%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 3;
+
+    @include mx.media-q("md") {
+      bottom: 8.36%;
+    }
+
+    // @include mx.media-q("lg") {
+    //   bottom: 10.6%;
+    // }
+
+    // @include mx.media-q("xxl") {
+    //   bottom: 8.37%;
+    // }
+  }
+  
+}
+// .item{
+//   width: 100%;
+//   height: 860px;
+//   padding-top: 150px;
+//   display: flex;
+//   //align-items: center;
+//   justify-content: center;
+//   background-color: rgba(0, 255, 255, 0.589);
+// }
+.prevEl {
+  transform: rotate(180deg);
+}
