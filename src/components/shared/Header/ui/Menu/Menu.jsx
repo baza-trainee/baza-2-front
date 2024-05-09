@@ -1,6 +1,6 @@
 import MainLink from "../../../MainLink/MainLink";
 import { navigationLinks } from "./constants";
-import styles from "./NavLinks.module.scss";
+import styles from "./Menu.module.scss";
 
 const Menu = () => {
   return (
