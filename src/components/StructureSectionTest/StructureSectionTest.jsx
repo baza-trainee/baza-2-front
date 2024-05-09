@@ -9,7 +9,7 @@ export default function StructureSectionTest() {
   const t = useTranslations("Main.our_structure_section");
 
   return(
-    <div className={styles.mainContainer}>
+    <section className={styles.mainContainer}>
         <div className={styles.text}>
           <p>{t("title")}</p>
         </div>
@@ -18,6 +18,6 @@ export default function StructureSectionTest() {
         <StructureCardTest key={Date.now()} item={item} />
       ))}
         </div>
-    </div>
+    </section>
   )
 }
