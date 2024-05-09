@@ -10,7 +10,7 @@ export const metadata = {
   description: "Baza trainee web site",
   icons: {
     icon: ['/favicons/favicon.svg'],
-    // apple: ['/apple-touch-icon.png?v=4'],
+    // apple: ['/apple-touch-icon.png'],
     // shortcut: ['/apple-touch-icon.png'],
   },
 };
