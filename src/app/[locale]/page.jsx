@@ -10,6 +10,8 @@ import HeroSection from "@/src/components/HeroSection/HeroSection";
 //import RoleCardTestSection from "@/src/components/RoleCardTestSection/RoleCardTestSection";
 //import Timeline from "@/src/components/Timeline/Timeline";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
+import StructureSectionTest from "@/src/components/StructureSectionTest/StructureSectionTest";
+
 
 export default function Home() {
   return (
@@ -21,7 +23,8 @@ export default function Home() {
       <HistorySection />
       <Counter />
       <MentorSection />
-      {/* <Timeline /> */}
+      <StructureSectionTest />
+      <Timeline />
       <ContactFormSection />
       <ArticlesSection />
       <ScrollToTopBtn />
