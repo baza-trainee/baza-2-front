@@ -2,10 +2,13 @@
 @import "../../../styles/mixins";
 
 .item {
-  //width: 625px;
-  width: 80vw;
+  width: 84vw;
   display: flex;
   flex-direction: column;
+  @include media-q("md") {
+    width: 625px;
+  }
+
   & > label {
     @include apply-font-styles($text-20-font);
     & > span {
@@ -33,10 +36,6 @@
     min-height: 132px;
     resize: none;
     transition: all $transition-duration-base $transition-timing-base;
-  }
-  @include media-q("md") {
-    //bottom: 8.36%;
-    width: 625px;
   }
 }
 .input._error {
