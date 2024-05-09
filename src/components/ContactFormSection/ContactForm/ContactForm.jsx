@@ -5,20 +5,22 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
+import SendIcon from "./sendIcon/sendIcon";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid, isDirty, isSubmitSuccessful },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
-
+ 
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
+  
   const isDisabled = () => {
     if (errors.firstName || errors.email || errors.message) {
       return true;
@@ -26,6 +28,7 @@ export default function ContactForm() {
       return true;
     } else return false;
   };
+
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
@@ -60,6 +63,10 @@ export default function ContactForm() {
       <MainButton type="submit" disabled={isDisabled()}>
         {t("btn_send")}
       </MainButton>
+
+     {isSubmitSuccessful && <div className={styles.send}>
+        <SendIcon/>
+      </div>}
     </form>
   );
 }

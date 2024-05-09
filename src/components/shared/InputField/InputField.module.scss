@@ -2,13 +2,9 @@
 @import "../../../styles/mixins";
 
 .item {
-  width: 84vw;
+  width: clamp(230px, 84vw, 625px);
   display: flex;
   flex-direction: column;
-  @include media-q("md") {
-    width: 625px;
-  }
-
   & > label {
     @include apply-font-styles($text-20-font);
     & > span {
