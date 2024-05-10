@@ -17,7 +17,7 @@
   .send {
     position: absolute;
     bottom: 50px;
-    animation: 2s linear send-slide;
+    animation: 1.5s linear send-slide;
     opacity: 0;
     z-index: 20;
   }
@@ -44,4 +44,3 @@
     transform: translateY(-110vh) scale(2);
   }
 }
-

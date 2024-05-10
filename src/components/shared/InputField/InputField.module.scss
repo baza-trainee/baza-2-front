@@ -2,7 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .item {
-  width: clamp(230px, 84vw, 625px);
+  width: clamp(250px, 84vw, 625px);
   display: flex;
   flex-direction: column;
   & > label {
