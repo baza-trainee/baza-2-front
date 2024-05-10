@@ -7,6 +7,11 @@ import { getMessages } from "next-intl/server";
 export const metadata = {
   title: "Baza trainee 2",
   description: "Baza trainee web site",
+  icons: {
+    icon: ['/favicons/favicon.svg'],
+    // apple: ['/apple-touch-icon.png'],
+    // shortcut: ['/apple-touch-icon.png'],
+  },
 };
 
 export default async function LocaleLayout({ children, params: { locale } }) {

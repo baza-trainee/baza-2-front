@@ -11,11 +11,11 @@
 		"hero_сarousel_section": {
 			"slide_1": {
 				"title": "Baza Trainee Ukraine",
-				"text": "A public organization whose goal is to get the first experience of work by those who are starting their way in IT"
+				"text": "A public organization that provides initial work experience to those who are just starting their journey in IT."
 			},
 			"slide_2": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+				"title": "About Us",
+				"text": "Baza Trainee Ukraine is an educational and training platform that was built in response to Ukrainian society’s growing demands in the field of IT. It is a website that brings together two groups of users - students of IT and social projects in need of IT support."
 			},
 			"slide_3": {
 				"title": "Baza Trainee Ukraine",
@@ -70,22 +70,22 @@
 			"btn_mentor": "Стати ментором"
 		},
 		"our_structure_section": {
-			"title": "Наша структура",
+			"title": "Our structure",
 			"item_1": {
 				"title": "BAZA TRAINEE UKRAINE",
-				"text": "Громадський проєкт для джуніорів і  світчерів ІТ, який побудований на створенні цифрових проєктів для соціальної сфери України"
+				"text": "A public project for juniors and IT switchers, focused on creating digital projects for the social sphere of Ukraine"
 			},
 			"item_2": {
 				"title": "BAZA SKILL",
-				"text": "Власна рекрутингова агенція для наших випускників. База даних перевірених джунів з досвідом командної розробки"
+				"text": "Our own recruiting agency for our graduates. A database of verified juniors with team development experience"
 			},
 			"item_3": {
 				"title": "BAZA EDUCAT",
-				"text": "Учбові курси різних рівнів складності для розробників, де навчають спільній роботі і командній розробці. Додай софт скіли до технічних знань і отримай додаткову підтримку на ринку праці"
+				"text": "Educational courses of various difficulty levels for developers, teaching teamwork and collaborative development. Enhance your technical skills with soft skills and receive additional support in the job market"
 			},
 			"item_4": {
 				"title": "BAZA POLIGON",
-				"text": "Веб агенція для малого і середнього бізнесу.  Створені в 2023 в Україні і для України."
+				"text": "A web agency for small and medium-sized businesses. Established in 2023 in Ukraine and for Ukraine"
 			}
 		},
 		"FAQ_section": {

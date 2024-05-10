@@ -1,62 +1,47 @@
 @import "../../../styles/variables";
 @import "../../../styles/mixins";
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   & :hover input,
-  & :hover textarea{
+  & :hover textarea {
     background: $secondary-hover;
   }
   & :focus input,
-  & :focus textarea{
+  & :focus textarea {
     background: $secondary-white;
+  }
+  .send {
+    position: absolute;
+    bottom: 50px;
+    animation: 2s linear send-slide;
+    opacity: 0;
+    z-index: 20;
+  }
+  .send > svg{
+    display: block;
+    width: 50px;
+    height: 50px;
   }
 }
 
-.list{
+.list {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 40px;
 }
-.item{
-  width: 625px;
-  display: flex;
-  flex-direction: column;
-  & > label{
-    @include apply-font-styles($text-20-font);
-    & > span{
-      color: $secondary-error;
-    }
+
+@keyframes send-slide {
+  from {
+    opacity: 1;
   }
-  & > input{
-    @include apply-font-styles($text-16-font);
-    color: secondary-black;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 10px;
-    outline: 0;
-    background: $secondary-white;
-    transition: all $transition-duration-base $transition-timing-base;
-  }
-  & > textarea{
-    @include apply-font-styles($text-16-font);
-    color: secondary-black;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 10px;
-    outline: 0;
-    background: $secondary-white;
-    height: 132px;
-    resize: none; 
-    transition: all $transition-duration-base $transition-timing-base;
-  }
-  ._error{
-    border: 2px solid $secondary-error;
-  }
-  ._success{
-    border: 2px solid $secondary-positive;
+  to {
+    opacity: 1;
+    transform: translateY(-110vh) scale(2);
   }
 }
+

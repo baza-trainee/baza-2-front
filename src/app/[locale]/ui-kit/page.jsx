@@ -1,6 +1,6 @@
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
-import StructureCard from "@/src/components/shared/StructureCard/StructureCard";
+import StructureCardTest from "@/src/components/shared/StructureCardTest/StructureCardTest";
 import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
 import Logo from "@/src/components/shared/Logo/Logo";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
@@ -12,7 +12,7 @@ export default function UiKit() {
     <main>
       <ScrollToTopBtn />
       <FooterLinks />
-      <StructureCard />
+      <StructureCardTest />
       <PartnerCard />
       <Logo variant="footer" />
       <SocialIcons />
