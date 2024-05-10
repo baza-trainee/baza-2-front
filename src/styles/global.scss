@@ -4,6 +4,11 @@
 
 body {
   background-color: var.$primary-fon;
+  &.lock {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
 }
 
 [class*="container"] {

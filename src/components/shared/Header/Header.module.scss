@@ -1,18 +1,19 @@
 @use "../../../styles/variables" as var;
 
 .header {
-  position: sticky;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 10;
   background-color: var.$primary-primary;
   padding: 12.5px 0;
-  transition: transform var.$transition-duration-base
-    var.$transition-timing-base 0s;
-  &.fixed {
-    transform: translateY(-100%);
-  }
+  //раскоментировать если нужен функционал по фиксированому хедеру
+  // transition: transform var.$transition-duration-base
+  //   var.$transition-timing-base 0s;
+  // &.fixed {
+  //   transform: translateY(-100%);
+  // }
 }
 .logo {
   z-index: 12;
@@ -32,7 +33,16 @@
   & > {
     flex-shrink: 0;
   }
-  @media (max-width: 1050px) {
+  @media (max-width: 1050px) and (min-width: 993px) {
     gap: 20px;
+  }
+  @media (max-width: 600px) {
+    gap: 20px;
+  }
+}
+
+.headerBtn {
+  @media (max-width: 992px) {
+    display: none;
   }
 }

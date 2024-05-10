@@ -8,41 +8,43 @@
   width: 100vw;
   height: 100vh;
   background: var.$primary-fon-card;
-  padding: 120px 40px 40px 40px;
+  padding: 112px 40px 40px 40px;
   z-index: 10;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition:
     opacity 0.3s ease 0s,
     visibility 0.3s ease 0s;
+  text-align: center;
   &.opened {
     opacity: 1;
     visibility: visible;
   }
-  @media (min-width: 992px) {
+  &::before {
+    content: "";
+    position: fixed;
+    display: block;
+    height: 80px;
+    background-color: var.$primary-fon-card;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0 30px 30px var.$primary-fon-card;
+  }
+  @media (min-width: 993px) {
     display: none;
   }
 }
 .burgerList {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-}
-
-.burgerMenuItem {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition:
-    opacity 0.3s ease 0s,
-    transform 0.3s ease 0s;
-  &.Done {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+  padding: 12px 0;
+  margin-bottom: 32px;
 }
 
 .burgerMenuLink {
@@ -54,6 +56,7 @@
   padding-left: 14px;
   height: 100%;
   &.active {
+    color: var.$primary-hover;
     &::before {
       content: "";
       position: absolute;
@@ -61,7 +64,7 @@
       left: 0;
       width: 2px;
       height: 100%;
-      background-color: var.$secondary-white;
+      background-color: var.$primary-hover;
     }
   }
 }

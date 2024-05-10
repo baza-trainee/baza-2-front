@@ -40,7 +40,7 @@ const Carousel = ({
       }}
       autoplay={{
         delay: delay,
-        disableOnInteraction: false
+        disableOnInteraction: false,
       }}
       className={className}
       {...options}

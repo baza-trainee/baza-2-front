@@ -1,4 +1,4 @@
-import Timeline from "../Timeline/Timeline";
+import Timeline from "./Timeline/Timeline";
 
 import styles from "./HistorySection.module.scss";
 

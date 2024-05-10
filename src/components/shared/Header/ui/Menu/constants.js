@@ -1,9 +1,9 @@
 import linkTypes from "../../../MainLink/constants";
 
 export const navigationLinks = [
-	{ name: "Головна", url: "/", type: linkTypes.DEFAULT },
-	{ name: "Стажування", url: "/internship", type: linkTypes.DEFAULT },
-	{ name: "Проєкти", url: "/projects", type: linkTypes.DEFAULT },
-	{ name: "Блог", url: "/blog", type: linkTypes.DEFAULT },
-	{ name: "Контакти", url: "/contacts", type: linkTypes.DEFAULT },
+	{ name: "main", url: "/", type: linkTypes.DEFAULT },
+	{ name: "internship", url: "/internship", type: linkTypes.DEFAULT },
+	{ name: "projects", url: "/projects", type: linkTypes.DEFAULT },
+	{ name: "blog", url: "/blog", type: linkTypes.DEFAULT },
+	{ name: "contacts", url: "/contacts", type: linkTypes.DEFAULT },
 ];

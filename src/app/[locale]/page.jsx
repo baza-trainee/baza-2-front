@@ -6,10 +6,12 @@ import ReviewsSection from "@/src/components/ReviewsSection/ReviewsSection";
 import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
+import HeroSection from "@/src/components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
     <main>
+      <HeroSection />
       <HistorySection />
       <Counter />
       <MentorSection />

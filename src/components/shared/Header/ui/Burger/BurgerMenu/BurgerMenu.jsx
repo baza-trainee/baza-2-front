@@ -1,33 +1,31 @@
 "use client";
 
-import { CSSTransition } from "react-transition-group";
 import clsx from "clsx";
 import Link from "next/link";
 import { useCallback, useEffect } from "react";
 import { links } from "./links";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { transformUrl } from "../../../lib/transformUrl";
+import { useTranslations } from "next-intl";
+import MainButton from "@/src/components/shared/MainButton/MainButton";
 import styles from "./BurgerMenu.module.scss";
+import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
-  const router = useRouter();
   const pathname = usePathname();
   const pathnameWithoutLang = transformUrl(pathname);
+  const t = useTranslations("Header");
 
-  const handleRouteChange = useCallback(() => {
-    setMenuOpened((prev) => !prev);
-  }, []);
+  const handleClose = useCallback(() => {
+    if (menuOpened) setMenuOpened(false);
+  }, [pathname]);
 
-  //при переходе на какуюто страницу закрываем бургер и тоглим стейт в 'false'
-  // useEffect(() => {
-  //   router.events.on("routeChangeStart", handleRouteChange);
+  // при переходе на какуюто страницу закрываем бургер и тоглим стейт в 'false'
+  useEffect(() => {
+    handleClose();
+  }, [pathname]);
 
-  //   return () => {
-  //     router.events.off("routeChangeStart", handleRouteChange);
-  //   };
-  // }, []);
-
-  // useBodyLock(openedMenu);
+  useBodyLock(menuOpened);
 
   return (
     <nav className={clsx(styles.burgerMenu, menuOpened && styles.opened)}>
@@ -36,27 +34,23 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
           const isCurrentPage = pathnameWithoutLang === link.href;
 
           return (
-            <CSSTransition
-              classNames={{ enterDone: styles.Done }}
-              in={menuOpened}
-              key={i}
-              timeout={link.timeout}
-            >
-              <li className={styles.burgerMenuItem}>
-                <Link
-                  href={link.href}
-                  className={clsx(
-                    styles.burgerMenuLink,
-                    isCurrentPage && styles.active
-                  )}
-                >
-                  {link.content}
-                </Link>
-              </li>
-            </CSSTransition>
+            <li onClick={handleClose} className={styles.burgerMenuItem}>
+              <Link
+                href={link.href}
+                className={clsx(
+                  styles.burgerMenuLink,
+                  isCurrentPage && styles.active
+                )}
+              >
+                {t(link.content)}
+              </Link>
+            </li>
           );
         })}
       </ul>
+      <MainButton className={styles.burgerBtn}>
+        {t("btn_support_project")}
+      </MainButton>
     </nav>
   );
 };
