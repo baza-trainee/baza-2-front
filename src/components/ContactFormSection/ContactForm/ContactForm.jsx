@@ -7,6 +7,7 @@ import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import SendIcon from "./sendIcon/sendIcon";
 
+
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
   const {
@@ -15,12 +16,12 @@ export default function ContactForm() {
     formState: { errors, isValid, isDirty, isSubmitSuccessful },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
- 
+
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
-  
+
   const isDisabled = () => {
     if (errors.firstName || errors.email || errors.message) {
       return true;
