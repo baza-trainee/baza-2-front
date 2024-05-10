@@ -23,7 +23,7 @@ export default function Home() {
       <Counter />
       <MentorSection />
       <StructureSectionTest />
-      <Timeline />
+      {/* <Timeline /> */}
       <ContactFormSection />
       <ArticlesSection />
       <ScrollToTopBtn />
