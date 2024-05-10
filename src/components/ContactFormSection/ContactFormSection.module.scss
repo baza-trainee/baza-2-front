@@ -2,9 +2,9 @@
 @import "../../styles/mixins";
 
 .section{
-  padding: 60px 64px;
+  padding: 60px 0;
   .wrapper{
-    width: 673px;
+    width: clamp(230px, 92vw, 673px);
     display: flex;
     flex-direction: column;
     align-items: center;

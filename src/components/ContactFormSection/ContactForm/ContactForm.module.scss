@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   & :hover input,
   & :hover textarea {
     background: $secondary-hover;
@@ -12,6 +13,18 @@
   & :focus input,
   & :focus textarea {
     background: $secondary-white;
+  }
+  .send {
+    position: absolute;
+    bottom: 50px;
+    animation: 2s linear send-slide;
+    opacity: 0;
+    z-index: 20;
+  }
+  .send > svg{
+    display: block;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -21,3 +34,14 @@
   gap: 24px;
   margin-bottom: 40px;
 }
+
+@keyframes send-slide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-110vh) scale(2);
+  }
+}
+
