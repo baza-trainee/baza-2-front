@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "../../styles/variables" as var;
+@use "../../styles/mixins.scss" as mx;
 
 .section{
   padding: 60px 0;
@@ -15,7 +15,7 @@
     box-shadow: inset 0 2px 16px 0 rgba(154, 149, 153, 0.6);
     background: rgba(210, 210, 210, 0.5); 
     & > h2{
-      @include apply-font-styles($h2-font);
+      @include mx.apply-font-styles(var.$h2-font);
     }
   }
 }
