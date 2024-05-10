@@ -1,51 +1,80 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
 .btn_main {
-  @include apply-font-styles($button);
-  color: $secondary-white;
+  @include mx.apply-font-styles(var.$button);
+  position: relative;
+  overflow: hidden;
+  color: var.$secondary-white;
   padding: 14px 24px;
   border-radius: 8px;
   cursor: pointer;
-  background: $button-gradient;
+  z-index: 2;
   box-shadow: none;
   border: none;
-  transition: all $transition-duration-base $transition-timing-base;
+  transition: all var.$transition-duration-base var.$transition-timing-base;
 
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var.$button-gradient;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+  }
+  
+  &::before {
+    content: "";
+    position: absolute;
+    opacity: 1;
+    z-index: -1;
+    top:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var.$primary-hover;
+  }
+
+  &:hover::after,
+  &:focus:after{
+    opacity: 0;
+  }
   &:hover,
   &:focus {
-    background: linear-gradient(0deg, $primary-hover, $primary-hover);
-    color: $secondary-black;
+    color: var.$secondary-black;
   }
 
   &:disabled {
-    background: $secondary-gray;
-    color: $secondary-text;
+    background: var.$secondary-gray;
+    color: var.$secondary-text;
     cursor: default;
   }
 }
 
 .btn_modal {
-  @include apply-font-styles($text-20-font);
-  color: $secondary-white;
+  @include mx.apply-font-styles(var.$text-20-font);
+  color: var.$secondary-white;
   padding: 15px 32px;
-  border: 1px solid $secondary-white;
+  border: 1px solid var.$secondary-white;
   border-radius: 8px;
   cursor: pointer;
   background: none;
   box-shadow: none;
-  transition: all $transition-duration-base $transition-timing-base;
+  transition: all var.$transition-duration-base var.$transition-timing-base;
 
   &:hover,
   &:focus {
     box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
-    background: $secondary-hover;
-    color: $secondary-black;
+    background: var.$secondary-hover;
+    color: var.$secondary-black;
   }
 
   &:disabled {
-    background: $secondary-gray;
-    color: $secondary-text;
+    background: var.$secondary-gray;
+    color: var.$secondary-text;
     cursor: default;
   }
 }
