@@ -10,7 +10,8 @@ import { useTranslations } from "next-intl";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import styles from "./BurgerMenu.module.scss";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
-import { createKey } from "../../../../../../lib/utils/createKey";
+import { createKey } from "@/src/lib/utils/createKey";
+//import { createKey } from "../../../../../../lib/utils/createKey";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   const pathname = usePathname();
@@ -33,12 +34,12 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
       <ul className={styles.burgerList}>
         {links.map((link, i) => {
           const isCurrentPage = pathnameWithoutLang === link.href;
-          const liKey = createKey();
+          //const liKey = createKey();
           return (
             <li
               onClick={handleClose}
               className={styles.burgerMenuItem}
-              key={liKey}
+              key={createKey()}
             >
               <Link
                 href={link.href}
