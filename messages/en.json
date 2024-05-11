@@ -59,9 +59,9 @@
 		},
 		"counter_section": {
 			"title": "Наш прогрес",
-			"active_projects": "активних проєктів",
-			"involved_participants": "залучених учасників",
-			"employed": "працевлаштовано"
+			"active_projects": "active projects",
+			"involved_participants": "involved participants",
+			"employed": "employed"
 		},
 		"mentor_section": {
 			"title": "Ментору",
