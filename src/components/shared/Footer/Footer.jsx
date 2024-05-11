@@ -1,10 +1,10 @@
 import React from "react";
-import ContactLinks from "../shared/ContactLinks/ContactLinks";
-import SocialIcons from "../shared/SocialIcons/SocialIcons";
-import FooterLinks from "../shared/FooterLinks/FooterLinks";
+import ContactLinks from "../ContactLinks/ContactLinks";
+import SocialIcons from "../SocialIcons/SocialIcons";
+import FooterLinks from "../FooterLinks/FooterLinks";
 import styles from "./Footer.module.scss";
-import Logo from "../shared/Logo/Logo";
-import Copyright from "../shared/Copyright/Copyright";
+import Logo from "../Logo/Logo";
+import Copyright from "../Copyright/Copyright";
 
 const Footer = () => {
   return (

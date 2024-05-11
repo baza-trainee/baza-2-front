@@ -1,32 +1,29 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mixin;
 
 .link {
-  @include apply-font-styles($h3-font);
-
+  @include mixin.apply-font-styles(var.$h3-font);
   position: relative;
-
-  color: $secondary-white;
-  text-decoration: none;
-
-  transition: all 0.3s ease 0s;
+  padding: 3px 0;
+  color: var.$secondary-white;
+  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   @media (any-hover: hover) {
     &:hover,
     &:focus {
-      color: $primary-hover;
+      color: var.$primary-hover;
     }
   }
 
   &:active {
-    color: $secondary-white;
+    color: var.$secondary-white;
     &::before {
       width: 100%;
-      background-color: $secondary-white;
+      background-color: var.$secondary-white;
     }
   }
 
   &--default {
-    color: $secondary-white;
+    color: var.$secondary-white;
     &::before {
       content: "";
       width: 0;
@@ -34,42 +31,42 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: $primary-hover;
+      background-color: var.$primary-hover;
       transition: all 0.3s ease 0s;
     }
     @media (any-hover: hover) {
       &:hover,
       &:focus {
-        color: $primary-hover;
+        color: var.$primary-hover;
         &::before {
           width: 100%;
         }
       }
       &:active {
-        color: $secondary-white;
+        color: var.$secondary-white;
         &::before {
           width: 100%;
-          background-color: $secondary-white;
+          background-color: var.$secondary-white;
         }
       }
     }
   }
 
   &--help {
-    border-bottom: 1px solid $secondary-white;
+    border-bottom: 1px solid var.$secondary-white;
     @media (any-hover: hover) {
       &:hover,
       &:focus {
-        border-bottom: 1px solid $primary-hover;
+        border-bottom: 1px solid var.$primary-hover;
       }
       &:active {
-        border-bottom: 1px solid $secondary-white;
+        border-bottom: 1px solid var.$secondary-white;
       }
     }
   }
 
   &--footer {
-    color: $secondary-white;
+    color: var.$secondary-white;
     @media (any-hover: hover) {
       &:active {
         text-decoration: underline;

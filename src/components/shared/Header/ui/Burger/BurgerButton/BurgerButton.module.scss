@@ -1,0 +1,55 @@
+@use "sass:math";
+@use "../../../../../../styles/variables" as var;
+
+.burgerIcon {
+  display: none;
+  @media (max-width: 992px) {
+    display: block;
+    position: relative;
+    width: 27px;
+    height: 21px;
+    z-index: 11;
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var.$secondary-white;
+      opacity: 0.6;
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - 1px);
+    }
+    &.opened {
+      span {
+        width: 0;
+      }
+      &::before {
+        top: calc(50% - 1px);
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - 1px);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
