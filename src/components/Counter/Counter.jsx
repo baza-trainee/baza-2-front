@@ -2,6 +2,7 @@
 import CountUp from "react-countup";
 import styles from "./counter.module.scss";
 import { useTranslations } from "next-intl";
+import { createKey } from "@/src/lib/utils/createKey";
 
 const data = [
   {
@@ -26,9 +27,9 @@ const CounterComponent = () => {
   return (
     <section className={styles.counter}>
       <ul className={styles.list}>
-        {data.map((item, index) => {
+        {data.map((item) => {
           return (
-            <li key={index}>
+            <li key={createKey()}>
               <h1 className={styles.item}>
                 <CountUp
                   start={0}
