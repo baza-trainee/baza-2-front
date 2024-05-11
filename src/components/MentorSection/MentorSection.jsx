@@ -1,29 +1,26 @@
 import Image from "next/image";
 import img from "./Images/image.jpg"
 import MainButton from "../shared/MainButton/MainButton";
+import { useTranslations } from "next-intl";
 
 import styles from "./MentorSection.module.scss";
 
 const MentorSection = () => {
+  const t = useTranslations("Main.mentor_section");
   return (
     <section className={styles.mentor}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Ментору</h1>
+        <h1 className={styles.title}>{t("title")}</h1>
         <div className={styles.wrapper}>
           <div className={styles.text}>
             <p>
-              Ментор - це колега на два рівні вищий за менторі, який слідкує за
-              виконанням задач і допомагає порадою або роз`ясненням, коли учасник
-              не впевнений в рішенні.
+              {t("paragraph_1")}
             </p>
             <p>
-              Наші ментори - практики провідних ІТ-компаній України, які прагнуть
-              підтримати новачків знаннями і розширити власні управлінські
-              навички.
+              {t("paragraph_2")}
             </p>
             <p>
-              На Baza Trainee Ukraine ментор направляє команду одразу з декількох
-              осіб, спряючи їхньому професійному розвитку.
+              {t("paragraph_3")}
             </p>
           </div>
           <Image
@@ -34,7 +31,7 @@ const MentorSection = () => {
             alt="About mentor team"
           />
         </div>
-        <MainButton>Стати ментором</MainButton>
+        <MainButton>{t("btn_mentor")}</MainButton>
       </div>
     </section>
   );

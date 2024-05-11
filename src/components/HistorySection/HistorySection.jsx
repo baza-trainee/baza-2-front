@@ -10,7 +10,7 @@ const HistorySection = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>{t('title')}</h1>
         <p className={styles.text}>
-        {t('text')}
+          {t('text')}
           <br /> {t('text1')}
         </p>
         <Timeline />
