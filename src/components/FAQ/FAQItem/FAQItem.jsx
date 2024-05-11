@@ -19,7 +19,7 @@ const FAQItem = ({ title, description }) => {
   return (
     <div className={styles.faqItem}>
       <div onClick={toggleDescription} className={styles.titleRow}>
-        <p className={styles.title}>{title}</p>
+        <h3 className={styles.title}>{title}</h3>
         <button className={clsx(styles.plus, showMore && styles.plusActive)}>
           <span />
           <span />

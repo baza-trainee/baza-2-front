@@ -21,6 +21,18 @@
       #490735 100%
     );
   }
+  @media (any-hover: hover) {
+    &:hover {
+      button {
+        & > span {
+          background-color: var.$primary-hover;
+        }
+      }
+      h3 {
+        color: var.$primary-hover;
+      }
+    }
+  }
 }
 .titleRow {
   display: flex;
@@ -38,6 +50,7 @@
   font-size: 22px;
   line-height: 140%;
   font-weight: 700;
+  transition: color var.$transition-duration-base var.$transition-timing-base 0s;
 }
 .plus {
   width: 48px;
@@ -50,8 +63,7 @@
     height: 3px;
     border-radius: 5px;
     background-color: #fff;
-    transition: transform var.$transition-duration-base
-      var.$transition-timing-base 0s;
+    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
     &:first-child {
       transform: rotate(-90deg) translateX(-3px);
     }

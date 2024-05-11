@@ -1,0 +1,10 @@
+.menu {
+  display: flex;
+  align-items: center;
+  column-gap: 32px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
