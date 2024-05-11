@@ -1,10 +1,12 @@
 import { PageNotFound } from "@/src/components/PageNotFound/PageNotFound";
+import { useTranslations } from "next-intl";
 
 export default function NotFound() {
+  const t = useTranslations("Page_404");
   return (
     <PageNotFound
-      text="Вибачте, сторінка, яку ви шукаєте, переміщена або видалена."
-      textErrBtn="Повернутись на головну"
+      textErr={t('title')}
+      textErrBtn={t('btn_home')}
     />
   );
 }

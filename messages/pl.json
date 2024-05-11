@@ -167,6 +167,11 @@
     "btn_home": "Powrót do strony głównej"
   },
 
+  "Error": {
+    "title": "Przepraszam, coś poszło nie tak.",
+    "btn_home": "Spróbuj ponownie"
+  },
+
   "Modal": {
     "amount": "Kwota doładowania",
     "UAH": "UAN",
