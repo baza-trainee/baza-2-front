@@ -5,23 +5,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
-  min-height: 100vh;
+  max-height: 100vh;
 
   h2 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 200px;
+    @include mx.apply-font-styles(var.$h2-font);
+
+    font-size: 130px;
     color: var.$secondary-gray;
+    margin-bottom: 32px;
+
+    @include mx.media-q("md") {
+      font-size: 200px;
+    }
   }
 
   p {
     @include mx.apply-font-styles(var.$h2-font);
 
+    font-size: 20px;
+
     font-weight: 700;
     color: var.$secondary-white;
 
     margin-bottom: 48px;
+    text-align: center;
+
+    @include mx.media-q("md") {
+      font-size: 24px;
+    }
   }
 }
 

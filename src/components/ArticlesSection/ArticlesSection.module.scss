@@ -3,12 +3,23 @@
 
 .articlesContainer {
   max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 24px;
-  margin-bottom: 60px;
-  margin-top: 60px;
+  margin: 16px auto;
+  padding: 0 10px;
+
+  @include mx.media-q("sm") {
+    margin-top: 24px;
+    margin-bottom: 41px;
+    padding: 0 20px;
+  }
+
+  @include mx.media-q("md") {
+    margin-bottom: 48.5px;
+    margin-top: 48px;
+    padding: 0 24px;
+  }
 
   @include mx.media-q("lg") {
+    margin: 60px auto;
     padding: 0 64px;
   }
 
@@ -18,28 +29,21 @@
 
   @include mx.media-q("xxxl") {
     padding: 0 120px;
-    margin-top: 72px;
-    margin-bottom: 72px;
+    margin: 72px auto;
   }
 }
 
 .wrapperAll {
   position: relative;
   margin: 0 auto;
-  width: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: flex-end;
-  // gap: 104px;
-  max-width: 1320px;
-  margin-bottom: 48px;
 
-  @include mx.media-q("lg") {
-    gap: 319px;
+  max-width: 1320px;
+  margin-bottom: 16px;
+
+  @include mx.media-q("md") {
+    margin-bottom: 48px;
   }
-  @include mx.media-q("xl") {
-    gap: 363px;
-  }
+
   @include mx.media-q("xxxl") {
     margin-bottom: 56px;
   }
@@ -47,17 +51,38 @@
 
 .title {
   @include mx.apply-font-styles(var.$h1-font);
+  font-size: 24px;
+
   text-align: center;
   margin: 10px 0;
+
+  @include mx.media-q("md") {
+    font-size: 32px;
+  }
+
+  @include mx.media-q("lg") {
+    font-size: 40px;
+  }
 }
 
 .navigationButtons {
-  position: absolute;
-  top: 5px;
-  right: 0;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+  display: none;
+
+  @include mx.media-q("md") {
+    position: absolute;
+    top: -3px;
+    right: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  @include mx.media-q("lg") {
+    right: 0;
+  }
+
+  @include mx.media-q("xxl") {
+    top: 0;
+  }
 }
 
 .prevElArticle {
@@ -66,5 +91,18 @@
 
 .mySwiperItem {
   flex-shrink: 1;
-  max-width: 397px;
+  max-width: 350px;
+  margin-bottom: 16px;
+
+  @include mx.media-q("lg") {
+    max-width: 397px;
+  }
+}
+
+.paginationArticle {
+  justify-content: center;
+
+  // @include mx.media-q("md") {
+  //   display: none;
+  // }
 }
