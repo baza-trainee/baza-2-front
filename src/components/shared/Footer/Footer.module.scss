@@ -2,11 +2,12 @@
 
 .section {
   background-color: $primary-footer;
-  padding: 0 120px;
 }
 
 .block {
   max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .footer {
@@ -15,12 +16,7 @@
   justify-content: space-between;
 }
 
-.logo {
-  padding: 0 73px 52px 0;
-}
-
 .contacts {
-  width: 397px;
   display: flex;
   flex-direction: column;
   gap: 24px;

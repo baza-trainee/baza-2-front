@@ -9,7 +9,7 @@ import HelpLinks from "../FooterLinks/HelpLinks";
 
 const Footer = () => {
   return (
-    <div className={styles.section}>
+    <footer className={styles.section}>
       <div className={styles.block}>
         <div className={styles.footer}>
           <Logo variant="footer" className={styles.logo} />
@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
       </div>
       <Copyright />
-    </div>
+    </footer>
   );
 };
 
