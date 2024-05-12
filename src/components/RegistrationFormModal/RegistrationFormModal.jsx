@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+//import ReactDOM from "react-dom";
 import styles from "./RegistrationFormModal.module.scss";
 import InputField from "../shared/InputField/InputField";
 import { useForm } from "react-hook-form";
@@ -8,8 +8,14 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
+import useStateModal from "@/src/state/useStateModal";
+import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
-const RegistrationFormModal = ({ isOpen, onClose }) => {
+
+const RegistrationFormModal = () => {
+  const isOpen = useStateModal((state) => state.isOpen)
+  const onClose = useStateModal((state) => state.close)
+  
   const t = useTranslations("Modal_form");
   const modalRef = React.useRef();
   const {
@@ -19,22 +25,22 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+  useBodyLock(isOpen);
+  // useEffect(() => {
+  //   function handleClickOutside(event) {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       onClose();
+  //     }
+  //   }
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
-      }
-    }
+  //   if (isOpen) {
+  //     window.addEventListener("click", handleClickOutside);
+  //   }
 
-    if (isOpen) {
-      window.addEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
+  //   return () => {
+  //     window.removeEventListener("click", handleClickOutside);
+  //   };
+  // }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -132,8 +138,8 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
     },
   ];
 
-  return ReactDOM.createPortal(
-    <div className={styles.modalOverlay} onClick={onClose}>
+  return(
+  <div className={styles.modalOverlay} onClick={onClose}>
       <div
         className={styles.modal}
         ref={modalRef}
@@ -160,9 +166,39 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
           </MainButton>
         </form>
       </div>
-    </div>,
-    document.body
-  );
+    </div>
+)
+  // return ReactDOM.createPortal(
+  //   <div className={styles.modalOverlay} onClick={onClose}>
+  //     <div
+  //       className={styles.modal}
+  //       ref={modalRef}
+  //       onClick={(e) => e.stopPropagation()}
+  //     >
+  //       <button className={styles.closeButton} onClick={onClose}>
+  //         <Icon name="close" width={20} height={20} />
+  //       </button>
+  //       <form onSubmit={handleSubmit(onSubmit)}>
+  //         <h2>{t("title")}</h2>
+  //         <ul className={styles.list}>
+  //           {inputFields.map((field) => (
+  //             <li key={field.id}>
+  //               <InputField {...field} />
+  //             </li>
+  //           ))}
+  //         </ul>
+  //         <MainButton
+  //           type="submit"
+  //           disabled={!isDirty || !isValid}
+  //           className={styles.submit}
+  //         >
+  //           {t("btn_send")}
+  //         </MainButton>
+  //       </form>
+  //     </div>
+  //   </div>,
+  //   document.body
+  // );
 };
 
 export default RegistrationFormModal;

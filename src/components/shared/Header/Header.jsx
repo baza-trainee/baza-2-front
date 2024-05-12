@@ -8,19 +8,19 @@ import LangDropdown from "../LangDropdown/LangDropdown";
 import Menu from "./ui/Menu/Menu";
 import styles from "./Header.module.scss";
 import Burger from "./ui/Burger/Burger";
-
+import useStateModal from "@/src/state/useStateModal";
 const Header = () => {
   const t = useTranslations("Header");
-
+  const open = useStateModal((state) => state.open)
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <Logo variant="header" className={styles.logo} />
         <Menu />
         <div className={styles.actions}>
-          <MainButton className={styles.headerBtn}>
+          <MainButton className={styles.headerBtn} onClick={open }>
             {t("btn_support_project")}
-          </MainButton>
+          </MainButton >
           <LangDropdown />
           <Burger />
         </div>
