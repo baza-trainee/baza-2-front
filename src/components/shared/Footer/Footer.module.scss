@@ -8,6 +8,9 @@
   max-width: 1680px;
   margin: 0 auto;
   padding: 0 15px;
+  @media (max-width: 1440px) {
+    max-width: 1280px;
+  }
 }
 
 .footer {
