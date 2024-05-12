@@ -1,5 +1,5 @@
-@use "../../../../../../styles/variables" as var;
-@use "../../../../../../styles/mixins" as mx;
+@use "../../../../../styles/variables" as var;
+@use "../../../../../styles/mixins" as mx;
 
 .burgerMenu {
   position: absolute;
@@ -38,6 +38,7 @@
     display: none;
   }
 }
+
 .burgerList {
   display: flex;
   flex-direction: column;
@@ -45,26 +46,4 @@
   gap: 30px;
   padding: 12px 0;
   margin-bottom: 32px;
-}
-
-.burgerMenuLink {
-  @include mx.apply-font-styles(var.$text-20-font);
-  position: relative;
-  display: block;
-  font-weight: 700;
-  line-height: 1.2;
-  padding-left: 14px;
-  height: 100%;
-  &.active {
-    color: var.$primary-hover;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background-color: var.$primary-hover;
-    }
-  }
 }

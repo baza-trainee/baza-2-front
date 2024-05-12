@@ -1,21 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
 import { useCallback, useEffect } from "react";
-import { links } from "./links";
-import { usePathname } from "next/navigation";
-import { transformUrl } from "../../../lib/transformUrl";
 import { useTranslations } from "next-intl";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
-import styles from "./BurgerMenu.module.scss";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
+import { usePathname } from "@/src/navigation";
+import styles from "./BurgerMenu.module.scss";
+import { links } from "./links";
+import MainLink from "../../../MainLink/MainLink";
 import { createKey } from "@/src/lib/utils/createKey";
-//import { createKey } from "../../../../../../lib/utils/createKey";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   const pathname = usePathname();
-  const pathnameWithoutLang = transformUrl(pathname);
   const t = useTranslations("Header");
 
   const handleClose = useCallback(() => {
@@ -32,27 +29,21 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   return (
     <nav className={clsx(styles.burgerMenu, menuOpened && styles.opened)}>
       <ul className={styles.burgerList}>
-        {links.map((link, i) => {
-          const isCurrentPage = pathnameWithoutLang === link.href;
-          //const liKey = createKey();
-          return (
-            <li
-              onClick={handleClose}
-              className={styles.burgerMenuItem}
-              key={createKey()}
+        {links?.map((link) => (
+          <li
+            onClick={handleClose}
+            className={styles.burgerMenuItem}
+            key={createKey()}
+          >
+            <MainLink
+              url={link.href}
+              type={link.type}
+              // handleClose={handleClose}
             >
-              <Link
-                href={link.href}
-                className={clsx(
-                  styles.burgerMenuLink,
-                  isCurrentPage && styles.active
-                )}
-              >
-                {t(link.content)}
-              </Link>
-            </li>
-          );
-        })}
+              {t(link.content)}
+            </MainLink>
+          </li>
+        ))}
       </ul>
       <MainButton className={styles.burgerBtn}>
         {t("btn_support_project")}
