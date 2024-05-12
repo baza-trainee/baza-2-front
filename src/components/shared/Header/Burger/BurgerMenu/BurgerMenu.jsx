@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 import { usePathname } from "@/src/navigation";
-import styles from "./BurgerMenu.module.scss";
 import { links } from "./links";
-import MainLink from "../../../MainLink/MainLink";
 import { createKey } from "@/src/lib/utils/createKey";
+import MainLink from "../../../MainLink/MainLink";
+import styles from "./BurgerMenu.module.scss";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
 
   const handleClose = useCallback(() => {
     if (menuOpened) setMenuOpened(false);
-  }, [pathname]);
+  }, [menuOpened]);
 
   // при переходе на какуюто страницу закрываем бургер и тоглим стейт в 'false'
   useEffect(() => {
@@ -30,15 +30,11 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
     <nav className={clsx(styles.burgerMenu, menuOpened && styles.opened)}>
       <ul className={styles.burgerList}>
         {links?.map((link) => (
-          <li
-            onClick={handleClose}
-            className={styles.burgerMenuItem}
-            key={createKey()}
-          >
+          <li className={styles.burgerMenuItem} key={createKey()}>
             <MainLink
               url={link.href}
               type={link.type}
-              // handleClose={handleClose}
+              handleClose={handleClose}
             >
               {t(link.content)}
             </MainLink>

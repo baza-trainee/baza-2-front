@@ -16,9 +16,8 @@ const MainLink = ({
   const isCurrentPage = pathname === url;
 
   const scrollToBottom = (event) => {
-    // if (type === linkTypes.BURGER) handleClose();
+    if (type === linkTypes.BURGER) handleClose();
     if (url === "/contacts") {
-      // handleClose();
       event.preventDefault();
       window.scrollTo({
         top: document.documentElement.scrollHeight,
