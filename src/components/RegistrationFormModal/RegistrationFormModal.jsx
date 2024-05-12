@@ -15,7 +15,7 @@ import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 const RegistrationFormModal = () => {
   const isOpen = useStateModal((state) => state.isOpen)
   const onClose = useStateModal((state) => state.close)
-  
+
   const t = useTranslations("Modal_form");
   const modalRef = React.useRef();
   const {
@@ -25,6 +25,7 @@ const RegistrationFormModal = () => {
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+  
   useBodyLock(isOpen);
   // useEffect(() => {
   //   function handleClickOutside(event) {

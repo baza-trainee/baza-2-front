@@ -18,7 +18,7 @@ const Header = () => {
         <Logo variant="header" className={styles.logo} />
         <Menu />
         <div className={styles.actions}>
-          <MainButton className={styles.headerBtn} onClick={open }>
+          <MainButton className={styles.headerBtn} onClick={open}>
             {t("btn_support_project")}
           </MainButton >
           <LangDropdown />

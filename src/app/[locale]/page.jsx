@@ -7,6 +7,7 @@ import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import HeroSection from "@/src/components/HeroSection/HeroSection";
+import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
 //import useStateModal from "@/src/state/useStateModal";
 
 //const isOpen = useStateModal((state) => state.isOpen)
@@ -25,6 +26,7 @@ export default function Home() {
       <ArticlesSection />
       <ContactFormSection />
       <ScrollToTopBtn />
+      <RegistrationFormModal/>
     </main>
   );
 }
