@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import clsx from "clsx";
 
@@ -12,6 +13,7 @@ import data from "./data";
 import styles from "./timeline.module.scss";
 
 const Timeline = () => {
+  const t = useTranslations("Main.history_project_section.history");
   const [isScrollDown, setIsScrollDown] = useState(false);
   const timelineRef = useRef(null);
   const timelineDrawRef = useRef(null);
@@ -63,8 +65,8 @@ const Timeline = () => {
                 id={item.id}
                 key={item.id}
               >
-                <p className={styles.title}>{item.title}</p>
-                <p className={styles.text}>{item.text}</p>
+                <p className={styles.title}>{t(`${item.id}.${item.title}`)}</p>
+                <p className={styles.text}>{t(`${item.id}.${item.text}`)}</p>
               </li>
             );
           })}

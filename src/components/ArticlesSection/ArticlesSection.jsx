@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { items } from "./items";
 
 import styles from "./ArticlesSection.module.scss";
+import { createKey } from "@/src/lib/utils/createKey";
 
 export const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");
@@ -42,7 +43,7 @@ export const ArticlesSection = () => {
           },
         }}
         items={items}
-        renderItem={(item) => <ArticleCard key={Date.now()} item={item} />}
+        renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
       />
     </section>
   );

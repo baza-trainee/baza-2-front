@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
 .form {
   display: flex;
@@ -8,16 +8,16 @@
   position: relative;
   & :hover input,
   & :hover textarea {
-    background: $secondary-hover;
+    background: var.$secondary-hover;
   }
   & :focus input,
   & :focus textarea {
-    background: $secondary-white;
+    background: var.$secondary-white;
   }
   .send {
     position: absolute;
     bottom: 50px;
-    animation: 2s linear send-slide;
+    animation: 1.5s linear send-slide;
     opacity: 0;
     z-index: 20;
   }
@@ -44,4 +44,3 @@
     transform: translateY(-110vh) scale(2);
   }
 }
-

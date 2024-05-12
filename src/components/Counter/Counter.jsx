@@ -1,32 +1,35 @@
 "use client";
 import CountUp from "react-countup";
 import styles from "./counter.module.scss";
+import { useTranslations } from "next-intl";
+import { createKey } from "@/src/lib/utils/createKey";
 
 const data = [
   {
     id: 1,
     count: 41,
-    title: "активних проєктів",
+    title: "active_projects",
   },
   {
     id: 2,
     count: 371,
-    title: "залучених учасників",
+    title: "involved_participants",
   },
   {
     id: 3,
     count: 87,
-    title: "працевлаштовано",
+    title: "employed",
   },
 ];
 
 const CounterComponent = () => {
+  const t = useTranslations("Main.counter_section");
   return (
     <section className={styles.counter}>
       <ul className={styles.list}>
-        {data.map((item, index) => {
+        {data.map((item) => {
           return (
-            <li key={index}>
+            <li key={createKey()}>
               <h1 className={styles.item}>
                 <CountUp
                   start={0}
@@ -35,7 +38,7 @@ const CounterComponent = () => {
                   formattingFn={(value) => `${value}+`}
                 />
               </h1>
-              <p className={styles.title}>{item.title}</p>
+              <p className={styles.title}>{t(item.title)}</p>
             </li>
           );
         })}

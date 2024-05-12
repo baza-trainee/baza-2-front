@@ -1,44 +1,44 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
 .item {
-  width: clamp(230px, 84vw, 625px);
+  width: clamp(250px, 84vw, 625px);
   display: flex;
   flex-direction: column;
   & > label {
-    @include apply-font-styles($text-20-font);
+    @include mx.apply-font-styles(var.$text-20-font);
     & > span {
-      color: $secondary-error;
+      color: var.$secondary-error;
     }
   }
   & > input {
-    @include apply-font-styles($text-16-font);
+    @include mx.apply-font-styles(var.$text-16-font);
     color: secondary-black;
     border: 2px solid transparent;
     border-radius: 8px;
     padding: 10px;
     outline: 0;
-    background: $secondary-white;
-    transition: all $transition-duration-base $transition-timing-base;
+    background: var.$secondary-white;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
   }
   & > textarea {
-    @include apply-font-styles($text-16-font);
-    color: secondary-black;
+    @include mx.apply-font-styles(var.$text-16-font);
+    color: var.$secondary-black;
     border: 2px solid transparent;
     border-radius: 8px;
     padding: 10px;
     outline: 0;
-    background: $secondary-white;
+    background: var.$secondary-white;
     min-height: 132px;
     resize: none;
-    transition: all $transition-duration-base $transition-timing-base;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
   }
 }
 .input._error {
-  border: 2px solid $secondary-error;
+  border: 2px solid var.$secondary-error;
 }
 .input._success {
-  border: 2px solid $secondary-positive;
+  border: 2px solid var.$secondary-positive;
 }
 
 .checkboxGroup {
@@ -76,14 +76,14 @@
   }
 }
 .boxLabel1 {
-  @include apply-font-styles($button);
+  @include mx.apply-font-styles(var.$button);
   cursor: pointer;
   position: flex;
   justify-content: center;
 }
 
 .boxLabel2 {
-  @include apply-font-styles($text-16-font);
+  @include mx.apply-font-styles(var.$text-16-font);
   cursor: pointer;
   position: flex;
   justify-content: center;

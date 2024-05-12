@@ -33,25 +33,26 @@
     },
     "history_project_section": {
       "title": "Historia projektu",
-      "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży. W ciągu roku osiągnęliśmy znaczący sukces:",
+      "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
+      "text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
       "history": {
-        "history_item_1": {
+        "item1": {
           "date": "Kwiecień 2023:",
           "text": "Start projektu Baza Trainee Ukraine"
         },
-        "history_item_2": {
+        "item2": {
           "date": "Sierpień 2023:",
           "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów."
         },
-        "history_item_3": {
+        "item3": {
           "date": "Listopad 2023:",
           "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów."
         },
-        "history_item_4": {
+        "item4": {
           "date": "Grudzień 2023:",
           "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów."
         },
-        "history_item_5": {
+        "item5": {
           "date": "Marzec 2024:",
           "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi."
         }
@@ -165,6 +166,11 @@
   "Page_404": {
     "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
     "btn_home": "Powrót do strony głównej"
+  },
+
+  "Error": {
+    "title": "Przepraszam, coś poszło nie tak.",
+    "btn_home": "Spróbuj ponownie"
   },
 
   "Modal": {
