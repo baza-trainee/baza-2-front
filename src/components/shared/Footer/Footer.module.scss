@@ -2,17 +2,17 @@
 
 .section {
   background-color: $primary-footer;
+  padding: 0 120px;
 }
 
-.container {
-  max-width: 1258px;
+.block {
+  max-width: 1680px;
 }
 
 .footer {
   margin: 68px auto 56px auto;
   display: flex;
   justify-content: space-between;
-  gap: 24px;
 }
 
 .logo {

@@ -1,9 +1,9 @@
-.list {
+.helpList {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 180px;
-  *:not(:last-child) {
+  width: 397px;
+  > *:not(:last-child) {
     margin-bottom: 16px;
   }
 }
