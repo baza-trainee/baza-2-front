@@ -30,7 +30,7 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
     <nav className={clsx(styles.burgerMenu, menuOpened && styles.opened)}>
       <ul className={styles.burgerList}>
         {links?.map((link) => (
-          <li className={styles.burgerMenuItem} key={createKey()}>
+          <li key={createKey()}>
             <MainLink
               url={link.href}
               type={link.type}
