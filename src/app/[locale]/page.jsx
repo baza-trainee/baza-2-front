@@ -8,6 +8,7 @@ import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import HeroSection from "@/src/components/HeroSection/HeroSection";
 import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
+import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
 
 export default function Home() {
   
