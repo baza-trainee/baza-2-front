@@ -1,5 +1,4 @@
 @use "../../../styles/variables" as var;
-//@use "../../../styles/mixins.scss" as mx;
 
 .header {
   transition: all var.$transition-duration-base var.$transition-timing-base;
@@ -7,17 +6,10 @@
     display: block;
     width: 60px;
     height: 60px;
-    fill: #FCFCFC;
   }
-  &:hover.logo{
-    fill: #C0A4B7;
+  &:hover{
+    opacity: .6;
   }
-  // .logo:hover{
-  //   fill: #1c12a8;
-  // }
-  // &:hover{
-  //   opacity: .6;
-  // }
 }
 .footer {
   .logo {
