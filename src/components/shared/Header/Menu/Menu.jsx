@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
-import MainLink from "../../../MainLink/MainLink";
+import MainLink from "../../MainLink/MainLink";
 import { navigationLinks } from "./constants";
 import styles from "./Menu.module.scss";
+import { createKey } from "@/src/lib/utils/createKey";
 
 const Menu = () => {
   const t = useTranslations("Header");
@@ -9,7 +10,7 @@ const Menu = () => {
   return (
     <ul className={styles.menu}>
       {navigationLinks.map(({ url, name, type }) => (
-        <li key={url}>
+        <li key={createKey()}>
           <MainLink url={url} type={type}>
             {t(name)}
           </MainLink>

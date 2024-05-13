@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import Logo from "../Logo/Logo";
 import MainButton from "../MainButton/MainButton";
 import LangDropdown from "../LangDropdown/LangDropdown";
-import Menu from "./ui/Menu/Menu";
+import Menu from "./Menu/Menu";
 import styles from "./Header.module.scss";
-import Burger from "./ui/Burger/Burger";
+import Burger from "./Burger/Burger";
 
 const Header = () => {
   const t = useTranslations("Header");
