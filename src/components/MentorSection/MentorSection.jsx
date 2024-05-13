@@ -1,16 +1,12 @@
-//"use client";
 import Image from "next/image";
 import img from "./Images/image.jpg"
-//import MainButton from "../shared/MainButton/MainButton";
 import { useTranslations } from "next-intl";
 
 import styles from "./MentorSection.module.scss";
-import ControlButton from "./ControlButton";
-//import useStateModal from "@/src/state/useStateModal";
+import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtnRegistrationFormModal";
 
 const MentorSection = () => {
   const t = useTranslations("Main.mentor_section");
-  //const open = useStateModal((state) => state.open)
   return (
     <section className={styles.mentor}>
       <div className={styles.container}>
@@ -35,8 +31,9 @@ const MentorSection = () => {
             alt="About mentor team"
           />
         </div>
-        <ControlButton>{t("btn_mentor")}</ControlButton>
-        {/* <MainButton onClick={open}>{t("btn_mentor")}</MainButton> */}
+        <ControlBtnRegistrationFormModal>
+          {t("btn_mentor")}
+        </ControlBtnRegistrationFormModal>
       </div>
     </section>
   );

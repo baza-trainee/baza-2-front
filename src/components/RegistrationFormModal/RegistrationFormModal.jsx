@@ -8,13 +8,12 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
-import useStateModal from "@/src/state/useStateModal";
+import stateRegistrationFormModal from "@/src/state/stateRegistrationFormModal";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
-
 const RegistrationFormModal = () => {
-  const isOpen = useStateModal((state) => state.isOpen)
-  const onClose = useStateModal((state) => state.close)
+  const isOpen = stateRegistrationFormModal((state) => state.isOpen)
+  const onClose = stateRegistrationFormModal((state) => state.close)
 
   const t = useTranslations("Modal_form");
   const modalRef = React.useRef();
