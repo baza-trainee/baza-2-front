@@ -36,7 +36,7 @@ export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel
       onClick={scrollToTop}
       aria-label={ariaLabel}
     >
-      <Icon name="logo"/>
+      <Icon className={styles.icon} name="logo"/>
     </Link>
   );
 }
