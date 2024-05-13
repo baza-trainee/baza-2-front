@@ -1,12 +1,12 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins.scss" as mx;
 
-.section{
+.section {
   //компенсує висоту хедер
   margin-top: 80px;
   position: relative;
 
-  .buttons{
+  .buttons {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -18,7 +18,7 @@
     justify-content: space-between;
     z-index: 3;
 
-    @include mx.media-q("md") {
+    @include mx.media-q("lg") {
       display: flex;
       padding: 0 4.4%;
     }
@@ -27,7 +27,7 @@
       padding: 0 6.25%;
     }
   }
-  .pagination{
+  .pagination {
     position: absolute;
     bottom: 8.36%;
     left: 50%;
@@ -46,7 +46,6 @@
     //   bottom: 8.37%;
     // }
   }
-  
 }
 // .item{
 //   width: 100%;

@@ -90,19 +90,30 @@
 }
 
 .mySwiperItem {
-  flex-shrink: 1;
-  max-width: 350px;
   margin-bottom: 16px;
 
+  @include mx.media-q("sm") {
+    flex-shrink: 1;
+    max-width: 350px;
+  }
+
   @include mx.media-q("lg") {
+    flex-shrink: 1;
+
     max-width: 397px;
   }
 }
 
-.paginationArticle {
+.pagination {
   justify-content: center;
-
-  // @include mx.media-q("md") {
-  //   display: none;
-  // }
+}
+@media only screen and (min-width: 768px) {
+  .pagination {
+    display: none;
+  }
+}
+@include mx.media-q("md") {
+  .pagination {
+    display: none;
+  }
 }
