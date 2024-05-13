@@ -3,30 +3,67 @@
 
 .mainContainer {
   gap: 48px;
-  display: grid;
-  direction: column;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   padding: 60px 64px 60px 64px;
-  background: linear-gradient(
-    127.17deg,
-    #db97c5 -15.12%,
-    #cc4fa3 5.17%,
-    #a03a7e 32.37%,
-    #6d2656 79.03%,
-    #490735 104.82%
-  );
+  background: linear-gradient(139deg,
+   #db97c5 0%, 
+   #cc4fa3 16.91%, 
+   #a03a7e 39.6%, 
+   #6d2656 78.5%, 
+   #490735 100%);
+   @media (max-width: 1920px) {
+    padding: 72px 120px;
+    gap: 56px;
+   }
+   @media (max-width: 1440px) {
+    padding: 60px 80px;
+    gap: 48px;
+   }
+   @media (max-width: 1280px) {
+    padding: 60px 64px;
+    gap: 48px;
+   }
+   @media (max-width: 768px) {
+    padding: 48px 24px;
+    gap: 32px;
+   }
+   @media (max-width: 420px) {
+    padding: 24px 20px;
+    gap: 16px;
+   }
+  
+
 }
 
 .cardContainer {
-  display: grid;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
 }
 
 .text {
+  padding: 10px 0px;
+  width: 329px;
+  height: 80px;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0px;
   align-items: center;
-  justify-content: center;
-  display: grid;
+  display: flex;
   @include mixin.apply-font-styles(var.$h1-font);
+  @media (max-width: 420px) {
+    gap: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    @include mixin.apply-font-styles(var.$h3-font);
+  }
 }
+
+

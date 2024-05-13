@@ -7,6 +7,7 @@ import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import HeroSection from "@/src/components/HeroSection/HeroSection";
+import StructureSection from "@/src/components/StructureSection/StructureSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HistorySection />
       <Counter />
       <MentorSection />
+      <StructureSection />
       <FAQ />
       <ReviewsSection />
       <ArticlesSection />

@@ -1,9 +1,10 @@
 import styles from "./StructureCard.module.scss";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function StructureCard({ item, id }) {
   const t = useTranslations("Main.our_structure_section");
-  const { img, title, text, width, height } = item;
+  const { img, title, text, width, height, url } = item;
 
   return (
     <div className={styles.cardStyle}>
@@ -11,7 +12,6 @@ export default function StructureCard({ item, id }) {
         <div className={styles.ellipseWrapper}></div>
         <img
           className={styles.svgWrapper}
-          id={id}
           src={img}
           width={width}
           height={height}
@@ -19,8 +19,15 @@ export default function StructureCard({ item, id }) {
         />
       </div>
       <div className={styles.textCard}>
-        <p className={styles.header}>{t(title)}</p>
-        <p className={styles.text}>{t(text)}</p>
+        <Link
+          className={styles.header}
+          href={url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {t(title)}
+        </Link>
+        <h3 className={styles.text}>{t(text)}</h3>
       </div>
     </div>
   );

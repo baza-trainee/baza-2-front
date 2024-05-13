@@ -1,0 +1,110 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as var;
+
+.cardStyle {
+  border-bottom: 1px solid #2e0535;
+  padding: 0px 32px 8px 48px;
+  width: 1236px;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 48px;
+  @include mixins.media-q("sm") {    
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 380px;
+    height: fit-content;
+    padding: 0px;
+   }
+}
+
+.cardStyle:nth-child(odd) {
+  .ellipseWrapper {
+    background-color: rgba(226, 185, 213, 1);
+    fill: #e2b9d5;
+    @include mixins.media-q("sm") {    
+      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 420px;
+      height: fit-content;
+     }
+  }
+}
+
+.header {
+  @include mixins.apply-font-styles(var.$h2-font);
+  color: var.$secondary-white;
+  &:hover,
+  &:focus {
+    color: var.$primary-hover;
+  }
+  @include mixins.media-q("sm") {    
+    @include mixins.apply-font-styles(var.$h3-font);
+  }
+}
+.text {
+  color: var.$secondary-white;
+  @include mixins.apply-font-styles(var.$text-20-font);
+  @include mixins.media-q("sm") {    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    @include mixins.apply-font-styles(var.$text-16-font)
+   
+  }
+}
+.textCard {
+  width: 712px;
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  @include mixins.media-q("sm") {    
+    width: 380px;
+    padding: 0px 0px 8px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 12px;
+   
+  }
+}
+
+.ellipseWrapper {
+  width: 300px;
+  height: 157px;
+  position: absolute;
+  background-color: rgba(226, 185, 213, 0);
+  border-radius: 100%;
+  fill: #e2b9d5;
+  filter: blur(30px);
+  
+  
+}
+
+.svgWrapper {
+  position: relative; 
+  
+}
+.cardWrapper {
+  width: 400px;
+  height: 157px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
