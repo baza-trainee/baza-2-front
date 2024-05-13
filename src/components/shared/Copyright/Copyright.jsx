@@ -8,7 +8,7 @@ const Copyright = () => {
 
   return (
     <p className={styles.copyrights}>
-      {t("development")} Baza Trainee Ukraine &copy; {currentYear} {t("rights")}
+      {t("development")} Baza Trainee Ukraine {currentYear} &copy; {t("rights")}
     </p>
   );
 };
