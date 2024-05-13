@@ -14,6 +14,7 @@ const Carousel = ({
   nextEl,
   paginationEl,
   delay,
+  slidesPerView: slidesPerViewProp = 1,
   ...options
 }) => {
   const renderSlides = useCallback(
@@ -42,6 +43,7 @@ const Carousel = ({
         delay: delay,
         disableOnInteraction: false,
       }}
+      slidesPerView={slidesPerViewProp}
       className={className}
       {...options}
     >

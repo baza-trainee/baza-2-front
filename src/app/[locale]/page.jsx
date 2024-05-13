@@ -7,10 +7,7 @@ import HistorySection from "@/src/components/HistorySection/HistorySection";
 import MentorSection from "@/src/components/MentorSection/MentorSection";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import HeroSection from "@/src/components/HeroSection/HeroSection";
-import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
-//import useStateModal from "@/src/state/useStateModal";
-
-//const isOpen = useStateModal((state) => state.isOpen)
+import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 
 export default function Home() {
   
@@ -24,6 +21,7 @@ export default function Home() {
       <FAQ />
       <ReviewsSection />
       <ArticlesSection />
+      <PartnerSection />
       <ContactFormSection />
       <ScrollToTopBtn />
       <RegistrationFormModal/>
