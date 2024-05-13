@@ -37,26 +37,9 @@
     @include mx.media-q("md") {
       bottom: 8.36%;
     }
-
-    // @include mx.media-q("lg") {
-    //   bottom: 10.6%;
-    // }
-
-    // @include mx.media-q("xxl") {
-    //   bottom: 8.37%;
-    // }
   }
   
 }
-// .item{
-//   width: 100%;
-//   height: 860px;
-//   padding-top: 150px;
-//   display: flex;
-//   //align-items: center;
-//   justify-content: center;
-//   background-color: rgba(0, 255, 255, 0.589);
-// }
 .prevEl {
   transform: rotate(180deg);
 }

@@ -1,14 +1,32 @@
+@use "../../../styles/variables" as var;
+//@use "../../../styles/mixins.scss" as mx;
+
 .header {
-  & > svg {
+  transition: all var.$transition-duration-base var.$transition-timing-base;
+  .logo{
     display: block;
     width: 60px;
     height: 60px;
+    fill: #FCFCFC;
   }
+  &:hover.logo{
+    fill: #C0A4B7;
+  }
+  // .logo:hover{
+  //   fill: #1c12a8;
+  // }
+  // &:hover{
+  //   opacity: .6;
+  // }
 }
 .footer {
-  & > svg {
+  .logo {
     display: block;
     width: 120px;
     height: 120px;
+  }
+  transition: all var.$transition-duration-base var.$transition-timing-base;
+  &:hover{
+    opacity: .5;
   }
 }
