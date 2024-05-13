@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { useTranslations } from "next-intl";
 import Logo from "../Logo/Logo";
 import MainButton from "../MainButton/MainButton";
@@ -11,14 +8,13 @@ import Burger from "./Burger/Burger";
 
 const Header = () => {
   const t = useTranslations("Header");
-  const open = useStateModal((state) => state.open)
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <Logo variant="header" className={styles.logo} />
         <Menu />
         <div className={styles.actions}>
-          <MainButton className={styles.headerBtn} onClick={open}>
+          <MainButton className={styles.headerBtn}>
             {t("btn_support_project")}
           </MainButton >
           <LangDropdown />
