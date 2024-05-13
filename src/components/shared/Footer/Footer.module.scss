@@ -4,23 +4,22 @@
   background-color: $primary-footer;
 }
 
-.container {
-  max-width: 1258px;
+.block {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 15px;
+  @media (max-width: 1440px) {
+    max-width: 1280px;
+  }
 }
 
 .footer {
   margin: 68px auto 56px auto;
   display: flex;
   justify-content: space-between;
-  gap: 24px;
-}
-
-.logo {
-  padding: 0 73px 52px 0;
 }
 
 .contacts {
-  width: 397px;
   display: flex;
   flex-direction: column;
   gap: 24px;

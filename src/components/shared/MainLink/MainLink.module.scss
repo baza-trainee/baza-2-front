@@ -14,16 +14,7 @@
     }
   }
 
-  &:active {
-    color: var.$secondary-white;
-    &::before {
-      width: 100%;
-      background-color: var.$secondary-white;
-    }
-  }
-
   &--default {
-    color: var.$secondary-white;
     &::before {
       content: "";
       width: 0;
@@ -35,19 +26,17 @@
       transition: all 0.3s ease 0s;
     }
     @media (any-hover: hover) {
-      &:hover,
-      &:focus {
+      &:hover {
         color: var.$primary-hover;
         &::before {
           width: 100%;
         }
       }
-      &:active {
-        color: var.$secondary-white;
-        &::before {
-          width: 100%;
-          background-color: var.$secondary-white;
-        }
+    }
+    &.active {
+      color: var.$primary-hover;
+      &::before {
+        width: 100%;
       }
     }
   }
@@ -66,10 +55,30 @@
   }
 
   &--footer {
-    color: var.$secondary-white;
     @media (any-hover: hover) {
       &:active {
         text-decoration: underline;
+      }
+    }
+  }
+  &--burger {
+    @include mixin.apply-font-styles(var.$text-20-font);
+    position: relative;
+    display: block;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-left: 14px;
+    height: 100%;
+    &.active {
+      color: var.$primary-hover;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background-color: var.$primary-hover;
       }
     }
   }
