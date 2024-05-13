@@ -16,10 +16,10 @@ export default function Home() {
       <HistorySection />
       <Counter />
       <MentorSection />
-      <PartnerSection/>
       <FAQ />
       <ReviewsSection />
       <ArticlesSection />
+      <PartnerSection />
       <ContactFormSection />
       <ScrollToTopBtn />
     </main>
