@@ -5,7 +5,7 @@
   border: 2px solid #ff62ce;
   border-radius: 12px;
   padding: 24px 32px;
-  width: 826px;
+  min-width: 826px;
   min-height: 429px;
   display: flex;
   flex-direction: column;
@@ -50,11 +50,8 @@
   .btns{
     display: flex;
     gap: 16px;
-    //margin-bottom: 32px;
   }
-  .btn{
-    
-  }
+
   ._active{
     box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
     background: var.$secondary-hover;
