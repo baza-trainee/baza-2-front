@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+//import ReactDOM from "react-dom";
 import styles from "./RegistrationFormModal.module.scss";
 import InputField from "../shared/InputField/InputField";
 import { useForm } from "react-hook-form";
@@ -10,7 +10,7 @@ import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
 import Modal from "../shared/Modal/Modal";
 
-const RegistrationFormModal = ({ isOpen, onClose }) => {
+
   const t = useTranslations("Modal_form");
   const {
     control,
@@ -19,6 +19,8 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+  
+  useBodyLock(isOpen);
 
   if (!isOpen) return null;
 
@@ -143,6 +145,7 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
       </div>
     </Modal>
   );
+
 };
 
 export default RegistrationFormModal;

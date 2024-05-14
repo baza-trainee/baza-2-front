@@ -1,9 +1,9 @@
 import Image from "next/image";
 import img from "./Images/image.jpg"
-import MainButton from "../shared/MainButton/MainButton";
 import { useTranslations } from "next-intl";
 
 import styles from "./MentorSection.module.scss";
+import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtnRegistrationFormModal";
 
 const MentorSection = () => {
   const t = useTranslations("Main.mentor_section");
@@ -31,7 +31,9 @@ const MentorSection = () => {
             alt="About mentor team"
           />
         </div>
-        <MainButton>{t("btn_mentor")}</MainButton>
+        <ControlBtnRegistrationFormModal>
+          {t("btn_mentor")}
+        </ControlBtnRegistrationFormModal>
       </div>
     </section>
   );

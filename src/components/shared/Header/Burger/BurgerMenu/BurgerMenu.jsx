@@ -3,13 +3,13 @@
 import clsx from "clsx";
 import { useCallback, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import MainButton from "@/src/components/shared/MainButton/MainButton";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 import { usePathname } from "@/src/navigation";
 import { links } from "./links";
 import { createKey } from "@/src/lib/utils/createKey";
 import MainLink from "../../../MainLink/MainLink";
 import styles from "./BurgerMenu.module.scss";
+import ControlBtnModalPayment from "../../../controlButtons/ControlBtnModalPayment";
 
 const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
   const pathname = usePathname();
@@ -41,9 +41,9 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
           </li>
         ))}
       </ul>
-      <MainButton className={styles.burgerBtn}>
+      <ControlBtnModalPayment className={styles.headerBtn}>
         {t("btn_support_project")}
-      </MainButton>
+      </ControlBtnModalPayment>
     </nav>
   );
 };

@@ -60,7 +60,7 @@ export default function InputField({
   }
   if (version === "textArea") {
     return (
-      <li className={styles.item}>
+      <div className={styles.item}>
         <label htmlFor={id}>
           {label} <span>*</span>
         </label>
@@ -74,12 +74,12 @@ export default function InputField({
           {...registerOptions}
           placeholder={placeholder}
         />
-      </li>
+      </div>
     );
   }
   if (version === "input") {
     return (
-      <li className={styles.item}>
+      <div className={styles.item}>
         <label htmlFor={id}>
           {label} <span>*</span>
         </label>
@@ -93,7 +93,7 @@ export default function InputField({
           {...registerOptions}
           placeholder={placeholder}
         />
-      </li>
+      </div>
     );
   }
 }
