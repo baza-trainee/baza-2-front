@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "./Logo.module.scss";
 import clsx from "clsx";
 import { Link } from "@/src/navigation";
