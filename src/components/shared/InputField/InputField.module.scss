@@ -2,7 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .item {
-  width: clamp(250px, 84vw, 625px);
+  width: clamp(280px, 84vw, 625px);
   display: flex;
   flex-direction: column;
   & > label {
@@ -42,12 +42,20 @@
 }
 
 .checkboxGroup {
+  --registration-checkbox-number: 1;
+  height: calc(40px * var(--registration-checkbox-number) / 2);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-top: 15px;
-  gap: 30px;
+  padding-top: 10px;
+  gap: 8px;
   color: #fcfcfc;
+}
+
+@include mx.media_q(md, max) {
+  .checkboxGroup {
+    height: calc(40px * var(--registration-checkbox-number));
+  }
 }
 
 .boxInput {
@@ -92,4 +100,5 @@
 .checkbox {
   display: flex;
   align-items: center;
+  max-height: 3vh;
 }

@@ -1,4 +1,4 @@
-import linkTypes from "../../../MainLink/constants";
+import linkTypes from "../../MainLink/constants";
 
 export const navigationLinks = [
 	{ name: "main", url: "/", type: linkTypes.DEFAULT },

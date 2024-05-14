@@ -13,14 +13,13 @@
     left: 0;
     transform: translate(0%, -50%);
     padding: 0 4.4%;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 3;
 
-    @include mx.media-q("xl") {
-      display: flex;
-      padding: 0 4.4%;
+    @media (max-width: 992px) {
+      display: none;
     }
 
     @include mx.media-q("xxxl") {
@@ -30,12 +29,13 @@
   .pagination {
     position: absolute;
     bottom: 8.36%;
+    bottom: 16px;
     left: 50%;
     transform: translate(-50%, 0%);
     z-index: 3;
 
     @include mx.media-q("md") {
-      bottom: 8.36%;
+      bottom: 40px;
     }
 
     // @include mx.media-q("lg") {
@@ -47,15 +47,6 @@
     // }
   }
 }
-// .item{
-//   width: 100%;
-//   height: 860px;
-//   padding-top: 150px;
-//   display: flex;
-//   //align-items: center;
-//   justify-content: center;
-//   background-color: rgba(0, 255, 255, 0.589);
-// }
 .prevEl {
   transform: rotate(180deg);
 }
