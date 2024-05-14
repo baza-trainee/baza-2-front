@@ -12,7 +12,7 @@ export default function StructureSection() {
   return (
     <section className={styles.mainContainer}>
       <div className={styles.text}>
-        <h1>{t("title")}</h1>
+        <div>{t("title")}</div>
       </div>
       <div className={styles.cardContainer}>
         {items.map((item) => {

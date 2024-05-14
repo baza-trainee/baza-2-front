@@ -15,7 +15,7 @@
    #6d2656 78.5%, 
    #490735 100%);
    gap: 48px;
-  @media (max-width: 1920px) {
+   @media (min-width: 1367px) and (max-width: 1920px) {
     padding: 72px 120px;
     gap: 56px;
     width: 1920px;
@@ -24,14 +24,13 @@
   //   padding: 60px 64px;
   //   gap: 48px;
   //  }
-  @media (max-width: 768px) {
-   gap: 32px;
+  @media (min-width: 769px) and (max-width: 1366px) {
+    gap: 32px;
    padding: 48px 24px;
-   width: 768px;
-
+   width: 768p
   }
-  @media (max-width: 320px) {
-   padding: 16px 8px;
+  @media (min-width: 320px) and (max-width: 768px) {
+    padding: 16px 8px;
    gap: 16px;
    width: 320px;
    height: fit-content;
@@ -44,13 +43,18 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
-  @media (max-width: 320px) {
+  @media (min-width: 320px) and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
     width: 288px;
+    gap: 24px;
   }
-  @media (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 1366px) {
     width: 768x;
   }
-  @media (max-width: 1920px) {
+  @media (min-width: 1367px) and (max-width: 1920px) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,26 +75,36 @@
   display: flex;
   @include mixin.apply-font-styles(var.$h1-font);
 
-  @media (max-width: 320px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     gap: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    @include mixin.apply-font-styles(var.$h3-font);
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #fcfcfc;
     padding: 10px 0px;
     width: 198px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 769px) and (max-width: 1366px) {
     gap: 0px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-    @include mixin.apply-font-styles(var.$h2-font);
     padding: 10px 0px;
     width: 264px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: #fcfcfc;
   }
 }
 
