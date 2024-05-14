@@ -9,7 +9,9 @@ import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
 import Modal from "../shared/Modal/Modal";
+import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
+const RegistrationFormModal = ({ isOpen, onClose }) => {
 
   const t = useTranslations("Modal_form");
   const {

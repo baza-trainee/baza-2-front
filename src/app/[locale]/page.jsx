@@ -9,6 +9,7 @@ import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToT
 import HeroSection from "@/src/components/HeroSection/HeroSection";
 import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
+import StructureSection from "@/src/components/StructureSection/StructureSection";
 
 export default function Home() {
   
@@ -19,6 +20,7 @@ export default function Home() {
       <HistorySection />
       <Counter />
       <MentorSection />
+      <StructureSection />
       <FAQ />
       <ReviewsSection />
       <ArticlesSection />
