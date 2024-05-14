@@ -2,20 +2,48 @@
 @use "../../styles/mixins.scss" as mx;
 
 .section{
-  padding: 60px 0;
+  padding: 16px 10px;
+  @include mx.media-q("sm") {
+    padding: 24px 20px;
+  }
+  @include mx.media-q("md") {
+    padding: 48px 10px;
+  }
+  @include mx.media-q("lg") {
+    padding: 60px 10px;
+  }
   .wrapper{
-    width: clamp(260px, 92vw, 673px);
+    width: clamp(300px, 90vw, 673px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 16px;
     border-radius: 12px;
-    padding: 24px;
+    padding: 16px 10px;
     margin: 0 auto;
     box-shadow: inset 0 2px 16px 0 rgba(154, 149, 153, 0.6);
     background: rgba(210, 210, 210, 0.5); 
+
+    @include mx.media-q("md") {
+      padding: 24px;
+      gap: 32px;
+    }
+    @include mx.media-q("lg") {
+      gap: 40px;
+    }
     & > h2{
-      @include mx.apply-font-styles(var.$h2-font);
+      @include mx.apply-font-styles(var.$h3-font);
+      font-weight: 600;
+      font-size: 20px;
+      @include mx.media-q("sm") {
+        font-size: 24px;
+      }
+      @include mx.media-q("md") {
+        font-size: 32px;
+      }
+      @include mx.media-q("lg") {
+        font-size: 40px;
+      }
     }
   }
 }
