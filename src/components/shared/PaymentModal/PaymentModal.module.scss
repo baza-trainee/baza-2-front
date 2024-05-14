@@ -1,0 +1,64 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
+
+.card{
+  border: 2px solid #ff62ce;
+  border-radius: 12px;
+  padding: 24px 32px;
+  width: 826px;
+  min-height: 429px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  background: #180530;
+  color: var.$secondary-white;
+  position: relative;
+  & >p{
+    @include mx.apply-font-styles(var.$h2-font);
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    .icon{
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .close_btn{
+    position: absolute;
+    top: 24px;
+    right: 25px;
+    z-index: 2;
+    &>svg{
+      display: block;
+      width: 32px;
+      height: 32px;
+      fill: #030110;
+    }
+  }
+  .total{
+    @include mx.apply-font-styles(var.$h2-font);
+    font-size: 100px;
+    line-height: normal;
+   // margin-right: 50px;
+    &>svg{
+      display: block;
+      width: 32px;
+      height: 38px;
+    }
+  }
+  .btns{
+    display: flex;
+    gap: 16px;
+    //margin-bottom: 32px;
+  }
+  .btn{
+    
+  }
+  ._active{
+    box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
+    background: var.$secondary-hover;
+    color: var.$secondary-black;
+  }
+}
