@@ -8,10 +8,10 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
+import Modal from "../shared/Modal/Modal";
 
 const RegistrationFormModal = ({ isOpen, onClose }) => {
   const t = useTranslations("Modal_form");
-  const modalRef = React.useRef();
   const {
     control,
     register,
@@ -19,22 +19,6 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
-      }
-    }
-
-    if (isOpen) {
-      window.addEventListener("click", handleClickOutside);
-    }
-
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -132,13 +116,9 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
     },
   ];
 
-  return ReactDOM.createPortal(
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div
-        className={styles.modal}
-        ref={modalRef}
-        onClick={(e) => e.stopPropagation()}
-      >
+  return (
+    <Modal isOpen handleClose={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
           <Icon name="close" width={20} height={20} />
         </button>
@@ -146,22 +126,22 @@ const RegistrationFormModal = ({ isOpen, onClose }) => {
           <h2>{t("title")}</h2>
           <ul className={styles.list}>
             {inputFields.map((field) => (
-              <li key={field.id}>
+              <div key={field.id}>
                 <InputField {...field} />
-              </li>
+              </div>
             ))}
           </ul>
           <MainButton
             type="submit"
             disabled={!isDirty || !isValid}
             className={styles.submit}
+            variant={"modal"}
           >
             {t("btn_send")}
           </MainButton>
         </form>
       </div>
-    </div>,
-    document.body
+    </Modal>
   );
 };
 

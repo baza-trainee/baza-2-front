@@ -15,9 +15,6 @@ export default function InputField({
 }) {
   if (version === "checkBox") {
     const totalOptions = options.length;
-    const halfOptions = Math.ceil(totalOptions / 2);
-    const checkboxHeight = 55;
-    const groupHeight = halfOptions * checkboxHeight;
     return (
       <div className={styles.item}>
         {id !== "agree" && (
@@ -27,7 +24,7 @@ export default function InputField({
         )}
         <div
           className={styles.checkboxGroup}
-          style={{ height: `${groupHeight}px` }}
+          style={{ "--registration-checkbox-number": `${totalOptions}` }}
         >
           {options.map((option) => (
             <div className={styles.checkbox} key={option.id}>
@@ -37,6 +34,7 @@ export default function InputField({
                 render={({ field }) => (
                   <>
                     <input
+                      id={option.id}
                       className={styles.boxInput}
                       type="checkbox"
                       {...field}
@@ -68,7 +66,11 @@ export default function InputField({
         </label>
         <textarea
           id={id}
-          className={clsx(styles.input, isError && styles._error, isValid && styles._success)}
+          className={clsx(
+            styles.input,
+            isError && styles._error,
+            isValid && styles._success
+          )}
           {...registerOptions}
           placeholder={placeholder}
         />
@@ -83,7 +85,11 @@ export default function InputField({
         </label>
         <input
           id={id}
-          className={clsx(styles.input,isError && styles._error, isValid && styles._success)}
+          className={clsx(
+            styles.input,
+            isError && styles._error,
+            isValid && styles._success
+          )}
           {...registerOptions}
           placeholder={placeholder}
         />
