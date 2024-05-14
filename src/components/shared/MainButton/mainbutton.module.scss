@@ -31,7 +31,7 @@
     position: absolute;
     opacity: 1;
     z-index: -1;
-    top:0;
+    top: 0;
     right: 0;
     width: 100%;
     height: 100%;
@@ -39,7 +39,7 @@
   }
 
   &:hover::after,
-  &:focus:after{
+  &:focus:after {
     opacity: 0;
   }
   &:hover,
@@ -47,7 +47,7 @@
     color: var.$secondary-black;
   }
 
-  &:disabled::after{
+  &:disabled::after {
     opacity: 0;
   }
   &:disabled {
