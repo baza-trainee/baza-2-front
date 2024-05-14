@@ -6,11 +6,11 @@
   margin: 16px auto;
   padding: 0 10px;
 
-  @include mx.media-q("sm") {
-    margin-top: 24px;
-    margin-bottom: 41px;
-    padding: 0 20px;
-  }
+  // @include mx.media-q("sm") {
+  //   margin-top: 24px;
+  //   margin-bottom: 41px;
+  //   padding: 0 20px;
+  // }
 
   @include mx.media-q("md") {
     margin-bottom: 48.5px;
@@ -18,14 +18,14 @@
     padding: 0 24px;
   }
 
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     margin: 60px auto;
     padding: 0 64px;
   }
 
-  @include mx.media-q("xxl") {
-    padding: 0 80px;
-  }
+  // @include mx.media-q("xxl") {
+  //   padding: 0 80px;
+  // }
 
   @include mx.media-q("xxxl") {
     padding: 0 120px;
@@ -60,7 +60,7 @@
     font-size: 32px;
   }
 
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     font-size: 40px;
   }
 }
@@ -76,11 +76,11 @@
     gap: 20px;
     align-items: center;
   }
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     right: 0;
   }
 
-  @include mx.media-q("xxl") {
+  @include mx.media-q("xxxl") {
     top: 0;
   }
 }
@@ -90,30 +90,20 @@
 }
 
 .mySwiperItem {
-  margin-bottom: 16px;
-
-  @include mx.media-q("sm") {
+  @include mx.media-q("md") {
     flex-shrink: 1;
     max-width: 350px;
   }
 
-  @include mx.media-q("lg") {
-    flex-shrink: 1;
-
+  @include mx.media-q("xl") {
     max-width: 397px;
   }
 }
 
 .pagination {
+  margin-top: 16px;
   justify-content: center;
-}
-@media only screen and (min-width: 768px) {
-  .pagination {
-    display: none;
-  }
-}
-@include mx.media-q("md") {
-  .pagination {
+  @include mx.media-q("md") {
     display: none;
   }
 }
