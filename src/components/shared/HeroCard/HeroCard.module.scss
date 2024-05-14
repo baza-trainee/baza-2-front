@@ -27,25 +27,20 @@
   text-align: center;
   gap: 16px;
 
-  @include mx.media-q("sm") {
-    margin: 16px auto;
-    padding: 16px 24px;
-  }
-
   @include mx.media-q("md") {
     margin: 43px auto;
     padding: 16px 40px;
     gap: 24px;
   }
 
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     margin: 42.5px auto;
     padding: 24px;
     gap: 60px;
     top: 0%;
     right: 50%;
     transform: translateX(50%);
-    min-width: clamp(818px, 818px, 860px);
+    max-width: clamp(818px, 818px, 860px);
   }
 
   h2 {
@@ -53,33 +48,24 @@
     font-weight: 700;
     font-size: 24px;
 
-    @include mx.media-q("sm") {
-      font-size: 32px;
-    }
-
     @include mx.media-q("md") {
       font-size: 48px;
     }
 
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       font-size: 54px;
     }
   }
 
   p {
     @include mx.apply-font-styles(var.$h2-font);
-    width: 100%;
     font-size: 16px;
-
-    @include mx.media-q("sm") {
-      font-size: 18px;
-    }
 
     @include mx.media-q("md") {
       font-size: 24px;
     }
 
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       font-size: 28px;
     }
   }

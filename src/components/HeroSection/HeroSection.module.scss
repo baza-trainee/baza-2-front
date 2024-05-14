@@ -18,12 +18,12 @@
     justify-content: space-between;
     z-index: 3;
 
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       display: flex;
       padding: 0 4.4%;
     }
 
-    @include mx.media-q("xxl") {
+    @include mx.media-q("xxxl") {
       padding: 0 6.25%;
     }
   }

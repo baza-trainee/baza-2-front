@@ -25,10 +25,6 @@
   max-width: 350px;
   height: 242px;
 
-  // @include mx.media-q("sm") {
-  //   width: 350px;
-  // }
-
   @include mx.media-q("xl") {
     max-width: 397px;
   }
@@ -52,12 +48,10 @@
   margin-bottom: 16px;
 
   @include mx.media-q("md") {
-    // width: 318px;
     height: 148px;
   }
 
-  @include mx.media-q("lg") {
-    // width: 349px;
+  @include mx.media-q("xl") {
     margin-bottom: 24px;
   }
 
@@ -81,7 +75,7 @@
 
     color: var.$secondary-white;
 
-    @include mx.media-q("sm") {
+    @include mx.media-q("md") {
       -webkit-line-clamp: 4;
     }
   }
