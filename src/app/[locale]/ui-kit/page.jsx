@@ -17,8 +17,10 @@ export default function UiKit() {
   //useBodyLock(regModalOpen);
   return (
     <main>
+      <PaymentModal/>
       <ScrollToTopBtn />
       <FooterLinks />
+      <ControlBtnModalPayment>Test PaymentModal</ControlBtnModalPayment>
       <PartnerCard />
 
    {/* <RegistrationFormModal/> */}
@@ -40,8 +42,6 @@ export default function UiKit() {
       >
         open RegistrationModal
       </button>*/}
-      <ControlBtnModalPayment>PaymentModal</ControlBtnModalPayment>
-      <PaymentModal/>
     </main>
   );
 }

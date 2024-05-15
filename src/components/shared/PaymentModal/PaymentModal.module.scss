@@ -2,7 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .card{
-  border: 2px solid #ff62ce;
+  border: 2px solid var.$primary-border;
   border-radius: 12px;
   padding: 24px 32px;
   min-width: 826px;
@@ -12,18 +12,20 @@
   align-items: center;
   justify-content: center;
   gap: 32px;
-  background: #180530;
+  background: var.$primary-fon-card;
   color: var.$secondary-white;
   position: relative;
-& > h2{
-  @include mx.apply-font-styles(var.$h1-font);
-  margin-bottom: 28px
-}
+  
+  & > h2{
+    @include mx.apply-font-styles(var.$h1-font);
+    margin-bottom: 28px
+  }
   & > p{
     @include mx.apply-font-styles(var.$h2-font);
     display: flex;
     gap: 13px;
     align-items: center;
+
     .icon{
       display: block;
       width: 24px;
@@ -35,23 +37,30 @@
     top: 24px;
     right: 25px;
     z-index: 2;
-    &>svg{
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+
+    & > svg{
       display: block;
       width: 32px;
       height: 32px;
     }
+
+    &:hover{
+      opacity: .7;
+    }
   }
+
   .total{
     @include mx.apply-font-styles(var.$h2-font);
     font-size: 100px;
     line-height: normal;
-   // margin-right: 50px;
-    &>svg{
+    & > svg{
       display: block;
       width: 32px;
       height: 38px;
     }
   }
+
   .btns{
     display: flex;
     gap: 16px;

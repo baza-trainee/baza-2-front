@@ -1,6 +1,9 @@
+// !! Логіка запиту на старий бекенд на отримання посилання сторінки оплати. !!
 const urlBase = 'https://baza-trainee-landing.vercel.app/api/v1';
 
-const usePaymentHandler = (paymentAmount,locale) => {
+const usePaymentHandler = (payment,locale) => {
+  const paymentAmount = payment === "0" ? '1' : payment;
+
   const paymentData = {
     transactionType: 'CREATE_INVOICE',
     merchantDomainName: window.location.hostname,
@@ -8,7 +11,7 @@ const usePaymentHandler = (paymentAmount,locale) => {
     orderReference: Date.now().toString(),
     orderDate: Date.now(),
     amount: Number(paymentAmount),
-    language: locale === "ua" ? "uk" : locale,// мова сторінки оплати
+    language: locale,// мова сторінки оплати
     currency: 'UAH',
     productName: ['Baza trainee support'],
     productCount: [1],
@@ -28,7 +31,6 @@ const usePaymentHandler = (paymentAmount,locale) => {
         });
 
         const checkoutUrl = await response.json();
-        console.log(checkoutUrl.invoiceUrl)
         if (checkoutUrl.invoiceUrl) {
           window.location.href = checkoutUrl.invoiceUrl;
         }
@@ -40,6 +42,8 @@ const usePaymentHandler = (paymentAmount,locale) => {
       setErrorMessage('Please enter a valid payment amount');
     }
   };
+  // Розкоментувати щоб побачити перехід на сторінку оплати.
+  // !!! Обержно платежі справжні !!!
   //handlePayment()
   return paymentData
 };
