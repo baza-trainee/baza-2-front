@@ -1,14 +1,14 @@
 "use client";
 
-import { Icon } from '../Icon/Icon';
-import MainButton from '../MainButton/MainButton';
+import { Icon } from '../shared/Icon/Icon';
+import MainButton from '../shared/MainButton/MainButton';
 import { useTranslations } from "next-intl";
 import styles from './PaymentModal.module.scss';
 import clsx from "clsx";
 import { useState } from 'react';
 import { createKey } from '@/src/lib/utils/createKey';
 import { btnItems } from './btnItems';
-import Modal from '../Modal/Modal';
+import Modal from '../shared/Modal/Modal';
 import stateModalPayment from '@/src/state/stateModalPayment';
 import usePaymentHandler from './usePaymentHandler';
 import { useRouter } from '@/src/navigation';
