@@ -1,5 +1,5 @@
-"use client";
-import { useState } from "react";
+//"use client";
+//import { useState } from "react";
 import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
 import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
@@ -8,12 +8,12 @@ import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 // import RegistrationFormModal from "../../../components/RegistrationFormModal/RegistrationFormModal";
 //import { useBodyLock } from "../../../lib/hooks/useBodyLock";
 import StructureSection from "../../../components/StructureSection/StructureSection";
-import Modal from "@/src/components/shared/Modal/Modal";
 import PaymentModal from "@/src/components/shared/PaymentModal/PaymentModal";
+import ControlBtnModalPayment from "@/src/components/shared/controlButtons/ControlBtnModalPayment";
 
 export default function UiKit() {
-  const [regModalOpen, setRegModalOpen] = useState(false);
-  const handleClose=() =>{setRegModalOpen(false)}
+  //const [regModalOpen, setRegModalOpen] = useState(false);
+  //const handleClose=() =>{setRegModalOpen(false)}
   //useBodyLock(regModalOpen);
   return (
     <main>
@@ -29,7 +29,7 @@ export default function UiKit() {
         img="/images/hero_section/img-hero.jpg"
       />
       <SocialIcons />
-      <button
+       {/*  <button
         style={{
           margin: "10px",
           padding: "10px",
@@ -39,11 +39,9 @@ export default function UiKit() {
         onClick={(e) => (setRegModalOpen(true), e.stopPropagation())}
       >
         open RegistrationModal
-      </button>
-
-      <Modal isOpen={regModalOpen} handleClose={handleClose}>
-        <PaymentModal handleClose={handleClose}/>
-      </Modal>
+      </button>*/}
+      <ControlBtnModalPayment>PaymentModal</ControlBtnModalPayment>
+      <PaymentModal/>
     </main>
   );
 }
