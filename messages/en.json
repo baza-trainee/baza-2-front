@@ -179,7 +179,9 @@
 		"another_amount": "Another amount",
 		"btn_support": "To support",
 		"thanks_support": "Thanks for your support",
-		"btn_home": "Return to the home page"
+		"btn_home": "Return to the home page",
+		"ariaLabel_btn_close_1": "closes the modal payment window",
+    "ariaLabel_btn_close_2": "closes the thank you modal window"
 	},
 
 	"Modal_form": {

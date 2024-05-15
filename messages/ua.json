@@ -180,7 +180,9 @@
     "another_amount": "Інша сума",
     "btn_support": "Підтримати",
     "thanks_support": "Дякуємо за підтримку!",
-    "btn_home": "Повернутись на головну"
+    "btn_home": "Повернутись на головну",
+    "ariaLabel_btn_close_1": "зачиняє модальне вікно оплати",
+    "ariaLabel_btn_close_2": "зачиняє модальне вікно подяки"
   },
 
   "Modal_form": {
