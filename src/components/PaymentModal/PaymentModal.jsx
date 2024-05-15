@@ -21,7 +21,7 @@ export default function PaymentModal() {
   const router = useRouter();
   const { locale } = useParams();
   // контент.
-  const t = useTranslations("Modal");
+  const t = useTranslations("Modal_support");
   // локальний стан.
   const [amount, setAmount] = useState('0');
   const [thank, setThank] = useState(false);
