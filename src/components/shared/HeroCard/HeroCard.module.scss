@@ -3,7 +3,7 @@
 
 .card {
   position: relative;
-  height: clamp(220px, 90vh, 860px);
+  height: clamp(220px, 80vh, 860px);
 }
 
 .image {
@@ -18,65 +18,54 @@
   position: absolute;
   top: 0;
   z-index: 3;
-  padding: 24px 5px 5px 5px;
-  width:100%;
+  margin: 16px 8px;
+  padding: 8px;
   color: var.$secondary-white;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 16px;
 
-  @include mx.media-q("sm") {
-    padding: 32px 5px 5px 5px;
-    gap: 16px;
-  }
-  
   @include mx.media-q("md") {
-    padding: 59px 5px 5px 5px;
+    margin: 43px auto;
+    padding: 16px 40px;
     gap: 24px;
   }
 
-  @include mx.media-q("lg") {
-    padding: 60px 5px 5px 5px;
+  @include mx.media-q("xl") {
+    margin: 42.5px auto;
+    padding: 24px;
     gap: 60px;
+    top: 0%;
+    right: 50%;
+    transform: translateX(50%);
+    max-width: clamp(818px, 818px, 860px);
   }
 
   h2 {
     @include mx.apply-font-styles(var.$h1-font);
-    min-width: 300px;
     font-weight: 700;
     font-size: 24px;
-
-    @include mx.media-q("sm") {
-      font-size: 32px;
-    }
 
     @include mx.media-q("md") {
       font-size: 48px;
     }
 
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       font-size: 54px;
     }
   }
 
   p {
     @include mx.apply-font-styles(var.$h2-font);
-
-    font-weight: 500;
     font-size: 16px;
-    width: clamp(300px, 75%, 860px);
-
-    @include mx.media-q("sm") {
-      font-size: 18px;
-    }
 
     @include mx.media-q("md") {
       font-size: 24px;
     }
 
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       font-size: 28px;
     }
   }

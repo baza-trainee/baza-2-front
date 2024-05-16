@@ -9,17 +9,19 @@ export const ArticleCard = ({ item }) => {
 
   return (
     <div className={styles.containerForCard}>
-      <Image
-        className={styles.image}
-        src={img}
-        width={397}
-        height={242}
-        alt={t(title)}
-      />
+      <div className={styles.containerForImg}>
+        <Image
+          className={styles.image}
+          src={img}
+          fill
+          sizes="100%"
+          alt={t(title)}
+        />
+      </div>
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <h3 className={styles.title}>{t(title)}</h3>
-          <p className={styles.text}>{t(description)}</p>
+          <h3>{t(title)}</h3>
+          <p>{t(description)}</p>
         </div>
         <Link
           className={styles.linkRead}

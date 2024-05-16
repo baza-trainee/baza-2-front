@@ -1,12 +1,12 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins.scss" as mx;
 
-.section{
+.section {
   //компенсує висоту хедер
   margin-top: 80px;
   position: relative;
 
-  .buttons{
+  .buttons {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -22,33 +22,30 @@
       display: none;
     }
 
-    @include mx.media-q("xxl") {
+    @include mx.media-q("xxxl") {
       padding: 0 6.25%;
     }
   }
-  .pagination{
+  .pagination {
     position: absolute;
     bottom: 8.36%;
     bottom: 16px;
     left: 50%;
     transform: translate(-50%, 0%);
     z-index: 3;
-    gap: 8px;
-    & > span{
-      width: 8px;
-      height: 8px;
-      
-      @include mx.media-q("md") {
-        width: 16px;
-        height: 16px;
-      }
-    }
-   
+
     @include mx.media-q("md") {
       bottom: 40px;
     }
+
+    // @include mx.media-q("lg") {
+    //   bottom: 10.6%;
+    // }
+
+    // @include mx.media-q("xxl") {
+    //   bottom: 8.37%;
+    // }
   }
-  
 }
 .prevEl {
   transform: rotate(180deg);
