@@ -186,17 +186,37 @@
   },
 
   "Modal_form": {
-    "title": "Реєстрація ментора на Baza Trainee Ukraine",
+    "title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
+    "title_mentor": "Реєстрація ментора на Baza Trainee Ukraine",
     "firstName": "Ім’я",
     "lastName": "Прізвище",
     "specialization": "Спеціалізація",
     "email": "Електронна пошта",
+    "city":"Місто (країна)",
+    "course_name":"Назва пройденого курсу по спеціальності і термін закінчення (якщо курс іде зараз, зазначте, що поточний)",
+    "your answer":"Ваша відповідь",
+    "experience":"Наявність досвіду",
+    "yes":"Так",
+    "no":"Ні",
+    "motivation":"В чому мотивація створити продукт?",
+    "choose_project":"Оберіть проєкт",
+    "saw_questionnaire":"Я побачив/побачила анкету:",
+    "questionnaire_options":{
+      "option_1":"На сайті Baza Trainee Ukraine",
+      "option_2":"На сторінці Baza Educat в Instagram",
+      "option_3":"На сторінці Baza Educat в Facebook",
+      "option_4":"в каналі Baza Go в Telegram",
+      "option_5":"в пості на LinkedIn"
+    },
+    "rules_participation":"Правила участі в проєкті Baza Trainee Ukraine",
+    "acquainted":"Ознайомлений/ознайомлена з умовами участі в проєкті",
+    "agree":"Погоджуюсь",
     "phone": "Телефон",
     "discord": "Нік в Discord",
     "linkedin": "Профіль в Linkedin",
     "linkedin_placeholder": "Лінк на профіль",
     "convenient_time": "Зручний час для консультації",
-    "agree": "Надаю згоду на обробку персональних даних відповідно до Закону України «Про захист персональних даних»",
+    "permit": "Надаю згоду на обробку персональних даних відповідно до Закону України «Про захист персональних даних»",
     "btn_send": "Відправити",
     "error_message":{
       "firstName": "Введіть ім’я",
@@ -207,7 +227,14 @@
       "discord": "Введіть нік в Discord",
       "linkedin": "Введіть профіль в Linkedin",
       "convenient_time": "Оберіть час роботи",
-      "agree": "Надайте згоду на обробку персональних даних"
+      "city":"Введіть місто",
+      "course_name":"Введіть назву пройденого курсу",
+      "experience":"Оберіть наявність досвіду",
+      "motivation":"Вкажіть вашу мотивацію",
+      "choose_project":"Оберіть проєкт",
+      "saw_questionnaire":"Оберіть де побачив/побачила анкету",
+      "agree":"Ознайомтесь з умовами участі",
+      "permit": "Надайте згоду на обробку персональних даних"
     }
   },
 

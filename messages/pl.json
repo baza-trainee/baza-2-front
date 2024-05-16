@@ -185,17 +185,37 @@
   },
 
   "Modal_form": {
-    "title": "Rejestracja mentora na Baza Trainee Ukraine",
+    "title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
+    "title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
     "firstName": "Imię",
     "lastName": "Nazwisko",
     "specialization": "Specjalizacja",
     "email": "E-mail",
+    "city":"Miasto (kraj)",
+    "course_name":"Nazwa ukończonego kursu w specjalności i data zakończenia (jeżeli kurs jest aktualnie realizowany, należy zaznaczyć, że jest aktualny)",
+    "your answer":"Twoja odpowiedź",
+    "experience":"Dostępność doświadczenia",
+    "yes":"Więc",
+    "no":"Nie",
+    "motivation":"Jaka jest motywacja do stworzenia produktu?",
+    "choose_project":"Wybierz projekt",
+    "saw_questionnaire":"Widziałem ankietę:",
+    "questionnaire_options":{
+      "option_1":"Na stronie Bazy Trainee Ukraina",
+      "option_2":"Na stronie Bazy Educat na Instagramie",
+      "option_3":"Na stronie Bazy Edukacyjnej na Facebooku",
+      "option_4":"na kanale Baza Go Telegram",
+      "option_5":"w poście na LinkedIn"
+    },
+    "rules_participation":"Regulamin udziału w projekcie Baza Trainee Ukraina",
+    "acquainted":"Zapoznano się z warunkami udziału w projekcie",
+    "agree":"Zgadzam się",
     "phone": "Telefon",
     "discord": "Nick na Discordzie",
     "linkedin": "Profil na Linkedinie",
     "linkedin_placeholder": "Link do profilu",
     "convenient_time": "Dogodny termin konsultacji",
-    "agree": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
+    "permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
     "btn_send": "Wysłać",
     "error_message":{
       "firstName": "Wpisz imię",
@@ -206,7 +226,14 @@
       "discord": "Wpisz pseudonim na Discordzie",
       "linkedin": "Wprowadź swój profil na Linkedin",
       "convenient_time": "Wybierz godziny otwarcia",
-      "agree": "Wyraź zgodę na przetwarzanie danych osobowych"
+      "city":"Wejdź do miasta",
+      "course_name":"Wpisz nazwę ukończonego kursu",
+      "experience":"Wybierz dostępność doświadczenia",
+      "motivation":"Podaj swoją motywację",
+      "choose_project":"Wybierz projekt",
+      "saw_questionnaire":"Wybierz, gdzie widziałeś kwestionariusz",
+      "agree":"Zapoznaj się z warunkami uczestnictwa",
+      "permit": "Wyraź zgodę na przetwarzanie danych osobowych"
     }
   },
 

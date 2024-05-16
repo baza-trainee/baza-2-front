@@ -185,17 +185,38 @@
 	},
 
 	"Modal_form": {
-		"title": "Mentor registration on Baza Trainee Ukraine",
+		"title": "Registration for participation in the Baza Trainee Ukraine project",
+    "title_mentor": "Mentor registration on Baza Trainee Ukraine",
 		"firstName": "First Name",
 		"lastName": "Last Name",
 		"specialization": "Specialization",
 		"email": "Email",
+
+		"city":"City (country)",
+    "course_name":"The name of the completed course in the specialty and the end date (if the course is currently running, indicate that it is current)",
+    "your answer":"Your answer",
+    "experience":"Availability of experience",
+    "yes":"Yes",
+    "no":"No",
+    "motivation":"What is the motivation to create a product?",
+    "choose_project":"Choose a project",
+    "saw_questionnaire":"I saw the questionnaire:",
+    "questionnaire_options":{
+      "option_1":"On the Baza Trainee Ukraine website",
+      "option_2":"On the Baza Educat Instagram page",
+      "option_3":"On the Baza Educat Facebook page",
+      "option_4":"in the Baza Go Telegram channel",
+      "option_5":"in a LinkedIn post"
+    },
+    "rules_participation":"Rules of participation in the Baza Trainee Ukraine project",
+    "acquainted":"Familiarized with the conditions of participation in the project",
+    "agree":"I agree",
 		"phone": "Phone",
 		"discord": "Nick on Discord",
 		"linkedin": "Linkedin profile",
 		"linkedin_placeholder": "Link to profile",
 		"convenient_time": "A convenient time for consultation",
-		"agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
+		"permit": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
 		"btn_send": "Send",
 		"error_message":{
       "firstName": "Enter a name",
@@ -206,7 +227,14 @@
       "discord": "Enter a nickname in Discord",
       "linkedin": "Enter your Linkedin profile",
       "convenient_time": "Choose a working time",
-      "agree": "Give consent to the processing of personal data"
+			"city":"Enter the city",
+      "course_name":"Enter the name of the completed course",
+      "experience":"Choose the availability of experience",
+      "motivation":"State your motivation",
+      "choose_project":"Choose a project",
+      "saw_questionnaire":"Choose where you saw the questionnaire",
+      "agree":"Get acquainted with the conditions of participation",
+      "permit": "Give consent to the processing of personal data"
     }
 	},
 
