@@ -15,7 +15,7 @@ const ContactLinks = () => {
         <p className={styles.text}>+380 67 568 1788</p>
       </div>
       <div className={styles.contact}>
-        <Icon name="mail" width={25} height={29} />
+        <Icon name="mail" width={25} height={29} className={styles.mail}/>
         <p className={styles.text}>info@‌baza-trainee.tech</p>
       </div>
     </div>
