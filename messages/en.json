@@ -9,28 +9,28 @@
   },
 
 	"Main": {
-		"hero_сarousel_section": {
-			"slide_1": {
-				"title": "Baza Trainee Ukraine",
-				"text": "A public organization that provides initial work experience to those who are just starting their journey in IT."
-			},
-			"slide_2": {
-				"title": "About Us",
-				"text": "Baza Trainee Ukraine is an educational and training platform that was built in response to Ukrainian society’s growing demands in the field of IT. It is a website that brings together two groups of users - students of IT and social projects in need of IT support."
-			},
-			"slide_3": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
-			},
-			"slide_4": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
-			},
-			"slide_5": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
-			}
-		},
+    "hero_carousel_section": {
+      "slide_1": {
+        "title": "Baza Trainee Ukraine",
+        "text": "A nonprofit organization aimed at providing initial work experience for those embarking on their journey in IT."
+      },
+      "slide_2": {
+        "title": "About us",
+        "text": "The Baza Trainee Ukraine initiative, as an educational and training platform, emerges in response to a societal demand that arose in Ukraine in 2022-2023 in the field of employment in information technology. It represents a website that brings together two social groups as users."
+      },
+      "slide_3": {
+        "title": "Our target audience",
+        "text": "Ukrainians mastering specialties in the IT sector regardless of age and experience - trainees, juniors, switchers, mentors on one side, and communities and groups in Ukraine in the fields of charity, volunteering, and civic initiatives on the other."
+      },
+      "slide_4": {
+        "title": "Our goal",
+        "text": "To combine these categories in joint activity so that both sides benefit. For the first group, it's real practical experience in creating a live project, while for the second, it's a digital product that functions and promotes the development of social initiatives."
+      },
+      "slide_5": {
+        "title": "The principle of action",
+        "text": "To train participants based on the technologies they currently possess and facilitate their employment. When creating the project, apply the technologies that the participant wants to develop; no retraining occurs. Ensure the client receives a quality digital product."
+      }
+    },
 		"history_project_section": {
 			"title": "Project history",
 			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",
@@ -135,7 +135,7 @@
 				"title": "",
 				"text": ""
 			},
-			"btn_read_article": "Читати матеріал"
+			"btn_read_article": "Read the material"
 		},
 		"partners_section": {
 			"title": "Partners"
@@ -198,15 +198,20 @@
 		"agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
 		"btn_send": "Send",
 		"error_message":{
-      "firstName": "Введіть ім’я",
-      "lastName": "Введіть прізвище",
-      "specialization": "Оберіть спеціалізацію",
-      "email": "Введіть електронну пошту ",
-      "phone": "Введіть номер телефону ",
-      "discord": "Введіть нік в Discord",
-      "linkedin": "Введіть профіль в Linkedin",
-      "convenient_time": "Оберіть час роботи",
-      "agree": "Надайте згоду на обробку персональних даних"
+      "firstName": "Enter a name",
+      "lastName": "Enter your last name",
+      "specialization": "Choose a specialization",
+      "email": "Enter your email",
+      "phone": "Enter a phone number",
+      "discord": "Enter a nickname in Discord",
+      "linkedin": "Enter your Linkedin profile",
+      "convenient_time": "Choose a working time",
+      "agree": "Give consent to the processing of personal data"
     }
+	},
+
+	"cookies": {
+		"text": "This site uses cookies for proper operation and service improvement. If you agree to their use, click OK. More information in",
+		"privacy_policy": "Privacy policy."
 	}
 }

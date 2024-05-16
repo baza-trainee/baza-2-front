@@ -19,16 +19,16 @@
         "text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
       },
       "slide_3": {
-        "title": "Baza Trainee Ukraine",
-        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+        "title": "Nasza grupa docelowa",
+        "text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia - trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
       },
       "slide_4": {
-        "title": "Baza Trainee Ukraine",
-        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+        "title": "Nasz cel",
+        "text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej - cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
       },
       "slide_5": {
-        "title": "Baza Trainee Ukraine",
-        "text": "Громадська організація,яка має на меті отримання першого досвіду роботи тими, хто починає свій шлях в ІТ"
+        "title": "Zasada działania",
+        "text": "Trening uczestnika na podstawie obecnych technologii, którymi obecnie włada, i wspieranie jego zatrudnienia. Przy tworzeniu projektu stosować technologie, które chce rozwijać uczestnik, bez konieczności ponownego szkolenia. Zapewnić klientowi wysokiej jakości produkt cyfrowy."
       }
     },
     "history_project_section": {
@@ -135,7 +135,7 @@
         "title": "",
         "text": ""
       },
-      "btn_read_article": "Читати матеріал"
+      "btn_read_article": "Przeczytaj materiał"
     },
     "partners_section": {
       "title": "Partnerzy"
@@ -198,15 +198,20 @@
     "agree": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
     "btn_send": "Wysłać",
     "error_message":{
-      "firstName": "Введіть ім’я",
-      "lastName": "Введіть прізвище",
-      "specialization": "Оберіть спеціалізацію",
-      "email": "Введіть електронну пошту ",
-      "phone": "Введіть номер телефону ",
-      "discord": "Введіть нік в Discord",
-      "linkedin": "Введіть профіль в Linkedin",
-      "convenient_time": "Оберіть час роботи",
-      "agree": "Надайте згоду на обробку персональних даних"
+      "firstName": "Wpisz imię",
+      "lastName": "Wpisz swoje nazwisko",
+      "specialization": "Wybierz specjalizację",
+      "email": "Wprowadź swój email",
+      "phone": "Wprowadź numer telefonu",
+      "discord": "Wpisz pseudonim na Discordzie",
+      "linkedin": "Wprowadź swój profil na Linkedin",
+      "convenient_time": "Wybierz godziny otwarcia",
+      "agree": "Wyraź zgodę na przetwarzanie danych osobowych"
     }
+  },
+
+  "cookies": {
+    "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
+    "privacy_policy": "Polityka prywatności."
   }
 }
