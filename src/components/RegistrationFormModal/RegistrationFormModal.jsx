@@ -9,8 +9,10 @@ import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
 import { Icon } from "../shared/Icon/Icon";
 import Modal from "../shared/Modal/Modal";
+import stateRegistrationFormModal from "@/src/state/stateRegistrationFormModal";
+import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
-
+const RegistrationFormModal=()=>{
   const t = useTranslations("Modal_form");
   const {
     control,
@@ -20,6 +22,10 @@ import Modal from "../shared/Modal/Modal";
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
   
+  // Отримуємо стан.
+  const isOpen = stateRegistrationFormModal(state => state.isOpen);
+  const onClose = stateRegistrationFormModal(state => state.close);
+
   useBodyLock(isOpen);
 
   if (!isOpen) return null;
@@ -41,10 +47,10 @@ import Modal from "../shared/Modal/Modal";
     { id: "t9001200", label: "9.00-12.00" },
     { id: "t18002100", label: "18.00-21.00" },
     { id: "t12001500", label: "12.00-15.00" },
-    { id: "anytime", label: "anytime" },
+    { id: "anytime", label: t("anytime") },
   ];
 
-  const optionsPersonalData = [{ id: "personaldata", label: t("agree") }];
+  const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];
 
   const inputFields = [
     {
@@ -125,7 +131,7 @@ import Modal from "../shared/Modal/Modal";
           <Icon name="close" width={20} height={20} />
         </button>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h2>{t("title")}</h2>
+          <h2>{t("title_mentor")}</h2>
           <ul className={styles.list}>
             {inputFields.map((field) => (
               <div key={field.id}>
