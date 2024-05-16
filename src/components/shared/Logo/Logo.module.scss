@@ -1,24 +1,27 @@
 @use "../../../styles/variables" as var;
 
 .header {
-  transition: all var.$transition-duration-base var.$transition-timing-base;
-  .icon {
+  .logo {
+    transition: all var.$transition-duration-base var.$transition-timing-base;
     display: block;
     width: 60px;
     height: 60px;
+    fill: var.$secondary-white;
   }
-  &:hover{
-    opacity: .6;
+  &:hover .logo{
+    fill: var.$primary-hover;
   }
 }
+
 .footer {
-  transition: all var.$transition-duration-base var.$transition-timing-base;
-  .icon {
+  .logo {
+    transition: all var.$transition-duration-base var.$transition-timing-base;
     display: block;
     width: 120px;
     height: 120px;
+    fill: var.$secondary-white;
   }
-  &:hover{
-    opacity: .5;
+  &:hover .logo{
+    fill: var.$primary-hover;
   }
 }

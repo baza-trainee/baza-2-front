@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
-import SendIcon from "./sendIcon/sendIcon";
+import { Icon } from "../../shared/Icon/Icon";
 
 
 export default function ContactForm() {
@@ -70,9 +70,9 @@ export default function ContactForm() {
       <MainButton type="submit" disabled={isDisabled()}>
         {t("btn_send")}
       </MainButton>
-
+      
      {isSubmitSuccessful && <div className={styles.send}>
-        <SendIcon/>
+        <Icon name='mail'/>
       </div>}
     </form>
   );
