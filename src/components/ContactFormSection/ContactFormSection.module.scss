@@ -2,16 +2,16 @@
 @use "../../styles/mixins.scss" as mx;
 
 .section{
-  // padding: 16px 10px;
+   padding: 16px 10px;
   // @include mx.media-q("sm") {
   //   padding: 24px 20px;
   // }
   @include mx.media-q("md") {
     padding: 48px 10px;
   }
-  // @include mx.media-q("lg") {
-  //   padding: 60px 10px;
-  // }
+  @include mx.media-q("xl") {
+    padding: 60px 10px;
+  }
   .wrapper{
     width: clamp(300px, 90vw, 673px);
     display: flex;
@@ -28,9 +28,9 @@
       padding: 24px;
       gap: 32px;
     }
-    // @include mx.media-q("lg") {
-    //   gap: 40px;
-    // }
+    @include mx.media-q("xl") {
+      gap: 40px;
+    }
     & > h2{
       @include mx.apply-font-styles(var.$h3-font);
       font-weight: 600;
@@ -41,9 +41,9 @@
       @include mx.media-q("md") {
         font-size: 32px;
       }
-      // @include mx.media-q("lg") {
-      //   font-size: 40px;
-      // }
+      @include mx.media-q("xl") {
+        font-size: 40px;
+      }
     }
   }
 }

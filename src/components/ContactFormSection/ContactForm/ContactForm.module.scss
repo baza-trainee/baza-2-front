@@ -37,9 +37,9 @@
   @include mx.media-q("md") {
     margin-bottom: 32px;
   }
-  // @include mx.media-q("lg") {
-  //   margin-bottom: 40px;
-  // }
+  @include mx.media-q("xl") {
+    margin-bottom: 40px;
+  }
 }
 
 @keyframes send-slide {
