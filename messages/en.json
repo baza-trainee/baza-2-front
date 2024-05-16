@@ -32,44 +32,44 @@
 			}
 		},
 		"history_project_section": {
-			"title": "Історія проєкту",
-			"text": "Наш проєкт розпочався у квітні 2023 року з метою підтримки та професійного розвитку джунів та світчерів до сфери ІТ.",
-			"text1": "За рік ми досягли значних успіхів:",
+			"title": "Project history",
+			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",
+			"text1": "In a year, we have achieved significant success:",
 			"history": {
 				"item1": {
-					"date": "Квітень 2023:",
-					"text": "Старт проєкту Baza Trainee Ukraine"
+					"date": "April 2023:",
+					"text": "Project launch of Baza Trainee Ukraine."
 				},
 				"item2": {
-					"date": "Серпень 2023:",
-					"text": "Перша тисяча заявок від учасників загалом на 17 різноманітних проєктів, 8 менторів"
+					"date": "August 2023:",
+					"text": "The first thousand applications from participants for a total of 17 different projects, with 8 mentors."
 				},
 				"item3": {
-					"date": "Листопад 2023:",
-					"text": "Чотири лендінги з військових зборів закумулювали понад 200 тис грн, більше 50 працевлаштованих джунів "
+					"date": "November 2023:",
+					"text": "Four landing pages for military fundraising accumulated over 200,000 UAH, and more than 50 juniors were employed. "
 				},
 				"item4": {
-					"date": "Грудень 2023:",
-					"text": "Кількість учасників зросла до 1700. Успішно завершено 35 проєктів."
+					"date": "December 2023:",
+					"text": "The number of participants has increased to 1700. 35 projects have been successfully completed."
 				},
 				"item5": {
-					"date": "Березень 2024:",
-					"text": "Під час нашої роботи ми спостерігаємо ускладнення рівню проєктів — від простих лендінгів до повноцінних сайтів з складними внутрішніми блоками"
+					"date": "March 2024:",
+					"text": "During our work, we observe a complication in the level of projects — from simple landing pages to full-fledged websites with complex internal structures."
 				}
 			}
 		},
 		"counter_section": {
-			"title": "Наш прогрес",
+			"title": "Our progress",
 			"active_projects": "active projects",
 			"involved_participants": "involved participants",
 			"employed": "employed"
 		},
 		"mentor_section": {
-			"title": "Ментору",
-			"paragraph_1": "Ментор - це колега на два рівні вищий за менторі, який слідкує за виконанням задач і допомагає порадою або роз`ясненням, коли учасник не впевнений в рішенні",
-			"paragraph_2": "Наші ментори - практики провідних ІТ-компаній України, які прагнуть підтримати новачків знаннями і розширити власні управлінські навички.",
-			"paragraph_3": "На Baza Trainee Ukraine ментор направляє команду одразу з декількох осіб, спряючи їхньому професійному розвитку.",
-			"btn_mentor": "Стати ментором"
+			"title": "Mentor",
+			"paragraph_1": "A mentor is a colleague two levels above the mentee who oversees task execution and provides guidance or clarification when the participant is unsure about a decision.",
+			"paragraph_2": "Our mentors are practitioners from leading IT companies in Ukraine who aim to support newcomers with knowledge and enhance their own managerial skills.",
+			"paragraph_3": "At Baza Trainee Ukraine, mentors guide a team consisting of several individuals, fostering their professional development simultaneously.",
+			"btn_mentor": "Become a mentor"
 		},
 		"our_structure_section": {
 			"title": "Our structure",
@@ -93,26 +93,26 @@
 		"FAQ_section": {
 			"title": "FAQ",
 			"question_1": {
-				"title": "Які проєкти ми виконуємо?",
-				"text": "Ми створюємо справжні цифрові проєкти на соціальну тематику для конкретних замовників або внутрішні. Всі вони будуть присутні в мережі протягом року, і ви зможете продемонструвати їх в портфоліо . Це не абстрактні блоки, а реальні продукти, які мають соціальний вплив."
+				"title": "What projects are we executing?",
+				"text": "We create genuine digital projects on social topics for specific clients or internal purposes. All of them will be available online within a year, allowing you to showcase them in your portfolio. These are not abstract blocks but real products with social impact."
 			},
 			"question_2": {
-				"title": "Як подати заявку?",
-				"text": "На нашому сайті на сторінці Стажування під кнопкою Приєднатись до спільноти розташована анкета на участь в роботі організації. Для участі вам знадобиться акаунт в соціальній мережі Discord. Якщо його немає, відкрийте будь ласка і будьте з нами на зв`язку."
+				"title": "How to submit an application?",
+				"text": "On our website, on the Internship page, under the 'Join the Community' button, there is a form to apply for participation in the organization's work. To participate, you will need an account on the Discord social network. If you don't have one, please open one and stay in touch with us."
 			},
 			"question_3": {
-				"title": "Де можна ознайомитися з  умовами участі?",
-				"text": "Деталі на сторінці Стажування"
+				"title": "Where can I familiarize myself with the terms of participation?",
+				"text": "The details are on the Internship page."
 			},
 			"question_4": {
-				"title": "Чи можна побачити проєкти організації?",
-				"text": "Всі проєкти, на стадії збору команди, в процесі виконання або випущені розміщені на сторінці Проєкти. Там же можна побачити склад команди, яка його виконувала."
+				"title": "Can one see the organization's projects?",
+				"text": "All projects, whether in the team formation stage, in progress, or completed, are listed on the Projects page. You can also see the team composition responsible for each project there."
 			},
 			"question_5": {
-				"title": "Чи можна обрати потрібну мову програмування для участі?",
-				"text": "Так. Якщо є дваі і більше програмістів, що хочуть попрактикувати Vue.js або Angular або Flask, ми підберемо проєкт під обрану технологію. Приходьте з друзями, буде весело!"
+				"title": "Can I choose the programming language I want to participate in?",
+				"text": "So. If there are two or more programmers who want to practice Vue.js or Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!"
 			},
-			"btn_support_project": "Підтримати проєкт"
+			"btn_support_project": "Support the project"
 		},
 		"reviews_section": {
 			"title": "Reviews"
@@ -173,17 +173,19 @@
     "btn_home": "Try again"
   },
 
-	"Modal": {
-		"amount": "Сума поповнення",
+	"Modal_support": {
+		"amount": "Top-up amount",
 		"UAH": "UAH",
 		"another_amount": "Another amount",
 		"btn_support": "To support",
 		"thanks_support": "Thanks for your support",
-		"btn_home": "Return to the home page"
+		"btn_home": "Return to the home page",
+		"ariaLabel_btn_close_1": "closes the modal payment window",
+    "ariaLabel_btn_close_2": "closes the thank you modal window"
 	},
 
 	"Modal_form": {
-		"title": "Registration for participation in the Baza Trainee Ukraine project",
+		"title": "Mentor registration on Baza Trainee Ukraine",
 		"firstName": "First Name",
 		"lastName": "Last Name",
 		"specialization": "Specialization",
@@ -194,6 +196,17 @@
 		"linkedin_placeholder": "Link to profile",
 		"convenient_time": "A convenient time for consultation",
 		"agree": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
-		"btn_send": "Send"
+		"btn_send": "Send",
+		"error_message":{
+      "firstName": "Введіть ім’я",
+      "lastName": "Введіть прізвище",
+      "specialization": "Оберіть спеціалізацію",
+      "email": "Введіть електронну пошту ",
+      "phone": "Введіть номер телефону ",
+      "discord": "Введіть нік в Discord",
+      "linkedin": "Введіть профіль в Linkedin",
+      "convenient_time": "Оберіть час роботи",
+      "agree": "Надайте згоду на обробку персональних даних"
+    }
 	}
 }

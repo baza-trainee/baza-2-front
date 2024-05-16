@@ -174,17 +174,19 @@
     "btn_home": "Спробуйте знову"
   },
 
-  "Modal": {
+  "Modal_support": {
     "amount": "Сума поповнення",
     "UAH": "грн",
     "another_amount": "Інша сума",
     "btn_support": "Підтримати",
     "thanks_support": "Дякуємо за підтримку!",
-    "btn_home": "Повернутись на головну"
+    "btn_home": "Повернутись на головну",
+    "ariaLabel_btn_close_1": "зачиняє модальне вікно оплати",
+    "ariaLabel_btn_close_2": "зачиняє модальне вікно подяки"
   },
 
   "Modal_form": {
-    "title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
+    "title": "Реєстрація ментора на Baza Trainee Ukraine",
     "firstName": "Ім’я",
     "lastName": "Прізвище",
     "specialization": "Спеціалізація",
@@ -195,6 +197,17 @@
     "linkedin_placeholder": "Лінк на профіль",
     "convenient_time": "Зручний час для консультації",
     "agree": "Надаю згоду на обробку персональних даних відповідно до Закону України «Про захист персональних даних»",
-    "btn_send": "Відправити"
+    "btn_send": "Відправити",
+    "error_message":{
+      "firstName": "Введіть ім’я",
+      "lastName": "Введіть прізвище",
+      "specialization": "Оберіть спеціалізацію",
+      "email": "Введіть електронну пошту ",
+      "phone": "Введіть номер телефону ",
+      "discord": "Введіть нік в Discord",
+      "linkedin": "Введіть профіль в Linkedin",
+      "convenient_time": "Оберіть час роботи",
+      "agree": "Надайте згоду на обробку персональних даних"
+    }
   }
 }

@@ -14,7 +14,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty, isSubmitSuccessful },
-    reset,
+    reset
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
 
   const onSubmit = (data) => {

@@ -1,0 +1,74 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins.scss" as mx;
+
+.card{
+  border: 2px solid var.$primary-border;
+  border-radius: 12px;
+  padding: 24px 32px;
+  min-width: 826px;
+  min-height: 429px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  background: var.$primary-fon-card;
+  color: var.$secondary-white;
+  position: relative;
+  
+  & > h2{
+    @include mx.apply-font-styles(var.$h1-font);
+    margin-bottom: 28px
+  }
+  & > p{
+    @include mx.apply-font-styles(var.$h2-font);
+    display: flex;
+    gap: 13px;
+    align-items: center;
+
+    .icon{
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .close_btn{
+    position: absolute;
+    top: 24px;
+    right: 25px;
+    z-index: 2;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+
+    & > svg{
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover{
+      opacity: .7;
+    }
+  }
+
+  .total{
+    @include mx.apply-font-styles(var.$h2-font);
+    font-size: 100px;
+    line-height: normal;
+    & > svg{
+      display: block;
+      width: 32px;
+      height: 38px;
+    }
+  }
+
+  .btns{
+    display: flex;
+    gap: 16px;
+  }
+
+  ._active{
+    box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
+    background: var.$secondary-hover;
+    color: var.$secondary-black;
+  }
+}
