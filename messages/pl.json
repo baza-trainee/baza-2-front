@@ -66,9 +66,9 @@
     },
     "mentor_section": {
       "title": "Mentorowi",
-      "paragraph_1": "Mentor - це колега на два рівні вищий за менторі, який слідкує за виконанням задач і допомагає порадою або роз`ясненням, коли учасник не впевнений в рішенні",
-      "paragraph_2": "Наші ментори - практики провідних ІТ-компаній України, які прагнуть підтримати новачків знаннями і розширити власні управлінські навички.",
-      "paragraph_3": "На Baza Trainee Ukraine ментор направляє команду одразу з декількох осіб, спряючи їхньому професійному розвитку.",
+      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji",
+      "paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
+      "paragraph_3": "W Baza Trainee Ukraine mentor kieruje kilkuosobowym zespołem jednocześnie, kierując ich rozwojem zawodowym.",
       "btn_mentor": "Zostać mentorem"
     },
     "our_structure_section": {
@@ -93,24 +93,24 @@
     "FAQ_section": {
       "title": "FAQ",
       "question_1": {
-        "title": "Які проєкти ми виконуємо?",
-        "text": "Ми створюємо справжні цифрові проєкти на соціальну тематику для конкретних замовників або внутрішні. Всі вони будуть присутні в мережі протягом року, і ви зможете продемонструвати їх в портфоліо . Це не абстрактні блоки, а реальні продукти, які мають соціальний вплив."
+        "title": "Jakie projekty realizujemy?",
+        "text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
       },
       "question_2": {
-        "title": "Як подати заявку?",
-        "text": "На нашому сайті на сторінці Стажування під кнопкою Приєднатись до спільноти розташована анкета на участь в роботі організації. Для участі вам знадобиться акаунт в соціальній мережі Discord. Якщо його немає, відкрийте будь ласка і будьте з нами на зв`язку."
+        "title": "Jak aplikować?",
+        "text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
       },
       "question_3": {
-        "title": "Де можна ознайомитися з  умовами участі?",
-        "text": "Деталі на сторінці Стажування"
+        "title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
+        "text": "Szczegóły na stronie Staż"
       },
       "question_4": {
-        "title": "Чи можна побачити проєкти організації?",
-        "text": "Всі проєкти, на стадії збору команди, в процесі виконання або випущені розміщені на сторінці Проєкти. Там же можна побачити склад команди, яка його виконувала."
+        "title": "Czy można zobaczyć projekty organizacji?",
+        "text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
       },
       "question_5": {
-        "title": "Чи можна обрати потрібну мову програмування для участі?",
-        "text": "Так. Якщо є дваі і більше програмістів, що хочуть попрактикувати Vue.js або Angular або Flask, ми підберемо проєкт під обрану технологію. Приходьте з друзями, буде весело!"
+        "title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
+        "text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
       },
       "btn_support_project": "Wesprzyj projekt"
     },
@@ -173,27 +173,40 @@
     "btn_home": "Spróbuj ponownie"
   },
 
-  "Modal": {
+  "Modal_support": {
     "amount": "Kwota doładowania",
     "UAH": "UAN",
     "another_amount": "Inna kwota",
     "btn_support": "Wspierać",
     "thanks_support": "Dziękujemy za wsparcie!",
-    "btn_home": "Powrót do strony głównej"
+    "btn_home": "Powrót do strony głównej",
+    "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
+    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami"
   },
 
   "Modal_form": {
-    "title": "Реєстрація на участь в проєкті Baza Trainee Ukraine",
+    "title": "Rejestracja mentora na Baza Trainee Ukraine",
     "firstName": "Imię",
     "lastName": "Nazwisko",
-    "specialization": "Спеціалізація",
-    "email": "Електронна пошта",
-    "phone": "Телефон",
-    "discord": "Нік в Discord",
-    "linkedin": "Профіль в Linkedin",
-    "linkedin_placeholder": "Лінк на профіль",
-    "convenient_time": "Зручний час для консультації",
-    "agree": "Надаю згоду на обробку персональних даних відповідно до Закону України «Про захист персональних даних»",
-    "btn_send": "Відправити"
+    "specialization": "Specjalizacja",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "discord": "Nick na Discordzie",
+    "linkedin": "Profil na Linkedinie",
+    "linkedin_placeholder": "Link do profilu",
+    "convenient_time": "Dogodny termin konsultacji",
+    "agree": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
+    "btn_send": "Wysłać",
+    "error_message":{
+      "firstName": "Введіть ім’я",
+      "lastName": "Введіть прізвище",
+      "specialization": "Оберіть спеціалізацію",
+      "email": "Введіть електронну пошту ",
+      "phone": "Введіть номер телефону ",
+      "discord": "Введіть нік в Discord",
+      "linkedin": "Введіть профіль в Linkedin",
+      "convenient_time": "Оберіть час роботи",
+      "agree": "Надайте згоду на обробку персональних даних"
+    }
   }
 }

@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
@@ -26,9 +27,7 @@ const Modal = ({ children, isOpen, handleClose }) => {
 
   if (!isOpen) return null;
 
-  return createPortal(
-    <div className={styles.modalOverlay}>{children}</div>,
-    document.body
+  return createPortal(<div className={styles.modalOverlay}>{children}</div>, document.body
   );
 };
 

@@ -1,17 +1,16 @@
 import createMiddleware from "next-intl/middleware";
+import { locales } from "./i18n";
 
 export default createMiddleware({
-  // A list of all locales that are supported
-  locales: ["ua", "en", "pl"],
+  //Список усіх підтримуваних локалізацій
+  locales: locales,
 
-  // Used when no locale matches
-  //lng: 'ua',
+  // Використовується, коли не збігається жодна локаль
   defaultLocale: "ua",
-  //debugger: true,
   localeDetection: false
 });
 
 export const config = {
-  // Match only internationalized pathnames
+  // Зіставляти лише інтернаціоналізовані шляхи
   matcher: ["/", "/(ua|en|pl)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
 };

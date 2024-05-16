@@ -38,12 +38,10 @@
     background: var.$primary-hover;
   }
 
-  &:hover::after,
-  &:focus:after {
+  &:hover::after{
     opacity: 0;
   }
-  &:hover,
-  &:focus {
+  &:hover{
     color: var.$secondary-black;
   }
 

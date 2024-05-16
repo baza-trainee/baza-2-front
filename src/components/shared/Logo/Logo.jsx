@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "./Logo.module.scss";
 import clsx from "clsx";
 import { Link } from "@/src/navigation";
@@ -36,7 +37,7 @@ export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel
       onClick={scrollToTop}
       aria-label={ariaLabel}
     >
-      <Icon className={styles.icon} name="logo"/>
+      <Icon className={styles.logo} name="logo"/>
     </Link>
   );
 }
