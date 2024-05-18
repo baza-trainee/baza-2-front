@@ -1,18 +1,18 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins.scss" as mx;
 
-.section{
+.section {
   padding: 16px 10px;
-  @include mx.media-q("sm") {
+  @include mx.media-q("tn") {
     padding: 24px 20px;
   }
   @include mx.media-q("md") {
     padding: 48px 10px;
   }
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     padding: 60px 10px;
   }
-  .wrapper{
+  .wrapper {
     width: clamp(300px, 90vw, 673px);
     display: flex;
     flex-direction: column;
@@ -22,26 +22,26 @@
     padding: 16px 10px;
     margin: 0 auto;
     box-shadow: inset 0 2px 16px 0 rgba(154, 149, 153, 0.6);
-    background: rgba(210, 210, 210, 0.5); 
+    background: rgba(210, 210, 210, 0.5);
 
     @include mx.media-q("md") {
       padding: 24px;
       gap: 32px;
     }
-    @include mx.media-q("lg") {
+    @include mx.media-q("xl") {
       gap: 40px;
     }
-    & > h2{
+    & > h2 {
       @include mx.apply-font-styles(var.$h3-font);
       font-weight: 600;
       font-size: 20px;
-      @include mx.media-q("sm") {
+      @include mx.media-q("tn") {
         font-size: 24px;
       }
       @include mx.media-q("md") {
         font-size: 32px;
       }
-      @include mx.media-q("lg") {
+      @include mx.media-q("xl") {
         font-size: 40px;
       }
     }

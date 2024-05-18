@@ -21,7 +21,7 @@
     opacity: 0;
     z-index: 5;
   }
-  .send > svg{
+  .send > svg {
     display: block;
     width: 50px;
     height: 50px;
@@ -37,7 +37,7 @@
   @include mx.media-q("md") {
     margin-bottom: 32px;
   }
-  @include mx.media-q("lg") {
+  @include mx.media-q("xl") {
     margin-bottom: 40px;
   }
 }
