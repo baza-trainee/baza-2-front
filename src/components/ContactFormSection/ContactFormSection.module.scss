@@ -1,11 +1,11 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins.scss" as mx;
 
-.section {
-  padding: 16px 10px;
-  @include mx.media-q("tn") {
-    padding: 24px 20px;
-  }
+.section{
+   padding: 16px 10px;
+  // @include mx.media-q("sm") {
+  //   padding: 24px 20px;
+  // }
   @include mx.media-q("md") {
     padding: 48px 10px;
   }
@@ -35,9 +35,10 @@
       @include mx.apply-font-styles(var.$h3-font);
       font-weight: 600;
       font-size: 20px;
-      @include mx.media-q("tn") {
-        font-size: 24px;
-      }
+      // @include mx.media-q("sm") {
+      //   font-size: 24px;
+      // }
+
       @include mx.media-q("md") {
         font-size: 32px;
       }

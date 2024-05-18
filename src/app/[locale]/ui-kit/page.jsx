@@ -6,14 +6,17 @@ import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import StructureSection from "../../../components/StructureSection/StructureSection";
 import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
 import ControlBtnModalPayment from "@/src/components/shared/controlButtons/ControlBtnModalPayment";
+import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
+import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 
 export default function UiKit() {
   return (
     <main>
-      <PaymentModal/>
+      <PaymentModal />
       <ScrollToTopBtn />
       <FooterLinks />
       <ControlBtnModalPayment>Test PaymentModal</ControlBtnModalPayment>
+      <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
       <PartnerCard />
       <StructureSection />
       <HeroCard
@@ -22,6 +25,7 @@ export default function UiKit() {
         img="/images/hero_section/img-hero.jpg"
       />
       <SocialIcons />
+      <RegistrationFormModal/>
     </main>
   );
 }
