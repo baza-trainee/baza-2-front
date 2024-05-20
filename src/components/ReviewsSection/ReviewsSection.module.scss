@@ -11,15 +11,27 @@
 
 .title {
   @include apply-font-styles($h1-font);
+  @media (max-width: 1366px) {
+    font-size: 32px;
+  }
+  @media (max-width: 608px) {
+    font-size: 32px;
+  }
+  @media (max-width: 420px) {
+    font-size: 24px;
+  }
 }
 
 .sliderContainer {
-  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 
 .titleRow {
   position: relative;
   margin-bottom: 48px;
+  @media (max-width: 1366px) {
+    margin-bottom: 33px;
+  }
 }
 
 .prevBtn {
@@ -32,6 +44,9 @@
   top: 0;
   right: 0;
   gap: 32px;
+  @media (max-width: 608px) {
+    display: none;
+  }
 }
 .pagination {
   display: inline-flex;

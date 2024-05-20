@@ -12,8 +12,8 @@ const FeedbackCard = ({ image, name, role, date, text }) => {
           <div className={styles.personInfo}>
             <p className={styles.name}>{name}</p>
             <p className={styles.role}>{role}</p>
+            <p className={styles.date}>{date}</p>
           </div>
-          <p className={styles.date}>{date}</p>
         </div>
       </div>
       <div>
