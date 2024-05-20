@@ -7,7 +7,6 @@ import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import { Icon } from "../../shared/Icon/Icon";
 
-
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
   const {
