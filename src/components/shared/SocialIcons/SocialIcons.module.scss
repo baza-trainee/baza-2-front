@@ -1,6 +1,9 @@
 .list {
   display: flex;
   gap: 32px;
+  @media (max-width: 696px) {
+    justify-content: center;
+  }
 }
 
 .icon {
