@@ -37,17 +37,6 @@
     top: 24px;
     right: 25px;
     z-index: 2;
-    transition: all var.$transition-duration-base var.$transition-timing-base;
-
-    & > svg{
-      display: block;
-      width: 32px;
-      height: 32px;
-    }
-
-    &:hover{
-      opacity: .7;
-    }
   }
 
   .total{
