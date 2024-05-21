@@ -146,7 +146,12 @@
 			"email": "Email",
 			"message": "Message",
 			"message_placeholder": "Your message",
-			"btn_send": "Send"
+			"btn_send": "Send",
+			"error_message":{
+        "name": "Enter a name",
+        "email": "Please enter a valid email",
+        "message": "Enter a message"
+      }
 		}
 	},
 

@@ -12,12 +12,13 @@ import usePaymentHandler from './usePaymentHandler';
 import { btnItems } from './btnItems';
 import styles from './PaymentModal.module.scss';
 import clsx from "clsx";
+import CloseBtn from '../shared/CloseBtn/CloseBtn';
 
 export default function PaymentModal() {
   // Отримуємо стан.
   const isOpen = stateModalPayment(state => state.isOpen);
   const close = stateModalPayment(state => state.close);
-  // контент.
+  // router.
   const router = useRouter();
   const { locale } = useParams();
   // контент.
@@ -68,14 +69,13 @@ export default function PaymentModal() {
         <MainButton disabled={amount==='0'} onClick={submit}>{t('btn_support')}</MainButton>
       </>
       }
-
-      <button type='button' 
-        aria-label={thank ? 
+      <CloseBtn ariaLabel={ thank ? 
           t('ariaLabel_btn_close_2') : 
-          t('ariaLabel_btn_close_1')} 
+          t('ariaLabel_btn_close_1')
+        }
         onClick={handleClose} 
-        className={styles.close_btn}><Icon name='close'/>
-      </button>
+        className={styles.close_btn}
+      />
     </div>
   </Modal>
 }

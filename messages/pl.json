@@ -146,7 +146,12 @@
       "email": "E-mail",
       "message": "Wiadomość",
       "message_placeholder": "Twoja wiadomość",
-      "btn_send": "Wyślać"
+      "btn_send": "Wyślać",
+      "error_message":{
+        "name": "Wpisz imię",
+        "email": "Proszę podać poprawny adres e-mail",
+        "message": "Wpisz wiadomość"
+      }
     }
   },
 
