@@ -9,7 +9,7 @@
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width: 1024px) {
-    min-width: 688px;
+    max-width: 1024px;
   }
 }
 
@@ -39,7 +39,7 @@
   }
 }
 
-@media (max-width: 696px) {
+@media (max-width: 480px) {
   .hideOnSmallScreen {
     display: none;
   }
@@ -51,7 +51,7 @@
   }
 }
 
-@media (min-width: 697px) {
+@media (min-width: 479px) {
   .hideOnSmallScreen {
     display: block;
   }
@@ -64,9 +64,3 @@
   display: flex;
   justify-content: center;
 }
-// .logo {
-//   @media (min-width: 697px) {
-//     width: 100px;
-//     height: 100px;
-//   }
-// }
