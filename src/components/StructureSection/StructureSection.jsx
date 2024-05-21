@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import StructureCard from "../shared/StructureCard/StructureCard";
+import StructureCard from "./StructureCard/StructureCard";
 import styles from "./StructureSection.module.scss";
 import { items } from "./items";
 import { createKey } from "../../lib/utils/createKey";
@@ -11,8 +11,8 @@ export default function StructureSection() {
 
   return (
     <section className={styles.mainContainer}>
-      <div className={styles.text}>
-        <p>{t("title")}</p>
+      <div className={styles.title}>
+        <div>{t("title")}</div>
       </div>
       <div className={styles.cardContainer}>
         {items.map((item) => {
