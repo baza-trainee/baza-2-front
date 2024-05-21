@@ -11,36 +11,34 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(90%) brightness(60%);
+  filter: brightness(60%);
 }
 
 .wrapper {
   position: absolute;
   top: 0;
   z-index: 3;
-  margin: 16px 8px;
-  padding: 8px;
+  padding: 32px 16px;
   color: var.$secondary-white;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 16px;
-
-  @include mx.media-q("md") {
-    margin: 43px auto;
-    padding: 16px 40px;
-    gap: 24px;
+  @media (min-width: 420px) {
+    padding: 32px 20px;
   }
 
+  @include mx.media-q("md") {
+    padding: 40px 4%;
+    gap: 24px;
+  }
+  @media (min-width: 990px) {
+    padding: 40px 9%;
+  }
   @include mx.media-q("xl") {
-    margin: 42.5px auto;
-    padding: 24px;
+    padding: 70px 13%;
     gap: 60px;
-    top: 0%;
-    right: 50%;
-    transform: translateX(50%);
-    max-width: clamp(818px, 818px, 860px);
   }
 
   h2 {
@@ -48,6 +46,10 @@
     font-weight: 700;
     font-size: 24px;
 
+    @media (min-width: 420px) {
+      font-size: 32px;
+    }
+    
     @include mx.media-q("md") {
       font-size: 48px;
     }
@@ -61,6 +63,9 @@
     @include mx.apply-font-styles(var.$h2-font);
     font-size: 16px;
 
+    @media (min-width: 420px) {
+      font-size: 18px;
+    }
     @include mx.media-q("md") {
       font-size: 24px;
     }
