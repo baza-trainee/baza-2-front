@@ -24,7 +24,6 @@ export default function ContactForm() {
     reset();
   };
 
-
   useEffect(() => {
     const toggleReset = () => {
       const scrolled = window.scrollY;
