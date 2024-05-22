@@ -22,7 +22,7 @@ export default function UiKit() {
       <HeroCard
         title="slide_1.title"
         desc="slide_1.text"
-        img="/images/hero_section/img-hero.jpg"
+        img="/images/hero_section/slide_1.jpg"
       />
       <SocialIcons />
       <RegistrationFormModal/>
