@@ -1,11 +1,16 @@
 @use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
 .btn{
   transition: all var.$transition-duration-base var.$transition-timing-base;
   & > svg{
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    @include mx.media-q("md") {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &:hover{
