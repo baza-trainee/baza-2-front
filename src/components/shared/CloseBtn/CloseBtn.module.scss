@@ -3,7 +3,7 @@
 
 .btn{
   transition: all var.$transition-duration-base var.$transition-timing-base;
-  & > svg{
+  & svg{
     display: block;
     width: 28px;
     height: 28px;

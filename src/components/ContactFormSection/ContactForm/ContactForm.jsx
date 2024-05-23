@@ -6,7 +6,7 @@ import { formScheme } from "./formScheme";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import { Icon } from "../../shared/Icon/Icon";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
@@ -23,22 +23,6 @@ export default function ContactForm() {
     console.log(data);
     reset();
   };
-
-  useEffect(() => {
-    const toggleReset = () => {
-      const scrolled = window.scrollY;
-      const form = formRef.current ? formRef.current.offsetTop : 0;
-      if (scrolled <= (form-600) || scrolled >= (form + 500)) {
-        reset()
-      }
-    };
-
-    window.addEventListener("scroll", toggleReset);
-    return () => {
-      window.removeEventListener("scroll", toggleReset);
-    };
-  }, []);
-
 
   const isDisabled = () => {
     if (errors.firstName || errors.email || errors.message) {

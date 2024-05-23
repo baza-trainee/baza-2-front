@@ -9,13 +9,13 @@ const usePaymentHandler = (payment,locale) => {
     merchantDomainName: window.location.hostname,
     apiVersion: 1,
     orderReference: Date.now().toString(),
-    orderDate: Date.now(),
-    amount: Number(paymentAmount),
-    language: locale,// мова сторінки оплати
-    currency: 'UAH',
-    productName: ['Baza trainee support'],
-    productCount: [1],
-    productPrice: [Number(paymentAmount)],
+    orderDate: Date.now(),// дата.
+    amount: Number(paymentAmount), // сума.
+    language: locale, // мова сторінки оплати.
+    currency: 'UAH',// валюта.
+    productName: ['Baza trainee support'],// наза товару.
+    productCount: [1], // кількість товару.
+    productPrice: [Number(paymentAmount)], // ціна за одиницю товару.
     serviceUrl: 'https://baza-trainee.tech/api/v1/payment/complete',
   };
 
