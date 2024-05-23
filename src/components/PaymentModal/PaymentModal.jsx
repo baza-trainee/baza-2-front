@@ -36,19 +36,21 @@ export default function PaymentModal() {
   }, [thank]);
 
   return <Modal isOpen={isOpen} handleClose={handleClose}>
-    <div className={styles.card}>
-      {thank?
-      <ThanksCard goHome={handleGoHome}/>:
-      <FormPayment handleThank={handleThank}/>
-      }
-
-      <CloseBtn ariaLabel={ thank ? 
-          t('ariaLabel_btn_close_2') : 
-          t('ariaLabel_btn_close_1')
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        {thank?
+        <ThanksCard goHome={handleGoHome}/>:
+        <FormPayment handleThank={handleThank}/>
         }
-        onClick={handleClose} 
-        className={styles.close_btn}
-      />
+
+        <CloseBtn ariaLabel={ thank ? 
+            t('ariaLabel_btn_close_2') : 
+            t('ariaLabel_btn_close_1')
+          }
+          onClick={handleClose} 
+          className={styles.close_btn}
+        />
+      </div>
     </div>
   </Modal>
 }
