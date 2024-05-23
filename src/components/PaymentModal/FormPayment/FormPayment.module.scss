@@ -2,18 +2,14 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .form{
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-  // gap: 32px;
   color: var.$secondary-white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px 16px;
+  padding: 32px 5px;
   gap: 16px;
+
   @include mx.media-q("md") {
     padding: 24px 16px;
     gap: 32px;
@@ -24,9 +20,8 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    //font-weight: 700;
-    //font-weight: 600;
     font-size: 20px;
+
     @media (min-width: 420px) {
       font-size: 24px;
     }
@@ -35,106 +30,79 @@
       font-weight: 700;
       gap: 13px;
     }
+
     .icon{
       display: block;
       width: 24px;
       height: 24px;
     }
   }
-  // .total{
-  //   @include mx.apply-font-styles(var.$h2-font);
-  //   font-size: 100px;
-  //   line-height: normal;
-  //   & > svg{
-  //     display: block;
-  //     width: 32px;
-  //     height: 38px;
-  //   }
-  // }
+
   .amount{
     display: flex;
     align-items: center;
     justify-content: center;
-    //margin: 0 auto;
     padding-right: 40px;
-    //transform: translateX(-20%);
     gap: 10px;
-    //background-color: aqua;
+
     @media (min-width: 420px) {
       gap: 16px;
       padding-right: 40px;
     }
+
     @include mx.media-q("md") {
       padding: 0;
       transform: translateX(-40px);
-      
     }
+
     .input{
       background: none;
       color: var.$secondary-white;
       outline: 0;
-      //min-width: 67vw;
       max-width: 72vw;
       overflow: hidden;
-      //padding: 0;
-      //margin: 0;
       text-align: end;
       @include mx.apply-font-styles(var.$h2-font);
-      //font-size: 100px;
       font-size: 90px;
       line-height: normal;
+
       @media (min-width: 420px) {
         font-size: 96px;
-        //min-width: auto;
       }
+
       @include mx.media-q("md") {
         font-size: 100px;
-        
       }
     }
+
     & svg{
       display: block;
       width: 32px;
       height: 38px;
     }
   }
+
   .amount._active{
     padding: 0;
-    @media (min-width: 420px) {
-      //padding-right: 45px;
-      
-    }
   }
+
   .btns{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    //flex-wrap: wrap;
-    //gap: 16px;
-    @media (min-width: 350px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      //padding-right: 45px;
-      
-    }
+    flex-wrap: wrap;
+    gap: 12px;
+
     @include mx.media-q("md") {
       gap: 16px;
     }
   }
+
   .btn{
     padding: 12px 28px;
     font-weight: 400;
     font-size: 14px;
-    margin: 8px;
-    min-width: 250px;
-    @media (min-width: 365px) {
-      min-width: 50px;
-      //flex-direction: row;
-      //flex-wrap: wrap;
-      //padding-right: 45px;
-      
-    }
+
     @include mx.media-q("md") {
       font-size: 18px;
       margin: 0;
@@ -147,21 +115,15 @@
 
   .btn._hide{
     display: none;
-    @media (min-width: 523px) {
+
+    @media (min-width: 483px) {
       display: inline-block;
-      
     }
   }
+
   .btn._active{
     box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
     background: var.$secondary-hover;
     color: var.$secondary-black;
-  }
-}
-.btn_submit{
-  min-width: 250px;
-  @media (min-width: 365px) {
-    min-width: 50px;
-    
   }
 }

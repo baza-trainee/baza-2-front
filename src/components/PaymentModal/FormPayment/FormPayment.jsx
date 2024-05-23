@@ -71,7 +71,7 @@ export default function FormPayment({handleThank}) {
     onSubmit(amount)
     }}>
     <p>{t('amount')} <Icon className={styles.icon} name='donate-modal-icon'/></p>
-    <div className={clsx(styles.amount, amount.length>1&&!readOnly && styles._active)}>
+    <div className={clsx(styles.amount, amount.length >1 && !readOnly && styles._active)}>
       <input 
         id='amount'
         value={amount} 

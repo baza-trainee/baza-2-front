@@ -18,8 +18,12 @@
 
   & > h2{
     @include mx.apply-font-styles(var.$h1-font);
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
+
+    @media (min-width: 420px) {
+      font-size: 24px;
+    }
 
     @include mx.media-q("md") {
       font-size: 32px;

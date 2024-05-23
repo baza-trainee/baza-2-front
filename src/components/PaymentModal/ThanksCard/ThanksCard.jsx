@@ -7,7 +7,7 @@ export default function ThanksCard({goHome}) {
 
   return <div className={styles.thanks}>
     <h2>{t('thanks_support')}</h2>
-    <MainButton className={styles.btn} 
+    <MainButton
       onClick={goHome}>{t('btn_home')}</MainButton>
   </div>
 }
