@@ -7,6 +7,7 @@ import stateModalPayment from '@/src/state/stateModalPayment';
 import styles from './PaymentModal.module.scss';
 import FormPayment from './FormPayment/FormPayment';
 import ThanksCard from './ThanksCard/ThanksCard';
+import CloseBtn from '../shared/CloseBtn/CloseBtn';
 
 export default function PaymentModal() {
   // Отримуємо стан.
