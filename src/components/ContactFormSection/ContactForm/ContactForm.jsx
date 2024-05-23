@@ -1,5 +1,6 @@
 "use client";
 import styles from "./ContactForm.module.scss";
+import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
@@ -10,7 +11,8 @@ import { useRef } from "react";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
-  const formRef = useRef(null)
+  const formRef = useRef(null);
+
   const {
     register,
     handleSubmit,
@@ -50,7 +52,7 @@ export default function ContactForm() {
             label={t("name")}
            
           />
-          {errors.firstName && <span className={styles.error}>{t("error_message.name")}</span>}
+          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.name")}</span>}
         </li>
         <li>
           <InputField
@@ -64,7 +66,7 @@ export default function ContactForm() {
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <span className={styles.error}>{t("error_message.email")}</span>}
+          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t("error_message.email")}</span>}
         </li>
         <li>
           <InputField
@@ -81,6 +83,7 @@ export default function ContactForm() {
           {errors.message && <span className={styles.error}>{t("error_message.message")}</span>}
         </li>
       </ul>
+      
       <MainButton type="submit" disabled={isDisabled()}>
         {t("btn_send")}
       </MainButton>
