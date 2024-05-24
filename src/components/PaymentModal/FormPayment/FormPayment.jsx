@@ -16,7 +16,8 @@ export default function FormPayment({handleThank}) {
   // локальний стан.
   const [amount, setAmount] = useState('0');
   const [readOnly, setReadOnly] = useState(true);
-  
+  const [error, setError] = useState(null);
+
   const { locale } = useParams();
   const inputRef = useRef(null);
 
@@ -57,10 +58,16 @@ export default function FormPayment({handleThank}) {
     }
   };
   
+  const renderError=(value)=>{
+    setError(value)
+    setTimeout(() => {
+      setError(null)
+    }, 1000);
+  }
   const isValidate = (value) => {
    if(/^[1-9]\d{0,3}$|^$/.test(value)){
     setAmount(value.trim())
-   }
+   }else renderError(value.trim())
   }
 
   const activeStyle = id => (readOnly && amount === id) || (!readOnly && id === 'another');
@@ -71,7 +78,7 @@ export default function FormPayment({handleThank}) {
     onSubmit(amount)
     }}>
     <p>{t('amount')} <Icon className={styles.icon} name='donate-modal-icon'/></p>
-    <div className={clsx(styles.amount, amount.length >1 && !readOnly && styles._active)}>
+    <div className={clsx(styles.amount, amount.length > 1 && !readOnly && styles._active)}>
       <input 
         id='amount'
         value={amount} 
@@ -85,6 +92,8 @@ export default function FormPayment({handleThank}) {
         autoComplete="off"
         />
       <label htmlFor='amount'><Icon name='currency'/></label>
+
+      {error && <span className={styles.error}>{error}!</span>}
     </div>
 
     <ul className={styles.btns}>

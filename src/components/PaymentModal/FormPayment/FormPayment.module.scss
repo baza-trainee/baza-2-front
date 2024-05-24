@@ -44,6 +44,7 @@
     justify-content: center;
     padding-right: 40px;
     gap: 10px;
+    position: relative;
 
     @media (min-width: 420px) {
       gap: 16px;
@@ -79,6 +80,24 @@
       display: block;
       width: 32px;
       height: 38px;
+    }
+
+    .error{
+      @include mx.apply-font-styles(var.$h2-font);
+      font-size: 100px;
+      line-height: normal;
+      color: var.$secondary-error;
+      text-align: end;
+      padding-right: 48px;
+      width: 100%;
+      opacity: 0;
+      //background-color: aqua;
+      position: absolute;
+      top: 0;
+      //right: 50%;
+      left: 0;
+      z-index: 2;
+      animation: 1s linear error-slide;
     }
   }
 
@@ -125,5 +144,15 @@
     box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
     background: var.$secondary-hover;
     color: var.$secondary-black;
+  }
+}
+
+@keyframes error-slide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%) scale(2);
   }
 }
