@@ -7,12 +7,9 @@ import { formScheme } from "./formScheme";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import { Icon } from "../../shared/Icon/Icon";
-import { useRef } from "react";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
-  const formRef = useRef(null);
-
   const {
     register,
     handleSubmit,
@@ -36,8 +33,7 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} 
-    onSubmit={handleSubmit(onSubmit)} 
-    ref={formRef}>
+    onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
         <li>
           <InputField
@@ -84,7 +80,7 @@ export default function ContactForm() {
         </li>
       </ul>
       
-      <MainButton type="submit" disabled={isDisabled()}>
+      <MainButton type="submit" disabled={isDisabled()} >
         {t("btn_send")}
       </MainButton>
       
