@@ -2,11 +2,14 @@
 import useStateModal from "@/src/state/stateRegistrationFormModal";
 import MainButton from "../MainButton/MainButton";
 
-export default function ControlBtnRegistrationFormModal({children, className}) {
+export default function ControlBtnRegistrationFormModal({children, className, onClick}) {
   const open = useStateModal((state) => state.open)
   return <MainButton 
     className={className} 
-    onClick={open}>
+    onClick={()=>{
+      open()
+      onClick && onClick()
+    }}>
       {children}
   </MainButton>
 }

@@ -1,3 +1,4 @@
+import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
 import Footer from "@/src/components/shared/Footer/Footer";
 import Header from "@/src/components/shared/Header/Header";
 import "@/src/styles/global.scss";
@@ -24,6 +25,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             <Header />
             {children}
             <Footer />
+            <PaymentModal />
           </div>
         </NextIntlClientProvider>
       </body>

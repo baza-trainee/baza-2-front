@@ -84,21 +84,46 @@
 
     .error{
       @include mx.apply-font-styles(var.$h2-font);
-      font-size: 100px;
+      font-size: 90px;
       line-height: normal;
       color: var.$secondary-error;
       text-align: end;
-      padding-right: 48px;
+      padding-right: 57px;
       width: 100%;
       opacity: 0;
-      //background-color: aqua;
       position: absolute;
       top: 0;
-      //right: 50%;
       left: 0;
       z-index: 2;
       animation: 1s linear error-slide;
+
+      @media (min-width: 420px) {
+        font-size: 96px;
+        padding-right: 61px;
+      }
+
+      @include mx.media-q("md") {
+        font-size: 100px;
+        padding-right: 20px;
+      }
     }
+
+    .error._message{
+      text-align: center;
+      padding: 0;
+      font-size: 35px;
+      top: 20%;
+
+      @media (min-width: 420px) {
+        font-size: 50px;
+      }
+
+      @include mx.media-q("md") {
+        font-size: 59px;
+        left: 10%;
+      }
+    }
+
   }
 
   .amount._active{
@@ -146,7 +171,7 @@
     color: var.$secondary-black;
   }
 }
-
+// Анімація повідомлення про помилку.
 @keyframes error-slide {
   from {
     opacity: 1;

@@ -8,6 +8,8 @@ export default function ThanksCard({goHome}) {
   return <div className={styles.thanks}>
     <h2>{t('thanks_support')}</h2>
     <MainButton
-      onClick={goHome}>{t('btn_home')}</MainButton>
+      onClick={goHome}>
+        {t('btn_home')}
+    </MainButton>
   </div>
 }

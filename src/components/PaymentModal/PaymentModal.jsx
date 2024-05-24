@@ -43,13 +43,12 @@ export default function PaymentModal() {
         <FormPayment handleThank={handleThank}/>
         }
 
-        <CloseBtn ariaLabel={ thank ? 
+        <CloseBtn className={styles.close_btn}
+          ariaLabel={ thank ? 
             t('ariaLabel_btn_close_2') : 
             t('ariaLabel_btn_close_1')
           }
-          onClick={handleClose} 
-          className={styles.close_btn}
-        />
+          onClick={handleClose}/>
       </div>
     </div>
   </Modal>

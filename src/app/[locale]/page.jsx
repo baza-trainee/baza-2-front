@@ -9,7 +9,6 @@ import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToT
 import HeroSection from "@/src/components/HeroSection/HeroSection";
 import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import StructureSection from "@/src/components/StructureSection/StructureSection";
-import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
 
 export default function Home() {
   
@@ -27,7 +26,6 @@ export default function Home() {
       <PartnerSection />
       <ContactFormSection />
       <ScrollToTopBtn />
-      <PaymentModal />
     </main>
   );
 }

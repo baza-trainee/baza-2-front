@@ -186,7 +186,8 @@
     "thanks_support": "Dziękujemy za wsparcie!",
     "btn_home": "Powrót do strony głównej",
     "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
-    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami"
+    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
+    "error_message":"Maks. Suma!"
   },
 
   "Modal_form": {
