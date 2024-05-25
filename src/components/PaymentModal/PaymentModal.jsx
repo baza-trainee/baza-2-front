@@ -1,7 +1,6 @@
 "use client";
 import { useCallback, useState } from 'react';
 import { useTranslations } from "next-intl";
-import { useRouter } from '@/src/navigation';
 import Modal from '../shared/Modal/Modal';
 import stateModalPayment from '@/src/state/stateModalPayment';
 import styles from './PaymentModal.module.scss';
@@ -13,23 +12,16 @@ export default function PaymentModal() {
   // Отримуємо стан.
   const isOpen = stateModalPayment(state => state.isOpen);
   const close = stateModalPayment(state => state.close);
-  // Router.
-  const router = useRouter();
+
   // контент.
   const t = useTranslations("Modal_support");
   // локальний стан.;
   const [thank, setThank] = useState(false);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setThank(false)
     close()
-  }
-
-  const handleGoHome = useCallback(() => {
-    router.push('/')
-    setThank(false)
-    handleClose()
-  }, [thank]);
+  },[thank])
 
   const handleThank = useCallback(() => {
     setThank(true)
@@ -39,7 +31,7 @@ export default function PaymentModal() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         {thank?
-        <ThanksCard goHome={handleGoHome}/>:
+        <ThanksCard handleClose={handleClose}/>:
         <FormPayment handleThank={handleThank}/>
         }
 
