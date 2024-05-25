@@ -10,6 +10,7 @@ import { Icon } from "../../shared/Icon/Icon";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
+  
   const {
     register,
     handleSubmit,
