@@ -4,24 +4,20 @@
 .wrapper{
   position: fixed;
   left: 2%;
-  top: 98px;
+  top: 96px;
   z-index: 1000;
+  padding: 5px 0;
 
   @include mx.media-q("md") {
-    left: 24;
-    top: auto;
-    bottom: 48px;
-  }
-
-  @include mx.media-q("xl") {
     left: 5%;
+    top: auto;
     bottom: 5%;
   }
 
   .modal{
     border-radius: 8px;
     padding: 16px;
-    width: clamp(288px, 92vw, 412px);
+    width: clamp(285px, 92vw, 412px);
     background: var.$primary-fon;
     color: var.$secondary-white;
     display: flex;
@@ -81,7 +77,7 @@
         min-width: 130px;
       }
     }
-    
+
     .close{
       position: absolute;
       top: 16px;
