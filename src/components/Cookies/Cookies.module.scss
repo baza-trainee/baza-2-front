@@ -1,0 +1,104 @@
+@use "../../styles/mixins" as mx;
+@use "../../styles/variables" as var;
+
+.wrapper{
+  position: fixed;
+  left: 2%;
+  top: 98px;
+  z-index: 1000;
+
+  @include mx.media-q("md") {
+    left: 24;
+    top: auto;
+    bottom: 48px;
+  }
+
+  @include mx.media-q("xl") {
+    left: 5%;
+    bottom: 5%;
+  }
+
+  .modal{
+    border-radius: 8px;
+    padding: 16px;
+    width: clamp(288px, 92vw, 412px);
+    background: var.$primary-fon;
+    color: var.$secondary-white;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+
+    @include mx.media-q("md") {
+      padding: 24px;
+    }
+
+    .title{
+      @include mx.apply-font-styles(var.$h2-font);
+      font-weight: 700;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      @include mx.media-q("md") {
+        font-size: 24px;
+      }
+ 
+      & > svg{
+        display: block;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .text{
+      @include mx.apply-font-styles(var.$text-20-font);
+      font-size: 16px;
+
+      @include mx.media-q("md") {
+        font-size: 18px;
+      }
+      @include mx.media-q("xl") {
+        padding: 20px;
+      }
+
+      .lick{
+        color: var.$primary-border;
+        transition: all var.$transition-duration-base var.$transition-timing-base;
+      }
+      .lick:hover{
+        color: var.$primary-hover;
+        text-decoration: underline;
+      }
+    }
+
+    .btn{
+      min-width: 74px;
+      margin: 0 auto;
+
+      @include mx.media-q("md") {
+        min-width: 130px;
+      }
+    }
+    
+    .close{
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      width: 18px;
+      height: 18px;
+
+      @include mx.media-q("md") {
+        width: 20px;
+        height: 20px;
+        top: 24px;
+        right: 24px;
+      }
+    }
+  }
+
+
+
+}
