@@ -3,33 +3,19 @@
 
 .articlesContainer {
   max-width: 1920px;
-  margin: 16px auto;
-  padding: 0 10px;
-
-  // @include mx.media-q("sm") {
-  //   margin-top: 24px;
-  //   margin-bottom: 41px;
-  //   padding: 0 20px;
-  // }
+  margin: 0 auto;
+  padding: 32px 10px;
 
   @include mx.media-q("md") {
-    margin-bottom: 48.5px;
-    margin-top: 48px;
-    padding: 0 24px;
+    padding: 48px 0;
   }
 
   @include mx.media-q("xl") {
-    margin: 60px auto;
-    padding: 0 64px;
+    padding: 60px 64px;
   }
 
-  // @include mx.media-q("xxl") {
-  //   padding: 0 80px;
-  // }
-
   @include mx.media-q("xxxl") {
-    padding: 0 120px;
-    margin: 72px auto;
+    padding: 72px 120px;
   }
 }
 
@@ -38,9 +24,13 @@
   margin: 0 auto;
 
   max-width: 1320px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
   @include mx.media-q("md") {
+    margin-bottom: 32px;
+  }
+
+  @include mx.media-q("xl") {
     margin-bottom: 48px;
   }
 
@@ -49,19 +39,36 @@
   }
 }
 
+.mySwiperWrapper {
+  @include mx.media-q("md") {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include mx.media-q("xl") {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .title {
   @include mx.apply-font-styles(var.$h1-font);
   font-size: 24px;
 
   text-align: center;
-  margin: 10px 0;
 
   @include mx.media-q("md") {
     font-size: 32px;
+    margin: 10px 0;
   }
 
   @include mx.media-q("xl") {
     font-size: 40px;
+    margin: 0;
+  }
+
+  @include mx.media-q("xxxl") {
+    margin: 10px 0;
   }
 }
 
@@ -71,7 +78,7 @@
   @include mx.media-q("md") {
     position: absolute;
     top: -3px;
-    right: 16px;
+    right: 40px;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -91,7 +98,6 @@
 
 .mySwiperItem {
   @include mx.media-q("md") {
-    flex-shrink: 1;
     max-width: 350px;
   }
 
@@ -101,7 +107,7 @@
 }
 
 .pagination {
-  margin-top: 16px;
+  margin-top: 20px;
   justify-content: center;
   @include mx.media-q("md") {
     display: none;

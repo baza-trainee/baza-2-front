@@ -25,23 +25,25 @@ export const ArticlesSection = () => {
           <CarouselButton className="nextElArticle" />
         </div>
       </div>
-      <Carousel
-        slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
-        modules={[Navigation, Pagination]}
-        paginationEl={".custom-pagination-article"}
-        prevEl={".prevElArticle"}
-        nextEl={".nextElArticle"}
-        speed={1000}
-        slidesPerView={"auto"}
-        spaceBetween={24}
-        breakpoints={{
-          1920: {
-            spaceBetween: 30,
-          },
-        }}
-        items={items}
-        renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
-      />
+      <div className={styles.mySwiperWrapper}>
+        <Carousel
+          slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
+          modules={[Navigation, Pagination]}
+          paginationEl={".custom-pagination-article"}
+          prevEl={".prevElArticle"}
+          nextEl={".nextElArticle"}
+          speed={1000}
+          slidesPerView={"auto"}
+          spaceBetween={24}
+          breakpoints={{
+            1920: {
+              spaceBetween: 30,
+            },
+          }}
+          items={items}
+          renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
+        />
+      </div>
       <CarouselPagination
         className={clsx("custom-pagination-article", styles.pagination)}
       />
