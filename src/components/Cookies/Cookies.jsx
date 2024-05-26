@@ -1,25 +1,37 @@
 "use client"
 import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
 import { Icon } from '../shared/Icon/Icon';
 import MainButton from '../shared/MainButton/MainButton';
 import styles from './Cookies.module.scss';
-//import { Link } from '@/src/navigation';
 import CloseBtn from '../shared/CloseBtn/CloseBtn';
-import { useState } from 'react';
 
 export default function Cookies() {
   // контент.
   const t = useTranslations("cookies");
 // локальний стан.;           
+  const [showModal, setShowModal] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(true);
+  useEffect(() => {
+    // if (!Cookies.get('cookiesAccepted')) {
+    //   setShowModal(true);
+    // }
+  }, []);
 
-  if(!isOpen){return null}
+  const acceptCookies = () => {
+    // Cookies.set('cookiesAccepted', 'true', {
+    //   expires: 1 / 48,
+    // });
+    //setCookie();
+    setShowModal(false);
+  };
+
+  if(!showModal){return null}
 
   return <div className={styles.wrapper}>
     <div className={styles.modal}>
       <h3 className={styles.title}>Cookies<Icon name={"cookies"}/></h3>
-      {/* <p className={styles.text}>{t("text")} <Link href='/' className={styles.lick}>{t("privacy_policy")}</Link></p> */}
+
       <p className={styles.text}>{t("text")}  <a
         className={styles.lick}
         href={'/'}
@@ -28,10 +40,10 @@ export default function Cookies() {
         >{t('privacy_policy')}</a>
       </p>
       <MainButton className={styles.btn} 
-        onClick={()=>{setIsOpen(false)}}>Ok</MainButton>
+        onClick={()=>{acceptCookies(false)}}>Ok</MainButton>
 
         <CloseBtn className={styles.close} 
-        onClick={()=>{setIsOpen(false)}}/>
+        onClick={()=>{setShowModal(false)}}/>
     </div>
   </div>
 }
