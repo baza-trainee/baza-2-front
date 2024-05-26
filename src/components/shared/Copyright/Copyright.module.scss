@@ -5,6 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   margin-bottom: 24px;
   @include apply-font-styles($h3-font);
+  @media (max-width: 696px) {
+    font-size: 14px;
+  }
 }

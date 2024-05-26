@@ -12,12 +12,15 @@
   color: $secondary-white;
 
   margin-left: 8px;
+  @media (max-width: 696px) {
+    font-size: 14px;
+  }
 }
 
 .contact {
   display: flex;
   align-items: center;
 }
-.mail{
+.mail {
   stroke: $secondary-white;
 }
