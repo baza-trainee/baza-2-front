@@ -1,6 +1,6 @@
 "use client"
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Icon } from '../shared/Icon/Icon';
 import MainButton from '../shared/MainButton/MainButton';
 import styles from './Cookies.module.scss';
@@ -10,19 +10,9 @@ export default function Cookies() {
   // контент.
   const t = useTranslations("cookies");
 // локальний стан.;           
-  const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
-    // if (!Cookies.get('cookiesAccepted')) {
-    //   setShowModal(true);
-    // }
-  }, []);
+  const [showModal, setShowModal] = useState(true);
 
   const acceptCookies = () => {
-    // Cookies.set('cookiesAccepted', 'true', {
-    //   expires: 1 / 48,
-    // });
-    //setCookie();
     setShowModal(false);
   };
 
