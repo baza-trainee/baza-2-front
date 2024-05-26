@@ -6,7 +6,6 @@ import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import StructureSection from "../../../components/StructureSection/StructureSection";
 import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
-import Cookies from "@/src/components/Cookies/Cookies";
 
 export default function UiKit() {
   return (
@@ -23,7 +22,6 @@ export default function UiKit() {
       />
       <SocialIcons />
       <RegistrationFormModal />
-      <Cookies />
     </main>
   );
 }

@@ -9,6 +9,7 @@ import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToT
 import HeroSection from "@/src/components/HeroSection/HeroSection";
 import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import StructureSection from "@/src/components/StructureSection/StructureSection";
+import Cookies from "@/src/components/Cookies/Cookies";
 
 export default function Home() {
   
@@ -26,6 +27,7 @@ export default function Home() {
       <PartnerSection />
       <ContactFormSection />
       <ScrollToTopBtn />
+      <Cookies/>
     </main>
   );
 }
