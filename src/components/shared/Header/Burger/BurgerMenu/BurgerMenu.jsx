@@ -41,7 +41,7 @@ const BurgerMenu = ({ menuOpened, setMenuOpened }) => {
           </li>
         ))}
       </ul>
-      <ControlBtnModalPayment className={styles.headerBtn}>
+      <ControlBtnModalPayment className={styles.headerBtn} onClick={handleClose}>
         {t("btn_support_project")}
       </ControlBtnModalPayment>
     </nav>

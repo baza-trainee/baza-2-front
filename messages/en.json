@@ -68,7 +68,7 @@
 			"title": "Mentor",
 			"paragraph_1": "A mentor is a colleague two levels above the mentee who oversees task execution and provides guidance or clarification when the participant is unsure about a decision.",
 			"paragraph_2": "Our mentors are practitioners from leading IT companies in Ukraine who aim to support newcomers with knowledge and enhance their own managerial skills.",
-			"paragraph_3": "At Baza Trainee Ukraine, mentors guide a team consisting of several individuals, fostering their professional development simultaneously.",
+			"paragraph_3": "At Baza Trainee Ukraine, a mentor directs a team of several people at once, contributing to their professional development.",
 			"btn_mentor": "Become a mentor"
 		},
 		"our_structure_section": {
@@ -174,7 +174,7 @@
   },
 
   "Error": {
-    "title": "Sorry, something went wrong.",
+    "title": "Sorry, something went wrong",
     "btn_home": "Try again"
   },
 
@@ -186,7 +186,8 @@
 		"thanks_support": "Thanks for your support",
 		"btn_home": "Return to the home page",
 		"ariaLabel_btn_close_1": "closes the modal payment window",
-    "ariaLabel_btn_close_2": "closes the thank you modal window"
+    "ariaLabel_btn_close_2": "closes the thank you modal window",
+		"error_message":"Max. Sum!"
 	},
 
 	"Modal_form": {

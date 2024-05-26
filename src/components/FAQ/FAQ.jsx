@@ -1,8 +1,8 @@
 import FAQItem from "./FAQItem/FAQItem";
 import { useTranslations } from "next-intl";
 import { items } from "./items";
-import MainButton from "../shared/MainButton/MainButton";
 import styles from "./FAQ.module.scss";
+import ControlBtnModalPayment from "../shared/controlButtons/ControlBtnModalPayment";
 
 const FAQ = () => {
   const t = useTranslations("Main.FAQ_section");
@@ -20,7 +20,9 @@ const FAQ = () => {
             />
           ))}
         </ul>
-        <MainButton>{t("btn_support_project")}</MainButton>
+        <ControlBtnModalPayment>
+          {t("btn_support_project")}
+        </ControlBtnModalPayment>
       </div>
     </section>
   );

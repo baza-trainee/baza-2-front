@@ -4,6 +4,7 @@ export interface SpritesMap {
     | "baza-skill-logo"
     | "carousel-arrow"
     | "close"
+    | "cookies"
     | "currency"
     | "donate-modal-icon"
     | "facebook"
@@ -27,6 +28,7 @@ export const SPRITES_META: {
     | "baza-skill-logo"
     | "carousel-arrow"
     | "close"
+    | "cookies"
     | "currency"
     | "donate-modal-icon"
     | "facebook"
@@ -50,6 +52,7 @@ export const SPRITES_META: {
     "baza-skill-logo",
     "carousel-arrow",
     "close",
+    "cookies",
     "currency",
     "donate-modal-icon",
     "facebook",

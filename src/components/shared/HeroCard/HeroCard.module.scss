@@ -11,42 +11,41 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(90%) brightness(60%);
+  filter: brightness(60%);
 }
 
 .wrapper {
   position: absolute;
   top: 0;
   z-index: 3;
-  margin: 16px 8px;
-  padding: 8px;
+  padding: 10px;
   color: var.$secondary-white;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  height: 100%;
   gap: 16px;
 
   @include mx.media-q("md") {
-    margin: 43px auto;
-    padding: 16px 40px;
+    padding-bottom: 50px;
     gap: 24px;
   }
 
   @include mx.media-q("xl") {
-    margin: 42.5px auto;
-    padding: 24px;
-    gap: 60px;
-    top: 0%;
-    right: 50%;
-    transform: translateX(50%);
-    max-width: clamp(818px, 818px, 860px);
+    padding-bottom: 5%;
+    gap: 40px;
   }
 
   h2 {
     @include mx.apply-font-styles(var.$h1-font);
     font-weight: 700;
     font-size: 24px;
+
+    @media (min-width: 420px) {
+      font-size: 32px;
+    }
 
     @include mx.media-q("md") {
       font-size: 48px;
@@ -60,6 +59,11 @@
   p {
     @include mx.apply-font-styles(var.$h2-font);
     font-size: 16px;
+    width: clamp(280px, 95%, 830px);
+
+    @media (min-width: 420px) {
+      font-size: 20px;
+    }
 
     @include mx.media-q("md") {
       font-size: 24px;

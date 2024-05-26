@@ -37,27 +37,3 @@
     }
   }
 }
-
-.btnBack {
-  @include mx.apply-font-styles(var.$h3-font);
-
-  border-radius: 8px;
-  padding: 14px 24px;
-  width: 276px;
-  height: 55px;
-
-  background: linear-gradient(
-    131deg,
-    #6c2276 0%,
-    #682d78 32.28%,
-    #643579 56.25%,
-    #613b7a 75.15%,
-    #5d447c 90.88%
-  );
-
-  color: var.$secondary-white;
-  &:hover {
-    background: var.$primary-hover;
-    color: var.$secondary-black;
-  }
-}

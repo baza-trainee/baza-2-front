@@ -1,16 +1,16 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
 .box {
-  color: $secondary-white;
+  color: var.$secondary-white;
   position: relative;
   .btn_lang {
-    @include apply-font-styles($menu);
+    @include mx.apply-font-styles(var.$menu);
     width: 65px;
     padding: 14px 8px;
     display: flex;
     align-items: center;
-    transition: all 0.3s;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
   }
   .btn_icon_up {
     transform: rotate(180deg);
@@ -21,7 +21,7 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-    transition: all 0.2s ease 0s;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
     & > svg {
       display: block;
       width: 15px;
@@ -36,22 +36,22 @@
   .options {
     display: flex;
     flex-direction: column;
-    background-color: $primary-primary;
+    background-color: var.$primary-primary;
     width: 65px;
     border-radius: 2px;
     position: absolute;
     bottom: -80px;
     left: 0;
-    z-index: 2;
+    z-index: 5;
   }
   .options_item_btn {
-    @include apply-font-styles($menu);
+    @include mx.apply-font-styles(var.$menu);
     padding: 8px;
     text-align: start;
     transition: all 0.3s;
   }
   .options_item_btn:focus,
   .options_item_btn:hover {
-    color:$primary-hover;
+    color: var.$primary-hover;
   }
 }
