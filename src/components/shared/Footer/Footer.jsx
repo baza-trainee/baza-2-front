@@ -9,20 +9,29 @@ import HelpLinks from "../FooterLinks/HelpLinks";
 
 const Footer = () => {
   return (
-    <footer className={styles.section}>
-      <div className={styles.block}>
-        <div className={styles.footer}>
-          <Logo variant="footer" className={styles.logo} />
-          <FooterLinks />
-          <HelpLinks />
-          <div className={styles.contacts}>
-            <ContactLinks />
-            <SocialIcons />
+    <>
+      <footer className={styles.section}>
+        <div className={`${styles.block} ${styles.hideOnSmallScreen}`}>
+          <div className={styles.footer}>
+            <Logo variant="footer" className={styles.logo} />
+            <FooterLinks />
+            <HelpLinks />
+            <div className={styles.contacts}>
+              <ContactLinks />
+              <SocialIcons />
+            </div>
           </div>
         </div>
-      </div>
-      <Copyright />
-    </footer>
+        <div className={styles.showOnSmallScreen}>
+          <Logo variant="footer" className={styles.centerItem} />
+          <FooterLinks />
+          <HelpLinks />
+          <ContactLinks />
+          <SocialIcons className={styles.centerItem} />
+        </div>
+        <Copyright />
+      </footer>
+    </>
   );
 };
 

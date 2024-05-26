@@ -8,7 +8,7 @@
     height: 60px;
     fill: var.$secondary-white;
   }
-  &:hover .logo{
+  &:hover .logo {
     fill: var.$primary-hover;
   }
 }
@@ -21,7 +21,17 @@
     height: 120px;
     fill: var.$secondary-white;
   }
-  &:hover .logo{
+
+  &:hover .logo {
     fill: var.$primary-hover;
+  }
+}
+
+@media (max-width: 696px) {
+  .footer {
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
