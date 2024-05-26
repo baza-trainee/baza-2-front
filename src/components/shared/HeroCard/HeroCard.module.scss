@@ -15,7 +15,7 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(40%);
+  filter: brightness(30%);
 }
 
 .wrapper {
@@ -46,6 +46,15 @@
     @include mx.apply-font-styles(var.$h1-font);
     font-weight: 700;
     font-size: 24px;
+    background: var.$icons-gradient;
+    //background: var.$primary-gradient;
+    background-clip: text;
+    //color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // -webkit-text-fill-color: transparent;
+    // background: linear-gradient(135deg, #e37cc1 0%, #e231a8 36.5%, #9d2f79 76%, #851a62 100%);
+    // color: transparent;
 
     @media (min-width: 420px) {
       font-size: 32px;

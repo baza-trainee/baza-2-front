@@ -43,7 +43,7 @@ const Carousel = ({
         delay: delay,
         disableOnInteraction: false,
       }}
-      speed={1000}
+      speed={800}
       slidesPerView={slidesPerViewProp}
       className={className}
       {...options}

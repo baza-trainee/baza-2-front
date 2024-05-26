@@ -88,6 +88,7 @@ export default function FormPayment({handleThank}) {
         id='amount'
         value={amount} 
         type = "text"
+        inputMode="numeric"
         className={styles.input}
         ref={inputRef}
         size={ amount.length < 1 ? 1 : amount.length } 
