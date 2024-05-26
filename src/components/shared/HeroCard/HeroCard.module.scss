@@ -3,7 +3,11 @@
 
 .card {
   position: relative;
-  height: clamp(220px, 90vh, 860px);
+  height: clamp(220px, 86vh, 860px);
+
+  @include mx.media-q("md") {
+    height: clamp(220px, 90vh, 860px);
+  }
 }
 
 .image {
