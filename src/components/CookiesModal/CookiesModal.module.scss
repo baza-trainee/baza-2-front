@@ -24,7 +24,7 @@
     flex-direction: column;
     gap: 16px;
     position: relative;
-
+    box-shadow: inset 0 2px 8px 0 rgba(154, 149, 153, 0.452);
     @include mx.media-q("md") {
       padding: 24px;
     }
