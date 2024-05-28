@@ -1,5 +1,5 @@
 import Image from "next/image";
-import img from "./Images/image.jpg"
+//import img from "./Images/image.jpg"
 import { useTranslations } from "next-intl";
 
 import styles from "./MentorSection.module.scss";
@@ -23,13 +23,16 @@ const MentorSection = () => {
               {t("paragraph_3")}
             </p>
           </div>
-          <Image
-            className={styles.image}
-            src={img}
-            width={628}
-            height={496}
-            alt="About mentor team"
-          />
+          <div className={styles.wrapper_img}>
+            <Image
+              className={styles.image}
+              src={'/images/mentor_section/mentor.png'}
+              fill
+              sizes="100%"
+              alt="About mentor team"
+            />
+          </div>
+
         </div>
         <ControlBtnRegistrationFormModal>
           {t("btn_mentor")}
