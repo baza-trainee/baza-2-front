@@ -53,8 +53,8 @@ export default function CookiesModal() {
       <MainButton className={styles.btn} 
         onClick={acceptCookies}>Ok</MainButton>
 
-      {/* <CloseBtn className={styles.close} 
-        onClick={closeModal}/> */}
+      <CloseBtn className={styles.close} 
+        onClick={closeModal}/>
     </div>
   </div>
 }
