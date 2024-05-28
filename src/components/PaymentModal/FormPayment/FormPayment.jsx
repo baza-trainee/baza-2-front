@@ -83,21 +83,22 @@ export default function FormPayment({handleThank}) {
       onSubmit(amount)
     }}>
     <p>{t('amount')} <Icon className={styles.icon} name='donate-modal-icon'/></p>
-    <div className={clsx(styles.amount, amount.length > 1 && !readOnly && styles._active)}>
-    
+
+    <div className={styles.amount}>
       <input 
         value={amount} 
         type = "text"
         inputMode="numeric"
         className={styles.input}
         ref={inputRef}
-         size={4}
+        size={4}
         onInput={(e)=>{isValidate(e.target.value)}}
         onBlur={(e)=>{fixedAmount(e)}}
         readOnly={readOnly}
         autoComplete="off"
       />
-      <div className={styles.label}><span>{amount}</span><Icon name='currency'/></div>
+      <label className={styles.label}><span>{amount}</span><Icon name='currency'/></label>
+      
       {error && <p
         className={clsx(styles.error, error?.length > 2 && styles._message)}>{error}</p>
       }
