@@ -28,6 +28,7 @@ export default function UiKit() {
         text_2="card_1.text_2"
         text_3="card_1.text_3"
         icon="/images/icons/1.svg"
+        image="/images/icons/anketa.svg"
 
         />
       {/* <JoinProjectSection /> */}

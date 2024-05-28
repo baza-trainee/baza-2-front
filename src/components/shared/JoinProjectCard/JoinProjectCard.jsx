@@ -5,7 +5,7 @@ import { Icon } from '../Icon/Icon';
 export default function JoinProjectCard(item) {
   const t = useTranslations("How_we_work.join_project_section");
 
-  const { text_1, text_2, text_3, title, icon } = item;
+  const { text_1, text_2, text_3, title, icon, image } = item;
 
   return (
     <div className={styles.card}>
@@ -21,6 +21,12 @@ export default function JoinProjectCard(item) {
       <div className={styles.textCard}>
         <div className={styles.titleWrapper}>
           {t(title)}
+          <img
+
+            height={32}  
+            width={32}
+            src={image}>
+          </img>
         </div>
         <div className={styles.textWrapper}>
           <div className={styles.text}>
