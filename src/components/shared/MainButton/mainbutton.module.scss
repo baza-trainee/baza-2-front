@@ -13,9 +13,6 @@
   box-shadow: none;
   border: none;
   transition: all var.$transition-duration-base var.$transition-timing-base;
-  box-shadow:
-    inset 3px 3px 3px rgba(255, 255, 255, 0.213),
-    inset -3px -3px 3px rgba(88, 4, 70, 0.432);
 
   &::after {
     content: "";
