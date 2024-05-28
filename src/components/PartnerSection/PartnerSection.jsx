@@ -6,9 +6,9 @@ import { Navigation, Pagination } from "swiper/modules";
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-import styles from "./PartnerSection.module.scss";
 import { partnerCardItems } from "./partnerCardItems";
 import { useTranslations } from "next-intl";
+import styles from "./PartnerSection.module.scss";
 
 const PartnerSection = () => {
   const t = useTranslations("Main.partners_section");
@@ -29,6 +29,7 @@ const PartnerSection = () => {
             modules={[Navigation, Pagination]}
             paginationEl={".partner-custom-pagination"}
             slidesPerView={3}
+            spaceBetween={24}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
