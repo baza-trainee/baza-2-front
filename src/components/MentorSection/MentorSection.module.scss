@@ -110,7 +110,7 @@
         align-self: flex-end;
       }
 
-      @include mx.media-q("xl") {
+      @media (min-width: 1280px) {
         align-self: center;
       }
 
