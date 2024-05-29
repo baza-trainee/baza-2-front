@@ -1,16 +1,15 @@
 import Image from "next/image";
-//import img from "./Images/image.jpg"
 import { useTranslations } from "next-intl";
-
-import styles from "./MentorSection.module.scss";
 import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtnRegistrationFormModal";
+import styles from "./MentorSection.module.scss";
 
 const MentorSection = () => {
   const t = useTranslations("Main.mentor_section");
+
   return (
     <section className={styles.mentor}>
       <div className={styles.container}>
-        <h1 className={styles.title}>{t("title")}</h1>
+        <h2 className={styles.title}>{t("title")}</h2>
         <div className={styles.wrapper}>
           <div className={styles.text}>
             <p>
@@ -30,6 +29,7 @@ const MentorSection = () => {
               fill
               sizes="100%"
               alt="About mentor team"
+              quality={80}
             />
           </div>
 
