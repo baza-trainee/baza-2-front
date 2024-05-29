@@ -10,6 +10,7 @@ const MentorSection = () => {
     <section className={styles.mentor}>
       <div className={styles.container}>
         <h2 className={styles.title}>{t("title")}</h2>
+        
         <div className={styles.wrapper}>
           <div className={styles.text}>
             <p>
@@ -22,6 +23,7 @@ const MentorSection = () => {
               {t("paragraph_3")}
             </p>
           </div>
+
           <div className={styles.wrapper_img}>
             <Image
               className={styles.image}
@@ -32,8 +34,8 @@ const MentorSection = () => {
               quality={80}
             />
           </div>
-
         </div>
+
         <ControlBtnRegistrationFormModal>
           {t("btn_mentor")}
         </ControlBtnRegistrationFormModal>
