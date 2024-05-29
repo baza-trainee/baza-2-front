@@ -1,5 +1,5 @@
 "use client";
-
+  
 import JoinProjectCard from '../shared/JoinProjectCard/JoinProjectCard';
 import styles from './JoinProjectSection.module.scss';
 import  { items } from './items';
