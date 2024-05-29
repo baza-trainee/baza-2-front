@@ -2,7 +2,7 @@ import styles from "./StructureCard.module.scss";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-export default function StructureCard({ item, id }) {
+export default function StructureCard({ item }) {
   const t = useTranslations("Main.our_structure_section");
   const { img, title, text, width, height, url } = item;
 

@@ -3,6 +3,7 @@ export interface SpritesMap {
     | "arrow-back"
     | "baza-skill-logo"
     | "carousel-arrow"
+    | "check"
     | "close"
     | "cookies"
     | "currency"
@@ -18,6 +19,7 @@ export interface SpritesMap {
     | "linkedin"
     | "logo"
     | "mail"
+    | "onboarding"
     | "phone"
     | "scroll-top-arrow"
     | "telegram";
@@ -27,6 +29,7 @@ export const SPRITES_META: {
     | "arrow-back"
     | "baza-skill-logo"
     | "carousel-arrow"
+    | "check"
     | "close"
     | "cookies"
     | "currency"
@@ -42,6 +45,7 @@ export const SPRITES_META: {
     | "linkedin"
     | "logo"
     | "mail"
+    | "onboarding"
     | "phone"
     | "scroll-top-arrow"
     | "telegram"
@@ -51,6 +55,7 @@ export const SPRITES_META: {
     "arrow-back",
     "baza-skill-logo",
     "carousel-arrow",
+    "check",
     "close",
     "cookies",
     "currency",
@@ -66,6 +71,7 @@ export const SPRITES_META: {
     "linkedin",
     "logo",
     "mail",
+    "onboarding",
     "phone",
     "scroll-top-arrow",
     "telegram",
