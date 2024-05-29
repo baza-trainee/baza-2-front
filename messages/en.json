@@ -187,7 +187,7 @@
 		"btn_home": "Return to the home page",
 		"ariaLabel_btn_close_1": "closes the modal payment window",
     "ariaLabel_btn_close_2": "closes the thank you modal window",
-		"error_message":"Max. Sum!"
+		"error_message":"Max 4 signs!"
 	},
 
 	"Modal_form": {

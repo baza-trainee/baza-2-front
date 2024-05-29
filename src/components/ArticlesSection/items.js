@@ -19,8 +19,8 @@ export const items = [
   },
   {
     img: "/images/articles/img1.jpg",
-    title: "article_4.title",
-    description: "article_4.text",
-    link: "",
+    title: "article_1.title",
+    description: "article_1.text",
+    link: "https://mc.today/uk/pershoprohodets-otrimaye-vsi-vershki-i-vsi-shishki-olga-ivanova-pro-uspihi-skandali-i-plani-baza-trainee/",
   },
 ];

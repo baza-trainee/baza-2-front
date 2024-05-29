@@ -18,6 +18,7 @@ export default function HeroSection() {
         prevEl={".prevElHero"}
         nextEl={".nextElHero"}
         delay={10000}
+        sped={500}
         renderItem={(item) => (
           <HeroCard title={item.title} desc={item.desc} img={item.img} />
         )}

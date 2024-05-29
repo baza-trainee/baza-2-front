@@ -1,3 +1,4 @@
+import CookiesModal from "@/src/components/CookiesModal/CookiesModal";
 import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
 import Footer from "@/src/components/shared/Footer/Footer";
 import Header from "@/src/components/shared/Header/Header";
@@ -26,6 +27,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             {children}
             <Footer />
             <PaymentModal />
+            <CookiesModal/>
           </div>
         </NextIntlClientProvider>
       </body>

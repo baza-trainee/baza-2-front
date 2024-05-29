@@ -20,6 +20,7 @@
   background: var.$primary-fon-card;
   color: var.$secondary-white;
   position: relative;
+  overflow: hidden;
 
   @include mx.media-q("md") {
     min-height: 384px;
