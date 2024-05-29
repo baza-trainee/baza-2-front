@@ -1,0 +1,76 @@
+@use "../../../styles/mixins" as mixins;
+@use "../../../styles/variables" as var;
+
+.card {
+  border: 1px solid #ff62ce;
+  border-radius: 24px;
+  padding: 48px;
+  width: 1212px;
+  height: 400px;
+  display:flex;
+  flex-direction: row;
+  gap: 32px;
+}
+.textCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.svgWrapper {
+  width: 145px;
+  height: 324px;
+}
+
+.titleWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 24px;
+  padding: 10px;
+  height: 56px;
+  width: 907px;
+  @include mixins.apply-font-styles(var.$h4-font);
+  border-bottom: 1px solid #ff62ce;
+
+  
+}
+
+.textWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  width: fit-content;
+  height: 138px;
+  @include mixins.apply-font-styles(var.$text-20-font);
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  width: 915px;
+  height: 30px;
+}
+
+.icon {
+  width: 145px;
+  height: 324px;
+  fill: #fcfcfc;
+}
+
+
+.checkboxWrapper {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 2px;
+}

@@ -26,23 +26,23 @@ const CounterComponent = () => {
   const t = useTranslations("Main.counter_section");
   return (
     <section className={styles.counter}>
-      <ul className={styles.list}>
+      <div className={styles.container}>
         {data.map((item) => {
           return (
-            <li key={createKey()}>
-              <h1 className={styles.item}>
+            <div className={styles.item} key={createKey()}>
+              <h2 className={styles.numbers}>
                 <CountUp
                   start={0}
                   end={item.count}
                   duration={2}
                   formattingFn={(value) => `${value}+`}
                 />
-              </h1>
+              </h2>
               <p className={styles.title}>{t(item.title)}</p>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </section>
   );
 };

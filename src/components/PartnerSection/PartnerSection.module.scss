@@ -36,7 +36,7 @@
 .pagination {
   display: inline-flex;
 }
-.swiper-slide.swiper-slide-active {
-  width: 120%; 
-  height: 120%;
+
+.activeSlide {
+  transform: scale(1.2);
 }
