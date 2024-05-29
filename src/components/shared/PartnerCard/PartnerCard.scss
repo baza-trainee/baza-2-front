@@ -1,0 +1,10 @@
+.partner-card__item {
+  position: relative;
+  height: 180px;
+  border-radius: 8px;
+  transition: all 0.3s ease 0s;
+  overflow: hidden;
+  img {
+    object-fit: contain;
+  }
+}

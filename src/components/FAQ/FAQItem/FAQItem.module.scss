@@ -51,6 +51,12 @@
   line-height: 140%;
   font-weight: 700;
   transition: color var.$transition-duration-base var.$transition-timing-base 0s;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 }
 .plus {
   width: 48px;
@@ -81,6 +87,9 @@
   @include mixins.apply-font-styles(var.$text-16-font);
   padding: 10px;
   font-size: 18px;
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 }
 .descWrapper {
   max-height: 0;

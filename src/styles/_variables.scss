@@ -42,15 +42,15 @@ $fon-gradient1: #db97c5;
 $fon-gradient2: #cc4fa3;
 $fon-gradient3: #a03a7e;
 $fon-gradient4: #6d2656;
-$fon-gradient4: #490735;
+$fon-gradient5: #490735;
 
 $primary-gradient: linear-gradient(
-  90deg,
+  139deg,
   $fon-gradient1 0%,
-  $fon-gradient2 17%,
-  $fon-gradient3 40%,
-  $fon-gradient4 79%,
-  $fon-gradient4 100%
+  $fon-gradient2 16.91%,
+  $fon-gradient3 39.6%,
+  $fon-gradient4 78.5%,
+  $fon-gradient5 100%
 );
 //=Secondary colors=======================================================================================================================================================
 $secondary-black: #030110;
@@ -105,14 +105,14 @@ $h3-font: (
 );
 
 $h4-font: (
-"font-family": (
-  "Montserrat", 
-  sans-serif,
-),
-"font-weight": 700,
-"font-size": 24px,
-"line-height": 1.5,
-"letter-spacing": 0.01em,
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-weight": 700,
+  "font-size": 24px,
+  "line-height": 1.5,
+  "letter-spacing": 0.01em,
 );
 
 $button: $h3-font;
@@ -140,29 +140,26 @@ $text-16-font: (
   "line-height": 150%,
 );
 
-
 $text-14-font: (
-
-"font-family": (
-"Montserrat", 
-sans-serif,
-),
-"font-weight": 400,
-"font-size": 14px,
-"line-height": 1.5,
-"letter-spacing": 0.01em,
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-weight": 400,
+  "font-size": 14px,
+  "line-height": 1.5,
+  "letter-spacing": 0.01em,
 );
 
 $text-18-font: (
-
-"font-family": (
-"Montserrat", 
-sans-serif,
-),
-"font-weight": 400,
-"font-size": 18px,
-"line-height": 1.5,
-"letter-spacing": 0.01em,
+  "font-family": (
+    "Montserrat",
+    sans-serif,
+  ),
+  "font-weight": 400,
+  "font-size": 18px,
+  "line-height": 1.5,
+  "letter-spacing": 0.01em,
 );
 $breakpoints: (
   "tn": 320px,
