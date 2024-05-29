@@ -8,6 +8,36 @@
     "btn_support_project": "Wspierać projekt"
   },
 
+  "How_we_work": {
+    "join_project_section": {
+      "main_title": "Jak dołączyć do projektu",
+      "card_1": {
+        "title": "Wypełnienie ankiety",
+        "text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
+        "text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
+        "text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
+      },
+      "card_2": {
+        "title": "Заповнення анкети",
+        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
+        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+      },
+      "card_3": {
+        "title": "Заповнення анкети",
+        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
+        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+      },
+      "card_4": {
+        "title": "Заповнення анкети",
+        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
+        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+      }
+    }
+  },
+
   "Main": {
     "hero_carousel_section": {
       "slide_1": {
