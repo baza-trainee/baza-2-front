@@ -188,7 +188,7 @@
     "btn_home": "Повернутись на головну",
     "ariaLabel_btn_close_1": "зачиняє модальне вікно оплати",
     "ariaLabel_btn_close_2": "зачиняє модальне вікно подяки",
-    "error_message":"Мaкс. Сума!"
+    "error_message":"Max 4 signs!"
   },
 
   "Modal_form": {

@@ -21,7 +21,7 @@ export default function UiKit() {
         img="/images/hero_section/slide_1.jpg"
       />
       <SocialIcons />
-      <RegistrationFormModal/>
+      <RegistrationFormModal />
     </main>
   );
 }
