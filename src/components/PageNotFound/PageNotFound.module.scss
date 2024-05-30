@@ -3,54 +3,53 @@
 
 .mainErr {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-
   align-items: center;
-  //max-height: 100vh;
-  margin-top: 66px;
-  padding: 38px 10px 48px 10px;
+  margin-top: 80px;
+  padding: 38px 10px;
 
   @include mx.media-q("md") {
-    margin-top: 80px;
-    padding: 48px 65px 60px 65px;
+    padding: 48px 65px;
   }
 
   @include mx.media-q("xl") {
-    padding: 110px 260px 89px 260px;
+    padding: 65px;
   }
 
-  .numbers {
-    @include mx.apply-font-styles(var.$h2-font);
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 
-    font-size: 96px;
-    color: var.$secondary-gray;
-    margin-bottom: 16px;
-
-    @include mx.media-q("md") {
-      font-size: 164px;
+    .numbers {
+      @include mx.apply-font-styles(var.$h2-font);
+      font-size: 96px;
+      line-height: 1.1;
+      color: var.$secondary-gray;
+  
+      @include mx.media-q("md") {
+        font-size: 164px;
+      }
+  
+      @include mx.media-q("xl") {
+        font-size: 200px;
+      }
     }
+  
+    p {
+      @include mx.apply-font-styles(var.$h2-font);
+      font-size: 14px;
+      font-weight: 700;
+      color: var.$secondary-white;
+      text-align: center;
+      margin-bottom: 8px;
 
-    @include mx.media-q("xl") {
-      margin-bottom: 32px;
-      font-size: 200px;
-    }
-  }
-
-  p {
-    @include mx.apply-font-styles(var.$h2-font);
-
-    font-size: 14px;
-
-    font-weight: 700;
-    color: var.$secondary-white;
-
-    margin-bottom: 24px;
-    text-align: center;
-
-    @include mx.media-q("md") {
-      font-size: 24px;
-      margin-bottom: 48px;
+      @include mx.media-q("md") {
+        font-size: 24px;
+        margin-bottom: 32px;
+      }
     }
   }
 }
