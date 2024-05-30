@@ -13,10 +13,10 @@ const MentorSection = () => {
         
         <div className={styles.wrapper}>
           <div className={styles.text}>
-            <p>
+            <p className={styles.text_mb}>
               {t("paragraph_1")}
             </p>
-            <p>
+            <p className={styles.text_mb}>
               {t("paragraph_2")}
             </p>
             <p>
@@ -25,6 +25,14 @@ const MentorSection = () => {
           </div>
 
           <div className={styles.wrapper_img}>
+            <Image
+              className={styles.image_mobile}
+              src={'/images/mentor_section/mentor_mobile.png'}
+              fill
+              sizes="100%"
+              alt="About mentor team"
+              quality={80}
+            />
             <Image
               className={styles.image}
               src={'/images/mentor_section/mentor.png'}
