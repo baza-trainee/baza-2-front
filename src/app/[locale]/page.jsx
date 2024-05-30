@@ -11,8 +11,6 @@ import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import StructureSection from "@/src/components/StructureSection/StructureSection";
 
 export default function Home() {
-  
-
   return (
     <main>
       <HeroSection />
