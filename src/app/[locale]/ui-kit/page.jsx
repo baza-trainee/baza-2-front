@@ -5,7 +5,7 @@ import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
 import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
-import JoinProjectCard from "@/src/components/shared/JoinProjectCard/JoinProjectCard";
+import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
 
 export default function UiKit() {
   return (
@@ -19,16 +19,10 @@ export default function UiKit() {
         desc="slide_1.text"
         img="/images/hero_section/slide_1.jpg"
       />
+      <JoinProjectSection />
       <SocialIcons />
       <RegistrationFormModal/>
-      <JoinProjectCard 
-        title="card_1.title"
-        text_1="card_1.text_1"
-        text_2="card_1.text_2"
-        text_3="card_1.text_3"
-        icon="/images/icons/1.svg"
-        image="/images/icons/anketa.svg"
-        />
+      
     </main>
   );
 }
