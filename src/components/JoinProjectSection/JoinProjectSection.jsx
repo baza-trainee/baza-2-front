@@ -8,7 +8,7 @@ import  { motion, useScroll } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 
 export default function JoinProjectSection () {
-  const t = useTranslations("How_we_work.join_project_section");
+  const t = useTranslations("Internship.join_project_section");
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
