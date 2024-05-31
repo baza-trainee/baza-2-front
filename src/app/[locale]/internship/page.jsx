@@ -4,9 +4,9 @@ export default function Internship() {
  
   return (
     <main className="container" style={{marginTop:'120px'}}>
-      <div style={{marginBottom:'20px'}}><h2>Запрошуємо до участі</h2></div>
-      <div style={{marginBottom:'20px'}}><h2>Як долучитись до проєкту</h2></div>
-      <div  style={{marginBottom:'120px'}}><h2>Переваги стажування</h2></div>
+      <div style={{marginBottom:'20px'}}><h2>Секція: Запрошуємо до участі</h2></div>
+      <div style={{marginBottom:'20px'}}><h2>Секція: Як долучитись до проєкту</h2></div>
+      <div  style={{marginBottom:'120px'}}><h2>Секція: Переваги стажування</h2></div>
     </main>
   );
 };
