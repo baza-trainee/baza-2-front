@@ -18,7 +18,11 @@ export default function HeroSection() {
         prevEl={".prevElHero"}
         nextEl={".nextElHero"}
         delay={10000}
-        sped={500}
+        breakpoints={{
+          992: {
+            sped:100,
+          },
+        }}
         renderItem={(item) => (
           <HeroCard title={item.title} desc={item.desc} img={item.img} />
         )}

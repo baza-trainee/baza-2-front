@@ -3,16 +3,21 @@
 
 .btn_main {
   @include mx.apply-font-styles(var.$button);
+
   position: relative;
   overflow: hidden;
   color: var.$secondary-white;
-  padding: 14px 24px;
+  padding: 10.5px 24px;
   border-radius: 8px;
   cursor: pointer;
   z-index: 2;
   box-shadow: none;
   border: none;
   transition: all var.$transition-duration-base var.$transition-timing-base;
+
+  @include mx.media-q("md") {
+    padding: 14px 24px;
+  }
 
   &::after {
     content: "";
@@ -23,12 +28,10 @@
     width: 100%;
     height: 100%;
     background: var.$button-gradient;
-    background: var.$icons-gradient;
-    background: linear-gradient(160deg, #e37cc1 0%, #e231a8 36.5%, #9d2f79 76%, #851a62 100%);
-    transition: all var.$transition-duration-base var.$transition-timing-base;
     box-shadow:
       inset 3px 3px 3px rgba(255, 255, 255, 0.213),
       inset -3px -3px 3px rgba(88, 4, 70, 0.532);
+    transition: all var.$transition-duration-base var.$transition-timing-base;
   }
 
   &::before {
@@ -40,12 +43,11 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: var.$primary-hover;
-    background: var.$button-gradient;
-    transition: all var.$transition-duration-base var.$transition-timing-base;
+    background: var.$button-hover-gradient;
     box-shadow:
       inset 3px 3px 3px rgba(255, 255, 255, 0.213),
       inset -3px -3px 3px rgba(54, 4, 88, 0.532);
+    transition: all var.$transition-duration-base var.$transition-timing-base;
   }
 
   &:active::after,
@@ -61,7 +63,7 @@
     opacity: 0;
   }
   &:disabled {
-    background: var.$primary-hover;
+    background: var.$secondary-gray;
     color: var.$secondary-text;
     cursor: default;
   }
