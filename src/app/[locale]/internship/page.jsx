@@ -1,14 +1,12 @@
-import { useTranslations } from "next-intl";
 
 export default function Internship() {
-  // Видалити після тестів
-  const t = useTranslations("Main.hero_сarousel_section.slide_1");
+  // !! Замінити  <div> на готові компоненти !!
+ 
   return (
-    <main>
-      Тут буде контент сторінки - Стажування
-      {/* Видалити після тестів */}
-      <h1>{t("title")}</h1>
-      <p>{t("text")}</p>
+    <main className="container" style={{marginTop:'120px'}}>
+      <div style={{marginBottom:'20px'}}><h2>Запрошуємо до участі</h2></div>
+      <div style={{marginBottom:'20px'}}><h2>Як долучитись до проєкту</h2></div>
+      <div  style={{marginBottom:'120px'}}><h2>Переваги стажування</h2></div>
     </main>
   );
-}
+};
