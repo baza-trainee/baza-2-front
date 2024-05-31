@@ -8,7 +8,7 @@ export default function GlobalError({ reset }) {
   const t = useTranslations("Error");
   return (
     <main className={styles.mainErr}>
-      <p>{t('title')}<span> :)</span></p>
+      <p>{t('title')}<span> :(</span></p>
       <MainButton onClick={() => reset()}>{t('btn_home')}</MainButton>
     </main>
   );
