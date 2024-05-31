@@ -9,6 +9,11 @@
   },
 
   "Internship": {
+    "invite_participate":{
+      "title": "Zapraszamy do udziału",
+      "btn_text":"Dołącz do społeczności"
+    },
+
     "join_project_section": {
       "main_title": "Jak dołączyć do projektu",
       "card_1": {
@@ -35,6 +40,19 @@
         "text_2": "Прийняти запрошення на вступ до серверу в Discord",
         "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
       }
+    },
+    
+    "benefits_internship":{
+      "title": "Korzyści ze stażu",
+      "cards":{
+        "item_1":"Stosujemy i potwierdzamy wiedzę teoretyczną",
+        "item_2":"Doświadczenie zdobywamy pracując w zespole",
+        "item_3":"Pozbywamy się niepewności i redukujemy stres",
+        "item_4":"Rozumiemy, czemu ma służyć ten projekt",
+        "item_5":"Tworzymy portfolio realnych projektów",
+        "item_6":"Wybieramy pracodawcę świadomie"
+      },
+      "btn_text":"Dołącz do społeczności"
     }
   },
 
