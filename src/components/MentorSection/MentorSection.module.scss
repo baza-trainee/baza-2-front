@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as mx;
 @use "../../styles/variables" as var;
 
-.mentor{
+.mentor {
   padding: 32px 16px;
 
   @include mx.media-q("md") {
@@ -87,7 +87,7 @@
         transform: translate(15px, 20px);
       }
 
-      .text_mb{
+      .text_mb {
         margin-bottom: 21px;
         @include mx.media-q("md") {
           margin-bottom: 30px;
@@ -95,11 +95,12 @@
       }
     }
 
-    .wrapper_img{
+    .wrapper_img {
       position: relative;
       width: clamp(288px, 92vw, 573px);
       height: clamp(282px, 87vw, 550px);
       transform: translateY(5vw);
+      flex-shrink: 0;
 
       @media (min-width: 660px) {
         transform: translateY(20px);
@@ -115,27 +116,21 @@
         object-fit: contain;
         object-position: center;
       }
-      .image_mobile{
+      .image_mobile {
         display: block;
         height: 100%;
         object-fit: contain;
         object-position: center;
       }
 
-      @media (min-width: 1280px)  {
+      @media (min-width: 1280px) {
         .image {
           display: block;
         }
-        .image_mobile{
+        .image_mobile {
           display: none;
         }
       }
     }
   }
 }
-
-
-
-
-
-

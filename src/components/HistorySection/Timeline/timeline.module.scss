@@ -17,14 +17,17 @@
   width: 2px;
   background-color: var.$secondary-gray;
   height: calc(100% - 135px);
+  @media (max-width: 570px) {
+    left: 12px;
+  }
 }
 
 .timeline__draw {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 0;
   width: 2px;
-  transform: translateX(-50%);
+  transition: all 0.3s ease 0s;
   background: linear-gradient(
     139deg,
     #db97c5 0%,
@@ -41,10 +44,20 @@
   grid-auto-rows: min-content;
   column-gap: 88px;
   row-gap: 92px;
+  @media (max-width: 768px) {
+    column-gap: 72px;
+  }
+  @media (max-width: 570px) {
+    grid-template-columns: 1fr;
+    column-gap: 60px;
+  }
 
   .timeline__list__element {
     position: relative;
     width: 100%;
+    @media (max-width: 570px) {
+      padding-left: 40px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -53,22 +66,37 @@
       height: 24px;
       border-radius: 50%;
       background-color: var.$secondary-gray;
-      transition: all var.$transition-duration-base var.$transition-timing-base
-        0s;
+      transition:
+        background-color var.$transition-duration-base
+          var.$transition-timing-base 0s,
+        box-shadow var.$transition-duration-base var.$transition-timing-base 0s;
     }
-    &:nth-child(odd) {
-      grid-column: 1;
-      &::before {
-        right: -32px;
-        transform: translateX(100%);
+    @media (min-width: 571px) {
+      &:nth-child(odd) {
+        grid-column: 1;
+        &::before {
+          right: -32px;
+          transform: translateX(100%);
+          @media (max-width: 768px) {
+            right: -24px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        grid-column: 2;
+        &::before {
+          left: -32px;
+          transform: translateX(-100%);
+          @media (max-width: 768px) {
+            left: -24px;
+          }
+        }
       }
     }
-
-    &:nth-child(even) {
-      grid-column: 2;
+    @media (max-width: 570px) {
       &::before {
-        left: -32px;
-        transform: translateX(-100%);
+        left: 0;
       }
     }
 
