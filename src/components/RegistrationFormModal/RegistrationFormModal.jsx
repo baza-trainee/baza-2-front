@@ -7,10 +7,11 @@ import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../shared/MainButton/MainButton";
-import { Icon } from "../shared/Icon/Icon";
+
 import Modal from "../shared/Modal/Modal";
 import stateRegistrationFormModal from "@/src/state/stateRegistrationFormModal";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
+import CloseBtn from "../shared/CloseBtn/CloseBtn";
 
 const RegistrationFormModal=()=>{
   const t = useTranslations("Modal_form");
@@ -18,6 +19,7 @@ const RegistrationFormModal=()=>{
     control,
     register,
     handleSubmit,
+    trigger,
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
@@ -56,7 +58,9 @@ const RegistrationFormModal=()=>{
     {
       id: "firstName",
       placeholder: t("firstName"),
-      registerOptions: register("firstName", { ...formScheme.firstName }),
+      registerOptions: register("firstName", { ...formScheme.firstName, onBlur:() => {
+        trigger("firstName")
+      } }),
       isError: !!errors.firstName,
       version: "input",
       label: t("firstName"),
@@ -64,7 +68,9 @@ const RegistrationFormModal=()=>{
     {
       id: "lastName",
       placeholder: t("lastName"),
-      registerOptions: register("lastName", { ...formScheme.lastName }),
+      registerOptions: register("lastName", { ...formScheme.lastName, onBlur:() => {
+        trigger("lastName")
+      } }),
       isError: !!errors.lastName,
       version: "input",
       label: t("lastName"),
@@ -126,28 +132,36 @@ const RegistrationFormModal=()=>{
 
   return (
     <Modal isOpen handleClose={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose}>
-          <Icon name="close" width={20} height={20} />
-        </button>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <h2>{t("title_mentor")}</h2>
-          <ul className={styles.list}>
-            {inputFields.map((field) => (
-              <div key={field.id}>
-                <InputField {...field} />
-              </div>
-            ))}
-          </ul>
-          <MainButton
-            type="submit"
-            disabled={!isDirty || !isValid}
-            className={styles.submit}
-            variant={"modal"}
-          >
-            {t("btn_send")}
-          </MainButton>
-        </form>
+      <div className={styles.wrapper} onClick={(e) => {
+        onClose()
+        e.stopPropagation()
+        }}>
+        <div className={styles.modal} onClick={(e) => e.stopPropagation()
+        }>
+
+        <CloseBtn className={styles.closeButton}
+          onClick={onClose}/>
+
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <h2>{t("title_mentor")}</h2>
+            <ul className={styles.list}>
+              {inputFields.map((field) => (
+                <div key={field.id}>
+                  <InputField {...field} />
+                  {field.isError&&<p>{t(`error_message.${field.id}`)}</p>}
+                </div>
+              ))}
+            </ul>
+            <MainButton
+              type="submit"
+              disabled={!isDirty || !isValid}
+              className={styles.submit}
+              //variant={"modal"}
+            >
+              {t("btn_send")}
+            </MainButton>
+          </form>
+        </div>
       </div>
     </Modal>
   );
