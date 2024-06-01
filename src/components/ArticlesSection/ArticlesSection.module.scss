@@ -1,31 +1,12 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins" as mx;
 
-.articlesContainer {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 32px 10px;
-
-  @include mx.media-q("md") {
-    padding: 48px 0;
-  }
-
-  @include mx.media-q("xl") {
-    padding: 60px 64px;
-  }
-
-  @include mx.media-q("xxxl") {
-    padding: 72px 120px;
-  }
+.articleSection {
+  padding: 60px 0;
 }
 
-.wrapperAll {
-  position: relative;
-  margin: 0 auto;
-
-  max-width: 1320px;
-  margin-bottom: 20px;
-
+.container {
+  max-width: 1680px;
   @include mx.media-q("md") {
     margin-bottom: 32px;
   }
@@ -38,58 +19,29 @@
     margin-bottom: 56px;
   }
 }
-
-.mySwiperWrapper {
-  @include mx.media-q("md") {
-    padding-left: 24px;
-    padding-right: 24px;
+.titleRow {
+  position: relative;
+  margin-bottom: 48px;
+  @media (max-width: 1366px) {
+    margin-bottom: 33px;
   }
+}
 
-  @include mx.media-q("xl") {
-    padding-left: 0;
-    padding-right: 0;
+.navigationButtons {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  gap: 32px;
+  @media (max-width: 608px) {
+    display: none;
   }
 }
 
 .title {
   @include mx.apply-font-styles(var.$h1-font);
   font-size: 24px;
-
   text-align: center;
-
-  @include mx.media-q("md") {
-    font-size: 32px;
-    margin: 10px 0;
-  }
-
-  @include mx.media-q("xl") {
-    font-size: 40px;
-    margin: 0;
-  }
-
-  @include mx.media-q("xxxl") {
-    margin: 10px 0;
-  }
-}
-
-.navigationButtons {
-  display: none;
-
-  @include mx.media-q("md") {
-    position: absolute;
-    top: -3px;
-    right: 40px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  @include mx.media-q("xl") {
-    right: 0;
-  }
-
-  @include mx.media-q("xxxl") {
-    top: 0;
-  }
 }
 
 .prevElArticle {
@@ -97,19 +49,11 @@
 }
 
 .mySwiperItem {
-  @include mx.media-q("md") {
-    max-width: 350px;
-  }
-
-  @include mx.media-q("xl") {
-    max-width: 397px;
-  }
+  height: auto !important;
 }
 
 .pagination {
-  margin-top: 20px;
-  justify-content: center;
-  @include mx.media-q("md") {
+  @media (min-width: 609px) {
     display: none;
   }
 }

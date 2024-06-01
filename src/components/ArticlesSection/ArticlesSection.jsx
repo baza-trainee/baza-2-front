@@ -15,38 +15,44 @@ export const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");
 
   return (
-    <section className={styles.articlesContainer}>
-      <div className={styles.wrapperAll}>
-        <h2 className={styles.title}>{t("title")}</h2>
-        <div className={styles.navigationButtons}>
-          <CarouselButton
-            className={clsx("prevElArticle", styles.prevElArticle)}
-          />
-          <CarouselButton className="nextElArticle" />
+    <section className={styles.articleSection}>
+      <div className={styles.container}>
+        <div className={styles.titleRow}>
+          <h2 className={styles.title}>{t("title")}</h2>
+          <div className={styles.navigationButtons}>
+            <CarouselButton
+              className={clsx("prevElArticle", styles.prevElArticle)}
+            />
+            <CarouselButton className="nextElArticle" />
+          </div>
         </div>
-      </div>
-      <div className={styles.mySwiperWrapper}>
         <Carousel
           slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
           modules={[Navigation, Pagination]}
           paginationEl={".custom-pagination-article"}
           prevEl={".prevElArticle"}
           nextEl={".nextElArticle"}
-          speed={1000}
-          slidesPerView={"auto"}
-          spaceBetween={24}
+          spaceBetween={15}
           breakpoints={{
-            1920: {
+            1280: {
+              slidesPerView: 4,
               spaceBetween: 30,
+            },
+            930: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
+            420: {
+              slidesPerView: 2,
             },
           }}
           items={items}
-          renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
+          renderItem={(item) => <ArticleCard key={createKey()} {...item} />}
+        />
+        <CarouselPagination
+          className={clsx("custom-pagination-article", styles.pagination)}
         />
       </div>
-      <CarouselPagination
-        className={clsx("custom-pagination-article", styles.pagination)}
-      />
     </section>
   );
 };

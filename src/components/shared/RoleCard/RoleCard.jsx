@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./RoleCard.module.scss";
 import clsx from "clsx";
+import { Icon } from "../Icon/Icon";
 
 const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
   const [readMore, setReadMore] = useState(false);
@@ -31,21 +32,7 @@ const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
           onClick={() => setReadMore(false)}
           className={styles.fullDescClose}
         >
-          <svg
-            width="24"
-            height="17"
-            viewBox="0 0 24 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8.15231 2L2 8.50081L8.15385 15M22 8.50244H2"
-              stroke="#FCFCFC"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Icon name="arrow-back" />
         </button>
         {children}
       </div>
