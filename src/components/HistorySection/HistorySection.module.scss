@@ -1,26 +1,43 @@
 @use "../../styles/mixins" as mixins;
 @use "../../styles/variables" as var;
 
+.history {
+  padding: 72px 0px;
+}
+
 .title {
   text-align: center;
-  font-size: 40px;
-  line-height: 60px;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
   @include mixins.apply-font-styles(var.$h1-font);
+  @media (max-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 420px) {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
 }
 .container {
-  padding: 70px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1024px;
 }
 .text {
   max-width: 566px;
   padding: 20px;
-  border: 1px solid #ff62ce;
+  border: 1px solid var.$primary-border;
   border-radius: 16px;
-  background-color: #180530;
+  background-color: var.$primary-fon-card;
   text-align: center;
   margin-bottom: 32px;
   @include mixins.apply-font-styles(var.$text-20-font);
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media (max-width: 420px) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 }
