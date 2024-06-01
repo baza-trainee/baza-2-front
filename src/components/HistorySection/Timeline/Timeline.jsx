@@ -35,23 +35,19 @@ const Timeline = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div id="scroll-indicator" className="scroll-indicator">
-        <div id="indicator" className="indicator">
-          <span></span>
+      <div className={styles.timeline}>
+        <div ref={timelineRef} className={styles.timeline__initial}>
+          <div
+            ref={timelineDrawRef}
+            className={clsx(
+              styles.timeline__draw,
+              isScrollDown && styles.active
+            )}
+          />
         </div>
-      </div>
-      <div className="placeholder"></div>
-      <div className={styles.timeline} ref={timelineRef}>
-        <div className={styles.timeline__initial}></div>
-        <div
-          ref={timelineDrawRef}
-          className={clsx(styles.timeline__draw, {
-            [styles.active]: isScrollDown,
-          })}
-        ></div>
 
         <ul className={styles.timeline__list}>
-          {data.map((item) => {
+          {data.map((item, i) => {
             const [ref, inView] = useInView({
               threshold: 0.9,
             });
@@ -59,13 +55,17 @@ const Timeline = () => {
             return (
               <li
                 ref={ref}
-                className={clsx(styles.timeline__list__element, styles.marker, {
-                  [styles.active]: inView,
-                })}
+                className={clsx(
+                  styles.timeline__list__element,
+                  inView && styles.active
+                )}
+                style={{ gridRow: ++i }}
                 id={item.id}
                 key={item.id}
               >
-                <p className={styles.title}>{t(`${item.id}.${item.title}`)}</p>
+                <h3 className={clsx(styles.title, styles.marker)}>
+                  {t(`${item.id}.${item.title}`)}
+                </h3>
                 <p className={styles.text}>{t(`${item.id}.${item.text}`)}</p>
               </li>
             );
