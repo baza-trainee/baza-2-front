@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import linkTypes from "../../shared/MainLink/constants";
 import MainLink from "../MainLink/MainLink";
 
-export const ArticleCard = ({ img, title, description, link }) => {
+export const ArticleCard = ({ img, title, description, link, date }) => {
   const t = useTranslations("Main.press_about_section");
 
   return (
@@ -17,11 +17,12 @@ export const ArticleCard = ({ img, title, description, link }) => {
           sizes="100%"
           alt={t(title)}
         />
+        <span className={styles.date}>{date}</span>
       </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{t(title)}</h3>
         <p className={styles.desc}>{t(description)}</p>
-        <MainLink url={link} type={linkTypes.DEFAULT}>
+        <MainLink url={link} type={linkTypes.CARD}>
           {t("btn_read_article")}
         </MainLink>
       </div>

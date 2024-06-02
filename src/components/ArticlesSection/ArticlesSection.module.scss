@@ -2,22 +2,17 @@
 @use "../../styles/mixins" as mx;
 
 .articleSection {
-  padding: 60px 0;
+  padding: 72px 0;
+  @media (max-width: 768px) {
+    padding: 48px 0;
+  }
+  @media (max-width: 420px) {
+    padding: 32px 0;
+  }
 }
 
 .container {
   max-width: 1680px;
-  @include mx.media-q("md") {
-    margin-bottom: 32px;
-  }
-
-  @include mx.media-q("xl") {
-    margin-bottom: 48px;
-  }
-
-  @include mx.media-q("xxxl") {
-    margin-bottom: 56px;
-  }
 }
 .titleRow {
   position: relative;
@@ -40,8 +35,13 @@
 
 .title {
   @include mx.apply-font-styles(var.$h1-font);
-  font-size: 24px;
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+  @media (max-width: 420px) {
+    font-size: 26px;
+  }
 }
 
 .prevElArticle {
@@ -50,6 +50,9 @@
 
 .mySwiperItem {
   height: auto !important;
+}
+.slider {
+  margin-bottom: 20px;
 }
 
 .pagination {

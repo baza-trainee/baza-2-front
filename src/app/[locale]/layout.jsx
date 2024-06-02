@@ -2,15 +2,16 @@ import CookiesModal from "@/src/components/CookiesModal/CookiesModal";
 import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
 import Footer from "@/src/components/shared/Footer/Footer";
 import Header from "@/src/components/shared/Header/Header";
-import "@/src/styles/global.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import NextTopLoader from "nextjs-toploader";
+import "@/src/styles/global.scss";
 
 export const metadata = {
   title: "Baza trainee 2",
   description: "Baza trainee web site",
   icons: {
-    icon: ['/favicons/favicon.svg'],
+    icon: ["/favicons/favicon.svg"],
     // apple: ['/apple-touch-icon.png'],
     // shortcut: ['/apple-touch-icon.png'],
   },
@@ -27,9 +28,17 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             {children}
             <Footer />
             <PaymentModal />
-            <CookiesModal/>
+            <CookiesModal />
           </div>
         </NextIntlClientProvider>
+        <NextTopLoader
+          color="#ff62ce"
+          height={2}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #ff62ce,0 0 5px #ff62ce"
+        />
       </body>
     </html>
   );

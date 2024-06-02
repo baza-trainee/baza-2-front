@@ -29,6 +29,7 @@ export const ArticlesSection = () => {
         <Carousel
           slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
           modules={[Navigation, Pagination]}
+          className={styles.slider}
           paginationEl={".custom-pagination-article"}
           prevEl={".prevElArticle"}
           nextEl={".nextElArticle"}
@@ -42,8 +43,14 @@ export const ArticlesSection = () => {
               slidesPerView: 3,
               spaceBetween: 24,
             },
-            420: {
+            680: {
               slidesPerView: 2,
+            },
+            480: {
+              slidesPerView: 1.5,
+            },
+            320: {
+              slidesPerView: 1.1,
             },
           }}
           items={items}

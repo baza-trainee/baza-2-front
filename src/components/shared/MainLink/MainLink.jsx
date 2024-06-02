@@ -25,7 +25,21 @@ const MainLink = ({
       });
     }
   };
-
+  if (url === "/contacts") {
+    return (
+      <button
+        className={clsx(
+          styles.link,
+          styles[`link--${type}`],
+          isCurrentPage && styles.active,
+          className
+        )}
+        onClick={scrollToBottom}
+      >
+        {children}
+      </button>
+    );
+  }
   return (
     <Link
       href={url}

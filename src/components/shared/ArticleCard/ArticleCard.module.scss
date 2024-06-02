@@ -17,6 +17,16 @@
     object-fit: cover;
   }
 }
+
+.date {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background-color: var.$primary-border;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
 .content {
   padding: 32px 24px 24px 24px;
   display: flex;
