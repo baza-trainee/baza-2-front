@@ -11,9 +11,7 @@ export const metadata = {
   title: "Baza trainee 2",
   description: "Baza trainee web site",
   icons: {
-    icon: ["/favicons/favicon.svg"],
-    // apple: ['/apple-touch-icon.png'],
-    // shortcut: ['/apple-touch-icon.png'],
+    icon: ["/favicons/favicon.svg"]
   },
 };
 
