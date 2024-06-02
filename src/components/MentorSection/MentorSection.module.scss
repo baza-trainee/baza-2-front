@@ -69,14 +69,14 @@
       width: 100%;
       max-width: 607px;
       position: relative;
-      transform: translateY(-7vw);
+      transform: translateY(-10vw);
       @include mx.apply-font-styles(var.$text-20-font);
       font-weight: 400;
       font-size: 14px;
       z-index: 3;
 
       @media (min-width: 660px) {
-        transform: translateY(-60px);
+        transform: translateY(-80px);
       }
 
       @include mx.media-q("md") {
@@ -84,7 +84,7 @@
       }
 
       @media (min-width: 1280px) {
-        transform: translate(15px, 20px);
+        transform: translate(15px, 1px);
       }
 
       .text_mb {
@@ -99,11 +99,11 @@
       position: relative;
       width: clamp(288px, 92vw, 573px);
       height: clamp(282px, 87vw, 550px);
-      transform: translateY(5vw);
+      transform: translateY(9vw);
       flex-shrink: 0;
 
       @media (min-width: 660px) {
-        transform: translateY(20px);
+        transform: translateY(40px);
       }
 
       @media (min-width: 1280px) {

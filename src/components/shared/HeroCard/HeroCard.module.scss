@@ -4,7 +4,7 @@
 .card {
   position: relative;
   overflow: hidden;
-  height: clamp(360px, 88vh, 600px);
+  height: clamp(360px, 88vh, 860px);
 
   @include mx.media-q("md") {
     height: clamp(220px, 90vh, 860px);
@@ -15,8 +15,12 @@
   display: block;
   width: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: right;
   filter: brightness(30%);
+
+  @media (min-width: 992px) {
+    object-position: center;
+  }
 }
 
 .wrapper {
@@ -27,19 +31,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   width: 100%;
   height: 100%;
-  padding: 16px 3px;
+  padding: 3px;
   gap: 16px;
 
   @media (min-width: 410px) {
-    padding: 26px 10px 20px 10px;
-    gap: 16px;
-  }
-
-  @media (min-width: 992px) {
-    justify-content: center;
     padding: 10px;
   }
 
@@ -90,10 +89,6 @@
     @media (min-width: 420px) {
       font-size: 24px;
     }
-
-    // @include mx.media-q("md") {
-    //   font-size: 24px;
-    // }
 
     @include mx.media-q("xl") {
       font-size: 28px;

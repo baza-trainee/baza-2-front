@@ -44,7 +44,7 @@ const usePaymentHandler = (payment, locale) => {
 	};
 	// Розкоментувати щоб побачити перехід на сторінку оплати.
 	// !!! Обержно платежі справжні !!!
-	handlePayment()
+	//handlePayment()
 	return paymentData
 };
 

@@ -7,7 +7,7 @@ import {motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
 
 export default function JoinProjectCard({ item = {}, i, progress, range, targetScale}) {
-  const t = useTranslations("How_we_work.join_project_section");
+  const t = useTranslations("Internship.join_project_section");
   const { text_1, text_2, text_3, title, icon, image } = item;
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
