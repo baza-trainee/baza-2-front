@@ -3,6 +3,7 @@ const linkTypes = {
 	HELP: "help",
 	FOOTER: "footer",
 	BURGER: "burger",
+	CARD: "card",
 };
 
 export default linkTypes;

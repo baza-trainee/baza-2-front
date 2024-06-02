@@ -82,6 +82,31 @@
       }
     }
   }
+  &--card {
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    padding: 10px 4px;
+    &::before {
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: var.$primary-border;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: width var.$transition-duration-base
+        var.$transition-timing-base 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: var.$secondary-white;
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
   @media (max-width: 696px) {
     // font-size: 14px;
     line-height: 140%;
