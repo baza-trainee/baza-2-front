@@ -1,12 +1,12 @@
 "use client";
 import { useCallback, useState } from 'react';
 import { useTranslations } from "next-intl";
-import Modal from '../shared/Modal/Modal';
+import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
 import styles from './PaymentModal.module.scss';
 import FormPayment from './FormPayment/FormPayment';
 import ThanksCard from './ThanksCard/ThanksCard';
-import CloseBtn from '../shared/CloseBtn/CloseBtn';
+import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 
 export default function PaymentModal() {
   // Отримуємо стан.
@@ -27,7 +27,7 @@ export default function PaymentModal() {
     setThank(true)
   }, [thank]);
 
-  return <Modal isOpen={isOpen} handleClose={handleClose}>
+  return <LayoutModal isOpen={isOpen} handleClose={handleClose}>
     <div className={styles.wrapper}>
       <div className={styles.card}>
         {thank?
@@ -43,5 +43,5 @@ export default function PaymentModal() {
           onClick={handleClose}/>
       </div>
     </div>
-  </Modal>
+  </LayoutModal>
 }

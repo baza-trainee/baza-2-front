@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import { useTranslations } from "next-intl";
-import { Icon } from "../../shared/Icon/Icon";
 import { btnItems } from "../btnItems";
 import { createKey } from "@/src/lib/utils/createKey";
-import MainButton from "../../shared/MainButton/MainButton";
 import styles from './FormPayment.module.scss';
 import clsx from "clsx";
 import usePaymentHandler from '../usePaymentHandler';
 import { useParams } from 'next/navigation';
+import { Icon } from '@/src/components/shared/Icon/Icon';
+import MainButton from '@/src/components/shared/MainButton/MainButton';
 
 export default function FormPayment({handleThank}) {
   // Мова сторінки.
