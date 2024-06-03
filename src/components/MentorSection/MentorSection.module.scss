@@ -50,8 +50,7 @@
 
       @media (min-width: 1280px) {
         flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        align-items: end;
         margin-bottom: 48px;
       }
 
@@ -68,15 +67,17 @@
       padding: 20px;
       width: 100%;
       max-width: 607px;
+      margin-bottom: 5px;
       position: relative;
-      transform: translateY(-10vw);
+      transform: translateY(-3.5vw);
       @include mx.apply-font-styles(var.$text-20-font);
       font-weight: 400;
       font-size: 14px;
       z-index: 3;
 
       @media (min-width: 660px) {
-        transform: translateY(-80px);
+        transform: translateY(-23px);
+        margin-bottom: 10px;
       }
 
       @include mx.media-q("md") {
@@ -84,7 +85,8 @@
       }
 
       @media (min-width: 1280px) {
-        transform: translate(15px, 1px);
+        transform: translateX(15px);
+        margin-bottom: 63px;
       }
 
       .text_mb {
@@ -99,11 +101,11 @@
       position: relative;
       width: clamp(288px, 92vw, 573px);
       height: clamp(282px, 87vw, 550px);
-      transform: translateY(9vw);
+      transform: translateY(4vw);
       flex-shrink: 0;
 
       @media (min-width: 660px) {
-        transform: translateY(40px);
+        transform: translateY(23px);
       }
 
       @media (min-width: 1280px) {
