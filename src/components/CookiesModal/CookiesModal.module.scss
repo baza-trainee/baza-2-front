@@ -86,7 +86,7 @@
 
     .close{
       position: absolute;
-      top: 16px;
+      top: 23px;
       right: 16px;
       z-index: 2;
       width: 18px;
@@ -95,8 +95,18 @@
       @include mx.media-q("md") {
         width: 20px;
         height: 20px;
-        top: 24px;
+        top: 32px;
         right: 24px;
+      }
+
+      & svg{
+        width: 18px;
+        height: 18px;
+        
+        @include mx.media-q("md") {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
