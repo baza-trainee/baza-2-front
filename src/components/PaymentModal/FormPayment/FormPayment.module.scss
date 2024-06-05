@@ -43,47 +43,25 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 82vw;
+    width: 100%;
 
-    .label{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      @include mx.apply-font-styles(var.$h2-font);
-      position: absolute;
-      color: transparent;
-      top: 0;
-      height: 100%;
-      padding-left: 20px;
+    .vertical_line{
+      width: 1px;
+      height: 110px;
+      background: var.$primary-border;
+      animation: 1s linear line-opacity infinite;
 
-      & span{
-        font-size: 90px;
-        line-height: normal;
-
-        @media (min-width: 420px) {
-          font-size: 96px;
-        }
-
-        @include mx.media-q("md") {
-          font-size: 100px;
-        }
+      @media (min-width: 420px) {
+        height: 117px;
       }
 
-      & svg{
-        display: block;
-        width: 32px;
-        height: 38px;
-        margin-left: 10px;
+      @include mx.media-q("md") {
+        height: 122px;
       }
     }
-    .input{
-      z-index: 2;
-      background: none;
+
+    .text{
       color: var.$secondary-white;
-      outline: 0;
-      padding-right: 20px;
-      text-align: center;
       @include mx.apply-font-styles(var.$h2-font);
       font-size: 90px;
       line-height: normal;
@@ -97,13 +75,19 @@
       }
     }
 
+    .currency{
+      display: block;
+      width: 32px;
+      height: 38px;
+      margin-left: 10px;
+    }
+
     .error{
       @include mx.apply-font-styles(var.$h2-font);
       font-size: 90px;
-      line-height: normal;
+      //line-height: normal;
       color: var.$secondary-error;
-      text-align: end;
-      padding-right: 57px;
+      text-align: center;
       width: 100%;
       opacity: 0;
       position: absolute;
@@ -114,32 +98,42 @@
 
       @media (min-width: 420px) {
         font-size: 96px;
-        padding-right: 61px;
       }
 
       @include mx.media-q("md") {
         font-size: 100px;
-        padding-right: 20px;
       }
     }
 
     .error._message{
-      text-align: center;
-      padding: 0;
       font-size: 35px;
       top: 20%;
 
       @media (min-width: 420px) {
         font-size: 50px;
       }
-
-      @include mx.media-q("md") {
-        left: 10%;
-      }
     }
-
   }
 
+  .input{
+    z-index: 2;
+    background: none;
+    color: var.$secondary-white;
+    outline: 0;
+    padding-right: 20px;
+    text-align: center;
+    @include mx.apply-font-styles(var.$h2-font);
+    font-size: 90px;
+    line-height: normal;
+
+    @media (min-width: 420px) {
+      font-size: 96px;
+    }
+
+    @include mx.media-q("md") {
+      font-size: 100px;
+    }
+  }
   .btns{
     display: flex;
     align-items: center;
@@ -156,7 +150,7 @@
     padding: 12px 28px;
     font-weight: 400;
     font-size: 14px;
-
+    position: relative;
     @include mx.media-q("md") {
       font-size: 18px;
       margin: 0;
@@ -164,6 +158,15 @@
 
     @include mx.media-q("xl") {
       font-size: 20px;
+    }
+    .input{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
     }
   }
 
@@ -181,6 +184,7 @@
     color: var.$secondary-black;
   }
 }
+
 // Анімація повідомлення про помилку.
 @keyframes error-slide {
   from {
@@ -189,5 +193,14 @@
   to {
     opacity: 0;
     transform: translateY(-100%) scale(2);
+  }
+}
+// Анімація курсор.
+@keyframes line-opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
