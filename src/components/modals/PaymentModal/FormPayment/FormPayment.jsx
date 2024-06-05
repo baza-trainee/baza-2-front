@@ -88,7 +88,7 @@ export default function FormPayment({handleThank}) {
       <input 
         value={amount} 
         type = "text"
-        inputMode="numeric"
+        //inputMode="numeric"
         className={styles.input}
         ref={inputRef}
         size={4}
