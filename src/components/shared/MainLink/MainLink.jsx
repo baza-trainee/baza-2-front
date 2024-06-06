@@ -11,6 +11,7 @@ const MainLink = ({
   type = linkTypes.DEFAULT,
   className,
   handleClose,
+  ...rest
 }) => {
   const pathname = usePathname();
   const isCurrentPage = pathname === url;
@@ -50,6 +51,7 @@ const MainLink = ({
         className
       )}
       onClick={scrollToBottom}
+      {...rest}
     >
       {children}
     </Link>
