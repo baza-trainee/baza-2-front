@@ -11,7 +11,7 @@ import { createKey } from "@/src/lib/utils/createKey";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import styles from "./ArticlesSection.module.scss";
 
-export const ArticlesSection = () => {
+ const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");
 
   return (
@@ -63,3 +63,5 @@ export const ArticlesSection = () => {
     </section>
   );
 };
+
+export default ArticlesSection;
