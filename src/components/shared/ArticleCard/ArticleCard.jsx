@@ -1,15 +1,17 @@
 import styles from "./ArticleCard.module.scss";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import linkTypes from "../../shared/MainLink/constants";
+import Link from "next/link";
 import MainLink from "../MainLink/MainLink";
+import linkTypes from "../MainLink/constants";
 
-export const ArticleCard = ({ img, title, description, link, date }) => {
+export const ArticleCard = ({ item }) => {
+  const { img, title, description, link, date } = item;
   const t = useTranslations("Main.press_about_section");
 
   return (
     <div className={styles.card}>
-      <div className={styles.imgContainer}>
+      <div className={styles.img}>
         <Image
           className={styles.image}
           src={img}
@@ -19,10 +21,17 @@ export const ArticleCard = ({ img, title, description, link, date }) => {
         />
         <span className={styles.date}>{date}</span>
       </div>
-      <div className={styles.content}>
-        <h3 className={styles.title}>{t(title)}</h3>
-        <p className={styles.desc}>{t(description)}</p>
-        <MainLink url={link} type={linkTypes.CARD}>
+      <div className={styles.wrapper}>
+        <div className={styles.content}>
+          <h3>{t(title)}</h3>
+          <p>{t(description)}</p>
+        </div>
+        <MainLink
+          url={link}
+          type={linkTypes.CARD}
+          className={styles.linkRead}
+          target="blank"
+        >
           {t("btn_read_article")}
         </MainLink>
       </div>

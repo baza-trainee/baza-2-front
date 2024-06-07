@@ -1,10 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./ScrollToTopBtn.module.scss";
-import Image from "next/image";
-import { Icon } from "../Icon/Icon";
 
-export const ScrollToTopBtn = () => {
+const ScrollToTopBtn = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -73,3 +71,5 @@ export const ScrollToTopBtn = () => {
     </>
   );
 };
+
+export default ScrollToTopBtn;

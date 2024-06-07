@@ -11,55 +11,46 @@ import { createKey } from "@/src/lib/utils/createKey";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import styles from "./ArticlesSection.module.scss";
 
-export const ArticlesSection = () => {
+const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");
 
   return (
-    <section className={styles.articleSection}>
-      <div className={styles.container}>
-        <div className={styles.titleRow}>
-          <h2 className={styles.title}>{t("title")}</h2>
-          <div className={styles.navigationButtons}>
-            <CarouselButton
-              className={clsx("prevElArticle", styles.prevElArticle)}
-            />
-            <CarouselButton className="nextElArticle" />
-          </div>
+    <section className={styles.articlesContainer}>
+      <div className={styles.wrapperAll}>
+        <h2 className={styles.title}>{t("title")}</h2>
+        <div className={styles.navigationButtons}>
+          <CarouselButton
+            className={clsx("prevElArticle", styles.prevElArticle)}
+          />
+          <CarouselButton className="nextElArticle" />
         </div>
+      </div>
+      <div className={styles.mySwiperWrapper}>
         <Carousel
           slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
           modules={[Navigation, Pagination]}
-          className={styles.slider}
           paginationEl={".custom-pagination-article"}
           prevEl={".prevElArticle"}
           nextEl={".nextElArticle"}
-          spaceBetween={15}
+          slidesPerView={"auto"}
+          spaceBetween={16}
           breakpoints={{
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-            930: {
-              slidesPerView: 3,
+            768: {
               spaceBetween: 24,
             },
-            680: {
-              slidesPerView: 2,
-            },
-            480: {
-              slidesPerView: 1.5,
-            },
-            320: {
-              slidesPerView: 1.1,
+            1920: {
+              spaceBetween: 30,
             },
           }}
           items={items}
-          renderItem={(item) => <ArticleCard key={createKey()} {...item} />}
-        />
-        <CarouselPagination
-          className={clsx("custom-pagination-article", styles.pagination)}
+          renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
         />
       </div>
+      <CarouselPagination
+        className={clsx("custom-pagination-article", styles.pagination)}
+      />
     </section>
   );
 };
+
+export default ArticlesSection;
