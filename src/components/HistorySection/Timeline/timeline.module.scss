@@ -16,18 +16,16 @@
   transform: translateX(-50%);
   width: 2px;
   background-color: var.$secondary-gray;
-  height: calc(100% - 135px);
+  // height: calc(100% - 135px);
+  height: 100%;
   @media (max-width: 570px) {
     left: 12px;
   }
 }
 
 .timeline__draw {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  transition: all 0.3s ease 0s;
+  width: 100%;
+  transition: height 0.3s ease 0s;
   background: linear-gradient(
     139deg,
     #db97c5 0%,
