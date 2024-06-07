@@ -1,4 +1,3 @@
-import { ScrollToTopBtn } from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
 import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
@@ -10,7 +9,6 @@ import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectS
 export default function UiKit() {
   return (
     <main>
-      <ScrollToTopBtn />
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
       <PartnerCard />

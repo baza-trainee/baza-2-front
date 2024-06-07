@@ -18,7 +18,7 @@
   border-radius: 50%;
 
   cursor: pointer;
-  transition: opacity var.$transition-timing-base var.$transition-duration-base;
+  transition: background-color 0.5s var.$transition-timing-base ;
 }
 
 .scrollToTopBtnActive:hover {
