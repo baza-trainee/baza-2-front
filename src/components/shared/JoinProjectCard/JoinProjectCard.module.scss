@@ -2,15 +2,68 @@
 @use "../../../styles/variables" as var;
 
 .cardContainer {
-  height: 100vh;
+    min-width: 280px;
+    max-width: 688px;
+
+  @include mixins.media-q("md") {
+    min-width: 688px;
+    max-width: 1212px;
+  }
+
+  @include mixins.media-q("xl") { 
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: 0px;
+  top: 150px;
+  min-width: 1212px;
+  max-width: 1396px;
+  }
+  @include mixins.media-q("xxxl") { 
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 150px;
+  min-width: 1396px;
+  max-width: 100%;
+  }
+}
+
+.card{
+    background: #180530;
+    border: 1px solid #ff62ce;
+    border-radius: 24px;
+    padding: 48px;
+    min-width: 278px;
+    max-width: 686px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   
-  .card {
+@include mixins.media-q("md") {
+
+    border: 1px solid #ff62ce;
+    border-radius: 24px;
+    min-width: 686px;
+    max-width: 1212px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 20px;
+    padding: 48px 0px;    
+    }
+
+@include mixins.media-q("xl") { 
+
     position: relative;
     top: -10%;
     display: flex;
@@ -20,36 +73,96 @@
     border: 1px solid #ff62ce;
     border-radius: 24px;
     padding: 48px;
-    width: 1212px;
+    min-width: 1212px;
+    max-width: 1396px;
     height: 400px;
     gap: 32px;
-    position:relative;
     overflow: hidden;
     background-color: #180530;
-    
-    .svgWrapper {
-      width: fit-content;
-      height: fit-content;
+  }
 
-    }
+
+@include mixins.media-q("xxxl") { 
+  position: relative;
+  top: -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid #ff62ce;
+  border-radius: 24px;
+  padding: 48px;
+  height: 400px;
+  gap: 32px;
+  overflow: hidden;
+  background-color: #180530;
+  min-width: 1396px;
+  max-width: 100%;
+
 }
+
 }
+
 .textCard {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 24px;
+  padding: 0px 8px;
+  min-width: 278px;
+  max-width: 515px;
+  height: fit-content;
+
+
+  @include mixins.media-q("md")  { 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 515px;
+    max-width: 915px;
+    height: fit-content;  
+  }
+
+  @include mixins.media-q("xl") { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   gap: 32px;
-  width: fit-content;
+  min-width: 915px;
+  max-width: 1212px;
   height: fit-content;
 }
 
+@include mixins.media-q("xxxl") { 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 1212px;
+  max-width: 100%;
+  height: fit-content;
+}
+}
 
 .titleWrapper{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  gap: 12px;
+  padding: 10px;
+  width: 100%;
+  height: fit-content;
+  border-bottom: 1px solid #ff62ce;
+  text-align: center;
+  @include mixins.apply-font-styles(var.$h3-font);
+
+  @include mixins.media-q("xl") { 
   gap: 24px;
   padding: 10px;
   height: 56px;
@@ -57,21 +170,33 @@
   @include mixins.apply-font-styles(var.$h4-font);
   border-bottom: 1px solid #ff62ce;
 }
+@include mixins.media-q("xxxl") { 
+  @include mixins.apply-font-styles(var.$h5-font);
+}
+}
 
-.icon {
+.iconTitle {
+  width: 24px; 
+  height: 24px;
+  @include mixins.media-q("md") {
+    width: 32px; 
+    height: 33px;
+  }
+  @include mixins.media-q("xl") { 
+    width: 32px; 
+    height: 33px;
+  }
+}
+
+.iconNumber {
+  @include mixins.media-q("xl") { 
   width: 145px;
   height: 324px;
-  fill: #fcfcfc;
 }
-.textWrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 24px;
-  width: fit-content;
-  height: 138px;
-  @include mixins.apply-font-styles(var.$text-20-font);
+@include mixins.media-q("md") {
+  width: 135px;
+  height: 324px;
+}
 }
 
 .text {
@@ -80,15 +205,54 @@
   justify-content: flex-start;
   flex-direction: row;
   gap: 16px;
-  width: 915px;
-  height: 30px;
+  min-width: 261px;
+  max-width: 515px;
+  height: fit-content;
+  text-align: center;
+  @include mixins.apply-font-styles(var.$text-14-font);
+
+  @include mixins.media-q("md")  {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    min-width: 515px;
+    max-width: 915px;
+    height: fit-content;
+    text-align: start;
+    @include mixins.apply-font-styles(var.$text-18-font);
+   }
+
+  @include mixins.media-q("xl") { 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    min-width: 915px;
+    max-width: 1212px;
+    height: fit-content;
+  }
   
+  @include mixins.media-q("xxxl") { 
+    @include mixins.apply-font-styles(var.$text-20-font);
+    text-align: start;
+    min-width: 1212px;
+    max-width: 100%;
+  }
 }
-
-
 
 .checkboxWrapper {
   width: fit-content;
-  height: fit-content;
+  max-height: 25px;
   border-radius: 2px;
+
+@include mixins.media-q("xl") { 
+  width: 24px;
+  height: 24px;
+
 }
+}
+
+
