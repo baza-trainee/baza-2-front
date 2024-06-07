@@ -88,9 +88,12 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 4px 4px 0 rgba(91, 89, 93, 0.25);
     background: var.$secondary-hover;
     color: var.$secondary-black;
+    border: 1px solid var.$primary-border;
+    box-shadow:
+    inset 1px 1px var.$primary-border,
+    inset -1px -1px var.$primary-border;
   }
 
   &:disabled {
