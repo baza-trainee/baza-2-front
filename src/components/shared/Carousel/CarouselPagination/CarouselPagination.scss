@@ -1,20 +1,33 @@
 @use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins" as mx;
 
 .sliderPagination {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  pointer-events: none;
+  gap: 8px;
   & > span {
+    width: 8px;
+    height: 8px;
     cursor: pointer;
     display: inline-block;
-    width: 16px;
-    height: 16px;
     border-radius: 50%;
     background-color: var.$secondary-white;
     transition: all var.$transition-duration-base var.$transition-timing-base 0s;
     &.swiper-pagination-bullet-active {
       background-color: var.$primary-primary;
+      @include mx.media-q("md") {
+        transform: scale(1.25);
+      }
     }
+    @include mx.media-q("md") {
+      pointer-events: all;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  @include mx.media-q("md") {
+    gap: 16px;
   }
 }
