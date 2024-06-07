@@ -97,7 +97,7 @@
 .pagination {
   margin-top: 20px;
   justify-content: center;
-  
+
   @include mx.media-q("md") {
     display: none;
   }

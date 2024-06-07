@@ -24,20 +24,18 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 20px;
   & > {
     flex-shrink: 0;
   }
-  @media (max-width: 1050px) and (min-width: 993px) {
-    gap: 20px;
-  }
-  @media (max-width: 600px) {
-    gap: 20px;
+  @media (min-width: 1050px) {
+    gap: 48px;
   }
 }
 
 .headerBtn {
-  @media (max-width: 992px) {
-    display: none;
+  display: none;
+  @media (min-width: 993px) {
+    display: block;
   }
 }
