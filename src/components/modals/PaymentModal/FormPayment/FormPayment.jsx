@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useTranslations } from "next-intl";
-import { btnItems } from "../btnItems";
-import { createKey } from "@/src/lib/utils/createKey";
+import { Icon } from "../../shared/Icon/Icon";
+import MainButton from "../../shared/MainButton/MainButton";
 import styles from './FormPayment.module.scss';
 import clsx from "clsx";
 import usePaymentHandler from '../usePaymentHandler';
@@ -85,19 +85,12 @@ export default function FormPayment({handleThank}) {
     <p>{t('amount')} <Icon className={styles.icon} name='donate-modal-icon'/></p>
 
     <div className={styles.amount}>
-      <input 
-        value={amount} 
-        type = "text"
-        //inputMode="numeric"
-        className={styles.input}
-        ref={inputRef}
-        size={4}
-        onInput={(e)=>{isValidate(e.target.value)}}
-        onBlur={(e)=>{fixedAmount(e)}}
-        readOnly={readOnly}
-        autoComplete="off"
-      />
-      <label className={styles.label}><span>{amount}</span><Icon name='currency'/></label>
+
+      <label htmlFor='amount' className={styles.text}>{amount}</label>
+
+      {!readOnly && <span className={styles.vertical_line}></span>}
+
+      <Icon name='currency'className={styles.currency}/>
       
       {error && <p
         className={clsx(styles.error, error?.length > 2 && styles._message)}>{error}</p>
@@ -105,22 +98,59 @@ export default function FormPayment({handleThank}) {
     </div>
 
     <ul className={styles.btns}>
-      {btnItems.map((el)=>{
-        return <li key={createKey()}>
-          <MainButton 
-            className={clsx(styles.btn, activeStyle(el.id) && styles._active, el.id === '500' && styles._hide)}
-            variant='modal' 
-            onClick={(ev)=>{
-              'another' === el.id ?
-              another():
-              fixedAmount(ev, el.id)
-            }}>
-              {el.text}{t(el.currency)}
-          </MainButton>
-        </li>
-      })}
-    </ul>
+      <li>
+        <MainButton 
+          variant='modal' 
+          className={clsx(styles.btn, activeStyle('100') && styles._active)}
+          onClick={(ev)=>{
+            fixedAmount(ev, '100')
+          }}>
+            {`+100 ${t('UAH')}`}
+        </MainButton>
+      </li>
+      <li>
+        <MainButton 
+          variant='modal' 
+          className={clsx(styles.btn, activeStyle('200') && styles._active)}
+          onClick={(ev)=>{
+            fixedAmount(ev, '200')
+          }}>
+            {`+200 ${t('UAH')}`}
+        </MainButton>
+      </li>
+      <li>
+        <MainButton 
+          variant='modal' 
+          className={clsx(styles.btn, activeStyle('500') && styles._active, styles._hide)}
+          onClick={(ev)=>{
+            fixedAmount(ev, '500')
+          }}>
+            {`+500 ${t('UAH')}`}
+        </MainButton>
+      </li>
+      <li>
+        <MainButton 
+          variant='modal' 
+          className={clsx(styles.btn, activeStyle('another') && styles._active)}>
+            {`+${t('another_amount')}`}
+            
+            <input type='text' 
+              id='amount'
+              value={amount} 
+              className={styles.input} 
+              autoComplete="off" 
+              ref={inputRef}
+              inputMode="numeric"
+              onInput={(e)=>{isValidate(e.target.value)}}
+              onBlur={(e)=>{fixedAmount(e)}}
+              onClick={()=>{
+                another()
+              }}
+            />
 
+        </MainButton>
+      </li>
+    </ul>
     <MainButton className={styles.btn_submit} 
       type="submit" 
       disabled={isDisabled(amount)}>

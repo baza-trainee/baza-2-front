@@ -1,46 +1,84 @@
 @use "../../styles/variables" as var;
 @use "../../styles/mixins" as mx;
 
-.articleSection {
-  padding: 72px 0;
-  @media (max-width: 768px) {
-    padding: 48px 0;
+.articlesContainer {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 32px 16px;
+
+  @include mx.media-q("md") {
+    padding: 48px 40px;
   }
-  @media (max-width: 420px) {
-    padding: 32px 0;
+
+  @include mx.media-q("xl") {
+    padding: 60px 64px;
+  }
+
+  @include mx.media-q("xxxl") {
+    padding: 72px 120px;
   }
 }
 
-.container {
-  max-width: 1680px;
-}
-.titleRow {
+.wrapperAll {
   position: relative;
-  margin-bottom: 48px;
-  @media (max-width: 1366px) {
-    margin-bottom: 33px;
-  }
-}
+  margin: 0 auto 20px auto;
 
-.navigationButtons {
-  position: absolute;
-  display: flex;
-  top: 0;
-  right: 0;
-  gap: 32px;
-  @media (max-width: 608px) {
-    display: none;
+  max-width: 1320px;
+
+  @include mx.media-q("md") {
+    margin-bottom: 32px;
+  }
+
+  @include mx.media-q("xl") {
+    margin-bottom: 48px;
+  }
+
+  @include mx.media-q("xxxl") {
+    margin-bottom: 56px;
   }
 }
 
 .title {
-  @include mx.apply-font-styles(var.$h1-font);
+  @include mx.apply-font-styles(var.$h2-font);
+  font-size: 26px;
+  font-weight: 700;
+
   text-align: center;
-  @media (max-width: 768px) {
+
+  @include mx.media-q("md") {
     font-size: 32px;
+    margin: 10px 0;
   }
-  @media (max-width: 420px) {
-    font-size: 26px;
+
+  @include mx.media-q("xl") {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @include mx.media-q("xxxl") {
+    margin: 10px 0;
+  }
+}
+
+.navigationButtons {
+  display: none;
+
+  @include mx.media-q("md") {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  @include mx.media-q("xl") {
+    right: 0;
+  }
+
+  @include mx.media-q("xxxl") {
+    top: 0;
   }
 }
 
@@ -49,14 +87,18 @@
 }
 
 .mySwiperItem {
-  height: auto !important;
-}
-.slider {
-  margin-bottom: 20px;
+  max-width: 334px;
+
+  @include mx.media-q("xl") {
+    max-width: 397px;
+  }
 }
 
 .pagination {
-  @media (min-width: 609px) {
+  margin-top: 20px;
+  justify-content: center;
+
+  @include mx.media-q("md") {
     display: none;
   }
 }

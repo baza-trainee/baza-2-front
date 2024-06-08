@@ -6,14 +6,26 @@ import  { items } from './items';
 import { useTranslations } from "next-intl";
 import  { motion, useScroll } from 'framer-motion';
 import { useRef, useEffect } from 'react';
+import Lenis from '@studio-freight/lenis'
+
 
 export default function JoinProjectSection () {
   const t = useTranslations("Internship.join_project_section");
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start end', 'start start']
+    offset: ['start end', 'end end']
   })
+
+  useEffect( () => {
+  const lenis = new Lenis()
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+    requestAnimationFrame(raf)
+  }, [])
+  
 
   return(
     <section ref={container} className={styles.container}>
