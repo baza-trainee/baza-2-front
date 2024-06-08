@@ -8,10 +8,15 @@ import { Icon } from "../Icon/Icon";
 const logoConfig = {
   HEADER: "header",
   FOOTER: "footer",
-  URL:'/'
+  URL: "/",
 };
 // variant - 'header' або 'footer' за замовчуванням 'header'. ariaLabel - для посилання
-export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel }) {
+export default function Logo({
+  variant = logoConfig.HEADER,
+  className,
+  ariaLabel,
+  handleClick,
+}) {
   const logoClass = `${
     styles[
       variant === logoConfig.HEADER || variant === logoConfig.FOOTER
@@ -24,6 +29,9 @@ export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel
     if (variant === logoConfig.FOOTER) {
       event.preventDefault();
     }
+    if (variant === logoConfig.HEADER) {
+      handleClick();
+    }
     window.scrollTo({
       top: 0,
       behavior: variant === logoConfig.HEADER ? "instant" : "smooth",
@@ -33,11 +41,11 @@ export default function Logo({ variant = logoConfig.HEADER, className, ariaLabel
   return (
     <Link
       href={logoConfig.URL}
-      className={clsx(logoClass,className)}
+      className={clsx(logoClass, className)}
       onClick={scrollToTop}
       aria-label={ariaLabel}
     >
-      <Icon className={styles.logo} name="logo"/>
+      <Icon className={styles.logo} name="logo" />
     </Link>
   );
 }
