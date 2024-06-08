@@ -5,10 +5,12 @@ import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
+import Loader from "@/src/components/shared/loader/Loader";
 
 export default function UiKit() {
   return (
     <main>
+      <Loader/>
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
       <PartnerCard />

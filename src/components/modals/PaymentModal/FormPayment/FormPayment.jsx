@@ -1,7 +1,5 @@
 import { useRef, useState } from 'react';
 import { useTranslations } from "next-intl";
-import { Icon } from "../../shared/Icon/Icon";
-import MainButton from "../../shared/MainButton/MainButton";
 import styles from './FormPayment.module.scss';
 import clsx from "clsx";
 import usePaymentHandler from '../usePaymentHandler';
@@ -86,7 +84,7 @@ export default function FormPayment({handleThank}) {
 
     <div className={styles.amount}>
 
-      <label htmlFor='amount' className={styles.text}>{amount}</label>
+      <div htmlFor='amount' className={styles.text}>{amount}</div>
 
       {!readOnly && <span className={styles.vertical_line}></span>}
 
@@ -129,13 +127,14 @@ export default function FormPayment({handleThank}) {
         </MainButton>
       </li>
       <li>
-        <MainButton 
-          variant='modal' 
-          className={clsx(styles.btn, activeStyle('another') && styles._active)}>
+        <label
+          htmlFor='amount'
+          className={clsx(styles.label, activeStyle('another') && styles._active)}>
             {`+${t('another_amount')}`}
             
             <input type='text' 
               id='amount'
+              placeholder={`+${t('placeholder')}`}
               value={amount} 
               className={styles.input} 
               autoComplete="off" 
@@ -147,8 +146,7 @@ export default function FormPayment({handleThank}) {
                 another()
               }}
             />
-
-        </MainButton>
+        </label>
       </li>
     </ul>
     <MainButton className={styles.btn_submit} 

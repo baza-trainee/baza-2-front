@@ -123,19 +123,19 @@
       "title": "Nasza struktura",
       "item_1": {
         "title": "BAZA TRAINEE UKRAINE",
-        "text": "Громадський проєкт для джуніорів і  світчерів ІТ, який побудований на створенні цифрових проєктів для соціальної сфери України"
+        "text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
       },
       "item_2": {
         "title": "BAZA SKILL",
-        "text": "Власна рекрутингова агенція для наших випускників. База даних перевірених джунів з досвідом командної розробки"
+        "text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
       },
       "item_3": {
         "title": "BAZA EDUCAT",
-        "text": "Учбові курси різних рівнів складності для розробників, де навчають спільній роботі і командній розробці. Додай софт скіли до технічних знань і отримай додаткову підтримку на ринку праці"
+        "text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
       },
       "item_4": {
         "title": "BAZA POLIGON",
-        "text": "Веб агенція для малого і середнього бізнесу.  Створені в 2023 в Україні і для України."
+        "text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
       }
     },
     "FAQ_section": {
@@ -228,6 +228,7 @@
 
   "Modal_support": {
     "amount": "Kwota doładowania",
+    "placeholder": "Wprowadź żądaną kwotę",
     "UAH": "UAN",
     "another_amount": "Inna kwota",
     "btn_support": "Wspierać",
@@ -235,7 +236,9 @@
     "btn_home": "Powrót do strony głównej",
     "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
     "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
-    "error_message":"Max 4 signs!"
+    "ariaLabel_btn_close_3": "zamyka okno modalne błędu",
+    "error_message":"Max 4 signs!",
+    "error_message_pay":"Przepraszamy, pojawił się błąd"
   },
 
   "Modal_form": {

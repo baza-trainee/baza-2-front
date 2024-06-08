@@ -123,19 +123,19 @@
 			"title": "Our structure",
 			"item_1": {
 				"title": "BAZA TRAINEE UKRAINE",
-				"text": "A public project for juniors and IT switchers, focused on creating digital projects for the social sphere of Ukraine"
+				"text": "A public project for juniors and IT switchers, focused on creating digital projects for the social sphere of Ukraine."
 			},
 			"item_2": {
 				"title": "BAZA SKILL",
-				"text": "Our own recruiting agency for our graduates. A database of verified juniors with team development experience"
+				"text": "Our own recruiting agency for our graduates. A database of verified juniors with team development experience."
 			},
 			"item_3": {
 				"title": "BAZA EDUCAT",
-				"text": "Educational courses of various difficulty levels for developers, teaching teamwork and collaborative development. Enhance your technical skills with soft skills and receive additional support in the job market"
+				"text": "Educational courses of various difficulty levels for developers, teaching teamwork and collaborative development. Enhance your technical skills with soft skills and receive additional support in the job market."
 			},
 			"item_4": {
 				"title": "BAZA POLIGON",
-				"text": "A web agency for small and medium-sized businesses. Established in 2023 in Ukraine and for Ukraine"
+				"text": "A web agency for small and medium-sized businesses. Established in 2023 in Ukraine and for Ukraine."
 			}
 		},
 		"FAQ_section": {
@@ -228,6 +228,7 @@
 
 	"Modal_support": {
 		"amount": "Top-up amount",
+		"placeholder": "Enter the desired amount",
 		"UAH": "UAH",
 		"another_amount": "Another amount",
 		"btn_support": "To support",
@@ -235,7 +236,9 @@
 		"btn_home": "Return to the home page",
 		"ariaLabel_btn_close_1": "closes the modal payment window",
     "ariaLabel_btn_close_2": "closes the thank you modal window",
-		"error_message":"Max 4 signs!"
+		"ariaLabel_btn_close_3": "closes the error modal window",
+		"error_message":"Max 4 signs!",
+		"error_message_pay":"Sorry, an error occurred"
 	},
 
 	"Modal_form": {
