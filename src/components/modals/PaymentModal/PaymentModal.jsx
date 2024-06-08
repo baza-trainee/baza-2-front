@@ -5,7 +5,7 @@ import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
 import styles from './PaymentModal.module.scss';
 import FormPayment from './FormPayment/FormPayment';
-import ThanksCard from './ThanksCard/ThanksCard';
+import MessageCard from './MessageCard/MessageCard';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 
 export default function PaymentModal() {
@@ -15,8 +15,10 @@ export default function PaymentModal() {
 
   // контент.
   const t = useTranslations("Modal_support");
-  // локальний стан.;
+  // локальний стан.
   const [thank, setThank] = useState(false);
+  const [isLoader, setIsLoader] = useState(false);
+
 
   const handleClose = useCallback(() => {
     setThank(false)
@@ -31,7 +33,7 @@ export default function PaymentModal() {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         {thank?
-        <ThanksCard handleClose={handleClose}/>:
+        <MessageCard handleClose={handleClose}/>:
         <FormPayment handleThank={handleThank}/>
         }
 

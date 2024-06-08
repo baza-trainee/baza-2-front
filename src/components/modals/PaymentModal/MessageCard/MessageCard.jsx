@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
-import styles from './ThanksCard.module.scss';
+import styles from './MessageCard.module.scss';
 import ButtonLink from '@/src/components/shared/ButtonLink/ButtonLink';
 
-export default function ThanksCard({handleClose}) {
+export default function MessageCard({handleClose}) {
   const t = useTranslations("Modal_support");
 
   return <div className={styles.thanks}>
