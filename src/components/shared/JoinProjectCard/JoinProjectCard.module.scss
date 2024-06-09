@@ -36,7 +36,7 @@
 
 .card{
     background: #180530;
-    border: 1px solid #ff62ce;
+    border: var.$border;
     border-radius: 24px;
     padding: 48px;
     min-width: 278px;
@@ -48,14 +48,9 @@
     flex-direction: column;
   
 @include mixins.media-q("md") {
-
-    border: 1px solid #ff62ce;
-    border-radius: 24px;
     min-width: 686px;
     max-width: 1212px;
     height: 400px;
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
     flex-direction: row;
     gap: 20px;
@@ -63,15 +58,9 @@
     }
 
 @include mixins.media-q("xl") { 
-
     position: relative;
     top: -10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
-    border: 1px solid #ff62ce;
-    border-radius: 24px;
     padding: 48px;
     min-width: 1212px;
     max-width: 1396px;
@@ -81,16 +70,10 @@
     background-color: #180530;
   }
 
-
 @include mixins.media-q("xxxl") { 
   position: relative;
   top: -50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: row;
-  border: 1px solid #ff62ce;
-  border-radius: 24px;
   padding: 48px;
   height: 400px;
   gap: 32px;
@@ -158,7 +141,7 @@
   padding: 10px;
   width: 100%;
   height: fit-content;
-  border-bottom: 1px solid #ff62ce;
+  border-bottom: var.$border;
   text-align: center;
   @include mixins.apply-font-styles(var.$h3-font);
 
@@ -168,7 +151,8 @@
   height: 56px;
   width: 907px;
   @include mixins.apply-font-styles(var.$h4-font);
-  border-bottom: 1px solid #ff62ce;
+  border-bottom: var.$border;
+
 }
 @include mixins.media-q("xxxl") { 
   @include mixins.apply-font-styles(var.$h5-font);
