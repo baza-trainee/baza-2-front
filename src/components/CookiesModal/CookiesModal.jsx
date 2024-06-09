@@ -44,7 +44,7 @@ export default function CookiesModal() {
 
       <p className={styles.text}>{t("text")}  <a
         className={styles.lick}
-        href={'/'}
+        href={'/test'}
         target="_blank"
         rel="noreferrer noopener"
         >{t('privacy_policy')}</a>

@@ -5,7 +5,8 @@ export default function Internship() {
   return (
     <main  style={{marginTop:'120px'}}>
       <div style={{marginBottom:'20px'}}><h2>Секція: Запрошуємо до участі</h2></div>
-      <JoinProjectSection style={{marginBottom:'20px'}} /><h2>Секція: Як долучитись до проєкту</h2>
+      <JoinProjectSection style={{marginBottom:'20px'}} />
+      {/* <h2>Секція: Як долучитись до проєкту</h2> */}
       <div  style={{marginBottom:'120px'}}><h2>Секція: Переваги стажування</h2></div>
     </main>
   );

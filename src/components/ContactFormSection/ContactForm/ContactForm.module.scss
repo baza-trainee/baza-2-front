@@ -27,6 +27,18 @@
     height: 50px;
     stroke: var.$secondary-positive;
   }
+  .error_send{
+    position: absolute;
+    bottom: 50px;
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 34px;
+    font-weight: 700;
+    color: var.$secondary-error;
+    animation: 1.5s linear error-slide;
+    opacity: 0;
+    z-index: 5;
+  }
+
 }
 
 .list {
@@ -37,8 +49,6 @@
   .error{
     @include mx.apply-font-styles(var.$text-20-font);
     color: var.$secondary-error;
-
-
   }
   .error._hide{
     display: none;
@@ -62,5 +72,16 @@
   to {
     opacity: 1;
     transform: translateY(-110vh) scale(2);
+  }
+}
+
+// Анімація повідомлення про помилку.
+@keyframes error-slide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-60vh) scale(3);
   }
 }

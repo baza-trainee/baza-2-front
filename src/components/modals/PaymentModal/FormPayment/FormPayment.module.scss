@@ -115,26 +115,6 @@
     }
   }
 
-  // .input{
-  //   z-index: 2;
-  //   background: none;
-  //   color: var.$secondary-white;
-  //   outline: 0;
-  //   padding-right: 20px;
-  //   text-align: center;
-  //   @include mx.apply-font-styles(var.$h2-font);
-  //   font-size: 90px;
-  //   line-height: normal;
-
-  //   @media (min-width: 420px) {
-  //     font-size: 96px;
-  //   }
-
-  //   @include mx.media-q("md") {
-  //     font-size: 100px;
-  //   }
-  // }
-  
   .btns{
     display: flex;
     align-items: center;
@@ -190,7 +170,6 @@
       inset -1px -1px var.$primary-border;
     }
   }
-
   .btn._hide{
     display: none;
 

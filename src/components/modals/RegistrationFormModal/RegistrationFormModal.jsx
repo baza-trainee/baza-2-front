@@ -12,7 +12,7 @@ import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import LayoutModal from "../LayoutModal/LayoutModal";
 
-const RegistrationFormModal=()=>{
+const RegistrationFormModal=({test=false})=>{
   const t = useTranslations("Modal_form");
   const {
     control,
@@ -149,6 +149,9 @@ const RegistrationFormModal=()=>{
         <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
 
+         {test ? 
+            <h1>Форма Реєстрація ментора - Ще на етапі розробки :(</h1>
+             :
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2>{t("title_mentor")}</h2>
             <ul className={styles.list}>
@@ -167,7 +170,7 @@ const RegistrationFormModal=()=>{
             >
               {t("btn_send")}
             </MainButton>
-          </form>
+          </form>}
         </div>
       </div>
     </LayoutModal>
