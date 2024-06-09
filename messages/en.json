@@ -238,7 +238,7 @@
     "ariaLabel_btn_close_2": "closes the thank you modal window",
 		"ariaLabel_btn_close_3": "closes the error modal window",
 		"error_message":"Max 4 signs!",
-		"error_message_pay":"Sorry, an error occurred"
+		"error_message_pay":"Sorry, an error occurred :("
 	},
 
 	"Modal_form": {

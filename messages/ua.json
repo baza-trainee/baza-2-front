@@ -239,7 +239,7 @@
     "ariaLabel_btn_close_2": "зачиняє модальне вікно подяки",
     "ariaLabel_btn_close_3": "зачиняє модальне вікно помилки",
     "error_message":"Max 4 signs!",
-    "error_message_pay":"Вибачте, сталася помилка"
+    "error_message_pay":"Вибачте, сталася помилка :("
   },
   
   "Modal_form": {

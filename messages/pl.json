@@ -238,7 +238,7 @@
     "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
     "ariaLabel_btn_close_3": "zamyka okno modalne błędu",
     "error_message":"Max 4 signs!",
-    "error_message_pay":"Przepraszamy, pojawił się błąd"
+    "error_message_pay":"Przepraszamy, pojawił się błąd :("
   },
 
   "Modal_form": {

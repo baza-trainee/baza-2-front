@@ -13,7 +13,7 @@ const stateModalPayment = create(
       isOpen: false,
 
       //isLoader: false,
-      isError: false,
+      //isError: false,
       isThanks: false,
       //fishes: 0,
       //addAFish: () => set({ fishes: get().fishes + 1 }),
@@ -22,27 +22,27 @@ const stateModalPayment = create(
       //startLoader: () => set({ isLoader: true }),
       //stoptLoader: () => set({ isLoader: false }),
 
-      addError: () => set({ 
-        isError: true,
-        isThanks: false
-      }),
+      // addError: () => set({ 
+      //   isError: true,
+      //   isThanks: false
+      // }),
 
-      removeError: () => set({ 
-        isThanks: true,
-        isError: false,
-      }),
+      // removeError: () => set({ 
+      //   isThanks: true,
+      //   isError: false,
+      // }),
 
 
       addThanks: () => set({ 
         isThanks: true,
-        isError: false,
+        //isError: false,
       }),
 
 
       close: () => set({ 
         isOpen: false,
         //isLoader: false,
-        isError: false,
+        //isError: false,
         isThanks: false 
       }),
     }),
