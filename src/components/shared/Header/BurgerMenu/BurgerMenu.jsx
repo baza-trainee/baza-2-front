@@ -30,7 +30,7 @@ const BurgerMenu = () => {
   useBodyLock(isOpen);
 
   return (
-    <nav className={clsx(styles.burgerMenu, isOpen && styles.opened)}>
+    <nav data-lenis-prevent className={clsx(styles.burgerMenu, isOpen && styles.opened)}>
       <ul className={styles.burgerList}>
         {links?.map((link) => (
           <li key={createKey()}>
