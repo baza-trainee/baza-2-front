@@ -2,17 +2,13 @@
 @use "../../styles/mixins.scss" as mx;
 
 .wrapper{
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   padding: 10px;
-
-  @media (max-height: 430px) {
-    height: auto;
-  }
 }
+
 .card{
   border: 2px solid var.$primary-border;
   border-radius: 12px;
