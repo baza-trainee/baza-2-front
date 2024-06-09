@@ -7,6 +7,8 @@ import { formScheme } from "./formScheme";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import { Icon } from "../../shared/Icon/Icon";
+import handleSendContactForm from "@/src/lib/services/handleSendContactForm";
+import { useState } from "react";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
@@ -15,12 +17,27 @@ export default function ContactForm() {
     register,
     handleSubmit,
     trigger,
-    formState: { errors, isValid, isDirty, isSubmitSuccessful },
+    formState: { errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
 
+
+  const [isSubmit, setIsSubmit] = useState(null);
+
+  const isError = (res) => {
+    if(res.status === 200){
+      setIsSubmit('OK')
+    }else setIsSubmit('ERROR')
+    // setTimeout(()=>{
+    //   setIsSubmit(null)
+    // },2000)
+    console.log(res);
+  }
+
+
   const onSubmit = (data) => {
-    console.log(data);
+    handleSendContactForm( data, isError )
+    setIsSubmit(null)
     reset();
   };
 
@@ -85,8 +102,12 @@ export default function ContactForm() {
         {t("btn_send")}
       </MainButton>
       
-     {isSubmitSuccessful && <div className={styles.send}>
+     {isSubmit === 'OK' && <div className={styles.send}>
         <Icon name='mail'/>
+      </div>}
+
+      {isSubmit === 'ERROR' && <div className={styles.error_send}>
+        Error :(
       </div>}
     </form>
   );

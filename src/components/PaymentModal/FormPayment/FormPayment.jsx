@@ -84,7 +84,7 @@ export default function FormPayment({handleThank}) {
 
     <div className={styles.amount}>
 
-      <label htmlFor='amount' className={styles.text}>{amount}</label>
+      <p className={styles.text}>{amount}</p>
 
       {!readOnly && <span className={styles.vertical_line}></span>}
 
@@ -127,26 +127,26 @@ export default function FormPayment({handleThank}) {
         </MainButton>
       </li>
       <li>
-        <MainButton 
-          variant='modal' 
-          className={clsx(styles.btn, activeStyle('another') && styles._active)}>
-            {`+${t('another_amount')}`}
+      <label 
+        htmlFor='amount'
+        className={clsx(styles.label, activeStyle('another') && styles._active)}>
+          {`+${t('another_amount')}`}
             
-            <input type='text' 
-              id='amount'
-              value={amount} 
-              className={styles.input} 
-              autoComplete="off" 
-              ref={inputRef}
-              inputMode="numeric"
-              onInput={(e)=>{isValidate(e.target.value)}}
-              onBlur={(e)=>{fixedAmount(e)}}
-              onClick={()=>{
-                another()
-              }}
-            />
-
-        </MainButton>
+          <input type='text' 
+            id='amount'
+            placeholder={`+${t('placeholder')}`}
+            value={amount} 
+            className={styles.input} 
+            autoComplete="off" 
+            ref={inputRef}
+            inputMode="numeric"
+            onInput={(e)=>{isValidate(e.target.value)}}
+            onBlur={(e)=>{fixedAmount(e)}}
+            onClick={()=>{
+              another()
+            }}
+          />
+        </label >
       </li>
     </ul>
     <MainButton className={styles.btn_submit} 

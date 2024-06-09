@@ -20,6 +20,6 @@ export const formScheme={
     minLength:2, 
     maxLength:300,
     // регуярний вираз блокує російські літери.
-    pattern:/^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()]{2,300}$/ugi
+    pattern:/^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()]{9,300}$/ugi
   }
 }

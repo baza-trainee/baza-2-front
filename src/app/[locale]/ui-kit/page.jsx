@@ -20,7 +20,6 @@ export default function UiKit() {
       <JoinProjectSection />
       <SocialIcons />
       <RegistrationFormModal/>
-      
     </main>
   );
 }
