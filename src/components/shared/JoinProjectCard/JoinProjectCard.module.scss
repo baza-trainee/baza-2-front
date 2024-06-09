@@ -23,12 +23,6 @@
   }
   @include mixins.media-q("xxxl") { 
   height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: sticky;
-  top: 150px;
   min-width: 1396px;
   max-width: 100%;
   }
@@ -100,32 +94,21 @@
 
   @include mixins.media-q("md")  { 
     display: flex;
-    align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
     gap: 32px;
     min-width: 515px;
     max-width: 915px;
-    height: fit-content;  
   }
 
   @include mixins.media-q("xl") { 
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 32px;
   min-width: 915px;
   max-width: 1212px;
   height: fit-content;
 }
 
 @include mixins.media-q("xxxl") { 
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
-  flex-direction: column;
-  gap: 32px;
   min-width: 1212px;
   max-width: 100%;
   height: fit-content;
@@ -166,10 +149,6 @@
     width: 32px; 
     height: 33px;
   }
-  @include mixins.media-q("xl") { 
-    width: 32px; 
-    height: 33px;
-  }
 }
 
 .iconNumber {
@@ -196,27 +175,15 @@
   @include mixins.apply-font-styles(var.$text-14-font);
 
   @include mixins.media-q("md")  {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
     min-width: 515px;
     max-width: 915px;
-    height: fit-content;
     text-align: start;
     @include mixins.apply-font-styles(var.$text-18-font);
    }
 
   @include mixins.media-q("xl") { 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 16px;
     min-width: 915px;
     max-width: 1212px;
-    height: fit-content;
   }
   
   @include mixins.media-q("xxxl") { 
