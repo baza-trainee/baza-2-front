@@ -8,7 +8,7 @@ import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectS
 
 export default function UiKit() {
   return (
-    <><main>
+    <main>
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
       <PartnerCard />
@@ -19,8 +19,7 @@ export default function UiKit() {
       />
       <JoinProjectSection />
       <SocialIcons />
+      <RegistrationFormModal/>
     </main>
-    <RegistrationFormModal/>
-    </>
   );
 }
