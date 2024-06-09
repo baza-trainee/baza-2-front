@@ -4,10 +4,14 @@
 .card {
   position: relative;
   overflow: hidden;
-  height: clamp(360px, 88vh, 860px);
+  height: clamp(480px, 86vh, 860px);
+
+  @media (min-width: 410px) {
+    height: clamp(550px, 87vh, 860px);
+  }
 
   @include mx.media-q("md") {
-    height: clamp(220px, 90vh, 860px);
+    height: clamp(500px, 90vh, 860px);
   }
 }
 
@@ -78,8 +82,6 @@
   p {
     @include mx.apply-font-styles(var.$h2-font);
     font-size: 18px;
-    overflow-y: auto;
-    padding: 7px;
     width: clamp(280px, 95%, 830px);
 
     @media (min-width: 410px) {
