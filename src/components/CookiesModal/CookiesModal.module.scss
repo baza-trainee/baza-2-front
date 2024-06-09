@@ -5,8 +5,16 @@
   position: fixed;
   left: 2%;
   bottom: 14%;
+  top: auto;
   z-index: 1000;
   padding: 5px 0;
+  //overflow-y: scroll;
+
+  @media (max-height: 380px) {
+    left: 3px;
+    top: 3px;
+    bottom: auto;
+  }
 
   @media (min-width: 410px) {
     left: 2%;
@@ -21,6 +29,7 @@
     border-radius: 8px;
     padding: 16px;
     width: clamp(285px, 92vw, 412px);
+
     background: var.$primary-fon;
     color: var.$secondary-white;
     display: flex;
@@ -28,6 +37,10 @@
     gap: 16px;
     position: relative;
     box-shadow: inset 0 2px 12px 0 rgba(154, 149, 153, 0.25);
+
+    @media (max-height: 380px) {
+      width: clamp(310px, 95vw, 800px);
+    }
 
     @include mx.media-q("md") {
       padding: 24px;
