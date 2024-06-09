@@ -29,7 +29,7 @@
 }
 
 .card{
-    background: #180530;
+    background: var.$primary-fon-card;
     border: var.$border;
     border-radius: 24px;
     padding: 48px;
@@ -61,7 +61,7 @@
     height: 400px;
     gap: 32px;
     overflow: hidden;
-    background-color: #180530;
+    background-color: var.$primary-fon-card;
   }
 
 @include mixins.media-q("xxxl") { 
@@ -72,7 +72,7 @@
   height: 400px;
   gap: 32px;
   overflow: hidden;
-  background-color: #180530;
+  background-color: var.$primary-fon-card;
   min-width: 1396px;
   max-width: 100%;
 
