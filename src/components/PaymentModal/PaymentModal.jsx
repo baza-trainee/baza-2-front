@@ -28,7 +28,7 @@ export default function PaymentModal() {
   }, [thank]);
 
   return <Modal isOpen={isOpen} handleClose={handleClose}>
-    <div className={styles.wrapper}>
+    <div data-lenis-prevent className={styles.wrapper}>
       <div className={styles.card}>
         {thank?
         <ThanksCard handleClose={handleClose}/>:
