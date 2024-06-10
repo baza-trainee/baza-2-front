@@ -2,10 +2,10 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import { Icon } from '../shared/Icon/Icon';
-import MainButton from '../shared/MainButton/MainButton';
+import { Icon } from '../../shared/Icon/Icon';
+import MainButton from '../../shared/MainButton/MainButton';
 import styles from './CookiesModal.module.scss';
-import CloseBtn from '../shared/CloseBtn/CloseBtn';
+import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 
 // Examples Cookies:  expires: 365 днів.
 // Cookies.set('name', 'value', { expires: 365 })

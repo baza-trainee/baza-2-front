@@ -1,0 +1,64 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
+
+.wrapper{
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 6%;
+  z-index: 20;
+
+  .alert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px 16px;
+    color: var.$secondary-error;
+    border: 2px solid var.$primary-border;
+    border-radius: 12px;
+    background: var.$primary-fon-card;
+  
+    & > h2{
+      @include mx.apply-font-styles(var.$h1-font);
+      font-size: 20px;
+      text-align: center;
+      padding: 0 18px;
+  
+      @include mx.media-q("md") {
+        font-size: 24px;
+      }
+    }
+
+    & p{
+      @include mx.apply-font-styles(var.$h1-font);
+      font-size: 18px;
+
+      @include mx.media-q("md") {
+        font-size: 20px;
+      }
+    }
+  
+    .close_btn{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      & > svg{
+        width: 18px;
+        height: 18px;
+      }
+      
+      @include mx.media-q("md") {
+        width: 20px;
+        height: 20px;
+        & > svg{
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

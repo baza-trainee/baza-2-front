@@ -20,23 +20,32 @@
     animation: 1.5s linear send-slide;
     opacity: 0;
     z-index: 5;
+    & > svg {
+      display: block;
+      width: 50px;
+      height: 50px;
+      stroke: var.$secondary-positive;
+    }
   }
-  .send > svg {
-    display: block;
-    width: 50px;
-    height: 50px;
-    stroke: var.$secondary-positive;
-  }
+
   .error_send{
     position: absolute;
     bottom: 50px;
     @include mx.apply-font-styles(var.$text-20-font);
-    font-size: 34px;
+    font-size: 26px;
     font-weight: 700;
     color: var.$secondary-error;
     animation: 1.5s linear error-slide;
     opacity: 0;
     z-index: 5;
+
+    & > svg {
+      display: block;
+      margin: 0 auto;
+      width: 50px;
+      height: 50px;
+      stroke: var.$secondary-error;
+    }
   }
 
 }
@@ -77,11 +86,25 @@
 
 // Анімація повідомлення про помилку.
 @keyframes error-slide {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
-    opacity: 0;
-    transform: translateY(-60vh) scale(3);
+  50% {
+    transform: translateY(-100%) scale(1.2);
   }
+  90% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+  // from {
+  //   opacity: 1;
+  // }
+  // to {
+  //   opacity: 1;
+  //   transform: translateY(-60vh) scale(2);
+  // }
 }

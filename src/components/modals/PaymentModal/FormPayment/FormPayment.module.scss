@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as var;
-@use "../../../styles/mixins.scss" as mx;
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins.scss" as mx;
 
 .form{
   color: var.$secondary-white;
@@ -178,13 +178,14 @@
     }
   }
 
-  .btn._active{
+  &._active{
     border: 1px solid var.$primary-border;
     box-shadow:
     inset 1px 1px var.$primary-border,
     inset -1px -1px var.$primary-border;
   }
 }
+
 
 // Анімація повідомлення про помилку.
 @keyframes error-slide {

@@ -50,6 +50,8 @@
   padding-top: 10px;
   gap: 8px;
   color: #fcfcfc;
+  max-height: 90px;
+  //background-color: aqua;
 }
 
 @include mx.media_q(md, max) {
