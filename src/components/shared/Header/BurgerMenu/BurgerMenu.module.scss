@@ -8,7 +8,7 @@
   width: 100%;
   height: 100vh;
   background: var.$primary-fon-card;
-  padding: 112px 40px 40px 40px;
+  padding: 112px 40px 60px 40px;
   z-index: 11;
   visibility: hidden;
   overflow-y: auto;
@@ -61,7 +61,7 @@
   display: none;
   @media (min-width: 421px) {
     display: block;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
     left: 0;
