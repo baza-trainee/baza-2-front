@@ -1,4 +1,4 @@
-@use "../../../styles/variables" as var;
+@use "../../styles/variables" as var;
 
 .section {
   background-color: var.$primary-footer;
@@ -15,11 +15,13 @@
 
 .footer {
   margin: 68px auto 56px auto;
+  padding: 8px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   @media (max-width: 1024px) {
     margin: 24px auto;
+    padding: 12px;
   }
 }
 
@@ -28,14 +30,15 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
 
   @media (min-width: 1025px) {
     width: auto;
   }
 
   @media (max-width: 1024px) {
-    margin-top: 24px;
+    margin-top: 48px;
+    align-items: center;
   }
 }
 

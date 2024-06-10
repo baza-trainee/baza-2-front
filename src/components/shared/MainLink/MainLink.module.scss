@@ -48,6 +48,9 @@
         border-bottom: 1px solid var.$secondary-white;
       }
     }
+    @media (max-width: 696px) {
+      font-size: 14px;
+    }
   }
 
   &--footer {
@@ -55,6 +58,9 @@
       &:active {
         text-decoration: underline;
       }
+    }
+    @media (max-width: 696px) {
+      font-size: 14px;
     }
   }
   &--burger {

@@ -11,4 +11,8 @@
   @media (max-width: 696px) {
     font-size: 14px;
   }
+  @media (max-width: 480px) {
+    margin: 0 auto 32px auto;
+    width: 268px;
+  }
 }

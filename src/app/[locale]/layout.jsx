@@ -1,6 +1,6 @@
 import CookiesModal from "@/src/components/CookiesModal/CookiesModal";
 import PaymentModal from "@/src/components/PaymentModal/PaymentModal";
-import Footer from "@/src/components/shared/Footer/Footer";
+import Footer from "@/src/components/Footer/Footer";
 import Header from "@/src/components/shared/Header/Header";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
