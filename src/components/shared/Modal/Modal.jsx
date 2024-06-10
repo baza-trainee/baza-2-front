@@ -27,7 +27,7 @@ const Modal = ({ children, isOpen, handleClose }) => {
 
   if (!isOpen) return null;
 
-  return createPortal(<div className={styles.modalOverlay}>{children}</div>, document.body
+  return createPortal(<div data-lenis-prevent className={styles.modalOverlay}>{children}</div>, document.body
   );
 };
 
