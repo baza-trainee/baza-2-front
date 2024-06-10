@@ -8,6 +8,7 @@
   max-width: 1680px;
   margin: 0 auto;
   padding: 0 15px;
+
   @media (max-width: 1024px) {
     max-width: 1024px;
   }
@@ -19,6 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   @media (max-width: 1024px) {
     margin: 24px auto;
     padding: 12px;
@@ -43,10 +45,11 @@
 }
 
 @media (max-width: 480px) {
-  .hideOnSmallScreen {
+  .bigScreen {
     display: none;
   }
-  .showOnSmallScreen {
+
+  .smallScreen {
     display: flex;
     flex-direction: column;
     margin: 24px 20px 16px 20px;
@@ -54,11 +57,12 @@
   }
 }
 
-@media (min-width: 479px) {
-  .hideOnSmallScreen {
+@media (min-width: 481px) {
+  .bigScreen {
     display: block;
   }
-  .showOnSmallScreen {
+
+  .smallScreen {
     display: none;
   }
 }

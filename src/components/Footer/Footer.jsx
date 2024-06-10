@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.section}>
-        <div className={`${styles.block} ${styles.hideOnSmallScreen}`}>
+        <div className={`${styles.block} ${styles.bigScreen}`}>
           <div className={styles.footer}>
             <Logo variant="footer" className={styles.logo} />
             <FooterLinks />
@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={styles.showOnSmallScreen}>
+        <div className={styles.smallScreen}>
           <Logo variant="footer" className={styles.centerItem} />
           <FooterLinks />
           <HelpLinks />
