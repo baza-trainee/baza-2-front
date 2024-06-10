@@ -64,15 +64,15 @@
       },
       "slide_2": {
         "title": "About us",
-        "text": "The Baza Trainee Ukraine initiative, as an educational and training platform, emerges in response to a societal demand that arose in Ukraine in 2022-2023 in the field of employment in information technology. It represents a website that brings together two social groups as users."
+        "text": "The Baza Trainee Ukraine initiative, as an educational and training platform, emerges in response to a societal demand that arose in Ukraine in 2022—2023 in the field of employment in information technology. It represents a website that brings together two social groups of users."
       },
       "slide_3": {
         "title": "Our target audience",
-        "text": "Ukrainians mastering specialties in the IT sector regardless of age and experience - trainees, juniors, switchers, mentors on one side, and communities and groups in Ukraine in the fields of charity, volunteering, and civic initiatives on the other."
+        "text": "Ukrainians mastering specialties in the IT sector regardless of age and experience — trainees, juniors, switchers, mentors on one side, and communities and groups in Ukraine in the fields of charity, volunteering, and civic initiatives on the other."
       },
       "slide_4": {
         "title": "Our goal",
-        "text": "To combine these categories in joint activity so that both sides benefit. For the first group, it's real practical experience in creating a live project, while for the second, it's a digital product that functions and promotes the development of social initiatives."
+        "text": "To unite these categories in joint activity so that both sides benefit. For the first group, it's real practical experience in creating a real project, while for the second, it's a digital product that functions and promotes the development of social initiatives."
       },
       "slide_5": {
         "title": "The principle of action",
@@ -82,27 +82,27 @@
 		"history_project_section": {
 			"title": "Project history",
 			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",
-			"text1": "In a year, we have achieved significant success:",
+			"text1": "In a year, we have achieved significant success.",
 			"history": {
 				"item1": {
 					"date": "April 2023:",
-					"text": "Project launch of Baza Trainee Ukraine."
+					"text": "Project launch of Baza Trainee Ukraine"
 				},
 				"item2": {
 					"date": "August 2023:",
-					"text": "The first thousand applications from participants for a total of 17 different projects, with 8 mentors."
+					"text": "The first thousand applications from participants for a total of 17 different projects, with 8 mentors"
 				},
 				"item3": {
 					"date": "November 2023:",
-					"text": "Four landing pages for military fundraising accumulated over 200,000 UAH, and more than 50 juniors were employed. "
+					"text": "Four landing pages for military fundraising accumulated over 200,000 UAH, and more than 50 juniors were employed"
 				},
 				"item4": {
 					"date": "December 2023:",
-					"text": "The number of participants has increased to 1700. 35 projects have been successfully completed."
+					"text": "The number of participants has increased to 1700. 35 projects have been successfully completed"
 				},
 				"item5": {
 					"date": "March 2024:",
-					"text": "During our work, we observe a complication in the level of projects — from simple landing pages to full-fledged websites with complex internal structures."
+					"text": "During our work, we observe a complication in the level of projects — from simple landing pages to full-fledged websites with complex internal structures"
 				}
 			}
 		},
