@@ -1,27 +1,22 @@
 @use "../../../../styles/variables" as var;
 @use "../../../../styles/mixins" as mx;
 
-.burgerMenu {
+.content {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100vw;
+  right: -100%;
+  width: 100%;
   height: 100vh;
   background: var.$primary-fon-card;
   padding: 112px 40px 40px 40px;
-  z-index: 10;
-  opacity: 0;
+  z-index: 11;
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
   transition:
-    opacity 0.3s ease 0s,
+    right 0.3s ease 0s,
     visibility 0.3s ease 0s;
   text-align: center;
-  &.opened {
-    opacity: 1;
-    visibility: visible;
-  }
   &::before {
     content: "";
     position: fixed;
@@ -30,12 +25,58 @@
     background-color: var.$primary-fon-card;
     width: 100%;
     top: 0;
-    left: 0;
+    right: -100%;
     z-index: 2;
     box-shadow: 0 30px 30px var.$primary-fon-card;
+    transition: right 0.3s ease 0s;
+  }
+  &.opened {
+    right: 0;
+    visibility: visible;
+    &::before {
+      right: 0;
+    }
   }
   @media (min-width: 993px) {
     display: none;
+  }
+  @media (min-width: 421px) {
+    width: 320px;
+    right: -320px;
+    &::before {
+      width: 320px;
+      right: -320px;
+    }
+  }
+  @media (min-width: 601px) {
+    width: 400px;
+    right: -400px;
+    &::before {
+      width: 400px;
+      right: -400px;
+    }
+  }
+}
+.background {
+  display: none;
+  @media (min-width: 421px) {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.384);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0s;
+    z-index: 10;
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
   }
 }
 
