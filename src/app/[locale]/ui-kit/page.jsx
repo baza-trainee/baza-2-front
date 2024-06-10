@@ -1,5 +1,4 @@
 import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
-import PartnerCard from "@/src/components/shared/PartnerCard/PartnerCard";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
 import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import RegistrationFormModal from "@/src/components/RegistrationFormModal/RegistrationFormModal";
@@ -11,7 +10,6 @@ export default function UiKit() {
     <main>
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
-      <PartnerCard />
       <HeroCard
         title="slide_1.title"
         desc="slide_1.text"
