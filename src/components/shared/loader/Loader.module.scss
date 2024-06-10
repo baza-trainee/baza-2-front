@@ -7,7 +7,6 @@
   justify-content: center;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(30px);
   top: 0;
   left: 0;
   width: 100%;
@@ -16,7 +15,6 @@
 
   .loader {
     color: var.$primary-border;
-    //font-size: 24px;
     font-size: 10px;
     width: 1em;
     height: 1em;

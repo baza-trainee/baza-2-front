@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from "next-intl";
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
@@ -17,74 +17,61 @@ export default function PaymentModal() {
 
   // Отримуємо стан.
   const isOpen = stateModalPayment(state => state.isOpen);
-  const isThanks = stateModalPayment(state => state.isThanks);
-  const addThanks = stateModalPayment(state => state.addThanks);
   const close = stateModalPayment(state => state.close);
 
   // контент.
   const t = useTranslations("Modal_support");
   // локальний стан.
-  //const [thank, setThank] = useState(false);
+  const [success, setІuccess] = useState(false);
+  const [thank, setThank] = useState(false);
   const [isLoader, setIsLoader] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  // useEffect(()=>{
-  //   return ()=>{
-  //     if(thank){
-  //       addThanks()
-  //     }
-  //   }
-  // })
+  useEffect(()=>{
+    if(!success){return}
+    const timeoutId = setTimeout(()=>{
+      setIsLoader(false)
+      setThank(true)
+    },1000)
+    return () => clearTimeout(timeoutId);
+  },[success])
 
   const handleClose = useCallback(() => {
-    //setThank(false)
+    setIsError(false)
+    setIsLoader(false)
+    setThank(false)
+    setІuccess(false)
     close()
   },[])
 
-  // const handleThank = useCallback(() => {
-  //   setThank(true)
-  // }, [thank]);
+  const handleResponse = (res) => {
+    if(res==='ok'){
+      setІuccess(true)
+    }
 
-  const handleThank = (res) => {
-    console.log(res)
-    if(res.data){
-      window.location.href = res.data.invoiceUrl;
-      setTimeout(()=>{
-        //setIsLoader(false)
-        //setThank(true)
-        addThanks()
-      },700)
- 
-    }else {setIsLoader(false)}
-
-    if(res.error){
-      console.log(res)
-      setIsError(true)
+    if(res==='error'){
       setIsLoader(false)
+      setIsError(true)
     } 
-    //setIsLoader(false)
   };
-
 
   const handleSubmit = (amount) => {
-    handlePayment(amount, locale, handleThank)
+    handlePayment(amount, locale, handleResponse)
     setIsLoader(true)
-    //setThank(true)
   };
-
 
   return <LayoutModal isOpen={isOpen} handleClose={handleClose}>
     <div className={styles.wrapper}>
       <div className={styles.card}>
         {isLoader && <Loader/>}
         
-        {isError | isThanks ?
-        <MessageCard handleClose={handleClose} isError={isError}/>:
+        {isError | thank ?
+        <MessageCard handleClose={handleClose} isError={isError} isThanks={thank}/>:
         <FormPayment handleSubmit={handleSubmit}/>
         }
 
         <CloseBtn className={styles.close_btn}
-          ariaLabel={ isThanks ? 
+          ariaLabel={ thank ? 
             t('ariaLabel_btn_close_2') : 
             t('ariaLabel_btn_close_1')
           }

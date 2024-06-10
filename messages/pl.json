@@ -223,6 +223,7 @@
 
   "Error": {
     "title": "Przepraszam, coś poszło nie tak",
+    "text":"Spróbuj ponownie później",
     "btn_home": "Spróbuj ponownie"
   },
 

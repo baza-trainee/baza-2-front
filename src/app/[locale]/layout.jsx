@@ -1,4 +1,4 @@
-import CookiesModal from "@/src/components/CookiesModal/CookiesModal";
+import CookiesModal from "@/src/components/modals/CookiesModal/CookiesModal";
 import PaymentModal from "@/src/components/modals/PaymentModal/PaymentModal";
 import Footer from "@/src/components/shared/Footer/Footer";
 import Header from "@/src/components/shared/Header/Header";
@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 import "@/src/styles/global.scss";
+import ErrorAlert from "@/src/components/shared/ErrorAlert/ErrorAlert";
 
 export const metadata = {
   title: "Baza trainee 2",

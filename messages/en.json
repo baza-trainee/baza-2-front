@@ -223,6 +223,7 @@
 
   "Error": {
     "title": "Sorry, something went wrong",
+		"text":"Try again later",
     "btn_home": "Try again"
   },
 
