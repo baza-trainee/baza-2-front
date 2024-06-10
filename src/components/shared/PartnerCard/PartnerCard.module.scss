@@ -1,0 +1,35 @@
+@use "../../../styles/variables" as var;
+@use '../../../styles/mixins' as mixin;
+
+.partnerCardItem {
+  border-radius: 8px;
+  width: 288px;
+  height: 172px;
+  img {
+    object-fit: contain;
+    width: 288px;
+    height: 172px;
+  }
+
+  @include mixin.media-q("md") { 
+    border-radius: 8px;
+    width: 340px;
+    height: 197px;
+    img {
+      object-fit: contain;
+      width: 340px;
+      height: 172px;
+    }
+  }
+  @include mixin.media-q("xl") { 
+    position: relative;
+    height: 180px;
+    transition: all 0.3s ease 0s;
+    overflow: hidden;
+ 
+}
+  @include mixin.media-q("xxxl") { 
+    width: 396px;
+    height: 230px;
+}
+}

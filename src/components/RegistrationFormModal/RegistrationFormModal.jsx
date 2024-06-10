@@ -132,7 +132,7 @@ const RegistrationFormModal=({test=false})=>{
 
   return (
     <Modal isOpen handleClose={onClose}>
-      <div className={styles.wrapper} onClick={(e) => {
+      <div data-lenis-prevent className={styles.wrapper} onClick={(e) => {
         onClose()
         e.stopPropagation()
         }}>

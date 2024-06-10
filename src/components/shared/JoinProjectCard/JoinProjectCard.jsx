@@ -16,7 +16,7 @@ export default function JoinProjectCard({ item = {}, i, progress, range, targetS
     offset: ['start end', 'start end']
   });
 
-  const isMobile = useMediaQuery({ maxWidth: 1366 });
+  const isMobile = useMediaQuery({ maxWidth: 1365 });
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
