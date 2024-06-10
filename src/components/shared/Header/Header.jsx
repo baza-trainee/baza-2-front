@@ -5,14 +5,14 @@ import ControlBtnModalPayment from "../controlButtons/ControlBtnModalPayment";
 import styles from "./Header.module.scss";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import BurgerButton from "./BurgerButton/BurgerButton";
-import HeaderLogo from "./HeaderLogo/HeaderLogo";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
   const t = useTranslations("Header");
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <HeaderLogo />
+        <Logo variant="header" className={styles.logo} />
         <Menu />
         <div className={styles.actions}>
           <ControlBtnModalPayment className={styles.headerBtn}>

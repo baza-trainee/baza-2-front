@@ -18,38 +18,59 @@ const BurgerMenu = () => {
   const isOpen = stateBurgerMenu((state) => state.isOpen);
   const onClose = stateBurgerMenu((state) => state.close);
 
+  const BURGER_MENU_BREAKPOINT = 992;
+
   const handleClose = useCallback(() => {
     if (isOpen) onClose();
   }, [isOpen]);
+
+  const handleResize = useCallback(() => {
+    if (window.innerWidth > BURGER_MENU_BREAKPOINT) {
+      handleClose();
+    }
+  }, [handleClose]);
 
   // при переходе на какуюто страницу закрываем бургер и тоглим стейт в 'false'
   useEffect(() => {
     handleClose();
   }, [pathname]);
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
   useBodyLock(isOpen);
 
   return (
-    <nav className={clsx(styles.burgerMenu, isOpen && styles.opened)}>
-      <ul className={styles.burgerList}>
-        {links?.map((link) => (
-          <li key={createKey()}>
-            <MainLink
-              url={link.href}
-              type={link.type}
-              handleClose={handleClose}
-            >
-              {t(link.content)}
-            </MainLink>
-          </li>
-        ))}
-      </ul>
-      <ControlBtnModalPayment
-        className={styles.headerBtn}
+    <nav data-lenis-prevent className={styles.burgerMenu}>
+      <div className={clsx(styles.content, isOpen && styles.opened)}>
+        <ul className={styles.burgerList}>
+          {links?.map((link) => (
+            <li key={createKey()}>
+              <MainLink
+                url={link.href}
+                type={link.type}
+                handleClose={handleClose}
+              >
+                {t(link.content)}
+              </MainLink>
+            </li>
+          ))}
+        </ul>
+        <ControlBtnModalPayment
+          className={styles.headerBtn}
+          onClick={handleClose}
+        >
+          {t("btn_support_project")}
+        </ControlBtnModalPayment>
+      </div>
+      <div
         onClick={handleClose}
-      >
-        {t("btn_support_project")}
-      </ControlBtnModalPayment>
+        className={clsx(styles.background, isOpen && styles.show)}
+      ></div>
     </nav>
   );
 };
