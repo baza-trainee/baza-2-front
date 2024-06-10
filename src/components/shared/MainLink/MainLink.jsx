@@ -11,6 +11,7 @@ const MainLink = ({
   type = linkTypes.DEFAULT,
   className,
   handleClose,
+  openInNewTab = false,
   ...rest
 }) => {
   const pathname = usePathname();
@@ -26,35 +27,32 @@ const MainLink = ({
       });
     }
   };
-  if (url === "/contacts") {
-    return (
-      <button
-        className={clsx(
-          styles.link,
-          styles[`link--${type}`],
-          isCurrentPage && styles.active,
-          className
-        )}
-        onClick={scrollToBottom}
-      >
-        {children}
-      </button>
-    );
+
+  const linkProps = {
+    className: clsx(
+      styles.link,
+      styles[`link--${type}`],
+      isCurrentPage && styles.active,
+      className
+    ),
+    onClick: scrollToBottom,
+    ...rest,
+  };
+
+  if (openInNewTab) {
+    linkProps.target = "_blank";
+    linkProps.rel = "noopener noreferrer";
   }
+
+  if (url === "/contacts") {
+    return <button {...linkProps}>{children}</button>;
+  }
+
   return (
-    <Link
-      href={url}
-      className={clsx(
-        styles.link,
-        styles[`link--${type}`],
-        isCurrentPage && styles.active,
-        className
-      )}
-      onClick={scrollToBottom}
-      {...rest}
-    >
+    <Link href={url} {...linkProps}>
       {children}
     </Link>
   );
 };
+
 export default MainLink;

@@ -17,8 +17,10 @@ const Footer = () => {
             <FooterLinks />
             <HelpLinks />
             <div className={styles.contacts}>
-              <ContactLinks />
-              <SocialIcons />
+              <div className={styles.positionContacts}>
+                <ContactLinks />
+                <SocialIcons />
+              </div>
             </div>
           </div>
         </div>

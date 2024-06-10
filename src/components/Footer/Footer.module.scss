@@ -41,6 +41,18 @@
     align-items: flex-start;
   }
 }
+.positionContacts {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 24px;
+  @media (min-width: 481px) {
+    right: 5px;
+  }
+  @media (min-width: 697px) {
+    right: 20px;
+  }
+}
 
 .smallScreen {
   display: flex;

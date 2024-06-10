@@ -1,9 +1,9 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "/src/styles/variables" as var;
+@use "/src/styles/mixins" as mx;
 
 .section {
-  background-image: $primary-gradient;
-  color: $secondary-white;
+  background-image: var.$primary-gradient;
+  color: var.$secondary-white;
   padding: 60px 0;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .title {
-  @include apply-font-styles($h1-font);
+  @include mx.apply-font-styles(var.$h1-font);
   font-size: 24px;
 
   @media (min-width: 421px) {
@@ -20,7 +20,7 @@
   }
 
   @media (min-width: 1367px) {
-    @include apply-font-styles($h1-font);
+    @include mx.apply-font-styles(var.$h1-font);
   }
 }
 
