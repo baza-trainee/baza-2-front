@@ -1,24 +1,26 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
+
 .section {
   background-image: $primary-gradient;
   color: $secondary-white;
   padding: 60px 0;
 }
+
 .container {
   text-align: center;
 }
 
 .title {
   @include apply-font-styles($h1-font);
-  @media (max-width: 1366px) {
+  font-size: 24px;
+
+  @media (min-width: 421px) {
     font-size: 32px;
   }
-  @media (max-width: 608px) {
-    font-size: 32px;
-  }
-  @media (max-width: 420px) {
-    font-size: 24px;
+
+  @media (min-width: 1367px) {
+    @include apply-font-styles($h1-font);
   }
 }
 
@@ -28,9 +30,10 @@
 
 .titleRow {
   position: relative;
-  margin-bottom: 48px;
-  @media (max-width: 1366px) {
-    margin-bottom: 33px;
+  margin-bottom: 33px;
+
+  @media (min-width: 1367px) {
+    margin-bottom: 48px;
   }
 }
 
@@ -40,11 +43,12 @@
 
 .navigation {
   position: absolute;
-  display: flex;
+  display: none;
   top: 0;
   right: 0;
   gap: 32px;
-  @media (max-width: 608px) {
-    display: none;
+
+  @media (min-width: 609px) {
+    display: flex;
   }
 }
