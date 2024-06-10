@@ -145,15 +145,25 @@ $h6-font: (
   "font-family": (
     "Montserrat",
     sans-serif,
+    ),
+    "font-weight": 600,
+    "font-size": 20px,
+    "line-height": 1.5,
+    "letter-spacing": 0.01em,
+    );
+    
+$h7-font: (
+  "font-family": (
+    "Open Sans",
+    sans-serif,
   ),
-  "font-weight": 600,
-  "font-size": 20px,
-  "line-height": 1.5,
+  "font-size": 26px,
   "letter-spacing": 0.01em,
+  "font-weight": 700,
+  "line-height": 150%,
 );
-
-$button: $h3-font;
-$menu: $h3-font;
+    $button: $h3-font;
+    $menu: $h3-font;
 
 $text-20-font: (
   "font-family": (

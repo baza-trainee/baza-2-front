@@ -33,8 +33,9 @@ const PartnerSection = () => {
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
-            renderItem={(item) => <PartnerCard {...item} />}
-          />
+            renderItem={(item) => (
+              <PartnerCard item={item} />
+            )} />
         </div>
         <CarouselPagination
           className={clsx("partner-custom-pagination", styles.pagination)}
