@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import stateRegistrationFormModal from "@/src/state/stateRegistrationFormModal";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
-import Modal from "../LayoutModal/LayoutModal";
+//import Modal from "../LayoutModal/LayoutModal";
 import CloseBtn from "../../shared/CloseBtn/CloseBtn";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
@@ -138,8 +138,8 @@ const RegistrationFormModal=({test=false})=>{
   ];
 
   return (
-    <Modal isOpen handleClose={onClose}>
-      <div data-lenis-prevent className={styles.wrapper} onClick={(e) => {
+    <LayoutModal isOpen handleClose={onClose}>
+      <div className={styles.wrapper} onClick={(e) => {
         onClose()
         e.stopPropagation()
         }}>
