@@ -64,15 +64,15 @@
       },
       "slide_2": {
         "title": "O nas",
-        "text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
+        "text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022—2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
       },
       "slide_3": {
         "title": "Nasza grupa docelowa",
-        "text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia - trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
+        "text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia — trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
       },
       "slide_4": {
         "title": "Nasz cel",
-        "text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej - cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
+        "text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej — cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
       },
       "slide_5": {
         "title": "Zasada działania",
@@ -82,7 +82,7 @@
     "history_project_section": {
       "title": "Historia projektu",
       "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
-      "text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
+      "text1": "W ciągu roku osiągnęliśmy znaczący sukces",
       "history": {
         "item1": {
           "date": "Kwiecień 2023:",
@@ -90,19 +90,19 @@
         },
         "item2": {
           "date": "Sierpień 2023:",
-          "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów."
+          "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
         },
         "item3": {
           "date": "Listopad 2023:",
-          "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów."
+          "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
         },
         "item4": {
           "date": "Grudzień 2023:",
-          "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów."
+          "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
         },
         "item5": {
           "date": "Marzec 2024:",
-          "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi."
+          "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
         }
       }
     },
@@ -114,7 +114,7 @@
     },
     "mentor_section": {
       "title": "Mentorowi",
-      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji",
+      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
       "paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
       "paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
       "btn_mentor": "Zostać mentorem"
@@ -223,6 +223,7 @@
 
   "Error": {
     "title": "Przepraszam, coś poszło nie tak",
+    "text":"Spróbuj ponownie później",
     "btn_home": "Spróbuj ponownie"
   },
 

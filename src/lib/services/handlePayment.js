@@ -3,13 +3,8 @@ import axios from "axios";
 const BASE_URL = 'https://baza-trainee-landing.vercel.app/api/v1';
 
 export default function handlePayment(payment="0", locale="ua", callback=()=>{}){
-	const paymentAmount = payment === "0" ? '1' : payment;
-
 	// !! Умова для тестування помилок!!
-	if(payment==="123"){
-		callback({error:'error'})
-		return
-	}
+	const paymentAmount = payment === "123" ? 'h' : payment;
 
 	const paymentData = {
 		transactionType: 'CREATE_INVOICE',
@@ -28,24 +23,14 @@ export default function handlePayment(payment="0", locale="ua", callback=()=>{})
 
   axios.post(`${BASE_URL}/payment`, {...paymentData})
   .then(function (response) {
-		if (response.data.invoiceUrl) {
-			window.location.href = response.data.invoiceUrl;
-		}
-    callback(response)
+		if (response.data?.invoiceUrl) {
+			//window.location.href = response.data.invoiceUrl;
+			window.open(response.data.invoiceUrl);
+			callback('ok')
+		}else callback('error')
   })
   .catch(function (error) {
-    callback(error)
+		console.log(error)
+		callback('error')
   });
-
-
-
-
-
-	// try {
-	// 	const response = await axios.post(`${urlBase}/payment`, {...paymentData})
-	// 	callback(response)
-	// } catch (error) {
-	// 	callback({error:error})
-	// 	console.log(error);
-	// }
 }

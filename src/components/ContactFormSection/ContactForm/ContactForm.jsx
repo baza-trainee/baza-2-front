@@ -3,16 +3,20 @@ import styles from "./ContactForm.module.scss";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import handleSendContactForm from "@/src/lib/services/handleSendContactForm";
 import { formScheme } from "./formScheme";
+import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
-import { Icon } from "../../shared/Icon/Icon";
-import handleSendContactForm from "@/src/lib/services/handleSendContactForm";
-import { useState } from "react";
+import stateErrorAlert from "@/src/state/stateErrorAlert";
+import ErrorAlert from "../../shared/ErrorAlert/ErrorAlert";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
-  
+  const isOpen = stateErrorAlert(state => state.isOpen);
+  const open = stateErrorAlert(state => state.open);
+
   const {
     register,
     handleSubmit,
@@ -21,19 +25,14 @@ export default function ContactForm() {
     reset
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
 
-
-  const [isSubmit, setIsSubmit] = useState(null);
+  const [isSubmit, setIsSubmit] = useState('error');
 
   const isError = (res) => {
-    if(res.status === 200){
-      setIsSubmit('OK')
-    }else setIsSubmit('ERROR')
-    // setTimeout(()=>{
-    //   setIsSubmit(null)
-    // },2000)
-    console.log(res);
+    if(res === 'error'){
+      open()
+    }
+    setIsSubmit(res)
   }
-
 
   const onSubmit = (data) => {
     handleSendContactForm( data, isError )
@@ -102,13 +101,11 @@ export default function ContactForm() {
         {t("btn_send")}
       </MainButton>
       
-     {isSubmit === 'OK' && <div className={styles.send}>
+     {isSubmit === 'ok' && <div className={styles.send}>
         <Icon name='mail'/>
       </div>}
-
-      {isSubmit === 'ERROR' && <div className={styles.error_send}>
-        Error :(
-      </div>}
+      
+      {isOpen && <ErrorAlert/>}
     </form>
   );
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://185.161.208.63:3001/api/v1';
+const BASE_URL = 'https://baza2.crabdance.com/api/v1';
 const EMAIL_ADMIN ='brodich_vlad@ukr.net';
 
 export default function handleSendContactForm(data, callback=()=>{}) {
@@ -18,9 +18,12 @@ export default function handleSendContactForm(data, callback=()=>{}) {
     ...body(data)
   })
   .then(function (response) {
-    callback(response)
+    if (response.status === 200) {
+			callback('ok')
+		}else callback('error')
   })
   .catch(function (error) {
-    callback(error)
+    console.log(error)
+    callback('error')
   });
 }

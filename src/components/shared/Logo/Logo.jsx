@@ -15,7 +15,6 @@ export default function Logo({
   variant = logoConfig.HEADER,
   className,
   ariaLabel,
-  handleClick,
 }) {
   const logoClass = `${
     styles[
@@ -28,9 +27,6 @@ export default function Logo({
   const scrollToTop = (event) => {
     if (variant === logoConfig.FOOTER) {
       event.preventDefault();
-    }
-    if (variant === logoConfig.HEADER) {
-      handleClick();
     }
     window.scrollTo({
       top: 0,

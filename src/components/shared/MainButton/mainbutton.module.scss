@@ -79,6 +79,7 @@
   @include mx.apply-font-styles(var.$text-20-font);
   color: var.$secondary-white;
   padding: 15px 32px;
+  padding: 12px 28px;
   border: 1px solid var.$secondary-white;
   border-radius: 8px;
   cursor: pointer;

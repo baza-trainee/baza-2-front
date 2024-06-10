@@ -1,25 +1,128 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mixin;
+
 .section {
-  background-image: $primary-gradient;
-  color: $secondary-white;
-  padding: 60px 0;
+  background-image: var.$primary-gradient;
+  color: var.$secondary-white;
+  min-width: 320px;
+  max-width: 1920px;
+
+  height: fit-content;
+
+  @include mixin.media-q("md") { 
+  min-width: 768px;
+  max-width: 1366px;
+  }
+
+  @include mixin.media-q("xl") { 
+    min-width: 1366px;
+    max-width: 1920px;
+    padding: 60px 64px;
+}
+  @include mixin.media-q("xxxl") { 
+    min-width: 1920px;
+    max-width: 100%;
+}
+
+
 }
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 32px 16px;
+  gap: 20px;
   text-align: center;
+  min-width: 320px;
+  max-width: 1902px;
+  height: fit-content;
+
+  @include mixin.media-q("md") { 
+    gap: 32px;
+    padding: 48px 40px;
+    min-width: 768px;
+    max-width: 1366px;
+    }
+  
+  @include mixin.media-q("xl") { 
+    gap: 48px;
+    padding: 60px 64px;
+    min-width: 1366px;
+    max-width: 1920px;
+    height: 546px;
+  }
+
+  @include mixin.media-q("xxxl") { 
+    gap: 56px;
+    padding: 72px 120px;
+    min-width: 1920px;
+    max-width: 100%;
+  }
+
 }
 
 .title {
-  @include apply-font-styles($h1-font);
+  @include mixin.apply-font-styles(var.$h7-font);
+  @include mixin.media-q("md") { 
+    @include mixin.apply-font-styles(var.$h5-font);
+  }
+  @include mixin.media-q("xl") { 
+    @include mixin.apply-font-styles(var.$h1-font);
+  }
+
+
 }
 
 .sliderContainer {
   margin-bottom: 48px;
-}
 
+  @include mixin.media-q("md") { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 24px;
+    width: 1036px;
+    height: 197px;
+  }
+  @include mixin.media-q("xl") { 
+    gap: 66px;
+    width: 1238px;
+    height: 230px;
+
+}
+  @include mixin.media-q("xxxl") { 
+    gap: 107px;
+    width: 1320px;
+  }
+}
 .titleRow {
   position: relative;
-  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 768px;
+  height: fit-content;
+
+  @include mixin.media-q("md") { 
+    width: 688px;
+  }
+  
+  @include mixin.media-q("xl") { 
+  position: relative;
+  padding: 10px 0px;
+  width: 1236px;
+  height: 80px;
+  
+}
+
+  @include mixin.media-q("xxxl") { 
+  width: 1320px;
+  gap: 107px;
+  }
+
 }
 
 .prevBtn {
@@ -32,6 +135,7 @@
   top: 0;
   right: 0;
   gap: 32px;
+  
 }
 .activeSlide {
   transform: scale(1.2);
