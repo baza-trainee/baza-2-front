@@ -23,6 +23,8 @@ export default function JoinProjectSection() {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+    // Видалення екземпляру lenis
+    return ()=> lenis.destroy()
   }, []);
 
   return (
