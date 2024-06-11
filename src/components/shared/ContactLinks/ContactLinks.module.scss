@@ -10,10 +10,11 @@
 .text {
   @include apply-font-styles($h3-font);
   color: $secondary-white;
-
+  font-size: 14px;
   margin-left: 8px;
-  @media (max-width: 696px) {
-    font-size: 14px;
+
+  @media (min-width: 697px) {
+    @include apply-font-styles($h3-font);
   }
 }
 
@@ -21,6 +22,7 @@
   display: flex;
   align-items: center;
 }
+
 .mail {
   stroke: $secondary-white;
 }
