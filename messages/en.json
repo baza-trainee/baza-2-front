@@ -149,7 +149,7 @@
 				"text": "On our website, on the Internship page, under the 'Join the Community' button, there is a form to apply for participation in the organization's work. To participate, you will need an account on the Discord social network. If you don't have one, please open one and stay in touch with us."
 			},
 			"question_3": {
-				"title": "Where can I familiarize myself with the terms of participation?",
+				"title": "Where can I find the participation terms?",
 				"text": "The details are on the Internship page."
 			},
 			"question_4": {
@@ -158,7 +158,7 @@
 			},
 			"question_5": {
 				"title": "Can I choose the programming language I want to participate in?",
-				"text": "So. If there are two or more programmers who want to practice Vue.js or Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!"
+				"text": "Yes. If there are two or more programmers who want to practice Vue.js or Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!"
 			},
 			"btn_support_project": "Support the project"
 		},
