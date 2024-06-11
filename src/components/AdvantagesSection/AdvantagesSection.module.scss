@@ -29,8 +29,9 @@
     row-gap: 32px;
     column-gap: 20px;
     margin: 32px auto;
-    max-width: 688px;
+    max-width: 1366px;
   }
+
   @include mx.media-q("xl") {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 56px;
