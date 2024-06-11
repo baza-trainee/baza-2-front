@@ -39,3 +39,15 @@
     max-width: 1680px;
   }
 }
+
+.button {
+  display: flex;
+  margin-bottom: 32px;
+  justify-content: center;
+  @media (min-width: 696px) {
+    margin-bottom: 48px;
+  }
+  @include mx.media-q("xl") {
+    margin-bottom: 72px;
+  }
+}

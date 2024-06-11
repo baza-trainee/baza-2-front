@@ -3,6 +3,7 @@
 import Advantage from "../shared/Advantage/Advantage";
 import { items } from "./Items";
 import styles from "./AdvantagesSection.module.scss";
+import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtnRegistrationFormModal";
 
 const AdvantagesSection = () => {
   return (
@@ -15,6 +16,11 @@ const AdvantagesSection = () => {
           </li>
         ))}
       </ul>
+      <div className={styles.button}>
+        <ControlBtnRegistrationFormModal>
+          Приєднатися до спільноти
+        </ControlBtnRegistrationFormModal>
+      </div>
     </div>
   );
 };
