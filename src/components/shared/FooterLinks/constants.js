@@ -8,8 +8,28 @@ export const navigationLinks = [
 ];
 
 export const helpLinks = [
-  { name: "privacy_policy", url: "/", type: linkTypes.HELP },
-  { name: "site_use_policy", url: "/", type: linkTypes.HELP },
-  { name: "regulations", url: "/", type: linkTypes.FOOTER },
-  { name: "reporting", url: "/", type: linkTypes.FOOTER },
+  {
+    name: "privacy_policy",
+    url: "/test",
+    type: linkTypes.HELP,
+    openInNewTab: true,
+  },
+  {
+    name: "site_use_policy",
+    url: "/test",
+    type: linkTypes.HELP,
+    openInNewTab: true,
+  },
+  {
+    name: "regulations",
+    url: "/test",
+    type: linkTypes.FOOTER,
+    openInNewTab: true,
+  },
+  {
+    name: "reporting",
+    url: "/test",
+    type: linkTypes.FOOTER,
+    openInNewTab: true,
+  },
 ];

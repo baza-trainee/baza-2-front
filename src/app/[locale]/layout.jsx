@@ -12,7 +12,7 @@ export const metadata = {
   title: "Baza trainee 2",
   description: "Baza trainee web site",
   icons: {
-    icon: ["/favicons/favicon.svg"]
+    icon: ["/favicons/favicon.svg"],
   },
 };
 

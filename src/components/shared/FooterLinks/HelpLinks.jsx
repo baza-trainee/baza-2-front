@@ -10,8 +10,13 @@ const HelpLinks = () => {
 
   return (
     <div className={styles.helpList}>
-      {helpLinks.map(({ url, name, type }) => (
-        <MainLink url={url} key={createKey()} type={type}>
+      {helpLinks.map(({ url, name, type, openInNewTab }) => (
+        <MainLink
+          url={url}
+          key={createKey()}
+          type={type}
+          openInNewTab={openInNewTab}
+        >
           {t(name)}
         </MainLink>
       ))}

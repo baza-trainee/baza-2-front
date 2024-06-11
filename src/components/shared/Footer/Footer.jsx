@@ -11,18 +11,20 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.section}>
-        <div className={`${styles.block} ${styles.hideOnSmallScreen}`}>
+        <div className={`${styles.block} ${styles.bigScreen}`}>
           <div className={styles.footer}>
             <Logo variant="footer" className={styles.logo} />
             <FooterLinks />
             <HelpLinks />
             <div className={styles.contacts}>
-              <ContactLinks />
-              <SocialIcons />
+              <div className={styles.positionContacts}>
+                <ContactLinks />
+                <SocialIcons />
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles.showOnSmallScreen}>
+        <div className={styles.smallScreen}>
           <Logo variant="footer" className={styles.centerItem} />
           <FooterLinks />
           <HelpLinks />

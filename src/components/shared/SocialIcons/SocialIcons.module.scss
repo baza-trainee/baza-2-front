@@ -1,8 +1,12 @@
 .list {
   display: flex;
   gap: 32px;
-  @media (max-width: 696px) {
-    justify-content: center;
+  justify-content: center;
+  margin-top: 8px;
+
+  @media (min-width: 697px) {
+    justify-content: flex-start;
+    margin-top: 0;
   }
 }
 
@@ -11,6 +15,7 @@
   height: 48px;
   fill: #fcfcfc;
   transition: all 0.3s ease 0s;
+
   &:hover {
     fill: #a03a7e;
   }
