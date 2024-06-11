@@ -39,23 +39,25 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 0 16px 10px;
-  gap: 20px;
   cursor: pointer;
   @media (any-hover: none) {
     cursor: default;
   }
+  @media (min-width: 480px) {
+    gap: 20px;
+  }
 }
 .title {
   @include mixins.apply-font-styles(var.$h3-font);
-  font-size: 22px;
+  font-size: 16px;
   line-height: 140%;
   font-weight: 700;
   transition: color var.$transition-duration-base var.$transition-timing-base 0s;
-  @media (max-width: 768px) {
+  @media (min-width: 480px) {
     font-size: 20px;
   }
-  @media (max-width: 480px) {
-    font-size: 16px;
+  @media (min-width: 768px) {
+    font-size: 22px;
   }
 }
 .plus {
@@ -86,9 +88,9 @@
 .desc {
   @include mixins.apply-font-styles(var.$text-16-font);
   padding: 10px;
-  font-size: 18px;
-  @media (max-width: 480px) {
-    font-size: 16px;
+  font-size: 16px;
+  @media (min-width: 480px) {
+    font-size: 18px;
   }
 }
 .descWrapper {
