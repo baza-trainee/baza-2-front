@@ -9,10 +9,7 @@ export default function Internship() {
         <h2>Секція: Запрошуємо до участі</h2>
       </div>
       <JoinProjectSection style={{ marginBottom: "20px" }} />
-      {/* <h2>Секція: Як долучитись до проєкту</h2> */}
-      <div style={{ marginBottom: "120px" }}>
-        <AdvantagesSection />
-      </div>
+      <AdvantagesSection />
     </main>
   );
 }
