@@ -8,6 +8,7 @@ import styles from "./RegistrationFormModal.module.scss";
 import stateRegistrationFormModal from "@/src/state/stateRegistrationFormModal";
 import { useBodyLock } from "@/src/lib/hooks/useBodyLock";
 
+
 import CloseBtn from "../../shared/CloseBtn/CloseBtn";
 // import MainButton from "../../shared/MainButton/MainButton";
 // import InputField from "../../shared/InputField/InputField";
@@ -28,6 +29,7 @@ const RegistrationFormModal=({test=false})=>{
   
   // Отримуємо стан.
   const isOpen = stateRegistrationFormModal(state => state.isOpen);
+  const type = stateRegistrationFormModal(state => state.type);
   const type = stateRegistrationFormModal(state => state.type);
   const onClose = stateRegistrationFormModal(state => state.close);
 
@@ -157,6 +159,8 @@ const RegistrationFormModal=({test=false})=>{
           onClick={onClose}/>
 
          {test ? 
+            <h1>`Форма Реєстрація {type} -
+               Ще на етапі розробки :(`</h1>
             <h1>`Форма Реєстрація {type} -
                Ще на етапі розробки :(`</h1>
              :

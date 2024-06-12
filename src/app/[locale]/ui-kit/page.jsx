@@ -5,6 +5,7 @@ import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
 
+
 export default function UiKit() {
   return (
     <main>
@@ -18,6 +19,7 @@ export default function UiKit() {
       <JoinProjectSection />
       <SocialIcons />
       <RegistrationFormModal/>
+
     </main>
   );
 }
