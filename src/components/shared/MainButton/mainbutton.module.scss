@@ -94,7 +94,7 @@
 
   @include mx.media-q("md") {
     font-size: 18px;
-    height: 51px;
+    height: 52px;
   }
 
   @include mx.media-q("xl") {
@@ -102,7 +102,7 @@
     padding: 0 32px;
     height: 62px;
   }
-  
+
   &:hover,
   &:focus {
     background: var.$secondary-hover;
