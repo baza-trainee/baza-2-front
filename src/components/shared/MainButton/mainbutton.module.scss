@@ -77,9 +77,14 @@
 
 .btn_modal {
   @include mx.apply-font-styles(var.$text-20-font);
+  font-size: 14px;
+  font-weight: 400;
   color: var.$secondary-white;
-  padding: 15px 32px;
-  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  height: 45px;
   border: 1px solid var.$secondary-white;
   border-radius: 8px;
   cursor: pointer;
@@ -87,6 +92,17 @@
   box-shadow: none;
   transition: all var.$transition-duration-base var.$transition-timing-base;
 
+  @include mx.media-q("md") {
+    font-size: 18px;
+    height: 51px;
+  }
+
+  @include mx.media-q("xl") {
+    font-size: 20px;
+    padding: 0 32px;
+    height: 62px;
+  }
+  
   &:hover,
   &:focus {
     background: var.$secondary-hover;
