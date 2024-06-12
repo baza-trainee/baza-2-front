@@ -155,7 +155,8 @@ const RegistrationFormModal=({test=false})=>{
           onClick={onClose}/>
 
          {test ? 
-            <h1>Форма Реєстрація ментора - Ще на етапі розробки :(</h1>
+            <h1>Форма Реєстрація ментора -
+               Ще на етапі розробки :(</h1>
              :
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2>{t("title_mentor")}</h2>
