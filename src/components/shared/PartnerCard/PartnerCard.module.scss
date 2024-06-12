@@ -23,13 +23,20 @@
   }
   @include mixin.media-q("xl") { 
     position: relative;
-    height: 180px;
-    transition: all 0.3s ease 0s;
-    overflow: hidden;
+    width: 396px;
+    height: 230px;
+    img{
+      width: 396px;
+      height: 230px;
+      }
  
 }
   @include mixin.media-q("xxxl") { 
     width: 396px;
     height: 230px;
+    img{
+    width: 396px;
+    height: 230px;
+    }
 }
 }
