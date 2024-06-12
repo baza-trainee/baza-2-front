@@ -21,116 +21,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-  
-      h2 {
-        @include mix.apply-font-styles(var.$h1-font);
-      }
-      .submit {
-        position: relative;
-      }
+    .title{
+      @include mix.apply-font-styles(var.$h1-font);
     }
   
     .closeButton {
       position: absolute;
       top: 18px;
       right: 18px;
-      // background: transparent;
-      // border: none;
-      // font-size: 24px;
-      // cursor: pointer;
-    }
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding-bottom: 20px;
-
-      .error{
-        @include mix.apply-font-styles(var.$text-20-font);
-        color: var.$secondary-error;
-      }
-      .error._hide{
-        display: none;
-        @include mix.media-q("md") {
-          display: block;
-        }
-      }
-
-      .item {
-        width: clamp(280px, 84vw, 625px);
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        & > h4{
-          @include mix.apply-font-styles(var.$text-20-font);
-          & > span {
-            color: var.$secondary-error;
-          }
-
-          // & > input {
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100%;
-          //   //opacity: 0;
-          //   cursor: default;
-          //   // @include mix.apply-font-styles(var.$text-16-font);
-          //   // color: secondary-black;
-          //   // border: 2px solid transparent;
-          //   // border-radius: 8px;
-          //   // padding: 10px;
-          //   // outline: 0;
-          //   // background: var.$secondary-white;
-          //   // transition: all var.$transition-duration-base var.$transition-timing-base;
-          // }
-        }
-        .select{
-       
-          .btn_option{
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            & input{
-              display: none;
-            }
-
-            .check{
-              width: 24px;
-              height: 24px;
-              border-radius: 2px;
-              border: 1px solid var.$secondary-gray;
-              & svg{
-                opacity: 0;
-                display: block;
-                border-radius: 2px;
-                width: 24px;
-                height: 24px;
-              }
-              &._active{
-                border: none;
-                & svg{
-                  opacity: 1;
-                }
-              }
-            }
-          }
-        }
-      }
-
-
-
-      .input._error {
-        border: 2px solid var.$secondary-error;
-      }
-      .input._success {
-        border: 2px solid var.$secondary-positive;
-      }
     }
   }
 }
