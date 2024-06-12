@@ -146,7 +146,8 @@
 			},
 			"question_3": {
 				"title": "Where can I find the participation terms?",
-				"text": "The details are on the Internship page."
+				"text": "The details are on the Internship page.",
+				"link": "Internship page"
 			},
 			"question_4": {
 				"title": "Can one see the organization's projects?",
