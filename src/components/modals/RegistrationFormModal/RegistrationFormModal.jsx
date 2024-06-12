@@ -27,6 +27,7 @@ const RegistrationFormModal=({test=false})=>{
   
   // Отримуємо стан.
   const isOpen = stateRegistrationFormModal(state => state.isOpen);
+  const type = stateRegistrationFormModal(state => state.type);
   const onClose = stateRegistrationFormModal(state => state.close);
 
   const [ specialization, setSpecialization ] = useState('')
@@ -155,8 +156,8 @@ const RegistrationFormModal=({test=false})=>{
           onClick={onClose}/>
 
          {test ? 
-            <h1>Форма Реєстрація -
-               Ще на етапі розробки :(</h1>
+            <h1>`Форма Реєстрація {type} -
+               Ще на етапі розробки :(`</h1>
              :
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2>{t("title_mentor")}</h2>
