@@ -16,7 +16,8 @@
   }
 
   & > p{
-    @include mx.apply-font-styles(var.$h3-font);
+    @include mx.apply-font-styles(var.$h2-font);
+    font-weight: 600;
     display: flex;
     gap: 8px;
     align-items: center;
@@ -85,7 +86,6 @@
     .error{
       @include mx.apply-font-styles(var.$h2-font);
       font-size: 90px;
-      //line-height: normal;
       color: var.$secondary-error;
       text-align: center;
       width: 100%;
@@ -127,26 +127,31 @@
     }
   }
 
-  .btn,
   .label{
     display: inline-block;
     @include mx.apply-font-styles(var.$text-20-font);
-    line-height: normal;
+    font-weight: 400;
+    font-size: 14px;
     color: var.$secondary-white;
     border: 1px solid var.$secondary-white;
     border-radius: 8px;
     transition: all var.$transition-duration-base var.$transition-timing-base;
-    padding: 15px 32px;
-    font-weight: 400;
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 28px;
+    height: 45px;
     position: relative;
 
     @include mx.media-q("md") {
       font-size: 18px;
+      height: 52px;
     }
-
+  
     @include mx.media-q("xl") {
       font-size: 20px;
+      padding: 0 32px;
+      height: 62px;
     }
 
     .input{
@@ -197,6 +202,7 @@
     transform: translateY(-100%) scale(2);
   }
 }
+
 // Анімація курсор.
 @keyframes line-opacity {
   from {

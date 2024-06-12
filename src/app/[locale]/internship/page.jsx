@@ -1,5 +1,6 @@
 import AdvantagesSection from "@/src/components/AdvantagesSection/AdvantagesSection";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
+import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 export default function Internship() {
   // !! Замінити  <div> на готові компоненти !!
 
@@ -10,6 +11,7 @@ export default function Internship() {
       </div>
       <JoinProjectSection style={{ marginBottom: "20px" }} />
       <AdvantagesSection />
+      <RegistrationFormModal test={true}/>
     </main>
   );
 }

@@ -1,9 +1,10 @@
 import axios from 'axios';
+import {  BASE_URL2, EMAIL_ADMIN } from '../constants/constants';
 
-const BASE_URL = 'https://baza2.crabdance.com/api/v1';
-const EMAIL_ADMIN ='brodich_vlad@ukr.net';
+//const BASE_URL = 'https://baza2.crabdance.com/api/v1';
+//const EMAIL_ADMIN ='brodich_vlad@ukr.net';
 
-export default function handleSendContactForm(data, callback=()=>{}) {
+export default function handlerSendContactForm(data, callback=()=>{}) {
 
   const body =({ firstName, email, message })=>{
     return {
@@ -14,7 +15,7 @@ export default function handleSendContactForm(data, callback=()=>{}) {
     }
   }
 
-  axios.post(`${BASE_URL}/feedback/sendFeedback`, {
+  axios.post(`${BASE_URL2}/feedback/sendFeedback`, {
     ...body(data)
   })
   .then(function (response) {
