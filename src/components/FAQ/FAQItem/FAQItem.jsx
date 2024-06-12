@@ -2,8 +2,10 @@
 import clsx from "clsx";
 import { useRef, useState } from "react";
 import styles from "./FAQItem.module.scss";
+import MainLink from "../../shared/MainLink/MainLink";
+import linkTypes from "../../shared/MainLink/constants";
 
-const FAQItem = ({ title, description }) => {
+const FAQItem = ({ title, description, descLink }) => {
   const [showMore, setShowMore] = useState(false);
   const descRef = useRef(null);
   const descWrapperRef = useRef(null);
@@ -34,6 +36,12 @@ const FAQItem = ({ title, description }) => {
       >
         <p ref={descRef} className={styles.desc}>
           {description}
+          {descLink && (
+            <MainLink url="/internship" className={styles.link}>
+              {descLink}
+            </MainLink>
+          )}
+          .
         </p>
       </div>
     </div>
