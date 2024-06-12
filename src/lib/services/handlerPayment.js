@@ -1,8 +1,9 @@
 import axios from "axios";
+import { BASE_URL } from "../constants/constants";
 // !! Логіка запиту на старий бекенд на отримання посилання сторінки оплати. !!
-const BASE_URL = 'https://baza-trainee-landing.vercel.app/api/v1';
+//const BASE_URL = 'https://baza-trainee-landing.vercel.app/api/v1';
 
-export default function handlePayment(payment="0", locale="ua", callback=()=>{}){
+export default function handlerPayment(payment="0", locale="ua", callback=()=>{}){
 	// !! Умова для тестування помилок!!
 	const paymentAmount = payment === "123" ? 'h' : payment;
 
