@@ -7,7 +7,8 @@
 
   @include mixins.media-q("md") {
     min-width: 688px;
-    max-width: 1212px;
+    //max-width: 1212px;
+    max-width: auto;
   }
 
   @include mixins.media-q("xl") { 
@@ -19,7 +20,8 @@
   position: sticky;
   top: 150px;
   min-width: 1212px;
-  max-width: 1396px;
+  //max-width: 1396px;
+  max-width: auto;
   }
   @include mixins.media-q("xxxl") { 
   height: 60vh;
