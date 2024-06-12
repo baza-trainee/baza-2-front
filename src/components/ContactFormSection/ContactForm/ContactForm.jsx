@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import handleSendContactForm from "@/src/lib/services/handleSendContactForm";
+import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
 import { formScheme } from "./formScheme";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
@@ -35,7 +35,7 @@ export default function ContactForm() {
   }
 
   const onSubmit = (data) => {
-    handleSendContactForm( data, isError )
+    handlerSendContactForm( data, isError )
     setIsSubmit(null)
     reset();
   };

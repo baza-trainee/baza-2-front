@@ -20,6 +20,7 @@ export default function InputField({
         {id !== "agree" && (
           <label htmlFor={id}>
             {label} <span>*</span>
+            
           </label>
         )}
         <div
