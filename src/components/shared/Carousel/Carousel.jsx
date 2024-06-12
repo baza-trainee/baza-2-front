@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useCallback } from "react";
 import "swiper/css";
+import { EffectCoverflow } from "swiper/modules";
 
 const Carousel = ({
   modules,
@@ -14,7 +15,7 @@ const Carousel = ({
   nextEl,
   paginationEl,
   delay,
-  // slidesPerView: slidesPerViewProp = 1,
+  useCoverflow = false, 
   ...options
 }) => {
   const renderSlides = useCallback(
@@ -26,11 +27,12 @@ const Carousel = ({
       )),
     [slideClassName, renderItem]
   );
+
   const DEFAULT_MODULES = [Navigation];
 
   return (
     <Swiper
-      modules={[...(modules ?? DEFAULT_MODULES)]}
+      modules={[...(modules ?? DEFAULT_MODULES), ...(useCoverflow ? [EffectCoverflow] : [])]}
       navigation={{
         prevEl: prevEl,
         nextEl: nextEl,
@@ -44,9 +46,23 @@ const Carousel = ({
         disableOnInteraction: false,
       }}
       speed={700}
-      // slidesPerView={slidesPerViewProp}
       className={className}
       {...options}
+
+      effect={useCoverflow ? 'coverflow' : 'slide'} 
+      grabCursor={useCoverflow}
+      centeredSlides={useCoverflow}
+      loop={true}
+      coverflowEffect={
+        useCoverflow
+          ? {
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }
+          : {}
+      }
     >
       {renderSlides(items)}
     </Swiper>

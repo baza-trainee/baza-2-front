@@ -33,6 +33,7 @@ const PartnerSection = () => {
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
+            useCoverflow={true}
             renderItem={(item) => (
               <PartnerCard item={item} />
             )} />
