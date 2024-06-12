@@ -30,11 +30,8 @@ const RegistrationFormModal=({test=false})=>{
   // Отримуємо стан.
   const isOpen = stateRegistrationFormModal(state => state.isOpen);
   const type = stateRegistrationFormModal(state => state.type);
-  const type = stateRegistrationFormModal(state => state.type);
-  const onClose = stateRegistrationFormModal(state => state.close);
 
-  // const [ specialization, setSpecialization ] = useState('')
-  // const [ convenientTime, setConvenientTime ] = useState('')
+  const onClose = stateRegistrationFormModal(state => state.close);
 
   useBodyLock(isOpen);
 
@@ -161,12 +158,9 @@ const RegistrationFormModal=({test=false})=>{
          {test ? 
             <h1>`Форма Реєстрація {type} -
                Ще на етапі розробки :(`</h1>
-            <h1>`Форма Реєстрація {type} -
-               Ще на етапі розробки :(`</h1>
              :
-             
-           <FormMentor/> 
-          }
+             <FormMentor/>
+            }
         </div>
       </div>
     </LayoutModal>
