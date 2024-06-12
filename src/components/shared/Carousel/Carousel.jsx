@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useCallback } from "react";
 import "swiper/css";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 const Carousel = ({
   modules,
@@ -14,8 +14,9 @@ const Carousel = ({
   prevEl,
   nextEl,
   paginationEl,
-  delay,
+  delay = 3000,
   useCoverflow = false, 
+  useAutoplay = false,
   ...options
 }) => {
   const renderSlides = useCallback(
@@ -28,11 +29,15 @@ const Carousel = ({
     [slideClassName, renderItem]
   );
 
-  const DEFAULT_MODULES = [Navigation];
+  const DEFAULT_MODULES = [Navigation, Autoplay];
 
   return (
     <Swiper
-      modules={[...(modules ?? DEFAULT_MODULES), ...(useCoverflow ? [EffectCoverflow] : [])]}
+      modules={[
+        ...(modules ?? DEFAULT_MODULES), 
+        ...(useCoverflow ? [EffectCoverflow] : []),
+       ...(useAutoplay ? [Autoplay] : []),
+       ]}
       navigation={{
         prevEl: prevEl,
         nextEl: nextEl,
@@ -41,10 +46,11 @@ const Carousel = ({
         el: paginationEl ?? null,
         clickable: true,
       }}
-      autoplay={{
+      autoplay={
+        useAutoplay ? {
         delay: delay,
         disableOnInteraction: false,
-      }}
+      } : false }
       speed={700}
       className={className}
       {...options}

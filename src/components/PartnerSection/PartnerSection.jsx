@@ -11,6 +11,13 @@ import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
 
 const PartnerSection = () => {
+
+  const getSlidesPerView = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth <= 320) return 1;
+      return 3;
+    }
+  };
   const t = useTranslations("Main.partners_section");
   return (
     <section className={styles.section}>
@@ -26,14 +33,16 @@ const PartnerSection = () => {
         </div>
         <div className={styles.sliderContainer}>
           <Carousel
+            delay={3000}
             modules={[Navigation, Pagination]}
             paginationEl={".partner-custom-pagination"}
-            slidesPerView={3}
-            spaceBetween={24}
+            slidesPerView={getSlidesPerView()}
+            spaceBetween={10}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             useCoverflow={true}
+            useAutoplay={true}
             renderItem={(item) => (
               <PartnerCard item={item} />
             )} />
