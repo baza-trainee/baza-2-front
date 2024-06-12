@@ -2,13 +2,13 @@
 @use "../../styles/_mixins.scss" as mx;
 
 .counter {
-  padding: 65px 0;
+  padding: 32px 0;
   background: var.$primary-gradient;
-  @media (max-width: 768px) {
+  @media (min-width: 510px) {
     padding: 88px 0;
   }
-  @media (max-width: 510px) {
-    padding: 32px 0;
+  @media (min-width: 768px) {
+    padding: 65px 0;
   }
 }
 
@@ -17,10 +17,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  @media (max-width: 510px) {
-    flex-direction: column;
-    gap: 32px;
+  flex-direction: column;
+  gap: 32px;
+  @media (min-width: 510px) {
+    gap: 20px;
+    flex-direction: row;
   }
 }
 .item {
@@ -33,15 +34,16 @@
 }
 .numbers {
   @include mx.apply-font-styles(var.$h1-font);
-  font-size: 56px;
-  @media (max-width: 992px) {
-    font-size: 48px;
+  font-size: 48px;
+  @media (min-width: 992px) {
+    font-size: 56px;
   }
 }
 .title {
   text-align: center;
   @include mx.apply-font-styles(var.$h4-font);
-  @media (max-width: 992px) {
-    font-size: 20px;
+  font-size: 20px;
+  @media (min-width: 992px) {
+    font-size: 24px;
   }
 }

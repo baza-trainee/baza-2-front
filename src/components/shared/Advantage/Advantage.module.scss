@@ -1,0 +1,37 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mx;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.image {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  @media (min-width: 696px) {
+    width: 180px;
+    height: 180px;
+  }
+  @include mx.media-q("xl") {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.text {
+  @include mx.apply-font-styles(var.$text-16-font);
+  text-align: center;
+  width: 260px;
+  @media (min-width: 696px) {
+    @include mx.apply-font-styles(var.$h6-font);
+    width: 334px;
+  }
+  @include mx.media-q("xl") {
+    @include mx.apply-font-styles(var.$h4-font);
+    width: 397px;
+  }
+}
