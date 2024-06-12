@@ -46,11 +46,12 @@
   border-radius: 12px;
   background: rgba(210, 210, 210, 0.5);
   text-align: left;
-  @media (max-width: 1366px) {
+  top: 39px;
+  @media (min-width: 421px) {
     top: -25px;
   }
-  @media (max-width: 420px) {
-    top: 39px;
+  @media (min-width: 1367px) {
+    top: 0px;
   }
 }
 
@@ -78,20 +79,20 @@
 }
 
 .text {
-  @include mx.apply-font-styles(var.$text-16-font);
+  @include mx.apply-font-styles(var.$text-14-font);
   color: var.$secondary-white;
   max-width: 600px;
   text-align: left;
-  padding: 10px 0;
-  @media (max-width: 1366px) {
-    @include mx.apply-font-styles(var.$text-16-font);
-  }
-  @media (max-width: 608px) {
+  padding: 0;
+  @media (min-width: 421px) {
+    padding: 10px 0;
     @include mx.apply-font-styles(var.$text-18-font);
-    padding: 10px 50px;
   }
-  @media (max-width: 420px) {
-    @include mx.apply-font-styles(var.$text-14-font);
-    padding: 0;
+  @media (min-width: 609px) {
+    @include mx.apply-font-styles(var.$text-18-font);
+  }
+  @media (min-width: 1367px) {
+    @include mx.apply-font-styles(var.$text-16-font);
+    padding: 10px 50px;
   }
 }
