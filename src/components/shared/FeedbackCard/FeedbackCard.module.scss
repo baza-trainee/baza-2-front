@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixins";
+@use "/src/styles/variables" as var;
+@use "/src/styles/mixins" as mx;
 
 .card {
   display: flex;
@@ -46,11 +46,12 @@
   border-radius: 12px;
   background: rgba(210, 210, 210, 0.5);
   text-align: left;
-  @media (max-width: 1366px) {
+  top: 39px;
+  @media (min-width: 421px) {
     top: -25px;
   }
-  @media (max-width: 420px) {
-    top: 39px;
+  @media (min-width: 1367px) {
+    top: 0px;
   }
 }
 
@@ -60,37 +61,38 @@
 }
 
 .name {
-  @include apply-font-styles($h3-font);
+  @include mx.apply-font-styles(var.$h3-font);
   letter-spacing: 0.01em;
-  color: $secondary-black;
+  color: var.$secondary-black;
 }
 
 .role {
-  @include apply-font-styles($text-16-font);
+  @include mx.apply-font-styles(var.$text-16-font);
   letter-spacing: 0.01em;
-  color: $secondary-black;
+  color: var.$secondary-black;
 }
 
 .date {
-  @include apply-font-styles($text-16-font);
+  @include mx.apply-font-styles(var.$text-16-font);
   letter-spacing: 0.01em;
-  color: $secondary-text;
+  color: var.$secondary-text;
 }
 
 .text {
-  @include apply-font-styles($text-16-font);
-  color: $secondary-white;
+  @include mx.apply-font-styles(var.$text-14-font);
+  color: var.$secondary-white;
   max-width: 600px;
   text-align: left;
-  padding: 10px 0;
-  @media (max-width: 1366px) {
-    font-size: 18px;
+  padding: 0;
+  @media (min-width: 421px) {
+    padding: 10px 0;
+    @include mx.apply-font-styles(var.$text-18-font);
   }
-  @media (max-width: 608px) {
-    font-size: 16px;
+  @media (min-width: 609px) {
+    @include mx.apply-font-styles(var.$text-18-font);
+  }
+  @media (min-width: 1367px) {
+    @include mx.apply-font-styles(var.$text-16-font);
     padding: 10px 50px;
-  }
-  @media (max-width: 420px) {
-    padding: 0;
   }
 }
