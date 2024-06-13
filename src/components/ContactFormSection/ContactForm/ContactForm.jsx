@@ -63,8 +63,8 @@ export default function ContactForm() {
             isValid={isValid}
             version={"input"}
             label={t("name")}
-           
           />
+
           {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.name")}</span>}
         </li>
         <li>
@@ -79,6 +79,7 @@ export default function ContactForm() {
             version={"input"}
             label={t("email")}
           />
+
           {errors.email && <span className={clsx(styles.error, styles._hide)}>{t("error_message.email")}</span>}
         </li>
         <li>
@@ -93,6 +94,7 @@ export default function ContactForm() {
             version={"textArea"}
             label={t("message")}
           />
+          
           {errors.message && <span className={styles.error}>{t("error_message.message")}</span>}
         </li>
       </ul>

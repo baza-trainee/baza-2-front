@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { formScheme } from "./formScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
-import { optionsSpec } from "./options";
+import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 
 
@@ -21,24 +21,19 @@ export default function FormMentor() {
     formState: { errors, isValid, isDirty },
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
-  const [ specialization, setSpecialization ] = useState('')
-  const [ convenientTime, setConvenientTime ] = useState('')
+  const [ specialization, setSpecialization ] = useState('');
+  const [ convenientTime, setConvenientTime ] = useState('');
+  const [ agree, setAgree ] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
 
-  const optionsTime = [
-    { id: "t9001200", label: "9.00-12.00" },
-    { id: "t12001500", label: "12.00-15.00" },
-    { id: "t18002100", label: "18.00-21.00" },
-    { id: "anytime", label: t("anytime") },
-  ];
-  const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];
+  //const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      {/* <h2>{t("title_mentor")}</h2> */}
+      <h2>{t("title_mentor")}</h2>
 
       <ul className={styles.list}>
         <li>
@@ -163,7 +158,7 @@ export default function FormMentor() {
               {optionsTime.map((option)=>{
                 return(
                   <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
-                  <input 
+                  <input
                   type="radio" 
                   {...register("convenient_time", { ...formScheme.convenient_time })}
                   id={option.id} name="convenient_time" 
@@ -172,7 +167,7 @@ export default function FormMentor() {
                     <span className={clsx(styles.check, convenientTime === option.label && styles._active)}>
                       <Icon name={'check'}/>
                     </span>
-                    {option.label}
+                    {option.label=== "anytime"? t("anytime"):option.label}
                   </label>
                 )
               })}
@@ -185,23 +180,22 @@ export default function FormMentor() {
         <li>
           <div className={styles.item}>
             <label
-              htmlFor={'option.id'}
+              htmlFor={'agree'}
               className={styles.btn_option}
-              //onClick={()=>{setConvenientTime(option.label)}}
             >
-            <input
-              id={'option.id'}
-              type="checkbox"
-        
-              //checked={field.value}
-            ></input>
-            <span className={clsx(styles.check, convenientTime && styles._active)}>
-              <Icon name={'check'}/>
-              </span>
+              <input
+                id={'agree'}
+                type="checkbox"
+                {...register("agree", { ...formScheme.agree })}
+                onClick={(e)=>{setAgree(e.target.checked)}}
+              ></input>
+              <span className={clsx(styles.check, agree && styles._active)}>
+                <Icon name={'check'}/>
+                </span>
 
-            { t("permit")}
+              { t("permit")}
             </label>
-            {errors.linkedin && <span className={clsx(styles.error, styles._hide)}>{t("error_message.linkedin")}</span>}
+            {errors.agree && <span className={clsx(styles.error, styles._hide)}>{t("error_message.agree")}</span>}
           </div>
         </li>
           {/* {inputFields.map((field) => (

@@ -151,7 +151,7 @@ const RegistrationFormModal=({test=false})=>{
         }}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()
         }>
-        <h2 className={styles.title}>{t("title_mentor")}</h2>
+        {/* <h2 className={styles.title}>{t("title_mentor")}</h2> */}
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
 

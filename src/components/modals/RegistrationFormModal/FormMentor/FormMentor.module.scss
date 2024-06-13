@@ -21,12 +21,12 @@
       @include mix.apply-font-styles(var.$text-20-font);
       color: var.$secondary-error;
     }
-    .error._hide{
-      display: none;
-      @include mix.media-q("md") {
-        display: block;
-      }
-    }
+    // .error._hide{
+    //   display: none;
+    //   @include mix.media-q("md") {
+    //     display: block;
+    //   }
+    // }
   
     .item {
       width: clamp(280px, 84vw, 625px);
@@ -40,13 +40,16 @@
         }
       }
       .select{
-     
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
 
       }
       .btn_option{
         display: flex;
         align-items: center;
         gap: 12px;
+
         & input{
           display: none;
         }
@@ -56,6 +59,7 @@
           height: 24px;
           border-radius: 2px;
           border: 1px solid var.$secondary-gray;
+
           & svg{
             opacity: 0;
             display: block;
@@ -63,8 +67,10 @@
             width: 24px;
             height: 24px;
           }
+
           &._active{
             border: none;
+
             & svg{
               opacity: 1;
             }

@@ -13,7 +13,7 @@ export default function ErrorAlert(){
   useEffect(()=>{
     const timeoutId = setTimeout(()=>{
       close()
-    },2000)
+    },5000)
     return () => clearTimeout(timeoutId);
   },[])
 
