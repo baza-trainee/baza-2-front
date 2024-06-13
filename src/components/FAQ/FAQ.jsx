@@ -17,6 +17,7 @@ const FAQ = () => {
               key={i}
               title={t(item.title)}
               description={t(item.description)}
+              descLink={i == 2 ? t(item.link) : null}
             />
           ))}
         </ul>

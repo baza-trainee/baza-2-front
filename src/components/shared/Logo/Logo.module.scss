@@ -8,8 +8,10 @@
     height: 60px;
     fill: var.$secondary-white;
   }
-  &:hover .logo {
-    fill: var.$primary-hover;
+  @media (any-hover: hover) {
+    &:hover .logo {
+      fill: var.$primary-hover;
+    }
   }
 }
 
@@ -22,8 +24,10 @@
     fill: var.$secondary-white;
   }
 
-  &:hover .logo {
-    fill: var.$primary-hover;
+  @media (any-hover: hover) {
+    &:hover .logo {
+      fill: var.$primary-hover;
+    }
   }
 }
 

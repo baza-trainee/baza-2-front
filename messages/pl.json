@@ -1,303 +1,294 @@
 {
-  "Header": {
-    "main": "Strona główna",
-    "internship": "Praktyka",
-    "projects": "Projekty",
-    "blog": "Blog",
-    "contacts": "Kontakty",
-    "btn_support_project": "Wspierać projekt"
-  },
-
-  "Internship": {
-    "invite_participate":{
-      "title": "Zapraszamy do udziału",
-      "btn_text":"Dołącz do społeczności"
-    },
-
-    "join_project_section": {
-      "main_title": "Jak dołączyć do projektu",
-      "card_1": {
-        "title": "Wypełnienie ankiety",
-        "text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
-        "text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
-        "text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
-      },
-      "card_2": {
-        "title": "Заповнення анкети",
-        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
-        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
-      },
-      "card_3": {
-        "title": "Заповнення анкети",
-        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
-        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
-      },
-      "card_4": {
-        "title": "Заповнення анкети",
-        "text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-        "text_2": "Прийняти запрошення на вступ до серверу в Discord",
-        "text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
-      }
-    },
-    
-    "benefits_internship":{
-      "title": "Korzyści ze stażu",
-      "cards":{
-        "item_1":"Stosujemy i potwierdzamy wiedzę teoretyczną",
-        "item_2":"Doświadczenie zdobywamy pracując w zespole",
-        "item_3":"Pozbywamy się niepewności i redukujemy stres",
-        "item_4":"Rozumiemy, czemu ma służyć ten projekt",
-        "item_5":"Tworzymy portfolio realnych projektów",
-        "item_6":"Wybieramy pracodawcę świadomie"
-      },
-      "btn_text":"Dołącz do społeczności"
-    }
-  },
-
-  "Main": {
-    "hero_carousel_section": {
-      "slide_1": {
-        "title": "Baza Trainee Ukraine",
-        "text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
-      },
-      "slide_2": {
-        "title": "O nas",
-        "text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022—2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
-      },
-      "slide_3": {
-        "title": "Nasza grupa docelowa",
-        "text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia — trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
-      },
-      "slide_4": {
-        "title": "Nasz cel",
-        "text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej — cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
-      },
-      "slide_5": {
-        "title": "Zasada działania",
-        "text": "Trening uczestnika na podstawie obecnych technologii, którymi obecnie włada, i wspieranie jego zatrudnienia. Przy tworzeniu projektu stosować technologie, które chce rozwijać uczestnik, bez konieczności ponownego szkolenia. Zapewnić klientowi wysokiej jakości produkt cyfrowy."
-      }
-    },
-    "history_project_section": {
-      "title": "Historia projektu",
-      "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
-      "text1": "W ciągu roku osiągnęliśmy znaczący sukces",
-      "history": {
-        "item1": {
-          "date": "Kwiecień 2023:",
-          "text": "Start projektu Baza Trainee Ukraine"
-        },
-        "item2": {
-          "date": "Sierpień 2023:",
-          "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
-        },
-        "item3": {
-          "date": "Listopad 2023:",
-          "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
-        },
-        "item4": {
-          "date": "Grudzień 2023:",
-          "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
-        },
-        "item5": {
-          "date": "Marzec 2024:",
-          "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
-        }
-      }
-    },
-    "counter_section": {
-      "title": "Nasze postępy",
-      "active_projects": "aktywnych projektów",
-      "involved_participants": "zaangażowanych uczestników",
-      "employed": "zatrudniono"
-    },
-    "mentor_section": {
-      "title": "Mentorowi",
-      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
-      "paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
-      "paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
-      "btn_mentor": "Zostać mentorem"
-    },
-    "our_structure_section": {
-      "title": "Nasza struktura",
-      "item_1": {
-        "title": "BAZA TRAINEE UKRAINE",
-        "text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
-      },
-      "item_2": {
-        "title": "BAZA SKILL",
-        "text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
-      },
-      "item_3": {
-        "title": "BAZA EDUCAT",
-        "text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
-      },
-      "item_4": {
-        "title": "BAZA POLIGON",
-        "text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
-      }
-    },
-    "FAQ_section": {
-      "title": "FAQ",
-      "question_1": {
-        "title": "Jakie projekty realizujemy?",
-        "text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
-      },
-      "question_2": {
-        "title": "Jak aplikować?",
-        "text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
-      },
-      "question_3": {
-        "title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
-        "text": "Szczegóły na stronie Staż"
-      },
-      "question_4": {
-        "title": "Czy można zobaczyć projekty organizacji?",
-        "text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
-      },
-      "question_5": {
-        "title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
-        "text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
-      },
-      "btn_support_project": "Wesprzyj projekt"
-    },
-    "reviews_section": {
-      "title": "Opinie"
-    },
-    "press_about_section": {
-      "title": "Prasa o nas",
-      "article_1": {
-        "title": "Ми в MC Today",
-        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
-      },
-      "article_2": {
-        "title": "Ми на Dev ua",
-        "text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
-      },
-      "article_3": {
-        "title": "Ми на Hostiq.ua",
-        "text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
-      },
-      "article_4": {
-        "title": "",
-        "text": ""
-      },
-      "btn_read_article": "Przeczytaj materiał"
-    },
-    "partners_section": {
-      "title": "Partnerzy"
-    },
-    "feedback_form": {
-      "title": "Formularz zwrotny",
-      "name": "Imię",
-      "email": "E-mail",
-      "message": "Wiadomość",
-      "message_placeholder": "Twoja wiadomość",
-      "btn_send": "Wyślać",
-      "error_message":{
-        "name": "Wpisz imię",
-        "email": "Proszę podać poprawny adres e-mail",
-        "message": "Wpisz wiadomość"
-      }
-    }
-  },
-
-  "Footer": {
-    "main": "Strona główna",
-    "internship": "Praktyka",
-    "projects": "Projekty",
-    "blog": "Blog",
-    "privacy_policy": "Polityka prywatności",
-    "site_use_policy": "Zasady korzystania z serwisu",
-    "regulations": "Statut",
-    "reporting": "Raporty",
-    "development": "tworzenie ",
-    "rights": "Wszelkie prawa zastrzeżone"
-  },
-
-  "Page_404": {
-    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
-    "btn_home": "Powrót do strony głównej"
-  },
-
-  "Error": {
-    "title": "Przepraszam, coś poszło nie tak",
-    "text":"Spróbuj ponownie później",
-    "btn_home": "Spróbuj ponownie"
-  },
-
-  "Modal_support": {
-    "amount": "Kwota doładowania",
-    "placeholder": "Wprowadź żądaną kwotę",
-    "UAH": "UAN",
-    "another_amount": "Inna kwota",
-    "btn_support": "Wspierać",
-    "thanks_support": "Dziękujemy za wsparcie!",
-    "btn_home": "Powrót do strony głównej",
-    "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
-    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
-    "ariaLabel_btn_close_3": "zamyka okno modalne błędu",
-    "error_message":"Max 4 signs!",
-    "error_message_pay":"Przepraszamy, pojawił się błąd :("
-  },
-
-  "Modal_form": {
-    "title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
-    "title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
-    "firstName": "Imię",
-    "lastName": "Nazwisko",
-    "specialization": "Specjalizacja",
-    "email": "E-mail",
-    "city":"Miasto (kraj)",
-    "course_name":"Nazwa ukończonego kursu w specjalności i data zakończenia (jeżeli kurs jest aktualnie realizowany, należy zaznaczyć, że jest aktualny)",
-    "your answer":"Twoja odpowiedź",
-    "experience":"Dostępność doświadczenia",
-    "yes":"Więc",
-    "no":"Nie",
-    "motivation":"Jaka jest motywacja do stworzenia produktu?",
-    "choose_project":"Wybierz projekt",
-    "saw_questionnaire":"Widziałem ankietę:",
-    "questionnaire_options":{
-      "option_1":"Na stronie Bazy Trainee Ukraina",
-      "option_2":"Na stronie Bazy Educat na Instagramie",
-      "option_3":"Na stronie Bazy Edukacyjnej na Facebooku",
-      "option_4":"na kanale Baza Go Telegram",
-      "option_5":"w poście na LinkedIn"
-    },
-    "rules_participation":"Regulamin udziału w projekcie Baza Trainee Ukraina",
-    "acquainted":"Zapoznano się z warunkami udziału w projekcie",
-    "agree":"Zgadzam się",
-    "phone": "Telefon",
-    "discord": "Nick na Discordzie",
-    "linkedin": "Profil na Linkedinie",
-    "linkedin_placeholder": "Link do profilu",
-    "convenient_time": "Dogodny termin konsultacji",
-    "anytime":"kiedykolwiek",
-    "permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
-    "btn_send": "Wysłać",
-    "error_message":{
-      "firstName": "Wpisz imię",
-      "lastName": "Wpisz swoje nazwisko",
-      "specialization": "Wybierz specjalizację",
-      "email": "Wprowadź swój email",
-      "phone": "Wprowadź numer telefonu",
-      "discord": "Wpisz pseudonim na Discordzie",
-      "linkedin": "Wprowadź swój profil na Linkedin",
-      "convenient_time": "Wybierz godziny otwarcia",
-      "city":"Wejdź do miasta",
-      "course_name":"Wpisz nazwę ukończonego kursu",
-      "experience":"Wybierz dostępność doświadczenia",
-      "motivation":"Podaj swoją motywację",
-      "choose_project":"Wybierz projekt",
-      "saw_questionnaire":"Wybierz, gdzie widziałeś kwestionariusz",
-      "agree":"Zapoznaj się z warunkami uczestnictwa",
-      "permit": "Wyraź zgodę na przetwarzanie danych osobowych"
-    }
-  },
-
-  "cookies": {
-    "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
-    "privacy_policy": "Polityka prywatności."
-  }
+	"Header": {
+		"main": "Strona główna",
+		"internship": "Praktyka",
+		"projects": "Projekty",
+		"blog": "Blog",
+		"contacts": "Kontakty",
+		"btn_support_project": "Wspierać projekt"
+	},
+	"Internship": {
+		"invite_participate": {
+			"title": "Zapraszamy do udziału",
+			"btn_text": "Dołącz do społeczności"
+		},
+		"join_project_section": {
+			"main_title": "Jak dołączyć do projektu",
+			"card_1": {
+				"title": "Wypełnienie ankiety",
+				"text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
+				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
+				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
+			},
+			"card_2": {
+				"title": "Заповнення анкети",
+				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
+				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+			},
+			"card_3": {
+				"title": "Заповнення анкети",
+				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
+				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+			},
+			"card_4": {
+				"title": "Заповнення анкети",
+				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
+				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
+				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+			}
+		},
+		"benefits_internship": {
+			"title": "Korzyści ze stażu",
+			"cards": {
+				"item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
+				"item_2": "Doświadczenie zdobywamy pracując w zespole",
+				"item_3": "Pozbywamy się niepewności i redukujemy stres",
+				"item_4": "Rozumiemy, czemu ma służyć ten projekt",
+				"item_5": "Tworzymy portfolio realnych projektów",
+				"item_6": "Wybieramy pracodawcę świadomie"
+			},
+			"btn_text": "Dołącz do społeczności"
+		}
+	},
+	"Main": {
+		"hero_carousel_section": {
+			"slide_1": {
+				"title": "Baza Trainee Ukraine",
+				"text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
+			},
+			"slide_2": {
+				"title": "O nas",
+				"text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022—2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
+			},
+			"slide_3": {
+				"title": "Nasza grupa docelowa",
+				"text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia — trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
+			},
+			"slide_4": {
+				"title": "Nasz cel",
+				"text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej — cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
+			},
+			"slide_5": {
+				"title": "Zasada działania",
+				"text": "Trening uczestnika na podstawie obecnych technologii, którymi obecnie włada, i wspieranie jego zatrudnienia. Przy tworzeniu projektu stosować technologie, które chce rozwijać uczestnik, bez konieczności ponownego szkolenia. Zapewnić klientowi wysokiej jakości produkt cyfrowy."
+			}
+		},
+		"history_project_section": {
+			"title": "Historia projektu",
+			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
+			"text1": "W ciągu roku osiągnęliśmy znaczący sukces",
+			"history": {
+				"item1": {
+					"date": "Kwiecień 2023:",
+					"text": "Start projektu Baza Trainee Ukraine"
+				},
+				"item2": {
+					"date": "Sierpień 2023:",
+					"text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
+				},
+				"item3": {
+					"date": "Listopad 2023:",
+					"text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
+				},
+				"item4": {
+					"date": "Grudzień 2023:",
+					"text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
+				},
+				"item5": {
+					"date": "Marzec 2024:",
+					"text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
+				}
+			}
+		},
+		"counter_section": {
+			"title": "Nasze postępy",
+			"active_projects": "aktywnych projektów",
+			"involved_participants": "zaangażowanych uczestników",
+			"employed": "zatrudniono"
+		},
+		"mentor_section": {
+			"title": "Mentorowi",
+			"paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
+			"paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
+			"paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
+			"btn_mentor": "Zostać mentorem"
+		},
+		"our_structure_section": {
+			"title": "Nasza struktura",
+			"item_1": {
+				"title": "BAZA TRAINEE UKRAINE",
+				"text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
+			},
+			"item_2": {
+				"title": "BAZA SKILL",
+				"text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
+			},
+			"item_3": {
+				"title": "BAZA EDUCAT",
+				"text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
+			},
+			"item_4": {
+				"title": "BAZA POLIGON",
+				"text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
+			}
+		},
+		"FAQ_section": {
+			"title": "FAQ",
+			"question_1": {
+				"title": "Jakie projekty realizujemy?",
+				"text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
+			},
+			"question_2": {
+				"title": "Jak aplikować?",
+				"text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
+			},
+			"question_3": {
+				"title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
+				"text": "Szczegóły na stronie ",
+				"link": "Staż"
+			},
+			"question_4": {
+				"title": "Czy można zobaczyć projekty organizacji?",
+				"text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
+			},
+			"question_5": {
+				"title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
+				"text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
+			},
+			"btn_support_project": "Wesprzyj projekt"
+		},
+		"reviews_section": {
+			"title": "Opinie"
+		},
+		"press_about_section": {
+			"title": "Prasa o nas",
+			"article_1": {
+				"title": "Ми в MC Today",
+				"text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+			},
+			"article_2": {
+				"title": "Ми на Dev ua",
+				"text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
+			},
+			"article_3": {
+				"title": "Ми на Hostiq.ua",
+				"text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
+			},
+			"article_4": {
+				"title": "",
+				"text": ""
+			},
+			"btn_read_article": "Przeczytaj materiał"
+		},
+		"partners_section": {
+			"title": "Partnerzy"
+		},
+		"feedback_form": {
+			"title": "Formularz zwrotny",
+			"name": "Imię",
+			"email": "E-mail",
+			"message": "Wiadomość",
+			"message_placeholder": "Twoja wiadomość",
+			"btn_send": "Wyślać",
+			"error_message": {
+				"name": "Wpisz imię",
+				"email": "Proszę podać poprawny adres e-mail",
+				"message": "Wpisz wiadomość"
+			}
+		}
+	},
+	"Footer": {
+		"main": "Strona główna",
+		"internship": "Praktyka",
+		"projects": "Projekty",
+		"blog": "Blog",
+		"privacy_policy": "Polityka prywatności",
+		"site_use_policy": "Zasady korzystania z serwisu",
+		"regulations": "Statut",
+		"reporting": "Raporty",
+		"development": "tworzenie ",
+		"rights": "Wszelkie prawa zastrzeżone"
+	},
+	"Page_404": {
+		"title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
+		"btn_home": "Powrót do strony głównej"
+	},
+	"Error": {
+		"title": "Przepraszam, coś poszło nie tak",
+		"text": "Spróbuj ponownie później",
+		"btn_home": "Spróbuj ponownie"
+	},
+	"Modal_support": {
+		"amount": "Kwota doładowania",
+		"placeholder": "Wprowadź żądaną kwotę",
+		"UAH": "UAN",
+		"another_amount": "Inna kwota",
+		"btn_support": "Wspierać",
+		"thanks_support": "Dziękujemy za wsparcie!",
+		"btn_home": "Powrót do strony głównej",
+		"ariaLabel_btn_close_1": "zamyka okno modalne płatności",
+		"ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
+		"ariaLabel_btn_close_3": "zamyka okno modalne błędu",
+		"error_message": "Max 4 signs!",
+		"error_message_pay": "Przepraszamy, pojawił się błąd :("
+	},
+	"Modal_form": {
+		"title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
+		"title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
+		"firstName": "Imię",
+		"lastName": "Nazwisko",
+		"specialization": "Specjalizacja",
+		"email": "E-mail",
+		"city": "Miasto (kraj)",
+		"course_name": "Nazwa ukończonego kursu w specjalności i data zakończenia (jeżeli kurs jest aktualnie realizowany, należy zaznaczyć, że jest aktualny)",
+		"your answer": "Twoja odpowiedź",
+		"experience": "Dostępność doświadczenia",
+		"yes": "Więc",
+		"no": "Nie",
+		"motivation": "Jaka jest motywacja do stworzenia produktu?",
+		"choose_project": "Wybierz projekt",
+		"saw_questionnaire": "Widziałem ankietę:",
+		"questionnaire_options": {
+			"option_1": "Na stronie Bazy Trainee Ukraina",
+			"option_2": "Na stronie Bazy Educat na Instagramie",
+			"option_3": "Na stronie Bazy Edukacyjnej na Facebooku",
+			"option_4": "na kanale Baza Go Telegram",
+			"option_5": "w poście na LinkedIn"
+		},
+		"rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
+		"acquainted": "Zapoznano się z warunkami udziału w projekcie",
+		"agree": "Zgadzam się",
+		"phone": "Telefon",
+		"discord": "Nick na Discordzie",
+		"linkedin": "Profil na Linkedinie",
+		"linkedin_placeholder": "Link do profilu",
+		"convenient_time": "Dogodny termin konsultacji",
+		"anytime": "kiedykolwiek",
+		"permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
+		"btn_send": "Wysłać",
+		"error_message": {
+			"firstName": "Wpisz imię",
+			"lastName": "Wpisz swoje nazwisko",
+			"specialization": "Wybierz specjalizację",
+			"email": "Wprowadź swój email",
+			"phone": "Wprowadź numer telefonu",
+			"discord": "Wpisz pseudonim na Discordzie",
+			"linkedin": "Wprowadź swój profil na Linkedin",
+			"convenient_time": "Wybierz godziny otwarcia",
+			"city": "Wejdź do miasta",
+			"course_name": "Wpisz nazwę ukończonego kursu",
+			"experience": "Wybierz dostępność doświadczenia",
+			"motivation": "Podaj swoją motywację",
+			"choose_project": "Wybierz projekt",
+			"saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
+			"agree": "Zapoznaj się z warunkami uczestnictwa",
+			"permit": "Wyraź zgodę na przetwarzanie danych osobowych"
+		}
+	},
+	"cookies": {
+		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
+		"privacy_policy": "Polityka prywatności."
+	}
 }

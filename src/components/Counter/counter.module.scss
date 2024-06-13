@@ -23,6 +23,9 @@
     gap: 20px;
     flex-direction: row;
   }
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
 }
 .item {
   display: flex;

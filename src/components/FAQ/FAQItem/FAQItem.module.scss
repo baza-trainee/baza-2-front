@@ -86,7 +86,8 @@
 }
 
 .desc {
-  @include mixins.apply-font-styles(var.$text-16-font);
+  @include mixins.apply-font-styles(var.$h3-font);
+  font-weight: 400;
   padding: 10px;
   font-size: 16px;
   @media (min-width: 480px) {
@@ -99,4 +100,9 @@
     var.$transition-timing-base 0s;
 }
 .descWrapperActive {
+}
+
+.link {
+  font-weight: 400;
+  text-decoration: underline;
 }
