@@ -1,0 +1,97 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  h2 {
+    @include mix.apply-font-styles(var.$h1-font);
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 20px;
+  
+    .error{
+      @include mix.apply-font-styles(var.$text-20-font);
+      color: var.$secondary-error;
+    }
+    // .error._hide{
+    //   display: none;
+    //   @include mix.media-q("md") {
+    //     display: block;
+    //   }
+    // }
+  
+    .item {
+      width: clamp(280px, 84vw, 625px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      & > h4{
+        @include mix.apply-font-styles(var.$text-20-font);
+        & > span {
+          color: var.$secondary-error;
+        }
+      }
+      .select{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+
+      }
+      .btn_option{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        & input{
+          display: none;
+        }
+
+        .check{
+          width: 24px;
+          height: 24px;
+          border-radius: 2px;
+          border: 1px solid var.$secondary-gray;
+
+          & svg{
+            opacity: 0;
+            display: block;
+            border-radius: 2px;
+            width: 24px;
+            height: 24px;
+          }
+
+          &._active{
+            border: none;
+
+            & svg{
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  
+  
+  
+    .input._error {
+      border: 2px solid var.$secondary-error;
+    }
+    .input._success {
+      border: 2px solid var.$secondary-positive;
+    }
+  }
+
+
+
+  .submit {
+    position: relative;
+  }
+}

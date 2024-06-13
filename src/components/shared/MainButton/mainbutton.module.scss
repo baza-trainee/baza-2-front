@@ -50,12 +50,20 @@
     transition: all var.$transition-duration-base var.$transition-timing-base;
   }
 
-  &:active::after,
-  &:hover::after{
+  @media (any-hover: hover){
+    &:hover::after{
+      opacity: 0;
+    }
+
+    &:hover::before{
+      opacity: 1;
+    }
+  }
+  
+  &:active::after{
     opacity: 0;
   }
-  &:active::before,
-  &:hover::before{
+  &:active::before{
     opacity: 1;
   }
 

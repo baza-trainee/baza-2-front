@@ -39,9 +39,9 @@ export const formScheme = {
   },
   phone:{
     required: true,
-    minLength:2,
-    maxLength:50,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$)[A-Z]{2,}$/i
+    minLength:13,
+    maxLength:17,
+    //pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$)[A-Z]{2,}$/i
   },
   discord:{
     required: true,
@@ -58,6 +58,9 @@ export const formScheme = {
   convenient_time:{
     required: true, 
   },
+  agree:{
+    required: true, 
+  }
 };
 const form = {
   firstName: 'string',
