@@ -13,11 +13,20 @@
   justify-content: center;
   &:disabled {
     opacity: 0.1;
-    cursor: default;
+    pointer-events: none;
   }
   & > svg {
     display: block;
     width: 19px;
     height: 30px;
+    fill: #fff;
+    transition: fill var.$transition-duration-base var.$transition-timing-base;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      & > svg {
+        fill: var.$primary-hover;
+      }
+    }
   }
 }

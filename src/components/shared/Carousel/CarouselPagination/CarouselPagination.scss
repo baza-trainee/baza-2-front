@@ -8,26 +8,38 @@
   pointer-events: none;
   gap: 8px;
   & > span {
-    width: 8px;
-    height: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    display: inline-block;
-    border-radius: 50%;
-    background-color: var.$secondary-white;
-    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
-    &.swiper-pagination-bullet-active {
-      background-color: var.$primary-primary;
+    @include mx.media-q("md") {
+      padding: 5px;
+    }
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: var.$secondary-white;
+      transition: all var.$transition-duration-base var.$transition-timing-base
+        0s;
       @include mx.media-q("md") {
-        transform: scale(1.25);
+        pointer-events: all;
+        width: 16px;
+        height: 16px;
       }
     }
-    @include mx.media-q("md") {
-      pointer-events: all;
-      width: 16px;
-      height: 16px;
+    &.swiper-pagination-bullet-active {
+      &::before {
+        background-color: var.$primary-primary;
+        @include mx.media-q("md") {
+          transform: scale(1.25);
+        }
+      }
     }
   }
   @include mx.media-q("md") {
-    gap: 16px;
+    gap: 20px;
   }
 }
