@@ -5,32 +5,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 64px 10px;
+  //padding: 64px 16px;
+  padding: 14px 16px;
   margin: auto;
 
+  @include mix.media-q("md") {
+    padding: 40px 16px;
+  }
+  @include mix.media-q("xl") {
+    padding: 10vh 16px;
+  }
+
   .modal {
-    background: #180530;
-    padding: 48px 32px 32px 32px;
+    background: var.$primary-fon-card;
+    padding: 44px 8px 24px 8px;
     margin: auto;
     border-radius: 12px;
     border-width: 1px;
     border-style: solid;
-    border-color: var.$primary-border;
+    //border-color: var.$primary-border;
     border-color: var.$primary-border;
     position: relative;
-    max-width: 689px;
+    //max-width: 689px;
     max-width: 689px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    .title{
-      @include mix.apply-font-styles(var.$h1-font);
+
+    @include mix.media-q("md") {
+      padding: 48px 32px 32px 32px;
     }
+    // .title{
+    //   @include mix.apply-font-styles(var.$h1-font);
+    // }
   
     .closeButton {
       position: absolute;
       top: 18px;
       right: 18px;
+
+      top: 10px;
+      right: 10px;
+
+      @include mix.media-q("md") {
+        top: 30px;
+        right: 18px;
+      }
     }
   }
 }

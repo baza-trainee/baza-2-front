@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import styles from './FormMentor.module.scss';
+import styles from './FormPartaker.module.scss';
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
@@ -11,7 +11,7 @@ import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 
 
-export default function FormMentor() {
+export default function FormPartaker() {
   const t = useTranslations("Modal_form");
   const {
     control,
@@ -22,7 +22,7 @@ export default function FormMentor() {
     reset,
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
   const [ specialization, setSpecialization ] = useState('');
-  const [ convenientTime, setConvenientTime ] = useState('');
+  //const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
 
   const onSubmit = (data) => {
@@ -30,10 +30,9 @@ export default function FormMentor() {
     reset();
   };
 
-  //const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <h2>{t("title_mentor")}</h2>
+      <h2>{t("title")}</h2>
 
       <ul className={styles.list}>
         <li>
@@ -96,6 +95,23 @@ export default function FormMentor() {
           </div>
         </li>
 
+
+        <li>
+          <InputField
+            id={"phone"}
+            className={styles.item}
+            placeholder={"+380 xx xxx xx xx"}
+            defaultValues={"+380"}
+            registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
+              trigger("phone")
+            } })}
+            isError={errors.phone}
+            isValid={isValid}
+            version={"input"}
+            label={t("phone")}
+          />
+          {errors.phone && <span className={clsx(styles.error, styles._hide)}>{t("error_message.phone")}</span>}
+        </li>
         <li>
           <InputField
             id={"email"}
@@ -113,20 +129,35 @@ export default function FormMentor() {
         </li>
         <li>
           <InputField
-            id={"phone"}
+            id={"country"}
             className={styles.item}
-            placeholder={"+380 xx xxx xx xx"}
-            defaultValues={"+380"}
-            registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
-              trigger("phone")
+            placeholder={t("country_placeholder")}
+            registerOptions={register("country", { ...formScheme.country,onBlur:() => {
+              trigger("country")
             } })}
-            isError={errors.phone}
+            isError={errors.country}
             isValid={isValid}
             version={"input"}
-            label={t("phone")}
+            label={t("country")}
           />
-          {errors.phone && <span className={clsx(styles.error, styles._hide)}>{t("error_message.phone")}</span>}
+          {errors.country && <span className={clsx(styles.error, styles._hide)}>{t("error_message.country")}</span>}
         </li>
+        <li>
+          <InputField
+            id={"city"}
+            className={styles.item}
+            placeholder={t("city_placeholder")}
+            registerOptions={register("city", { ...formScheme.city,onBlur:() => {
+              trigger("city")
+            } })}
+            isError={errors.city}
+            isValid={isValid}
+            version={"input"}
+            label={t("city")}
+          />
+          {errors.city && <span className={clsx(styles.error, styles._hide)}>{t("error_message.phone")}</span>}
+        </li>
+
         <li>
           <InputField
             id={"discord"}
@@ -158,7 +189,7 @@ export default function FormMentor() {
           {errors.linkedin && <span className={clsx(styles.error, styles._hide)}>{t("error_message.linkedin")}</span>}
         </li>
 
-        <li>
+        {/* <li>
           <div className={styles.item}>
             <h4>{t("convenient_time")} <span>*</span></h4>
             <div className={styles.select}>
@@ -184,7 +215,7 @@ export default function FormMentor() {
             {errors.convenient_time && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.convenient_time")}</span>}
           </div>
 
-        </li>
+        </li> */}
         <li>
           <div className={styles.item}>
             <label

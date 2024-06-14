@@ -4,7 +4,7 @@
 .card {
   position: relative;
   overflow: hidden;
-  height: clamp(480px, 84vh, 860px);
+  height: clamp(450px, 84vh, 860px);
 
   @media (min-width: 410px) {
     height: clamp(550px, 86vh, 860px);
