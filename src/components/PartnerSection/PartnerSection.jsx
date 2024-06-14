@@ -10,7 +10,6 @@ import { partnerCardItems } from "./partnerCardItems";
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
 
-
 const PartnerSection = () => {
 
   const getSlidesPerView = () => {

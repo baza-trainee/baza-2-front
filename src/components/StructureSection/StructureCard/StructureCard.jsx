@@ -23,7 +23,7 @@ export default function StructureCard({ item }) {
           className={styles.header}
           href={url}
           rel="noopener noreferrer"
-          target="_blank"
+
         >
           {t(title)}
         </Link>
