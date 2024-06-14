@@ -7,7 +7,6 @@
 
   @include mixins.media-q("md") {
     min-width: 688px;
-    //max-width: 1212px;
     max-width: auto;
   }
 
@@ -20,7 +19,6 @@
   position: sticky;
   top: 150px;
   min-width: 1212px;
-  //max-width: 1396px;
   max-width: auto;
   }
   @include mixins.media-q("xxxl") { 
@@ -42,6 +40,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 0;
+    position: relative;
   
 @include mixins.media-q("md") {
     min-width: 686px;
@@ -83,6 +83,10 @@
 }
 
 .textCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,3 +213,7 @@
 }
 
 
+.svgWrapper {
+  position: relative;
+  z-index: 1;
+}
