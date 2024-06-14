@@ -11,6 +11,7 @@ export default function UiKit() {
     <main>
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
+      <ControlBtnRegistrationFormModal type="partaker">Test RegistrationFormModal Partaker </ControlBtnRegistrationFormModal>
       <HeroCard
         title="slide_1.title"
         desc="slide_1.text"

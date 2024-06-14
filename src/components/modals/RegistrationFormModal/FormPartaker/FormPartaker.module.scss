@@ -20,6 +20,7 @@
     @include mix.media-q("md") {
       @include mix.apply-font-styles(var.$h1-font);
     }
+
   }
 
   .list {
@@ -40,7 +41,7 @@
         font-size: 20px;
       }
     }
-
+  
     .item {
       width: clamp(280px, 84vw, 625px);
       display: flex;
@@ -66,7 +67,6 @@
           font-size: 20px;
         }
       }
-
       .select{
         display: grid;
         grid-template-columns: 1fr;
@@ -134,7 +134,6 @@
           }
         }
       }
- 
     }
   }
 }
