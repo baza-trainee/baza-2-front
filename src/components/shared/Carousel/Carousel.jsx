@@ -47,16 +47,16 @@ const Carousel = ({
         el: paginationEl ?? null,
         clickable: true,
       }}
-      // autoplay={
-      //   useAutoplay ? {
-      //   delay: delay,
-      //   disableOnInteraction: false,
-      // } : false }
-
-      autoplay={{
+      autoplay={
+        useAutoplay ? {
         delay: delay,
         disableOnInteraction: false,
-      }}
+      } : false }
+
+      // autoplay={{
+      //   delay: delay,
+      //   disableOnInteraction: false,
+      // }}
 
       speed={700}
       className={className}

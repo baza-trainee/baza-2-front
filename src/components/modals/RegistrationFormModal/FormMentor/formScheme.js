@@ -74,15 +74,15 @@ const form = {
 }
 
 const form2 = {
-  // Форма учасника !?
+  // Форма учасника 
   firstName: 'string',
   lastName: 'string',
   specialization:'string', // UI\UX designer
+  phone:'string',
   email: 'string',  //email@gmail.com
+  country:'string',
   city:'string',
   discord: 'string',
-  linkedin: 'string',
-  experience:'boolean',  //  Наявність досвіду 'boolean' або 'string'?
-  motivation:'string',   // В чому мотивація створити продукт
-  saw_questionnaire:'string',  // Я побачив/побачила анкету
+  linkedin: 'string'
 }
+

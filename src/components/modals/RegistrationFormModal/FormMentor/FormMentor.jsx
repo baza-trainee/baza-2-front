@@ -39,6 +39,7 @@ export default function FormMentor() {
         <li>
           <InputField
             id={"firstName"}
+            className={styles.item}
             placeholder={t("firstName")}
             registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
               trigger("firstName")
@@ -55,6 +56,7 @@ export default function FormMentor() {
         <li>
           <InputField
             id={"lastName"}
+            className={styles.item}
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...formScheme.lastName, onBlur:() => {
               trigger("lastName")
@@ -90,13 +92,14 @@ export default function FormMentor() {
               })}
             </div>
         
-            {errors.specialization && <span className={clsx(styles.error, styles._hide)}>{t("error_message.specialization")}</span>}
+            {errors.specialization && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.specialization")}</span>}
           </div>
         </li>
 
         <li>
           <InputField
             id={"email"}
+            className={styles.item}
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...formScheme.email,onBlur:() => {
               trigger("email")
@@ -111,6 +114,7 @@ export default function FormMentor() {
         <li>
           <InputField
             id={"phone"}
+            className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
             registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
               trigger("phone")
@@ -125,6 +129,7 @@ export default function FormMentor() {
         <li>
           <InputField
             id={"discord"}
+            className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
             registerOptions={register("discord", { ...formScheme.discord,onBlur:() => {
               trigger("discord")
@@ -139,6 +144,7 @@ export default function FormMentor() {
         <li>
           <InputField
             id={"linkedin"}
+            className={styles.item}
             placeholder={t("linkedin_placeholder")}
             registerOptions={register("linkedin", { ...formScheme.linkedin, onBlur:() => {
               trigger("linkedin")
@@ -157,11 +163,12 @@ export default function FormMentor() {
             <div className={styles.select}>
               {optionsTime.map((option)=>{
                 return(
-                  <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
+                  <label htmlFor={option.id} className={clsx(styles.btn_option,styles[option.id])} key={option.id}>
                   <input
                   type="radio" 
                   {...register("convenient_time", { ...formScheme.convenient_time })}
-                  id={option.id} name="convenient_time" 
+                  id={option.id} 
+                  name="convenient_time" 
                   value={option.label} 
                   onClick={()=>{setConvenientTime(option.label)}}/>
                     <span className={clsx(styles.check, convenientTime === option.label && styles._active)}>
@@ -173,7 +180,7 @@ export default function FormMentor() {
               })}
             </div>
             
-            {errors.convenient_time && <span className={clsx(styles.error, styles._hide)}>{t("error_message.convenient_time")}</span>}
+            {errors.convenient_time && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.convenient_time")}</span>}
           </div>
 
         </li>
@@ -181,7 +188,7 @@ export default function FormMentor() {
           <div className={styles.item}>
             <label
               htmlFor={'agree'}
-              className={styles.btn_option}
+              className={clsx(styles.btn_option, styles.agree)}
             >
               <input
                 id={'agree'}
@@ -195,7 +202,7 @@ export default function FormMentor() {
 
               { t("permit")}
             </label>
-            {errors.agree && <span className={clsx(styles.error, styles._hide)}>{t("error_message.agree")}</span>}
+            {errors.agree && <span className={clsx(styles.error, styles._list, styles._hide)}>{t("error_message.permit")}</span>}
           </div>
         </li>
           {/* {inputFields.map((field) => (
