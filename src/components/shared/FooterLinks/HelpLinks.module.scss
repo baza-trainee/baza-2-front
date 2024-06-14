@@ -1,8 +1,12 @@
 .helpList {
+  width: 227px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   > *:not(:last-child) {
     margin-bottom: 16px;
+  }
+  @media (min-width: 697px) {
+    width: 292px;
   }
 }

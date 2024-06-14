@@ -12,12 +12,14 @@ export default function PartnerCard({ item }) {
        href={url}
        rel="noopener noreferrer"
        target="_blank">
-        <Image
-          src={img}
-          alt="Card image"
-          fill
-          sizes="100%"
-        />
+        <div className={styles.img}>
+          <Image
+            src={img}
+            alt="Card image"
+            fill
+            sizes="100%"
+            />
+        </div>
       </Link>
     </div>
   );
