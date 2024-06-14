@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import Carousel from "../shared/Carousel/Carousel";
 import PartnerCard from "../shared/PartnerCard/PartnerCard";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
@@ -12,13 +13,11 @@ import styles from "./PartnerSection.module.scss";
 
 const PartnerSection = () => {
 
-  const getSlidesPerView = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth <= 320) return 1;
-      return 3;
-    }
-  };
+  const [useCoverflow, setUseCoverflow] = useState(false); 
+
+
   const t = useTranslations("Main.partners_section");
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -34,18 +33,30 @@ const PartnerSection = () => {
         <div className={styles.sliderContainer}>
           <Carousel
             delay={3000}
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, EffectCoverflow]}
             paginationEl={".partner-custom-pagination"}
-            slidesPerView={getSlidesPerView()}
+            slidesPerView={3}
             spaceBetween={10}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
-            useCoverflow={true}
-            useAutoplay={true}
+            grabCursor={useCoverflow}
+            centeredSlides={useCoverflow}
+            loop={true}
+            coverflowEffect={
+              useCoverflow
+                ? {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2.5,
+                  }
+                : {}
+            }
             renderItem={(item) => (
-              <PartnerCard item={item} />
-            )} />
+              <PartnerCard key={item.id} item={item} />
+            )}
+          />
         </div>
         <CarouselPagination
           className={clsx("partner-custom-pagination", styles.pagination)}
