@@ -116,6 +116,7 @@ export default function FormMentor() {
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
+            defaultValues={"+380"}
             registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
               trigger("phone")
             } })}
@@ -130,7 +131,7 @@ export default function FormMentor() {
           <InputField
             id={"discord"}
             className={styles.item}
-            placeholder={"+380 xx xxx xx xx"}
+            placeholder={t("discord")}
             registerOptions={register("discord", { ...formScheme.discord,onBlur:() => {
               trigger("discord")
             } })}

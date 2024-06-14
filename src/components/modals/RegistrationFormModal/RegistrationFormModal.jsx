@@ -17,7 +17,7 @@ import LayoutModal from "../LayoutModal/LayoutModal";
 import FormMentor from "./FormMentor/FormMentor";
 
 const RegistrationFormModal=({test=false})=>{
-  const t = useTranslations("Modal_form");
+  //const t = useTranslations("Modal_form");
   // const {
   //   control,
   //   register,
@@ -155,11 +155,10 @@ const RegistrationFormModal=({test=false})=>{
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
 
-         {test ? 
+         {type === 'mentor' ? 
+            <FormMentor/> :
             <h1>`Форма Реєстрація {type} -
                Ще на етапі розробки :(`</h1>
-             :
-             <FormMentor/>
             }
         </div>
       </div>

@@ -5,8 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 64px 16px;
+  //padding: 64px 16px;
+  padding: 14px 16px;
   margin: auto;
+
+  @include mix.media-q("md") {
+    padding: 40px 16px;
+  }
+  @include mix.media-q("xl") {
+    padding: 10vh 16px;
+  }
 
   .modal {
     background: var.$primary-fon-card;
@@ -35,6 +43,14 @@
       position: absolute;
       top: 18px;
       right: 18px;
+
+      top: 10px;
+      right: 10px;
+
+      @include mix.media-q("md") {
+        top: 30px;
+        right: 18px;
+      }
     }
   }
 }
