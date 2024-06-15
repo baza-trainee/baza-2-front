@@ -18,7 +18,7 @@
     padding: 48px 40px;
     min-width: 768px;
     max-width: 1366px;
-    height: fit-content;
+    height: auto;
    }
 
   @include mixins.media-q("xl") { 
