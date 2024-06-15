@@ -29,7 +29,7 @@ export default function JoinProjectSection() {
 
   return (
     <section ref={container} className={styles.container}>
-      <div className={styles.titleWrapper}>{t("main_title")}</div>
+      <h2 className={styles.titleWrapper}>{t("main_title")}</h2>
       {items.map((item, i) => {
         const targetScale = 1 - (items.length - i) * 0.05;
         return (

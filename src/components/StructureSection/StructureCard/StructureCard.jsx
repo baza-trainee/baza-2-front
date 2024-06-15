@@ -22,8 +22,7 @@ export default function StructureCard({ item }) {
         <Link
           className={styles.header}
           href={url}
-          rel="noopener noreferrer"
-          target="_blank"
+          target={url === "https://baza-skill.com.ua" ? "_blank" : ""}
         >
           {t(title)}
         </Link>

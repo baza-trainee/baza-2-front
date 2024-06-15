@@ -18,10 +18,8 @@
     padding: 48px 40px;
     min-width: 768px;
     max-width: 1366px;
-    height: fit-content;
+    height: auto;
    }
-
-
 
   @include mixins.media-q("xl") { 
   display:flex;
@@ -59,11 +57,12 @@
   text-align: center;
   @include mixins.apply-font-styles(var.$h6-font);
 
-
   @include mixins.media-q("md") {
+    @include mixins.apply-font-styles(var.$h5-font);
     width: 450px;
     height: 68px;
   }
+
   @include mixins.media-q("xl") { 
   display: flex;
   align-items: center;
@@ -75,7 +74,4 @@
   height: 80px;
   @include mixins.apply-font-styles(var.$h1-font);
 }
-
-
-
 }

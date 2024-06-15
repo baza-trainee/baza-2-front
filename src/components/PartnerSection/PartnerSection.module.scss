@@ -33,29 +33,31 @@
   padding: 32px 16px;
   gap: 20px;
   text-align: center;
-  width: 100%;
-
+  min-width: 288px;
+  max-width: 668px;
   height: fit-content;
 
   @include mixin.media-q("md") { 
     gap: 32px;
     padding: 48px 40px;
-    width: 100%;
+    min-width: 668px;
+    max-width: 1238px;
 
     }
   
   @include mixin.media-q("xl") { 
     gap: 48px;
     padding: 60px 64px;
-    width: 100%;
+    min-width: 1238px;
+    max-width: 1920px;
 
-    height: 546px;
   }
 
   @include mixin.media-q("xxxl") { 
     gap: 56px;
     padding: 72px 120px;
-    width: 100%;
+    min-width: 1920px;
+    max-width: 100%;
 
   }
 
@@ -74,33 +76,34 @@
 }
 
 .sliderContainer {
-  margin-bottom: 48px;
+
   width: 100%;
-  height: 172px;
+
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
   @include mixin.media-q("md") { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 24px;
-    width: 100%;
+      gap: 24px;
+      width: 100%;
 
-    height: 197px;
+    }
+    @include mixin.media-q("xl") { 
+      gap: 66px;
+      width: 100%
+  
+  
   }
-  @include mixin.media-q("xl") { 
-    gap: 66px;
-  width: 100%;
-    height: 230px;
+    @include mixin.media-q("xxxl") { 
+      gap: 66px;
 
-}
-  @include mixin.media-q("xxxl") { 
-    gap: 107px;
-    width: 100%;
-
-
-
+      max-width: 100%;
+      padding: 0 30px;
+    }
   }
-}
+
 .titleRow {
   position: relative;
   display: flex;
