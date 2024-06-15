@@ -25,7 +25,7 @@ export default function ContactForm() {
     reset
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
 
-  const [isSubmit, setIsSubmit] = useState('error');
+  const [isSubmit, setIsSubmit] = useState(null);
 
   const isError = (res) => {
     if(res === 'error'){
@@ -36,6 +36,7 @@ export default function ContactForm() {
 
   const onSubmit = (data) => {
     handlerSendContactForm( data, isError )
+    console.log(data)
     setIsSubmit(null)
     reset();
   };
