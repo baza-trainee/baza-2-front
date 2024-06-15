@@ -39,8 +39,8 @@ const ScrollToTopBtn = () => {
         type="button"
       >
         <svg
-          width="25"
-          height="29"
+          width="23"
+          height="27"
           viewBox="0 0 25 29"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

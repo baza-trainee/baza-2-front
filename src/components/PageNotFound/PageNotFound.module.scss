@@ -6,14 +6,14 @@
   justify-content: center;
   align-items: center;
   margin-top: 80px;
-  padding: 38px 10px;
+  padding: 38px 16px;
 
   @include mx.media-q("md") {
-    padding: 48px 65px;
+    padding: 48px 65px 52px;
   }
 
   @include mx.media-q("xl") {
-    padding: 65px;
+    padding: 110px 260px 65px 260px;
   }
 
   .wrapper{
@@ -48,7 +48,7 @@
 
       @include mx.media-q("md") {
         font-size: 24px;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
       }
     }
   }
