@@ -155,7 +155,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("city")}
           />
-          {errors.city && <span className={clsx(styles.error, styles._hide)}>{t("error_message.phone")}</span>}
+          {errors.city && <span className={clsx(styles.error, styles._hide)}>{t("error_message.city")}</span>}
         </li>
 
         <li>

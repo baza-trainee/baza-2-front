@@ -92,7 +92,7 @@ export default function FormMentor() {
               })}
             </div>
         
-            {errors.specialization && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.specialization")}</span>}
+            {errors.specialization && <span className={clsx(styles.error,  styles._hide)}>{t("error_message.specialization")}</span>}
           </div>
         </li>
 
@@ -181,7 +181,7 @@ export default function FormMentor() {
               })}
             </div>
             
-            {errors.convenient_time && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.convenient_time")}</span>}
+            {errors.convenient_time && <span className={clsx(styles.error, styles._hide)}>{t("error_message.convenient_time")}</span>}
           </div>
 
         </li>
