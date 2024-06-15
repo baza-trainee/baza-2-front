@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //padding: 64px 16px;
   padding: 14px 16px;
   margin: auto;
 
@@ -23,10 +22,8 @@
     border-radius: 12px;
     border-width: 1px;
     border-style: solid;
-    //border-color: var.$primary-border;
     border-color: var.$primary-border;
     position: relative;
-    //max-width: 689px;
     max-width: 689px;
     display: flex;
     align-items: center;
@@ -35,9 +32,6 @@
     @include mix.media-q("md") {
       padding: 48px 32px 32px 32px;
     }
-    // .title{
-    //   @include mix.apply-font-styles(var.$h1-font);
-    // }
   
     .closeButton {
       position: absolute;
