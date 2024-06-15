@@ -16,25 +16,31 @@ const Timeline = () => {
     offset: ["start center", "end center"],
   });
 
-  const scrollYProgressSpring = useSpring(scrollYProgress, {
-    stiffness: 110,
-    damping: 20,
-    restDelta: 0.001,
-  });
+  //расскоментировать если нужно анимированое заполнение полосы (осторожно, может не коректо работать изза анимаций!!!)
+  // const scrollYProgressSpring = useSpring(scrollYProgress, {
+  //   stiffness: 110,
+  //   damping: 20,
+  //   restDelta: 0.001,
+  // });
 
   const [activeIndex, setActiveIndex] = useState(null);
   const itemsRef = useRef([]);
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
-      const scrollCenter = window.scrollY + window.innerHeight / 2;
+      const sectionTop =
+        sectionRef.current.getBoundingClientRect().top + window.scrollY;
+      const lineHeight = lineRef.current.getBoundingClientRect().height;
 
       let newIndex = -1;
       itemsRef.current.forEach((item, index) => {
-        const itemTop = item.getBoundingClientRect().top + window.scrollY;
-        if (scrollCenter >= itemTop) {
+        const itemTop =
+          item.getBoundingClientRect().top + window.scrollY - sectionTop;
+        console.log(itemTop);
+        if (lineHeight > itemTop) {
           newIndex = index;
         }
         if (index + 1 === itemsRef.current.length) {
@@ -51,15 +57,16 @@ const Timeline = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className={styles.wrapper}>
-      <div className={styles.timeline}>
+    <div className={styles.wrapper}>
+      <div ref={sectionRef} className={styles.timeline}>
         <div
           className={styles.timeline__initial}
-          style={{ height: `calc(100% - ${lastElHeight}px)` }}
+          style={{ height: `calc(100% - ${lastElHeight - 5}px)` }}
         >
           <motion.div
+            ref={lineRef}
             style={{
-              scaleY: scrollYProgressSpring,
+              scaleY: scrollYProgress,
             }}
             className={clsx(styles.timeline__draw)}
           />
