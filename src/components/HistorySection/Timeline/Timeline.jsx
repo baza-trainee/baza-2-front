@@ -1,44 +1,46 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { motion, useScroll, useSpring } from "framer-motion";
 import clsx from "clsx";
 import data from "./data";
 import styles from "./timeline.module.scss";
 
 const Timeline = () => {
   const t = useTranslations("Main.history_project_section.history");
-
-  const [fillHeight, setFillHeight] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(-1);
   const sectionRef = useRef(null);
+  const [lastElHeight, setLastElHeight] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start center", "end center"],
+  });
+
+  const scrollYProgressSpring = useSpring(scrollYProgress, {
+    stiffness: 110,
+    damping: 20,
+    restDelta: 0.001,
+  });
+
+  const [activeIndex, setActiveIndex] = useState(null);
   const itemsRef = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
-      const sectionTop =
-        sectionRef.current.getBoundingClientRect().top + window.scrollY;
-      const sectionHeight = sectionRef.current.offsetHeight;
-      const windowHeight = window.innerHeight;
-      const scrollCenter = window.scrollY + windowHeight / 2;
-
-      const fill = Math.max(
-        Math.min(scrollCenter - sectionTop, sectionHeight),
-        0
-      );
-      setFillHeight(fill);
+      const scrollCenter = window.scrollY + window.innerHeight / 2;
 
       let newIndex = -1;
       itemsRef.current.forEach((item, index) => {
-        const itemTop =
-          item.getBoundingClientRect().top + window.scrollY - sectionTop;
-        if (fill >= itemTop) {
+        const itemTop = item.getBoundingClientRect().top + window.scrollY;
+        if (scrollCenter >= itemTop) {
           newIndex = index;
         }
+        if (index + 1 === itemsRef.current.length) {
+          setLastElHeight(item.offsetHeight);
+        }
       });
-
       setActiveIndex(newIndex);
     };
 
@@ -47,12 +49,18 @@ const Timeline = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div ref={sectionRef} className={styles.wrapper}>
       <div className={styles.timeline}>
-        <div className={styles.timeline__initial}>
-          <div
-            style={{ height: `${fillHeight}px` }}
+        <div
+          className={styles.timeline__initial}
+          style={{ height: `calc(100% - ${lastElHeight}px)` }}
+        >
+          <motion.div
+            style={{
+              scaleY: scrollYProgressSpring,
+            }}
             className={clsx(styles.timeline__draw)}
           />
         </div>
@@ -65,8 +73,7 @@ const Timeline = () => {
                 styles.timeline__list__element,
                 activeIndex >= index && styles.active
               )}
-              style={{ gridRow: ++index }}
-              id={item.id}
+              style={{ gridRow: index + 1 }}
               key={item.id}
             >
               <h3 className={clsx(styles.title, styles.marker)}>

@@ -21,18 +21,6 @@
       #490735 100%
     );
   }
-  @media (any-hover: hover) {
-    &:hover {
-      button {
-        & > span {
-          background-color: var.$primary-hover;
-        }
-      }
-      h3 {
-        color: var.$primary-hover;
-      }
-    }
-  }
 }
 .titleRow {
   display: flex;
@@ -45,6 +33,18 @@
   }
   @media (min-width: 480px) {
     gap: 20px;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      button {
+        & > span {
+          background-color: var.$primary-hover;
+        }
+      }
+      h3 {
+        color: var.$primary-hover;
+      }
+    }
   }
 }
 .title {
@@ -103,6 +103,13 @@
 }
 
 .link {
-  font-weight: 400;
-  text-decoration: underline;
+  color: var.$primary-border;
+  transition: all var.$transition-duration-base var.$transition-timing-base;
+  border-bottom: 1px solid transparent;
+  @media (any-hover: hover) {
+    &:hover {
+      color: var.$primary-hover;
+      border-bottom: 1px solid var.$primary-border;
+    }
+  }
 }
