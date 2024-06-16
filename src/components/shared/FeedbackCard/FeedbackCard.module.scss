@@ -16,7 +16,7 @@
     align-items: center;
   }
   @media (max-width: 420px) {
-    align-items: start;
+    align-items: flex-start;
     padding: 10px 16px;
   }
 }
