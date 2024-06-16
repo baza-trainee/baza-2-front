@@ -25,12 +25,10 @@
 
   @media (max-height: 430px) {
     left: 50%;
-    transform: translateX(-50%);
-    //left: 3px;
-    //top: 3px;
-    bottom: 13%;
-    //bottom: auto;
+    transform: translateX(-50%) scale(.8);
+    bottom: 10%;
   }
+  
   .modal{
     border-radius: 8px;
     padding: 16px;

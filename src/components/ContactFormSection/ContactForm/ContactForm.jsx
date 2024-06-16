@@ -2,10 +2,11 @@
 import styles from "./ContactForm.module.scss";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { formScheme } from "./formScheme";
+import { FeedbackSchema, feedbackDefaultValues } from "./FeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
@@ -20,10 +21,9 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    trigger,
     formState: { errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+  } = useForm({ defaultValues: {...feedbackDefaultValues}, resolver: zodResolver(FeedbackSchema), mode: 'onBlur'});
 
   const [isSubmit, setIsSubmit] = useState(null);
 
@@ -57,46 +57,40 @@ export default function ContactForm() {
           <InputField
             id={"firstName"}
             placeholder={t("name")}
-            registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
-              trigger("firstName")
-            }})}
+            registerOptions={register("firstName", { ...FeedbackSchema.firstName})}
             isError={errors.firstName}
             isValid={isValid}
             version={"input"}
             label={t("name")}
           />
 
-          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.name")}</span>}
+          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.firstName.message}`)}</span>}
         </li>
         <li>
           <InputField
             id={"email"}
             placeholder={"email@gmail.com"}
-            registerOptions={register("email", { ...formScheme.email,onBlur:() => {
-              trigger("email")
-            } })}
+            registerOptions={register("email", { ...FeedbackSchema.email })}
             isError={errors.email}
             isValid={isValid}
             version={"input"}
             label={t("email")}
           />
 
-          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t("error_message.email")}</span>}
+          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.email.message}`)}</span>}
         </li>
         <li>
           <InputField
             id={"message"}
             placeholder={t("message_placeholder")}
-            registerOptions={register("message", { ...formScheme.message,onBlur:() => {
-              trigger("message")
-            } })}
+            registerOptions={register("message", { ...FeedbackSchema.message })}
             isError={errors.message}
             isValid={isValid}
             version={"textArea"}
             label={t("message")}
           />
           
-          {errors.message && <span className={styles.error}>{t("error_message.message")}</span>}
+          {errors.message && <span className={styles.error}>{t(`error_message.${errors.message.message}`)}</span>}
         </li>
       </ul>
       

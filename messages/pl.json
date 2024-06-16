@@ -194,8 +194,12 @@
 			"btn_send": "Wyślać",
 			"error_message": {
 				"name": "Wpisz imię",
-				"email": "Proszę podać poprawny adres e-mail",
-				"message": "Wpisz wiadomość"
+				"name_long": "Nazwa nie może przekraczać 30 znaków",
+				"email": "Wprowadź swój email",
+				"invalid_email": "Proszę podać poprawny adres e-mail",
+				"message": "Wpisz wiadomość",
+				"message_long": "Prosimy o ograniczenie wiadomości do 300 znaków",
+				"invalid_message": "Używaj swojego języka ojczystego"
 			}
 		}
 	},
