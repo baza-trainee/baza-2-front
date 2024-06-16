@@ -31,7 +31,7 @@ export default function FormPartaker() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form_partaker}>
       <h2>{t("title")}</h2>
 
       <ul className={styles.list}>

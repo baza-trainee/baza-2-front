@@ -1,7 +1,7 @@
 @use "../../../../styles/mixins" as mix;
 @use "../../../../styles/variables" as var;
 
-.form {
+.form_mtntor {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,7 +127,7 @@
     }
   }
 
-  .error{
+  .error_modal{
     @include mix.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;
