@@ -1,4 +1,3 @@
-import ScrollToTopBtn from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 
 export default function blog() {
   // !! Замінити  <div> на готові компоненти !!
@@ -6,7 +5,6 @@ export default function blog() {
   return (
     <main className="container" style={{marginTop:'120px'}}>
       <div style={{ marginBottom: '120px' }}><h2>Сторінка: Блог</h2></div>
-      <ScrollToTopBtn/>
     </main>
   );
 };

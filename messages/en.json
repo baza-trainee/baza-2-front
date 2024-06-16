@@ -225,7 +225,7 @@
 		"placeholder": "Enter the desired amount",
 		"UAH": "UAH",
 		"another_amount": "Another amount",
-		"btn_support": "To support",
+		"btn_support": "Donate",
 		"thanks_support": "Thanks for your support",
 		"btn_home": "Return to the home page",
 		"ariaLabel_btn_close_1": "closes the modal payment window",
