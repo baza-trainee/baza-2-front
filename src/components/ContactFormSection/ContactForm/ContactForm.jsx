@@ -25,6 +25,15 @@ export default function ContactForm() {
     reset
   } = useForm({ defaultValues: { ...formScheme.defaultValues } });
 
+	// const form = useForm({
+	// 	defaultValues: {
+	// 		firstName: '', email:'', message:''
+	// 	},
+	// 	resolver: zodResolver(FeedbackSchema),
+	// 	mode: 'onBlur'
+	// })
+
+
   const [isSubmit, setIsSubmit] = useState(null);
 
   const isError = (res) => {
