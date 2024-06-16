@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  align-items: start;
+  align-items: flex-start;
   padding: 10px 16px;
   flex-direction: column;
 
@@ -15,7 +15,7 @@
   }
   @media (min-width: 609px) {
     gap: 167px;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: row;
   }
   @media (min-width: 1367px) {
