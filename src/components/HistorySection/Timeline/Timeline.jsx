@@ -39,7 +39,7 @@ const Timeline = () => {
       itemsRef.current.forEach((item, index) => {
         const itemTop =
           item.getBoundingClientRect().top + window.scrollY - sectionTop;
-        console.log(itemTop);
+        //console.log(itemTop);
         if (lineHeight > itemTop) {
           newIndex = index;
         }

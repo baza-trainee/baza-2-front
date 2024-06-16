@@ -2,10 +2,11 @@
 import styles from "./ContactForm.module.scss";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { formScheme } from "./formScheme";
+import { FeedbackSchema, formScheme } from "./formScheme";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
@@ -17,14 +18,20 @@ export default function ContactForm() {
   const isOpen = stateErrorAlert(state => state.isOpen);
   const open = stateErrorAlert(state => state.open);
 
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   trigger,
+  //   formState: { errors, isValid, isDirty },
+  //   reset
+  // } = useForm({ defaultValues: { ...formScheme.defaultValues } });
   const {
     register,
     handleSubmit,
-    trigger,
+    //trigger,
     formState: { errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: { ...formScheme.defaultValues } });
-
+  } = useForm({ defaultValues: {firstName: '', email:'', message:''}, resolver: zodResolver(FeedbackSchema),mode: 'onBlur'});
 	// const form = useForm({
 	// 	defaultValues: {
 	// 		firstName: '', email:'', message:''
@@ -44,7 +51,7 @@ export default function ContactForm() {
   }
 
   const onSubmit = (data) => {
-    handlerSendContactForm( data, isError )
+   // handlerSendContactForm( data, isError )
     console.log(data)
     setIsSubmit(null)
     reset();
@@ -67,7 +74,7 @@ export default function ContactForm() {
             id={"firstName"}
             placeholder={t("name")}
             registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
-              trigger("firstName")
+              //trigger("firstName")
             }})}
             isError={errors.firstName}
             isValid={isValid}
@@ -82,7 +89,7 @@ export default function ContactForm() {
             id={"email"}
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...formScheme.email,onBlur:() => {
-              trigger("email")
+              //trigger("email")
             } })}
             isError={errors.email}
             isValid={isValid}
@@ -97,7 +104,7 @@ export default function ContactForm() {
             id={"message"}
             placeholder={t("message_placeholder")}
             registerOptions={register("message", { ...formScheme.message,onBlur:() => {
-              trigger("message")
+              //trigger("message")
             } })}
             isError={errors.message}
             isValid={isValid}
@@ -105,7 +112,7 @@ export default function ContactForm() {
             label={t("message")}
           />
           
-          {errors.message && <span className={styles.error}>{t("error_message.message")}</span>}
+          {errors.message && <span className={styles.error}>{errors.message.message}{t("error_message.message")}</span>}
         </li>
       </ul>
       
