@@ -12,6 +12,10 @@
   height: 242px;
 }
 
+.image{
+  object-fit: cover;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
