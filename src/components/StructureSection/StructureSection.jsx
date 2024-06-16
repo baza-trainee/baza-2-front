@@ -1,5 +1,3 @@
-//"use client";
-
 import { useTranslations } from "next-intl";
 import StructureCard from "./StructureCard/StructureCard";
 import styles from "./StructureSection.module.scss";
@@ -11,9 +9,6 @@ export default function StructureSection() {
 
   return (
     <section className={styles.mainContainer}>
-      {/* <div className={styles.title}> */}
-        {/* <div>{t("title")}</div> */}
-      {/* </div> */}
       <h2 className={styles.title} >{t("title")}</h2>
       <div className={styles.cardContainer}>
         {items.map((item) => {

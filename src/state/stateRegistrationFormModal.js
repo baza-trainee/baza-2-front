@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-// member
+// partaker
 const stateRegistrationFormModal = create((set) => ({
   isOpen: false,
   type:'mentor',
-  open: (typeName='mentor') => set({ isOpen: true, type:typeName}),
+  open: (typeName) => set({ isOpen: true, type:typeName}),
   close: () => set({ isOpen: false, type:'mentor'}),
 }))
 

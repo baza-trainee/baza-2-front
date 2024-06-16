@@ -11,13 +11,6 @@
   min-width: 320px;
   max-width: 768px;
   height: fit-content;
-  // градіент є в загальних стилях _variables.scss 60 строка
-  // background: linear-gradient(139deg,
-  //  #db97c5 0%, 
-  //  #cc4fa3 16.91%, 
-  //  #a03a7e 39.6%, 
-  //  #6d2656 78.5%, 
-  //  #490735 100%);
   background: var.$primary-gradient;
 
   @include mixin.media-q("md")  { 
@@ -49,20 +42,22 @@
   justify-content: flex-start;
   flex-direction: column;
   min-width: 288px;
-  max-width: 768px;
+  max-width: 668px;
   height: fit-content;
   gap: 24px;
+  padding: 0 20px;
   
   @include mixin.media-q("md") { 
-    min-width: 768px;
-    max-width: 1238px;
+    min-width: 668px;
+    max-width: 1138px;
+    padding: 0 15px;
   }
   @include mixin.media-q("xl") { 
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    min-width: 1238px;
+    min-width: 1138px;
     max-width: 1320px;
   }
 
@@ -77,45 +72,14 @@
 }
 
 .title {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-direction: row;
-  // gap: 0px;
-  // min-width: 288px;
-  // height: 36px;
   text-align: center;
   width: 100%;
-  @include mixin.apply-font-styles(var.$h1-font);
-  // font-family,font-weight,line-height,letter-spacing є загальний а font-size ти змінюєш за потреби.
-  //font-family: "Open Sans", sans-serif;
-  //font-weight: 600;
-  //line-height: 1.5;
-  //letter-spacing: 0.01em;
-  // color є загальним.
-  //color: #fcfcfc;
+  @include mixin.apply-font-styles(var.$h7-font);
   color: var.$secondary-white;
-
   @include mixin.media-q("md") { 
-    // padding: 10px 0px;
-    // min-width: 264px;
-    //font-family: "Open Sans", sans-serif;
-    //font-weight: 600;
     font-size: 32px;
-    //line-height: 1.5;
-    //letter-spacing: 0.01em;
   }
-
   @include mixin.media-q("xl") { 
-    // gap: 0px;
-    // display: flex;
-    // align-items: center;
-    // justify-content: flex-start;
-    // flex-direction: row;
-    // padding: 10px 0px;
-    // min-width: 329px;
-    // height: 80px;
-    //@include mixin.apply-font-styles(var.$h1-font);
     font-size: 40px;
   }
 }

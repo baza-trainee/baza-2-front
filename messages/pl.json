@@ -60,19 +60,19 @@
 			},
 			"slide_2": {
 				"title": "O nas",
-				"text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022—2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
+				"text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
 			},
 			"slide_3": {
 				"title": "Nasza grupa docelowa",
-				"text": "Ukraińcy, którzy opanowują specjalności w obszarze IT niezależnie od wieku i doświadczenia — trainee, juniorzy, switcherzy, mentorzy z jednej strony, oraz społeczności i wspólnoty Ukrainy w obszarze charytatywności, wolontariatu, inicjatyw społecznych z drugiej."
+				"text": "Ukraińcy, którzy opanowują specjalizacje IT bez względu na wiek i doświadczenie - stażyści, juniorzy, pocieszyciele, mentorzy z jednej strony, a ukraińskie społeczności i organizacje w dziedzinie działalności charytatywnej, wolontariatu i inicjatyw publicznych z drugiej strony."
 			},
 			"slide_4": {
 				"title": "Nasz cel",
-				"text": "Połączyć te kategorie w wspólnej działalności w taki sposób, aby obie strony odniosły korzyści. Dla pierwszej grupy jest to rzeczywiste praktyczne doświadczenie tworzenia projektu na żywo, dla drugiej — cyfrowy produkt, który funkcjonuje i wspiera rozwój inicjatyw społecznych."
+				"text": "Połączenie tych kategorii we wspólnych działaniach w sposób przynoszący korzyści obu stronom. Dla pierwszej grupy oznacza to zdobycie prawdziwego praktycznego doświadczenia w tworzeniu projektu na żywo, podczas gdy dla drugiej grupy oznacza to otrzymanie funkcjonalnego produktu cyfrowego, który działa i przyczynia się do rozwoju inicjatywy społecznej."
 			},
 			"slide_5": {
 				"title": "Zasada działania",
-				"text": "Trening uczestnika na podstawie obecnych technologii, którymi obecnie włada, i wspieranie jego zatrudnienia. Przy tworzeniu projektu stosować technologie, które chce rozwijać uczestnik, bez konieczności ponownego szkolenia. Zapewnić klientowi wysokiej jakości produkt cyfrowy."
+				"text": "Przeszkolenie uczestnika w obszarze technologii, które są mu już znane i ułatwienie mu zatrudnienia. Podczas realizacji projektu zastosuj technologie, w których uczestnik chce dalej się rozwijać. Najistotniejsze będzie dostarczenie klientowi rozwiązania wysokiej jakości."
 			}
 		},
 		"history_project_section": {
@@ -241,7 +241,10 @@
 		"lastName": "Nazwisko",
 		"specialization": "Specjalizacja",
 		"email": "E-mail",
-		"city": "Miasto (kraj)",
+		"city": "Miasto",
+		"city_placeholder": "Kijów",
+		"country": "Kraj",
+		"country_placeholder": "Ukraina",
 		"course_name": "Nazwa ukończonego kursu w specjalności i data zakończenia (jeżeli kurs jest aktualnie realizowany, należy zaznaczyć, że jest aktualny)",
 		"your answer": "Twoja odpowiedź",
 		"experience": "Dostępność doświadczenia",
@@ -269,14 +272,15 @@
 		"permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
 		"btn_send": "Wysłać",
 		"error_message": {
-			"firstName": "Wpisz imię",
+			"firstName": "Wpisz swoje imię",
 			"lastName": "Wpisz swoje nazwisko",
 			"specialization": "Wybierz specjalizację",
 			"email": "Wprowadź swój email",
 			"phone": "Wprowadź numer telefonu",
 			"discord": "Wpisz pseudonim na Discordzie",
 			"linkedin": "Wprowadź swój profil na Linkedin",
-			"convenient_time": "Wybierz godziny otwarcia",
+			"convenient_time": "Wybierz dogodny termin konsultacji",
+			"country": "Wprowadź kraj",
 			"city": "Wejdź do miasta",
 			"course_name": "Wpisz nazwę ukończonego kursu",
 			"experience": "Wybierz dostępność doświadczenia",

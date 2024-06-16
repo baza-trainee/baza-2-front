@@ -7,6 +7,7 @@ import { getMessages } from "next-intl/server";
 import NextTopLoader from "nextjs-toploader";
 import "@/src/styles/global.scss";
 import ErrorAlert from "@/src/components/shared/ErrorAlert/ErrorAlert";
+import ScrollToTopBtn from "@/src/components/shared/ScrollToTopBtn/ScrollToTopBtn";
 
 export const metadata = {
   title: "Baza trainee 2",
@@ -26,8 +27,10 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             <Header />
             {children}
             <Footer />
+            
             <PaymentModal />
             <CookiesModal />
+            <ScrollToTopBtn />
           </div>
         </NextIntlClientProvider>
         <NextTopLoader

@@ -14,7 +14,7 @@
     padding: 60px 64px;
   }
 
-  @include mx.media-q("xxxl") {
+@media only screen and (min-width: 1800px) {
     padding: 72px 120px;
   }
 }
@@ -66,24 +66,36 @@
 
   @include mx.media-q("md") {
     position: absolute;
-    top: 0;
+    top: -5px;
     right: 0;
 
     display: flex;
-    gap: 20px;
     align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
   }
   @include mx.media-q("xl") {
-    right: 0;
-  }
-
-  @include mx.media-q("xxxl") {
-    top: 0;
+    gap: 32px;
+    top: -1px;
   }
 }
 
 .prevElArticle {
   transform: rotate(180deg);
+  height: 68px;
+
+  @include mx.media-q("xl") {
+    height: 60px;
+  }
+}
+
+.nextElArticle {
+  height: 68px;
+
+  @include mx.media-q("xl") {
+    height: 60px;
+  }
 }
 
 .mySwiperItem {

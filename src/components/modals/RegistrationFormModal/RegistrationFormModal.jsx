@@ -15,9 +15,10 @@ import CloseBtn from "../../shared/CloseBtn/CloseBtn";
 import LayoutModal from "../LayoutModal/LayoutModal";
 // import { Icon } from "../../shared/Icon/Icon";
 import FormMentor from "./FormMentor/FormMentor";
+import FormPartaker from "./FormPartaker/FormPartaker";
 
 const RegistrationFormModal=({test=false})=>{
-  const t = useTranslations("Modal_form");
+  //const t = useTranslations("Modal_form");
   // const {
   //   control,
   //   register,
@@ -155,12 +156,9 @@ const RegistrationFormModal=({test=false})=>{
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
 
-         {test ? 
-            <h1>`Форма Реєстрація {type} -
-               Ще на етапі розробки :(`</h1>
-             :
-             <FormMentor/>
-            }
+          {type === 'mentor' && <FormMentor/>}
+
+          {type === 'partaker' && <FormPartaker/> }  
         </div>
       </div>
     </LayoutModal>

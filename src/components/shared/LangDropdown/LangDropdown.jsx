@@ -62,7 +62,7 @@ export default function LangDropdown() {
       <button
         ref={menuRef}
         onClick={() => setIsOpen(!isOpen)}
-        className={style.btn_lang}
+        className={clsx(style.btn_lang, isOpen && style._active)}
         type="button"
         aria-label={ariaLabelsText(currentLocale).btn_lang}
       >

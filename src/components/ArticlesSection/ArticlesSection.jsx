@@ -22,7 +22,9 @@ const ArticlesSection = () => {
           <CarouselButton
             className={clsx("prevElArticle", styles.prevElArticle)}
           />
-          <CarouselButton className="nextElArticle" />
+          <CarouselButton
+            className={clsx("nextElArticle", styles.nextElArticle)}
+          />
         </div>
       </div>
       <div className={styles.mySwiperWrapper}>
@@ -38,7 +40,8 @@ const ArticlesSection = () => {
             768: {
               spaceBetween: 24,
             },
-            1920: {
+            1800: {
+              slidesPerView: 4,
               spaceBetween: 30,
             },
           }}

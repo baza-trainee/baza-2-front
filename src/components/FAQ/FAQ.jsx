@@ -10,7 +10,7 @@ const FAQ = () => {
   return (
     <section className={styles.faq}>
       <div className={styles.container}>
-        <h1 className={styles.title}>{t("title")}</h1>
+        <h2 className={styles.title}>{t("title")}</h2>
         <ul className={styles.faqItemsList}>
           {items?.map((item, i) => (
             <FAQItem

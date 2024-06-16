@@ -12,9 +12,14 @@
     align-items: center;
     transition: all var.$transition-duration-base var.$transition-timing-base;
   }
+
+  ._active{
+    opacity: 0.65;
+  }
   .btn_icon_up {
     transform: rotate(180deg);
   }
+  
   .btn_icon {
     display: flex;
     align-items: center;
@@ -29,10 +34,12 @@
     }
   }
 
-  .btn_lang:hover {
-    opacity: 0.65;
+  @media (any-hover: hover){
+    .btn_lang:hover {
+      opacity: 0.65;
+    }
   }
-
+  
   .options {
     display: flex;
     flex-direction: column;

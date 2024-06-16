@@ -10,6 +10,7 @@ export default function InputField({
   isValid,
   version,
   label = "default label",
+  className,
   options = {},
   control = {},
 }) {
@@ -80,7 +81,7 @@ export default function InputField({
   }
   if (version === "input") {
     return (
-      <div className={styles.item}>
+      <div className={clsx(styles.item, className)}>
         <label htmlFor={id}>
           {label} <span>*</span>
         </label>

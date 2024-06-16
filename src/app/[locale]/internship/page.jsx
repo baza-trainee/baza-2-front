@@ -11,7 +11,7 @@ export default function Internship() {
       </div>
       <JoinProjectSection style={{ marginBottom: "20px" }} />
       <AdvantagesSection />
-      <RegistrationFormModal test={true}/>
+      <RegistrationFormModal/>
     </main>
   );
 }

@@ -19,7 +19,7 @@ const AdvantagesSection = () => {
         ))}
       </ul>
       <div className={styles.button}>
-        <ControlBtnRegistrationFormModal type="trainee">
+        <ControlBtnRegistrationFormModal type="partaker">
           Приєднатися до спільноти
         </ControlBtnRegistrationFormModal>
       </div>
