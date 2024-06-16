@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { FeedbackSchema, formScheme } from "./formScheme";
+import { FeedbackSchema, feedbackDefaultValues } from "./FeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
@@ -18,28 +18,12 @@ export default function ContactForm() {
   const isOpen = stateErrorAlert(state => state.isOpen);
   const open = stateErrorAlert(state => state.open);
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   trigger,
-  //   formState: { errors, isValid, isDirty },
-  //   reset
-  // } = useForm({ defaultValues: { ...formScheme.defaultValues } });
   const {
     register,
     handleSubmit,
-    //trigger,
     formState: { errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: {firstName: '', email:'', message:''}, resolver: zodResolver(FeedbackSchema),mode: 'onBlur'});
-	// const form = useForm({
-	// 	defaultValues: {
-	// 		firstName: '', email:'', message:''
-	// 	},
-	// 	resolver: zodResolver(FeedbackSchema),
-	// 	mode: 'onBlur'
-	// })
-
+  } = useForm({ defaultValues: {...feedbackDefaultValues}, resolver: zodResolver(FeedbackSchema), mode: 'onBlur'});
 
   const [isSubmit, setIsSubmit] = useState(null);
 
@@ -51,7 +35,7 @@ export default function ContactForm() {
   }
 
   const onSubmit = (data) => {
-   // handlerSendContactForm( data, isError )
+    handlerSendContactForm( data, isError )
     console.log(data)
     setIsSubmit(null)
     reset();
@@ -73,46 +57,40 @@ export default function ContactForm() {
           <InputField
             id={"firstName"}
             placeholder={t("name")}
-            registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
-              //trigger("firstName")
-            }})}
+            registerOptions={register("firstName", { ...FeedbackSchema.firstName})}
             isError={errors.firstName}
             isValid={isValid}
             version={"input"}
             label={t("name")}
           />
 
-          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.name")}</span>}
+          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.firstName.message}`)}</span>}
         </li>
         <li>
           <InputField
             id={"email"}
             placeholder={"email@gmail.com"}
-            registerOptions={register("email", { ...formScheme.email,onBlur:() => {
-              //trigger("email")
-            } })}
+            registerOptions={register("email", { ...FeedbackSchema.email })}
             isError={errors.email}
             isValid={isValid}
             version={"input"}
             label={t("email")}
           />
 
-          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t("error_message.email")}</span>}
+          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.email.message}`)}</span>}
         </li>
         <li>
           <InputField
             id={"message"}
             placeholder={t("message_placeholder")}
-            registerOptions={register("message", { ...formScheme.message,onBlur:() => {
-              //trigger("message")
-            } })}
+            registerOptions={register("message", { ...FeedbackSchema.message })}
             isError={errors.message}
             isValid={isValid}
             version={"textArea"}
             label={t("message")}
           />
           
-          {errors.message && <span className={styles.error}>{errors.message.message}{t("error_message.message")}</span>}
+          {errors.message && <span className={styles.error}>{t(`error_message.${errors.message.message}`)}</span>}
         </li>
       </ul>
       

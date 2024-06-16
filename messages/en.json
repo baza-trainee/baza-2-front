@@ -194,8 +194,12 @@
 			"btn_send": "Send",
 			"error_message": {
 				"name": "Enter a name",
-				"email": "Please enter a valid email",
-				"message": "Enter a message"
+				"name_long": "The name must not exceed 30 characters",
+				"email": "Enter your email",
+				"invalid_email": "Please enter a valid email",
+				"message": "Enter a message",
+				"message_long": "Please limit your message to 300 characters",
+				"invalid_message": "Use your native language"
 			}
 		}
 	},

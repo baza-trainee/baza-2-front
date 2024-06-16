@@ -159,9 +159,17 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 45px;
       opacity: 0;
       cursor: pointer;
+
+      @include mx.media-q("md") {
+        height: 52px;
+      }
+    
+      @include mx.media-q("xl") {
+        height: 62px;
+      }
     }
 
     &._active,
