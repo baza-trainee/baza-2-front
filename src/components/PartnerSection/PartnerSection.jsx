@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Carousel from "../shared/Carousel/Carousel";
 import PartnerCard from "../shared/PartnerCard/PartnerCard";
-import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
@@ -13,9 +12,13 @@ import styles from "./PartnerSection.module.scss";
 
 const PartnerSection = () => {
 
-  const [useCoverflow, setUseCoverflow] = useState(false); 
-
-
+  const getSlidesPerView = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth <= 500) return 1;
+      if (window.innerWidth <= 768) return 2;
+      return 3;
+    }
+  }
   const t = useTranslations("Main.partners_section");
 
   return (
@@ -33,26 +36,27 @@ const PartnerSection = () => {
         <div className={styles.sliderContainer}>
           <Carousel
             delay={3000}
-            modules={[Navigation, Pagination, EffectCoverflow]}
+            modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
-            slidesPerView={3}
             spaceBetween={10}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
-            grabCursor={useCoverflow}
-            centeredSlides={useCoverflow}
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
             loop={true}
+            slidesPerView={getSlidesPerView()}
             coverflowEffect={
-              useCoverflow
-                ? {
+              {
                     rotate: 0,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 2.5,
-                  }
-                : {}
+                    stretch: 80,
+                    depth: 350,
+                    modifier: 1,
+                    slideShadows: false,
+              }
             }
+
             renderItem={(item) => (
               <PartnerCard key={item.id} item={item} />
             )}

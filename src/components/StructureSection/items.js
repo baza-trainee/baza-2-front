@@ -13,7 +13,7 @@ export const items = [
     img: "/images/structure/skill.svg",
     width: "296px",
     height: "74px",
-    url: "/",
+    url: "https://baza-skill.com.ua",
   },
   {
     title: "item_3.title",
@@ -21,7 +21,8 @@ export const items = [
     img: "/images/structure/educate.svg",
     width: "300px",
     height: "157px",
-    url: "/",
+    url: "/error",
+
   },
   {
     title: "item_4.title",
@@ -29,6 +30,7 @@ export const items = [
     img: "/images/structure/logoblack.svg",
     width: "120px",
     height: "120px",
-    url: "/",
+    url: "/error",
+
   },
 ];
