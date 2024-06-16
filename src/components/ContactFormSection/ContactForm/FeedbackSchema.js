@@ -7,7 +7,8 @@ export const FeedbackSchema = z
 	.object({
 		firstName: z.string()
     .trim()
-    .min(2, { message: 'name' })
+    .min(1, { message: 'name' })
+    .min(2, { message: 'name_short' })
     .max(30, { message: 'name_long' })
     .regex(patternName, { message: 'name_long' }),
 
@@ -18,7 +19,8 @@ export const FeedbackSchema = z
 
     message: z.string()
     .trim()
-    .min(10, { message: 'message' })
+    .min(1, { message: 'message' })
+    .min(10, { message: 'message_short' })
     .max(300, { message: 'message_long' })
     .regex(patternMessage, { message: 'invalid_message' }),
 	});
