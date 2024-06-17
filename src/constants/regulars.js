@@ -16,3 +16,4 @@ const nonRussianLettersPattern =
 
 const nonRussianLettersWithSymbolsAndDigitsPattern =
   /^(?!.*[ЁёЫыЭэЪъ])[\w\s`’'!"#$№%&()*+,\-–—./:;<=>?@[\\\]^_`{|}~A-Za-zА-Яа-яІіЇїЄєҐґąćęłńóśźżĄĆĘŁŃÓŚŹŻ.]+$/;
+
