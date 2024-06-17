@@ -1,9 +1,9 @@
 import { create } from 'zustand'
 
-const stateErrorAlert = create((set) => ({
+const stateUseAlert = create((set) => ({
   isOpen: false,
   open: () => set({ isOpen: true }),
   close: () => set({ isOpen: false }),
 }))
 
-export default stateErrorAlert
+export default stateUseAlert
