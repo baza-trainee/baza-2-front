@@ -54,7 +54,7 @@ export default function FormMentor({handleClose}) {
             label={t("firstName")}
           />
 
-          {errors.firstName && <span className={styles.error_modal}>{t(`error_message.${errors.firstName.message}`)}</span>}
+          {errors.firstName && <p className={styles.error_modal}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
 
         <li>
@@ -69,7 +69,7 @@ export default function FormMentor({handleClose}) {
             label={t("lastName")}
           />
 
-          {errors.lastName && <span className={styles.error_modal}>{t(`error_message.${errors.lastName.message}`)}</span>}
+          {errors.lastName && <p className={styles.error_modal}>{t(`error_message.${errors.lastName.message}`)}</p>}
         </li>
 
         <li>
@@ -94,7 +94,7 @@ export default function FormMentor({handleClose}) {
               })}
             </div>
         
-            {errors.specialization && <span className={styles.error_modal}>{t(`error_message.${errors.specialization.message}`)}</span>}
+            {errors.specialization && <p className={styles.error_modal}>{t(`error_message.${errors.specialization.message}`)}</p>}
           </div>
         </li>
 
@@ -109,7 +109,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <span className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</span>}
+          {errors.email && <p className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</p>}
         </li>
 
         <li>
@@ -128,7 +128,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <span className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</span>}
+          {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
         <li>
@@ -142,7 +142,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("discord")}
           />
-          {errors.discord && <span className={styles.error_modal}>{t("error_message.discord")}</span>}
+          {errors.discord && <p className={styles.error_modal}>{t("error_message.discord")}</p>}
         </li>
 
         <li>
@@ -156,7 +156,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <span className={styles.error_modal}>{t("error_message.linkedin")}</span>}
+          {errors.linkedin && <p className={styles.error_modal}>{t("error_message.linkedin")}</p>}
         </li>
 
         <li>
@@ -182,7 +182,7 @@ export default function FormMentor({handleClose}) {
               })}
             </div>
             
-            {errors.convenient_time && <span className={styles.error_modal}>{t("error_message.convenient_time")}</span>}
+            {errors.convenient_time && <p className={styles.error_modal}>{t("error_message.convenient_time")}</p>}
           </div>
         </li>
 
@@ -205,16 +205,15 @@ export default function FormMentor({handleClose}) {
 
               { t("permit")}
             </label>
-            {errors.agree && <span className={styles.error_modal}>{t("error_message.permit")}</span>}
+            {errors.agree && <p className={styles.error_modal}>{t("error_message.permit")}</p>}
           </div>
         </li>
       </ul>
 
       <MainButton
         type="submit"
-        // disabled={!isDirty || !isValid}
+        disabled={!isDirty || !isValid}
         className={styles.submit}
-        //variant={"modal"}
       >
         {t("btn_send")}
       </MainButton>
