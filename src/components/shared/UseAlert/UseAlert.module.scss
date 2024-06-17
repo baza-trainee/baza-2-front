@@ -24,13 +24,14 @@
     justify-content: center;
     position: relative;
     padding: 24px 16px;
-    //color: var.$secondary-error;
     border: 2px solid var.$primary-border;
     border-radius: 12px;
     background: var.$primary-fon-card;
+
     &.error{
       color: var.$secondary-error;
     }
+    
     &.success{
       color: var.$secondary-positive;
     }

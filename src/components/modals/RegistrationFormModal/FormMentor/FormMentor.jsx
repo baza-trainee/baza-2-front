@@ -1,36 +1,39 @@
 "use client";
 import React, { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import styles from './FormMentor.module.scss';
 import clsx from "clsx";
+
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { formScheme } from "./formScheme";
+import { MentorSchema, mentorDefaultValues } from "./mentorScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 
-
 export default function FormMentor() {
   const t = useTranslations("Modal_form");
+
   const {
-    control,
     register,
     handleSubmit,
-    trigger,
     formState: { errors, isValid, isDirty },
-    reset,
-  } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+    reset
+  } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
+
   const [ specialization, setSpecialization ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data);
+    setSpecialization('')
+    setConvenientTime('')
+    setAgree(false)
     reset();
   };
 
-  //const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_mtntor}>
       <h2>{t("title_mentor")}</h2>
@@ -41,16 +44,14 @@ export default function FormMentor() {
             id={"firstName"}
             className={styles.item}
             placeholder={t("firstName")}
-            registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
-              trigger("firstName")
-            }})}
+            registerOptions={register("firstName", { ...MentorSchema.firstName})}
             isError={errors.firstName}
             isValid={isValid}
             version={"input"}
             label={t("firstName")}
           />
 
-          {errors.firstName && <span className={styles.error_modal}>{t("error_message.firstName")}</span>}
+          {errors.firstName && <span className={styles.error_modal}>{t(`error_message.${errors.firstName.message}`)}</span>}
         </li>
 
         <li>
@@ -58,16 +59,14 @@ export default function FormMentor() {
             id={"lastName"}
             className={styles.item}
             placeholder={t("lastName")}
-            registerOptions={register("lastName", { ...formScheme.lastName, onBlur:() => {
-              trigger("lastName")
-            }})}
+            registerOptions={register("lastName", { ...MentorSchema.lastName})}
             isError={errors.firstName}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
           />
 
-          {errors.lastName && <span className={styles.error_modal}>{t("error_message.lastName")}</span>}
+          {errors.lastName && <span className={styles.error_modal}>{t(`error_message.${errors.lastName.message}`)}</span>}
         </li>
 
         <li>
@@ -79,7 +78,7 @@ export default function FormMentor() {
                   <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
                   <input 
                   type="radio" 
-                  {...register("specialization", { ...formScheme.specialization })}
+                  {...register("specialization", { ...MentorSchema.specialization })}
                   id={option.id} name="specialization" 
                   value={option.label} 
                   onClick={()=>{setSpecialization(option.label)}}/>
@@ -92,7 +91,7 @@ export default function FormMentor() {
               })}
             </div>
         
-            {errors.specialization && <span className={styles.error_modal}>{t("error_message.specialization")}</span>}
+            {errors.specialization && <span className={styles.error_modal}>{t(`error_message.${errors.specialization.message}`)}</span>}
           </div>
         </li>
 
@@ -101,40 +100,36 @@ export default function FormMentor() {
             id={"email"}
             className={styles.item}
             placeholder={"email@gmail.com"}
-            registerOptions={register("email", { ...formScheme.email,onBlur:() => {
-              trigger("email")
-            } })}
+            registerOptions={register("email", { ...MentorSchema.email })}
             isError={errors.email}
             isValid={isValid}
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <span className={styles.error_modal}>{t("error_message.email")}</span>}
+          {errors.email && <span className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</span>}
         </li>
+
         <li>
           <InputField
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
-            defaultValues={"+380"}
-            registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
-              trigger("phone")
-            } })}
+            registerOptions={register("phone", { ...MentorSchema.phone
+              })}
             isError={errors.phone}
             isValid={isValid}
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <span className={styles.error_modal}>{t("error_message.phone")}</span>}
+          {errors.phone && <span className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</span>}
         </li>
+
         <li>
           <InputField
             id={"discord"}
             className={styles.item}
             placeholder={t("discord")}
-            registerOptions={register("discord", { ...formScheme.discord,onBlur:() => {
-              trigger("discord")
-            } })}
+            registerOptions={register("discord", { ...MentorSchema.discord })}
             isError={errors.discord}
             isValid={isValid}
             version={"input"}
@@ -142,14 +137,13 @@ export default function FormMentor() {
           />
           {errors.discord && <span className={styles.error_modal}>{t("error_message.discord")}</span>}
         </li>
+
         <li>
           <InputField
             id={"linkedin"}
             className={styles.item}
             placeholder={t("linkedin_placeholder")}
-            registerOptions={register("linkedin", { ...formScheme.linkedin, onBlur:() => {
-              trigger("linkedin")
-            } })}
+            registerOptions={register("linkedin", { ...MentorSchema.linkedin })}
             isError={errors.linkedin}
             isValid={isValid}
             version={"input"}
@@ -167,7 +161,7 @@ export default function FormMentor() {
                   <label htmlFor={option.id} className={clsx(styles.btn_option,styles[option.id])} key={option.id}>
                   <input
                   type="radio" 
-                  {...register("convenient_time", { ...formScheme.convenient_time })}
+                  {...register("convenient_time", { ...MentorSchema.convenient_time })}
                   id={option.id} 
                   name="convenient_time" 
                   value={option.label} 
@@ -183,8 +177,8 @@ export default function FormMentor() {
             
             {errors.convenient_time && <span className={styles.error_modal}>{t("error_message.convenient_time")}</span>}
           </div>
-
         </li>
+        
         <li>
           <div className={styles.item}>
             <label
@@ -194,7 +188,8 @@ export default function FormMentor() {
               <input
                 id={'agree'}
                 type="checkbox"
-                {...register("agree", { ...formScheme.agree })}
+                {...register("agree", { ...MentorSchema.agree })}
+                checked={agree}
                 onClick={(e)=>{setAgree(e.target.checked)}}
               ></input>
               <span className={clsx(styles.check, agree && styles._active)}>
@@ -206,12 +201,6 @@ export default function FormMentor() {
             {errors.agree && <span className={styles.error_modal}>{t("error_message.permit")}</span>}
           </div>
         </li>
-          {/* {inputFields.map((field) => (
-            <div key={field.id}>
-              <InputField {...field} />
-              {field.isError && <p>{t(`error_message.${field.id}`)}</p>}
-            </div>
-          ))} */}
       </ul>
 
       <MainButton
