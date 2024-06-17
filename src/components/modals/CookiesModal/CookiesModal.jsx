@@ -43,7 +43,7 @@ export default function CookiesModal() {
       <h3 className={styles.title}>Cookies<Icon name={"cookies"}/></h3>
 
       <p className={styles.text}>{t("text")}  <a
-        className={styles.lick}
+        className={styles.linck}
         href={'/test'}
         target="_blank"
         rel="noreferrer noopener"

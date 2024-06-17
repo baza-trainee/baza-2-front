@@ -194,12 +194,16 @@
 			"btn_send": "Send",
 			"error_message": {
 				"name": "Enter a name",
-				"name_long": "The name must not exceed 30 characters",
+				"name_min": "The name must have at least 2 characters",
+				"name_max": "The name must not exceed 30 characters",
+				"incorrect_name": "Please enter a valid name",
 				"email": "Enter your email",
-				"invalid_email": "Please enter a valid email",
+				"incorrect_email": "Please enter a valid email",
+        "invalid_ru": ".ru and .by domains are not allowed",
 				"message": "Enter a message",
-				"message_long": "Please limit your message to 300 characters",
-				"invalid_message": "Use your native language"
+				"message_min": "The message must have at least 10 characters",
+				"message_max": "Please limit your message to 300 characters",
+				"incorrect_message": "Please enter a valid message"
 			}
 		}
 	},

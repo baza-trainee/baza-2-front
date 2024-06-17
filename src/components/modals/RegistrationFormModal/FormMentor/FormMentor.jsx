@@ -50,7 +50,7 @@ export default function FormMentor() {
             label={t("firstName")}
           />
 
-          {errors.firstName && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.firstName")}</span>}
+          {errors.firstName && <span className={styles.error_modal}>{t("error_message.firstName")}</span>}
         </li>
 
         <li>
@@ -67,7 +67,7 @@ export default function FormMentor() {
             label={t("lastName")}
           />
 
-          {errors.lastName && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.lastName")}</span>}
+          {errors.lastName && <span className={styles.error_modal}>{t("error_message.lastName")}</span>}
         </li>
 
         <li>
@@ -92,7 +92,7 @@ export default function FormMentor() {
               })}
             </div>
         
-            {errors.specialization && <span className={clsx(styles.error_modal,  styles._hide)}>{t("error_message.specialization")}</span>}
+            {errors.specialization && <span className={styles.error_modal}>{t("error_message.specialization")}</span>}
           </div>
         </li>
 
@@ -109,7 +109,7 @@ export default function FormMentor() {
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.email")}</span>}
+          {errors.email && <span className={styles.error_modal}>{t("error_message.email")}</span>}
         </li>
         <li>
           <InputField
@@ -125,7 +125,7 @@ export default function FormMentor() {
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.phone")}</span>}
+          {errors.phone && <span className={styles.error_modal}>{t("error_message.phone")}</span>}
         </li>
         <li>
           <InputField
@@ -140,7 +140,7 @@ export default function FormMentor() {
             version={"input"}
             label={t("discord")}
           />
-          {errors.discord && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.discord")}</span>}
+          {errors.discord && <span className={styles.error_modal}>{t("error_message.discord")}</span>}
         </li>
         <li>
           <InputField
@@ -155,7 +155,7 @@ export default function FormMentor() {
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.linkedin")}</span>}
+          {errors.linkedin && <span className={styles.error_modal}>{t("error_message.linkedin")}</span>}
         </li>
 
         <li>
@@ -181,7 +181,7 @@ export default function FormMentor() {
               })}
             </div>
             
-            {errors.convenient_time && <span className={clsx(styles.error_modal, styles._hide)}>{t("error_message.convenient_time")}</span>}
+            {errors.convenient_time && <span className={styles.error_modal}>{t("error_message.convenient_time")}</span>}
           </div>
 
         </li>
@@ -203,7 +203,7 @@ export default function FormMentor() {
 
               { t("permit")}
             </label>
-            {errors.agree && <span className={clsx(styles.error_modal, styles._list, styles._hide)}>{t("error_message.permit")}</span>}
+            {errors.agree && <span className={styles.error_modal}>{t("error_message.permit")}</span>}
           </div>
         </li>
           {/* {inputFields.map((field) => (

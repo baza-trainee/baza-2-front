@@ -12,6 +12,7 @@ import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import stateErrorAlert from "@/src/state/stateErrorAlert";
 import ErrorAlert from "../../shared/ErrorAlert/ErrorAlert";
+import Loader from "../../shared/loader/Loader";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
@@ -26,8 +27,10 @@ export default function ContactForm() {
   } = useForm({ defaultValues: {...feedbackDefaultValues}, resolver: zodResolver(FeedbackSchema), mode: 'onBlur'});
 
   const [isSubmit, setIsSubmit] = useState(null);
+  const [loader, setIsLoader] = useState(false);
 
   const isError = (res) => {
+    setIsLoader(false)
     if(res === 'error'){
       open()
     }
@@ -35,6 +38,7 @@ export default function ContactForm() {
   }
 
   const onSubmit = (data) => {
+    setIsLoader(true)
     handlerSendContactForm( data, isError )
     console.log(data)
     setIsSubmit(null)
@@ -51,7 +55,7 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} 
-    onSubmit={handleSubmit(onSubmit)}>
+      onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
         <li>
           <InputField
@@ -103,6 +107,8 @@ export default function ContactForm() {
       </div>}
       
       {isOpen && <ErrorAlert/>}
+
+      {loader && <Loader/>}
     </form>
   );
 }
