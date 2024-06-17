@@ -27,27 +27,6 @@
       stroke: var.$secondary-positive;
     }
   }
-
-  .error_send{
-    position: absolute;
-    bottom: 50px;
-    @include mx.apply-font-styles(var.$text-20-font);
-    font-size: 26px;
-    font-weight: 700;
-    color: var.$secondary-error;
-    animation: 1.5s linear error-slide;
-    opacity: 0;
-    z-index: 5;
-
-    & > svg {
-      display: block;
-      margin: 0 auto;
-      width: 50px;
-      height: 50px;
-      stroke: var.$secondary-error;
-    }
-  }
-
 }
 
 .list {
@@ -57,7 +36,12 @@
   margin-bottom: 16px;
   .error{
     @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 14px;
+    
     color: var.$secondary-error;
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
   }
   .error._hide{
     display: none;
@@ -73,7 +57,7 @@
     margin-bottom: 40px;
   }
 }
-
+// Анімація повідомлення
 @keyframes send-slide {
   from {
     opacity: 1;
@@ -82,29 +66,4 @@
     opacity: 1;
     transform: translateY(-110vh) scale(2);
   }
-}
-
-// Анімація повідомлення про помилку.
-@keyframes error-slide {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-100%) scale(1.2);
-  }
-  90% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-
-  // from {
-  //   opacity: 1;
-  // }
-  // to {
-  //   opacity: 1;
-  //   transform: translateY(-60vh) scale(2);
-  // }
 }

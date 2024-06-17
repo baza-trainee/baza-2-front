@@ -5,7 +5,6 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  //right: auto;
   bottom: 14%;
   top: auto;
   z-index: 1000;
@@ -83,12 +82,12 @@
         font-size: 20px;
       }
 
-      .lick{
+      .linck{
         color: var.$primary-border;
         transition: all var.$transition-duration-base var.$transition-timing-base;
         border-bottom:1px solid transparent;
       }
-      .lick:hover{
+      .linck:hover{
         color: var.$primary-hover;
         border-bottom:1px solid var.$primary-border;
       }

@@ -13,6 +13,7 @@ export default function InputField({
   className,
   options = {},
   control = {},
+  ...props
 }) {
   if (version === "checkBox") {
     const totalOptions = options.length;
@@ -94,6 +95,7 @@ export default function InputField({
           )}
           {...registerOptions}
           placeholder={placeholder}
+          {...props}
         />
       </div>
     );

@@ -194,12 +194,16 @@
 			"btn_send": "Wyślać",
 			"error_message": {
 				"name": "Wpisz imię",
-				"name_long": "Nazwa nie może przekraczać 30 znaków",
+				"name_min": "Nazwa musi mieć co najmniej 2 znaki",
+				"name_max": "Nazwa nie może przekraczać 30 znaków",
+				"incorrect_name": "Proszę wpisać prawidłowe imię",
 				"email": "Wprowadź swój email",
-				"invalid_email": "Proszę podać poprawny adres e-mail",
+				"incorrect_email": "Proszę podać poprawny adres e-mail",
+        "invalid_ru": "Domeny .ru i .by są niedozwolone",
 				"message": "Wpisz wiadomość",
-				"message_long": "Prosimy o ograniczenie wiadomości do 300 znaków",
-				"invalid_message": "Używaj swojego języka ojczystego"
+				"message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
+				"message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
+				"incorrect_message": "Proszę wprowadzić poprawną wiadomość"
 			}
 		}
 	},
@@ -277,10 +281,19 @@
 		"btn_send": "Wysłać",
 		"error_message": {
 			"firstName": "Wpisz swoje imię",
+			"firstName_min": "Nazwa musi mieć co najmniej 2 znaki",
+			"firstName_max": "Nazwa nie może przekraczać 30 znaków",
+			"incorrect_firstName": "Proszę wpisać prawidłowe imię",
 			"lastName": "Wpisz swoje nazwisko",
+			"lastName_min": "Nazwisko musi mieć co najmniej 2 znaki",
+			"lastName_max": "Nazwisko nie może przekraczać 50 znaków",
+			"incorrect_lastName": "Wpisz poprawne nazwisko",
 			"specialization": "Wybierz specjalizację",
 			"email": "Wprowadź swój email",
+			"incorrect_email": "Proszę podać poprawny adres e-mail",
+			"invalid_ru": "Domeny .ru i .by są niedozwolone",
 			"phone": "Wprowadź numer telefonu",
+			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
 			"discord": "Wpisz pseudonim na Discordzie",
 			"linkedin": "Wprowadź swój profil na Linkedin",
 			"convenient_time": "Wybierz dogodny termin konsultacji",

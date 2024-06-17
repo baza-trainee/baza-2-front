@@ -6,17 +6,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { FeedbackSchema, feedbackDefaultValues } from "./FeedbackSchema";
+import { FeedbackSchema, feedbackDefaultValues } from "./feedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
-import stateErrorAlert from "@/src/state/stateErrorAlert";
-import ErrorAlert from "../../shared/ErrorAlert/ErrorAlert";
+import stateUseAlert from "@/src/state/stateUseAlert";
+import UseAlert from "../../shared/UseAlert/UseAlert";
+import Loader from "../../shared/loader/Loader";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
-  const isOpen = stateErrorAlert(state => state.isOpen);
-  const open = stateErrorAlert(state => state.open);
+  const isOpen = stateUseAlert(state => state.isOpen);
+  const open = stateUseAlert(state => state.open);
 
   const {
     register,
@@ -26,8 +27,10 @@ export default function ContactForm() {
   } = useForm({ defaultValues: {...feedbackDefaultValues}, resolver: zodResolver(FeedbackSchema), mode: 'onBlur'});
 
   const [isSubmit, setIsSubmit] = useState(null);
+  const [loader, setIsLoader] = useState(false);
 
   const isError = (res) => {
+    setIsLoader(false)
     if(res === 'error'){
       open()
     }
@@ -35,6 +38,7 @@ export default function ContactForm() {
   }
 
   const onSubmit = (data) => {
+    setIsLoader(true)
     handlerSendContactForm( data, isError )
     console.log(data)
     setIsSubmit(null)
@@ -51,7 +55,7 @@ export default function ContactForm() {
 
   return (
     <form className={styles.form} 
-    onSubmit={handleSubmit(onSubmit)}>
+      onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
         <li>
           <InputField
@@ -102,7 +106,9 @@ export default function ContactForm() {
         <Icon name='mail'/>
       </div>}
       
-      {isOpen && <ErrorAlert/>}
+      {isOpen && <UseAlert/>}
+
+      {loader && <Loader/>}
     </form>
   );
 }
