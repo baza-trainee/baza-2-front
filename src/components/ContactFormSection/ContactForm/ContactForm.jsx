@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { FeedbackSchema, feedbackDefaultValues } from "./feedbackSchema";
+import { FeedbackSchema, feedbackDefaultValues } from "./FeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";

@@ -279,6 +279,7 @@
 		"anytime": "anytime",
 		"permit": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
 		"btn_send": "Send",
+		
 		"error_message": {
 			"firstName": "Enter your name",
 			"firstName_min": "The name must have at least 2 characters",
