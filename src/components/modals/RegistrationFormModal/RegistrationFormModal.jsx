@@ -30,7 +30,7 @@ const RegistrationFormModal=()=>{
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
 
-          {type === 'mentor' && <FormMentor/>}
+          {type === 'mentor' && <FormMentor handleClose={onClose}/>}
 
           {type === 'partaker' && <FormPartaker/> }  
         </div>

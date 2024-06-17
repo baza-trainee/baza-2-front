@@ -6,13 +6,13 @@ import clsx from "clsx";
 
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { MentorSchema, mentorDefaultValues } from "./mentorScheme";
+import { MentorSchema, formatPhoneNumber, mentorDefaultValues } from "./mentorScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 
-export default function FormMentor() {
+export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
 
   const {
@@ -23,15 +23,18 @@ export default function FormMentor() {
   } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
 
   const [ specialization, setSpecialization ] = useState('');
+  const [ phone, setPhone ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data);
     setSpecialization('')
+    setPhone('')
     setConvenientTime('')
     setAgree(false)
     reset();
+    handleClose()
   };
 
   return (
@@ -114,6 +117,10 @@ export default function FormMentor() {
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
+            value={phone}
+            onFocus={()=>{setPhone('+380')}}
+            onInput={(e)=>{setPhone(e.target.value)}}
+            onBlur={()=>{setPhone(formatPhoneNumber(phone))}}
             registerOptions={register("phone", { ...MentorSchema.phone
               })}
             isError={errors.phone}
@@ -178,7 +185,7 @@ export default function FormMentor() {
             {errors.convenient_time && <span className={styles.error_modal}>{t("error_message.convenient_time")}</span>}
           </div>
         </li>
-        
+
         <li>
           <div className={styles.item}>
             <label
