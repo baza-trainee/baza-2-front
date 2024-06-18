@@ -27,7 +27,7 @@ export default function ContactForm() {
   const [isSubmit, setIsSubmit] = useState(null);
   const [loader, setIsLoader] = useState(false);
 
-  const isError = (res) => {
+  const isSubmitted = (res) => {
     setIsLoader(false)
     if(res === 'error'){
       open('error')
@@ -37,7 +37,7 @@ export default function ContactForm() {
 
   const onSubmit = (data) => {
     setIsLoader(true)
-    handlerSendContactForm( data, isError )
+    handlerSendContactForm( data, isSubmitted )
     console.log(data)
     setIsSubmit(null)
     reset();
@@ -100,7 +100,7 @@ export default function ContactForm() {
         {t("btn_send")}
       </MainButton>
       
-     {isSubmit === 'ok' && <div className={styles.send}>
+     {isSubmit && <div className={styles.send}>
         <Icon name='mail'/>
       </div>}
 

@@ -12,14 +12,14 @@ export default function UseAlert(){
   const type = stateUseAlert(state => state.type);
   const close = stateUseAlert(state => state.close);
 
-  // const styleVariant =  variant==='error'| variant==="success" ? variant :'error';
-
   useEffect(()=>{
-    const timeoutId = setTimeout(()=>{
-      close()
-    },5000)
-    return () => clearTimeout(timeoutId);
-  },[])
+    if(isOpen){
+      const timeoutId = setTimeout(()=>{
+        close()
+      },5000)
+      return () => clearTimeout(timeoutId);
+    }
+  },[isOpen])
 
   if(!isOpen){return null}
 

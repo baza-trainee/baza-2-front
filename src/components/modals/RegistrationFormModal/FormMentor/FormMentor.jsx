@@ -11,9 +11,13 @@ import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
+import Loader from "@/src/components/shared/loader/Loader";
+import stateUseAlert from "@/src/state/stateUseAlert";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
+
+  const open = stateUseAlert(state => state.open);
 
   const {
     register,
@@ -26,15 +30,33 @@ export default function FormMentor({handleClose}) {
   const [ phone, setPhone ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
+  const [loader, setIsLoader] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const resetForm = () => {
     setSpecialization('')
     setPhone('')
     setConvenientTime('')
     setAgree(false)
+    setIsLoader(false)
     reset();
     handleClose()
+  }
+  const isSubmitted = (res) => {
+    setIsLoader(false)
+    if(res === 'error'){
+      open('error')
+    }
+    open('success')
+    resetForm()
+  }
+
+  const onSubmit = (data) => {
+    setIsLoader(true)
+    // Імітація відправки форми
+    setTimeout(()=>{
+      isSubmitted('success')
+      console.log(data);
+    },3000)
   };
 
   return (
@@ -118,11 +140,10 @@ export default function FormMentor({handleClose}) {
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
             value={phone}
-            onFocus={()=>{setPhone('+380')}}
+            onFocus={()=>{setPhone(phone ? phone : '+380')}}
             onInput={(e)=>{setPhone(e.target.value)}}
-            onBlur={()=>{setPhone(formatPhoneNumber(phone))}}
-            registerOptions={register("phone", { ...MentorSchema.phone
-              })}
+            onChange={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            registerOptions={register("phone", { ...MentorSchema.phone })}
             isError={errors.phone}
             isValid={isValid}
             version={"input"}
@@ -142,7 +163,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("discord")}
           />
-          {errors.discord && <p className={styles.error_modal}>{t("error_message.discord")}</p>}
+          {errors.discord && <p className={styles.error_modal}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 
         <li>
@@ -156,7 +177,7 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <p className={styles.error_modal}>{t("error_message.linkedin")}</p>}
+          {errors.linkedin && <p className={styles.error_modal}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
 
         <li>
@@ -217,6 +238,8 @@ export default function FormMentor({handleClose}) {
       >
         {t("btn_send")}
       </MainButton>
+
+      {loader && <Loader/>}
     </form>
   )
 }

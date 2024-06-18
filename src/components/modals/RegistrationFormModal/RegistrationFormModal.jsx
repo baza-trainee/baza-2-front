@@ -17,7 +17,7 @@ const RegistrationFormModal=()=>{
 
   useBodyLock(isOpen);
 
-  if (!isOpen) return null;
+  if (!isOpen | !type === 'mentor'| !type === 'partaker') return null;
 
   return (
     <LayoutModal isOpen handleClose={onClose}>
