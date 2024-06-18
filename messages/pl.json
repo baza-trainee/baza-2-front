@@ -78,7 +78,7 @@
 		"history_project_section": {
 			"title": "Historia projektu",
 			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
-			"text1": "W ciągu roku osiągnęliśmy znaczący sukces",
+			"text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
 			"history": {
 				"item1": {
 					"date": "Kwiecień 2023:",
@@ -199,7 +199,7 @@
 				"incorrect_name": "Proszę wpisać prawidłowe imię",
 				"email": "Wprowadź swój email",
 				"incorrect_email": "Proszę podać poprawny adres e-mail",
-        "invalid_ru": "Domeny .ru i .by są niedozwolone",
+				"invalid_ru": "Domeny .ru i .by są niedozwolone",
 				"message": "Wpisz wiadomość",
 				"message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
 				"message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
