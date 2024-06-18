@@ -13,20 +13,6 @@ export const mentorDefaultValues= {
   convenient_time:"",
   agree: false,
 }
- 
-// export function formatPhoneNumber(number) {
-//   // Видаляємо будь-які нецифрові символи з номеру телефону
-//  const phoneNumber = number.replace(/\D/g, '');
-
-//   // Перевіряємо, чи довжина номеру телефону дорівнює 12 (припускаємо, що вхідний формат правильний)
-//   if (phoneNumber.length === 12) {
-//       // Форматуємо номер у вигляді +380 67 760 65 08
-//       return `+${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3, 5)} ${phoneNumber.slice(5, 8)} ${phoneNumber.slice(8, 10)} ${phoneNumber.slice(10, 12)}`;
-//   } else {
-//       // Якщо номер не відповідає очікуваній довжині, повертаємо не змінений рядок або можемо повернути помилку
-//       return number;
-//   }
-// }
 
 export const MentorSchema = z
 	.object({
@@ -57,7 +43,6 @@ export const MentorSchema = z
     phone: z.string()
     .trim()
     .min(1, { message: 'phone' })
-    //.min(13, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' })
     .transform(value=>  formatPhoneNumber(value)),
 
@@ -101,4 +86,3 @@ export const MentorSchema = z
 //   discord: 'string',
 //   linkedin: 'string'
 // }
-

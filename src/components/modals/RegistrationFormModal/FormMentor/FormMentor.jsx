@@ -193,7 +193,7 @@ export default function FormMentor({handleClose}) {
                   {...register("convenient_time", { ...MentorSchema.convenient_time })}
                   id={option.id} 
                   name="convenient_time" 
-                  value={option.label} 
+                  value={option.label=== "anytime"? t("anytime"):option.label} 
                   onClick={()=>{setConvenientTime(option.label)}}/>
                     <span className={clsx(styles.check, convenientTime === option.label && styles._active)}>
                       <Icon name={'check'}/>
