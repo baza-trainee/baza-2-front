@@ -236,6 +236,7 @@ export default function FormMentor({handleClose}) {
         type="submit"
         //disabled={!isDirty || !isValid}
         className={styles.submit}
+        //variant={"modal"}
       >
         {t("btn_send")}
       </MainButton>

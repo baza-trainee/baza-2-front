@@ -10,9 +10,10 @@ import styles from "./timeline.module.scss";
 const Timeline = () => {
   const t = useTranslations("Main.history_project_section.history");
   const sectionRef = useRef(null);
+  const baseLineRef = useRef(null);
   const [lastElHeight, setLastElHeight] = useState(0);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: baseLineRef,
     offset: ["start center", "end center"],
   });
 
@@ -60,6 +61,7 @@ const Timeline = () => {
     <div className={styles.wrapper}>
       <div ref={sectionRef} className={styles.timeline}>
         <div
+          ref={baseLineRef}
           className={styles.timeline__initial}
           style={{ height: `calc(100% - ${lastElHeight - 5}px)` }}
         >
@@ -83,9 +85,9 @@ const Timeline = () => {
               style={{ gridRow: index + 1 }}
               key={item.id}
             >
-              <h3 className={clsx(styles.title, styles.marker)}>
+              <h2 className={clsx(styles.title, styles.marker)}>
                 {t(`${item.id}.${item.title}`)}
-              </h3>
+              </h2>
               <p className={styles.text}>{t(`${item.id}.${item.text}`)}</p>
             </li>
           ))}
