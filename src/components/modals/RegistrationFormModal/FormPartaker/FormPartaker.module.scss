@@ -82,6 +82,20 @@
           }
         }
       }
+      
+      .select_column{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        @include mix.media-q("md") {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 24px;
+        }
+      }
 
       .btn_option{
         display: flex;

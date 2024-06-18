@@ -5,9 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  padding: 10px;
   position: relative;
+  padding: 16px 10px;
+  margin: auto;
+
+  @include mx.media-q("md") {
+    padding: 40px 16px;
+  }
 }
 
 .card{

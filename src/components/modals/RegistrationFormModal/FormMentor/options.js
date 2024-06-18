@@ -14,5 +14,3 @@ export const optionsTime = [
   { id: "time3", label: "18.00-21.00" },
   { id: "time4", label: "anytime" },
 ];
-
-//export const optionsPersonalData = [{ id: "personaldata", label: t("permit") }];

@@ -296,6 +296,7 @@
 			"phone": "Enter a phone number",
 			"incorrect_phone": "Please enter a valid phone number",
 			"discord": "Enter a nickname in Discord",
+			"incorrect_discord": "Enter a valid nickname in Discord",
 			"linkedin": "Enter your Linkedin profile",
 			"invalid_url": "Enter a valid Linkedin profile link",
 			"convenient_time": "Choose a convenient consultation time",

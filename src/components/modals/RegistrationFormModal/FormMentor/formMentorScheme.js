@@ -1,4 +1,4 @@
-import { patternEmail, patternName, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { z } from "zod";
 
@@ -48,7 +48,8 @@ export const MentorSchema = z
 
     discord: z.string()
     .trim()
-    .min(1, { message: 'discord' }),
+    .min(1, { message: 'discord' })
+    .regex(patternNikDiscord, { message: 'incorrect_discord' }),
 
     linkedin: z.string()
     .trim()
