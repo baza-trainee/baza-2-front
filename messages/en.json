@@ -78,7 +78,7 @@
 		"history_project_section": {
 			"title": "Project history",
 			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",
-			"text1": "In a year, we have achieved significant success.",
+			"text1": "In a year, we have achieved significant success:",
 			"history": {
 				"item1": {
 					"date": "April 2023:",
@@ -199,7 +199,7 @@
 				"incorrect_name": "Please enter a valid name",
 				"email": "Enter your email",
 				"incorrect_email": "Please enter a valid email",
-        "invalid_ru": ".ru and .by domains are not allowed",
+				"invalid_ru": ".ru and .by domains are not allowed",
 				"message": "Enter a message",
 				"message_min": "The message must have at least 10 characters",
 				"message_max": "Please limit your message to 300 characters",
@@ -279,7 +279,6 @@
 		"anytime": "anytime",
 		"permit": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
 		"btn_send": "Send",
-		
 		"error_message": {
 			"firstName": "Enter your name",
 			"firstName_min": "The name must have at least 2 characters",
