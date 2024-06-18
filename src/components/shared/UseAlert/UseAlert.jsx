@@ -6,27 +6,28 @@ import CloseBtn from '../CloseBtn/CloseBtn';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import { useEffect } from 'react';
 
-export default function UseAlert({variant='error', message}){
-  const t = useTranslations("Error");
+export default function UseAlert(){
+  const t = useTranslations("Alert");
   const isOpen = stateUseAlert(state => state.isOpen);
+  const type = stateUseAlert(state => state.type);
   const close = stateUseAlert(state => state.close);
 
-  const styleVariant =  variant==='error'| variant==="success" ? variant :'error';
-
   useEffect(()=>{
-    const timeoutId = setTimeout(()=>{
-      close()
-    },5000)
-    return () => clearTimeout(timeoutId);
-  },[])
+    if(isOpen){
+      const timeoutId = setTimeout(()=>{
+        close()
+      },5000)
+      return () => clearTimeout(timeoutId);
+    }
+  },[isOpen])
 
   if(!isOpen){return null}
 
   return( 
   <div className={styles.wrapper}>
-    <div className={clsx(styles.alert, styles[styleVariant])}>
-      { message && variant === 'success' ? 
-        <h2>{message} :)</h2> :
+    <div className={clsx(styles.alert, styles[type])}>
+      { type === 'success' ? 
+        <h2>{t('title_success')} :)</h2> :
         <> 
           <h2>{t('title')} :(</h2>
           <p>{t('text')}</p> 

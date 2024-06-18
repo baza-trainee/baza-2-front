@@ -6,17 +6,15 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
-import { FeedbackSchema, feedbackDefaultValues } from "./FeedbackSchema";
+import { FeedbackSchema, feedbackDefaultValues } from "./formFeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
 import InputField from "../../shared/InputField/InputField";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import UseAlert from "../../shared/UseAlert/UseAlert";
 import Loader from "../../shared/loader/Loader";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
-  const isOpen = stateUseAlert(state => state.isOpen);
   const open = stateUseAlert(state => state.open);
 
   const {
@@ -29,17 +27,17 @@ export default function ContactForm() {
   const [isSubmit, setIsSubmit] = useState(null);
   const [loader, setIsLoader] = useState(false);
 
-  const isError = (res) => {
+  const isSubmitted = (res) => {
     setIsLoader(false)
     if(res === 'error'){
-      open()
+      open('error')
     }
     setIsSubmit(res)
   }
 
   const onSubmit = (data) => {
     setIsLoader(true)
-    handlerSendContactForm( data, isError )
+    handlerSendContactForm( data, isSubmitted )
     console.log(data)
     setIsSubmit(null)
     reset();
@@ -102,11 +100,9 @@ export default function ContactForm() {
         {t("btn_send")}
       </MainButton>
       
-     {isSubmit === 'ok' && <div className={styles.send}>
+     {isSubmit && <div className={styles.send}>
         <Icon name='mail'/>
       </div>}
-      
-      {isOpen && <UseAlert/>}
 
       {loader && <Loader/>}
     </form>

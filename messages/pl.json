@@ -223,8 +223,9 @@
 		"title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
 		"btn_home": "Powrót do strony głównej"
 	},
-	"Error": {
+	"Alert": {
 		"title": "Przepraszam, coś poszło nie tak",
+		"title_success": "Wysłano pomyślnie",
 		"text": "Spróbuj ponownie później",
 		"btn_home": "Spróbuj ponownie"
 	},
@@ -296,6 +297,7 @@
 			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
 			"discord": "Wpisz pseudonim na Discordzie",
 			"linkedin": "Wprowadź swój profil na Linkedin",
+			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
 			"convenient_time": "Wybierz dogodny termin konsultacji",
 			"country": "Wprowadź kraj",
 			"city": "Wejdź do miasta",

@@ -1,4 +1,5 @@
-import { patternEmail, patternName, patternPhone } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
+import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { z } from "zod";
 
 export const mentorDefaultValues= {
@@ -11,19 +12,6 @@ export const mentorDefaultValues= {
   specialization:"",
   convenient_time:"",
   agree: false,
-}
- 
-export function formatPhoneNumber(number) {
-if( /^\+380[\s]\d{2}[\s]\d{3}[\s]\d{2}[\s]\d{2}$/.test(number)){return number}
-
-  let formattedNumber = '';
-  let numberString = number;
-  formattedNumber += numberString.slice(0, 4) + ' ';
-  formattedNumber += numberString.slice(4, 6) + ' ';
-  formattedNumber += numberString.slice(6, 9) + ' ';
-  formattedNumber += numberString.slice(9, 11) + ' ';
-  formattedNumber += numberString.slice(11);
-  return formattedNumber;
 }
 
 export const MentorSchema = z
@@ -55,8 +43,8 @@ export const MentorSchema = z
     phone: z.string()
     .trim()
     .min(1, { message: 'phone' })
-    .regex(patternPhone, { message: 'incorrect_phone' }),
-    //.transform(value=> formatPhoneNumber(value)),
+    .regex(patternPhone, { message: 'incorrect_phone' })
+    .transform(value=>  formatPhoneNumber(value)),
 
     discord: z.string()
     .trim()
@@ -64,7 +52,9 @@ export const MentorSchema = z
 
     linkedin: z.string()
     .trim()
-    .min(1, { message: 'linkedin' }),
+    .min(1, { message: 'linkedin' })
+    .url({ message: "invalid_url" })
+    .regex(patternUrlLinkedin, { message: 'invalid_url' }),
 
     convenient_time: z.string()
     .trim()
@@ -96,4 +86,3 @@ export const MentorSchema = z
 //   discord: 'string',
 //   linkedin: 'string'
 // }
-

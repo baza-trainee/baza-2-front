@@ -4,7 +4,7 @@ import styles from './FormPartaker.module.scss';
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { formScheme } from "./formScheme";
+import { formScheme } from "./formPartakeScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
