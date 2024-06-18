@@ -5,7 +5,7 @@ import styles from "./RoleCard.module.scss";
 import clsx from "clsx";
 import { Icon } from "../Icon/Icon";
 
-const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
+const RoleCard = ({ imgSrc, shortDesc, title, fullDesc }) => {
   const [readMore, setReadMore] = useState(false);
 
   return (
@@ -34,7 +34,8 @@ const RoleCard = ({ imgSrc, shortDesc, title, children }) => {
         >
           <Icon name="arrow-back" />
         </button>
-        {children}
+        <p>{fullDesc.part1}</p>
+        <p>{fullDesc.part2}</p>
       </div>
     </article>
   );
