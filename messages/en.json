@@ -223,8 +223,9 @@
 		"title": "Sorry, the page you are looking for has been moved or deleted.",
 		"btn_home": "Return to the home page"
 	},
-	"Error": {
+	"Alert": {
 		"title": "Sorry, something went wrong",
+		"title_success": "Sent successfully",
 		"text": "Try again later",
 		"btn_home": "Try again"
 	},

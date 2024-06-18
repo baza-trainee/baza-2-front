@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 import { useTranslations } from "next-intl";
 
 export default function GlobalError({ reset }) {
-  const t = useTranslations("Error");
+  const t = useTranslations("Alert");
   return (
     <main className={styles.mainErr}>
       <p>{t('title')}<span> :(</span></p>

@@ -223,8 +223,9 @@
 		"title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
 		"btn_home": "Powrót do strony głównej"
 	},
-	"Error": {
+	"Alert": {
 		"title": "Przepraszam, coś poszło nie tak",
+		"title_success": "Wysłano pomyślnie",
 		"text": "Spróbuj ponownie później",
 		"btn_home": "Spróbuj ponownie"
 	},

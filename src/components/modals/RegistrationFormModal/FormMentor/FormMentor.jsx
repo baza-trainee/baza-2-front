@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from './FormMentor.module.scss';
 import clsx from "clsx";
 
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { MentorSchema, formatPhoneNumber, mentorDefaultValues } from "./mentorScheme";
+import { MentorSchema, formatPhoneNumber, mentorDefaultValues } from "./formMentorScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
