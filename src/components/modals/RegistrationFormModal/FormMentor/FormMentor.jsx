@@ -6,13 +6,14 @@ import clsx from "clsx";
 
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { MentorSchema, formatPhoneNumber, mentorDefaultValues } from "./formMentorScheme";
+import { MentorSchema, mentorDefaultValues } from "./formMentorScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
 import { optionsSpec, optionsTime } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
+import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
