@@ -17,26 +17,26 @@
 			"card_1": {
 				"title": "Filling out the questionnaire",
 				"text_1": "Fill out the questionnaire on the website by clicking the Join the community button",
-				"text_2": "Accept the invitation to join the server on Discord",
+				"text_2": "Accept the invitation to join the server in Discord",
 				"text_3": "Add a specialization to your nickname so that the team can identify your role"
 			},
 			"card_2": {
-				"title": "Filling out the questionnaire",
-				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
-				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+				"title": "Accept the invitation",
+				"text_1": "Accept the invitation to the Baza Trainee Ukraine server, which will arrive after filling out the form within 48 hours",
+				"text_2": "Follow weekly announcements about the start of projects in the General channel",
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
 			},
 			"card_3": {
-				"title": "Заповнення анкети",
-				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
-				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+				"title": "Get onboarded",
+				"text_1": "Take a video onboarding about the rules of participation and work in the project management software",
+				"text_2": "Confirm the agreement to participate in the project and the NDA",
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
 			},
 			"card_4": {
-				"title": "Заповнення анкети",
-				"text_1": "Заповнити анкету на сайті, натиснувши кнопку Приєднатись до спільноти",
-				"text_2": "Прийняти запрошення на вступ до серверу в Discord",
-				"text_3": "Додати до свого ніку спеціалізацію, щоб команда могла ідентифікувати вашу роль"
+				"title": "Communication with the team",
+				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
+				"text_2": "Complete the task, release the product and declare the availability of practical experience",
+				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
 			}
 		},
 		"benefits_internship": {
