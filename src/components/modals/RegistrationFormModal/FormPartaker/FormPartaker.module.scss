@@ -141,7 +141,7 @@
     }
   }
 
-  .error{
+  .error_partaker{
     @include mix.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;

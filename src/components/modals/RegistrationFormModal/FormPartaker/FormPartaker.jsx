@@ -80,7 +80,7 @@ export default function FormPartaker() {
             label={t("firstName")}
           />
 
-          {errors.firstName && <p className={styles.error}>{t("error_message.firstName")}</p>}
+          {errors.firstName && <p className={styles.error_partaker}>{t("error_message.firstName")}</p>}
         </li>
 
         <li>
@@ -95,7 +95,7 @@ export default function FormPartaker() {
             label={t("lastName")}
           />
 
-          {errors.lastName && <p className={styles.error}>{t("error_message.lastName")}</p>}
+          {errors.lastName && <p className={styles.error_partaker}>{t("error_message.lastName")}</p>}
         </li>
 
         <li>
@@ -120,7 +120,7 @@ export default function FormPartaker() {
               })}
             </div>
         
-            {errors.specialization && <p className={clsx(styles.error, styles._list)}>{t("error_message.specialization")}</p>}
+            {errors.specialization && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.specialization")}</p>}
           </div>
         </li>
 
@@ -135,7 +135,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <p className={styles.error}>{t("error_message.email")}</p>}
+          {errors.email && <p className={styles.error_partaker}>{t("error_message.email")}</p>}
         </li>
 
         <li>
@@ -153,7 +153,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <p className={styles.error}>{t(`error_message.${errors.phone.message}`)}</p>}
+          {errors.phone && <p className={styles.error_partaker}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
         <li>
@@ -167,7 +167,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("city")}
           />
-          {errors.city && <p className={styles.error}>{t("error_message.city")}</p>}
+          {errors.city && <p className={styles.error_partaker}>{t("error_message.city")}</p>}
         </li>
 
         <li>
@@ -181,7 +181,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("country")}
           />
-          {errors.country && <p className={styles.error}>{t("error_message.country")}</p>}
+          {errors.country && <p className={styles.error_partaker}>{t("error_message.country")}</p>}
         </li>
 
         <li>
@@ -195,7 +195,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("discord")}
           />
-          {errors.discord && <p className={styles.error}>{t("error_message.discord")}</p>}
+          {errors.discord && <p className={styles.error_partaker}>{t("error_message.discord")}</p>}
         </li>
         <li>
           <InputField
@@ -208,7 +208,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <p className={styles.error}>{t("error_message.linkedin")}</p>}
+          {errors.linkedin && <p className={styles.error_partaker}>{t("error_message.linkedin")}</p>}
         </li>
         <li>
           <div className={styles.item}>
@@ -240,7 +240,7 @@ export default function FormPartaker() {
               </label>
             </div>
         
-            {errors.experience && <p className={clsx(styles.error, styles._list)}>{t("error_message.experience")}</p>}
+            {errors.experience && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.experience")}</p>}
           </div>
         </li>
         {/* <li>
