@@ -2,7 +2,7 @@
 @use "../../../styles/variables" as var;
 
 .wrapper{
-  padding: 14px 16px;
+  padding: 16px 16px 40px 16px;
   margin: auto;
 
   @include mix.media-q("md") {
