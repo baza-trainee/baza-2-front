@@ -1,6 +1,6 @@
+import { z } from "zod";
 import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
-import { z } from "zod";
 
 export const mentorDefaultValues= {
   firstName: "",
@@ -64,7 +64,7 @@ export const MentorSchema = z
     agree: z.boolean().refine(value => value === true, "You must agree to the terms and conditions")
 	});
 
-// const form = {
+// Форма ментора{
 //   firstName: 'string',
 //   lastName: 'string',
 //   email: 'string',  //email@gmail.com
@@ -73,17 +73,4 @@ export const MentorSchema = z
 //   linkedin: 'string',
 //   specialization:'string', // UI\UX designer
 //   convenient_time:'string',// 18.00-21.00
-// }
-
-// const form2 = {
-//   // Форма учасника 
-//   firstName: 'string',
-//   lastName: 'string',
-//   specialization:'string', // UI\UX designer
-//   phone:'string',
-//   email: 'string',  //email@gmail.com
-//   country:'string',
-//   city:'string',
-//   discord: 'string',
-//   linkedin: 'string'
 // }

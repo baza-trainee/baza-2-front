@@ -1,12 +1,13 @@
+import { z } from "zod";
 import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
-import { z } from "zod";
 
 export const partakerDefaultValues= {
   firstName: "",
   lastName: "",
   specialization:"",
   email: "",
+  phone:"",
   city:'',
   country:'',
   discord: '',
@@ -43,6 +44,12 @@ export const PartakerSchema = z
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'invalid_ru' }),
+
+    phone: z.string()
+    .trim()
+    .min(1, { message: 'phone' })
+    .regex(patternPhone, { message: 'incorrect_phone' })
+    .transform(value=>  formatPhoneNumber(value)),
 
     city: z.string()
     .trim()
@@ -168,31 +175,21 @@ export const formScheme = {
     required: true, 
   }
 };
-const form = {
-  firstName: 'string',
-  lastName: 'string',
-  email: 'string',  //email@gmail.com
-  phone:'string',   //+38 111 22 33
-  discord: 'string',
-  linkedin: 'string',
-  specialization:'string', // UI\UX designer
-  convenient_time:'string',// 18.00-21.00
-}
 
-const form2 = {
-  // Форма учасника 
-  firstName: 'string',
-  lastName: 'string',
-  specialization:'string', // UI\UX designer
-  phone:'string',
-  email: 'string',  //email@gmail.com
-  country:'string',
-  city:'string',
-  discord: 'string',
-  linkedin: 'string',
-  experience:'string',
-	motivation: 'string',
-  saw_questionnaire: "Я побачив/побачила анкету:",
+// Форма учасника {
+//   firstName: 'string',
+//   lastName: 'string',
+//   specialization:'string', // UI\UX designer
+//   email: 'string',  //email@gmail.com
+//   phone:'string',
+//   city:'string',
+//   country:'string',
+//   discord: 'string',
+//   linkedin: 'string', // https://www.linkedin.com/in/{user name}
+//   experience:'string', //'Так/Ні'  або 'bulean'?
+// 	motivation: 'string',
+//   saw_questionnaire: "Я побачив/побачила анкету:",
 
-}
+//   agree_conditions: false, // 'bulean' ?,
+// }
 

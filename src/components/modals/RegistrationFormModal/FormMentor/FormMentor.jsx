@@ -14,6 +14,7 @@ import { Icon } from "@/src/components/shared/Icon/Icon";
 import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { createKey } from "@/src/lib/utils/createKey";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -86,7 +87,7 @@ export default function FormMentor({handleClose}) {
             className={styles.item}
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...MentorSchema.lastName})}
-            isError={errors.firstName}
+            isError={errors.lastName}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
@@ -101,7 +102,7 @@ export default function FormMentor({handleClose}) {
             <div className={styles.select}>
               {optionsSpec.map((option)=>{
                 return(
-                  <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
+                  <label htmlFor={option.id} className={styles.btn_option} key={createKey()}>
                   <input 
                   type="radio" 
                   {...register("specialization", { ...MentorSchema.specialization })}
@@ -187,7 +188,7 @@ export default function FormMentor({handleClose}) {
             <div className={styles.select}>
               {optionsTime.map((option)=>{
                 return(
-                  <label htmlFor={option.id} className={clsx(styles.btn_option,styles[option.id])} key={option.id}>
+                  <label htmlFor={option.id} className={clsx(styles.btn_option,styles[option.id])} key={createKey()}>
                   <input
                   type="radio" 
                   {...register("convenient_time", { ...MentorSchema.convenient_time })}

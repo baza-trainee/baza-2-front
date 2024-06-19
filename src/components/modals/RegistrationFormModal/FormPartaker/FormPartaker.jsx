@@ -12,6 +12,8 @@ import { Icon } from "@/src/components/shared/Icon/Icon";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "@/src/components/shared/loader/Loader";
+import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { createKey } from "@/src/lib/utils/createKey";
 
 
 export default function FormPartaker() {
@@ -27,6 +29,7 @@ export default function FormPartaker() {
   } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
 
   const [ specialization, setSpecialization ] = useState('');
+  const [ phone, setPhone ] = useState('');
   const[ experience, setExperience ] = useState('')
 
   const [ agree, setAgree ] = useState(false);
@@ -34,6 +37,7 @@ export default function FormPartaker() {
 
   const resetForm = () => {
     setSpecialization('')
+    setPhone('')
     setExperience('')
     setAgree(false)
     setIsLoader(false)
@@ -104,7 +108,7 @@ export default function FormPartaker() {
             className={styles.item}
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...PartakerSchema.lastName})}
-            isError={errors.firstName}
+            isError={errors.lastName}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
@@ -119,7 +123,7 @@ export default function FormPartaker() {
             <div className={styles.select}>
               {optionsSpec.map((option)=>{
                 return(
-                  <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
+                  <label htmlFor={option.id} className={styles.btn_option} key={createKey()}>
                   <input 
                   type="radio" 
                   {...register("specialization", { ...PartakerSchema.specialization })}
@@ -153,6 +157,23 @@ export default function FormPartaker() {
           {errors.email && <p className={styles.error}>{t("error_message.email")}</p>}
         </li>
 
+        <li>
+          <InputField
+            id={"phone"}
+            className={styles.item}
+            placeholder={"+380 xx xxx xx xx"}
+            value={phone}
+            onFocus={()=>{setPhone(phone ? phone : '+380')}}
+            onInput={(e)=>{setPhone(e.target.value)}}
+            onChange={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            registerOptions={register("phone", { ...PartakerSchema.phone })}
+            isError={errors.phone}
+            isValid={isValid}
+            version={"input"}
+            label={t("phone")}
+          />
+          {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
+        </li>
 
         <li>
           <InputField
