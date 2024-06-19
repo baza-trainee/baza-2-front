@@ -2,12 +2,12 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
   padding: 10px;
-  position: relative;
+  margin: auto;
+
+  @include mx.media-q("md") {
+    padding: 40px 16px;
+  }
 }
 
 .card{

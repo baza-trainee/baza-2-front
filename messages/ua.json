@@ -296,6 +296,7 @@
 			"phone": "Введіть номер телефону",
 			"incorrect_phone": "Введіть дійсний номер телефону",
 			"discord": "Введіть нік в Discord",
+			"incorrect_discord": "Введіть коректний нік в Discord",
 			"linkedin": "Введіть профіль в Linkedin",
 			"invalid_url": "Введіть дійсне посилання на профіль в Linkedin",	
 			"convenient_time": "Оберіть зручний час консультації",
