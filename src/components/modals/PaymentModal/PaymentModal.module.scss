@@ -2,11 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 16px 10px;
+  padding: 10px;
   margin: auto;
 
   @include mx.media-q("md") {

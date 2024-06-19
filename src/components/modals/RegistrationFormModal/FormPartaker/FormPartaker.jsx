@@ -33,7 +33,7 @@ export default function FormPartaker() {
   const[ experience, setExperience ] = useState('')
 
   const [ agree, setAgree ] = useState(false);
-  const [loader, setIsLoader] = useState(false);
+  const [loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setSpecialization('')
@@ -62,25 +62,6 @@ export default function FormPartaker() {
     },3000)
   };
 
-
-  // const {
-  //   control,
-  //   register,
-  //   handleSubmit,
-  //   trigger,
-  //   formState: { errors, isValid, isDirty },
-  //   reset,
-  // } = useForm({ defaultValues: { ...formScheme.defaultValues } });
-
-
-  // const [ specialization, setSpecialization ] = useState('');
-  // //const [ convenientTime, setConvenientTime ] = useState('');
-  // const [ agree, setAgree ] = useState(false);
-
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   reset();
-  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_partaker}>
@@ -172,7 +153,7 @@ export default function FormPartaker() {
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
+          {errors.phone && <p className={styles.error}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
         <li>

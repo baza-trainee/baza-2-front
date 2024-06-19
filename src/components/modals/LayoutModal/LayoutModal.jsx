@@ -21,13 +21,16 @@ const LayoutModal = ({ children, isOpen, handleClose }) => {
     };
   }, [closeOnEscape]);
 
-  console.log(isOpen);
-
   useBodyLock(isOpen);
 
   if (!isOpen) return null;
 
-  return createPortal(<div data-lenis-prevent className={styles.modalOverlay}>{children}</div>, document.body
+  return createPortal(
+    <div data-lenis-prevent className={styles.modalOverlay}>
+      <div className={styles.modaScroll}>
+        {children}
+      </div>
+    </div>, document.body
   );
 };
 
