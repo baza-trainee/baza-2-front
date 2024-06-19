@@ -24,10 +24,9 @@
   grid-template-columns: 1fr;
   row-gap: 20px;
   margin: 20px auto;
-  @media (min-width: 696px) {
+  @media (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
     row-gap: 32px;
-    column-gap: 20px;
     margin: 32px auto;
     max-width: 1366px;
   }
@@ -35,7 +34,6 @@
   @include mx.media-q("xl") {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 56px;
-    column-gap: 80px;
     margin: 56px auto;
     max-width: 1680px;
   }
