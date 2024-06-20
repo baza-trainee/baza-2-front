@@ -7,6 +7,7 @@ export default function InputField({
   placeholder = "default placeholder",
   registerOptions = {},
   isError,
+  //errorMessage='error',
   isValid,
   version,
   label = "default label",
@@ -77,6 +78,7 @@ export default function InputField({
           {...registerOptions}
           placeholder={placeholder}
         />
+        {/* {isError && <p className={styles.error_message}>{errorMessage}</p>} */}
       </div>
     );
   }
@@ -97,6 +99,8 @@ export default function InputField({
           placeholder={placeholder}
           {...props}
         />
+
+        {isError && <p className={styles.error_message}>{errorMessage}</p>}
       </div>
     );
   }
