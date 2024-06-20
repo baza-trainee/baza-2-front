@@ -274,6 +274,7 @@
 		"discord": "Nick on Discord",
 		"linkedin": "Linkedin profile",
 		"linkedin_placeholder": "Link to profile",
+		"course_name": "The name of the completed course in the specialty and the end date (if the course is currently running, indicate that it is current)",
 		"convenient_time": "A convenient time for consultation",
 		"anytime": "anytime",
 		"permit": "I consent to the processing of personal data in accordance with the Law of Ukraine «On the Protection of Personal Data»",
@@ -303,7 +304,6 @@
 			"course_name": "Enter the name of the completed course",
 			"experience": "Choose the availability of experience",
 			"motivation": "State your motivation",
-			"choose_project": "Choose a project",
 			"saw_questionnaire": "Choose where you saw the questionnaire",
 			"agree": "Get acquainted with the conditions of participation",
 			"permit": "Give consent to the processing of personal data"

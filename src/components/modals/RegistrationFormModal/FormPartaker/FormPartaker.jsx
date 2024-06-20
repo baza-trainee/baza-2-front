@@ -215,20 +215,33 @@ export default function FormPartaker() {
           {errors.linkedin && <p className={styles.error_partaker}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
         <li>
+          <InputField
+            id={"courseName"}
+            className={styles.item}
+            placeholder={t("your_answer")}
+            registerOptions={register("courseName", { ...PartakerSchema.courseName })}
+            isError={errors.courseName}
+            isValid={isValid}
+            version={"input"}
+            label={t("course_name")}
+          />
+          {errors.courseName && <p className={styles.error_partaker}>{t(`error_message.${errors.courseName.message}`)}</p>}
+        </li>
+        <li>
           <div className={styles.item}>
             <h4>{t("experience")} <span>*</span></h4>
             <div className={styles.select_column}>
               <label htmlFor={'yes'} className={styles.btn_option}>
                 <input 
                   type="radio" 
-                    {...register("experience", { ...PartakerSchema.experience })}
-                    id={'yes'} name="experience" 
-                    value={t("yes")} 
-                    onClick={()=>{setExperience('yes')}}/>
-                      <span className={clsx(styles.check, experience==='yes' && styles._active)}>
-                        <Icon name={'check'}/>
-                      </span>
-                      {t("yes")}
+                  {...register("experience", { ...PartakerSchema.experience })}
+                  id={'yes'} name="experience" 
+                  value={t("yes")} 
+                  onClick={()=>{setExperience('yes')}}/>
+                  <span className={clsx(styles.check, experience==='yes' && styles._active)}>
+                    <Icon name={'check'}/>
+                  </span>
+                  {t("yes")}
               </label>
               <label htmlFor={'no'} className={styles.btn_option}>
                 <input 
@@ -273,8 +286,8 @@ export default function FormPartaker() {
                   <label htmlFor={option.id} className={styles.btn_option} key={createKey()}>
                   <input 
                   type="radio" 
-                  {...register("saw_questionnaire", { ...PartakerSchema.saw_questionnaire })}
-                  id={option.id} name="saw_questionnaire" 
+                  {...register("sawQuestionnaire", { ...PartakerSchema.sawQuestionnaire })}
+                  id={option.id} name="sawQuestionnaire" 
                   value={t(option.id)} 
                   onClick={()=>{setQuestionnaire(t(option.id))}}/>
                     <span className={clsx(styles.check, questionnaire === t(option.id) && styles._active)}>
@@ -286,7 +299,7 @@ export default function FormPartaker() {
               })}
             </div>
         
-            {errors.saw_questionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
+            {errors.sawQuestionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
           </div>
         </li>
         <li>
