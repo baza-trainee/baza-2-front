@@ -5,12 +5,12 @@
   padding: 16px 10px 40px 10px;
   margin: auto;
 
-  @media (max-height: 430px) {
-    padding: 40px 16px 80px 16px;
-  }
-
   @include mx.media-q("md") {
     padding: 40px 16px;
+  }
+  
+  @media (max-height: 430px) {
+    padding: 40px 16px 80px 16px;
   }
 }
 

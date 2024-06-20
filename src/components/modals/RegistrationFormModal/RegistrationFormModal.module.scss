@@ -8,6 +8,7 @@
   @include mix.media-q("md") {
     padding: 40px 16px 80px 16px;
   }
+  
   @include mix.media-q("xl") {
     padding: 10vh 16px;
   }
