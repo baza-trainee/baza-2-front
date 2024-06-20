@@ -143,8 +143,7 @@ export default function FormMentor({handleClose}) {
             placeholder={"+380 xx xxx xx xx"}
             value={phone}
             onFocus={()=>{setPhone(phone ? phone : '+380')}}
-            onInput={(e)=>{setPhone(e.target.value)}}
-            onChange={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            onInput={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
             registerOptions={register("phone", { ...MentorSchema.phone })}
             isError={errors.phone}
             isValid={isValid}

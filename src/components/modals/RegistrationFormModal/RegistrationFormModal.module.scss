@@ -2,12 +2,13 @@
 @use "../../../styles/variables" as var;
 
 .wrapper{
-  padding: 16px 16px 40px 16px;
+  padding: 16px 16px 80px 16px;
   margin: auto;
 
   @include mix.media-q("md") {
-    padding: 40px 16px;
+    padding: 40px 16px 80px 16px;
   }
+  
   @include mix.media-q("xl") {
     padding: 10vh 16px;
   }

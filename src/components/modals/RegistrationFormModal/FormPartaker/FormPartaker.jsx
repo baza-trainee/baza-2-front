@@ -112,10 +112,11 @@ export default function FormPartaker() {
                   <input 
                   type="radio" 
                   {...register("specialization", { ...PartakerSchema.specialization })}
-                  id={option.id} name="specialization" 
+                  id={option.id} 
+                  name="specialization" 
                   value={option.label} 
                   onClick={()=>{setSpecialization(option.label)}}/>
-                    <span className={clsx(styles.check,specialization === option.label && styles._active)}>
+                    <span className={clsx(styles.check, specialization === option.label && styles._active)}>
                       <Icon name={'check'}/>
                     </span>
                     {option.label}
@@ -149,8 +150,7 @@ export default function FormPartaker() {
             placeholder={"+380 xx xxx xx xx"}
             value={phone}
             onFocus={()=>{setPhone(phone ? phone : '+380')}}
-            onInput={(e)=>{setPhone(e.target.value)}}
-            onChange={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            onInput={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
             registerOptions={register("phone", { ...PartakerSchema.phone })}
             isError={errors.phone}
             isValid={isValid}
