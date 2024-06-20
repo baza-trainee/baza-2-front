@@ -112,10 +112,11 @@ export default function FormPartaker() {
                   <input 
                   type="radio" 
                   {...register("specialization", { ...PartakerSchema.specialization })}
-                  id={option.id} name="specialization" 
+                  id={option.id} 
+                  name="specialization" 
                   value={option.label} 
                   onClick={()=>{setSpecialization(option.label)}}/>
-                    <span className={clsx(styles.check,specialization === option.label && styles._active)}>
+                    <span className={clsx(styles.check, specialization === option.label && styles._active)}>
                       <Icon name={'check'}/>
                     </span>
                     {option.label}
