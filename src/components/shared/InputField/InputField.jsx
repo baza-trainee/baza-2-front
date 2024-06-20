@@ -99,8 +99,6 @@ export default function InputField({
           placeholder={placeholder}
           {...props}
         />
-
-        {isError && <p className={styles.error_message}>{errorMessage}</p>}
       </div>
     );
   }
