@@ -12,9 +12,10 @@ export const partakerDefaultValues= {
   country:'',
   discord: '',
   linkedin: '',
+  courseName:'',
   experience:'',
 	motivation: '',
-  saw_questionnaire: '',
+  sawQuestionnaire: '',
   agree_conditions: false,
   agree: false,
 }
@@ -76,6 +77,9 @@ export const PartakerSchema = z
     .url({ message: "invalid_url" })
     .regex(patternUrlLinkedin, { message: 'invalid_url' }),
 
+    courseName: z.string()
+    .trim()
+    .min(1, { message: 'course_name' }),
 
     experience: z.string()
     .trim()
@@ -85,7 +89,7 @@ export const PartakerSchema = z
     .trim()
     .min(1, { message: 'experience' }),
 
-    saw_questionnaire: z.string()
+    sawQuestionnaire: z.string()
     .trim()
     .min(1, { message: 'experience' }),
 
@@ -186,10 +190,9 @@ export const formScheme = {
 //   country:'string',
 //   discord: 'string',
 //   linkedin: 'string', // https://www.linkedin.com/in/{user name}
-//   experience:'string', //'Так/Ні'  або 'bulean'?
-// 	motivation: 'string',
-//   saw_questionnaire: "Я побачив/побачила анкету:",
-
-//   agree_conditions: false, // 'bulean' ?,
+//   courseName:'string'
+//   experience:'string', //'Так/Ні'  або 'bооlean'?
+// 	 motivation: 'string',
+//   sawQuestionnaire: "Я побачив/побачила анкету:",
 // }
 

@@ -274,6 +274,7 @@
 		"discord": "Nick na Discordzie",
 		"linkedin": "Profil na Linkedinie",
 		"linkedin_placeholder": "Link do profilu",
+		"course_name": "Nazwa ukończonego kursu w specjalności i data zakończenia (jeżeli kurs jest aktualnie realizowany, należy wskazać, że jest aktualny)",
 		"convenient_time": "Dogodny termin konsultacji",
 		"anytime": "kiedykolwiek",
 		"permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
@@ -303,7 +304,6 @@
 			"course_name": "Wpisz nazwę ukończonego kursu",
 			"experience": "Wybierz dostępność doświadczenia",
 			"motivation": "Podaj swoją motywację",
-			"choose_project": "Wybierz projekt",
 			"saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
 			"agree": "Zapoznaj się z warunkami uczestnictwa",
 			"permit": "Wyraź zgodę na przetwarzanie danych osobowych"
