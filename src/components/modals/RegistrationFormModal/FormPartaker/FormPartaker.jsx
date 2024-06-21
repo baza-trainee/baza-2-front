@@ -228,6 +228,19 @@ export default function FormPartaker() {
           {errors.courseName && <p className={styles.error_partaker}>{t(`error_message.${errors.courseName.message}`)}</p>}
         </li> */}
         <li>
+          <InputField
+            id={"courseName"}
+            className={styles.item}
+            placeholder={t("your_answer")}
+            registerOptions={register("courseName", { ...PartakerSchema.courseName })}
+            isError={errors.courseName}
+            isValid={isValid}
+            version={"input"}
+            label={t("course_name")}
+          />
+          {errors.courseName && <p className={styles.error_partaker}>{t(`error_message.${errors.courseName.message}`)}</p>}
+        </li>
+        <li>
           <div className={styles.item}>
             <h4>{t("experience")} <span>*</span></h4>
             <div className={styles.select_column}>

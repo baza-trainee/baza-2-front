@@ -13,6 +13,7 @@ export const partakerDefaultValues= {
   discord: '',
   linkedin: '',
   courseName:'',
+  courseName:'',
   experience:'',
 	motivation: '',
   sawQuestionnaire: '',
@@ -89,6 +90,7 @@ export const PartakerSchema = z
     .trim()
     .min(1, { message: 'experience' }),
 
+    sawQuestionnaire: z.string()
     sawQuestionnaire: z.string()
     .trim()
     .min(1, { message: 'experience' }),
