@@ -1,10 +1,10 @@
 import styles from "./StructureCard.module.scss";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import MainLink from "../../shared/MainLink/MainLink";
 
 export default function StructureCard({ item }) {
   const t = useTranslations("Main.our_structure_section");
-  const { img, title, text, width, height, url } = item;
+  const { img, title, text, width, height, url, openInNewTab } = item;
 
   return (
     <div className={styles.cardStyle}>
@@ -19,13 +19,13 @@ export default function StructureCard({ item }) {
         />
       </div>
       <div className={styles.textCard}>
-        <Link
+        <MainLink
           className={styles.header}
-          href={url}
-          target={url === "https://baza-skill.com.ua" ? "_blank" : ""}
+          url={url}
+          openInNewTab={openInNewTab}
         >
           {t(title)}
-        </Link>
+        </MainLink>
         <h3 className={styles.text}>{t(text)}</h3>
       </div>
     </div>
