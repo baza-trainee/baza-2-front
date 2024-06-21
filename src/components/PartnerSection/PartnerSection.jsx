@@ -12,13 +12,6 @@ import styles from "./PartnerSection.module.scss";
 
 const PartnerSection = () => {
 
-  const getSlidesPerView = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth <= 500) return 1;
-      if (window.innerWidth <= 768) return 2;
-      return 3;
-    }
-  }
   const t = useTranslations("Main.partners_section");
 
   return (
@@ -46,11 +39,30 @@ const PartnerSection = () => {
             grabCursor={true}
             centeredSlides={true}
             loop={true}
-            slidesPerView={getSlidesPerView()}
+            
+            breakpoints={{
+            320: {
+              spaceBetween: 10,
+              slidesPerView: 1,
+
+            },
+            768: {
+              spaceBetween: 30,
+              slidesPerView: 2,
+            },
+            1366: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1920: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+          }}
             coverflowEffect={
               {
-                    rotate: 0,
-                    stretch: 80,
+                    rotate: 5,
+                    stretch: 10,
                     depth: 350,
                     modifier: 1,
                     slideShadows: false,
