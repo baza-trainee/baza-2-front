@@ -57,7 +57,6 @@ const PartnerSection = () => {
             1920: {
               slidesPerView: 3,
               spaceBetween: 10,
-
             },
           }}
             coverflowEffect={
