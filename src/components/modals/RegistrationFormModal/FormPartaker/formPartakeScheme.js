@@ -12,8 +12,7 @@ export const partakerDefaultValues= {
   country:'',
   discord: '',
   linkedin: '',
-  courseName:'',
-  experience:'',
+  experience: '',
 	motivation: '',
   sawQuestionnaire: '',
   agree_conditions: false,
@@ -54,17 +53,17 @@ export const PartakerSchema = z
 
     city: z.string()
     .trim()
-    .min(1, { message: 'lastName' })
-    .min(2, { message: 'lastName_min' })
-    .max(50, { message: 'lastName_max' })
-    .regex(patternName, { message: 'incorrect_lastName' }),
+    .min(1, { message: 'city' })
+    .min(2, { message: 'city' })
+    .max(50, { message: 'city' })
+    .regex(patternName, { message: 'city' }),
 
     country: z.string()
     .trim()
-    .min(1, { message: 'lastName' })
-    .min(2, { message: 'lastName_min' })
-    .max(50, { message: 'lastName_max' })
-    .regex(patternName, { message: 'incorrect_lastName' }),
+    .min(1, { message: 'country' })
+    .min(2, { message: 'country' })
+    .max(50, { message: 'country' })
+    .regex(patternName, { message: 'country' }),
 
     discord: z.string()
     .trim()
@@ -79,7 +78,8 @@ export const PartakerSchema = z
 
     experience: z.string()
     .trim()
-    .min(1, { message: 'experience' }),
+    .min(1, { message: 'experience' })
+    .transform(value=>  value==='true'),
 
     motivation: z.string()
     .trim()
@@ -94,88 +94,6 @@ export const PartakerSchema = z
     agree: z.boolean().refine(value => value === true, "You must agree to the terms and conditions")
 	});
 
-
-export const formScheme = {
-  defaultValues: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone:"",
-    country:'',
-    city:'',
-    discord: "",
-    linkedin: "",
-    specialization:"",
-    convenient_time:"",
-    agree: false,
-  },
-  firstName:{
-    required: true, 
-    minLength:2, 
-    maxLength:30, 
-    // регуярний вираз блокує російські літери.
-     pattern: /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} '-]{0,28}[\p{L}])?$/ugi
-  },
-  lastName:{
-    required: true, 
-    minLength:2, 
-    maxLength:30, 
-    // регуярний вираз блокує російські літери.
-     pattern: /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} '-]{0,28}[\p{L}])?$/ugi
-  },
-  specialization:{
-    required: true, 
-    // minLength:2, 
-    // maxLength:30, 
-    // регуярний вираз блокує російські літери.
-    //  pattern: /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} '-]{0,28}[\p{L}])?$/ugi
-  },
-  email:{
-    required: true,
-    minLength:2,
-    maxLength:50,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$|by$)[A-Z]{2,}$/i
-  },
-  phone:{
-    required: true,
-    minLength:13,
-    maxLength:17,
-    //pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$)[A-Z]{2,}$/i
-  },
-  country:{
-    required: true,
-    minLength:2, 
-    maxLength:30, 
-    // регуярний вираз блокує російські літери.
-     pattern: /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} '-]{0,28}[\p{L}])?$/ugi
-  },
-  city:{
-    required: true,
-    minLength:2, 
-    maxLength:30, 
-    // регуярний вираз блокує російські літери.
-     pattern: /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} '-]{0,28}[\p{L}])?$/ugi
-  },
-  discord:{
-    required: true,
-    minLength:2,
-    maxLength:50,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$)[A-Z]{2,}$/i
-  }, 
-  linkedin:{
-    required: true,
-    minLength:2,
-    maxLength:50,
-    pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(?!ru$|рф$)[A-Z]{2,}$/i
-  },
-  convenient_time:{
-    required: true, 
-  },
-  agree:{
-    required: true, 
-  }
-};
-
 // Форма учасника {
 //   firstName: 'string',
 //   lastName: 'string',
@@ -186,8 +104,7 @@ export const formScheme = {
 //   country:'string',
 //   discord: 'string',
 //   linkedin: 'string', // https://www.linkedin.com/in/{user name}
-//   courseName:'string'
-//   experience:'string', //'Так/Ні'  або 'bооlean'?
+//   experience:'string', 'bооlean'
 // 	 motivation: 'string',
 //   sawQuestionnaire: "Я побачив/побачила анкету:",
 // }
