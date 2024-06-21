@@ -214,7 +214,7 @@ export default function FormPartaker() {
           />
           {errors.linkedin && <p className={styles.error_partaker}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
-        <li>
+        {/* <li>
           <InputField
             id={"courseName"}
             className={styles.item}
@@ -226,7 +226,7 @@ export default function FormPartaker() {
             label={t("course_name")}
           />
           {errors.courseName && <p className={styles.error_partaker}>{t(`error_message.${errors.courseName.message}`)}</p>}
-        </li>
+        </li> */}
         <li>
           <div className={styles.item}>
             <h4>{t("experience")} <span>*</span></h4>

@@ -77,9 +77,9 @@ export const PartakerSchema = z
     .url({ message: "invalid_url" })
     .regex(patternUrlLinkedin, { message: 'invalid_url' }),
 
-    courseName: z.string()
-    .trim()
-    .min(1, { message: 'course_name' }),
+    // courseName: z.string()
+    // .trim()
+    // .min(1, { message: 'course_name' }),
 
     experience: z.string()
     .trim()
