@@ -92,7 +92,7 @@
 
   
   @include mixin.media-q("md") { 
-      gap: 24px;
+      gap: 14px;
       width: 668px;
     }
     @include mixin.media-q("xl") { 
@@ -112,7 +112,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  width: 320;
+  width: 320px;
   height: fit-content;
 
   @include mixin.media-q("md") { 

@@ -31,15 +31,15 @@ const PartnerSection = () => {
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
-            spaceBetween={10}
+            spaceBetween={0}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
-            grabCursor={true}
-            centeredSlides={true}
             loop={true}
-            
+            centeredSlides={true}
+
+
             breakpoints={{
             320: {
               spaceBetween: 10,
@@ -47,21 +47,22 @@ const PartnerSection = () => {
 
             },
             768: {
-              spaceBetween: 30,
+              spaceBetween: 10,
               slidesPerView: 2,
             },
             1366: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 10,
             },
             1920: {
               slidesPerView: 3,
               spaceBetween: 10,
+
             },
           }}
             coverflowEffect={
               {
-                    rotate: 5,
+                    rotate: 1,
                     stretch: 10,
                     depth: 350,
                     modifier: 1,

@@ -19,7 +19,7 @@ export const partnerCardItems = [
   {
     title: "slide_4.title",
     img: "/images/partner_section/beetroot.webp",
-    url: "https://juniverse.com.ua/",
+    url: "https://beetroot.academy/",
 
   },
   {
