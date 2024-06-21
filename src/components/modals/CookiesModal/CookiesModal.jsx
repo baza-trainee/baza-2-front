@@ -6,6 +6,7 @@ import { Icon } from '../../shared/Icon/Icon';
 import MainButton from '../../shared/MainButton/MainButton';
 import styles from './CookiesModal.module.scss';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
+import downloadPdf from '@/src/lib/hooks/downloadPdf';
 
 // Examples Cookies:  expires: 365 днів.
 // Cookies.set('name', 'value', { expires: 365 })
@@ -42,13 +43,11 @@ export default function CookiesModal() {
     <div className={styles.modal}>
       <h3 className={styles.title}>Cookies<Icon name={"cookies"}/></h3>
 
-      <p className={styles.text}>{t("text")}  <a
+      <p className={styles.text}>{t("text")}  <button
+        type="button"
         className={styles.linck}
-        href={'/test'}
-        //href={'/documents/privacy _policy.pdf'}
-        target="_blank"
-        rel="noreferrer noopener"
-        >{t('privacy_policy')}</a>
+        onClick={()=>{downloadPdf('/documents/privacy_policy.pdf')}}
+        >{t('privacy_policy')}</button> 
       </p>
 
       <MainButton className={styles.btn} 

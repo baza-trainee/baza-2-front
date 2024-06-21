@@ -14,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
+import downloadPdf from "@/src/lib/hooks/downloadPdf";
 
 
 export default function FormPartaker() {
@@ -214,19 +215,7 @@ export default function FormPartaker() {
           />
           {errors.linkedin && <p className={styles.error_partaker}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
-        <li>
-          <InputField
-            id={"courseName"}
-            className={styles.item}
-            placeholder={t("your_answer")}
-            registerOptions={register("courseName", { ...PartakerSchema.courseName })}
-            isError={errors.courseName}
-            isValid={isValid}
-            version={"input"}
-            label={t("course_name")}
-          />
-          {errors.courseName && <p className={styles.error_partaker}>{t(`error_message.${errors.courseName.message}`)}</p>}
-        </li>
+
         <li>
           <div className={styles.item}>
             <h4>{t("experience")} <span>*</span></h4>
@@ -235,10 +224,10 @@ export default function FormPartaker() {
                 <input 
                   type="radio" 
                   {...register("experience", { ...PartakerSchema.experience })}
-                  id={'yes'} name="experience" 
-                  value={t("yes")} 
+                  id={'yes'} name= "experience" 
+                  value={'true'} 
                   onClick={()=>{setExperience('yes')}}/>
-                  <span className={clsx(styles.check, experience==='yes' && styles._active)}>
+                  <span className={clsx(styles.check, experience === 'yes' && styles._active)}>
                     <Icon name={'check'}/>
                   </span>
                   {t("yes")}
@@ -249,16 +238,16 @@ export default function FormPartaker() {
                   {...register("experience", { ...PartakerSchema.experience })}
                   id={'no'} 
                   name="experience" 
-                  value={t("no")} 
+                  value={'false'} 
                   onClick={()=>{setExperience('no')}}/>
-                  <span className={clsx(styles.check, experience==='no' && styles._active)}>
+                  <span className={clsx(styles.check, experience === 'no' && styles._active)}>
                     <Icon name={'check'}/>
                   </span>
                   {t("no")}
               </label>
             </div>
         
-            {errors.experience && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.experience")}</p>}
+            {errors.experience && <p className={clsx(styles.error_partaker, styles._list)}>{t(`error_message.${errors.experience.message}`)}</p>}
           </div>
         </li>
 
@@ -305,10 +294,10 @@ export default function FormPartaker() {
         <li>
           <div className={styles.item}>
             <h4>{t("rules_participation")} <span>*</span></h4>
-            <a href="/test" 
-            className={styles.linck}
-            target="_blank"
-            rel="noreferrer noopener">Baza_Trainee_Ukraine.pdf</a>
+            <button 
+              className={styles.linck} 
+              onClick={ ()=>{downloadPdf('/documents/rules_participation.pdf')} }
+              type="button" >Baza_Trainee_Ukraine.pdf</button>
           </div>
         </li>
         <li>

@@ -45,6 +45,7 @@
           font-size: 20px;
         }
       }
+
       & > h4{
         @include mix.apply-font-styles(var.$text-16-font);
         font-size: 14px;
@@ -96,14 +97,18 @@
           margin-bottom: 24px;
         }
       }
+      
       .linck{
         @include mix.apply-font-styles(var.$text-16-font);
         color: var.$secondary-white;
-        font-size: 16px;
         text-decoration: underline;
         transition: color var.$transition-duration-base var.$transition-timing-base;
-        &:hover{
-          color: var.$primary-hover;
+        text-align: start;
+
+        @media (any-hover: hover){
+          &:hover{
+            color: var.$primary-hover;
+          }
         }
       }
       .btn_option{
