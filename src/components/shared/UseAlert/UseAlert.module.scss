@@ -2,7 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .wrapper{
-  min-width: 98%;
+  width: clamp(300px, 98vw, 500px);
   padding: 10px;
   position: fixed;
   left: 50%;

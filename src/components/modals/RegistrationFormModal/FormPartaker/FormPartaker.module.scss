@@ -45,6 +45,7 @@
           font-size: 20px;
         }
       }
+
       & > h4{
         @include mix.apply-font-styles(var.$text-16-font);
         font-size: 14px;
@@ -82,7 +83,34 @@
           }
         }
       }
+      
+      .select_column{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
 
+        @include mix.media-q("md") {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 24px;
+        }
+      }
+      
+      .linck{
+        @include mix.apply-font-styles(var.$text-16-font);
+        color: var.$secondary-white;
+        text-decoration: underline;
+        transition: color var.$transition-duration-base var.$transition-timing-base;
+        text-align: start;
+
+        @media (any-hover: hover){
+          &:hover{
+            color: var.$primary-hover;
+          }
+        }
+      }
       .btn_option{
         display: flex;
         align-items: center;
@@ -127,7 +155,7 @@
     }
   }
 
-  .error{
+  .error_partaker{
     @include mix.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;

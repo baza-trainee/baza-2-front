@@ -12,8 +12,7 @@ const HeroCard = ({ title, desc, img }) => {
         src={img}
         alt={title}
         className={styles.image}
-        priority
-        quality={100}
+        //quality={80}
       />
       <div className={styles.wrapper}>
         <h2>{t(title)}</h2>

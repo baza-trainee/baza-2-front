@@ -3,7 +3,6 @@
 
 .item {
   width: clamp(280px, 84vw, 625px);
-  //width: 100%;
   display: flex;
   flex-direction: column;
   & > label {

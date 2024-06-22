@@ -7,10 +7,10 @@ import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtn
 import { useTranslations } from "next-intl";
 
 const AdvantagesSection = () => {
-  const t = useTranslations();
+  const t = useTranslations("Internship.benefits_internship");
   return (
     <div className={styles.section}>
-      <h3 className={styles.title}>Переваги стажування</h3>
+      <h3 className={styles.title}>{t("title")}</h3>
       <ul className={styles.list}>
         {items.map(({ img, text }) => (
           <li key={img}>
@@ -20,7 +20,7 @@ const AdvantagesSection = () => {
       </ul>
       <div className={styles.button}>
         <ControlBtnRegistrationFormModal type="partaker">
-          Приєднатися до спільноти
+          {t("btn_text")}
         </ControlBtnRegistrationFormModal>
       </div>
     </div>

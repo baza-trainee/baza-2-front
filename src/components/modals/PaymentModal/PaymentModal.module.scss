@@ -2,12 +2,16 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 10px 40px 10px;
   margin: auto;
-  padding: 10px;
-  position: relative;
+
+  @include mx.media-q("md") {
+    padding: 40px 16px;
+  }
+  
+  @media (max-height: 430px) {
+    padding: 40px 16px 80px 16px;
+  }
 }
 
 .card{
@@ -21,7 +25,7 @@
   background: var.$primary-fon-card;
   color: var.$secondary-white;
   position: relative;
- 
+
   @include mx.media-q("md") {
     min-height: 384px;
   }

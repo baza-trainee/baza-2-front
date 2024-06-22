@@ -25,7 +25,7 @@ const MentorSection = () => {
               fill
               sizes="100%"
               alt="About mentor team"
-              quality={80}
+              //quality={80}
             />
             <Image
               className={styles.image}

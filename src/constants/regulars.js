@@ -10,6 +10,7 @@ export const patternMessage = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A
 
 export const patternUrlLinkedin = /^https:\/\/www\.linkedin\.com\/in/;
 
+export const patternNikDiscord = /^[a-zA-Z0-9][a-zA-Z0-9-_]{1,31}$/;
 
 // const emailPattern =
 //   /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;

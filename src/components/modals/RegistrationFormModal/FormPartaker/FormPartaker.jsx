@@ -1,34 +1,72 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from './FormPartaker.module.scss';
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
-import { formScheme } from "./formPartakeScheme";
+import { PartakerSchema, partakerDefaultValues } from "./formPartakeScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/InputField/InputField";
-import { optionsSpec, optionsTime } from "./options";
+import { optionsQuestionnaire, optionsSpec } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
+import stateUseAlert from "@/src/state/stateUseAlert";
+import { zodResolver } from "@hookform/resolvers/zod";
+import Loader from "@/src/components/shared/loader/Loader";
+import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { createKey } from "@/src/lib/utils/createKey";
+import downloadPdf from "@/src/lib/hooks/downloadPdf";
 
 
 export default function FormPartaker() {
   const t = useTranslations("Modal_form");
+
+  const open = stateUseAlert(state => state.open);
+
   const {
-    control,
     register,
     handleSubmit,
-    trigger,
     formState: { errors, isValid, isDirty },
-    reset,
-  } = useForm({ defaultValues: { ...formScheme.defaultValues } });
+    reset
+  } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
+
   const [ specialization, setSpecialization ] = useState('');
-  //const [ convenientTime, setConvenientTime ] = useState('');
+  const [ phone, setPhone ] = useState('');
+  const[ experience, setExperience ] = useState('')
+  const[ questionnaire, setQuestionnaire ] = useState('')
+  
+  const [ conditions, setConditions ] = useState(false);
   const [ agree, setAgree ] = useState(false);
+  const [loader, setIsLoader ] = useState(false);
+
+  const resetForm = () => {
+    setSpecialization('')
+    setPhone('')
+    setExperience('')
+    setQuestionnaire('')
+    setConditions(false)
+    setAgree(false)
+    setIsLoader(false)
+    reset();
+  }
+  
+  const isSubmitted = (res) => {
+    setIsLoader(false)
+    if(res === 'error'){
+      open('error')
+    }
+    open('success')
+    resetForm()
+  }
 
   const onSubmit = (data) => {
-    console.log(data);
-    reset();
+    setIsLoader(true)
+    // Імітація відправки форми
+    setTimeout(()=>{
+      isSubmitted('success')
+      console.log(data);
+    },3000)
   };
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_partaker}>
@@ -40,16 +78,14 @@ export default function FormPartaker() {
             id={"firstName"}
             className={styles.item}
             placeholder={t("firstName")}
-            registerOptions={register("firstName", { ...formScheme.firstName, onBlur:() => {
-              trigger("firstName")
-            }})}
+            registerOptions={register("firstName", { ...PartakerSchema.firstName})}
             isError={errors.firstName}
             isValid={isValid}
             version={"input"}
             label={t("firstName")}
           />
 
-          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.firstName")}</span>}
+          {errors.firstName && <p className={styles.error_partaker}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
 
         <li>
@@ -57,16 +93,14 @@ export default function FormPartaker() {
             id={"lastName"}
             className={styles.item}
             placeholder={t("lastName")}
-            registerOptions={register("lastName", { ...formScheme.lastName, onBlur:() => {
-              trigger("lastName")
-            }})}
-            isError={errors.firstName}
+            registerOptions={register("lastName", { ...PartakerSchema.lastName})}
+            isError={errors.lastName}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
           />
 
-          {errors.lastName && <span className={clsx(styles.error, styles._hide)}>{t("error_message.lastName")}</span>}
+          {errors.lastName && <p className={styles.error_partaker}>{t(`error_message.${errors.lastName.message}`)}</p>}
         </li>
 
         <li>
@@ -75,14 +109,15 @@ export default function FormPartaker() {
             <div className={styles.select}>
               {optionsSpec.map((option)=>{
                 return(
-                  <label htmlFor={option.id} className={styles.btn_option} key={option.id}>
+                  <label htmlFor={option.id} className={styles.btn_option} key={createKey()}>
                   <input 
                   type="radio" 
-                  {...register("specialization", { ...formScheme.specialization })}
-                  id={option.id} name="specialization" 
+                  {...register("specialization", { ...PartakerSchema.specialization })}
+                  id={option.id} 
+                  name="specialization" 
                   value={option.label} 
                   onClick={()=>{setSpecialization(option.label)}}/>
-                    <span className={clsx(styles.check,specialization === option.label && styles._active)}>
+                    <span className={clsx(styles.check, specialization === option.label && styles._active)}>
                       <Icon name={'check'}/>
                     </span>
                     {option.label}
@@ -91,71 +126,67 @@ export default function FormPartaker() {
               })}
             </div>
         
-            {errors.specialization && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.specialization")}</span>}
+            {errors.specialization && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.specialization")}</p>}
           </div>
         </li>
 
+        <li>
+          <InputField
+            id={"email"}
+            className={styles.item}
+            placeholder={"email@gmail.com"}
+            registerOptions={register("email", { ...PartakerSchema.email })}
+            isError={errors.email}
+            isValid={isValid}
+            version={"input"}
+            label={t("email")}
+          />
+          {errors.email && <p className={styles.error_partaker}>{t(`error_message.${errors.email.message}`)}</p>}
+        </li>
 
         <li>
           <InputField
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
-            defaultValues={"+380"}
-            registerOptions={register("phone", { ...formScheme.phone,onBlur:() => {
-              trigger("phone")
-            } })}
+            value={phone}
+            onFocus={()=>{setPhone(phone ? phone : '+380')}}
+            onInput={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            registerOptions={register("phone", { ...PartakerSchema.phone })}
             isError={errors.phone}
             isValid={isValid}
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <span className={clsx(styles.error, styles._hide)}>{t("error_message.phone")}</span>}
+          {errors.phone && <p className={styles.error_partaker}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
-        <li>
-          <InputField
-            id={"email"}
-            className={styles.item}
-            placeholder={"email@gmail.com"}
-            registerOptions={register("email", { ...formScheme.email,onBlur:() => {
-              trigger("email")
-            } })}
-            isError={errors.email}
-            isValid={isValid}
-            version={"input"}
-            label={t("email")}
-          />
-          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t("error_message.email")}</span>}
-        </li>
-        <li>
-          <InputField
-            id={"country"}
-            className={styles.item}
-            placeholder={t("country_placeholder")}
-            registerOptions={register("country", { ...formScheme.country,onBlur:() => {
-              trigger("country")
-            } })}
-            isError={errors.country}
-            isValid={isValid}
-            version={"input"}
-            label={t("country")}
-          />
-          {errors.country && <span className={clsx(styles.error, styles._hide)}>{t("error_message.country")}</span>}
-        </li>
+
         <li>
           <InputField
             id={"city"}
             className={styles.item}
             placeholder={t("city_placeholder")}
-            registerOptions={register("city", { ...formScheme.city,onBlur:() => {
-              trigger("city")
-            } })}
+            registerOptions={register("city", { ...PartakerSchema.city })}
             isError={errors.city}
             isValid={isValid}
             version={"input"}
             label={t("city")}
           />
-          {errors.city && <span className={clsx(styles.error, styles._hide)}>{t("error_message.city")}</span>}
+          {errors.city && <p className={styles.error_partaker}>{t(`error_message.${errors.city.message}`)}</p>}
+        </li>
+
+        <li>
+          <InputField
+            id={"country"}
+            className={styles.item}
+            placeholder={t("country_placeholder")}
+            registerOptions={register("country", { ...PartakerSchema.country })}
+            isError={errors.country}
+            isValid={isValid}
+            version={"input"}
+            label={t("country")}
+          />
+          {errors.country && <p className={styles.error_partaker}>{t(`error_message.${errors.country.message}`)}</p>}
         </li>
 
         <li>
@@ -163,59 +194,137 @@ export default function FormPartaker() {
             id={"discord"}
             className={styles.item}
             placeholder={t("discord")}
-            registerOptions={register("discord", { ...formScheme.discord,onBlur:() => {
-              trigger("discord")
-            } })}
+            registerOptions={register("discord", { ...PartakerSchema.discord })}
             isError={errors.discord}
             isValid={isValid}
             version={"input"}
             label={t("discord")}
           />
-          {errors.discord && <span className={clsx(styles.error, styles._hide)}>{t("error_message.discord")}</span>}
+          {errors.discord && <p className={styles.error_partaker}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
         <li>
           <InputField
             id={"linkedin"}
             className={styles.item}
             placeholder={t("linkedin_placeholder")}
-            registerOptions={register("linkedin", { ...formScheme.linkedin, onBlur:() => {
-              trigger("linkedin")
-            } })}
+            registerOptions={register("linkedin", { ...PartakerSchema.linkedin })}
             isError={errors.linkedin}
             isValid={isValid}
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <span className={clsx(styles.error, styles._hide)}>{t("error_message.linkedin")}</span>}
+          {errors.linkedin && <p className={styles.error_partaker}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
 
-        {/* <li>
+        <li>
           <div className={styles.item}>
-            <h4>{t("convenient_time")} <span>*</span></h4>
-            <div className={styles.select}>
-              {optionsTime.map((option)=>{
-                return(
-                  <label htmlFor={option.id} className={clsx(styles.btn_option,styles[option.id])} key={option.id}>
-                  <input
+            <h4>{t("experience")} <span>*</span></h4>
+            <div className={styles.select_column}>
+              <label htmlFor={'yes'} className={styles.btn_option}>
+                <input 
                   type="radio" 
-                  {...register("convenient_time", { ...formScheme.convenient_time })}
-                  id={option.id} 
-                  name="convenient_time" 
-                  value={option.label} 
-                  onClick={()=>{setConvenientTime(option.label)}}/>
-                    <span className={clsx(styles.check, convenientTime === option.label && styles._active)}>
+                  {...register("experience", { ...PartakerSchema.experience })}
+                  id={'yes'} name= "experience" 
+                  value={'true'} 
+                  onClick={()=>{setExperience('yes')}}/>
+                  <span className={clsx(styles.check, experience === 'yes' && styles._active)}>
+                    <Icon name={'check'}/>
+                  </span>
+                  {t("yes")}
+              </label>
+              <label htmlFor={'no'} className={styles.btn_option}>
+                <input 
+                  type="radio" 
+                  {...register("experience", { ...PartakerSchema.experience })}
+                  id={'no'} 
+                  name="experience" 
+                  value={'false'} 
+                  onClick={()=>{setExperience('no')}}/>
+                  <span className={clsx(styles.check, experience === 'no' && styles._active)}>
+                    <Icon name={'check'}/>
+                  </span>
+                  {t("no")}
+              </label>
+            </div>
+        
+            {errors.experience && <p className={clsx(styles.error_partaker, styles._list)}>{t(`error_message.${errors.experience.message}`)}</p>}
+          </div>
+        </li>
+
+        <li>
+          <InputField
+            id={"motivation"}
+            className={styles.item}
+            placeholder={t("your_answer")}
+            registerOptions={register("motivation", { ...PartakerSchema.motivation})}
+            isError={errors.motivation}
+            isValid={isValid}
+            version={"input"}
+            label={t("motivation")}
+          />
+
+          {errors.motivation && <p className={styles.error_partaker}>{t(`error_message.${errors.motivation.message}`)}</p>}
+        </li>
+
+        <li>
+          <div className={styles.item}>
+            <h4>{t("saw_questionnaire")} <span>*</span></h4>
+            <div className={styles.select_column}>
+              {optionsQuestionnaire.map((option)=>{
+                return(
+                  <label htmlFor={option.id} className={styles.btn_option} key={createKey()}>
+                  <input 
+                  type="radio" 
+                  {...register("sawQuestionnaire", { ...PartakerSchema.sawQuestionnaire })}
+                  id={option.id} name="sawQuestionnaire" 
+                  value={t(option.id)} 
+                  onClick={()=>{setQuestionnaire(t(option.id))}}/>
+                    <span className={clsx(styles.check, questionnaire === t(option.id) && styles._active)}>
                       <Icon name={'check'}/>
                     </span>
-                    {option.label=== "anytime"? t("anytime"):option.label}
+                    {t(option.id)}
                   </label>
                 )
               })}
             </div>
-            
-            {errors.convenient_time && <span className={clsx(styles.error,styles._list, styles._hide)}>{t("error_message.convenient_time")}</span>}
+        
+            {errors.sawQuestionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
           </div>
+        </li>
+        <li>
+          <div className={styles.item}>
+            <h4>{t("rules_participation")} <span>*</span></h4>
+            <button 
+              className={styles.linck} 
+              onClick={ ()=>{downloadPdf('/documents/rules_participation.pdf')} }
+              type="button" >Baza_Trainee_Ukraine.pdf</button>
+          </div>
+        </li>
+        <li>
+          <div className={styles.item}>
+            <h4>{t("acquainted")} <span>*</span></h4>
+            <label
+              htmlFor={'acquainted'}
+              className={clsx(styles.btn_option, styles.agree)}
+            >
+              <input
+                id={'acquainted'}
+                type="checkbox"
+                {...register("agree_conditions", { ...PartakerSchema.agree_conditions })}
+                checked={conditions}
+                onClick={(e)=>{setConditions(e.target.checked)}}
+              ></input>
+              <span className={clsx(styles.check, conditions && styles._active)}>
+                <Icon name={'check'}/>
+                </span>
 
-        </li> */}
+              { t("agree")}
+            </label>
+
+            {errors.agree_conditions && <p className={styles.error_partaker}>{t("error_message.agree")}</p>}
+          </div>
+        </li>
+
         <li>
           <div className={styles.item}>
             <label
@@ -225,7 +334,8 @@ export default function FormPartaker() {
               <input
                 id={'agree'}
                 type="checkbox"
-                {...register("agree", { ...formScheme.agree })}
+                {...register("agree", { ...PartakerSchema.agree })}
+                checked={agree}
                 onClick={(e)=>{setAgree(e.target.checked)}}
               ></input>
               <span className={clsx(styles.check, agree && styles._active)}>
@@ -234,7 +344,8 @@ export default function FormPartaker() {
 
               { t("permit")}
             </label>
-            {errors.agree && <span className={clsx(styles.error, styles._list, styles._hide)}>{t("error_message.permit")}</span>}
+
+            {errors.agree && <p className={styles.error_partaker}>{t("error_message.permit")}</p>}
           </div>
         </li>
           {/* {inputFields.map((field) => (
@@ -249,10 +360,11 @@ export default function FormPartaker() {
         type="submit"
         // disabled={!isDirty || !isValid}
         className={styles.submit}
-        //variant={"modal"}
       >
         {t("btn_send")}
       </MainButton>
+
+      {loader && <Loader/>}
     </form>
   )
 }

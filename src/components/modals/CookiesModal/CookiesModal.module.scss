@@ -10,10 +10,7 @@
   z-index: 1000;
   padding: 5px 0;
 
- 
-
   @media (min-width: 410px) {
-    //left: 2%;
     bottom: 8%;
   }
 
@@ -32,7 +29,6 @@
     border-radius: 8px;
     padding: 16px;
     width: clamp(285px, 92vw, 412px);
-
     background: var.$primary-fon;
     color: var.$secondary-white;
     display: flex;
@@ -48,8 +44,6 @@
     @include mx.media-q("md") {
       padding: 24px;
     }
-
-
 
     .title{
       @include mx.apply-font-styles(var.$h2-font);
@@ -71,8 +65,7 @@
     }
 
     .text{
-      @include mx.apply-font-styles(var.$text-20-font);
-      font-size: 16px;
+      @include mx.apply-font-styles(var.$text-16-font);
 
       @include mx.media-q("md") {
         font-size: 18px;
@@ -83,13 +76,27 @@
       }
 
       .linck{
+        @include mx.apply-font-styles(var.$text-16-font);
+        margin: 0;
+        padding: 0;
         color: var.$primary-border;
         transition: all var.$transition-duration-base var.$transition-timing-base;
         border-bottom:1px solid transparent;
+        
+        @include mx.media-q("md") {
+          font-size: 18px;
+        }
+        
+        @include mx.media-q("xl") {
+          font-size: 20px;
+        }
       }
-      .linck:hover{
-        color: var.$primary-hover;
-        border-bottom:1px solid var.$primary-border;
+
+      @media (any-hover: hover){
+        .linck:hover{
+          color: var.$primary-hover;
+          border-bottom:1px solid var.$primary-border;
+        }
       }
     }
 
