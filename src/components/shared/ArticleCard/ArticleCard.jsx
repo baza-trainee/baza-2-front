@@ -1,7 +1,6 @@
 import styles from "./ArticleCard.module.scss";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import MainLink from "../MainLink/MainLink";
 import linkTypes from "../MainLink/constants";
 
