@@ -14,6 +14,7 @@ export const items = [
     width: "296px",
     height: "74px",
     url: "https://baza-skill.com.ua",
+    openInNewTab: true,
   },
   {
     title: "item_3.title",
@@ -22,7 +23,7 @@ export const items = [
     width: "300px",
     height: "157px",
     url: "/error",
-
+    openInNewTab: true,
   },
   {
     title: "item_4.title",
@@ -31,6 +32,6 @@ export const items = [
     width: "120px",
     height: "120px",
     url: "/error",
-
+    openInNewTab: true,
   },
 ];
