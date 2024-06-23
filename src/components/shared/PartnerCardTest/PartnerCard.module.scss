@@ -23,8 +23,11 @@
   display: flex;
   align-items: center;
   transition: all .3s;
-  &:hover{
-    transform: scale(1.03);
+  
+  @media (any-hover: hover){
+    &:hover{
+      transform: scale(1.02);
+    }
   }
   //justify-content: center;
   //background-color: aqua;
@@ -48,18 +51,12 @@
 
   .img_wrap {
     position: relative;
-    width: 406px;
-    height: 230px;
+    // width: 406px;
+    // height: 230px;
     //height: 172px;
     width: 100%;
     height: 100%;
-    // transition: all .4s;
-    // &:hover{
-    //   transform: scale(1.08);
-    // }
-   // border-radius: 8px;
-   // overflow: hidden;
-    //background-color: aqua;
+
     .img{
       //display: block;
       //object-fit: cover;
@@ -85,8 +82,8 @@
 
 
     @include mixin.media-q("md") { 
-      width: 430px;
-      width: 450px;
+      // width: 430px;
+      // width: 450px;
       width: 50vw;
       height: 230px;
     }

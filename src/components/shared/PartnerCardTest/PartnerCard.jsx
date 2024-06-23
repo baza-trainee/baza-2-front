@@ -8,7 +8,7 @@ export default function PartnerCard({ item }) {
   const { img, url } = item;
   const swiperSlide = useSwiperSlide();
 
-  console.log(swiperSlide)
+  //console.log(swiperSlide)
 
 //   {swiperSlide.isActive
 //     "isActive": false,

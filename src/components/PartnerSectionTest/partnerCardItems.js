@@ -4,12 +4,12 @@ export const partnerCardItems = [
     img: "/images/partner_section/deltahost.svg",
     url: "https://deltahost.com/",
   },
-  // {
-  //   title: "slide_2.title",
-  //   img: "/images/partner_section/patronBadge.webp",
-  //   url: "https://patronbadge.com/",
+  {
+    title: "slide_2.title",
+    img: "/images/partner_section/logo1.png",
+    url: "https://patronbadge.com/",
 
-  // },
+  },
   {
     title: "slide_3.title",
     img: "/images/partner_section/logo_uk.svg",

@@ -31,66 +31,37 @@ const PartnerSectionTest = () => {
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-test-custom-pagination"}
-            //spaceBetween={10}
             items={partnerCardItems}
             prevEl={".partner-test-prevBtn"}
             nextEl={".partner-test-nextBtn"}
             effect={'coverflow'}
             loop={true}
-            //loopAddBlankSlides={true}
-            // //loopedSlides={2}
-            // loopAdditionalSlides={2}
-            // //loopFillGroupWithBlank={true}
-            // //slidesPerGroup={1}
-            // centeredSlides={true}
-            // slidesPerView={3}
   
-            // //virtual={true}
-            //loopAdditionalSlides={1}
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={40}
             loopAdditionalSlides={0}
             pauseOnMouseEnter={true}
-            // loopAdditionalSlides={2}
-            // centeredSlides={true}
-            // slidesPerView={3}
-            // spaceBetween={10}
          
-
             breakpoints={{
               768: {
-              spaceBetween: 10,
               slidesPerView: 2,
               loopAdditionalSlides:0,
               spaceBetween:10
-              //centeredSlides:true
             },
-            // 768: {
-            //   spaceBetween: 10,
-            //   slidesPerView: 2,
-            // },
             1366: {
-              // slidesPerView: 4,
-              // spaceBetween: 10,
-              //spaceBetween: 10,
               slidesPerView: 3,
               loopAdditionalSlides:2,
               spaceBetween:10
-            },
-            // 1920: {
-            //   slidesPerView: 3,
-            //   spaceBetween: 10,
-            // },
+            }
           }}
             coverflowEffect={
               {
-                    rotate: 1,
-                    stretch: 10,
-                    depth: 350,
-                    modifier: 1,
-                    slideShadows: false,
-
+                rotate: 1,
+                stretch: 10,
+                depth: 350,
+                modifier: 1,
+                slideShadows: false,
               }
             }
 
