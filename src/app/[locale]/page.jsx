@@ -9,6 +9,8 @@ import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import StructureSection from "@/src/components/StructureSection/StructureSection";
 import ArticlesSection from "@/src/components/ArticlesSection/ArticlesSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
+//import ArticlesSectionTest from "@/src/components/ArticlesSectionTest/ArticlesSection";
+import PartnerSectionTest from "@/src/components/PartnerSectionTest/PartnerSection";
 
 export default function Home() {
   return (
@@ -21,7 +23,11 @@ export default function Home() {
       <FAQ />
       <ReviewsSection />
       <ArticlesSection />
+      {/* <ArticlesSectionTest /> */}
+
       <PartnerSection />
+      <PartnerSectionTest />
+
       <ContactFormSection />
       <RegistrationFormModal/>
     </main>

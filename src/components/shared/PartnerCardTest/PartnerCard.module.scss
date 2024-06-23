@@ -1,0 +1,141 @@
+@use "../../../styles/variables" as var;
+@use '../../../styles/mixins' as mixin;
+
+
+.partnerCardItem {
+ // position: relative;
+   width: 430px;
+   height: 272px;
+
+   width: 320px;
+   height: 200px;
+   border-radius: 8px;
+   padding: 10px;
+   width: 95vw;
+   max-height: 200px;
+   height: 40vw;
+   //width: 100%;
+   //height: 100%;
+  //width: 456px;
+  //height: 230px;
+  background-color: var.$secondary-gray;
+  //border: 2px solid var.$primary-border;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+  &:hover{
+    transform: scale(1.03);
+  }
+  //justify-content: center;
+  //background-color: aqua;
+  //opacity: .6;
+  &._disabled{
+    //cursor: pointer;
+    cursor: default;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+    //display: none;
+    //border: none;
+
+    //background: none;
+    opacity: .3;
+    @include mixin.media-q("md") { 
+      display: flex;
+    }
+  }
+
+  .img_wrap {
+    position: relative;
+    width: 406px;
+    height: 230px;
+    //height: 172px;
+    width: 100%;
+    height: 100%;
+    // transition: all .4s;
+    // &:hover{
+    //   transform: scale(1.08);
+    // }
+   // border-radius: 8px;
+   // overflow: hidden;
+    //background-color: aqua;
+    .img{
+      //display: block;
+      //object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+      //width: 100%;
+      //height: 100%;
+      border-radius: 8px;
+      //overflow: hidden;
+      opacity: .5;
+      filter: blur(5px) brightness(40%);
+      //filter: brightness(80%);
+      //cursor: default;
+      transition: all .8s;
+      &._active{
+        opacity: 1;
+        filter: none;
+       //background-color: rgba(62, 63, 63, 0.589);
+      }
+
+    }
+    }
+
+
+    @include mixin.media-q("md") { 
+      width: 430px;
+      width: 450px;
+      width: 50vw;
+      height: 230px;
+    }
+    @include mixin.media-q("xl") { 
+      width: 470px;
+      height: 230px;
+
+      // width: 496px;
+      // height: 230px;
+    }
+
+//       @include mixin.media-q("xxxl") { 
+//         width: 396px;
+//         height: 230px;
+//         // .img_wrap{
+//         // width: 396px;
+//         // height: 230px;
+//         // }
+// }
+  }
+
+  // @include mixin.media-q("md") { 
+  //   width: 340px;
+  //   height: 197px;
+  //   // .img_wrap {
+  
+  //   //   .img{
+  //   //     object-fit: contain;
+  //   //   }
+  //   //   //object-fit: contain;
+  //   //   // width: 340px;
+  //   //   // height: 197px;
+  //   // }
+  // }
+//   @include mixin.media-q("xl") { 
+//     width: 396px;
+//     height: 230px;
+//     // .img_wrap{
+//     //   width: 396px;
+//     //   height: 230px;
+//     //   }
+ 
+// }
+//   @include mixin.media-q("xxxl") { 
+//     width: 396px;
+//     height: 230px;
+//     .img_wrap{
+//     width: 396px;
+//     height: 230px;
+//     }
+// }
+
