@@ -23,7 +23,7 @@ export default function PartnerCard({ item }) {
       target="_blank">
       <div className={styles.img_wrap}>
         <Image
-          className={clsx(styles.img,swiperSlide.isActive && styles._active)}
+          className={styles.img}
           src={img}
           alt="Card image"
           fill
