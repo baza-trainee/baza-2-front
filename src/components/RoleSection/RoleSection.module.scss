@@ -2,6 +2,7 @@
 @use "../../styles/mixins" as mx;
 
 .roleSection {
+  margin-top: 80px;
   padding: 32px 0;
   @media (min-width: 420px) {
     padding: 48px 0;

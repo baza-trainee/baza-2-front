@@ -4,7 +4,7 @@ import RoleSection from "@/src/components/RoleSection/RoleSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 export default function Internship() {
   return (
-    <main style={{ marginTop: "120px" }}>
+    <main>
       <RoleSection />
       <JoinProjectSection style={{ marginBottom: "20px" }} />
       <AdvantagesSection />
