@@ -18,7 +18,7 @@ const PartnerSection = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleRow}>
-          <h2 className={styles.title}>{t("title")}</h2>
+          <h2 className={styles.title}>Test {t("title")}</h2>
           <div className={styles.navigation}>
             <CarouselButton
               className={clsx("partner-prevBtn", styles.prevBtn)}
@@ -31,41 +31,35 @@ const PartnerSection = () => {
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
-            spaceBetween={0}
             items={partnerCardItems}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
             loop={true}
+  
             centeredSlides={true}
-
-
+            slidesPerView={1}
+            spaceBetween={40}
+            loopAdditionalSlides={0}
             breakpoints={{
-            320: {
-              spaceBetween: 10,
-              slidesPerView: 1,
-
-            },
-            768: {
-              spaceBetween: 10,
+              768: {
               slidesPerView: 2,
+              loopAdditionalSlides:0,
+              spaceBetween:10
             },
             1366: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-            1920: {
               slidesPerView: 3,
-              spaceBetween: 10,
-            },
+              loopAdditionalSlides:2,
+              spaceBetween:10
+            }
           }}
             coverflowEffect={
               {
-                    rotate: 1,
-                    stretch: 10,
-                    depth: 350,
-                    modifier: 1,
-                    slideShadows: false,
+                rotate: 1,
+                stretch: 10,
+                depth: 350,
+                modifier: 1,
+                slideShadows: false,
               }
             }
 

@@ -4,7 +4,7 @@ import MainLink from "../../shared/MainLink/MainLink";
 
 export default function StructureCard({ item }) {
   const t = useTranslations("Main.our_structure_section");
-  const { img, title, text, width, height, url, openInNewTab } = item;
+  const { img, title, text, width, height, url, openInNewTab, type } = item;
 
   return (
     <div className={styles.cardStyle}>
@@ -23,6 +23,7 @@ export default function StructureCard({ item }) {
           className={styles.header}
           url={url}
           openInNewTab={openInNewTab}
+          type={type}
         >
           {t(title)}
         </MainLink>
