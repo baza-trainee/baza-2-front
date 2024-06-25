@@ -37,10 +37,12 @@
 }
 
 .content {
-  display: grid;
+  //display: grid;
+  display: none;
   grid-template-columns: 1fr;
   gap: 20px;
   @media (min-width: 600px) {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 768px) {
@@ -48,5 +50,12 @@
   }
   @media (min-width: 992px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+.mobile_content{
+  width: 90vw;
+  margin: 0 auto;
+  @media (min-width: 600px) {
+    display: none;
   }
 }
