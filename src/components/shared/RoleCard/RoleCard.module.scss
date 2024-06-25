@@ -12,7 +12,7 @@
 }
 .imageContainer {
   position: relative;
-  padding-bottom: 75%;
+  padding-bottom: 46%;
   & > img {
     object-fit: cover;
   }
@@ -27,62 +27,78 @@
   margin-bottom: 16px;
 }
 .shortDesc {
-  @include mixin.apply-font-styles(var.$text-20-font);
+  @include mixin.apply-font-styles(var.$text-16-font);
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: 24px;
 }
 .readMore {
+  font-size: 16px;
+  align-self: flex-end;
+  font-weight: 400;
   position: relative;
-  align-self: end;
-  padding: 10px 0;
-  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
+  padding: 10px 4px;
   &::before {
     content: "";
     width: 0;
-    height: 2px;
+    height: 1px;
+    background-color: var.$primary-border;
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: var.$primary-hover;
-    transition: all var.$transition-duration-base var.$transition-timing-base 0s;
+    transition: width var.$transition-duration-base var.$transition-timing-base
+      0s;
   }
   @media (any-hover: hover) {
     &:hover {
-      color: var.$primary-hover;
+      color: var.$secondary-white;
       &::before {
         width: 100%;
       }
     }
   }
 }
-
-.fullDesc {
+.fullDescWrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
-  overflow-y: auto;
-  background: var.$primary-fon-card;
-  padding: 24px 16px 16px 16px;
+  z-index: 8;
   opacity: 0;
   visibility: hidden;
   transition: all var.$transition-duration-base var.$transition-timing-base 0s;
+  padding: 24px 10px 16px 10px;
   border-radius: 8px;
   border: 1px solid var.$primary-border;
+  background: var.$primary-fon-card;
   &.showFullDesc {
     opacity: 1;
     visibility: visible;
   }
+}
+
+.fullDesc {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   &::-webkit-scrollbar {
-    width: 7px;
+    width: 10px;
   }
   &::-webkit-scrollbar-track {
     background: #180530;
+    box-shadow:
+      inset -1px 0 0 0 #f0f0f0,
+      inset 1px 0 0 0 #e8e8e8;
+    border-radius: 2px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgba(139, 139, 139, 0.452);
+    border-radius: 4px;
+    width: 8px;
+    background-color: var.$secondary-white;
   }
   & > p {
     @include mixin.apply-font-styles(var.$text-20-font);
@@ -97,6 +113,8 @@
   height: 24px;
   margin-bottom: 16px;
   & > svg {
+    width: 100%;
+    height: 100%;
     transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   }
   @media (any-hover: hover) {
