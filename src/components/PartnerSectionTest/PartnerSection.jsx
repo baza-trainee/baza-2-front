@@ -41,7 +41,6 @@ const PartnerSectionTest = () => {
             slidesPerView={1}
             spaceBetween={40}
             loopAdditionalSlides={0}
-            pauseOnMouseEnter={true}
          
             breakpoints={{
               768: {
