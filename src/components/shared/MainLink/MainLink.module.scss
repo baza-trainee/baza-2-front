@@ -52,6 +52,21 @@
       font-size: 14px;
     }
   }
+  &--structure {
+    border-bottom: var.$secondary-white;
+    @media (any-hover: hover) {
+      &:hover,
+      &:focus {
+        border-bottom: var.$primary-hover;
+      }
+      &:active {
+        border-bottom: var.$secondary-white;
+      }
+    }
+    @media (max-width: 696px) {
+      font-size: 14px;
+    }
+  }
 
   &--footer {
     @media (any-hover: hover) {

@@ -3,40 +3,61 @@
 
 
 .partnerCardItem {
-  position: relative;
-  width: 288px;
-  height: 172px;
-  .img {
-    object-fit: cover;
+  border-radius: 8px;
+  padding: 10px;
+  width: 95vw;
+  max-height: 230px;
+  height: 40vw;
+  background-color: var.$secondary-white;
+  //border: 2px solid var.$primary-border; brightness(40%);
+  display: flex;
+  align-items: center;
+  transition: all .8s;
+  //opacity: .7;
+  filter: blur(3px) brightness(40%);
+
+
+  @media (any-hover: hover){
+    &:hover{
+      transform: scale(1.02);
+    }
+  }
+
+  &._active{
+    opacity: 1;
+    filter: none;
+  }
+
+  &._disabled{
+    cursor: default;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+ 
+    @include mixin.media-q("md") { 
+      display: flex;
+    }
+  }
+
+  .img_wrap {
     position: relative;
-    width: 288px;
-    height: 172px;
+    width: 100%;
+    height: 100%;
+
+    .img{
+      //object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+    }
   }
 
   @include mixin.media-q("md") { 
-    width: 340px;
-    height: 197px;
-    .img {
-      object-fit: contain;
-      width: 340px;
-      height: 197px;
-    }
+    width: 50vw;
+    height: 230px;
   }
   @include mixin.media-q("xl") { 
-    width: 396px;
+    width: 470px;
     height: 230px;
-    .img{
-      width: 396px;
-      height: 230px;
-      }
- 
-}
-  @include mixin.media-q("xxxl") { 
-    width: 396px;
-    height: 230px;
-    .img{
-    width: 396px;
-    height: 230px;
-    }
-}
+  }
 }
