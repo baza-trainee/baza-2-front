@@ -1,3 +1,5 @@
+import linkTypes from "../shared/MainLink/constants";
+
 export const items = [
   {
     title: "item_1.title",
@@ -5,8 +7,9 @@ export const items = [
     img: "/images/structure/logoblack.svg",
     width: "120px",
     height: "120px",
-    url: "/test",
+    url: "/",
     openInNewTab: true,
+    type: linkTypes.STRUCTURE,
   },
   {
     title: "item_2.title",
@@ -16,6 +19,9 @@ export const items = [
     height: "74px",
     url: "https://baza-skill.com.ua",
     openInNewTab: true,
+    type: linkTypes.STRUCTURE,
+    
+    
   },
   {
     title: "item_3.title",
@@ -25,6 +31,9 @@ export const items = [
     height: "157px",
     url: "/error",
     openInNewTab: false,
+    type: linkTypes.STRUCTURE,
+    
+    
   },
   {
     title: "item_4.title",
@@ -34,5 +43,6 @@ export const items = [
     height: "120px",
     url: "/error",
     openInNewTab: false,
+    type: linkTypes.STRUCTURE,
   },
 ];
