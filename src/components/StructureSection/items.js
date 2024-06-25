@@ -5,7 +5,8 @@ export const items = [
     img: "/images/structure/logoblack.svg",
     width: "120px",
     height: "120px",
-    url: "/",
+    url: "/test",
+    openInNewTab: true,
   },
   {
     title: "item_2.title",
@@ -23,7 +24,7 @@ export const items = [
     width: "300px",
     height: "157px",
     url: "/error",
-    openInNewTab: true,
+    openInNewTab: false,
   },
   {
     title: "item_4.title",
@@ -32,6 +33,6 @@ export const items = [
     width: "120px",
     height: "120px",
     url: "/error",
-    openInNewTab: true,
+    openInNewTab: false,
   },
 ];
