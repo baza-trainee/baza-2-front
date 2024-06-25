@@ -12,7 +12,7 @@ const HeroCard = ({ title, desc, img }) => {
         src={img}
         alt={title}
         className={styles.image}
-        //quality={80}
+        quality={60}
       />
       <div className={styles.wrapper}>
         <h2>{t(title)}</h2>

@@ -1,0 +1,12 @@
+{
+  "contactsDataList": {
+    "phone1": 380123456789,
+    "phone2": 380123456789,
+    "email": "example@example.com"
+  },
+  "socialsMediaList": {
+    "linkedin": "https://www.linkedin.com/in/example",
+    "facebook": "https://www.facebook.com/example",
+    "telegram": "https://t.me/+CBXkAASfvJl"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "report": "report.pdf",
+  "statute": "statute.pdf",
+  "privacyPolicy": {
+    "en": "privacy_en.pdf",
+    "pl": "privacy_pl.pdf",
+    "ua": "privacy_ua.pdf"
+  },
+  "termsOfUse": {
+    "en": "terms_en.pdf",
+    "pl": "terms_pl.pdf",
+    "ua": "terms_ua.pdf"
+  }
+}
