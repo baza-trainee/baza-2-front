@@ -1,6 +1,5 @@
 export const partnerCardItems = [
   {
-<<<<<<< HEAD
     name: "slide_1",
     imgUrl: "/images/partner_section/deltahost.png",
     homeUrl: "https://deltahost.com/",
@@ -14,7 +13,6 @@ export const partnerCardItems = [
     name: "slide_3",
     imgUrl: "/images/partner_section/hostiq.png",
     homeUrl: "https://https://hostiq.ua/",
-=======
     title: "slide_1.title",
     img: "/images/partner_section/deltahost.png",
     url: "https://deltahost.com/",
@@ -38,7 +36,7 @@ export const partnerCardItems = [
     title: "slide_3.title",
     img: "/images/partner_section/juniverse.png",
     url: "https://juniverse.com.ua/",
->>>>>>> ca534da8c034fcd36204ea9b71a8ec8379104017
+
   },
   // {
   //   title: "slide_4.title",
@@ -51,7 +49,6 @@ export const partnerCardItems = [
   //   url: "https://caritas.ua/",
   // },
   {
-<<<<<<< HEAD
     name: "slide_4",
     imgUrl: "/images/partner_section/skill.png",
     homeUrl: "https://baza-skill.com.ua/",
@@ -70,7 +67,6 @@ export const partnerCardItems = [
     name: "slide_7",
     imgUrl: "/images/partner_section/karitas.webp",
     homeUrl: "https://caritas.ua/",
-=======
     title: "slide_5.title",
     img: "/images/partner_section/tails.webp",
     url: "http://hvostiki.com.ua/",
@@ -104,7 +100,6 @@ export const partnerCardItems = [
     title: "slide_5.title",
     img: "/images/partner_section/songs.png",
     url: "https://baza-trainee.github.io/1001-songs-frontend/",
->>>>>>> ca534da8c034fcd36204ea9b71a8ec8379104017
   },
   {
     name: "slide_8",
