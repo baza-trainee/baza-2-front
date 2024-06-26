@@ -25,6 +25,7 @@
 .title {
   @include mixin.apply-font-styles(var.$h2-font);
   margin-bottom: 16px;
+  white-space: nowrap;
 }
 .shortDesc {
   @include mixin.apply-font-styles(var.$text-16-font);

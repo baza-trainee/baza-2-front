@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import CloseBtn from '../CloseBtn/CloseBtn';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import { useEffect } from 'react';
+import { createPortal } from "react-dom";
 
 export default function UseAlert(){
   const t = useTranslations("Alert");
@@ -23,8 +24,8 @@ export default function UseAlert(){
 
   if(!isOpen){return null}
 
-  return( 
-  <div className={styles.wrapper}>
+  return createPortal(
+    <div className={styles.wrapper}>
     <div className={clsx(styles.alert, styles[type])}>
       { type === 'success' ? 
         <h2>{t('title_success')} :)</h2> :
@@ -35,5 +36,6 @@ export default function UseAlert(){
       }
       <CloseBtn className={styles.close_btn} onClick={close}/>
     </div>
-  </div>)
+  </div>, document.body
+  );
 }

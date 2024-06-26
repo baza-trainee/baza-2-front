@@ -6,7 +6,7 @@ export default function Internship() {
   return (
     <main>
       <RoleSection />
-      <JoinProjectSection style={{ marginBottom: "20px" }} />
+      <JoinProjectSection />
       <AdvantagesSection />
       <RegistrationFormModal />
     </main>

@@ -52,10 +52,10 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.mobile_content{
-  width: 90vw;
-  margin: 0 auto;
-  @media (min-width: 600px) {
-    display: none;
-  }
+
+.mobContainer {
+  max-width: 100%;
+}
+.pagination {
+  margin-top: 20px;
 }

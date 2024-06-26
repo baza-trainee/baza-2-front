@@ -27,28 +27,29 @@ const ArticlesSection = () => {
           />
         </div>
       </div>
-      <div className={styles.mySwiperWrapper}>
-        <Carousel
-          slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
-          modules={[Navigation, Pagination]}
-          paginationEl={".custom-pagination-article"}
-          prevEl={".prevElArticle"}
-          nextEl={".nextElArticle"}
-          slidesPerView={"auto"}
-          spaceBetween={16}
-          breakpoints={{
-            768: {
-              spaceBetween: 24,
-            },
-            1800: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-          }}
-          items={items}
-          renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
-        />
-      </div>
+      <Carousel
+        slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
+        modules={[Navigation, Pagination]}
+        paginationEl={".custom-pagination-article"}
+        prevEl={".prevElArticle"}
+        nextEl={".nextElArticle"}
+        className={clsx("swiper-wrapper", styles.mySwiperWrapper)}
+        slidesPerView={1}
+        spaceBetween={16}
+        breakpoints={{
+          768: {
+            spaceBetween: 24,
+            slidesPerView: 2,
+          },
+          1366: { slidesPerView: 3 },
+          1800: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        }}
+        items={items}
+        renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
+      />
       <CarouselPagination
         className={clsx("custom-pagination-article", styles.pagination)}
       />

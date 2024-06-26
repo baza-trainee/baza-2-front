@@ -121,7 +121,7 @@
     gap: 12px;
     min-width: 712px;;
   }
-  
+
   @include mixins.media-q("xxxl") { 
     gap: 12px;
     min-width: 800px;
@@ -131,9 +131,7 @@
 .header {
   @include mixins.apply-font-styles(var.$h6-font);
   color: var.$secondary-white;
-  &:hover {
-    color: var.$primary-hover;
-    }
+
   @include mixins.media-q("md") {
     @include mixins.apply-font-styles(var.$h4-font);
   }

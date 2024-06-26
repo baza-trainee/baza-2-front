@@ -48,7 +48,7 @@ export default function FormMentor({handleClose}) {
     if(res === 'error'){
       open('error')
     }
-    open('success')
+    open(res)
     resetForm()
   }
 

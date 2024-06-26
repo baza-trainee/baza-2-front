@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
+import { patternEmail, patternEmailNonRu, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const mentorDefaultValues= {
@@ -38,7 +38,8 @@ export const MentorSchema = z
     .trim()
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
-    .regex(patternEmail, { message: 'invalid_ru' }),
+    .regex(patternEmail, { message: 'incorrect_email' })
+    .regex(patternEmailNonRu, { message: 'invalid_ru' }),
 
     phone: z.string()
     .trim()

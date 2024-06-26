@@ -8,6 +8,7 @@ const ScrollToTopBtn = () => {
   useEffect(() => {
     const toggleVisible = () => {
       const scrolled = window.scrollY;
+
       if (scrolled > 300) {
         setIsVisible(true);
       } else {

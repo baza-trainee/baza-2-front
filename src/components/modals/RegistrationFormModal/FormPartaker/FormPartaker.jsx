@@ -25,7 +25,7 @@ export default function FormPartaker() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
 
@@ -202,6 +202,7 @@ export default function FormPartaker() {
           />
           {errors.discord && <p className={styles.error_partaker}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
+
         <li>
           <InputField
             id={"linkedin"}
@@ -291,6 +292,7 @@ export default function FormPartaker() {
             {errors.sawQuestionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
           </div>
         </li>
+
         <li>
           <div className={styles.item}>
             <h4>{t("rules_participation")} <span>*</span></h4>
@@ -300,6 +302,7 @@ export default function FormPartaker() {
               type="button" >Baza_Trainee_Ukraine.pdf</button>
           </div>
         </li>
+
         <li>
           <div className={styles.item}>
             <h4>{t("acquainted")} <span>*</span></h4>
@@ -358,7 +361,6 @@ export default function FormPartaker() {
 
       <MainButton
         type="submit"
-        // disabled={!isDirty || !isValid}
         className={styles.submit}
       >
         {t("btn_send")}
