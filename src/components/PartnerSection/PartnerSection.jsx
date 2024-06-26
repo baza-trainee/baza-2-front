@@ -8,7 +8,6 @@ import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPa
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
-import { partnerCardItems } from "./partnerCardItems";
 
 const PartnerSection = () => {
 
@@ -36,7 +35,6 @@ const PartnerSection = () => {
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
             loop={true}
-  
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={40}
