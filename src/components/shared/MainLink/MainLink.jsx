@@ -11,7 +11,6 @@ const MainLink = ({
   type = linkTypes.DEFAULT,
   className,
   handleClose,
-  openInNewTab = false,
   ...rest
 }) => {
   const pathname = usePathname();
@@ -38,11 +37,6 @@ const MainLink = ({
     onClick: scrollToBottom,
     ...rest,
   };
-
-  if (openInNewTab) {
-    linkProps.target = "_blank";
-    linkProps.rel = "noopener noreferrer";
-  }
 
   if (url === "/contacts") {
     return <button {...linkProps}>{children}</button>;
