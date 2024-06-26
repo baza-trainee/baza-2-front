@@ -8,7 +8,7 @@ export const items = [
     width: "120px",
     height: "120px",
     url: "/",
-    openInNewTab: true,
+    openInNewTab: '_blank',
     type: linkTypes.STRUCTURE,
   },
   {
@@ -18,7 +18,7 @@ export const items = [
     width: "296px",
     height: "74px",
     url: "https://baza-skill.com.ua",
-    openInNewTab: true,
+    openInNewTab: '_blank',
     type: linkTypes.STRUCTURE,
     
     
@@ -30,7 +30,7 @@ export const items = [
     width: "300px",
     height: "157px",
     url: "/error",
-    openInNewTab: false,
+    openInNewTab: '_self',
     type: linkTypes.STRUCTURE,
     
     
@@ -42,7 +42,7 @@ export const items = [
     width: "120px",
     height: "120px",
     url: "/error",
-    openInNewTab: false,
+    openInNewTab: '_self',
     type: linkTypes.STRUCTURE,
   },
 ];
