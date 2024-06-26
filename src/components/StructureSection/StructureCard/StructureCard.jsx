@@ -22,6 +22,7 @@ export default function StructureCard({ item }) {
         <MainLink
           className={styles.header}
           url={url}
+          type="structure"
           openInNewTab={openInNewTab}
         >
           {t(title)}

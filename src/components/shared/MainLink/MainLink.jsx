@@ -32,7 +32,7 @@ const MainLink = ({
     className: clsx(
       styles.link,
       styles[`link--${type}`],
-      isCurrentPage && styles.active,
+      type!=="structure" && isCurrentPage && styles.active,
       className
     ),
     onClick: scrollToBottom,

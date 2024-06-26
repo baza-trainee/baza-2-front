@@ -5,12 +5,12 @@ export const partnerCardItems = [
     url: "https://tucha.ua/uk",
   },
   {
-    title: "slide_2.title",
+    title: "patronbadge",
     img: "/images/partner_section/patronbadge.png",
     url: "https://patronbadge.com/",
   },
   {
-    title: "slide_3.title",
+    title: "educate",
     img: "/images/partner_section/educate.svg",
     url: "/test",
   },
@@ -56,7 +56,7 @@ export const partnerCardItems = [
     url: "https://juniverse.com.ua/",
   },
   {
-    title: "charity_tuner",
+    title: "charity tuner",
     img: "/images/partner_section/charity_tuner.png",
     url: "http://charitytuner.org/"
   },
@@ -71,12 +71,12 @@ export const partnerCardItems = [
     url: "https://hostiq.ua/",
   },
   {
-    title: "eng-for",
+    title: "eng for",
     img: "/images/partner_section/eng_for.svg",
     url: "https://hostiq.ua/",
   },
   {
-    title: "martha-house",
+    title: "martha house",
     img: "/images/partner_section/martha_house.png",
     url: "https://martha-house.vercel.app/",
   },
