@@ -24,16 +24,16 @@ export const partnerCardItems = [
     img: "/images/partner_section/juniverse.png",
     url: "https://juniverse.com.ua/",
   },
-  {
-    title: "slide_4.title",
-    img: "/images/partner_section/beetroot.webp",
-    url: "https://beetroot.academy/",
-  },
-  {
-    title: "slide_5.title",
-    img: "/images/partner_section/karitas.webp",
-    url: "https://caritas.ua/",
-  },
+  // {
+  //   title: "slide_4.title",
+  //   img: "/images/partner_section/beetroot.webp",
+  //   url: "https://beetroot.academy/",
+  // },
+  // {
+  //   title: "slide_5.title",
+  //   img: "/images/partner_section/karitas.webp",
+  //   url: "https://caritas.ua/",
+  // },
   {
     title: "slide_5.title",
     img: "/images/partner_section/tails.webp",
