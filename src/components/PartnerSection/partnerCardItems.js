@@ -41,7 +41,7 @@ export const partnerCardItems = [
   },
   {
     title: "slide_5.title",
-    img: "/images/partner_section/cisca.webp",
+    img: "/images/partner_section/scsa.png",
     url: "https://scsa.org.ua/",
   },
   {
