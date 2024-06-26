@@ -18,7 +18,7 @@ const PartnerSection = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleRow}>
-          <h2 className={styles.title}>Test {t("title")}</h2>
+          <h2 className={styles.title}>{t("title")}</h2>
           <div className={styles.navigation}>
             <CarouselButton
               className={clsx("partner-prevBtn", styles.prevBtn)}

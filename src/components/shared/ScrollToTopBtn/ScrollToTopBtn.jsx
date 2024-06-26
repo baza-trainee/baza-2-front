@@ -15,6 +15,7 @@ const ScrollToTopBtn = () => {
         setIsVisible(false);
       }
     };
+    toggleVisible();
 
     window.addEventListener("scroll", toggleVisible);
 
@@ -22,7 +23,6 @@ const ScrollToTopBtn = () => {
       window.removeEventListener("scroll", toggleVisible);
     };
   }, []);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

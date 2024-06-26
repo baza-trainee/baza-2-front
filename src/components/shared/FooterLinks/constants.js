@@ -10,26 +10,22 @@ export const navigationLinks = [
 export const helpLinks = [
   {
     name: "privacy_policy",
-    url: "/test",
+    url: "/documents/privacy_policy.pdf",
     type: linkTypes.HELP,
-    openInNewTab: true,
   },
   {
     name: "site_use_policy",
-    url: "/test",
+    url: "/documents/terms_of_use.pdf",
     type: linkTypes.HELP,
-    openInNewTab: true,
   },
   {
     name: "regulations",
     url: "/test",
     type: linkTypes.FOOTER,
-    openInNewTab: true,
   },
   {
     name: "reporting",
     url: "/test",
     type: linkTypes.FOOTER,
-    openInNewTab: true,
   },
 ];
