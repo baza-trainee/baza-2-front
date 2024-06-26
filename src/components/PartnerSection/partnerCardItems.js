@@ -56,7 +56,7 @@ export const partnerCardItems = [
   },
   {
     title: "slide_5.title",
-    img: "/images/partner_section/tucha.svg",
+    img: "/images/partner_section/tucha.png",
     url: "https://tucha.ua/uk",
   },
   {
