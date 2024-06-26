@@ -97,12 +97,28 @@
     height: 60px;
   }
 }
+.mySwiperWrapper{
+  margin: 0 auto;
+  max-width: 397px !important;
+  @include mx.media-q("md"){
+   max-width: 818px !important;
+  }
+  @include mx.media-q("xl") {
+    max-width: 1239px !important;
+  }
+    @include mx.media-q("xxxl") {
+    max-width: 1678px !important;
+  }
+}
 
 .mySwiperItem {
-  max-width: 334px;
+  width: 280px;
 
+  @include mx.media-q("md"){
+    width: 334px;
+  }
   @include mx.media-q("xl") {
-    max-width: 397px;
+    width: 397px;
   }
 }
 
