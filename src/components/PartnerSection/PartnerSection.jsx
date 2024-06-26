@@ -6,9 +6,9 @@ import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/module
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-import { partnerCardItems } from "./partnerCardItems";
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
+import { partnerCardItems } from "./partnerCardItems";
 
 const PartnerSection = () => {
 
@@ -18,7 +18,7 @@ const PartnerSection = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleRow}>
-          <h2 className={styles.title}>Test {t("title")}</h2>
+          <h2 className={styles.title}>{t("title")}</h2>
           <div className={styles.navigation}>
             <CarouselButton
               className={clsx("partner-prevBtn", styles.prevBtn)}
