@@ -6,7 +6,7 @@ import { useSwiperSlide } from 'swiper/react';
 
 export default function PartnerCard({ item }) {
 
-  const { imgUrl, homeUrl, name } = item;
+  const { imgUrl, homeUrl={}, name } = item;
 
   const swiperSlide = useSwiperSlide();
 
