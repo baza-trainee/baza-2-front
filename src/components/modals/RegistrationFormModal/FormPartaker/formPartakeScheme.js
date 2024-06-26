@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const partakerDefaultValues= {
@@ -43,7 +43,8 @@ export const PartakerSchema = z
     .trim()
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
-    .regex(patternEmail, { message: 'invalid_ru' }),
+    .regex(patternEmail, { message: 'incorrect_email' })
+    .regex(patternEmailNonRu, { message: 'invalid_ru' }),
 
     phone: z.string()
     .trim()
@@ -54,16 +55,14 @@ export const PartakerSchema = z
     city: z.string()
     .trim()
     .min(1, { message: 'city' })
-    .min(2, { message: 'city' })
-    .max(50, { message: 'city' })
-    .regex(patternName, { message: 'city' }),
+    .max(30, { message: 'city_max' })
+    .regex(patternText, { message: 'incorrect_city' }),
 
     country: z.string()
     .trim()
     .min(1, { message: 'country' })
-    .min(2, { message: 'country' })
-    .max(50, { message: 'country' })
-    .regex(patternName, { message: 'country' }),
+    .max(30, { message: 'country_max' })
+    .regex(patternText, { message: 'incorrect_country' }),
 
     discord: z.string()
     .trim()
@@ -83,7 +82,9 @@ export const PartakerSchema = z
 
     motivation: z.string()
     .trim()
-    .min(1, { message: 'experience' }),
+    .min(1, { message: 'motivation' })
+    .max(50, { message: 'motivation_max' })
+    .regex(patternText, { message: 'incorrect_motivation' }),
 
     sawQuestionnaire: z.string()
     .trim()
