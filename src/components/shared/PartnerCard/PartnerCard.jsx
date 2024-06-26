@@ -12,7 +12,6 @@ export default function PartnerCard({ item }) {
 
   return (
     <Link
-
       href={homeUrl}
       className={clsx(styles.partnerCardItem, swiperSlide.isActive ? styles._active: styles._disabled)}
       rel="noopener noreferrer"
