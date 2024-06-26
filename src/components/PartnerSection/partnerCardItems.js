@@ -24,16 +24,16 @@ export const partnerCardItems = [
     img: "/images/partner_section/juniverse.png",
     url: "https://juniverse.com.ua/",
   },
-  {
-    title: "slide_4.title",
-    img: "/images/partner_section/beetroot.webp",
-    url: "https://beetroot.academy/",
-  },
-  {
-    title: "slide_5.title",
-    img: "/images/partner_section/karitas.webp",
-    url: "https://caritas.ua/",
-  },
+  // {
+  //   title: "slide_4.title",
+  //   img: "/images/partner_section/beetroot.webp",
+  //   url: "https://beetroot.academy/",
+  // },
+  // {
+  //   title: "slide_5.title",
+  //   img: "/images/partner_section/karitas.webp",
+  //   url: "https://caritas.ua/",
+  // },
   {
     title: "slide_5.title",
     img: "/images/partner_section/tails.webp",
@@ -41,7 +41,7 @@ export const partnerCardItems = [
   },
   {
     title: "slide_5.title",
-    img: "/images/partner_section/cisca.webp",
+    img: "/images/partner_section/scsa.png",
     url: "https://scsa.org.ua/",
   },
   {
@@ -56,7 +56,7 @@ export const partnerCardItems = [
   },
   {
     title: "slide_5.title",
-    img: "/images/partner_section/tucha.svg",
+    img: "/images/partner_section/tucha.png",
     url: "https://tucha.ua/uk",
   },
   {
