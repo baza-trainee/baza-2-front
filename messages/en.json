@@ -250,7 +250,7 @@
 	},
 	"Alert": {
 		"title": "Sorry, something went wrong",
-		"title_success": "Sent successfully",
+		"title_success": "Your data has been sent successfully",
 		"text": "Try again later",
 		"btn_home": "Try again"
 	},
@@ -266,7 +266,7 @@
 		"ariaLabel_btn_close_2": "closes the thank you modal window",
 		"ariaLabel_btn_close_3": "closes the error modal window",
 		"error_message": "Max 4 signs!",
-		"error_message_pay": "Sorry, an error occurred :("
+		"error_message_pay": "Sorry, an error occurred"
 	},
 	"Modal_form": {
 		"title": "Registration for participation in the Baza Trainee Ukraine project",

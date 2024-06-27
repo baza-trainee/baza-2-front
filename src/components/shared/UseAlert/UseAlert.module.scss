@@ -2,7 +2,7 @@
 @use "../../../styles/mixins.scss" as mx;
 
 .wrapper{
-  width: clamp(300px, 98vw, 500px);
+  width: clamp(300px, 98vw, 580px);
   padding: 10px;
   position: fixed;
   left: 50%;
@@ -23,11 +23,14 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 24px 16px;
+    padding: 50px 10px;
     border: 2px solid var.$primary-border;
     border-radius: 12px;
     background: var.$primary-fon-card;
 
+    @include mx.media-q("md") {
+       padding: 60px 10px;
+    }
     &.error{
       color: var.$secondary-error;
     }
@@ -40,7 +43,6 @@
       @include mx.apply-font-styles(var.$h1-font);
       font-size: 20px;
       text-align: center;
-      padding: 0 18px;
   
       @include mx.media-q("md") {
         font-size: 24px;

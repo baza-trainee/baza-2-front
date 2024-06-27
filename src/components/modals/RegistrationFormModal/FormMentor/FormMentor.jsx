@@ -15,6 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
+import { regInputPhone } from "@/src/constants/regulars";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -59,6 +60,20 @@ export default function FormMentor({handleClose}) {
       isSubmitted('success')
       console.log(data);
     },3000)
+  };
+  const isDisabled = () => {
+    if (Object.keys(errors).length > 0) {
+      return true;
+    } else if (isDirty && !isValid) {
+      return true;
+    } else return false;
+  };
+
+  // Валідація символів номеру телефону
+  const inputValidPhone = (event) =>{
+    if(regInputPhone.test(event.target.value)){
+      setPhone(formatPhoneNumber(event.target.value))
+    }else event.preventDefault()
   };
 
   return (
@@ -126,6 +141,7 @@ export default function FormMentor({handleClose}) {
           <InputField
             id={"email"}
             className={styles.item}
+            type='email'
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...MentorSchema.email })}
             isError={errors.email}
@@ -141,9 +157,10 @@ export default function FormMentor({handleClose}) {
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
+            type='tel'
             value={phone}
             onFocus={()=>{setPhone(phone ? phone : '+380')}}
-            onInput={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            onInput={(e)=>{inputValidPhone(e)}}
             registerOptions={register("phone", { ...MentorSchema.phone })}
             isError={errors.phone}
             isValid={isValid}
@@ -234,6 +251,7 @@ export default function FormMentor({handleClose}) {
 
       <MainButton
         type="submit"
+        disabled={isDisabled()}
         //disabled={!isDirty || !isValid}
         className={styles.submit}
         //variant={"modal"}
