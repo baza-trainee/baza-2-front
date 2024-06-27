@@ -8,7 +8,7 @@ import FormPayment from './FormPayment/FormPayment';
 import MessageCard from './MessageCard/MessageCard';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import { useParams } from 'next/navigation';
-import handlerPayment from '@/src/lib/services/handlerPayment';
+import handlerPayment from '@/src/services/handlerPayment';
 import Loader from '../../shared/loader/Loader';
 
 export default function PaymentModal() {

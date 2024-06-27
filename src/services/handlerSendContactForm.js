@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {  BASE_URL2, EMAIL_ADMIN } from '../../constants/constants';
+import {  BASE_URL2, EMAIL_ADMIN } from '../constants/constants';
 
 //const BASE_URL = 'https://baza2.crabdance.com/api/v1';
 //const EMAIL_ADMIN ='brodich_vlad@ukr.net';

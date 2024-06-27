@@ -9,10 +9,23 @@ import clsx from "clsx";
 import { partnerCardItems } from "./partnerCardItems";
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
+import { exampleService } from "@/src/services/example-service";
+import { useQuery } from "@tanstack/react-query";
 
 const PartnerSection = () => {
 
+
+  // const { isLoading, isError, data, error } = useQuery({
+  //   queryKey: 'partner',
+  //   queryFn: exampleService,  1696591738772.webp
+  // })
+ const { isLoading, isError, data, error }= useQuery({ queryKey: ['todos'], queryFn: exampleService.getAllPartners })
+console.log(data?.results)
+//https://baza-trainee.tech/api/v1/files/1696591738772.webp
+
   const t = useTranslations("Main.partners_section");
+if(isLoading){return <h1>Loading....</h1>}
+
 
   return (
     <section className={styles.section}>
@@ -31,7 +44,8 @@ const PartnerSection = () => {
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
-            items={partnerCardItems}
+            //items={partnerCardItems}
+            items={data?.results}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}

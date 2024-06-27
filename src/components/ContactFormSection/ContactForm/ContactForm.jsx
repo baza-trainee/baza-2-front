@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import handlerSendContactForm from "@/src/lib/services/handlerSendContactForm";
+import handlerSendContactForm from "@/src/services/handlerSendContactForm";
 import { FeedbackSchema, feedbackDefaultValues } from "./formFeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";

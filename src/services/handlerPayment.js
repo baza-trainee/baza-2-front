@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL } from "../../constants/constants";
+import { BASE_URL } from "../constants/constants";
 // !! Логіка запиту на старий бекенд на отримання посилання сторінки оплати. !!
 //const BASE_URL = 'https://baza-trainee-landing.vercel.app/api/v1';
 
