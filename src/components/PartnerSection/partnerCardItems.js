@@ -49,11 +49,11 @@ export const partnerCardItems = [
     imgUrl: "/images/partner_section/zerno.png",
     homeUrl: "https://www.zerno.fashion/",
   },
-  {
-    name: "slide_5.title",
-    imgUrl: "/images/partner_section/status.svg",
-    homeUrl: "https://statusac.com.ua/",
-  },
+  // {
+  //   name: "slide_5.title",
+  //   imgUrl: "/images/partner_section/status.svg",
+  //   homeUrl: "https://statusac.com.ua/",
+  // },
   {
     name: "slide_5.title",
     imgUrl: "/images/partner_section/tucha.png",
