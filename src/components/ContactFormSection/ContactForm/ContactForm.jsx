@@ -72,6 +72,7 @@ export default function ContactForm() {
           <InputField
             id={"email"}
             placeholder={"email@gmail.com"}
+            type='email'
             registerOptions={register("email", { ...FeedbackSchema.email })}
             isError={errors.email}
             isValid={isValid}

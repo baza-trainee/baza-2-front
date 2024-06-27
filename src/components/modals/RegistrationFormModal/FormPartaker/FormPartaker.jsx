@@ -15,6 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
 import downloadPdf from "@/src/lib/hooks/downloadPdf";
+import { regInputPhone } from "@/src/constants/regulars";
 
 
 export default function FormPartaker() {
@@ -73,6 +74,12 @@ export default function FormPartaker() {
     } else if (isDirty && !isValid) {
       return true;
     } else return false;
+  };
+  // Валідація символів номеру телефону
+  const inputValidPhone = (event) =>{
+    if(regInputPhone.test(event.target.value)){
+      setPhone(formatPhoneNumber(event.target.value))
+    }else event.preventDefault()
   };
 
   return (
@@ -140,6 +147,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"email"}
+            type='email'
             className={styles.item}
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...PartakerSchema.email })}
@@ -156,9 +164,10 @@ export default function FormPartaker() {
             id={"phone"}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
+            type='tel'
             value={phone}
             onFocus={()=>{setPhone(phone ? phone : '+380')}}
-            onInput={(e)=>{setPhone(formatPhoneNumber(e.target.value))}}
+            onInput={(e)=>{inputValidPhone(e)}}
             registerOptions={register("phone", { ...PartakerSchema.phone })}
             isError={errors.phone}
             isValid={isValid}
