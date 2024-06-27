@@ -11,6 +11,7 @@ const MainLink = ({
   type = linkTypes.DEFAULT,
   className,
   handleClose,
+  openInNewTab,
   ...rest
 }) => {
   const pathname = usePathname();
@@ -42,6 +43,12 @@ const MainLink = ({
     ...rest,
   };
 
+
+  if (openInNewTab) {
+    linkProps.target = "_blank";
+    linkProps.rel = "noopener noreferrer";
+  }
+  
   if (type === linkTypes.HELP || url === "/contacts") {
     return <button {...linkProps}>{children}</button>;
   }
