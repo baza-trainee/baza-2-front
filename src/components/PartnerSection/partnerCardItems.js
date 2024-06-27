@@ -12,7 +12,7 @@ export const partnerCardItems = [
   {
     name: "slide_2.title",
     imgUrl: "/images/partner_section/hostiq.png",
-    homeUrl: "https://https://hostiq.ua/",
+    homeUrl: "https://hostiq.ua/",
   },
   {
     name: "slide_2.title",
@@ -47,7 +47,7 @@ export const partnerCardItems = [
   {
     name: "slide_5.title",
     imgUrl: "/images/partner_section/zerno.png",
-    homeUrl: "https://https://www.zerno.fashion/",
+    homeUrl: "https://www.zerno.fashion/",
   },
   {
     name: "slide_5.title",
