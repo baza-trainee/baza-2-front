@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useCallback, useEffect, useState } from "react";
 import { items } from "./items";
 import RoleCard from "../shared/RoleCard/RoleCard";
@@ -15,17 +14,22 @@ import "swiper/css/effect-cube";
 
 const RoleSection = () => {
   const t = useTranslations("Internship.invite_participate");
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = useCallback(() => {
-    setIsMobile(window.innerWidth < 600);
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 600);
+    }
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 600);
+      window.addEventListener("resize", handleResize);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, [handleResize]);
 
   return (
