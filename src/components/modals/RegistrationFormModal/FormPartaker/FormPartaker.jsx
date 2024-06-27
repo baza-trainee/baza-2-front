@@ -25,7 +25,7 @@ export default function FormPartaker() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: {  errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
 
@@ -67,6 +67,13 @@ export default function FormPartaker() {
     },3000)
   };
 
+  const isDisabled = () => {
+    if (Object.keys(errors).length > 0) {
+      return true;
+    } else if (isDirty && !isValid) {
+      return true;
+    } else return false;
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_partaker}>
@@ -361,6 +368,7 @@ export default function FormPartaker() {
 
       <MainButton
         type="submit"
+        disabled={isDisabled()}
         className={styles.submit}
       >
         {t("btn_send")}

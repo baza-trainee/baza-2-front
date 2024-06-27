@@ -60,6 +60,14 @@ export default function FormMentor({handleClose}) {
       console.log(data);
     },3000)
   };
+  const isDisabled = () => {
+    if (Object.keys(errors).length > 0) {
+      return true;
+    } else if (isDirty && !isValid) {
+      return true;
+    } else return false;
+  };
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form_mtntor}>
@@ -234,6 +242,7 @@ export default function FormMentor({handleClose}) {
 
       <MainButton
         type="submit"
+        disabled={isDisabled()}
         //disabled={!isDirty || !isValid}
         className={styles.submit}
         //variant={"modal"}

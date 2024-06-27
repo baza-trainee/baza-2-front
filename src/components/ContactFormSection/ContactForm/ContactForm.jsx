@@ -44,7 +44,7 @@ export default function ContactForm() {
   };
 
   const isDisabled = () => {
-    if (errors.firstName || errors.email || errors.message) {
+    if (Object.keys(errors).length > 0) {
       return true;
     } else if (isDirty && !isValid) {
       return true;
