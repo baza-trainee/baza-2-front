@@ -28,9 +28,9 @@ export default function UseAlert(){
     <div className={styles.wrapper}>
     <div className={clsx(styles.alert, styles[type])}>
       { type === 'success' ? 
-        <h2>{t('title_success')} :)</h2> :
+        <h2>{t('title_success')}</h2> :
         <> 
-          <h2>{t('title')} :(</h2>
+          <h2>{t('title')}</h2>
           <p>{t('text')}</p> 
         </>
       }

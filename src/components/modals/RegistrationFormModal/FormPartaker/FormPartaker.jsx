@@ -49,7 +49,7 @@ export default function FormPartaker() {
     setIsLoader(false)
     reset();
   }
-  
+
   const isSubmitted = (res) => {
     setIsLoader(false)
     if(res === 'error'){
