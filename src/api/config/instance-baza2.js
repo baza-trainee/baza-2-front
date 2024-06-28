@@ -9,4 +9,5 @@ const instanceBaza2 = axios.create({
 		'Content-Type': 'application/json'
 	}
 })
+
 export default instanceBaza2

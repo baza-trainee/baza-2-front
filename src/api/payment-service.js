@@ -1,5 +1,4 @@
-import instance from "./instance"
-
+import instance from "./config/instance"
 
 export async function PaymentService(paymentAmount="0", locale="ua"){
 

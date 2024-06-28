@@ -1,4 +1,4 @@
-import instance from './instance'
+import instance from './config/instance'
 
 export async function  getAllProjects(search=''){
 	try {

@@ -1,4 +1,4 @@
-import instanceBaza2 from "./instance-baza2";
+import instanceBaza2 from "./config/instance-baza2";
 const EMAIL_ADMIN ='brodich_vlad@ukr.net';
 
 export async function ContactFormService(data){
