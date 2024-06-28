@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ProjectCard.module.scss";
 import clsx from "clsx";
 import { createKey } from "@/src/lib/utils/createKey";
@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 const ProjectCard = ({ data }) => {
   const { complexity, imageUrl, title } = data;
   const { locale } = useParams();
+  const [isTeamShowed, setIsTeamShowed] = useState(false);
 
   return (
     <article className={styles.article}>
@@ -18,7 +19,7 @@ const ProjectCard = ({ data }) => {
       </div>
       <div className={styles.content}>
         <span className={clsx(styles.status)}>In progress</span>
-        <h3 className={styles.title}>Lorem ipsum dolor</h3>
+        <h3 className={styles.title}>{title[locale]}</h3>
         <div className={styles.info}>
           <div className={styles.infoRow}>
             <div className={styles.name}>
@@ -49,7 +50,11 @@ const ProjectCard = ({ data }) => {
             </div>
           </div>
         </div>
-        <button type="button" className={styles.button}>
+        <button
+          onClick={() => setIsTeamShowed((state) => !state)}
+          type="button"
+          className={styles.button}
+        >
           <span></span>
           Команда проекту
         </button>
