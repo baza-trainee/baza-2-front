@@ -26,8 +26,8 @@ $button-hover-gradient: linear-gradient(
 );
 
 $button-gradient1: #e37cc1;
-$button-gradient2: #e231a8 ;
-$button-gradient3: #9d2f79 ;
+$button-gradient2: #e231a8;
+$button-gradient3: #9d2f79;
 $button-gradient4: #851a62;
 
 $button-gradient: linear-gradient(
@@ -35,7 +35,7 @@ $button-gradient: linear-gradient(
   $button-gradient1 0%,
   $button-gradient2 36.5%,
   $button-gradient3 76%,
-  $button-gradient4 100%,
+  $button-gradient4 100%
 );
 //=Gradient Icons=======================================================================================================================================================
 $icon-gradient1: #e37cc1;
@@ -117,18 +117,16 @@ $h3-font: (
   "line-height": 150%,
 );
 
-
 $h4-font: (
   "font-family": (
     "Montserrat",
     sans-serif,
-    ),
-    "font-weight": 700,
-    "font-size": 24px,
-    "line-height": 1.5,
-    "letter-spacing": 0.01em,
-    );
-
+  ),
+  "font-weight": 700,
+  "font-size": 24px,
+  "line-height": 1.5,
+  "letter-spacing": 0.01em,
+);
 
 $h5-font: (
   "font-family": (
@@ -145,13 +143,13 @@ $h6-font: (
   "font-family": (
     "Montserrat",
     sans-serif,
-    ),
-    "font-weight": 600,
-    "font-size": 20px,
-    "line-height": 1.5,
-    "letter-spacing": 0.01em,
-    );
-    
+  ),
+  "font-weight": 600,
+  "font-size": 20px,
+  "line-height": 1.5,
+  "letter-spacing": 0.01em,
+);
+
 $h7-font: (
   "font-family": (
     "Open Sans",
@@ -162,8 +160,8 @@ $h7-font: (
   "font-weight": 700,
   "line-height": 150%,
 );
-    $button: $h3-font;
-    $menu: $h3-font;
+$button: $h3-font;
+$menu: $h3-font;
 
 $text-20-font: (
   "font-family": (
