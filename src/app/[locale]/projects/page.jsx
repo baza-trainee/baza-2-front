@@ -1,10 +1,9 @@
+import Projects from "@/src/components/Projects/Projects";
 
-export default function Projects() {
-  // !! Замінити  <div> на готові компоненти !!
- 
+export default function ProjectsPage() {
   return (
-    <main className="container" style={{marginTop:'120px'}}>
-      <div style={{ marginBottom: '120px' }}><h2>Сторінка: Проекти</h2></div>
+    <main style={{ marginTop: "120px" }}>
+      <Projects />
     </main>
   );
-};
+}
