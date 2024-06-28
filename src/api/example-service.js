@@ -9,3 +9,6 @@ export async function  getAllProjects(search=''){
 	}
 }
 //'https://baza-trainee.tech/api/v1/projects?search=value'
+
+//https://baza-trainee.tech/api/v1/files/1704803899277.png   Contacts
+

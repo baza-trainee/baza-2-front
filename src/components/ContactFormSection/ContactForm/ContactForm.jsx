@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
 import { useMutation } from "@tanstack/react-query";
-import { ContactFormService } from "@/src/api/contact-form-service";
+import { ContactFormService } from "@/src/api/contact-form";
 import { FeedbackSchema, feedbackDefaultValues } from "./formFeedbackSchema";
 import { Icon } from "../../shared/Icon/Icon";
 import MainButton from "../../shared/MainButton/MainButton";
