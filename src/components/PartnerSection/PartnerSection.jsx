@@ -6,26 +6,22 @@ import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/module
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-import { partnerCardItems } from "./partnerCardItems";
+
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
-import { exampleService } from "@/src/services/example-service";
-import { useQuery } from "@tanstack/react-query";
+import { partnerCardItems } from "./partnerCardItems";
+
+// import { useQuery } from "@tanstack/react-query";
+// import { getAllPartners } from "@/src/api/partners-services";
 
 const PartnerSection = () => {
 
-
-  // const { isLoading, isError, data, error } = useQuery({
-  //   queryKey: 'partner',
-  //   queryFn: exampleService,  1696591738772.webp
-  // })
- const { isLoading, isError, data, error }= useQuery({ queryKey: ['todos'], queryFn: exampleService.getAllPartners })
-console.log(data?.results)
-//https://baza-trainee.tech/api/v1/files/1696591738772.webp
+//  const { isLoading, isError, data }= useQuery({ queryKey: ['partners'], queryFn: getAllPartners })
 
   const t = useTranslations("Main.partners_section");
-if(isLoading){return <h1>Loading....</h1>}
 
+  // if(isLoading){return <h1>Loading....</h1>}
+  // if(isError){return <h1>Error</h1>}
 
   return (
     <section className={styles.section}>
@@ -44,8 +40,8 @@ if(isLoading){return <h1>Loading....</h1>}
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
-            //items={partnerCardItems}
-            items={data?.results}
+            items={partnerCardItems}
+            //items={data?.results}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
