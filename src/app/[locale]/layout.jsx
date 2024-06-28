@@ -23,8 +23,8 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   const messages = await getMessages();
   return (
     <html lang={locale === "ua" ? "uk" : locale}>
-      <Providers>
-        <body>
+      <body>
+        <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <div className="wrapper">
               <Header />
@@ -45,8 +45,8 @@ export default async function LocaleLayout({ children, params: { locale } }) {
             speed={200}
             shadow="0 0 10px #ff62ce,0 0 5px #ff62ce"
           />
+        </Providers>
         </body>
-      </Providers>
     </html>
   );
 }
