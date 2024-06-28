@@ -2,6 +2,8 @@ const createNextIntlPlugin = require("next-intl/plugin");
 const svg = require("@neodx/svg/webpack");
 
 const withNextIntl = createNextIntlPlugin();
+// /** @type {import('next').NextConfig} */
+// const path = require('path')
 
 const nextConfig = {
 	webpack: (config, { isServer }) => {
@@ -18,6 +20,16 @@ const nextConfig = {
 		}
 		return config;
 	},
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+        port: '',
+        pathname: '**',
+      },
+    ],
+  },
 };
 
 module.exports = withNextIntl(nextConfig);

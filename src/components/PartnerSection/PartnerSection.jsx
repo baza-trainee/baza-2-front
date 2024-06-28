@@ -6,13 +6,22 @@ import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/module
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-import { partnerCardItems } from "./partnerCardItems";
+
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
+import { partnerCardItems } from "./partnerCardItems";
+
+// import { useQuery } from "@tanstack/react-query";
+// import { getAllPartners } from "@/src/api/partners-services";
 
 const PartnerSection = () => {
 
+//  const { isLoading, isError, data }= useQuery({ queryKey: ['partners'], queryFn: getAllPartners })
+
   const t = useTranslations("Main.partners_section");
+
+  // if(isLoading){return <h1>Loading....</h1>}
+  // if(isError){return <h1>Error</h1>}
 
   return (
     <section className={styles.section}>
@@ -32,6 +41,7 @@ const PartnerSection = () => {
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
             items={partnerCardItems}
+            //items={data?.results}
             prevEl={".partner-prevBtn"}
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}

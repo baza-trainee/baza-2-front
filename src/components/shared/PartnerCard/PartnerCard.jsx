@@ -18,6 +18,7 @@ export default function PartnerCard({ item }) {
         <Image
           className={styles.img}
           src={imgUrl}
+          //src={`https://baza-trainee.tech/api/v1/files/${imageUrl}`}
           alt={name}
           fill
           sizes="100%"
