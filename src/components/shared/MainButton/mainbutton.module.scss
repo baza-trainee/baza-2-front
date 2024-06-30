@@ -3,7 +3,6 @@
 
 .btn_main {
   @include mx.apply-font-styles(var.$button);
-
   position: relative;
   overflow: hidden;
   color: var.$secondary-white;
@@ -60,11 +59,14 @@
     }
   }
   
-  &:active::after{
-    opacity: 0;
-  }
-  &:active::before{
-    opacity: 1;
+  @media (hover: none){
+    &:active::after{
+      opacity: 0;
+    }
+
+    &:active::before{
+      opacity: 1;
+    }
   }
 
   &:disabled::after {
@@ -92,7 +94,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 28px;
-  height: 45px;
+  //height: 45px;
   border: 1px solid var.$secondary-white;
   border-radius: 8px;
   cursor: pointer;
@@ -102,13 +104,13 @@
 
   @include mx.media-q("md") {
     font-size: 18px;
-    height: 52px;
+    //height: 52px;
   }
 
   @include mx.media-q("xl") {
     font-size: 20px;
     padding: 0 32px;
-    height: 62px;
+    //height: 62px;
   }
 
   &:hover,
