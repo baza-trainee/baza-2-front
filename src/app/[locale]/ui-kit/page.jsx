@@ -4,6 +4,7 @@ import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
+import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
 
 
 export default function UiKit() {
@@ -18,6 +19,7 @@ export default function UiKit() {
         img="/images/hero_section/slide_1.jpg"
       />
       <JoinProjectSection />
+      <ContactFormSection />
       <SocialIcons />
       <RegistrationFormModal/>
 

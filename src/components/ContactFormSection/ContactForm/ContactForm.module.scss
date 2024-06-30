@@ -36,9 +36,9 @@
   margin-bottom: 16px;
   .error{
     @include mx.apply-font-styles(var.$text-20-font);
-    font-size: 14px;
-    
+    font-size: 16px;
     color: var.$secondary-error;
+
     @include mx.media-q("md") {
       font-size: 20px;
     }

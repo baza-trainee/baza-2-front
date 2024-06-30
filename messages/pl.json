@@ -35,7 +35,7 @@
 				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
 			},
 			"card_link": "Czytaj więcej",
-			"btn_text": "Dołącz do społeczności"
+			"btn_text": "Dołącz do projektu"
 		},
 		"join_project_section": {
 			"main_title": "Jak dołączyć do projektu",
@@ -74,7 +74,7 @@
 				"item_5": "Tworzymy portfolio realnych projektów",
 				"item_6": "Wybieramy pracodawcę świadomie"
 			},
-			"btn_text": "Dołącz do społeczności"
+			"btn_text": "Dołącz do projektu"
 		}
 	},
 	"Main": {
@@ -221,7 +221,7 @@
 				"name": "Wpisz imię",
 				"name_min": "Nazwa musi mieć co najmniej 2 znaki",
 				"name_max": "Nazwa nie może przekraczać 30 znaków",
-				"incorrect_name": "Proszę wpisać prawidłowe imię",
+				"incorrect_name": "Proszę podać poprawny adres e-mail",
 				"email": "Wprowadź swój email",
 				"incorrect_email": "Proszę podać poprawny adres e-mail",
 				"invalid_ru": "Domeny .ru i .by są niedozwolone",
@@ -324,15 +324,15 @@
 			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
 			"convenient_time": "Wybierz dogodny termin konsultacji",
 			"country": "Wprowadź kraj",
-			"country_max": "Назва країни повинна бути не більше 30 знаків",
-			"incorrect_country": "Введіть коректну назву країни",
+			"country_max": "Nazwa kraju nie powinna przekraczać 30 znaków",
+			"incorrect_country": "Wprowadź poprawną nazwę kraju",
 			"city": "Wejdź do miasta",
-			"city_max": "Назва міста повинна бути не більше 30 знаків",
-			"incorrect_city": "Введіть коректну назву міста",
+			"city_max": "Nazwa miasta nie powinna przekraczać 30 znaków",
+			"incorrect_city": "Wpisz poprawną nazwę miasta",
 			"experience": "Wybierz dostępność doświadczenia",
 			"motivation": "Podaj swoją motywację",
-			"motivation_max": "Текст має бути не більше 50 знаків",
-			"incorrect_motivation": "Введіть коректний текст",
+			"motivation_max": "Tekst nie powinien przekraczać 50 znaków",
+			"incorrect_motivation": "Wpisz poprawny tekst",
 			"saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
 			"agree": "Zapoznaj się z warunkami uczestnictwa",
 			"permit": "Wyraź zgodę na przetwarzanie danych osobowych"
