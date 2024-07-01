@@ -90,6 +90,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"firstName"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("firstName")}
             registerOptions={register("firstName", { ...PartakerSchema.firstName})}
@@ -105,6 +106,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"lastName"}
+            maxLength={55}
             className={styles.item}
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...PartakerSchema.lastName})}
@@ -147,6 +149,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"email"}
+            maxLength={55}
             type='email'
             className={styles.item}
             placeholder={"email@gmail.com"}
@@ -162,6 +165,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"phone"}
+            maxLength={20}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
             type='tel'
@@ -180,6 +184,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"city"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("city_placeholder")}
             registerOptions={register("city", { ...PartakerSchema.city })}
@@ -194,6 +199,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"country"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("country_placeholder")}
             registerOptions={register("country", { ...PartakerSchema.country })}
@@ -208,6 +214,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"discord"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("discord")}
             registerOptions={register("discord", { ...PartakerSchema.discord })}
@@ -222,6 +229,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"linkedin"}
+            maxLength={200}
             className={styles.item}
             placeholder={t("linkedin_placeholder")}
             registerOptions={register("linkedin", { ...PartakerSchema.linkedin })}
@@ -271,6 +279,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"motivation"}
+            maxLength={200}
             className={styles.item}
             placeholder={t("your_answer")}
             registerOptions={register("motivation", { ...PartakerSchema.motivation})}
