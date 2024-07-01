@@ -249,8 +249,9 @@
 		"btn_home": "Return to the home page"
 	},
 	"Alert": {
-		"title": "Sorry, something went wrong",
+		"title_error": "Sorry, something went wrong",
 		"title_success": "Your data has been sent successfully",
+		"title_info": "Sorry, site under development",
 		"text": "Try again later",
 		"btn_home": "Try again"
 	},

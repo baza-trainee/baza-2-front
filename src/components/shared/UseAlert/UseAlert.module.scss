@@ -39,6 +39,10 @@
       color: var.$secondary-positive;
     }
 
+    &.info{
+      color: var.$secondary-white;
+    }
+
     & > h2{
       @include mx.apply-font-styles(var.$h1-font);
       font-size: 20px;
