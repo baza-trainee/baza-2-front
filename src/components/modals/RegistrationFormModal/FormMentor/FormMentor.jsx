@@ -84,6 +84,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"firstName"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("firstName")}
             registerOptions={register("firstName", { ...MentorSchema.firstName})}
@@ -99,6 +100,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"lastName"}
+            maxLength={55}
             className={styles.item}
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...MentorSchema.lastName})}
@@ -140,6 +142,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"email"}
+            maxLength={55}
             className={styles.item}
             type='email'
             placeholder={"email@gmail.com"}
@@ -155,6 +158,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"phone"}
+            maxLength={20}
             className={styles.item}
             placeholder={"+380 xx xxx xx xx"}
             type='tel'
@@ -173,6 +177,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"discord"}
+            maxLength={35}
             className={styles.item}
             placeholder={t("discord")}
             registerOptions={register("discord", { ...MentorSchema.discord })}
@@ -187,6 +192,7 @@ export default function FormMentor({handleClose}) {
         <li>
           <InputField
             id={"linkedin"}
+            maxLength={200}
             className={styles.item}
             placeholder={t("linkedin_placeholder")}
             registerOptions={register("linkedin", { ...MentorSchema.linkedin })}

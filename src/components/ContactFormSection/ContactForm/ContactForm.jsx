@@ -54,6 +54,7 @@ export default function ContactForm() {
         <li>
           <InputField
             id={"firstName"}
+            maxLength={35}
             placeholder={t("name")}
             registerOptions={register("firstName", { ...FeedbackSchema.firstName})}
             isError={errors.firstName}
@@ -67,6 +68,7 @@ export default function ContactForm() {
         <li>
           <InputField
             id={"email"}
+            maxLength={55}
             placeholder={"email@gmail.com"}
             type='email'
             registerOptions={register("email", { ...FeedbackSchema.email })}
@@ -81,6 +83,7 @@ export default function ContactForm() {
         <li>
           <InputField
             id={"message"}
+            maxLength={305}
             placeholder={t("message_placeholder")}
             registerOptions={register("message", { ...FeedbackSchema.message })}
             isError={errors.message}

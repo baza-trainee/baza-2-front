@@ -249,8 +249,9 @@
 		"btn_home": "Powrót do strony głównej"
 	},
 	"Alert": {
-		"title": "Przepraszam, coś poszło nie tak",
+		"title_error": "Przepraszam, coś poszło nie tak",
 		"title_success": "Twoje dane zostały pomyślnie przesłane",
+		"title_info": "Przepraszamy, strona w fazie rozwoju",
 		"text": "Spróbuj ponownie później",
 		"btn_home": "Spróbuj ponownie"
 	},

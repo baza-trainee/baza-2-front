@@ -1,10 +1,19 @@
 import { create } from 'zustand'
-// type 'error'|'success';
+// type 'error'|'success'|'info';
 const stateUseAlert = create((set) => ({
   isOpen: false,
-  type:'error',
-  open: (typeName='error') => set({ isOpen: true, type:typeName}),
-  close: () => set({ isOpen: false, type:'error' }),
+  type: 'error',
+  autoClose: true,
+  open: (typeName ='error', autoClose = true) => set({ 
+    isOpen: true, 
+    type:typeName, 
+    autoClose:autoClose
+  }),
+  close: () => set({ 
+    isOpen: false, 
+    type:'error', 
+    autoClose:true 
+  }),
 }))
 
 export default stateUseAlert
