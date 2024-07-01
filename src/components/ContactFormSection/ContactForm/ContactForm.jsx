@@ -23,7 +23,7 @@ export default function ContactForm() {
     formState: { errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: {...feedbackDefaultValues}, resolver: zodResolver(FeedbackSchema), mode: 'onBlur'});
-  open('success')
+
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: (data) => {
       return ContactFormService(data)
