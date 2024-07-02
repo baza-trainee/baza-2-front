@@ -38,7 +38,7 @@ export default function ModalDocumentPdf() {
   useEffect(() => {
 
     const getWidth = () =>
-     { pdfWrapperRef?.current?.getBoundingClientRect()?.width || 0;}
+     {return pdfWrapperRef?.current?.getBoundingClientRect()?.width || 0;}
 
     setWidth(getWidth());
 
@@ -46,22 +46,24 @@ export default function ModalDocumentPdf() {
       setWidth(getWidth());
     };
 
+
+    //setWidth(getWidth())
+    window.addEventListener('resize', handleResize);
     if (pdfWrapperRef?.current) {
       setWidth(getWidth());
     }
-    console.log(pdfWrapperRef)
-    //setWidth(getWidth())
-    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [pdfWrapperRef]);
+  }, [pdfWrapperRef, width]);
 
 
   function onDocumentLoadSuccess({ numPages }){
     setNumPages(numPages);
   }
+
+  //if(!numPages){return null}
 
   return (
     <LayoutModal isOpen={isOpen}>
