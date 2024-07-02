@@ -7,6 +7,7 @@ import MainButton from '../../shared/MainButton/MainButton';
 import styles from './CookiesModal.module.scss';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import downloadPdf from '@/src/lib/hooks/downloadPdf';
+import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 
 // Examples Cookies:  expires: 365 днів.
 // Cookies.set('name', 'value', { expires: 365 })
@@ -16,6 +17,9 @@ import downloadPdf from '@/src/lib/hooks/downloadPdf';
 export default function CookiesModal() {
   // контент.
   const t = useTranslations("cookies");
+
+   // Отримуємо стан.
+   const openDocument = stateModalDocumentPdf(state => state.open);
   // локальний стан.          
   const [showModal, setShowModal] = useState(false);
   // перевіряємо чи cookiesAccepted.
@@ -46,7 +50,7 @@ export default function CookiesModal() {
       <p className={styles.text}>{t("text")}  <button
         type="button"
         className={styles.linck}
-        onClick={()=>{downloadPdf('/documents/privacy_policy.pdf')}}
+        onClick={()=>{openDocument('/documents/privacy_policy.pdf')}}
         >{t('privacy_policy')}</button> 
       </p>
 

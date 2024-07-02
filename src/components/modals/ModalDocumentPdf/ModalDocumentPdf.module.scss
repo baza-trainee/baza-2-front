@@ -1,0 +1,76 @@
+@use "../../../styles/mixins" as mix;
+@use "../../../styles/variables" as var;
+
+.wrapper{
+  padding: 16px 16px 80px 16px;
+  margin: auto;
+  width: clamp(300px, 95vw, 1100px);
+  //background-color: aqua;
+ 
+  @include mix.media-q("md") {
+    padding: 40px 16px 80px 16px;
+  }
+  
+  @include mix.media-q("xl") {
+    padding: 10vh 16px;
+  }
+
+  .modal {
+    //max-width: 1000px;
+    background: var.$primary-fon-card;
+    padding: 44px 8px 24px 8px;
+    //margin: auto;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var.$primary-border;
+    position: relative;
+    //max-width: 689px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+
+    @include mix.media-q("md") {
+      padding: 92px 32px 32px 32px;
+      //padding: 92px 70px 32px 32px;
+    }
+
+    .wrapper_document{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .document{
+      //width: 90vw;
+    
+    }
+    .page{
+      //width: 90vw;
+      //height: 110vh;
+
+      //overflow-y: scroll;
+      margin: 20px;
+      //overflow: scroll;
+      background-color: aqua;
+      transform: scale(1);
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+
+      top: 10px;
+      right: 10px;
+
+      @include mix.media-q("md") {
+        top: 30px;
+        right: 18px;
+      }
+    }
+  }
+}

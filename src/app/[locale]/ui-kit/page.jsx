@@ -5,6 +5,7 @@ import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal
 import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
 import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
+import ModalDocumentPdf from "@/src/components/modals/ModalDocumentPdf/ModalDocumentPdf";
 
 
 export default function UiKit() {
@@ -13,12 +14,14 @@ export default function UiKit() {
       <FooterLinks />
       <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
       <ControlBtnRegistrationFormModal type="partaker">Test RegistrationFormModal Partaker </ControlBtnRegistrationFormModal>
+      <ModalDocumentPdf/>
       <HeroCard
         title="slide_1.title"
         desc="slide_1.text"
         img="/images/hero_section/slide_1.jpg"
       />
       <JoinProjectSection />
+    
       <ContactFormSection />
       <SocialIcons />
       <RegistrationFormModal/>
