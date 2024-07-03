@@ -8,6 +8,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
 	webpack: (config, { isServer }) => {
 		config.resolve.alias.canvas = false;
+
 		if (!isServer) {
 			config.plugins.push(
 				svg({

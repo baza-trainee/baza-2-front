@@ -28,7 +28,7 @@ export default function CookiesModal() {
       setShowModal(true);
     }
   }, []);
-  // зберігаємо cookiesAccepted зі значенням true.
+  // зберігаємо cookiesAccepted зі значенням true. 
   const acceptCookies = () => {
     Cookies.set('cookiesAccepted', 'true', {
       expires: 1 / 48,
@@ -42,7 +42,7 @@ export default function CookiesModal() {
   };
 
   if(!showModal){return null};
-
+//  '/documents/privacy_policy.pdf' '/documents/Reports_test.pdf'  '/documents/rules_participation.pdf' '/documents/Statut.pdf'  '/documents/terms_of_use.pdf'
   return <div className={styles.wrapper}>
     <div className={styles.modal}>
       <h3 className={styles.title}>Cookies<Icon name={"cookies"}/></h3>
