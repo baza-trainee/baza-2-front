@@ -12,7 +12,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 6;
     top: 0;
     left: 0;
     background: linear-gradient(
@@ -26,6 +26,7 @@
     &:hover {
       &::before {
         opacity: 0;
+        pointer-events: none;
       }
     }
   }
@@ -44,6 +45,13 @@
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 4;
+    background: linear-gradient(
+      226deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.3) 54.85%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
   }
   & > img {
     object-fit: cover;
@@ -84,49 +92,7 @@
 .title {
   @include mx.apply-font-styles(var.$h4-font);
 }
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.infoRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 20px;
-  row-gap: 10px;
-  flex-wrap: wrap;
-}
-.name {
-  @include mx.apply-font-styles(var.$text-20-font);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  & > span {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-  }
-  & > p {
-    @include mx.apply-font-styles(var.$text-16-font);
-  }
-}
-.complexity {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.circle {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var.$secondary-white;
-  &.circleActive {
-    background-color: var.$primary-border;
-  }
-}
+
 .button {
   align-self: flex-start;
   @include mx.apply-font-styles(var.$h4-font);
