@@ -54,6 +54,7 @@ export default function ContactForm() {
         <li>
           <InputField
             id={"firstName"}
+            maxLength={35}
             placeholder={t("name")}
             registerOptions={register("firstName", { ...FeedbackSchema.firstName})}
             isError={errors.firstName}
@@ -62,11 +63,12 @@ export default function ContactForm() {
             label={t("name")}
           />
 
-          {errors.firstName && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.firstName.message}`)}</span>}
+          {errors.firstName && <p className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
         <li>
           <InputField
             id={"email"}
+            maxLength={55}
             placeholder={"email@gmail.com"}
             type='email'
             registerOptions={register("email", { ...FeedbackSchema.email })}
@@ -76,11 +78,12 @@ export default function ContactForm() {
             label={t("email")}
           />
 
-          {errors.email && <span className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.email.message}`)}</span>}
+          {errors.email && <p className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.email.message}`)}</p>}
         </li>
         <li>
           <InputField
             id={"message"}
+            maxLength={305}
             placeholder={t("message_placeholder")}
             registerOptions={register("message", { ...FeedbackSchema.message })}
             isError={errors.message}
@@ -89,7 +92,7 @@ export default function ContactForm() {
             label={t("message")}
           />
           
-          {errors.message && <span className={styles.error}>{t(`error_message.${errors.message.message}`)}</span>}
+          {errors.message && <p className={styles.error}>{t(`error_message.${errors.message.message}`)}</p>}
         </li>
       </ul>
       

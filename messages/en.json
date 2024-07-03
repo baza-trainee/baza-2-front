@@ -35,7 +35,7 @@
 				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
 			},
 			"card_link": "Read more",
-			"btn_text": "Join the community"
+			"btn_text": "Join the project"
 		},
 		"join_project_section": {
 			"main_title": "How to join the project",
@@ -74,7 +74,7 @@
 				"item_5": "We form a portfolio of real projects",
 				"item_6": "We carefully choose an employer"
 			},
-			"btn_text": "Join the community"
+			"btn_text": "Join the project"
 		}
 	},
 	"Main": {
@@ -249,8 +249,9 @@
 		"btn_home": "Return to the home page"
 	},
 	"Alert": {
-		"title": "Sorry, something went wrong",
+		"title_error": "Sorry, something went wrong",
 		"title_success": "Your data has been sent successfully",
+		"title_info": "Sorry, site under development",
 		"text": "Try again later",
 		"btn_home": "Try again"
 	},
@@ -325,14 +326,14 @@
 			"convenient_time": "Choose a convenient consultation time",
 			"country": "Enter the country",
 			"country_max": "Назва країни повинна бути не більше 30 знаків",
-			"incorrect_country": "Введіть коректну назву країни",
+			"incorrect_country": "Enter the correct country name",
 			"city": "Enter the city",
-			"city_max": "Назва міста повинна бути не більше 30 знаків",
-			"incorrect_city": "Введіть коректну назву міста",
+			"city_max": "The name of the city should not exceed 30 characters",
+			"incorrect_city": "Enter the correct city name",
 			"experience": "Choose the availability of experience",
 			"motivation": "State your motivation",
-			"motivation_max": "Текст має бути не більше 50 знаків",
-			"incorrect_motivation": "Введіть коректний текст",
+			"motivation_max": "The text should not exceed 50 characters",
+			"incorrect_motivation": "Enter the correct text",
 			"saw_questionnaire": "Choose where you saw the questionnaire",
 			"agree": "Get acquainted with the conditions of participation",
 			"permit": "Give consent to the processing of personal data"

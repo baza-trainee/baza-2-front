@@ -2,14 +2,10 @@ import { useRef, useState } from 'react';
 import { useTranslations } from "next-intl";
 import styles from './FormPayment.module.scss';
 import clsx from "clsx";
-//import usePaymentHandler from '../usePaymentHandler';
-//import { useParams } from 'next/navigation';
 import { Icon } from '@/src/components/shared/Icon/Icon';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 
 export default function FormPayment({handleSubmit}) {
-  // Мова сторінки.
-  //const { locale } = useParams();
   // контент.
   const t = useTranslations("Modal_support");
   // локальний стан.
@@ -30,10 +26,7 @@ export default function FormPayment({handleSubmit}) {
       console.log('Не обрана сума')
       return
     }
-    // Тимчасовий вивід результату в консоь.
-    //console.log(usePaymentHandler(amount, locale)) 
     handleSubmit(amount)
-    //handleThank()
   };
   // Перемикач Інша сума.
   const another = () => {
