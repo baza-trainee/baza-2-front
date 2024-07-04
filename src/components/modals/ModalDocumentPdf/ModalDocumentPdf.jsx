@@ -1,25 +1,29 @@
 "use client";
 import styles from './ModalDocumentPdf.module.scss'
-import { useEffect, useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import { pdfjs } from 'react-pdf';
+import { useState } from 'react';
+import dynamic from "next/dynamic";
+//import { Document, Page } from 'react-pdf';
+//import 'react-pdf/dist/Page/AnnotationLayer.css';
+// import { pdfjs } from 'react-pdf';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 import { useBodyLock } from '@/src/lib/hooks/useBodyLock';
-import Loader from '../../shared/loader/Loader';
+//import Loader from '../../shared/loader/Loader';
 
+const PDFViewer = dynamic(() => import("@/src/components/shared/PdfViewer/PdfViewer"), {
+  ssr: false
+});
 // pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).toString();
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   'pdfjs-dist/build/pdf.worker.min.mjs',
+//   import.meta.url,
+// ).toString();
 
 
 export default function ModalDocumentPdf() {
-  const [numPages, setNumPages] = useState();
+  //const [numPages, setNumPages] = useState();
 
  // Отримуємо стан.
   const isOpen = stateModalDocumentPdf(state => state.isOpen);
@@ -28,32 +32,32 @@ export default function ModalDocumentPdf() {
 
   useBodyLock(isOpen);
 
-  const [width, setWidth] = useState(0);
+  // const [width, setWidth] = useState(0);
 
-  function onDocumentLoadSuccess({ numPages }){
-    setNumPages(numPages);
-  }
+  // function onDocumentLoadSuccess({ numPages }){
+  //   setNumPages(numPages);
+  // }
 
-  useEffect(() => {
-    const getWidth = () => {
-      const windowInnerWidth = window.innerWidth
-      if(windowInnerWidth > 1200){return 1000}
-       else if(window.innerWidth <= 1200 && window.innerWidth > 768){return window.innerWidth - 130}else {return window.innerWidth - 40}
-    }
+  // useEffect(() => {
+  //   const getWidth = () => {
+  //     const windowInnerWidth = window.innerWidth
+  //     if(windowInnerWidth > 1200){return 1000}
+  //      else if(window.innerWidth <= 1200 && window.innerWidth > 768){return window.innerWidth - 130}else {return window.innerWidth - 40}
+  //   }
 
-    const handleResize = () => {
-      setWidth(getWidth());
-    };
+  //   const handleResize = () => {
+  //     setWidth(getWidth());
+  //   };
 
-    setWidth(getWidth());
+  //   setWidth(getWidth());
 
-    window.addEventListener('resize', handleResize);
-    setWidth(getWidth());
+  //   window.addEventListener('resize', handleResize);
+  //   setWidth(getWidth());
  
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   return (
     <LayoutModal isOpen={isOpen}>
@@ -61,8 +65,8 @@ export default function ModalDocumentPdf() {
         <div className={styles.modal} >
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
-
-          <Document className={styles.document}
+          <PDFViewer file={document}/>
+          {/* <Document className={styles.document}
             loading={<Loader />}
            //error={<div className="text-3xl font-bold">{error}</div>}
             file={document} 
@@ -78,7 +82,7 @@ export default function ModalDocumentPdf() {
                   width={width}
                 />
               ))}
-          </Document>
+          </Document> */}
         </div>
       </div>
     </LayoutModal>

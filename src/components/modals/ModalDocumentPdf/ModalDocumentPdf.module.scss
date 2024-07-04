@@ -14,7 +14,7 @@
   }
 
   .modal {
-    min-width: 280px;
+    min-width: 270px;
     min-height: 90vh;
     background: var.$primary-fon-card;
     padding: 56px 8px 24px 8px;
@@ -43,18 +43,18 @@
       width: 100%;
       height: 100%;
     }
-    .document{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
+    // .document{
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   justify-content: center;
+    //   width: 100%;
+    //   height: 100%;
     
-    }
-    .page{
-      margin-bottom: 5px;
-    }
+    // }
+    // .page{
+    //   margin-bottom: 5px;
+    // }
 
     .closeButton {
       position: absolute;

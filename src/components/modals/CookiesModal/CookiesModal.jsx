@@ -18,8 +18,7 @@ export default function CookiesModal() {
   // контент.
   const t = useTranslations("cookies");
 
-   // Отримуємо стан.
-   const openDocument = stateModalDocumentPdf(state => state.open);
+  const open = stateModalDocumentPdf(state => state.open);
   // локальний стан.          
   const [showModal, setShowModal] = useState(false);
   // перевіряємо чи cookiesAccepted.
@@ -28,7 +27,7 @@ export default function CookiesModal() {
       setShowModal(true);
     }
   }, []);
-  // зберігаємо cookiesAccepted зі значенням true. 
+  // зберігаємо cookiesAccepted зі значенням true.
   const acceptCookies = () => {
     Cookies.set('cookiesAccepted', 'true', {
       expires: 1 / 48,
@@ -42,7 +41,7 @@ export default function CookiesModal() {
   };
 
   if(!showModal){return null};
-//  '/documents/privacy_policy.pdf' '/documents/Reports_test.pdf'  '/documents/rules_participation.pdf' '/documents/Statut.pdf'  '/documents/terms_of_use.pdf'
+
   return <div className={styles.wrapper}>
     <div className={styles.modal}>
       <h3 className={styles.title}>Cookies<Icon name={"cookies"}/></h3>
@@ -50,7 +49,7 @@ export default function CookiesModal() {
       <p className={styles.text}>{t("text")}  <button
         type="button"
         className={styles.linck}
-        onClick={()=>{openDocument('/documents/privacy_policy.pdf')}}
+        onClick={()=>{open('/documents/privacy_policy.pdf')}}
         >{t('privacy_policy')}</button> 
       </p>
 

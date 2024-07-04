@@ -41,7 +41,6 @@ const FAQItem = ({ title, description, descLink }) => {
               {descLink}
             </MainLink>
           )}
-          .
         </p>
       </div>
     </div>
