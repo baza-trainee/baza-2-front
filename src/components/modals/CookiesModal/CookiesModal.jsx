@@ -49,7 +49,7 @@ export default function CookiesModal() {
       <p className={styles.text}>{t("text")}  <button
         type="button"
         className={styles.linck}
-        onClick={()=>{open('/documents/privacy_policy.pdf')}}
+        onClick={()=>{open('privacyPolicy')}}
         >{t('privacy_policy')}</button> 
       </p>
 
