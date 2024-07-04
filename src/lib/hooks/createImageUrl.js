@@ -1,0 +1,1 @@
+export const createImageUrl = (id) =>{return `https://baza2.crabdance.com/api/v1/files/${id}`}
