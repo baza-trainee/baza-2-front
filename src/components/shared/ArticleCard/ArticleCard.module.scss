@@ -12,7 +12,7 @@
   height: 242px;
 }
 
-.image{
+.image {
   object-fit: cover;
 }
 
@@ -66,7 +66,7 @@
 
 .linkRead {
   @include mx.apply-font-styles(var.$text-16-font);
-
+  font-family: "Montserrat", sans-serif !important; 
   display: block;
   padding: 10px 4px;
   margin-left: auto;

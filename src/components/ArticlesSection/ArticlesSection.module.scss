@@ -14,7 +14,7 @@
     padding: 60px 64px;
   }
 
-@media only screen and (min-width: 1800px) {
+  @media only screen and (min-width: 1800px) {
     padding: 72px 120px;
   }
 }
@@ -40,6 +40,7 @@
 
 .title {
   @include mx.apply-font-styles(var.$h2-font);
+  font-family: "Open Sans", sans-serif;
   font-size: 26px;
   font-weight: 700;
 
@@ -97,16 +98,16 @@
     height: 60px;
   }
 }
-.mySwiperWrapper{
+.mySwiperWrapper {
   margin: 0 auto;
   max-width: 397px !important;
-  @include mx.media-q("md"){
-   max-width: 818px !important;
+  @include mx.media-q("md") {
+    max-width: 818px !important;
   }
   @include mx.media-q("xl") {
     max-width: 1239px !important;
   }
-    @include mx.media-q("xxxl") {
+  @include mx.media-q("xxxl") {
     max-width: 1678px !important;
   }
 }
@@ -114,7 +115,7 @@
 .mySwiperItem {
   width: 280px;
 
-  @include mx.media-q("md"){
+  @include mx.media-q("md") {
     width: 334px;
   }
   @include mx.media-q("xl") {
