@@ -6,19 +6,26 @@ import { Icon } from '../../shared/Icon/Icon';
 import MainButton from '../../shared/MainButton/MainButton';
 import styles from './CookiesModal.module.scss';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
-import downloadPdf from '@/src/lib/hooks/downloadPdf';
+//import downloadPdf from '@/src/lib/hooks/downloadPdf';
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
-
+import { useQuery } from "@tanstack/react-query";
+import { getDocuments } from '@/src/api/documents';
 // Examples Cookies:  expires: 365 днів.
 // Cookies.set('name', 'value', { expires: 365 })
 // Cookies.get('name') // => 'value'
 // Cookies.remove('name')
 
 export default function CookiesModal() {
+  const { isLoading, isError, data }= useQuery({ queryKey: ['documents'], queryFn: getDocuments })
+
   // контент.
   const t = useTranslations("cookies");
 
   const open = stateModalDocumentPdf(state => state.open);
+  const fetch = stateModalDocumentPdf(state => state.fetch);
+
+  if(data){fetch(data)}
+
   // локальний стан.          
   const [showModal, setShowModal] = useState(false);
   // перевіряємо чи cookiesAccepted.
