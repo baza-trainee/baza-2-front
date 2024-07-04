@@ -11,6 +11,16 @@
   background-color: var.$primary-bg-card-blog;
   padding: 16px 8px;
   min-height: 288px;
+  max-width: 1061px;
+
+@media only screen and (min-width: 600px) {
+    padding: 24px 16px;
+    // min-width: 656px;
+    // min-height: 208px;
+
+    min-width: 552px;
+    min-height: 208px;
+  }
 }
 
 .wrapper {
@@ -18,19 +28,20 @@
   flex-direction: column;
   gap: 8px;
 
-  @include mx.media-q("md") {
+@media only screen and (min-width: 600px) {
+  
     flex-direction: row;
     gap: 16px;
-  }
-}
+  
+}}
 
 .img {
   position: relative;
-  height: 136px;
+  min-height: 136px;
 
-  @include mx.media-q("md") {
-    height: 148px;
-    width: 196px;
+@media only screen and (min-width: 600px) {
+    min-height: 148px;
+    min-width: 196px;
   }
 }
 
@@ -53,14 +64,17 @@
 .content {
   max-width: 100%;
   @include mx.media-q("md") {
-    width: 444px;
-    max-width: none;
+    min-width: 444px;
   }
   h3 {
     @include mx.apply-font-styles(var.$h2-font);
     margin-bottom: 16px;
     font-weight: 700;
     color: var.$secondary-black;
+
+    @include mx.media-q("md") {
+      font-size: 24px;
+    }
   }
 
   p {
@@ -85,4 +99,3 @@
   font-family: "Montserrat", sans-serif !important;
   color: var.$secondary-black !important;
 }
-

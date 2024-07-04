@@ -1,0 +1,9 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mx;
+
+.input{
+    min-width: 288px;
+    max-width: 625px;
+    padding: 10px;
+    border-radius: 8px;
+}
