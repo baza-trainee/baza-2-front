@@ -17,6 +17,16 @@
     padding: 24px 16px;
     min-height: 208px;
   }
+
+  @include mx.media-q("xl") {
+    padding: 24px 20px 24px 16px;
+    min-height: 214px;
+  }
+
+  @include mx.media-q("xxxl") {
+    padding-right: 25px;
+    min-height: 260px;
+  }
 }
 
 .wrapper {

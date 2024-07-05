@@ -1,346 +1,367 @@
 {
-	"Header": {
-		"main": "Strona główna",
-		"internship": "Praktyka",
-		"projects": "Projekty",
-		"blog": "Blog",
-		"contacts": "Kontakty",
-		"btn_support_project": "Wspierać projekt"
-	},
-	"Internship": {
-		"invite_participate": {
-			"title": "Zapraszamy do udziału",
-			"card_1": {
-				"text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом.",
-				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
-			},
-			"card_2": {
-				"text1": " Frontend-розробник - це програміст, який розробляє зовнішню частину продукту – елементи вебсайтів, програм та застосунків, які дозволяють людині з ними працювати.  Він відповідає за створення зручного та естетичного вигляду вебсторінки на різних пристроях, а також реалізує анімації та інші ефекти.",
-				"text2": "Frontend-розробник пише код і верстає ту частину сторінки, яку бачить і з якою взаємодіє користувач. Наприклад, кожну картинку, кнопку талітеру на цьому сайті зверстав Frontend-розробник за макетом дизайнера. Це цікава робота, адже кожен новий рядок коду покращує зовнішній вигляд та можливості сайту"
-			},
-			"card_3": {
-				"text1": " Бекенд-розробник відповідає за створення та налаштування серверної частини додатку, включаючи логіку обробки даних, взаємодію з базами даних, розробку API та забезпечення захисту інформації.",
-				"text2": "Бекенд-розробник також відповідає за розробку та інтеграцію таких компонентів, як системи аутентифікації, авторизації, кешування, черг повідомлень та інші, які забезпечують працездатність та продуктивність усього додатку. Він  створює 'начинку' проєкту - пише шляхи, завдяки яким все починає працювати."
-			},
-			"card_4": {
-				"text1": " Fullstack-розробники володіють навичками програмування як фронтенду (клієнтська сторона), так і бекенду (серверна сторона). Вони можуть розробити повноцінний продукт від початку до кінця і цінуються на ринку як універсальні фахівці",
-				"text2": "Fullstack-розробники створюють сайти та вебзастосунки — відповідають за їх фронтенд та бекенд. Фронтенд — частина сайту або програми, яку користувачі бачать у браузері. Це система заголовків та підзаголовків, картинки, посилання та кнопки. Бекенд — це логіка і функціонування роботи сайту або програми. Це все, що приховано під капотом - механіка дій, зберігання даних тощо."
-			},
-			"card_5": {
-				"text1": "QA-інженер відповідає за розробку планів тестування додатків та сайтів. Тестувальник виявляє недоліки в роботі продукту, а що найважливіше — допомагає уникнути їх у майбутньому.",
-				"text2": "Тестувальник покращує програми, але не пише код. Він знаходить помилки (баги), описує їх і передає розробникам. Простими словами, тестувальник стежить, щоб усе правильно працювало та відповідало вимогам."
-			},
-			"card_6": {
-				"text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом",
-				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
-			},
-			"card_link": "Czytaj więcej",
-			"btn_text": "Dołącz do projektu"
-		},
-		"join_project_section": {
-			"main_title": "Jak dołączyć do projektu",
-			"card_1": {
-				"title": "Wypełnienie ankiety",
-				"text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
-				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
-				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
-			},
-			"card_2": {
-				"title": "Przyjąć zaproszenie",
-				"text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
-				"text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_3": {
-				"title": "Dołącz do nas",
-				"text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
-				"text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_4": {
-				"title": "Komunikacja z zespołem",
-				"text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
-				"text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
-				"text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
-			}
-		},
-		"benefits_internship": {
-			"title": "Korzyści ze stażu",
-			"cards": {
-				"item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
-				"item_2": "Doświadczenie zdobywamy pracując w zespole",
-				"item_3": "Pozbywamy się niepewności i redukujemy stres",
-				"item_4": "Rozumiemy, czemu ma służyć ten projekt",
-				"item_5": "Tworzymy portfolio realnych projektów",
-				"item_6": "Wybieramy pracodawcę świadomie"
-			},
-			"btn_text": "Dołącz do projektu"
-		}
-	},
-	"Main": {
-		"hero_carousel_section": {
-			"slide_1": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
-			},
-			"slide_2": {
-				"title": "O nas",
-				"text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
-			},
-			"slide_3": {
-				"title": "Nasza grupa docelowa",
-				"text": "Ukraińcy, którzy opanowują specjalizacje IT bez względu na wiek i doświadczenie - stażyści, juniorzy, pocieszyciele, mentorzy z jednej strony, a ukraińskie społeczności i organizacje w dziedzinie działalności charytatywnej, wolontariatu i inicjatyw publicznych z drugiej strony."
-			},
-			"slide_4": {
-				"title": "Nasz cel",
-				"text": "Połączenie tych kategorii we wspólnych działaniach w sposób przynoszący korzyści obu stronom. Dla pierwszej grupy oznacza to zdobycie prawdziwego praktycznego doświadczenia w tworzeniu projektu na żywo, podczas gdy dla drugiej grupy oznacza to otrzymanie funkcjonalnego produktu cyfrowego, który działa i przyczynia się do rozwoju inicjatywy społecznej."
-			},
-			"slide_5": {
-				"title": "Zasada działania",
-				"text": "Przeszkolenie uczestnika w obszarze technologii, które są mu już znane i ułatwienie mu zatrudnienia. Podczas realizacji projektu zastosuj technologie, w których uczestnik chce dalej się rozwijać. Najistotniejsze będzie dostarczenie klientowi rozwiązania wysokiej jakości."
-			}
-		},
-		"history_project_section": {
-			"title": "Historia projektu",
-			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
-			"text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
-			"history": {
-				"item1": {
-					"date": "Kwiecień 2023:",
-					"text": "Start projektu Baza Trainee Ukraine"
-				},
-				"item2": {
-					"date": "Sierpień 2023:",
-					"text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
-				},
-				"item3": {
-					"date": "Listopad 2023:",
-					"text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
-				},
-				"item4": {
-					"date": "Grudzień 2023:",
-					"text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
-				},
-				"item5": {
-					"date": "Marzec 2024:",
-					"text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
-				}
-			}
-		},
-		"counter_section": {
-			"title": "Nasze postępy",
-			"active_projects": "aktywnych projektów",
-			"involved_participants": "zaangażowanych uczestników",
-			"employed": "zatrudniono"
-		},
-		"mentor_section": {
-			"title": "Mentorowi",
-			"paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
-			"paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
-			"paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
-			"btn_mentor": "Zostać mentorem"
-		},
-		"our_structure_section": {
-			"title": "Nasza struktura",
-			"item_1": {
-				"title": "BAZA TRAINEE UKRAINE",
-				"text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
-			},
-			"item_2": {
-				"title": "BAZA SKILL",
-				"text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
-			},
-			"item_3": {
-				"title": "BAZA EDUCAT",
-				"text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
-			},
-			"item_4": {
-				"title": "BAZA POLIGON",
-				"text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
-			}
-		},
-		"FAQ_section": {
-			"title": "FAQ",
-			"question_1": {
-				"title": "Jakie projekty realizujemy?",
-				"text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
-			},
-			"question_2": {
-				"title": "Jak aplikować?",
-				"text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
-			},
-			"question_3": {
-				"title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
-				"text": "Szczegóły na stronie ",
-				"link": "Staż."
-			},
-			"question_4": {
-				"title": "Czy można zobaczyć projekty organizacji?",
-				"text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
-			},
-			"question_5": {
-				"title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
-				"text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
-			},
-			"btn_support_project": "Wesprzyj projekt"
-		},
-		"reviews_section": {
-			"title": "Opinie"
-		},
-		"press_about_section": {
-			"title": "Prasa o nas",
-			"article_1": {
-				"title": "Ми в MC Today",
-				"text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
-			},
-			"article_2": {
-				"title": "Ми на Dev ua",
-				"text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
-			},
-			"article_3": {
-				"title": "Ми на Hostiq.ua",
-				"text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
-			},
-			"article_4": {
-				"title": "",
-				"text": ""
-			},
-			"btn_read_article": "Przeczytaj materiał"
-		},
-		"partners_section": {
-			"title": "Partnerzy"
-		},
-		"feedback_form": {
-			"title": "Formularz zwrotny",
-			"name": "Imię",
-			"email": "E-mail",
-			"message": "Wiadomość",
-			"message_placeholder": "Twoja wiadomość",
-			"btn_send": "Wyślać",
-			"error_message": {
-				"name": "Wpisz imię",
-				"name_min": "Nazwa musi mieć co najmniej 2 znaki",
-				"name_max": "Nazwa nie może przekraczać 30 znaków",
-				"incorrect_name": "Proszę podać poprawny adres e-mail",
-				"email": "Wprowadź swój email",
-				"incorrect_email": "Proszę podać poprawny adres e-mail",
-				"invalid_ru": "Domeny .ru i .by są niedozwolone",
-				"message": "Wpisz wiadomość",
-				"message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
-				"message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
-				"incorrect_message": "Proszę wprowadzić poprawną wiadomość"
-			}
-		}
-	},
-	"Footer": {
-		"main": "Strona główna",
-		"internship": "Praktyka",
-		"projects": "Projekty",
-		"blog": "Blog",
-		"privacy_policy": "Polityka prywatności",
-		"site_use_policy": "Zasady korzystania ze strony internetowej",
-		"regulations": "Statut",
-		"reporting": "Raporty",
-		"development": "tworzenie ",
-		"rights": "Wszelkie prawa zastrzeżone"
-	},
-	"Page_404": {
-		"title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
-		"btn_home": "Powrót do strony głównej"
-	},
-	"Alert": {
-		"title_error": "Przepraszam, coś poszło nie tak",
-		"title_success": "Twoje dane zostały pomyślnie przesłane",
-		"title_info": "Przepraszamy, strona w fazie rozwoju",
-		"text": "Spróbuj ponownie później",
-		"btn_home": "Spróbuj ponownie"
-	},
-	"Modal_support": {
-		"amount": "Kwota doładowania",
-		"placeholder": "Wprowadź żądaną kwotę",
-		"UAH": "UAN",
-		"another_amount": "Inna kwota",
-		"btn_support": "Wspierać",
-		"thanks_support": "Dziękujemy za wsparcie!",
-		"btn_home": "Powrót do strony głównej",
-		"ariaLabel_btn_close_1": "zamyka okno modalne płatności",
-		"ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
-		"ariaLabel_btn_close_3": "zamyka okno modalne błędu",
-		"error_message": "Max 4 signs!",
-		"error_message_pay": "Przepraszamy, pojawił się błąd"
-	},
-	"Modal_form": {
-		"title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
-		"title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
-		"firstName": "Imię",
-		"lastName": "Nazwisko",
-		"specialization": "Specjalizacja",
-		"email": "E-mail",
-		"city": "Miasto",
-		"city_placeholder": "Kijów",
-		"country": "Kraj",
-		"country_placeholder": "Ukraina",
-		"your_answer": "Twoja odpowiedź",
-		"experience": "Dostępność doświadczenia",
-		"yes": "Więc",
-		"no": "Nie",
-		"motivation": "Jaka jest motywacja do stworzenia produktu?",
-		"saw_questionnaire": "Widziałem ankietę:",
-		"questionnaire_options": {
-			"option_1": "Na stronie Bazy Trainee Ukraina",
-			"option_2": "Na stronie Bazy Educat na Instagramie",
-			"option_3": "Na stronie Bazy Edukacyjnej na Facebooku",
-			"option_4": "na kanale Baza Go Telegram",
-			"option_5": "w poście na LinkedIn"
-		},
-		"rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
-		"acquainted": "Zapoznano się z warunkami udziału w projekcie",
-		"agree": "Zgadzam się",
-		"phone": "Telefon",
-		"discord": "Nick na Discordzie",
-		"linkedin": "Profil na Linkedinie",
-		"linkedin_placeholder": "Link do profilu",
-		"convenient_time": "Dogodny termin konsultacji",
-		"anytime": "kiedykolwiek",
-		"permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
-		"btn_send": "Wysłać",
-		"error_message": {
-			"firstName": "Wpisz swoje imię",
-			"firstName_min": "Nazwa musi mieć co najmniej 2 znaki",
-			"firstName_max": "Nazwa nie może przekraczać 30 znaków",
-			"incorrect_firstName": "Proszę wpisać prawidłowe imię",
-			"lastName": "Wpisz swoje nazwisko",
-			"lastName_min": "Nazwisko musi mieć co najmniej 2 znaki",
-			"lastName_max": "Nazwisko nie może przekraczać 50 znaków",
-			"incorrect_lastName": "Wpisz poprawne nazwisko",
-			"specialization": "Wybierz specjalizację",
-			"email": "Wprowadź swój email",
-			"incorrect_email": "Proszę podać poprawny adres e-mail",
-			"invalid_ru": "Domeny .ru i .by są niedozwolone",
-			"phone": "Wprowadź numer telefonu",
-			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
-			"discord": "Wpisz pseudonim na Discordzie",
-			"incorrect_discord": "Wpisz prawidłowy pseudonim w Discord",
-			"linkedin": "Wprowadź swój profil na Linkedin",
-			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
-			"convenient_time": "Wybierz dogodny termin konsultacji",
-			"country": "Wprowadź kraj",
-			"country_max": "Nazwa kraju nie powinna przekraczać 30 znaków",
-			"incorrect_country": "Wprowadź poprawną nazwę kraju",
-			"city": "Wejdź do miasta",
-			"city_max": "Nazwa miasta nie powinna przekraczać 30 znaków",
-			"incorrect_city": "Wpisz poprawną nazwę miasta",
-			"experience": "Wybierz dostępność doświadczenia",
-			"motivation": "Podaj swoją motywację",
-			"motivation_max": "Tekst nie powinien przekraczać 50 znaków",
-			"incorrect_motivation": "Wpisz poprawny tekst",
-			"saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
-			"agree": "Zapoznaj się z warunkami uczestnictwa",
-			"permit": "Wyraź zgodę na przetwarzanie danych osobowych"
-		}
-	},
-	"cookies": {
-		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
-		"privacy_policy": "Polityka prywatności."
-	}
+  "Header": {
+    "main": "Strona główna",
+    "internship": "Praktyka",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "contacts": "Kontakty",
+    "btn_support_project": "Wspierać projekt"
+  },
+  "Internship": {
+    "invite_participate": {
+      "title": "Zapraszamy do udziału",
+      "card_1": {
+        "text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом.",
+        "text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
+      },
+      "card_2": {
+        "text1": " Frontend-розробник - це програміст, який розробляє зовнішню частину продукту – елементи вебсайтів, програм та застосунків, які дозволяють людині з ними працювати.  Він відповідає за створення зручного та естетичного вигляду вебсторінки на різних пристроях, а також реалізує анімації та інші ефекти.",
+        "text2": "Frontend-розробник пише код і верстає ту частину сторінки, яку бачить і з якою взаємодіє користувач. Наприклад, кожну картинку, кнопку талітеру на цьому сайті зверстав Frontend-розробник за макетом дизайнера. Це цікава робота, адже кожен новий рядок коду покращує зовнішній вигляд та можливості сайту"
+      },
+      "card_3": {
+        "text1": " Бекенд-розробник відповідає за створення та налаштування серверної частини додатку, включаючи логіку обробки даних, взаємодію з базами даних, розробку API та забезпечення захисту інформації.",
+        "text2": "Бекенд-розробник також відповідає за розробку та інтеграцію таких компонентів, як системи аутентифікації, авторизації, кешування, черг повідомлень та інші, які забезпечують працездатність та продуктивність усього додатку. Він  створює 'начинку' проєкту - пише шляхи, завдяки яким все починає працювати."
+      },
+      "card_4": {
+        "text1": " Fullstack-розробники володіють навичками програмування як фронтенду (клієнтська сторона), так і бекенду (серверна сторона). Вони можуть розробити повноцінний продукт від початку до кінця і цінуються на ринку як універсальні фахівці",
+        "text2": "Fullstack-розробники створюють сайти та вебзастосунки — відповідають за їх фронтенд та бекенд. Фронтенд — частина сайту або програми, яку користувачі бачать у браузері. Це система заголовків та підзаголовків, картинки, посилання та кнопки. Бекенд — це логіка і функціонування роботи сайту або програми. Це все, що приховано під капотом - механіка дій, зберігання даних тощо."
+      },
+      "card_5": {
+        "text1": "QA-інженер відповідає за розробку планів тестування додатків та сайтів. Тестувальник виявляє недоліки в роботі продукту, а що найважливіше — допомагає уникнути їх у майбутньому.",
+        "text2": "Тестувальник покращує програми, але не пише код. Він знаходить помилки (баги), описує їх і передає розробникам. Простими словами, тестувальник стежить, щоб усе правильно працювало та відповідало вимогам."
+      },
+      "card_6": {
+        "text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом",
+        "text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
+      },
+      "card_link": "Czytaj więcej",
+      "btn_text": "Dołącz do projektu"
+    },
+    "join_project_section": {
+      "main_title": "Jak dołączyć do projektu",
+      "card_1": {
+        "title": "Wypełnienie ankiety",
+        "text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
+        "text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
+        "text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
+      },
+      "card_2": {
+        "title": "Przyjąć zaproszenie",
+        "text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
+        "text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
+        "text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+      },
+      "card_3": {
+        "title": "Dołącz do nas",
+        "text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
+        "text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
+        "text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+      },
+      "card_4": {
+        "title": "Komunikacja z zespołem",
+        "text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
+        "text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
+        "text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
+      }
+    },
+    "benefits_internship": {
+      "title": "Korzyści ze stażu",
+      "cards": {
+        "item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
+        "item_2": "Doświadczenie zdobywamy pracując w zespole",
+        "item_3": "Pozbywamy się niepewności i redukujemy stres",
+        "item_4": "Rozumiemy, czemu ma służyć ten projekt",
+        "item_5": "Tworzymy portfolio realnych projektów",
+        "item_6": "Wybieramy pracodawcę świadomie"
+      },
+      "btn_text": "Dołącz do projektu"
+    }
+  },
+  "Main": {
+    "hero_carousel_section": {
+      "slide_1": {
+        "title": "Baza Trainee Ukraine",
+        "text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
+      },
+      "slide_2": {
+        "title": "O nas",
+        "text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
+      },
+      "slide_3": {
+        "title": "Nasza grupa docelowa",
+        "text": "Ukraińcy, którzy opanowują specjalizacje IT bez względu na wiek i doświadczenie - stażyści, juniorzy, pocieszyciele, mentorzy z jednej strony, a ukraińskie społeczności i organizacje w dziedzinie działalności charytatywnej, wolontariatu i inicjatyw publicznych z drugiej strony."
+      },
+      "slide_4": {
+        "title": "Nasz cel",
+        "text": "Połączenie tych kategorii we wspólnych działaniach w sposób przynoszący korzyści obu stronom. Dla pierwszej grupy oznacza to zdobycie prawdziwego praktycznego doświadczenia w tworzeniu projektu na żywo, podczas gdy dla drugiej grupy oznacza to otrzymanie funkcjonalnego produktu cyfrowego, który działa i przyczynia się do rozwoju inicjatywy społecznej."
+      },
+      "slide_5": {
+        "title": "Zasada działania",
+        "text": "Przeszkolenie uczestnika w obszarze technologii, które są mu już znane i ułatwienie mu zatrudnienia. Podczas realizacji projektu zastosuj technologie, w których uczestnik chce dalej się rozwijać. Najistotniejsze będzie dostarczenie klientowi rozwiązania wysokiej jakości."
+      }
+    },
+    "history_project_section": {
+      "title": "Historia projektu",
+      "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
+      "text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
+      "history": {
+        "item1": {
+          "date": "Kwiecień 2023:",
+          "text": "Start projektu Baza Trainee Ukraine"
+        },
+        "item2": {
+          "date": "Sierpień 2023:",
+          "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
+        },
+        "item3": {
+          "date": "Listopad 2023:",
+          "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
+        },
+        "item4": {
+          "date": "Grudzień 2023:",
+          "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
+        },
+        "item5": {
+          "date": "Marzec 2024:",
+          "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
+        }
+      }
+    },
+    "counter_section": {
+      "title": "Nasze postępy",
+      "active_projects": "aktywnych projektów",
+      "involved_participants": "zaangażowanych uczestników",
+      "employed": "zatrudniono"
+    },
+    "mentor_section": {
+      "title": "Mentorowi",
+      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
+      "paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
+      "paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
+      "btn_mentor": "Zostać mentorem"
+    },
+    "our_structure_section": {
+      "title": "Nasza struktura",
+      "item_1": {
+        "title": "BAZA TRAINEE UKRAINE",
+        "text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
+      },
+      "item_2": {
+        "title": "BAZA SKILL",
+        "text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
+      },
+      "item_3": {
+        "title": "BAZA EDUCAT",
+        "text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
+      },
+      "item_4": {
+        "title": "BAZA POLIGON",
+        "text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
+      }
+    },
+    "FAQ_section": {
+      "title": "FAQ",
+      "question_1": {
+        "title": "Jakie projekty realizujemy?",
+        "text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
+      },
+      "question_2": {
+        "title": "Jak aplikować?",
+        "text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
+      },
+      "question_3": {
+        "title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
+        "text": "Szczegóły na stronie ",
+        "link": "Staż."
+      },
+      "question_4": {
+        "title": "Czy można zobaczyć projekty organizacji?",
+        "text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
+      },
+      "question_5": {
+        "title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
+        "text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
+      },
+      "btn_support_project": "Wesprzyj projekt"
+    },
+    "reviews_section": {
+      "title": "Opinie"
+    },
+    "press_about_section": {
+      "title": "Prasa o nas",
+      "article_1": {
+        "title": "Ми в MC Today",
+        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+      },
+      "article_2": {
+        "title": "Ми на Dev ua",
+        "text": "Українські джуни з Baza Trainee створили лендинг Cats-law.site про  Закон України 2351 «Про жорстоке поводження з тваринами»"
+      },
+      "article_3": {
+        "title": "Ми на Hostiq.ua",
+        "text": "Як Baza Trainee Ukraine випускає свої продукти і чому відповідальний провайдер є обов`язковою частиною кожного проєкту"
+      },
+      "article_4": {
+        "title": "",
+        "text": ""
+      },
+      "btn_read_article": "Przeczytaj materiał"
+    },
+    "partners_section": {
+      "title": "Partnerzy"
+    },
+    "feedback_form": {
+      "title": "Formularz zwrotny",
+      "name": "Imię",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "message_placeholder": "Twoja wiadomość",
+      "btn_send": "Wyślać",
+      "error_message": {
+        "name": "Wpisz imię",
+        "name_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "name_max": "Nazwa nie może przekraczać 30 znaków",
+        "incorrect_name": "Proszę podać poprawny adres e-mail",
+        "email": "Wprowadź swój email",
+        "incorrect_email": "Proszę podać poprawny adres e-mail",
+        "invalid_ru": "Domeny .ru i .by są niedozwolone",
+        "message": "Wpisz wiadomość",
+        "message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
+        "message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
+        "incorrect_message": "Proszę wprowadzić poprawną wiadomość"
+      }
+    }
+  },
+  "Footer": {
+    "main": "Strona główna",
+    "internship": "Praktyka",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "privacy_policy": "Polityka prywatności",
+    "site_use_policy": "Zasady korzystania ze strony internetowej",
+    "regulations": "Statut",
+    "reporting": "Raporty",
+    "development": "tworzenie ",
+    "rights": "Wszelkie prawa zastrzeżone"
+  },
+  "Page_404": {
+    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
+    "btn_home": "Powrót do strony głównej"
+  },
+  "Alert": {
+    "title_error": "Przepraszam, coś poszło nie tak",
+    "title_success": "Twoje dane zostały pomyślnie przesłane",
+    "title_info": "Przepraszamy, strona w fazie rozwoju",
+    "text": "Spróbuj ponownie później",
+    "btn_home": "Spróbuj ponownie"
+  },
+  "Modal_support": {
+    "amount": "Kwota doładowania",
+    "placeholder": "Wprowadź żądaną kwotę",
+    "UAH": "UAN",
+    "another_amount": "Inna kwota",
+    "btn_support": "Wspierać",
+    "thanks_support": "Dziękujemy za wsparcie!",
+    "btn_home": "Powrót do strony głównej",
+    "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
+    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
+    "ariaLabel_btn_close_3": "zamyka okno modalne błędu",
+    "error_message": "Max 4 signs!",
+    "error_message_pay": "Przepraszamy, pojawił się błąd"
+  },
+  "Modal_form": {
+    "title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
+    "title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "specialization": "Specjalizacja",
+    "email": "E-mail",
+    "city": "Miasto",
+    "city_placeholder": "Kijów",
+    "country": "Kraj",
+    "country_placeholder": "Ukraina",
+    "your_answer": "Twoja odpowiedź",
+    "experience": "Dostępność doświadczenia",
+    "yes": "Więc",
+    "no": "Nie",
+    "motivation": "Jaka jest motywacja do stworzenia produktu?",
+    "saw_questionnaire": "Widziałem ankietę:",
+    "questionnaire_options": {
+      "option_1": "Na stronie Bazy Trainee Ukraina",
+      "option_2": "Na stronie Bazy Educat na Instagramie",
+      "option_3": "Na stronie Bazy Edukacyjnej na Facebooku",
+      "option_4": "na kanale Baza Go Telegram",
+      "option_5": "w poście na LinkedIn"
+    },
+    "rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
+    "acquainted": "Zapoznano się z warunkami udziału w projekcie",
+    "agree": "Zgadzam się",
+    "phone": "Telefon",
+    "discord": "Nick na Discordzie",
+    "linkedin": "Profil na Linkedinie",
+    "linkedin_placeholder": "Link do profilu",
+    "convenient_time": "Dogodny termin konsultacji",
+    "anytime": "kiedykolwiek",
+    "permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
+    "btn_send": "Wysłać",
+    "error_message": {
+      "firstName": "Wpisz swoje imię",
+      "firstName_min": "Nazwa musi mieć co najmniej 2 znaki",
+      "firstName_max": "Nazwa nie może przekraczać 30 znaków",
+      "incorrect_firstName": "Proszę wpisać prawidłowe imię",
+      "lastName": "Wpisz swoje nazwisko",
+      "lastName_min": "Nazwisko musi mieć co najmniej 2 znaki",
+      "lastName_max": "Nazwisko nie może przekraczać 50 znaków",
+      "incorrect_lastName": "Wpisz poprawne nazwisko",
+      "specialization": "Wybierz specjalizację",
+      "email": "Wprowadź swój email",
+      "incorrect_email": "Proszę podać poprawny adres e-mail",
+      "invalid_ru": "Domeny .ru i .by są niedozwolone",
+      "phone": "Wprowadź numer telefonu",
+      "incorrect_phone": "Proszę wpisać poprawny numer telefonu",
+      "discord": "Wpisz pseudonim na Discordzie",
+      "incorrect_discord": "Wpisz prawidłowy pseudonim w Discord",
+      "linkedin": "Wprowadź swój profil na Linkedin",
+      "invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
+      "convenient_time": "Wybierz dogodny termin konsultacji",
+      "country": "Wprowadź kraj",
+      "country_max": "Nazwa kraju nie powinna przekraczać 30 znaków",
+      "incorrect_country": "Wprowadź poprawną nazwę kraju",
+      "city": "Wejdź do miasta",
+      "city_max": "Nazwa miasta nie powinna przekraczać 30 znaków",
+      "incorrect_city": "Wpisz poprawną nazwę miasta",
+      "experience": "Wybierz dostępność doświadczenia",
+      "motivation": "Podaj swoją motywację",
+      "motivation_max": "Tekst nie powinien przekraczać 50 znaków",
+      "incorrect_motivation": "Wpisz poprawny tekst",
+      "saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
+      "agree": "Zapoznaj się z warunkami uczestnictwa",
+      "permit": "Wyraź zgodę na przetwarzanie danych osobowych"
+    }
+  },
+  "cookies": {
+    "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
+    "privacy_policy": "Polityka prywatności."
+  },
+  "Blog": {
+    "blog_section": {
+      "article_1": {
+        "title": "Ми в MC Today",
+        "text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність."
+      },
+      "article_2": {
+        "title": "Ми на Dev ua",
+        "text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність.»"
+      },
+      "article_3": {
+        "title": "Ми на Hostiq.ua",
+        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+      },
+      "article_4": {
+        "title": "Ми на Hostiq.ua",
+        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+      },
+      "btn_read_article": "Читати матеріал"
+    }
+  }
 }
