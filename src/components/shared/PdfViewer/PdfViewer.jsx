@@ -7,7 +7,7 @@ import { createKey } from "@/src/lib/utils/createKey";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
 
-export default function PDFViewer({file="/documents/privacy_policy.pdf"}) {
+export default function PDFViewer({file}) {
 
   const [numPages, setNumPages] = useState(null);
   const [width, setWidth] = useState(0);
@@ -20,7 +20,7 @@ export default function PDFViewer({file="/documents/privacy_policy.pdf"}) {
     const getWidth = () => {
       const windowInnerWidth = window.innerWidth
       if(windowInnerWidth > 1200){return 1000}
-       else if(window.innerWidth <= 1200 && window.innerWidth > 768){return window.innerWidth - 130}else {return window.innerWidth - 50}
+       else if(window.innerWidth <= 1200 && window.innerWidth > 768){return window.innerWidth - 130}else {return window.innerWidth - 60}
     }
 
     const handleResize = () => {
@@ -40,7 +40,6 @@ export default function PDFViewer({file="/documents/privacy_policy.pdf"}) {
   return (
     <Document className={styles.document}
       loading={<Loader />}
-    //error={<div className="text-3xl font-bold">{error}</div>}
       file={file} 
       onLoadSuccess={onDocumentLoadSuccess} >
         {Array.from(new Array(numPages), (_, index) => (

@@ -363,5 +363,9 @@
       },
       "btn_read_article": "Читати матеріал"
     }
-  }
+  },
+	"sorryModal": {
+		"title": "Sorry, no information found.",
+		"text": "Specify the request"
+	}
 }

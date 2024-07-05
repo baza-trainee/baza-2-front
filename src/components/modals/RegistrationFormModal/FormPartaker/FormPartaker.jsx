@@ -14,13 +14,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import downloadPdf from "@/src/lib/hooks/downloadPdf";
 import { regInputPhone } from "@/src/constants/regulars";
+import stateModalDocumentPdf from "@/src/state/stateModalDocumentPdf";
 
 
 export default function FormPartaker() {
   const t = useTranslations("Modal_form");
-
+  const openPdf = stateModalDocumentPdf(state => state.open);
   const open = stateUseAlert(state => state.open);
 
   const {
@@ -323,7 +323,7 @@ export default function FormPartaker() {
             <h4>{t("rules_participation")} <span>*</span></h4>
             <button 
               className={styles.linck} 
-              onClick={ ()=>{downloadPdf('/documents/rules_participation.pdf')} }
+              onClick={ ()=>{openPdf('rules')} }
               type="button" >Baza_Trainee_Ukraine.pdf</button>
           </div>
         </li>
