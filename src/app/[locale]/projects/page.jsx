@@ -1,9 +1,11 @@
+import SorryModal from "@/src/components/modals/SorryModal/SorryModal";
 import Projects from "@/src/components/Projects/Projects";
 
 export default function ProjectsPage() {
   return (
-    <main style={{ marginTop: "120px" }}>
+    <main>
       <Projects />
+      <SorryModal/>
     </main>
   );
 }

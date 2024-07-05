@@ -342,5 +342,9 @@
 	"cookies": {
 		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
 		"privacy_policy": "Polityka prywatności."
+	},
+	"sorryModal": {
+		"title": "Przepraszamy, nie znaleziono żadnych informacji.",
+		"text": "Określ żądanie"
 	}
 }
