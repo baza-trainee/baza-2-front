@@ -9,9 +9,7 @@ import ScrollToTopBtn from "../shared/ScrollToTopBtn/ScrollToTopBtn";
 import UseAlert from "../shared/UseAlert/UseAlert";
 
 export default function LayoutProvider({children}) {
-
   const pathname = usePathname()
-console.log(pathname)
 
   return (
     <div className="wrapper">
