@@ -6,7 +6,6 @@ import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButt
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
 import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
 
-
 export default function UiKit() {
   return (
     <main>

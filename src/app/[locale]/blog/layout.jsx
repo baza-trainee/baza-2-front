@@ -1,11 +1,10 @@
 import SorryModal from "@/src/components/modals/SorryModal/SorryModal";
-import Projects from "@/src/components/Projects/Projects";
 
-export default function ProjectsPage() {
+export default function layout( {children}) {
   return (
     <main>
-      <Projects />
+      {children}
       <SorryModal/>
     </main>
   );
-}
+};
