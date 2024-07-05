@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 1680px;
+  max-height: 1680px;
   margin: 0 auto;
   padding: 32px 16px;
 
@@ -33,12 +33,12 @@
 
   @include mx.media-q("md") {
     gap: 24px;
+    justify-content: space-between;
     padding: 24px 0;
   }
   @include mx.media-q("xl") {
     flex-direction: row;
     flex-flow: row-reverse;
-    gap: 0;
     padding: 0;
   }
 }
