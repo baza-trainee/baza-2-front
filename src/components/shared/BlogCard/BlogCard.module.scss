@@ -1,0 +1,99 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mx;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  border-radius: 16px;
+  border: 2px solid var.$primary-border;
+  background-color: var.$primary-bg-card-blog;
+  padding: 16px 8px;
+  min-height: 288px;
+  max-width: 1061px;
+
+  @media only screen and (min-width: 600px) {
+    padding: 24px 16px;
+    min-height: 208px;
+  }
+
+  @include mx.media-q("xl") {
+    padding: 24px 20px 24px 16px;
+    min-height: 214px;
+  }
+
+  @include mx.media-q("xxxl") {
+    padding-right: 25px;
+    min-height: 260px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr;
+    gap: 16px;
+  }
+}
+
+.img {
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.date {
+  position: absolute;
+  top: 6px;
+  left: 0px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background-color: var.$secondary-gray;
+
+  @include mx.apply-font-styles(var.$text-16-font);
+  font-size: 14px;
+}
+
+.content {
+  max-width: 100%;
+  @include mx.media-q("md") {
+  }
+  h3 {
+    @include mx.apply-font-styles(var.$h2-font);
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: var.$secondary-black;
+
+    @include mx.media-q("md") {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    @include mx.apply-font-styles(var.$text-16-font);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    color: var.$secondary-black;
+
+    @include mx.media-q("md") {
+      -webkit-line-clamp: 4;
+    }
+  }
+}
+
+.linkRead {
+  font-family: "Montserrat", sans-serif !important;
+  color: var.$secondary-black !important;
+}

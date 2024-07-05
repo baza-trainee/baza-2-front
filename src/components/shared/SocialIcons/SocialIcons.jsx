@@ -1,9 +1,10 @@
+import clsx from "clsx";
 import { Icon } from "../Icon/Icon";
 import styles from "./SocialIcons.module.scss";
 
-const SocialIcons = () => {
+const SocialIcons = ({ classNameCustom }) => {
   return (
-    <div className={styles.list}>
+    <div className={clsx(styles.list, classNameCustom)}>
       <a
         href="https://www.linkedin.com/company/baza-trainee-ukraine/"
         target="_blank"
