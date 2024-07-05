@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./InputSearch.module.scss";
+import { Icon } from "../Icon/Icon";
 
 const InputSearch = ({ onSubmit }) => {
   const [value, setValue] = useState("");
@@ -23,7 +24,9 @@ const InputSearch = ({ onSubmit }) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="submit">Search</button>
+      <button type="submit">
+        <Icon name="search" width={32} height={32} />
+      </button>
     </form>
   );
 };

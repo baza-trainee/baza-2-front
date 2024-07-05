@@ -22,6 +22,7 @@ export interface SpritesMap {
     | "onboarding"
     | "phone"
     | "scroll-top-arrow"
+    | "search"
     | "telegram";
 }
 export const SPRITES_META: {
@@ -48,6 +49,7 @@ export const SPRITES_META: {
     | "onboarding"
     | "phone"
     | "scroll-top-arrow"
+    | "search"
     | "telegram"
   >;
 } = {
@@ -74,6 +76,7 @@ export const SPRITES_META: {
     "onboarding",
     "phone",
     "scroll-top-arrow",
+    "search",
     "telegram",
   ],
 };
