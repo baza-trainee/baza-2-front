@@ -6,7 +6,6 @@ import { Icon } from '../../shared/Icon/Icon';
 import MainButton from '../../shared/MainButton/MainButton';
 import styles from './CookiesModal.module.scss';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
-//import downloadPdf from '@/src/lib/hooks/downloadPdf';
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 import { useQuery } from "@tanstack/react-query";
 import { getDocuments } from '@/src/api/documents';
@@ -22,9 +21,9 @@ export default function CookiesModal() {
   const t = useTranslations("cookies");
 
   const open = stateModalDocumentPdf(state => state.open);
-  const fetch = stateModalDocumentPdf(state => state.fetch);
+  const filesUpdate = stateModalDocumentPdf(state => state.filesUpdate);
 
-  if(data){fetch(data)}
+  if(data){filesUpdate(data)}
 
   // локальний стан.          
   const [showModal, setShowModal] = useState(false);

@@ -20,11 +20,8 @@ const RegistrationFormModal=()=>{
   if (!isOpen | !type === 'mentor'| !type === 'partaker') return null;
 
   return (
-    <LayoutModal isOpen handleClose={onClose}>
-      <div className={styles.wrapper} onClick={(e) => {
-        onClose()
-        e.stopPropagation()
-        }}>
+    <LayoutModal isOpen={isOpen} handleClose={onClose}>
+      <div className={styles.wrapper}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()
         }>
           <CloseBtn className={styles.closeButton}
