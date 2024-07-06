@@ -11,7 +11,6 @@ const ContactLinks = () => {
   useEffect(() => {
     getContacts()
       .then((data) => {
-        console.log("Contacts data:", data);
         setContactsData(data);
       })
       .catch((error) => {

@@ -9,7 +9,6 @@ const SocialIcons = ({ classNameCustom }) => {
   useEffect(() => {
     getContacts()
       .then((data) => {
-        console.log("Contacts data:", data);
         setSocialMediaData(data);
       })
       .catch((error) => {
