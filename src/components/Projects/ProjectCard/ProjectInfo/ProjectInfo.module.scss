@@ -19,11 +19,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  & > span {
+  & > svg {
     display: block;
     width: 24px;
     height: 24px;
-    background-color: #fff;
   }
   & > p {
     @include mx.apply-font-styles(var.$text-16-font);

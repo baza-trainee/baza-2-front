@@ -1,7 +1,10 @@
+import clsx from "clsx";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
+import styles from "./ProjectCardTeam.module.scss";
 
-const ProjectCardTeam = ({ project, handleClose }) => {
+const ProjectCardTeam = ({ project, handleClose, isShowed }) => {
   const { locale } = useParams();
 
   const projectTeamTitle = project.title[locale];
@@ -22,8 +25,30 @@ const ProjectCardTeam = ({ project, handleClose }) => {
   );
 
   return (
-    <div className="">
-      <div className=""></div>
+    <div className={clsx(styles.projectTeam, isShowed && styles.showed)}>
+      <h4 className={styles.title}>{projectTeamTitle}</h4>
+      <button className={styles.close} onClick={handleClose}>
+        <span />
+        <span />
+      </button>
+      <div className={styles.content}>
+        {sortedRoles.map((role) => (
+          <div key={role}>
+            <h4 className={styles.roleTitle}>{role}</h4>
+
+            {rolesAndMembers[role].map((teamMember) => (
+              <Link
+                key={teamMember._id}
+                className={styles.member}
+                href={teamMember?.profileUrl}
+                target="_blank"
+              >
+                {teamMember.name[locale]}
+              </Link>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

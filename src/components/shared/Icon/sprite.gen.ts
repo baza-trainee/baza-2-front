@@ -2,9 +2,12 @@ export interface SpritesMap {
   sprite:
     | "arrow-back"
     | "baza-skill-logo"
+    | "calendar"
     | "carousel-arrow"
     | "check"
+    | "clock"
     | "close"
+    | "complexity"
     | "cookies"
     | "donate-modal-icon"
     | "facebook"
@@ -22,15 +25,19 @@ export interface SpritesMap {
     | "phone"
     | "scroll-top-arrow"
     | "search"
+    | "team"
     | "telegram";
 }
 export const SPRITES_META: {
   sprite: Array<
     | "arrow-back"
     | "baza-skill-logo"
+    | "calendar"
     | "carousel-arrow"
     | "check"
+    | "clock"
     | "close"
+    | "complexity"
     | "cookies"
     | "donate-modal-icon"
     | "facebook"
@@ -48,15 +55,19 @@ export const SPRITES_META: {
     | "phone"
     | "scroll-top-arrow"
     | "search"
+    | "team"
     | "telegram"
   >;
 } = {
   sprite: [
     "arrow-back",
     "baza-skill-logo",
+    "calendar",
     "carousel-arrow",
     "check",
+    "clock",
     "close",
+    "complexity",
     "cookies",
     "donate-modal-icon",
     "facebook",
@@ -74,6 +85,7 @@ export const SPRITES_META: {
     "phone",
     "scroll-top-arrow",
     "search",
+    "team",
     "telegram",
   ],
 };
