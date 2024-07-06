@@ -30,6 +30,12 @@
       }
     }
   }
+  &.hideBg {
+    &::before {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 }
 
 .imgContainer {
@@ -48,8 +54,8 @@
     z-index: 4;
     background: linear-gradient(
       226deg,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.3) 54.85%,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 54.85%,
       rgba(0, 0, 0, 0.6) 100%
     );
   }
@@ -64,7 +70,7 @@
   flex-direction: column;
   gap: 80px;
   position: relative;
-  z-index: 5;
+  z-index: 6;
   justify-content: space-between;
 }
 .status {
@@ -100,10 +106,13 @@
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid #fff;
-  & > span {
+  & > svg {
     display: block;
-    width: 32px;
-    height: 32px;
-    background-color: #fff;
+    width: 24px;
+    height: 24px;
+    @media (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
