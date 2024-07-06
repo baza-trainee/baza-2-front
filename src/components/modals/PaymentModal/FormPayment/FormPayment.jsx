@@ -82,8 +82,8 @@ export default function FormPayment({handleSubmit}) {
 
       {!readOnly && <span className={styles.vertical_line}></span>}
 
-      <Icon name='currency'className={styles.currency}/>
-      
+      {/* <Icon name='currency'className={styles.currency}/> */}
+      <span className={styles.currency}>{t('UAH')}</span>
       {error && <p
         className={clsx(styles.error, error?.length > 2 && styles._message)}>{error}</p>
       }

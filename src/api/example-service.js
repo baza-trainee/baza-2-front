@@ -8,7 +8,12 @@ export async function  getAllProjects(search=''){
 		throw new Error(error?.response?.data?.message)
 	}
 }
-//'https://baza-trainee.tech/api/v1/projects?search=value'
 
-//https://baza-trainee.tech/api/v1/files/1704803899277.png   Contacts
+// Отримати посилання на фото або документи База2- 
+//createImageUrl(1704803899277.png)
+
+// Отримати посилання на фото або документи База1- 
+// createImageUrlBaza1(1704803899277.png)
+
+//Або так  BASE_URL/files/1704803899277.png 
 

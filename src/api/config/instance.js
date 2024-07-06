@@ -1,5 +1,6 @@
+import { BASE_URL } from '@/src/constants/constants'
 import axios from 'axios'
-const BASE_URL = 'https://baza-trainee-landing.vercel.app/api/v1'
+//const BASE_URL = 'https://baza-trainee.tech/api/v1';
 // baza-trainee 1
 const instance = axios.create({
 	//baseURL: process.env.PUBLIC_API_URL,

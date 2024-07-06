@@ -45,30 +45,30 @@
     justify-content: center;
     position: relative;
     width: 100%;
-
+    min-height: 90px;
     .vertical_line{
       width: 1px;
-      height: 110px;
+      height: 80px;
       background: var.$primary-border;
       animation: 1s linear line-opacity infinite;
 
       @media (min-width: 420px) {
-        height: 117px;
+        height: 90px;
       }
 
       @include mx.media-q("md") {
         height: 122px;
       }
     }
-
+    .currency,
     .text{
       color: var.$secondary-white;
       @include mx.apply-font-styles(var.$h2-font);
-      font-size: 90px;
+      font-size: 64px;
       line-height: normal;
 
       @media (min-width: 420px) {
-        font-size: 96px;
+        font-size: 88px;
       }
 
       @include mx.media-q("md") {
@@ -77,10 +77,16 @@
     }
 
     .currency{
-      display: block;
-      width: 32px;
-      height: 38px;
-      margin-left: 10px;
+      font-size: 46px;
+      padding-top: 10px;
+      font-weight: 400;
+      // display: block;
+      // width: 32px;
+      // height: 38px;
+      margin-left: 5px;
+      @media (min-width: 420px) {
+        font-size: 70px;
+      }
     }
 
     .error{
