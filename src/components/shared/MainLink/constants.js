@@ -5,7 +5,7 @@ const linkTypes = {
   BURGER: "burger",
   CARD: "card",
   STRUCTURE: "structure",
-  DOCS: "docp",
+  DOCS: "docs",
 };
 
 export default linkTypes;
