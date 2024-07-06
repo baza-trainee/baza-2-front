@@ -19,7 +19,7 @@ const MainLink = ({
 
   const handleClick = (event) => {
     if (type === linkTypes.BURGER) handleClose();
-    if (type === linkTypes.HELP) {
+    if (type === linkTypes.HELP || type === linkTypes.DOCS) {
       event.preventDefault();
       return;
     }
@@ -43,13 +43,16 @@ const MainLink = ({
     ...rest,
   };
 
-
   if (openInNewTab) {
     linkProps.target = "_blank";
     linkProps.rel = "noopener noreferrer";
   }
-  
-  if (type === linkTypes.HELP || url === "/contacts") {
+
+  if (
+    type === linkTypes.HELP ||
+    url === "/contacts" ||
+    type === linkTypes.DOCS
+  ) {
     return <button {...linkProps}>{children}</button>;
   }
 
