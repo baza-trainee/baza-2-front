@@ -3,9 +3,10 @@ import Link from "next/link";
 import styles from './PartnerCard.module.scss'
 import clsx from "clsx";
 import { useSwiperSlide } from 'swiper/react';
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 
 export default function PartnerCard({ item }) {
-  const { homeUrl={}, imgUrl, name } = item;
+  const { homeUrl={}, imageUrl, name } = item;
   const swiperSlide = useSwiperSlide();
 
   return (
@@ -17,8 +18,8 @@ export default function PartnerCard({ item }) {
       <div className={styles.img_wrap}>
         <Image
           className={styles.img}
-          src={imgUrl}
-          //src={`https://baza-trainee.tech/api/v1/files/${imageUrl}`}
+          //src={imgUrl}
+          src={createImageUrl(imageUrl)}
           alt={name}
           fill
           sizes="100%"

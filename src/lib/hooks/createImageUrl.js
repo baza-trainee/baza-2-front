@@ -1,1 +1,5 @@
-export const createImageUrl = (id) =>{return `https://baza2.crabdance.com/api/v1/files/${id}`}
+import { BASE_URL, BASE_URL2 } from "@/src/constants/constants"
+
+export const createImageUrl = (id) =>{return `${BASE_URL2}/files/${id}`}
+
+export const createImageUrlBaza1 = (id) =>{return `${BASE_URL}/files/${id}`}
