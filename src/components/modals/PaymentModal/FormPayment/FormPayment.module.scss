@@ -52,10 +52,6 @@
       background: var.$primary-border;
       animation: 1s linear line-opacity infinite;
 
-      @media (min-width: 420px) {
-        height: 90px;
-      }
-
       @include mx.media-q("md") {
         height: 122px;
       }
@@ -67,25 +63,20 @@
       font-size: 64px;
       line-height: normal;
 
-      @media (min-width: 420px) {
-        font-size: 88px;
-      }
-
       @include mx.media-q("md") {
         font-size: 100px;
       }
     }
 
     .currency{
-      font-size: 46px;
+      font-size: 40px;
       padding-top: 10px;
-      font-weight: 400;
-      // display: block;
-      // width: 32px;
-      // height: 38px;
       margin-left: 5px;
-      @media (min-width: 420px) {
-        font-size: 70px;
+
+      @include mx.media-q("md") {
+        margin-left: 10px;
+        margin-top: 15px;
+        font-size: 48px;
       }
     }
 
