@@ -324,7 +324,7 @@ export default function FormPartaker() {
             <button 
               className={styles.linck} 
               onClick={ ()=>{openPdf('rules')} }
-              type="button" >Baza_Trainee_Ukraine.pdf</button>
+              type="button">{t('read_here')}</button>
           </div>
         </li>
 

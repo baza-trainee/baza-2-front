@@ -6,7 +6,6 @@ export interface SpritesMap {
     | "check"
     | "close"
     | "cookies"
-    | "currency"
     | "donate-modal-icon"
     | "facebook"
     | "internship-benefits-1"
@@ -33,7 +32,6 @@ export const SPRITES_META: {
     | "check"
     | "close"
     | "cookies"
-    | "currency"
     | "donate-modal-icon"
     | "facebook"
     | "internship-benefits-1"
@@ -60,7 +58,6 @@ export const SPRITES_META: {
     "check",
     "close",
     "cookies",
-    "currency",
     "donate-modal-icon",
     "facebook",
     "internship-benefits-1",
