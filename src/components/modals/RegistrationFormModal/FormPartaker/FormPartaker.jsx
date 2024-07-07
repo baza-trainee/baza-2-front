@@ -381,7 +381,7 @@ export default function FormPartaker({handleClose}) {
 
       <MainButton
         type="submit"
-        disabled={isDisabled()}
+        //disabled={isDisabled()}
         className={styles.submit}
       >
         {t("btn_send")}
