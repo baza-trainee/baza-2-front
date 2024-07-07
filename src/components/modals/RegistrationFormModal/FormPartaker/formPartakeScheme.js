@@ -51,6 +51,7 @@ export const PartakerSchema = z
     .min(1, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' })
     .transform(value=>  formatPhoneNumber(value,true)),
+    .transform(value=>  formatPhoneNumber(value,true)),
 
     city: z.string()
     .trim()
