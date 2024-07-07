@@ -184,6 +184,7 @@ export default function FormPartaker({handleClose}) {
           <InputField
             id={"city"}
             maxLength={35}
+            required={false}
             className={styles.item}
             placeholder={t("city_placeholder")}
             registerOptions={register("city", { ...PartakerSchema.city })}
@@ -199,6 +200,7 @@ export default function FormPartaker({handleClose}) {
           <InputField
             id={"country"}
             maxLength={35}
+            required={false}
             className={styles.item}
             placeholder={t("country_placeholder")}
             registerOptions={register("country", { ...PartakerSchema.country })}
