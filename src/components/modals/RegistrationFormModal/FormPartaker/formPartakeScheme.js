@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu, patternCountry } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const partakerDefaultValues= {
@@ -50,19 +50,21 @@ export const PartakerSchema = z
     .trim()
     .min(1, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' })
-    .transform(value=>  formatPhoneNumber(value)),
+    .transform(value=>  formatPhoneNumber(value,true)),
 
     city: z.string()
     .trim()
     .min(1, { message: 'city' })
+    .min(2, { message: 'city_min' })
     .max(30, { message: 'city_max' })
-    .regex(patternText, { message: 'incorrect_city' }),
+    .regex(patternCountry, { message: 'incorrect_city' }),
 
     country: z.string()
     .trim()
     .min(1, { message: 'country' })
+    .min(4, { message: 'country_min' })
     .max(30, { message: 'country_max' })
-    .regex(patternText, { message: 'incorrect_country' }),
+    .regex(patternCountry, { message: 'incorrect_country' }),
 
     discord: z.string()
     .trim()
