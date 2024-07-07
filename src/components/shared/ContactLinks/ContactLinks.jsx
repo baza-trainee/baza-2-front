@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import styles from "./ContactLinks.module.scss";
 import { Icon } from "../Icon/Icon";
 import { useEffect, useState } from "react";
