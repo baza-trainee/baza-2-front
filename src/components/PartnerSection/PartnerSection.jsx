@@ -6,13 +6,13 @@ import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/module
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-
+import { isFirefox } from 'react-device-detect';
 import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
 //import { partnerCardItems } from "./partnerCardItems";
-
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
+const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 
 const PartnerSection = () => {
 
@@ -63,15 +63,19 @@ const PartnerSection = () => {
               spaceBetween:10
             }
           }}
-            coverflowEffect={
-              {
-                rotate: 0, // Check for QA in FireFow scroll 
-                stretch: 0, // Check for QA in FireFow scroll 
-                depth: 350,
-                modifier: 1,
-                slideShadows: false,
-              }
-            }
+          coverflowEffect={isMobileFirefox ? {
+            rotate: 5,
+            stretch: 0,
+            depth: 50,
+            modifier: 1,
+            slideShadows: false,
+          } : {
+            rotate: 10,
+            stretch: 10,
+            depth: 350,
+            modifier: 1,
+            slideShadows: false,
+          }}
 
             renderItem={(item) => (
               <PartnerCard key={item.id} item={item} />
