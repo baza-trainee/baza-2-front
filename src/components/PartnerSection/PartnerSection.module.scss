@@ -1,112 +1,73 @@
-@use "../../styles/variables" as var;
-@use "../../styles/mixins" as mixin;
+@use "../../../styles/variables" as var;
+@use '../../../styles/mixins' as mixin;
 
-.section {
-  background-image: var.$primary-gradient;
-  color: var.$secondary-white;
-  width: 100%;
-  padding: 32px 16px;
-
-  @include mixin.media-q("md") { 
-  padding: 48px 16px;
-  }
-
-  @include mixin.media-q("xl") { 
-    padding: 60px 16px;
-
-}
-  @include mixin.media-q("xxxl") { 
-    padding: 72px 16px;
-}
-
-
-}
-.container {
+.partnerCardItem {
+  border-radius: 8px;
+  padding: 10px;
+  width: 95vw;
+  max-height: 230px;
+  height: 40vw;
+  background-color: var.$secondary-white;
+  //border: 2px solid var.$primary-border; brightness(40%);
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  @include mixin.media-q("md") { 
-    gap: 32px;
+  transition: all .8s;
+  //opacity: .7;
+  filter: blur(3px) brightness(40%);
+
+
+  @media (any-hover: hover){
+    &:hover{
+      transform: scale(1.02);
     }
-  
-  @include mixin.media-q("xl") { 
-    gap: 48px;
   }
 
-  @include mixin.media-q("xxxl") { 
-    gap: 56px;
-  }
-}
-
-.title {
-  @include mixin.apply-font-styles(var.$h7-font);
-  @include mixin.media-q("md") { 
-    @include mixin.apply-font-styles(var.$h5-font);
-  }
-  @include mixin.media-q("xl") { 
-    @include mixin.apply-font-styles(var.$h1-font);
-  }
-
-
-}
-
-.sliderContainer {
-  will-change: transform;
-  width: 95vw;
-  @include mixin.media-q("md") { 
-      width: 100%;
+  &._active{
+    opacity: 1;
+    filter: none;
+    @include mixin.media-q("md") { 
+      transform: translateX(-20px)
     }
     @include mixin.media-q("xl") { 
-      max-width: 1238px;
+      transform: translateX(-40px)
+    }
+   
   }
-    @include mixin.media-q("xxxl") { 
-      max-width: 1920px;
+
+  &._disabled{
+    cursor: default;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+ 
+    @include mixin.media-q("md") { 
+      display: flex;
+    }
+
+    @include mixin.media-q("xl") { 
+      transform: translateX(-30px)
     }
   }
 
-.titleRow {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 320px;
+  .img_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .img{
+      //object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
 
   @include mixin.media-q("md") { 
-    width: 688px;
-    padding: 0px 0px 0px 3rem;
+    width: 50vw;
+    height: 230px;
   }
-  
   @include mixin.media-q("xl") { 
-  position: relative;
-  padding: 10px 0px 0px 4rem;
-  width: 1236px;
-}
-
-  @include mixin.media-q("xxxl") { 
-  width: 1320px;
+    width: 470px;
+    height: 230px;
   }
 }
-
-.prevBtn {
-  transform: rotate(180deg);
-}
-
-.navigation {
-  display: none;
-  @include mixin.media-q("md") { 
-  position: absolute;
-  display: flex;
-  top: 0;
-  right: 0;
-  gap: 32px;
-  gap: 16px;
-  }
-  
-}
-
-
-
-
