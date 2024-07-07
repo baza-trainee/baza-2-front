@@ -2,20 +2,14 @@
 import clsx from "clsx";
 import { Icon } from "../Icon/Icon";
 import styles from "./SocialIcons.module.scss";
-import { useEffect, useState } from "react";
 import { getContacts } from "@/src/api/contacts";
+import { useQuery } from "@tanstack/react-query";
 
 const SocialIcons = ({ classNameCustom }) => {
-  const [socialMediaData, setSocialMediaData] = useState(null);
-  useEffect(() => {
-    getContacts()
-      .then((data) => {
-        setSocialMediaData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching contacts:", error.message);
-      });
-  }, []);
+  const { data: socialMediaData } = useQuery({
+    queryKey: ["contacts"],
+    queryFn: getContacts,
+  });
 
   return (
     <div className={clsx(styles.list, classNameCustom)}>

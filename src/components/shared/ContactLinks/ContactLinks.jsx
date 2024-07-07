@@ -1,22 +1,14 @@
 "use client";
 import styles from "./ContactLinks.module.scss";
 import { Icon } from "../Icon/Icon";
-import { useEffect, useState } from "react";
 import { getContacts } from "@/src/api/contacts";
+import { useQuery } from "@tanstack/react-query";
 
 const ContactLinks = () => {
-  const [contactsData, setContactsData] = useState(null);
-
-  useEffect(() => {
-    getContacts()
-      .then((data) => {
-        setContactsData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching contacts:", error.message);
-      });
-  }, []);
-
+  const { data: contactsData } = useQuery({
+    queryKey: ["contacts"],
+    queryFn: getContacts,
+  });
   const formatPhoneNumber = (phoneNumber) => {
     const cleaned = ("" + phoneNumber).replace(/\D/g, "");
     const match = cleaned.match(/^(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})$/);
