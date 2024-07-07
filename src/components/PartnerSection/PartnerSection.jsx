@@ -47,7 +47,7 @@ const PartnerSection = () => {
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
             loop={true}
-  
+            autoplay={{ disableOnInteraction: false, pauseOnMouseEnter: true }} // Check for QA in FireFow scroll 
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={40}
@@ -66,8 +66,8 @@ const PartnerSection = () => {
           }}
             coverflowEffect={
               {
-                rotate: 1,
-                stretch: 10,
+                rotate: 0, // Check for QA in FireFow scroll 
+                stretch: 0, // Check for QA in FireFow scroll 
                 depth: 350,
                 modifier: 1,
                 slideShadows: false,
