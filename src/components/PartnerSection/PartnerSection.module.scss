@@ -46,6 +46,9 @@
     @include mixin.apply-font-styles(var.$h5-font);
   }
   @include mixin.media-q("xl") { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include mixin.apply-font-styles(var.$h1-font);
   }
 
@@ -53,9 +56,8 @@
 }
 
 .sliderContainer {
-
+  transition: transform 0.3s ease, opacity 0.3s ease;
   width: 95vw;
-
   
   @include mixin.media-q("md") { 
       width: 100%;
