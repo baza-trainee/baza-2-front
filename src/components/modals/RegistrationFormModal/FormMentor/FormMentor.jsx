@@ -15,7 +15,6 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import { regInputPhone } from "@/src/constants/regulars";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -25,7 +24,7 @@ export default function FormMentor({handleClose}) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
 
@@ -64,16 +63,14 @@ export default function FormMentor({handleClose}) {
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else if (isDirty && !isValid) {
+    } else if (!isValid) {
       return true;
     } else return false;
   };
 
   // Валідація символів номеру телефону
   const inputValidPhone = (event) =>{
-    if(regInputPhone.test(event.target.value)){
-      setPhone(formatPhoneNumber(event.target.value))
-    }else event.preventDefault()
+    setPhone(formatPhoneNumber(event.target.value))
   };
 
   return (

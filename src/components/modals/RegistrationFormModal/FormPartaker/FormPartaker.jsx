@@ -14,11 +14,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import { regInputPhone } from "@/src/constants/regulars";
 import stateModalDocumentPdf from "@/src/state/stateModalDocumentPdf";
 
 
-export default function FormPartaker() {
+export default function FormPartaker({handleClose}) {
   const t = useTranslations("Modal_form");
   const openPdf = stateModalDocumentPdf(state => state.open);
   const open = stateUseAlert(state => state.open);
@@ -26,7 +25,7 @@ export default function FormPartaker() {
   const {
     register,
     handleSubmit,
-    formState: {  errors, isValid, isDirty },
+    formState: {  errors, isValid },
     reset
   } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
 
@@ -48,6 +47,7 @@ export default function FormPartaker() {
     setAgree(false)
     setIsLoader(false)
     reset();
+    handleClose()
   }
 
   const isSubmitted = (res) => {
@@ -71,15 +71,14 @@ export default function FormPartaker() {
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else if (isDirty && !isValid) {
+    } else if (!isValid) {
       return true;
     } else return false;
   };
+
   // Валідація символів номеру телефону
   const inputValidPhone = (event) =>{
-    if(regInputPhone.test(event.target.value)){
-      setPhone(formatPhoneNumber(event.target.value))
-    }else event.preventDefault()
+    setPhone(formatPhoneNumber(event.target.value))
   };
 
   return (
@@ -279,7 +278,7 @@ export default function FormPartaker() {
         <li>
           <InputField
             id={"motivation"}
-            maxLength={200}
+            maxLength={55}
             className={styles.item}
             placeholder={t("your_answer")}
             registerOptions={register("motivation", { ...PartakerSchema.motivation})}
@@ -376,12 +375,6 @@ export default function FormPartaker() {
             {errors.agree && <p className={styles.error_partaker}>{t("error_message.permit")}</p>}
           </div>
         </li>
-          {/* {inputFields.map((field) => (
-            <div key={field.id}>
-              <InputField {...field} />
-              {field.isError && <p>{t(`error_message.${field.id}`)}</p>}
-            </div>
-          ))} */}
       </ul>
 
       <MainButton
