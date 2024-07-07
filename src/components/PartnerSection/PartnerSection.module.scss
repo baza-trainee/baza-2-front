@@ -46,9 +46,7 @@
     @include mixin.apply-font-styles(var.$h5-font);
   }
   @include mixin.media-q("xl") { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
     @include mixin.apply-font-styles(var.$h1-font);
   }
 
