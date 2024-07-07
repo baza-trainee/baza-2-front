@@ -26,7 +26,6 @@ export default function InputField({
         <textarea
           id={id}
           maxLength={maxLength}
-          required={required}
           className={clsx(
             styles.input,
             isError && styles._error,
@@ -48,7 +47,6 @@ export default function InputField({
         <input
           id={id}
           maxLength={maxLength}
-          required={required}
           className={clsx(
             styles.input,
             isError && styles._error,
