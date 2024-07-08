@@ -13,12 +13,12 @@ import styles from "./PartnerSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
 
-const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 
 const PartnerSection = () => {
-
- const { isLoading, isError, data }= useQuery({ queryKey: ['partners'], queryFn: getAllPartners })
+  
+  const { isLoading, isError, data }= useQuery({ queryKey: ['partners'], queryFn: getAllPartners })
   const t = useTranslations("Main.partners_section");
+  const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 
   //if(isLoading){return <h1>Loading....</h1>}
   //if(isError){return null}
@@ -47,10 +47,6 @@ const PartnerSection = () => {
             nextEl={".partner-nextBtn"}
             effect={'coverflow'}
             loop={true}
-<<<<<<< HEAD
-=======
-            autoplay={{ disableOnInteraction: false, pauseOnMouseEnter: true }} // Check for QA in FireFow scroll 
->>>>>>> main
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={40}
@@ -67,7 +63,6 @@ const PartnerSection = () => {
               spaceBetween:10
             }
           }}
-<<<<<<< HEAD
           coverflowEffect={isMobileFirefox ? {
             rotate: 5,
             stretch: 0,
@@ -81,17 +76,6 @@ const PartnerSection = () => {
             modifier: 1,
             slideShadows: false,
           }}
-=======
-            coverflowEffect={
-              {
-                rotate: 0, // Check for QA in FireFow scroll 
-                stretch: 0, // Check for QA in FireFow scroll 
-                depth: 350,
-                modifier: 1,
-                slideShadows: false,
-              }
-            }
->>>>>>> main
 
             renderItem={(item) => (
               <PartnerCard key={item.id} item={item} />
