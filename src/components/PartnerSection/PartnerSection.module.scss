@@ -54,9 +54,14 @@
 }
 
 .sliderContainer {
+<<<<<<< HEAD
   transition: transform 0.3s ease, opacity 0.3s ease;
   width: 95vw;
   
+=======
+  will-change: transform;
+  width: 95vw;
+>>>>>>> main
   @include mixin.media-q("md") { 
       width: 100%;
     }
@@ -78,20 +83,18 @@
 
   @include mixin.media-q("md") { 
     width: 688px;
+    padding: 0px 0px 0px 3rem;
   }
   
   @include mixin.media-q("xl") { 
   position: relative;
-  padding: 10px 0px;
+  padding: 10px 0px 0px 4rem;
   width: 1236px;
-  //height: 80px;
-  
 }
 
   @include mixin.media-q("xxxl") { 
   width: 1320px;
   }
-
 }
 
 .prevBtn {

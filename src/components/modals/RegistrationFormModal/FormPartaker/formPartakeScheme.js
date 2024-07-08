@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu, patternCountry } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu, patternCountry, patternСity} from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const partakerDefaultValues= {
@@ -54,17 +54,15 @@ export const PartakerSchema = z
 
     city: z.string()
     .trim()
-    .min(1, { message: 'city' })
-    .min(2, { message: 'city_min' })
     .max(30, { message: 'city_max' })
-    .regex(patternCountry, { message: 'incorrect_city' }),
+    .regex(patternСity, { message: 'incorrect_city' })
+    .optional(),
 
     country: z.string()
     .trim()
-    .min(1, { message: 'country' })
-    .min(4, { message: 'country_min' })
     .max(30, { message: 'country_max' })
-    .regex(patternCountry, { message: 'incorrect_country' }),
+    .regex(patternCountry, { message: 'incorrect_country' })
+    .optional(),
 
     discord: z.string()
     .trim()
@@ -95,7 +93,7 @@ export const PartakerSchema = z
     agree_conditions: z.boolean().refine(value => value === true, "You must agree to the terms and conditions"),
 
     agree: z.boolean().refine(value => value === true, "You must agree to the terms and conditions")
-	});
+	})
 
 // Форма учасника {
 //   firstName: 'string',
