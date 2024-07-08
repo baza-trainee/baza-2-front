@@ -12,12 +12,12 @@ import styles from "./PartnerSection.module.scss";
 //import { partnerCardItems } from "./partnerCardItems";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
+
 const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 
 const PartnerSection = () => {
 
  const { isLoading, isError, data }= useQuery({ queryKey: ['partners'], queryFn: getAllPartners })
-
   const t = useTranslations("Main.partners_section");
 
   //if(isLoading){return <h1>Loading....</h1>}
