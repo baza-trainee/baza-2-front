@@ -25,6 +25,13 @@
   &._active{
     opacity: 1;
     filter: none;
+    @include mixin.media-q("md") { 
+      transform: translateX(-20px)
+    }
+    @include mixin.media-q("xl") { 
+      transform: translateX(-30px)
+    }
+   
   }
 
   &._disabled{
@@ -37,6 +44,15 @@
     @include mixin.media-q("md") { 
       display: flex;
     }
+
+    @include mixin.media-q("xl") { 
+      transform: translateX(-30px)
+    }
+    @include mixin.media-q("xl") { 
+      transform: translateX(-20px)
+
+    }
+
   }
 
   .img_wrap {
