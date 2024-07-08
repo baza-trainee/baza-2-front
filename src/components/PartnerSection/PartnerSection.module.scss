@@ -44,9 +44,12 @@
   @include mixin.apply-font-styles(var.$h7-font);
   @include mixin.media-q("md") { 
     @include mixin.apply-font-styles(var.$h5-font);
+    padding-right: 30px;
   }
   @include mixin.media-q("xl") { 
     @include mixin.apply-font-styles(var.$h1-font);
+    padding-right: 60px;
+
   }
 
 
