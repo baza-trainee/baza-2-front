@@ -15,6 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
+import Image from "next/image";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -171,7 +172,7 @@ export default function FormMentor({handleClose}) {
           {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
-        <li>
+        <li className={styles.tooltip}>
           <InputField
             id={"discord"}
             maxLength={35}
@@ -183,6 +184,16 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("discord")}
           />
+          <div className={styles.tooltiptext}>
+            <p>Ім'я користувача в discord. 
+Увага! Скопіюйте свій нік і надішліть в правильному вигляді! 
+На скріні - приклад!!!</p>
+              <div className={styles.wrapp_img}>
+                <Image src={'/images/forms/screenshot_discord.png'} alt="screenshot discord" 
+                fill
+                sizes="100%"/>
+              </div>
+          </div>
           {errors.discord && <p className={styles.error_modal}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 
