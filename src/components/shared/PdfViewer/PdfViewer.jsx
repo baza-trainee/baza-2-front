@@ -4,6 +4,7 @@ import styles from './PDFViewer.module.scss';
 import { Document, Page, pdfjs } from "react-pdf";
 import Loader from "../loader/Loader";
 import { createKey } from "@/src/lib/utils/createKey";
+import downloadPdf from "@/src/lib/hooks/downloadPdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
 
@@ -37,12 +38,18 @@ export default function PDFViewer({file}) {
     };
   }, []);
 
+  const onLoadError = (err) => {
+    console.log(err.message)
+    downloadPdf(file)
+  }
+
   return (
     <Document className={styles.document}
       loading={<Loader />}
       file={file} 
-      onLoadSuccess={onDocumentLoadSuccess} >
-        {Array.from(new Array(numPages), (_, index) => (
+      onLoadError={(err)=>onLoadError(err)}
+      onLoadSuccess={onDocumentLoadSuccess}>
+        {numPages && Array.from(new Array(numPages), (_, index) => (
           <Page
             loading=''
             key={createKey()}

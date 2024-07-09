@@ -125,7 +125,18 @@
         }
       }
     }
-    
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+    }
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:focus ._active,
+    .tooltip:hover ._active {
+      visibility: visible;
+      opacity: 1;
+    }
+
     .error_modal{
       @include mix.apply-font-styles(var.$text-16-font);
       font-size: 14px;
@@ -136,6 +147,4 @@
       }
     }
   }
-
-
 }
