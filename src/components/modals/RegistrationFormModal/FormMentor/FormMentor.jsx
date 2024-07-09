@@ -15,7 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import Image from "next/image";
+import TooltipText from "../TooltipText/TooltipText";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -33,7 +33,7 @@ export default function FormMentor({handleClose}) {
   const [ phone, setPhone ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
-  const [loader, setIsLoader] = useState(false);
+  const [ loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setSpecialization('')
@@ -184,7 +184,10 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("discord")}
           />
-          <div className={styles.tooltiptext}>
+
+<TooltipText className={styles._active}/>
+
+          {/* <div className={styles.tooltiptext}>
             <p>Ім'я користувача в discord. 
 Увага! Скопіюйте свій нік і надішліть в правильному вигляді! 
 На скріні - приклад!!!</p>
@@ -193,7 +196,7 @@ export default function FormMentor({handleClose}) {
                 fill
                 sizes="100%"/>
               </div>
-          </div>
+          </div> */}
           {errors.discord && <p className={styles.error_modal}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 
