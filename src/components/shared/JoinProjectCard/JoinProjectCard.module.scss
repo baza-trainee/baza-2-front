@@ -7,25 +7,24 @@
     min-height: 400px;
     @include mixins.media-q("md") {
       min-width: 688px;
-      max-width: auto;
+      max-width: 100%;
       padding: 24px;
+      position: sticky;
+      top: 150px;
+      height: 80vh;
   }
 
   @include mixins.media-q("xl") { 
-  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: sticky;
-  top: 150px;
-  min-width: 1212px;
-  max-width: auto;
+  width: 100%;
+
   }
   @include mixins.media-q("xxxl") { 
   height: 60vh;
-  min-width: 1396px;
-  max-width: 100%;
+ width: 1920px;
   }
 }
 
@@ -43,26 +42,23 @@
     z-index: 0;
     position: relative;
     min-height: 400px;
-  padding: 20px 0;
+
 
   
 @include mixins.media-q("md") {
-    min-width: 686px;
-    max-width: 1212px;
+    min-width: 688px;
+    max-width: 100%;
     height: 400px;
     justify-content: flex-start;
     flex-direction: row;
     gap: 20px;
-    padding: 48px 0px;    
     }
 
 @include mixins.media-q("xl") { 
     position: relative;
     top: -10%;
     flex-direction: row;
-    padding: 48px;
-    min-width: 1212px;
-    max-width: 1396px;
+    width: 100%;
     height: 400px;
     gap: 32px;
     overflow: hidden;
@@ -71,15 +67,14 @@
 
 @include mixins.media-q("xxxl") { 
   position: relative;
-  top: -50%;
+  top: -10%;
   flex-direction: row;
-  padding: 48px;
   height: 400px;
   gap: 32px;
   overflow: hidden;
   background-color: var.$primary-fon-card;
-  min-width: 1396px;
-  max-width: 100%;
+  width: 1920px;
+
 
 }
 
@@ -122,8 +117,7 @@
 
 @include mixins.media-q("xxxl") { 
   justify-content: flex-start;
-  min-width: 1212px;
-  max-width: 100%;
+width: 100%;
   height: fit-content;
 }
 }
@@ -197,8 +191,7 @@
    }
 
   @include mixins.media-q("xl") { 
-    min-width: 915px;
-    max-width: 1212px;
+   width: 100%;
   }
   
   @include mixins.media-q("xxxl") { 
@@ -210,8 +203,8 @@
 }
 
 .checkboxWrapper {
-  width: fit-content;
-  max-height: 25px;
+  width: 22px;
+  max-height: 22px;
   border-radius: 2px;
 
 @include mixins.media-q("xl") { 

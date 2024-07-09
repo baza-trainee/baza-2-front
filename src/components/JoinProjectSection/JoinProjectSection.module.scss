@@ -14,10 +14,9 @@
   background: var.$primary-gradient;
 
   @include mixins.media-q("md") {
-    gap: 32px;
-    padding: 48px 40px;
+    gap: 82px;
     min-width: 768px;
-    max-width: 1366px;
+    max-width: 100%;
     height: auto;
    }
 
@@ -28,16 +27,16 @@
   justify-content: center;
   gap: 48px;
   padding: 60px 64px;
-  min-width: 1366px;
-  max-width: 1920px;
+  width: 100%;
+
   height: fit-content;
-  background: #0f031f;
+
 }
 
 @include mixins.media-q("xxxl") { 
 
   gap: 48px;
-  padding: 72px 120px;
+  padding: 60px 120px 120px 120px;
   min-width: 1920px;
   max-width: 100%;
   height: fit-content;
