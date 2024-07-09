@@ -13,6 +13,7 @@
 }
 .container {
   max-width: 1680px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +23,7 @@
   }
   @media (min-width: 768px) {
     gap: 56px;
+    padding: 0 40px;
   }
 }
 
@@ -56,4 +58,7 @@
 }
 .pagination {
   margin-top: 20px;
+}
+
+.btn {
 }

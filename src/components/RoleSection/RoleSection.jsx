@@ -5,12 +5,11 @@ import RoleCard from "../shared/RoleCard/RoleCard";
 import ControlBtnRegistrationFormModal from "../shared/controlButtons/ControlBtnRegistrationFormModal";
 import { useTranslations } from "next-intl";
 import { createKey } from "@/src/lib/utils/createKey";
-import { EffectCube, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import Carousel from "../shared/Carousel/Carousel";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
 import styles from "./RoleSection.module.scss";
-import "swiper/css/effect-cube";
 
 const RoleSection = () => {
   const t = useTranslations("Internship.invite_participate");
@@ -40,15 +39,9 @@ const RoleSection = () => {
           <div className={styles.mobContainer}>
             <Carousel
               items={items}
-              breakpoints={{}}
-              modules={[EffectCube, Pagination]}
-              effect={"cube"}
+              modules={[Pagination]}
               paginationEl={".custom-pagination-role"}
-              grabCursor={true}
-              cubeEffect={{
-                shadow: false,
-                slideShadows: false,
-              }}
+              grabCursor
               spaceBetween={30}
               renderItem={(item) => (
                 <RoleCard
@@ -77,7 +70,7 @@ const RoleSection = () => {
             ))}
           </div>
         )}
-        <ControlBtnRegistrationFormModal type="partaker">
+        <ControlBtnRegistrationFormModal className={styles.btn} type="partaker">
           {t("btn_text")}
         </ControlBtnRegistrationFormModal>
       </div>
