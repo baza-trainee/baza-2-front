@@ -30,7 +30,6 @@ const BlogCard = ({ item }) => {
         url={link}
         type={linkTypes.CARD}
         className={styles.linkRead}
-        target="blank"
       >
         {t("btn_read_article")}
       </MainLink>
@@ -39,3 +38,26 @@ const BlogCard = ({ item }) => {
 };
 
 export default BlogCard;
+
+
+
+
+// import { useRouter } from 'next/router'
+ 
+// export default function ReadMore({ post }) {
+//   const router = useRouter()
+ 
+//   return (
+//     <button
+//       type="button"
+//       onClick={() => {
+//         router.push({
+//           pathname: '/post/[pid]',
+//           query: { pid: post.id },
+//         })
+//       }}
+//     >
+//       Click here to read more
+//     </button>
+//   )
+// }
