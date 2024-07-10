@@ -5,16 +5,17 @@ import { Document, Page, pdfjs } from "react-pdf";
 import Loader from "../loader/Loader";
 import { createKey } from "@/src/lib/utils/createKey";
 import downloadPdf from "@/src/lib/hooks/downloadPdf";
+import { browserName, isMobile, BrowserTypes, isMIUI} from 'react-device-detect';
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
+export default function PDFViewer({file, onClose}) {
 
-export default function PDFViewer({file}) {
-
-  const [numPages, setNumPages] = useState(null);
+  const [pages, setPages] = useState(null);
   const [width, setWidth] = useState(0);
 
   function onDocumentLoadSuccess({ numPages }){
-    setNumPages(numPages);
+    setPages(numPages);
   }
 
   useEffect(() => {
@@ -38,10 +39,21 @@ export default function PDFViewer({file}) {
     };
   }, []);
 
-  const onLoadError = (err) => {
-    console.log(err.message)
+  const onLoadError = () => {
     downloadPdf(file)
+    onClose()
   }
+
+  if(isMobile && isMIUI){
+    return (
+    <div className={styles.miui_error}>
+      <h3>Помилка ваш: {browserName} не підтримує перегляд PDF документів</h3>
+      <button type="button" onClick={onLoadError}>Завантажити PDF документ</button>
+      <p>або скористайтесь іншим браузером Chrome/Opera/Firefox</p>
+    </div>
+    )
+  }
+
 
   return (
     <Document className={styles.document}
@@ -49,7 +61,7 @@ export default function PDFViewer({file}) {
       file={file} 
       onLoadError={(err)=>onLoadError(err)}
       onLoadSuccess={onDocumentLoadSuccess}>
-        {numPages && Array.from(new Array(numPages), (_, index) => (
+        {pages && Array.from(new Array(pages), (_, index) => (
           <Page
             loading=''
             key={createKey()}

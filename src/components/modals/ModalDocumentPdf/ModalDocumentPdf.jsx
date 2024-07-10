@@ -24,7 +24,7 @@ export default function ModalDocumentPdf() {
         <div className={styles.modal} >
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
-          <PDFViewer file={file}/>
+          <PDFViewer file={file} onClose={onClose}/>
         </div>
       </div>
     </LayoutModal>
