@@ -6,28 +6,33 @@ import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import MainButton from '../../shared/MainButton/MainButton';
 import { useTranslations } from 'next-intl';
 
-export default function SorryModal() {
+export default function SorryModal({handleCallback=()=>{}}) {
   // контент.
   const t = useTranslations("sorryModal");
   // Отримуємо стан.
   const isOpen = stateSorryModal(state => state.isOpen);
   const onClose = stateSorryModal(state => state.close);
 
+  const handleOk=()=>{
+    handleCallback()
+    onClose()
+  }
+
   return (
-    <LayoutModal isOpen={isOpen} handleClose={onClose}>
+    <LayoutModal isOpen={isOpen} handleClose={handleOk}>
       <div className={styles.wrapper} onClick={(e) => {
-        onClose()
+        handleOk()
         e.stopPropagation()
         }}>
         <div className={styles.modal} onClick={(e) => e.stopPropagation()
         }>
           <CloseBtn className={styles.closeButton}
-          onClick={onClose}/>
+          onClick={handleOk}/>
             <h3>{t("title")}</h3>
             <p>{t("text")}</p>
 
           <MainButton className={styles.btn} 
-          onClick={onClose}>Oк</MainButton>
+          onClick={handleOk}>Oк</MainButton>
         </div>
       </div>
     </LayoutModal>

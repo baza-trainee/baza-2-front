@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu } from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu, patternCountry, patternСity} from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const partakerDefaultValues= {
@@ -50,19 +50,19 @@ export const PartakerSchema = z
     .trim()
     .min(1, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' })
-    .transform(value=>  formatPhoneNumber(value)),
+    .transform(value=>  formatPhoneNumber(value,true)),
 
     city: z.string()
     .trim()
-    .min(1, { message: 'city' })
     .max(30, { message: 'city_max' })
-    .regex(patternText, { message: 'incorrect_city' }),
+    .regex(patternСity, { message: 'incorrect_city' })
+    .optional(),
 
     country: z.string()
     .trim()
-    .min(1, { message: 'country' })
     .max(30, { message: 'country_max' })
-    .regex(patternText, { message: 'incorrect_country' }),
+    .regex(patternCountry, { message: 'incorrect_country' })
+    .optional(),
 
     discord: z.string()
     .trim()
@@ -83,6 +83,7 @@ export const PartakerSchema = z
     motivation: z.string()
     .trim()
     .min(1, { message: 'motivation' })
+    .min(5, { message: 'motivation_min' })
     .max(50, { message: 'motivation_max' })
     .regex(patternText, { message: 'incorrect_motivation' }),
 
@@ -93,7 +94,7 @@ export const PartakerSchema = z
     agree_conditions: z.boolean().refine(value => value === true, "You must agree to the terms and conditions"),
 
     agree: z.boolean().refine(value => value === true, "You must agree to the terms and conditions")
-	});
+	})
 
 // Форма учасника {
 //   firstName: 'string',

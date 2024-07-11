@@ -15,7 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import { regInputPhone } from "@/src/constants/regulars";
+import TooltipText from "../TooltipText/TooltipText";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -25,7 +25,7 @@ export default function FormMentor({handleClose}) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
 
@@ -33,7 +33,7 @@ export default function FormMentor({handleClose}) {
   const [ phone, setPhone ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
-  const [loader, setIsLoader] = useState(false);
+  const [ loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setSpecialization('')
@@ -64,16 +64,14 @@ export default function FormMentor({handleClose}) {
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else if (isDirty && !isValid) {
+    } else if (!isValid) {
       return true;
     } else return false;
   };
 
   // Валідація символів номеру телефону
   const inputValidPhone = (event) =>{
-    if(regInputPhone.test(event.target.value)){
-      setPhone(formatPhoneNumber(event.target.value))
-    }else event.preventDefault()
+    setPhone(formatPhoneNumber(event.target.value))
   };
 
   return (
@@ -144,7 +142,7 @@ export default function FormMentor({handleClose}) {
             id={"email"}
             maxLength={55}
             className={styles.item}
-            type='email'
+            //type='email'
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...MentorSchema.email })}
             isError={errors.email}
@@ -174,7 +172,7 @@ export default function FormMentor({handleClose}) {
           {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
-        <li>
+        <li className={styles.tooltip}>
           <InputField
             id={"discord"}
             maxLength={35}
@@ -186,6 +184,9 @@ export default function FormMentor({handleClose}) {
             version={"input"}
             label={t("discord")}
           />
+
+          <TooltipText className={styles._active}/>
+
           {errors.discord && <p className={styles.error_modal}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 

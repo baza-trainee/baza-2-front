@@ -9,21 +9,24 @@ const token = {
   },
 };
 
-const authApi = {
-  getInfo: async () => {
-    const res = await instanceBaza2.get(`/auth/user`);
-    return res;
-  },
-  logIn: async ({ email, password }) => {
-    const response = await instanceBaza2.post(`/auth/login`, {
-      email,
-      password,
-    });
 
-    token.set(response.data.token);
-    return response;
-  },
-  register: async ({
+export const getInfoUser = async () => {
+  const res = await instanceBaza2.get(`/auth/user`);
+  return res;
+}
+
+export const logIn= async ({ email, password }) => {
+  const response = await instanceBaza2.post(`/auth/login`, {
+    email,
+    password,
+  });
+
+  token.set(response.data.token);
+  return response;
+}
+
+
+export const register= async ({
     name,
     email,
     password,
@@ -36,8 +39,8 @@ const authApi = {
 
     token.set(response.data.token);
     return response;
-  },
-  changePassword: async ({
+  }
+  export const changePassword = async ({
     oldPassword,
     newPassword,
   }) => {
@@ -48,8 +51,8 @@ const authApi = {
 
     token.set(response.data.token);
     return response;
-  },
-  passwordRequestReset: async ({
+  }
+  export const passwordRequestReset = async ({
     email,
   }) => {
     const response = await instanceBaza2.post(`/auth/passwordRequestReset`, {
@@ -58,8 +61,9 @@ const authApi = {
 
     token.set(response.data.token);
     return response;
-  },
-  passwordReset: async ({
+  }
+
+export const passwordReset = async ({
     userId,
     token,
     password,
@@ -70,7 +74,4 @@ const authApi = {
       password,
     });
     return response;
-  },
-};
-
-export default authApi;
+  }

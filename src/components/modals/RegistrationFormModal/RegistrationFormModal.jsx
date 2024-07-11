@@ -29,7 +29,7 @@ const RegistrationFormModal=()=>{
 
           {type === 'mentor' && <FormMentor handleClose={onClose}/>}
 
-          {type === 'partaker' && <FormPartaker/> }  
+          {type === 'partaker' && <FormPartaker handleClose={onClose}/> }  
         </div>
       </div>
     </LayoutModal>

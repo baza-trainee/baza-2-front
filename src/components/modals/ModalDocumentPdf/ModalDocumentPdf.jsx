@@ -19,12 +19,12 @@ export default function ModalDocumentPdf() {
   useBodyLock(isOpen);
 
   return (
-    <LayoutModal isOpen={isOpen}>
+    <LayoutModal isOpen={isOpen} handleClose={onClose}>
       <div className={styles.wrapper} >
         <div className={styles.modal} >
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
-          <PDFViewer file={file}/>
+          <PDFViewer file={file} onClose={onClose}/>
         </div>
       </div>
     </LayoutModal>
