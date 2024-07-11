@@ -28,8 +28,7 @@ const BlogCard = ({ item }) => {
       </div>
       <MainLink
         url={link}
-        type={linkTypes.CARD}
-        className={styles.linkRead}
+        type={linkTypes.BLOG}
       >
         {t("btn_read_article")}
       </MainLink>

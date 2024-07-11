@@ -28,7 +28,6 @@ export const ArticleCard = ({ item }) => {
         <MainLink
           url={link}
           type={linkTypes.CARD}
-          className={styles.linkRead}
           target="blank"
         >
           {t("btn_read_article")}
