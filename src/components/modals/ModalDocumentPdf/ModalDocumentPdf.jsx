@@ -23,6 +23,7 @@ export default function ModalDocumentPdf() {
   if(isMIUI){    
     downloadPdf(file)
     onClose()
+    return null
   }
 
   return (
