@@ -10,7 +10,7 @@
   border-radius: 8px;
   position: absolute;
   z-index: 1;
-  bottom: 80%;
+  top: 110%;
   left: 0;
   opacity: 0;
   transition: all var.$transition-duration-base var.$transition-timing-base;
@@ -48,12 +48,12 @@
 }
 
 .tooltiptext::after {
-  content: "";
+  content: " ";
   position: absolute;
-  top: 100%;
+  bottom: 100%; 
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: var.$secondary-hover transparent transparent transparent;
+  border-color: transparent transparent var.$secondary-hover  transparent;
 }
