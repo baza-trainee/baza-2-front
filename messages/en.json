@@ -41,7 +41,7 @@
 			"main_title": "How to join the project",
 			"card_1": {
 				"title": "Filling out the questionnaire",
-				"text_1": "Fill out the questionnaire on the website by clicking the Join the community button",
+				"text_1": "Fill out the questionnaire on the website by clicking the Join the project button",
 				"text_2": "Accept the invitation to join the server in Discord",
 				"text_3": "Add a specialization to your nickname so that the team can identify your role"
 			},
@@ -298,7 +298,7 @@
 		"acquainted": "Familiarized with the conditions of participation in the project",
 		"agree": "I agree",
 		"phone": "Phone",
-		"discord": "Discord username",
+		"discord": "Nick on Discord",
 		"discord_tooltip_text": "WARNING! Copy the discord username and send in the correct form",
 		"discord_tooltip_example": "Example:",
 		"linkedin": "Linkedin profile",
@@ -322,8 +322,8 @@
 			"invalid_ru": ".ru and .by domains are not allowed",
 			"phone": "Enter a phone number",
 			"incorrect_phone": "Please enter a valid phone number",
-			"discord": "Enter Discord Username",
-			"incorrect_discord": "Enter a valid Discord username",
+			"discord": "Enter Nick in Discord",
+			"incorrect_discord": "Enter a valid Nick in Discord",
 			"linkedin": "Enter your Linkedin profile",
 			"invalid_url": "Enter a valid Linkedin profile link",
 			"convenient_time": "Choose a convenient consultation time",

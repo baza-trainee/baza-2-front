@@ -41,7 +41,7 @@
 			"main_title": "Jak dołączyć do projektu",
 			"card_1": {
 				"title": "Wypełnienie ankiety",
-				"text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
+				"text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
 				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
 				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
 			},
@@ -298,7 +298,7 @@
 		"acquainted": "Zapoznano się z warunkami udziału w projekcie",
 		"agree": "Zgadzam się",
 		"phone": "Telefon",
-		"discord": "Nazwa użytkownika Discord",
+		"discord": "Nick na Discordzie",
 		"discord_tooltip_text": "OSTRZEŻENIE! Skopiuj nazwę użytkownika discord i wyślij w poprawnym formularzu",
 		"discord_tooltip_example": "Przykład:",
 		"linkedin": "Profil na Linkedinie",
@@ -322,8 +322,8 @@
 			"invalid_ru": "Domeny .ru i .by są niedozwolone",
 			"phone": "Wprowadź numer telefonu",
 			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
-			"discord": "Wpisz nazwę użytkownika Discord",
-			"incorrect_discord": "Wprowadź prawidłową nazwę użytkownika Discord",
+			"discord": "Wpisz Nicka na Discordzie",
+			"incorrect_discord": "Wpisz prawidłowy nick na Discordzie",
 			"linkedin": "Wprowadź swój profil na Linkedin",
 			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
 			"convenient_time": "Wybierz dogodny termin konsultacji",
