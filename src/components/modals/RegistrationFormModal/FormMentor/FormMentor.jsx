@@ -259,13 +259,10 @@ export default function FormMentor({handleClose}) {
       <MainButton
         type="submit"
         disabled={isDisabled()}
-        //disabled={!isDirty || !isValid}
         className={styles.submit}
-        //variant={"modal"}
       >
         {t("btn_send")}
       </MainButton>
-
       {loader && <Loader/>}
     </form>
   )

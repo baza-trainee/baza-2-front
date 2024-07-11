@@ -7,6 +7,7 @@ export interface SpritesMap {
     | "check"
     | "clock"
     | "close"
+    | "closed_eye"
     | "complexity"
     | "cookies"
     | "donate-modal-icon"
@@ -22,6 +23,7 @@ export interface SpritesMap {
     | "logo"
     | "mail"
     | "onboarding"
+    | "open_eye"
     | "phone"
     | "scroll-top-arrow"
     | "search"
@@ -37,6 +39,7 @@ export const SPRITES_META: {
     | "check"
     | "clock"
     | "close"
+    | "closed_eye"
     | "complexity"
     | "cookies"
     | "donate-modal-icon"
@@ -52,6 +55,7 @@ export const SPRITES_META: {
     | "logo"
     | "mail"
     | "onboarding"
+    | "open_eye"
     | "phone"
     | "scroll-top-arrow"
     | "search"
@@ -67,6 +71,7 @@ export const SPRITES_META: {
     "check",
     "clock",
     "close",
+    "closed_eye",
     "complexity",
     "cookies",
     "donate-modal-icon",
@@ -82,6 +87,7 @@ export const SPRITES_META: {
     "logo",
     "mail",
     "onboarding",
+    "open_eye",
     "phone",
     "scroll-top-arrow",
     "search",
