@@ -4,8 +4,8 @@ import styles from "./BlogCard.module.scss";
 import Image from "next/image";
 import linkTypes from "../MainLink/constants";
 
-const BlogCard = ({ item }) => {
-  const { img, title, description, link, date } = item;
+const BlogCard = ({ item, pathname }) => {
+  const { id,img, title, description, date } = item;
   const t = useTranslations("Blog.blog_section");
 
   return (
@@ -27,7 +27,7 @@ const BlogCard = ({ item }) => {
         </div>
       </div>
       <MainLink
-        url={link}
+        url={`${pathname.slice(3)}/${ id }`}
         type={linkTypes.BLOG}
       >
         {t("btn_read_article")}
@@ -37,26 +37,3 @@ const BlogCard = ({ item }) => {
 };
 
 export default BlogCard;
-
-
-
-
-// import { useRouter } from 'next/router'
- 
-// export default function ReadMore({ post }) {
-//   const router = useRouter()
- 
-//   return (
-//     <button
-//       type="button"
-//       onClick={() => {
-//         router.push({
-//           pathname: '/post/[pid]',
-//           query: { pid: post.id },
-//         })
-//       }}
-//     >
-//       Click here to read more
-//     </button>
-//   )
-// }
