@@ -83,6 +83,7 @@ export const PartakerSchema = z
     motivation: z.string()
     .trim()
     .min(1, { message: 'motivation' })
+    .min(5, { message: 'motivation_min' })
     .max(50, { message: 'motivation_max' })
     .regex(patternText, { message: 'incorrect_motivation' }),
 

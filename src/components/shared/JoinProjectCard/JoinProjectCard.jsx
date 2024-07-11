@@ -6,10 +6,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '../Icon/Icon';
+import { createKey } from "@/src/lib/utils/createKey";
+
 
 export default function JoinProjectCard({ item = {}, i, progress, range, targetScale }) {
   const t = useTranslations("Internship.join_project_section");
-  const { text_1, text_2, text_3, title, icon, image } = item;
+  const { title, icon, image, texts, name } = item;
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -17,10 +19,10 @@ export default function JoinProjectCard({ item = {}, i, progress, range, targetS
   });
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const [isClient, setIsClient] = useState(false);
+  const [isCpent, setIsCpent] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setIsCpent(true);
   }, []);
 
   // const svgScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
@@ -28,40 +30,31 @@ export default function JoinProjectCard({ item = {}, i, progress, range, targetS
 
   return (
     <div ref={container} className={styles.cardContainer}>
-      <motion.div style={{ scale: isClient ? (isMobile ? 1 : scale) : 1, top: `calc(-10% + ${i * 50}px)` }} className={styles.card}>
+      <motion.div style={{ scale: isCpent ? (isMobile ? 1 : scale) : 1, top: `calc(-10% + ${i * 50}px)` }} className={styles.card}>
         <div className={styles.svgWrapper}>
           <img
             className={styles.iconNumber}
-            fill sizes = "100%"
-            src={icon}>
-          </img>
+            src={icon}
+            alt={name}
+          />
         </div>
         <div className={styles.textCard}>
-          <div className={styles.titleWrapper}>
+          <span className={styles.titleWrapper}>
             {t(title)}
             <img
               className={styles.iconTitle}
-              src={image}>
-            </img>
-          </div>
-          <div className={styles.text}>
-            <div >
-              <Icon className={styles.checkboxWrapper} name="check" width={24} height={24} />
-            </div>
-            {t(text_1)}
-          </div>
-          <div className={styles.text}>
-            <div >
-              <Icon className={styles.checkboxWrapper} name="check" width={24} height={24} />
-            </div>
-            {t(text_2)}
-          </div>
-          <div className={styles.text}>
-            <div >
-              <Icon className={styles.checkboxWrapper} name="check" width={24} height={24} />
-            </div>
-            {t(text_3)}
-          </div>
+              src={image}
+              alt={t(title)}
+            />
+          </span>
+          {texts.map((text) => (
+            <ul key={createKey()} className={styles.text}>
+              <div>
+                <Icon name="check" width={24} height={24} />
+              </div>
+              {t(text)}
+            </ul>
+          ))}
         </div>
       </motion.div>
     </div>

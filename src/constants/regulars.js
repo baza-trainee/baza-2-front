@@ -17,9 +17,9 @@ export const patternUrlLinkedin = /^https:\/\/www\.linkedin\.com\/in\/[A-z0-9%/.
 
 export const patternNikDiscord = /^[a-z][a-z0-9_.]{1,31}$/;
 
-export const patternCountry = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}]{4,30}(?:[\p{L} `’'”-]{4,30}[\p{L}])?)$/ugi;
+export const patternCountry = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}`’']{4,30}(?:[\p{L} `’'”-]{4,30}[\p{L}])?)$/ugi;
 
-export const patternСity = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}]{2,30}(?:[\p{L} `’'”-]{2,30}[\p{L}])?)$/ugi;
+export const patternСity = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}`’']{2,30}(?:[\p{L} `’'”-]{2,30}[\p{L}])?)$/ugi;
 
 export const patternText = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()_~₴#$%^&|”’`\\]{1,200}$/ugi;
 

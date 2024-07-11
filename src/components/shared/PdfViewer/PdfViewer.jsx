@@ -4,16 +4,18 @@ import styles from './PDFViewer.module.scss';
 import { Document, Page, pdfjs } from "react-pdf";
 import Loader from "../loader/Loader";
 import { createKey } from "@/src/lib/utils/createKey";
+import downloadPdf from "@/src/lib/hooks/downloadPdf";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`;
 
-export default function PDFViewer({file}) {
+export default function PDFViewer({file, onClose}) {
 
-  const [numPages, setNumPages] = useState(null);
+  const [pages, setPages] = useState(null);
   const [width, setWidth] = useState(0);
 
   function onDocumentLoadSuccess({ numPages }){
-    setNumPages(numPages);
+    setPages(numPages);
   }
 
   useEffect(() => {
@@ -37,14 +39,23 @@ export default function PDFViewer({file}) {
     };
   }, []);
 
+  const onLoadError = () => {
+    downloadPdf(file)
+    onClose()
+  }
+
   return (
     <Document className={styles.document}
       loading={<Loader />}
       file={file} 
-      onLoadSuccess={onDocumentLoadSuccess} >
-        {Array.from(new Array(numPages), (_, index) => (
+      onLoadError={(err)=>onLoadError(err)}
+      onError={onLoadError}
+      onLoadSuccess={onDocumentLoadSuccess}>
+      
+        {pages && Array.from(new Array(pages), (_, index) => (
           <Page
             loading=''
+            onError={onLoadError}
             key={createKey()}
             pageNumber={index + 1}
             renderAnnotationLayer={false}

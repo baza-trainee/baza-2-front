@@ -154,7 +154,16 @@
       }
     }
   }
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+  }
 
+  .tooltip:focus ._active,
+  .tooltip:hover ._active {
+    visibility: visible;
+    opacity: 1;
+  }
   .error_partaker{
     @include mix.apply-font-styles(var.$text-16-font);
     font-size: 14px;

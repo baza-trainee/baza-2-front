@@ -52,6 +52,7 @@
       font-size: 14px;
     }
   }
+
   &--structure {
     border-bottom: var.$secondary-white;
     @media (any-hover: hover) {
@@ -78,6 +79,18 @@
       font-size: 14px;
     }
   }
+
+  &--docs {
+    @media (any-hover: hover) {
+      &:active {
+        text-decoration: underline;
+      }
+    }
+    @media (max-width: 696px) {
+      font-size: 14px;
+    }
+  }
+
   &--burger {
     font-size: 20px;
     position: relative;
