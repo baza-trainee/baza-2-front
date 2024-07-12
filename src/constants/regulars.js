@@ -23,6 +23,8 @@ export const patternСity = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u04
 
 export const patternText = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()_~₴#$%^&|”’`\\]{1,200}$/ugi;
 
+export const patternPassword = /^(?!.*[\\])[\w!@#$&*()\-.(),]{6,14}$/;
+
 
 
 // /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'”-]{0,50}[\p{L}])?)$/ugi

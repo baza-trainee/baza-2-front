@@ -78,7 +78,7 @@ export const PartakerSchema = z
     experience: z.string()
     .trim()
     .min(1, { message: 'experience' })
-    .transform(value=>  value==='true'),
+    .transform(value => value==='true'),
 
     motivation: z.string()
     .trim()

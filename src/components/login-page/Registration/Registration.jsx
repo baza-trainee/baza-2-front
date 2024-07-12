@@ -1,4 +1,5 @@
 "use client";
+import { z } from 'zod';
 import { Link } from '@/src/navigation';
 import InputField from '../../shared/InputField/InputField';
 import Loader from '../../shared/loader/Loader';
@@ -6,10 +7,13 @@ import MainButton from '../../shared/MainButton/MainButton';
 import styles from './Registration.module.scss';
 import { Icon } from '../../shared/Icon/Icon';
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from 'react';
+import stateUseAlert from '@/src/state/stateUseAlert';
 
 export default function Registration() {
+  const open = stateUseAlert(state => state.open);
 
   const {
     register,
@@ -18,7 +22,25 @@ export default function Registration() {
     reset
   } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
 
+  const [ visible, setVisible ] = useState(false);
+  const [ loader, setIsLoader ] = useState(false);
 
+  const resetForm = () => {
+    // setSpecialization('')
+    // setPhone('')
+    // setConvenientTime('')
+    // setVisible(false)
+    // setIsLoader(false)
+    // reset();
+  }
+  const isSubmitted = (res) => {
+    setIsLoader(false)
+    if(res === 'error'){
+      open('error')
+    }
+    open(res)
+    resetForm()
+  }
   const onSubmit = (data) => {
     // setIsLoader(true)
     // // Імітація відправки форми
@@ -44,7 +66,7 @@ export default function Registration() {
         <p>Зареєструйтесь в системі</p>
       </div>
       <ul className={styles.list}>
-      <li>
+        <li>
           <InputField
             id={"email"}
             maxLength={55}
@@ -64,18 +86,18 @@ export default function Registration() {
             id={"password"}
             maxLength={55}
             className={styles.item}
-            type='password'
+            type={visible?'text':'password'}
             placeholder={"Пароль"}
-            //registerOptions={register("email", { ...MentorSchema.email })}
-            //isError={errors.email}
-            //isValid={isValid}
+            registerOptions={register("password", { ...registrationSchema.password })}
+            isError={errors.password}
+            isValid={isValid}
             version={"input"}
             label={'Пароль'}
           />
-          <button type='button' className={styles.btn}>
-            <Icon width={24} height={24} name={'closed_eye'}/>
+          <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
+            <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
           </button>
-          {/* {errors.email && <p className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</p>} */}
+          {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
         </li>
         <li className={styles.list_item}>
           <InputField
@@ -83,26 +105,26 @@ export default function Registration() {
             //required={false}
             maxLength={55}
             className={styles.item}
-            type='password'
+            type={visible?'text':'password'}
             placeholder={"Пароль"}
-            //registerOptions={register("email", { ...MentorSchema.email })}
-            //isError={errors.email}
-            //isValid={isValid}
+            registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
+            isError={errors.confirmPassword}
+            isValid={isValid}
             version={"input"}
             label={'Підтвердіть пароль'}
           />
-          <button type='button' className={styles.btn}>
-          <Icon width={24} height={24} name={'open_eye'}/>
+          <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
+            <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
           </button>
          
-          {/* {errors.email && <p className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</p>} */}
+          {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
         </li>
 
 
       </ul>
       <MainButton
         type="submit"
-        disabled={isDisabled()}
+        //disabled={isDisabled()}
         className={styles.submit}
       >
         {'Зареєструватись'}
