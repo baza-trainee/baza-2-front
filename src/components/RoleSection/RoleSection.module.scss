@@ -61,4 +61,5 @@
 }
 
 .btn {
+  @include mx.apply-font-styles(var.$text-16-font);
 }
