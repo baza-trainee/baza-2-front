@@ -322,10 +322,10 @@ export default function FormPartaker({handleClose}) {
             {errors.sawQuestionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
           </div>
         </li>
-
+        {/* <span>*</span> */}
         <li>
           <div className={styles.item}>
-            <h4>{t("rules_participation")} <span>*</span></h4>
+            <h4>{t("rules_participation")}</h4>
             <button 
               className={styles.linck} 
               onClick={ ()=>{openPdf('rules')} }
