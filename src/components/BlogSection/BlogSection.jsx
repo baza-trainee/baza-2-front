@@ -39,7 +39,7 @@ const BlogSection = () => {
     router.push(
       `${pathname}?${createQueryString([{ page: "1" }, { query: value }])}`
     );
-   };
+  };
 
   const handlerClickMore = () => {
     const currentPage = searchParams.get("page");
@@ -54,7 +54,7 @@ const BlogSection = () => {
         <SocialIcons classNameCustom={styles.icons} />
         <ul className={styles.list}>
           {items.map((el) => (
-            <BlogCard key={createKey()} item={el} />
+            <BlogCard key={createKey()} item={el} pathname={pathname} />
           ))}
         </ul>
       </div>

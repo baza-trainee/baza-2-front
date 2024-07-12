@@ -1,6 +1,5 @@
+import BlogArticleSection from "@/src/components/BlogArticleSection/BlogArticleSection";
 
 export default function article() {
-  // !! Замінити  <div> на готові компоненти !!
- 
-  return <div style={{ marginBottom: '120px' }}><h2>Сторінка: article</h2></div>
-};
+  return <BlogArticleSection />;
+}

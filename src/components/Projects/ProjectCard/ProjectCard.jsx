@@ -23,7 +23,7 @@ const ProjectCard = ({ data }) => {
       <div className={styles.imgContainer}>
         <Image src={imageUrl} fill sizes="100%" alt={title[locale]} />
       </div>
-      <div className={styles.content}>
+      <div className={clsx(styles.content, isTeamShowed && styles.hidden)}>
         <span className={clsx(styles.status)}>In progress</span>
         <h3 className={styles.title}>{title[locale]}</h3>
         <ProjectInfo complexity={complexity} />
@@ -31,12 +31,12 @@ const ProjectCard = ({ data }) => {
           <Icon name="team" />
           <span>Команда проекту</span>
         </button>
-        <ProjectCardTeam
-          project={data}
-          isShowed={isTeamShowed}
-          handleClose={handleClose}
-        />
       </div>
+      <ProjectCardTeam
+        project={data}
+        isShowed={isTeamShowed}
+        handleClose={handleClose}
+      />
     </article>
   );
 };

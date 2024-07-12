@@ -11,28 +11,28 @@
 		"invite_participate": {
 			"title": "Zapraszamy do udziału",
 			"card_1": {
-				"text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом.",
-				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
+				"text1": "Projektanci UI/UX specjalizują się w użyteczności i wyglądzie aplikacji oraz stron. To oni tworzą wygodny, atrakcyjny i intuicyjny design, który pozwala jasno i efektywnie korzystać z produktu.",
+				"text2": "Web designer to specjalista, który tworzy wizualną oprawę marki w internecie. Projektuje interfejsy stron, sklepów online, landing page'y i aplikacje dla klienta. Opiekuję się logiczną i wizualną częścią produktu."
 			},
 			"card_2": {
-				"text1": " Frontend-розробник - це програміст, який розробляє зовнішню частину продукту – елементи вебсайтів, програм та застосунків, які дозволяють людині з ними працювати.  Він відповідає за створення зручного та естетичного вигляду вебсторінки на різних пристроях, а також реалізує анімації та інші ефекти.",
-				"text2": "Frontend-розробник пише код і верстає ту частину сторінки, яку бачить і з якою взаємодіє користувач. Наприклад, кожну картинку, кнопку талітеру на цьому сайті зверстав Frontend-розробник за макетом дизайнера. Це цікава робота, адже кожен новий рядок коду покращує зовнішній вигляд та можливості сайту"
+				"text1": "Frontend developer to programista, który tworzy zewnętrzną część produktu - elementy stron, programów i aplikacji, umożliwiające interakcję z użytkownikiem. Odpowiada za tworzenie wygodnego i estetycznego wyglądu strony na różnych urządzeniach, a także implementuje animacje i inne efekty.",
+				"text2": "Frontend developer pisze kod i tworzy tę część strony, którą widzi i z którą wchodzi w interakcję użytkownik. Na przykład, każdy obrazek, przycisk i litekę na tej stronie stworzył Frontend developer według projektu designera. To ciekawa praca, bo każda nowa linia kodu poprawia wygląd i funkcjonalność strony."
 			},
 			"card_3": {
-				"text1": " Бекенд-розробник відповідає за створення та налаштування серверної частини додатку, включаючи логіку обробки даних, взаємодію з базами даних, розробку API та забезпечення захисту інформації.",
-				"text2": "Бекенд-розробник також відповідає за розробку та інтеграцію таких компонентів, як системи аутентифікації, авторизації, кешування, черг повідомлень та інші, які забезпечують працездатність та продуктивність усього додатку. Він  створює 'начинку' проєкту - пише шляхи, завдяки яким все починає працювати."
+				"text1": "Backend developer odpowiada za tworzenie i konfigurację serwerowej części aplikacji, w tym logikę przetwarzania danych, interakcję z bazami danych, rozwój API i zapewnienie bezpieczeństwa informacji.",
+				"text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
 			},
 			"card_4": {
-				"text1": " Fullstack-розробники володіють навичками програмування як фронтенду (клієнтська сторона), так і бекенду (серверна сторона). Вони можуть розробити повноцінний продукт від початку до кінця і цінуються на ринку як універсальні фахівці",
-				"text2": "Fullstack-розробники створюють сайти та вебзастосунки — відповідають за їх фронтенд та бекенд. Фронтенд — частина сайту або програми, яку користувачі бачать у браузері. Це система заголовків та підзаголовків, картинки, посилання та кнопки. Бекенд — це логіка і функціонування роботи сайту або програми. Це все, що приховано під капотом - механіка дій, зберігання даних тощо."
+				"text1": "Fullstack developerzy posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
+				"text2": "Fullstack developerzy tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
 			},
 			"card_5": {
-				"text1": "QA-інженер відповідає за розробку планів тестування додатків та сайтів. Тестувальник виявляє недоліки в роботі продукту, а що найважливіше — допомагає уникнути їх у майбутньому.",
-				"text2": "Тестувальник покращує програми, але не пише код. Він знаходить помилки (баги), описує їх і передає розробникам. Простими словами, тестувальник стежить, щоб усе правильно працювало та відповідало вимогам."
+				"text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
+				"text2": "Tester ulepsza programy, ale nie pisze kodu. Znajduje błędy (bugi), opisuje je i przekazuje deweloperom. Mówiąc prosto, tester dba o to, aby wszystko działało poprawnie i spełniało wymagania."
 			},
 			"card_6": {
-				"text1": "UI/UX-дизайнери спеціалізуються на зручності і зовнішньому вигляді програм і сайтів. Саме вони створюють зручний, привабливий і зрозумілий дизайн, який дозволяє ясно і ефективно користуватись продуктом",
-				"text2": "Вебдизайнер – це фахівець, який створює візуальне оформлення бренду в інтернеті. Він проєктує інтерфейси вебсайтів, інтернет-магазинів, лендингів, програм для замовника. Займається логічною та візуальною частиною продукту."
+				"text1": "Project manager zarządza procesem rozwoju produktu od początku do wydania, odpowiadając zarówno za pracę zespołu, jak i za kontakty z klientem.",
+				"text2": "Ta złożona rola wymaga wielu umiejętności: rozumienia procesu rozwoju i technicznych detali projektu, umiejętności zarządzania ryzykami, komunikacji z różnymi grupami zaangażowanymi w tworzenie produktu. W tej dziedzinie nie ma granic doskonalenia, ponieważ można rozwijać się zarówno w zakresie złożoności produktów, jak i w zarządzaniu."
 			},
 			"card_link": "Czytaj więcej",
 			"btn_text": "Dołącz do projektu"
@@ -41,7 +41,7 @@
 			"main_title": "Jak dołączyć do projektu",
 			"card_1": {
 				"title": "Wypełnienie ankiety",
-				"text_1": "Wypełnij ankietę znajdującą się na stronie internetowej, klikając przycisk Dołącz do społeczności",
+				"text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
 				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
 				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
 			},
@@ -294,11 +294,11 @@
 			"option_5": "w poście na LinkedIn"
 		},
 		"rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
-		"read_here":"przeczytaj tutaj",
+		"read_here": "przeczytaj tutaj",
 		"acquainted": "Zapoznano się z warunkami udziału w projekcie",
 		"agree": "Zgadzam się",
 		"phone": "Telefon",
-		"discord": "Nazwa użytkownika Discord",
+		"discord": "Nick na Discordzie",
 		"discord_tooltip_text": "OSTRZEŻENIE! Skopiuj nazwę użytkownika discord i wyślij w poprawnym formularzu",
 		"discord_tooltip_example": "Przykład:",
 		"linkedin": "Profil na Linkedinie",
@@ -322,8 +322,8 @@
 			"invalid_ru": "Domeny .ru i .by są niedozwolone",
 			"phone": "Wprowadź numer telefonu",
 			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
-			"discord": "Wpisz nazwę użytkownika Discord",
-			"incorrect_discord": "Wprowadź prawidłową nazwę użytkownika Discord",
+			"discord": "Wpisz Nicka na Discordzie",
+			"incorrect_discord": "Wpisz prawidłowy nick na Discordzie",
 			"linkedin": "Wprowadź swój profil na Linkedin",
 			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
 			"convenient_time": "Wybierz dogodny termin konsultacji",
@@ -345,26 +345,26 @@
 		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
 		"privacy_policy": "Polityka prywatności."
 	},
-	"Blog":{
-		"blog_section":{
-      "article_1": {
-        "title": "Ми в MC Today",
-        "text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність."
-      },
-      "article_2": {
-        "title": "Ми на Dev ua",
-        "text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність.»"
-      },
-      "article_3": {
-        "title": "Ми на Hostiq.ua",
-        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
-      },
-      "article_4": {
-        "title": "Ми на Hostiq.ua",
-        "text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
-      },
-      "btn_read_article": "Читати матеріал"
-    }
+	"Blog": {
+		"blog_section": {
+			"article_1": {
+				"title": "Ми в MC Today",
+				"text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність."
+			},
+			"article_2": {
+				"title": "Ми на Dev ua",
+				"text": "За останні кілька років сфера розробки програмного забезпечення зазнала революційних інновацій та трансформаційних змін. У міру того, як світовий ринок розробки програмного забезпечення наближається до оціночної оцінки в 507,2 мільярда доларів, трансформаційний вплив нових тенденцій стає все більш очевидним. Розуміння та адаптація останніх тенденцій розробки програмного забезпечення є стратегічною необхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність.»"
+			},
+			"article_3": {
+				"title": "Ми на Hostiq.ua",
+				"text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+			},
+			"article_4": {
+				"title": "Ми на Hostiq.ua",
+				"text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
+			},
+			"btn_read_article": "Читати матеріал"
+		}
 	},
 	"sorryModal": {
 		"title": "Przepraszamy, nie znaleziono żadnych informacji.",

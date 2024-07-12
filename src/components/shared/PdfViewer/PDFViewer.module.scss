@@ -12,38 +12,3 @@
 .page{
   margin-bottom: 5px;
 }
-
-.miui_error{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: auto;
- text-align: center;
-  @include mix.apply-font-styles(var.$text-16-font);
-  font-size: 24px;
-  color: var.$secondary-white;
-  &>h3{
-    font-weight: 600;
-  }
-  &>p{
-    font-size: 22px;
-    @include mix.media-q("md") {
-      font-size: 24px;
-    }
-  }
-
-  @include mix.media-q("md") {
-    font-size: 26px;
-  }
-
-  & > button{
-    text-decoration: underline;
-    font-size: 20px;
-    transition: all var.$transition-duration-base var.$transition-timing-base;
-  }
-  & > button:hover{
-    opacity: .6;
-  }
-}

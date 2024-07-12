@@ -6,6 +6,7 @@ const linkTypes = {
   CARD: "card",
   STRUCTURE: "structure",
   DOCS: "docs",
+  BLOG: "blog"
 };
 
 export default linkTypes;
