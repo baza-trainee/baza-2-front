@@ -4,8 +4,8 @@ import styles from "./BlogCard.module.scss";
 import Image from "next/image";
 import linkTypes from "../MainLink/constants";
 
-const BlogCard = ({ item }) => {
-  const { img, title, description, link, date } = item;
+const BlogCard = ({ item, pathname }) => {
+  const { id,img, title, description, date } = item;
   const t = useTranslations("Blog.blog_section");
 
   return (
@@ -27,10 +27,8 @@ const BlogCard = ({ item }) => {
         </div>
       </div>
       <MainLink
-        url={link}
-        type={linkTypes.CARD}
-        className={styles.linkRead}
-        target="blank"
+        url={`${pathname.slice(3)}/${ id }`}
+        type={linkTypes.BLOG}
       >
         {t("btn_read_article")}
       </MainLink>
