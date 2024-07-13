@@ -15,8 +15,16 @@
   height: 48px;
   fill: #fcfcfc;
   transition: all 0.3s ease 0s;
+}
 
-  &:hover {
+@media (hover: hover) {
+  .icon:hover {
+    fill: #a03a7e;
+  }
+}
+
+@media (hover: none) {
+  .icon:active {
     fill: #a03a7e;
   }
 }
