@@ -3,8 +3,14 @@ import styles from "./ProjectInfo.module.scss";
 import { createKey } from "@/src/lib/utils/createKey";
 import clsx from "clsx";
 import { Icon } from "@/src/components/shared/Icon/Icon";
+import { useParams } from "next/navigation";
+import { formatDate, formatDateToNumeric } from "@/src/lib/utils/formatData";
 
-const ProjectInfo = ({ complexity }) => {
+const ProjectInfo = ({ complexity, creationDate }) => {
+  const { locale } = useParams();
+  console.log(locale);
+  const date = formatDate(creationDate, locale === "ua" ? "uk-UA" : locale);
+
   return (
     <div className={styles.info}>
       <div className={styles.infoRow}>
@@ -12,7 +18,7 @@ const ProjectInfo = ({ complexity }) => {
           <Icon name="calendar" />
           <span>Старт проекту</span>
         </div>
-        <p>15 cічня 2024</p>
+        <p>{date}</p>
       </div>
       <div className={styles.infoRow}>
         <div className={styles.name}>

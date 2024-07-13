@@ -24,7 +24,9 @@ const RoleCard = ({ imgSrc, desc1, desc2, title }) => {
       )}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.shortDesc}>{desc1}</p>
+        <div className={styles.shortDescWrapper}>
+          <p className={styles.shortDesc}>{desc1}</p>
+        </div>
         <button onClick={() => setReadMore(true)} className={styles.readMore}>
           {t("card_link")}
         </button>

@@ -3,6 +3,8 @@
 
 .article {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 8px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: var.$primary-fon-card;
@@ -19,6 +21,7 @@
 }
 .content {
   display: flex;
+  flex: 1 1 100%;
   flex-direction: column;
   padding: 24px;
 }
@@ -27,6 +30,13 @@
   margin-bottom: 16px;
   white-space: nowrap;
 }
+
+.shortDescWrapper {
+  display: flex;
+  flex: 1 1 100%;
+  margin-bottom: 24px;
+}
+
 .shortDesc {
   @include mixin.apply-font-styles(var.$text-16-font);
   display: -webkit-box;
@@ -34,7 +44,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 24px;
 }
 .readMore {
   font-size: 16px;
