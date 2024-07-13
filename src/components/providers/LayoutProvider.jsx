@@ -20,6 +20,7 @@ export default function LayoutProvider({children}) {
       {isAdminPage ?
         <>
           {children}
+          <UseAlert/>
         </>:
         <>
           <Header />

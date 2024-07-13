@@ -1,5 +1,5 @@
 "use client";
-import { z } from 'zod';
+
 import { Link } from '@/src/navigation';
 import InputField from '../../shared/InputField/InputField';
 import Loader from '../../shared/loader/Loader';
@@ -7,7 +7,7 @@ import MainButton from '../../shared/MainButton/MainButton';
 import styles from './Registration.module.scss';
 import { Icon } from '../../shared/Icon/Icon';
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from 'react';
 import stateUseAlert from '@/src/state/stateUseAlert';
@@ -23,15 +23,14 @@ export default function Registration() {
   } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
 
   const [ visible, setVisible ] = useState(false);
+  const [ visible1, setVisible1 ] = useState(false);
   const [ loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
-    // setSpecialization('')
-    // setPhone('')
-    // setConvenientTime('')
-    // setVisible(false)
-    // setIsLoader(false)
-    // reset();
+    setVisible(false)
+    setVisible1(false)
+    setIsLoader(false)
+    reset();
   }
   const isSubmitted = (res) => {
     setIsLoader(false)
@@ -42,14 +41,23 @@ export default function Registration() {
     resetForm()
   }
   const onSubmit = (data) => {
-    // setIsLoader(true)
-    // // Імітація відправки форми
-    // setTimeout(()=>{
-    //   isSubmitted('success')
-    //   console.log(data);
-    // },3000)
+    setIsLoader(true)
+    // Імітація відправки форми
+    setTimeout(()=>{
+      isSubmitted('success')
+      console.log({email:data.email, password:data.password, name:'admin' });
+    },3000)
   };
 
+  // {
+  //   "email": "user@example.com",
+  //   "password": "password123"
+  // }
+  // {
+  //   "email": "user@example.com",
+  //   "password": "password123",
+  //   "name": "John"
+  // }
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
@@ -57,7 +65,7 @@ export default function Registration() {
       return true;
     } else return false;
   };
-
+//console.log( Date.now())
   return (
   <section className={styles.section}>
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -108,13 +116,13 @@ export default function Registration() {
             type={visible?'text':'password'}
             placeholder={"Пароль"}
             registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
-            isError={errors.confirmPassword}
+            isError={errors.confirmPassword?.message}
             isValid={isValid}
             version={"input"}
             label={'Підтвердіть пароль'}
           />
-          <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
-            <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
+          <button type='button' className={styles.btn} onClick={()=>{setVisible1(!visible1)}}>
+            <Icon width={24} height={24} name={visible1?'open_eye':'closed_eye'}/>
           </button>
          
           {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
@@ -124,14 +132,14 @@ export default function Registration() {
       </ul>
       <MainButton
         type="submit"
-        //disabled={isDisabled()}
+        disabled={isDisabled()}
         className={styles.submit}
       >
         {'Зареєструватись'}
       </MainButton>
 
       <p>Ви маєте акаунт? <Link href={'/login'}>Авторизуватись</Link></p>
-      {/* {loader && <Loader/>} */}
+      {loader && <Loader/>} 
 
 
     </form>

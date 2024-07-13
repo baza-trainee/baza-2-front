@@ -1,13 +1,13 @@
 import { z } from "zod";
 import { patternEmail, patternEmailNonRu, patternPassword,  } from "@/src/constants/regulars";
 
-export const registrationDefaultValues= {
+export const loginDefaultValues= {
   email: "",
   password:"",
-  confirmPassword:''
+
 }
 
-export const registrationSchema = z
+export const loginSchema = z
 	.object({
 		email: z.string()
     .trim()
@@ -23,12 +23,6 @@ export const registrationSchema = z
     .max(14, {message: 'Пароль має містити максимум 14 символів'})
     .regex(patternPassword, { message: 'Пароль має складатись з 6 символів і  містити цифри та латинські літери' }),
 
-    confirmPassword: z.string()
-      .trim()
-      .min(1, { message: 'Поле пароль не може бути порожнім' })
   })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: 'Паролі не збігаються.Спробуйте ще раз.',
-     path: ['confirmPassword'],
-  })
+
  

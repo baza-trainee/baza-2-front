@@ -1,8 +1,5 @@
-import { Link } from "@/src/navigation";
+import LoginSection from "@/src/components/login-page/LoginSection/LoginSection";
 
 export default function signin() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: login</h2>
-  <Link href={'/login/registration'}>registration</Link>
-  </div>
+  return <LoginSection/>
 };
