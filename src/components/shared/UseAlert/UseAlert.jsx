@@ -33,8 +33,10 @@ export default function UseAlert(){
           <h2>{t(`title_${type}`)}</h2> 
           <p>{t('text')}</p> 
         </>:
-
-        <h2>{t(`title_${type}`)}</h2>
+        <>
+          <h2>{t(`title_${type}`)}</h2>
+          {type === 'infoMiui'&& <p>{t(`text_${type}`)}</p> }
+        </>
       }
       <CloseBtn className={styles.close_btn} onClick={close}/>
     </div>

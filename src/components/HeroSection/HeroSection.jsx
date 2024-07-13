@@ -7,8 +7,13 @@ import Carousel from "../shared/Carousel/Carousel";
 import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
 import HeroCard from "../shared/HeroCard/HeroCard";
+import stateUseAlert from "@/src/state/stateUseAlert";
+import { isMIUI} from 'react-device-detect';
 
 export default function HeroSection() {
+  const open = stateUseAlert(state => state.open);
+  if(isMIUI){ open('infoMiui',false) }
+
   return (
     <section className={styles.section}>
       <Carousel
