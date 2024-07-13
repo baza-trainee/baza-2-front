@@ -5,6 +5,8 @@ import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 import { useBodyLock } from '@/src/lib/hooks/useBodyLock';
+import { isMIUI} from 'react-device-detect';
+import downloadPdf from '@/src/lib/hooks/downloadPdf';
 
 const PDFViewer = dynamic(() => import("@/src/components/shared/PdfViewer/PdfViewer"), {
   ssr: false
@@ -17,6 +19,12 @@ export default function ModalDocumentPdf() {
   const onClose = stateModalDocumentPdf(state => state.close);
 
   useBodyLock(isOpen);
+
+  if(isMIUI){    
+    downloadPdf(file)
+    onClose()
+    return null
+  }
 
   return (
     <LayoutModal isOpen={isOpen} handleClose={onClose}>

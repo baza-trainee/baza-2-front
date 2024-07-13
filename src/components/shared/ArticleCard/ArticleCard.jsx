@@ -25,12 +25,7 @@ export const ArticleCard = ({ item }) => {
           <h3>{t(title)}</h3>
           <p>{t(description)}</p>
         </div>
-        <MainLink
-          url={link}
-          type={linkTypes.CARD}
-          className={styles.linkRead}
-          target="blank"
-        >
+        <MainLink url={link} type={linkTypes.CARD} openInNewTab>
           {t("btn_read_article")}
         </MainLink>
       </div>

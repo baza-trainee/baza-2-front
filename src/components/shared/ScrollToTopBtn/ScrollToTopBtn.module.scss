@@ -1,6 +1,6 @@
 @use "../../../styles/variables" as var;
-.scrollToTopBtn{
-display: none;
+.scrollToTopBtn {
+  display: none;
 }
 
 .scrollToTopBtnActive {
@@ -23,8 +23,9 @@ display: none;
   cursor: pointer;
   transition: background-color 0.5s var.$transition-timing-base;
 
-}
-
-.scrollToTopBtnActive:hover {
-  background-color: var.$secondary-hover;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var.$secondary-hover;
+    }
+  }
 }
