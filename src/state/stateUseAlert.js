@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-// type 'error'|'success'|'info';
+// type 'error'|'success'|'info'|'infoMiui';
 const stateUseAlert = create((set) => ({
   isOpen: false,
   type: 'error',
@@ -12,7 +12,7 @@ const stateUseAlert = create((set) => ({
   close: () => set({ 
     isOpen: false, 
     type:'error', 
-    autoClose:true 
+    autoClose: true 
   }),
 }))
 

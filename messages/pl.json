@@ -253,6 +253,8 @@
 		"title_success": "Twoje dane zostały pomyślnie przesłane",
 		"title_info": "Przepraszamy, strona w fazie rozwoju",
 		"text": "Spróbuj ponownie później",
+		"title_infoMiui": "Ta przeglądarka nie obsługuje niektórych funkcji.",
+		"text_infoMiui": "Do poprawnego działania strony użyj innej przeglądarki.",
 		"btn_home": "Spróbuj ponownie"
 	},
 	"Modal_support": {
