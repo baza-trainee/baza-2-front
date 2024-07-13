@@ -1,6 +1,6 @@
 export const items = [
 	{
-		title: "UI/UX designer",
+		title: "UI\\UX designer",
 		imgSrc: "/images/role_section/design.jpg",
 		desc1: 'card_1.text1',
 		desc2: 'card_1.text2',
