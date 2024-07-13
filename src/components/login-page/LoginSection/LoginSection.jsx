@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from 'react';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import { loginDefaultValues, loginSchema } from './loginScheme';
+import clsx from 'clsx';
 
 export default function LoginSection() {
   const open = stateUseAlert(state => state.open);
@@ -24,10 +25,12 @@ export default function LoginSection() {
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
 
   const [ visible, setVisible ] = useState(false);
+  const [ remember, setRemember ] = useState(false);
   const [ loader, setIsLoader ] = useState(false);
-
+ // remember
   const resetForm = () => {
     setVisible(false)
+    setRemember(false)
     setIsLoader(false)
     reset();
   }
@@ -52,11 +55,7 @@ export default function LoginSection() {
   //   "email": "user@example.com",
   //   "password": "password123"
   // }
-  // {
-  //   "email": "user@example.com",
-  //   "password": "password123",
-  //   "name": "John"
-  // }
+// "https://baza-trainee.tech/passwordReset?token=0d4edd6644700fcb2a84d2b597d3413b819cae2631acbfed424a35dac4ef260e&id=650fec0015d612e0367f5ba6"
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
@@ -108,28 +107,28 @@ export default function LoginSection() {
             </button>
             {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
           </li>
-          {/* <li className={styles.list_item}>
-            <InputField
-              id={"confirm_password"}
-              //required={false}
-              maxLength={55}
-              className={styles.item}
-              type={visible?'text':'password'}
-              placeholder={"Пароль"}
-              registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
-              isError={errors.confirmPassword?.message}
-              isValid={isValid}
-              version={"input"}
-              label={'Підтвердіть пароль'}
-            />
-            <button type='button' className={styles.btn} onClick={()=>{setVisible1(!visible1)}}>
-              <Icon width={24} height={24} name={visible1?'open_eye':'closed_eye'}/>
-            </button>
-          
-            {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
-          </li> */}
 
+          <li>
+            <div className={styles.item}>
+              <label
+                htmlFor={'remember'}
+                className={clsx(styles.btn_option, styles.agree)}
+              >
+                <input
+                  id={'remember'}
+                  type="checkbox"
+                  // {...register("agree", { ...MentorSchema.agree })}
+                  checked={remember}
+                  onClick={(e)=>{setRemember(e.target.checked)}}
+                ></input>
+                <span className={clsx(styles.check, remember && styles._active)}>
+                  <Icon name={'check'}/>
+                  </span>
 
+                {"Запам’ятати пароль"}
+              </label>
+            </div>
+          </li>
         </ul>
         <MainButton
           type="submit"
@@ -139,7 +138,7 @@ export default function LoginSection() {
           {'Увійти'}
         </MainButton>
 
-        <Link href={'/login'}>Забули пароль?</Link>
+        <Link href={'/login/forgot-password'}>Забули пароль?</Link>
         {loader && <Loader/>} 
 
 
