@@ -16,11 +16,10 @@ export default function LayoutProvider({children}) {
     pathname.split('/').includes('login');
 
   return (
-    <div className="wrapper">
+    <div className = "wrapper">
       {isAdminPage ?
         <>
           {children}
-          <UseAlert/>
         </>:
         <>
           <Header />

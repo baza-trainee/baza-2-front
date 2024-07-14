@@ -23,21 +23,18 @@ export default function UseAlert(){
     }
   },[isOpen, autoClose])
 
+  const isText = (type) => {
+    if(type === 'info'|| type === 'success'){return false}else return true
+  }
+
   if(!isOpen){return null}
 
   return createPortal(
     <div className={styles.wrapper}>
     <div className={clsx(styles.alert, styles[type])}>
-      { type === 'error' ? 
-        <>
-          <h2>{t(`title_${type}`)}</h2> 
-          <p>{t('text')}</p> 
-        </>:
-        <>
-          <h2>{t(`title_${type}`)}</h2>
-          {type === 'infoMiui'&& <p>{t(`text_${type}`)}</p> }
-        </>
-      }
+        <h2>{t(`title_${type}`)}</h2> 
+        { isText(type) && <p>{t(`text_${type}`)}</p> }
+
       <CloseBtn className={styles.close_btn} onClick={close}/>
     </div>
   </div>, document.body
