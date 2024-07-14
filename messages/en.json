@@ -16,7 +16,7 @@
 		"invite_participate": {
 			"title": "We invite you to participate",
 			"card_1": {
-				"text1": "UI/UX designers specialize in the usability and appearance of applications and websites. They create convenient, attractive, and intuitive designs that allow users to navigate and utilize the product clearly and efficiently.",
+				"text1": "UI\\UX designers specialize in the usability and appearance of applications and websites. They create convenient, attractive, and intuitive designs that allow users to navigate and utilize the product clearly and efficiently.",
 				"text2": "A web designer is a specialist who creates the visual representation of a brand on the internet. They design the interfaces of websites, online stores, landing pages, and applications for clients. They handle both the logical and visual aspects of the product."
 			},
 			"card_2": {
@@ -305,7 +305,9 @@
 		"acquainted": "Familiarized with the conditions of participation in the project",
 		"agree": "I agree",
 		"phone": "Phone",
-		"discord": "Discord username",
+		"discord": "Nick on Discord",
+		"discord_tooltip_text": "WARNING! Copy the discord username and send in the correct form",
+		"discord_tooltip_example": "Example:",
 		"linkedin": "Linkedin profile",
 		"linkedin_placeholder": "Link to profile",
 		"convenient_time": "A convenient time for consultation",
@@ -332,8 +334,7 @@
 			"linkedin": "Enter your Linkedin profile",
 			"invalid_url": "Enter a valid Linkedin profile link",
 			"convenient_time": "Choose a convenient consultation time",
-			"country": "Enter the country",
-			"country_max": "Назва країни повинна бути не більше 30 знаків",
+			"country_max": "The name of the country should not exceed 30 characters",
 			"incorrect_country": "Enter the correct country name",
 			"city": "Enter the city",
 			"city_max": "The name of the city should not exceed 30 characters",
