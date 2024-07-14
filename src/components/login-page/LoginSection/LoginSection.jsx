@@ -1,7 +1,7 @@
 "use client";
 import styles from './LoginSection.module.scss';
 
-import { Link } from '@/src/navigation';
+import { Link, useRouter } from '@/src/navigation';
 import InputField from '../../shared/InputField/InputField';
 import Loader from '../../shared/loader/Loader';
 import MainButton from '../../shared/MainButton/MainButton';
@@ -9,10 +9,12 @@ import { Icon } from '../../shared/Icon/Icon';
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import { loginDefaultValues, loginSchema } from './loginScheme';
 import clsx from 'clsx';
+import { useMutation } from '@tanstack/react-query';
+import { logIn } from '@/src/api/auth';
 
 export default function LoginSection() {
   const open = stateUseAlert(state => state.open);
@@ -20,22 +22,57 @@ export default function LoginSection() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    setValue,
+    watch,
+    formState: { errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
+  } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onChange'});
+  const router = useRouter();
 
+  const { mutate, isPending, isError, isSuccess, data } = useMutation({
+    mutationFn: (data) => {
+      return logIn(data)
+    },
+  })
+console.log(data)
+console.log(isSuccess)
+console.log( isError)
   const [ visible, setVisible ] = useState(false);
   const [ remember, setRemember ] = useState(false);
   const [ loader, setIsLoader ] = useState(false);
  // remember
+  if(data){
+    localStorage.setItem(
+      'access_token',
+      data.token)
+  }
+  useEffect(() => {
+    const credentials = localStorage.getItem('credentials');
+    if (credentials) {
+      const { email, password, remember } = JSON.parse(
+        credentials
+      );
+      setValue('email', email);
+      setValue('password', password);
+      setRemember( remember);
+    }
+  }, [setValue]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      router.replace('/admin');
+    }
+  });
+
   const resetForm = () => {
     setVisible(false)
     setRemember(false)
-    setIsLoader(false)
+    //setIsLoader(false)
     reset();
   }
   const isSubmitted = (res) => {
-    setIsLoader(false)
+   // setIsLoader(false)
     if(res === 'error'){
       open('error')
     }
@@ -43,11 +80,21 @@ export default function LoginSection() {
     resetForm()
   }
   const onSubmit = (data) => {
-    setIsLoader(true)
+    mutate(data)
+    //setIsLoader(true)
     // Імітація відправки форми
     setTimeout(()=>{
       isSubmitted('success')
-      console.log({email:data.email, password:data.password, name:'admin' });
+      
+      if (remember) {
+        localStorage.setItem(
+          'credentials',
+          JSON.stringify({...data, remember:remember})
+        );
+      } else {
+        localStorage.removeItem('credentials');
+      }
+      console.log({email:data.email, password:data.password });
     },3000)
   };
 
@@ -56,14 +103,8 @@ export default function LoginSection() {
   //   "password": "password123"
   // }
 // "https://baza-trainee.tech/passwordReset?token=0d4edd6644700fcb2a84d2b597d3413b819cae2631acbfed424a35dac4ef260e&id=650fec0015d612e0367f5ba6"
-  const isDisabled = () => {
-    if (Object.keys(errors).length > 0) {
-      return true;
-    } else if (!isValid) {
-      return true;
-    } else return false;
-  };
-
+  const email = watch('email');
+  const password = watch('password');
   return (
     <section className={styles.section}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -117,8 +158,8 @@ export default function LoginSection() {
                 <input
                   id={'remember'}
                   type="checkbox"
-                  // {...register("agree", { ...MentorSchema.agree })}
-                  checked={remember}
+                  // {...register("agree", { ...loginSchema.remember })}
+                  defaultChecked={remember}
                   onClick={(e)=>{setRemember(e.target.checked)}}
                 ></input>
                 <span className={clsx(styles.check, remember && styles._active)}>
@@ -132,14 +173,17 @@ export default function LoginSection() {
         </ul>
         <MainButton
           type="submit"
-          disabled={isDisabled()}
-          className={styles.submit}
+          //disabled={isDisabled()}
+          disabled={
+            (!isDirty && !email && !password) ||
+            !!Object.keys(errors).length
+          }
         >
           {'Увійти'}
         </MainButton>
 
         <Link href={'/login/forgot-password'}>Забули пароль?</Link>
-        {loader && <Loader/>} 
+        {isPending && <Loader/>} 
 
 
       </form>

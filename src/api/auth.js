@@ -19,7 +19,7 @@ export const getInfoUser = async () => {
 //   "email": "user@example.com",
 //   "password": "password123"
 // }
-export const logIn= async ({ email, password }) => {
+export const logIn = async ({ email, password }) => {
   const response = await instanceBaza2.post(`/auth/login`, {
     email,
     password,
@@ -53,7 +53,7 @@ export const register = async ({
     token.set(response.data.token);
     console.log(response)
     return response;
-  }
+}
   // {
   //   "email": "user@example.com",
   //   "password": "password123",
@@ -73,6 +73,7 @@ export const register = async ({
     token.set(response.data.token);
     return response;
   }
+
   export const passwordRequestReset = async ({
     email,
   }) => {
@@ -95,4 +96,4 @@ export const passwordReset = async ({
       password,
     });
     return response;
-  }
+}

@@ -1,4 +1,9 @@
 {
+	"TitlePage":{
+		"title_main": "Baza Trainee Ukraine",
+		"title_internship": "Стажування",
+		"title_blog": "Блог"
+	},
 	"Header": {
 		"main": "Головна",
 		"internship": "Стажування",
@@ -252,7 +257,7 @@
 		"title_error": "Вибачте, щось пішло не так",
 		"title_success": "Ваші дані успішно відправлено",
 		"title_info": "Вибачте, сайт в розробці",
-		"text": "Спробуйте пізніше",
+		"text_error": "Спробуйте пізніше",
 		"title_infoMiui": "Цей браузер не підтримує деякі  функції.",
 		"text_infoMiui": "Використайте інший браузер для коректної роботи сайту.",
 		"btn_home": "Спробуйте знову"
