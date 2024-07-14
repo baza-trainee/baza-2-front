@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from '@/src/navigation';
+import { Link, useRouter } from '@/src/navigation';
 import InputField from '../../shared/InputField/InputField';
 import Loader from '../../shared/loader/Loader';
 import MainButton from '../../shared/MainButton/MainButton';
@@ -11,10 +11,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from 'react';
 import stateUseAlert from '@/src/state/stateUseAlert';
+import { useMutation } from '@tanstack/react-query';
+import { registerAdmin } from '@/src/api/auth';
 
 export default function Registration() {
   const open = stateUseAlert(state => state.open);
+  const router = useRouter();
 
+  const { mutate, isPending, isError, data } = useMutation({
+    mutationFn: (data) => {
+      return registerAdmin(data)
+    },
+  })
+
+  if(data){open('success')}
   const {
     register,
     handleSubmit,
@@ -24,29 +34,15 @@ export default function Registration() {
 
   const [ visible, setVisible ] = useState(false);
   const [ visible1, setVisible1 ] = useState(false);
-  const [ loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setVisible(false)
     setVisible1(false)
-    setIsLoader(false)
     reset();
   }
-  const isSubmitted = (res) => {
-    setIsLoader(false)
-    if(res === 'error'){
-      open('error')
-    }
-    open(res)
-    resetForm()
-  }
+
   const onSubmit = (data) => {
-    setIsLoader(true)
-    // Імітація відправки форми
-    setTimeout(()=>{
-      isSubmitted('success')
-      console.log({email:data.email, password:data.password, name:'admin' });
-    },3000)
+    mutate({email:data.email, password:data.password, name:'admin' })
   };
 
   // {
@@ -65,7 +61,7 @@ export default function Registration() {
       return true;
     } else return false;
   };
-//console.log( Date.now())
+
   return (
   <section className={styles.section}>
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -113,7 +109,7 @@ export default function Registration() {
             //required={false}
             maxLength={55}
             className={styles.item}
-            type={visible?'text':'password'}
+            type={visible1?'text':'password'}
             placeholder={"Пароль"}
             registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
             isError={errors.confirmPassword?.message}
@@ -139,9 +135,7 @@ export default function Registration() {
       </MainButton>
 
       <p>Ви маєте акаунт? <Link href={'/login'}>Авторизуватись</Link></p>
-      {loader && <Loader/>} 
-
-
+      {isPending && <Loader/>} 
     </form>
   </section>
   )
