@@ -1,5 +1,6 @@
-import LoginSection from "@/src/components/login-page/LoginSection/LoginSection";
+import Registration from "@/src/components/login-page/Registration/Registration";
 
 export default function Login() {
-  return <LoginSection/>
+  return  <Registration/>
+  // return <LoginSection/>
 };
