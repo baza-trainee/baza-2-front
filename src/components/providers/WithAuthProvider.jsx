@@ -12,13 +12,14 @@ export default function WithAuthProvider({
 
   useEffect(() => {
     const getUser = async () => {
-      const token = localStorage.getItem('access_token');
+      const token = sessionStorage.getItem('access_token');
       if (!token) {
         router.push('/login');
       } else setIsShow(true);
     };
     getUser();
   }, [router]);
-
-  return <>{isShow && children}</>;
+  // Тільки під час розробки
+  return <>{ children }</>
+ // return <>{isShow && children}</>;
 };

@@ -30,7 +30,7 @@ export default function LoginSection() {
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onChange'});
 
 
-  const { mutate, isPending, isError, data, isSuccess } = useMutation({
+  const { mutate, isPending, isError, data, isSuccess, error } = useMutation({
     mutationFn: (data) => {
       return logIn(data)
     },
@@ -39,24 +39,10 @@ export default function LoginSection() {
   const [ visible, setVisible ] = useState(false);
   const [ remember, setRemember ] = useState(false);
 
-  // const resetForm = () => {
-  //   setVisible(false)
-  //   setRemember(false)
-  //   reset();
-  // }
-
-  if(isError){
-    open('error', false)
-    //resetForm()
-   // return null
-  }
-  //localStorage.clear()
-  if(data){
-    //resetForm()
-    localStorage.setItem(
-      'access_token',
-      data.token
-    )
+  const resetForm = () => {
+    setVisible(false)
+    setRemember(false)
+    reset();
   }
 
   useEffect(() => {
@@ -72,9 +58,27 @@ export default function LoginSection() {
   }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
+    if (data) {
+      sessionStorage.setItem(
+        'access_token',
+        data.token
+      )
+      //router.replace('/login/signIn')
+      resetForm()
+      //open('success')
+    }
+    if (isError) {
+      console.log( error?.message)
+      resetForm()
+      open('error', false)
+    }
+
+  },[data,isError]);
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('access_token');
     if (token) {
-      router.replace('/admin');
+      //router.replace('/admin');
     }
   });
 
@@ -91,6 +95,8 @@ export default function LoginSection() {
       localStorage.removeItem('credentials');
     }
   };
+
+
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
@@ -103,8 +109,8 @@ export default function LoginSection() {
   //   "password": "password123"
   // }
 // "https://baza-trainee.tech/passwordReset?token=0d4edd6644700fcb2a84d2b597d3413b819cae2631acbfed424a35dac4ef260e&id=650fec0015d612e0367f5ba6"
-  const email = watch('email');
-  const password = watch('password');
+  // const email = watch('email');
+  // const password = watch('password');
   return (
     <section className={styles.section}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -185,7 +191,7 @@ export default function LoginSection() {
         <Link href={'/login/forgot-password'}>Забули пароль?</Link>
         {isPending && <Loader/>} 
 
-        {isError && <UseAlert/>}
+        <UseAlert/>
       </form>
     </section>
   )
