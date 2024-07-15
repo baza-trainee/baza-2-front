@@ -25,8 +25,10 @@ export interface SpritesMap {
     | "onboarding"
     | "open_eye"
     | "phone"
+    | "projects"
     | "scroll-top-arrow"
     | "search"
+    | "slider"
     | "team"
     | "telegram";
 }
@@ -57,8 +59,10 @@ export const SPRITES_META: {
     | "onboarding"
     | "open_eye"
     | "phone"
+    | "projects"
     | "scroll-top-arrow"
     | "search"
+    | "slider"
     | "team"
     | "telegram"
   >;
@@ -89,8 +93,10 @@ export const SPRITES_META: {
     "onboarding",
     "open_eye",
     "phone",
+    "projects",
     "scroll-top-arrow",
     "search",
+    "slider",
     "team",
     "telegram",
   ],
