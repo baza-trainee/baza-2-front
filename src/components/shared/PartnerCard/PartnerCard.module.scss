@@ -8,11 +8,14 @@
   max-height: 230px;
   height: 40vw;
   background-color: var.$secondary-white;
+  //border: 2px solid var.$primary-border; brightness(40%);
   display: flex;
   align-items: center;
   transition: all .8s;
+  //opacity: .7;
   filter: blur(3px) brightness(40%);
-  
+
+
   @media (any-hover: hover){
     &:hover{
       transform: scale(1.02);
@@ -60,6 +63,7 @@
     height: 100%;
 
     .img{
+      //object-fit: cover;
       object-fit: contain;
       object-position: center;
     }

@@ -7,30 +7,32 @@
   width: 100%;
   padding: 32px 16px;
 
-@media (min-width: 720px) {
-    padding: 48px 16px;
+  @media (min-width: 720px) {
+
+  padding: 48px 16px;
   }
 
   @include mixin.media-q("xl") { 
     padding: 60px 16px;
-  }
 
+}
   @include mixin.media-q("xxxl") { 
     padding: 72px 16px;
-  }
 }
 
+
+}
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-
   @media (min-width: 720px) {
-    gap: 32px;
-  }
 
+    gap: 32px;
+    }
+  
   @include mixin.media-q("xl") { 
     gap: 48px;
   }
@@ -42,34 +44,33 @@
 
 .title {
   @include mixin.apply-font-styles(var.$h7-font);
-
-  @media (min-width: 720px) {
+  @include mixin.media-q("md") { 
     @include mixin.apply-font-styles(var.$h5-font);
     padding-right: 30px;
   }
-
-  @include mixin.media-q("xl") {
+  @include mixin.media-q("xl") { 
     @include mixin.apply-font-styles(var.$h1-font);
     padding-right: 60px;
+
   }
+
+
 }
 
 .sliderContainer {
   will-change: transform;
   width: 95vw;
-
   @media (min-width: 720px) {
-    width: 100%;
-  }
 
-  @include mixin.media-q("xl") {
-    max-width: 1238px;
+      width: 100%;
+    }
+    @include mixin.media-q("xl") { 
+      max-width: 1238px;
   }
-
-  @include mixin.media-q("xxxl") {
-    max-width: 1920px;
+    @include mixin.media-q("xxxl") { 
+      max-width: 1920px;
+    }
   }
-}
 
 .titleRow {
   position: relative;
@@ -84,15 +85,15 @@
     width: 688px;
     padding: 0px 0px 0px 3rem;
   }
+  
+  @include mixin.media-q("xl") { 
+  position: relative;
+  padding: 10px 0px 0px 4rem;
+  width: 1236px;
+}
 
-  @include mixin.media-q("xl") {
-    position: relative;
-    padding: 10px 0px 0px 4rem;
-    width: 1236px;
-  }
-
-  @include mixin.media-q("xxxl") {
-    width: 1320px;
+  @include mixin.media-q("xxxl") { 
+  width: 1320px;
   }
 }
 
@@ -102,15 +103,17 @@
 
 .navigation {
   display: none;
-
   @media (min-width: 720px) {
-
-    position: absolute;
-    display: flex;
-    top: 0;
-    right: 0;
-    gap: 16px;
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  gap: 32px;
+  gap: 16px;
   }
+  
 }
+
+
 
 
