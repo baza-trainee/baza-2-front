@@ -18,7 +18,6 @@ export default function PartnerCard({ item }) {
       <div className={styles.img_wrap}>
         <Image
           className={styles.img}
-          //src={imgUrl}
           src={createImageUrl(imageUrl)}
           alt={name}
           fill
