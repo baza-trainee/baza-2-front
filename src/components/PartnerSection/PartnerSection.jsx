@@ -44,11 +44,11 @@ const PartnerSection = () => {
             centeredSlides={true}
             slidesPerView={1}
             spaceBetween={40}
-            loopAdditionalSlides={0}
+            loopAdditionalSlides={1}
             breakpoints={{
               640: {
                 slidesPerView: 2,
-                spaceBetween: 10
+                spaceBetween: 5
               },
               1366: {
                 slidesPerView: 3,
@@ -56,9 +56,9 @@ const PartnerSection = () => {
               }
             }}
             coverflowEffect={isMobileFirefox ? {
-              rotate: 5,
+              rotate: 2,
               stretch: 0,
-              depth: 50,
+              depth: 20,
               modifier: 1,
               slideShadows: false,
             } : {
