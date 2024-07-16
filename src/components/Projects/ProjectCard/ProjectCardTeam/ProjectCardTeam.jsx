@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import React from "react";
 import styles from "./ProjectCardTeam.module.scss";
 import { createKey } from "@/src/lib/utils/createKey";
+import { useTranslations } from "next-intl";
 
 const orderList = [
   "Product Owner",
@@ -20,8 +21,8 @@ const orderList = [
 
 const ProjectCardTeam = ({ project, handleClose, isShowed }) => {
   const { locale } = useParams();
+  const t = useTranslations("Projects.card");
 
-  const projectTeamTitle = project.title[locale];
   const rolesAndMembers = {};
 
   project.teamMembers.forEach((member) => {
@@ -42,7 +43,7 @@ const ProjectCardTeam = ({ project, handleClose, isShowed }) => {
     <div className={clsx(styles.projectTeam, isShowed && styles.showed)}>
       <div className={styles.membersContainer}>
         <div className={styles.titleRow}>
-          <h4 className={styles.title}>{projectTeamTitle}</h4>
+          <h4 className={styles.title}>{t("team")}</h4>
           <button className={styles.close} onClick={handleClose}>
             <div className={styles.closeCnt}>
               <span />

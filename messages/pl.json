@@ -1,5 +1,5 @@
 {
-	"TitlePage":{
+	"TitlePage": {
 		"title_main": "Baza Trainee Ukraine",
 		"title_internship": "Praktyka",
 		"title_blog": "Bloga"
@@ -371,6 +371,22 @@
 				"text": "Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today. Про старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC TodayПро старт проєкту, його розвиток, результати і статистику, про плани і цілі - в матеріалі інтернет-видання MC Today"
 			},
 			"btn_read_article": "Читати матеріал"
+		}
+	},
+	"Projects": {
+		"title": "Projekty",
+		"card": {
+			"status": {
+				"done": "Ukończone",
+				"in_progress": "W trakcie opracowywania"
+			},
+			"info": {
+				"start": "Start projektu",
+				"duration": "Czas trwania",
+				"weeks": "{count, plural, =1 {# tydzień} =2 {# tygodnie} =3 {# tygodnie} =4 {# tygodnie} other {# tygodni}}",
+				"complexity": "Złożoność"
+			},
+			"team": "Zespół"
 		}
 	},
 	"sorryModal": {
