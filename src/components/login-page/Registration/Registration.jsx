@@ -57,7 +57,7 @@ export default function Registration() {
   }
   useEffect(() => {
     if (data) {
-      router.replace('/login/signIn')
+      router.replace('/admin/login')
       resetForm()
       open('success')
     }
@@ -165,7 +165,7 @@ export default function Registration() {
         {'Зареєструватись'}
       </MainButton>
 
-      <p>Ви маєте акаунт? <Link href={'/login/signIn'}>Авторизуватись</Link></p>
+      <p>Ви маєте акаунт? <Link href={'/admin/login'}>Авторизуватись</Link></p>
       <UseAlert/>
       {/* {isError||data && <UseAlert/>} */}
       {isPending && <Loader/>} 

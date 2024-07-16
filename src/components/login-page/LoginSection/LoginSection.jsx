@@ -188,9 +188,9 @@ export default function LoginSection() {
           {'Увійти'}
         </MainButton>
 
-        <Link href={'/login/forgot-password'}>Забули пароль?</Link>
+        <Link href={'/admin/forgot-password'}>Забули пароль?</Link>
         {isPending && <Loader/>} 
-
+        <p className={styles.link}>Не має акауну? <Link href={'/admin/registration'}>Зареєструватись ?</Link></p>
         <UseAlert/>
       </form>
     </section>

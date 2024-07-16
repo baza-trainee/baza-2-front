@@ -12,8 +12,7 @@ export default function LayoutProvider({children}) {
   const pathname = usePathname()
 
   const isAdminPage =
-    pathname.split('/').includes('admin') ||
-    pathname.split('/').includes('login');
+    pathname.split('/').includes('admin')
 
   return (
     <div className = "wrapper">
