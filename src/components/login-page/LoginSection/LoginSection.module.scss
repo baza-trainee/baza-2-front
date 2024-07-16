@@ -44,9 +44,15 @@
         font-weight: 400;
         font-size: 20px;
       }
-    }
 
-    & > a {
+
+    }
+    .link{
+      @include mix.apply-font-styles(var.$h2-font);
+      font-weight: 400;
+      font-size: 20px;
+    }
+    &  a {
       @include mix.apply-font-styles(var.$h2-font);
       font-weight: 400;
       font-size: 20px;
@@ -56,7 +62,7 @@
         -webkit-text-fill-color: transparent;
       transition: all .3s;
     }
-    & > a:hover{
+    &  a:hover{
       opacity: .7;
     }
 

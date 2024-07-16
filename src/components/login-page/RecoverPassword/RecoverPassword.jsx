@@ -178,7 +178,7 @@ export default function RecoverPassword() {
               <MainButton
                 variant='modal'
                 className={styles.btn_cancel}
-                onClick={()=>{router.replace('/login/signIn')}}
+                onClick={()=>{router.replace('/login')}}
               >
                 {'Скасувати'}
               </MainButton>

@@ -165,7 +165,7 @@ export default function Registration() {
         {'Зареєструватись'}
       </MainButton>
 
-      <p>Ви маєте акаунт? <Link href={'/login/signIn'}>Авторизуватись</Link></p>
+      <p>Ви маєте акаунт? <Link href={'/login'}>Авторизуватись</Link></p>
       <UseAlert/>
       {/* {isError||data && <UseAlert/>} */}
       {isPending && <Loader/>} 
