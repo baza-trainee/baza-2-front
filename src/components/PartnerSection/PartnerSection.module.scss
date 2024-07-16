@@ -7,9 +7,9 @@
   width: 100%;
   padding: 32px 16px;
 
-  @media (min-width: 720px) {
+  @media (min-width: 640px) {
 
-  padding: 48px 16px;
+  padding: 38px 10px;
   }
 
   @include mixin.media-q("xl") { 
@@ -28,9 +28,9 @@
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  @media (min-width: 720px) {
+  @media (min-width: 640px) {
 
-    gap: 32px;
+    gap: 22px;
     }
   
   @include mixin.media-q("xl") { 
@@ -46,11 +46,11 @@
   @include mixin.apply-font-styles(var.$h7-font);
   @include mixin.media-q("md") { 
     @include mixin.apply-font-styles(var.$h5-font);
-    padding-right: 30px;
+    text-align: center
   }
   @include mixin.media-q("xl") { 
     @include mixin.apply-font-styles(var.$h1-font);
-    padding-right: 60px;
+
 
   }
 
@@ -60,7 +60,7 @@
 .sliderContainer {
   will-change: transform;
   width: 95vw;
-  @media (min-width: 720px) {
+  @media (min-width: 640px) {
 
       width: 100%;
     }
@@ -80,15 +80,13 @@
   flex-direction: row;
   width: 320px;
 
-  @media (min-width: 720px) {
-
-    width: 688px;
-    padding: 0px 0px 0px 3rem;
+  @media (min-width: 640px) {
+    width: 620px;
   }
   
   @include mixin.media-q("xl") { 
   position: relative;
-  padding: 10px 0px 0px 4rem;
+
   width: 1236px;
 }
 
@@ -103,12 +101,11 @@
 
 .navigation {
   display: none;
-  @media (min-width: 720px) {
+  @media (min-width: 640px) {
   position: absolute;
   display: flex;
   top: 0;
   right: 0;
-  gap: 32px;
   gap: 16px;
   }
   

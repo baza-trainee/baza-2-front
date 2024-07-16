@@ -46,7 +46,7 @@ const PartnerSection = () => {
             spaceBetween={40}
             loopAdditionalSlides={0}
             breakpoints={{
-              720: {
+              640: {
                 slidesPerView: 2,
                 spaceBetween: 10
               },
