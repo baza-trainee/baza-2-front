@@ -5,10 +5,13 @@ import clsx from "clsx";
 import Logo from '../../shared/Logo/Logo';
 import MainButton from '../../shared/MainButton/MainButton';
 import { Icon } from '../../shared/Icon/Icon';
-import { Link } from '@/src/navigation';
+import { Link, usePathname } from '@/src/navigation';
 
 export default function NavBar() {
+  const pathname = usePathname()
 
+
+  console.log(pathname==='/admin')
   const [hide, setHide]= useState(false)
 
   return (
