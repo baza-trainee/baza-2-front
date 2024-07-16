@@ -29,7 +29,7 @@ export const items = [
     img: "/images/structure/educate.svg",
     width: "300px",
     height: "157px",
-    url: "/error",
+    url: "https://baza-educate.com.ua",
     openInNewTab: true,
     type: linkTypes.STRUCTURE,
     
@@ -41,7 +41,7 @@ export const items = [
     img: "/images/structure/logoblack.svg",
     width: "120px",
     height: "120px",
-    url: "/error",
+    url: "https://baza-poligon.com.ua",
     openInNewTab: true,
     type: linkTypes.STRUCTURE,
   },

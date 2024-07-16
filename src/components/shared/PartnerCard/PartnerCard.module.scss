@@ -25,7 +25,8 @@
   &._active{
     opacity: 1;
     filter: none;
-    @include mixin.media-q("md") { 
+    @media (min-width: 720px) {
+
       transform: translateX(-20px)
     }
     @include mixin.media-q("xl") { 
@@ -41,7 +42,8 @@
     -ms-pointer-events: none;
     pointer-events: none;
  
-    @include mixin.media-q("md") { 
+    @media (min-width: 720px) {
+
       display: flex;
     }
 
@@ -67,7 +69,8 @@
     }
   }
 
-  @include mixin.media-q("md") { 
+  @media (min-width: 720px) {
+
     width: 50vw;
     height: 230px;
   }
