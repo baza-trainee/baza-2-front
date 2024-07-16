@@ -8,11 +8,9 @@
   max-height: 230px;
   height: 40vw;
   background-color: var.$secondary-white;
-  //border: 2px solid var.$primary-border; brightness(40%);
   display: flex;
   align-items: center;
   transition: all .8s;
-  //opacity: .7;
   filter: blur(3px) brightness(40%);
 
 
@@ -25,9 +23,9 @@
   &._active{
     opacity: 1;
     filter: none;
-    @media (min-width: 720px) {
+    @media (min-width: 640px) {
 
-      transform: translateX(-20px)
+      transform: translateX(-15px)
     }
     @include mixin.media-q("xl") { 
       transform: translateX(-30px)
@@ -42,7 +40,7 @@
     -ms-pointer-events: none;
     pointer-events: none;
  
-    @media (min-width: 720px) {
+    @media (min-width: 640px) {
 
       display: flex;
     }
@@ -51,8 +49,6 @@
       transform: translateX(-30px)
     }
     @include mixin.media-q("xl") { 
-      transform: translateX(-20px)
-
     }
 
   }
@@ -63,16 +59,15 @@
     height: 100%;
 
     .img{
-      //object-fit: cover;
       object-fit: contain;
       object-position: center;
     }
   }
 
-  @media (min-width: 720px) {
+  @media (min-width: 640px) {
 
     width: 50vw;
-    height: 230px;
+    height: 200px;
   }
   @include mixin.media-q("xl") { 
     width: 470px;

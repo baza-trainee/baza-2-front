@@ -20,14 +20,6 @@ const MentorSection = () => {
 
           <div className={styles.wrapper_img}>
             <Image
-              className={styles.image_mobile}
-              src={"/images/mentor_section/mentor_mobile.png"}
-              fill
-              sizes="100%"
-              alt="About mentor team"
-              quality={60}
-            />
-            <Image
               className={styles.image}
               src={"/images/mentor_section/mentor.png"}
               fill
