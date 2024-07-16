@@ -130,7 +130,7 @@ export default function ForgotPassword() {
               <MainButton
                 variant='modal'
                 className={styles.btn_cancel}
-                onClick={()=>{router.replace('/login')}}
+                onClick={()=>{router.replace('/admin/login')}}
               >
                 {'Скасувати'}
               </MainButton>
