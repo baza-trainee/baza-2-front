@@ -6,6 +6,9 @@ import Logo from '../../shared/Logo/Logo';
 import MainButton from '../../shared/MainButton/MainButton';
 import { Icon } from '../../shared/Icon/Icon';
 import { Link, usePathname } from '@/src/navigation';
+import MainLink from '../../shared/MainLink/MainLink';
+import { links } from './linksType';
+import { createKey } from '@/src/lib/utils/createKey';
 
 export default function NavBar() {
   const pathname = usePathname()
@@ -25,14 +28,15 @@ export default function NavBar() {
             <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
           </MainButton>
         </li>
-        <li>
-          <Link className={styles.link} href={'/admin'}><Icon name="slider" className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>Слайдер</span></Link>
-        </li>
-        <li>
-          <Link className={styles.link} href={'/admin/projects'}><Icon name="projects" className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>Проєкти</span></Link>
-        </li>
+        {links.map((el)=>{
+          return (<li key={createKey()}>  
+            <Link className={clsx(styles.link,pathname===`${el.href}`&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
+          </li>)
+        })}
       </ul>
-      NavBar
+      <MainButton >
+        <Icon className={styles.icon} width={24} height={24} name="go_out"/><span className={clsx(styles.text, hide && styles._hide)}>Вийти</span>
+      </MainButton>
     </div>
   )
 }
