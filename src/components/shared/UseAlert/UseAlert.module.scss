@@ -8,7 +8,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 13%;
-  z-index: 20;
+  z-index: 1002;
 
   @include mx.media-q("md") {
     min-width:auto;
@@ -29,7 +29,7 @@
     background: var.$primary-fon-card;
 
     @include mx.media-q("md") {
-       padding: 60px 10px;
+      padding: 60px 10px;
     }
     &.error{
       color: var.$secondary-error;
@@ -41,6 +41,11 @@
 
     &.info{
       color: var.$secondary-white;
+    }
+
+    &.infoMiui{
+      color: var.$secondary-white;
+      text-align: center;
     }
 
     & > h2{
@@ -55,6 +60,7 @@
 
     & p{
       @include mx.apply-font-styles(var.$h1-font);
+      
       font-size: 18px;
 
       @include mx.media-q("md") {

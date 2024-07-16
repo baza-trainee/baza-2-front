@@ -11,9 +11,12 @@ import UseAlert from "../shared/UseAlert/UseAlert";
 export default function LayoutProvider({children}) {
   const pathname = usePathname()
 
+  const isAdminPage =
+    pathname.split('/').includes('admin')
+
   return (
-    <div className="wrapper">
-      {pathname==='/admin'|| pathname==='/login'?
+    <div className = "wrapper">
+      {isAdminPage ?
         <>
           {children}
         </>:

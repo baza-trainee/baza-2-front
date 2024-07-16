@@ -9,10 +9,12 @@ import PartnerSection from "@/src/components/PartnerSection/PartnerSection";
 import StructureSection from "@/src/components/StructureSection/StructureSection";
 import ArticlesSection from "@/src/components/ArticlesSection/ArticlesSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
+import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 
 export default function Home() {
   return (
     <main>
+      <HiddenTtitlePage namePage={'main'}/>
       <HeroSection />
       <HistorySection />
       <Counter />

@@ -69,14 +69,14 @@
       max-width: 607px;
       margin-bottom: 5px;
       position: relative;
-      transform: translateY(-3.5vw);
+      transform: translateY(-3.9vw);
       @include mx.apply-font-styles(var.$text-20-font);
       font-weight: 400;
       font-size: 14px;
       z-index: 3;
 
       @media (min-width: 660px) {
-        transform: translateY(-23px);
+        transform: translateY(-27px);
         margin-bottom: 10px;
       }
 
@@ -85,7 +85,7 @@
       }
 
       @media (min-width: 1280px) {
-        transform: translateX(15px);
+        transform: translateX(15px) translateY(-20px);
         margin-bottom: 63px;
       }
 
@@ -113,25 +113,10 @@
       }
 
       .image {
-        display: none;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-      }
-      .image_mobile {
         display: block;
         height: 100%;
         object-fit: contain;
         object-position: center;
-      }
-
-      @media (min-width: 1280px) {
-        .image {
-          display: block;
-        }
-        .image_mobile {
-          display: none;
-        }
       }
     }
   }

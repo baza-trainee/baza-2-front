@@ -1,4 +1,9 @@
 {
+	"TitlePage":{
+		"title_main": "Baza Trainee Ukraine",
+		"title_internship": "Praktyka",
+		"title_blog": "Bloga"
+	},
 	"Header": {
 		"main": "Strona główna",
 		"internship": "Praktyka",
@@ -252,7 +257,9 @@
 		"title_error": "Przepraszam, coś poszło nie tak",
 		"title_success": "Twoje dane zostały pomyślnie przesłane",
 		"title_info": "Przepraszamy, strona w fazie rozwoju",
-		"text": "Spróbuj ponownie później",
+		"text_error": "Spróbuj ponownie później",
+		"title_infoMiui": "Ta przeglądarka nie obsługuje niektórych funkcji.",
+		"text_infoMiui": "Do poprawnego działania strony użyj innej przeglądarki.",
 		"btn_home": "Spróbuj ponownie"
 	},
 	"Modal_support": {

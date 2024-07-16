@@ -1,4 +1,9 @@
 {
+	"TitlePage":{
+		"title_main": "Baza Trainee Ukraine",
+		"title_internship": "Internship",
+		"title_blog": "Blog"
+	},
 	"Header": {
 		"main": "Home",
 		"internship": "Internship",
@@ -252,7 +257,9 @@
 		"title_error": "Sorry, something went wrong",
 		"title_success": "Your data has been sent successfully",
 		"title_info": "Sorry, site under development",
-		"text": "Try again later",
+		"text_error": "Try again later",
+		"title_infoMiui": "This browser does not support some features.",
+		"text_infoMiui": "Use a different browser for the correct operation of the site.",
 		"btn_home": "Try again"
 	},
 	"Modal_support": {
