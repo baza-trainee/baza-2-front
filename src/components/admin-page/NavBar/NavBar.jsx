@@ -5,18 +5,18 @@ import clsx from "clsx";
 import Logo from '../../shared/Logo/Logo';
 import MainButton from '../../shared/MainButton/MainButton';
 import { Icon } from '../../shared/Icon/Icon';
-import { Link, usePathname } from '@/src/navigation';
-import MainLink from '../../shared/MainLink/MainLink';
+import { Link, usePathname, useRouter } from '@/src/navigation';
 import { links } from './linksType';
 import { createKey } from '@/src/lib/utils/createKey';
 
 export default function NavBar() {
   const pathname = usePathname()
-
-
-  console.log(pathname==='/admin')
+  const router = useRouter();
   const [hide, setHide]= useState(false)
-
+  const removeToken=()=>{
+    sessionStorage.removeItem('access_token')
+    router.replace('/admin/login');
+  }
   return (
     <div className={clsx(styles.wrapp, hide && styles._hide)}>
       <header className={styles.header}>
@@ -39,7 +39,7 @@ export default function NavBar() {
             </li>)
           })}
         </ul>
-        <MainButton variant='admin' className={styles.btn_exit}>
+        <MainButton variant='admin' className={styles.btn_exit} onClick={removeToken}>
           <Icon className={styles.icon} name="go_out"/> <span className={clsx(styles.text, hide && styles._hide)}>Вийти</span>
         </MainButton>
       </div>
