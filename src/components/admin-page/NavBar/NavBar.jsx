@@ -22,21 +22,27 @@ export default function NavBar() {
       <header className={styles.header}>
         <Logo className={styles.logo}/>
       </header>
-      <ul className={styles.list}>
-        <li>
-          <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
-            <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
-          </MainButton>
-        </li>
-        {links.map((el)=>{
-          return (<li key={createKey()}>  
-            <Link className={clsx(styles.link,pathname===`${el.href}`&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
-          </li>)
-        })}
-      </ul>
-      <MainButton >
-        <Icon className={styles.icon} width={24} height={24} name="go_out"/><span className={clsx(styles.text, hide && styles._hide)}>Вийти</span>
+      <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
+        <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
       </MainButton>
+      <div className={styles.skroll}>
+
+        <ul className={styles.list}>
+          <li>
+            {/* <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
+              <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
+            </MainButton> */}
+          </li>
+          {links.map((el)=>{
+            return (<li key={createKey()}>  
+              <Link className={clsx(styles.link,pathname===`${el.href}`&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
+            </li>)
+          })}
+        </ul>
+        <MainButton variant='admin' className={styles.btn_exit}>
+          <Icon className={styles.icon} name="go_out"/> <span className={clsx(styles.text, hide && styles._hide)}>Вийти</span>
+        </MainButton>
+      </div>
     </div>
   )
 }

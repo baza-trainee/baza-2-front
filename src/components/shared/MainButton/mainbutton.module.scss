@@ -132,3 +132,27 @@
     cursor: default;
   }
 }
+
+.btn_admin {
+  @include mx.apply-font-styles(var.$h3-font);
+  border: 3px solid  #c0a4b7;
+  padding: 5px;
+  height: 55px;
+  color: var.$secondary-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+  transition: all var.$transition-duration-base var.$transition-timing-base;
+
+  &:hover,
+  &:focus {
+    opacity: .5;
+    box-shadow:
+    inset 1px 1px var.$primary-border,
+    inset -1px -1px var.$primary-border;
+  }
+}

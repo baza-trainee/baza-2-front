@@ -5,6 +5,9 @@ export default function LayoutAdmin({children}) {
   return (
     <div className={styles.page}>
       <NavBar/>
+      <di>
+
+      </di>
       {children}
     </div>
   )
