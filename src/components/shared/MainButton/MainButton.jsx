@@ -4,6 +4,7 @@ import clsx from "clsx";
 const buttonConfig = {
   MAIN: "main",
   MODAL: "modal",
+  ADMIN:"admin"
 };
 
 export default function MainButton({
@@ -19,7 +20,7 @@ export default function MainButton({
   const btnClass = `${
     styles[
       `btn_${
-        variant === buttonConfig.MAIN || variant === buttonConfig.MODAL
+        variant === buttonConfig.MAIN || variant === buttonConfig.MODAL|| variant === buttonConfig.ADMIN
           ? variant
           : buttonConfig.MAIN
       }`
