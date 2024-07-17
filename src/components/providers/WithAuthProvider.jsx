@@ -15,12 +15,12 @@ export default function WithAuthProvider({
       const token = sessionStorage.getItem('access_token');
       if (!token) {
         // Тільки під час розробки
-        //router.replace('/admin/login');
+        router.replace('/admin/login');
       } else setIsShow(true);
     };
     getUser();
   }, [router]);
   // Тільки під час розробки
-  return <>{ children }</>
-  //return <>{isShow && children}</>;
+  //return <>{ children }</>
+  return <>{isShow && children}</>;
 };
