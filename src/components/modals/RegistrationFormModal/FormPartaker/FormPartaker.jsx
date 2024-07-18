@@ -26,7 +26,7 @@ export default function FormPartaker({handleClose}) {
   const {
     register,
     handleSubmit,
-    formState: {  errors, isValid },
+    formState: {  errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
 
@@ -72,7 +72,7 @@ export default function FormPartaker({handleClose}) {
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else if (!isValid) {
+    } else if (isDirty && !isValid) {
       return true;
     } else return false;
   };
