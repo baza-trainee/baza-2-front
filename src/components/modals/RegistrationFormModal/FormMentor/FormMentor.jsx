@@ -25,7 +25,7 @@ export default function FormMentor({handleClose}) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
 
@@ -61,10 +61,11 @@ export default function FormMentor({handleClose}) {
       console.log(data);
     },3000)
   };
+  
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else if (!isValid) {
+    } else if (isDirty && !isValid) {
       return true;
     } else return false;
   };
