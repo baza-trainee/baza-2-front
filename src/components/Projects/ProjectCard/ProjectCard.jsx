@@ -9,6 +9,7 @@ import ProjectInfo from "./ProjectInfo/ProjectInfo";
 import ProjectCardTeam from "./ProjectCardTeam/ProjectCardTeam";
 import { Icon } from "../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
+import ProjectStatus from "./ProjectStatus/ProjectStatus";
 
 const ProjectCard = ({ data }) => {
   const {
@@ -17,6 +18,7 @@ const ProjectCard = ({ data }) => {
     title,
     creationDate,
     launchDate,
+    teamMembers,
     isTeamRequired,
   } = data;
   const { locale } = useParams();
@@ -33,21 +35,27 @@ const ProjectCard = ({ data }) => {
         <Image src={imageUrl} fill sizes="100%" alt={title[locale]} />
       </div>
       <div className={clsx(styles.content, isTeamShowed && styles.hidden)}>
-        <span className={clsx(styles.status)}>{t("status.in_progress")}</span>
+        <ProjectStatus
+          creationDate={creationDate}
+          launchDate={launchDate}
+          isTeamRequired={isTeamRequired}
+        />
         <h3 className={styles.title}>{title[locale]}</h3>
         <ProjectInfo
           complexity={complexity}
           creationDate={creationDate}
           launchDate={launchDate}
         />
-        {isTeamRequired && (
-          <button onClick={handleClose} type="button" className={styles.button}>
-            <Icon name="team" />
-            <span>{t("team")}</span>
-          </button>
-        )}
+        <button
+          onClick={handleClose}
+          type="button"
+          className={clsx(styles.button, teamMembers && styles.show)}
+        >
+          <Icon name="team" />
+          <span>{t("team")}</span>
+        </button>
       </div>
-      {isTeamRequired && (
+      {teamMembers && (
         <ProjectCardTeam
           project={data}
           isShowed={isTeamShowed}

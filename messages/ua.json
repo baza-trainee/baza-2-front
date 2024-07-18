@@ -378,7 +378,8 @@
 		"card": {
 			"status": {
 				"done": "Завершено",
-				"in_progress": "В розробці"
+				"in_progress": "В розробці",
+				"team_formation": "Формування команди"
 			},
 			"info": {
 				"start": "Старт проекту",
