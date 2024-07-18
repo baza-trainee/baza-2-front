@@ -378,7 +378,8 @@
 		"card": {
 			"status": {
 				"done": "Ukończone",
-				"in_progress": "W trakcie opracowywania"
+				"in_progress": "W trakcie opracowywania",
+				"team_formation": "Tworzenie zespołu"
 			},
 			"info": {
 				"start": "Start projektu",
