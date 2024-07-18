@@ -29,7 +29,10 @@ export default function LoginSection() {
     reset
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onChange'});
 
-
+  // {
+  //   "email": "user@example.com",
+  //   "password": "password123"
+  // }
   const { mutate, isPending, isError, data, isSuccess, error } = useMutation({
     mutationFn: (data) => {
       return logIn(data)
@@ -78,7 +81,7 @@ export default function LoginSection() {
   useEffect(() => {
     const token = sessionStorage.getItem('access_token');
     if (token) {
-      //router.replace('/admin');
+      router.replace('/admin');
     }
   });
 

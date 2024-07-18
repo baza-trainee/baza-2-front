@@ -74,10 +74,7 @@ export default function Registration() {
     //resetForm()
   };
 
-  // {
-  //   "email": "user@example.com",
-  //   "password": "password123"
-  // }
+
   // {
   //   "email": "user@example.com",
   //   "password": "password123",
