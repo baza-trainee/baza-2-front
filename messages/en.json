@@ -378,7 +378,8 @@
 		"card": {
 			"status": {
 				"done": "Completed",
-				"in_progress": "Development"
+				"in_progress": "Development",
+				"team_formation": "Team formation"
 			},
 			"info": {
 				"start": "Project start",

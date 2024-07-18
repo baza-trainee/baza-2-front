@@ -79,28 +79,6 @@
     opacity: 0;
   }
 }
-.status {
-  display: inline-flex;
-  align-self: flex-start;
-  padding: 8px;
-  gap: 10px;
-  align-items: center;
-  border: 1px solid var.$secondary-white;
-  @include mx.apply-font-styles(var.$text-16-font);
-  &::before {
-    content: "";
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ffd210;
-  }
-  &.done {
-    &::before {
-      background-color: #1cd41f;
-    }
-  }
-}
 .title {
   @include mx.apply-font-styles(var.$h4-font);
 }
@@ -112,6 +90,14 @@
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid #fff;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+  }
   & > svg {
     display: block;
     width: 24px;
