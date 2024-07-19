@@ -3,7 +3,7 @@ import styles from './LoginSection.module.scss';
 import { useEffect } from 'react';
 import { Link, useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
-import { logIn } from '@/src/api/auth';
+import { logIn, token } from '@/src/api/auth';
 import Loader from '../../shared/loader/Loader';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import UseAlert from '../../shared/UseAlert/UseAlert';
@@ -24,12 +24,13 @@ export default function LoginSection() {
   })
 
   useEffect(() => {
-    if (data) {
-      sessionStorage.setItem(
-        'access_token',
-        data.token
-      )
-    }
+    // if (data) {
+    //   token
+    //   sessionStorage.setItem(
+    //     'access_token',
+    //     data.token
+    //   )
+    // }
     if (isError) {
       console.log( error?.message)
       open('error', false)
@@ -37,9 +38,10 @@ export default function LoginSection() {
   },[data,isError]);
 
   useEffect(() => {
-    const token = sessionStorage.getItem('access_token');
-    if (token) {
-      //router.replace('/admin');
+    //const token = sessionStorage.getItem('access_token');
+
+    if (token.get()) {
+      router.replace('/admin');
     }
   });
 

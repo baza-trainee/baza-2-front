@@ -5,10 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 500px;
   min-height: 100vh;
   padding: 10px;
 
   .wrapper{
+    max-width: 600px;
     border-radius: 8px;
     background: #d2d2d2;
     color: #020202;

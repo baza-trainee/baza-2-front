@@ -1,7 +1,7 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { useRouter } from '@/src/navigation';
+import { token } from '@/src/api/auth';
 
 export default function WithAuthProvider({
   children,
@@ -11,16 +11,16 @@ export default function WithAuthProvider({
   const router = useRouter();
   const [isShow, setIsShow] = useState();
     // Розкоментувати під час розробки
-    return <>{ children }</>
+   // return <>{ children }</>
 
   useEffect(() => {
-    const getUser = async () => {
-      const token = sessionStorage.getItem('access_token');
-      if (!token) {
+    const getAdmin = () => {
+      if (!token.get()) {
         router.replace('/admin/login');
       } else setIsShow(true);
     };
-    getUser();
+    getAdmin();
   }, [router]);
+
   return <>{isShow && children}</>;
 };
