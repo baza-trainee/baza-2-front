@@ -1,11 +1,8 @@
 "use client";
 import styles from './FormRecoverPassword.module.scss'
-//import clsx from 'clsx';
-//import { useEffect, useState } from 'react';
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-//import stateUseAlert from '@/src/state/stateUseAlert';
-
 import { useRouter } from '@/src/navigation';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
@@ -14,8 +11,7 @@ import { recoverPasswordDefaultValues, recoverPasswordSchema } from './recoverPa
 import { Icon } from '../../../shared/Icon/Icon';
 import { useState } from 'react';
 
-export default function FormRecoverPassword({onSubmit, isSuccess}) {
-  //const open = stateUseAlert(state => state.open);
+export default function FormRecoverPassword({handleMutate }) {
   const router = useRouter();
 
   const {
@@ -34,7 +30,11 @@ export default function FormRecoverPassword({onSubmit, isSuccess}) {
     setVisible1(false)
     reset();
   }
-  if(isSuccess){ resetForm() }
+  
+  const onSubmit = (data) => {
+    handleMutate(data)
+    resetForm()
+  };
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {

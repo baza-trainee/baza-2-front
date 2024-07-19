@@ -16,7 +16,6 @@ export default function LoginSection() {
   //   "email": "user@example.com",
   //   "password": "password123"
 
-
   const { mutate, isPending, isError, data, error } = useMutation({
     mutationFn: (data) => {
       return logIn(data)
@@ -24,22 +23,13 @@ export default function LoginSection() {
   })
 
   useEffect(() => {
-    // if (data) {
-    //   token
-    //   sessionStorage.setItem(
-    //     'access_token',
-    //     data.token
-    //   )
-    // }
     if (isError) {
       console.log( error?.message)
       open('error', false)
     }
-  },[data,isError]);
+  },[isError]);
 
   useEffect(() => {
-    //const token = sessionStorage.getItem('access_token');
-
     if (token.get()) {
       router.replace('/admin');
     }
@@ -47,7 +37,7 @@ export default function LoginSection() {
 
   return (
     <Section title={'Вхід'} text={ 'Введіть дані для входу' }>
-      <LoginForm handleMutate={mutate} isSuccess={data?.token}/>
+      <LoginForm handleMutate={mutate}/>
 
       <Link className={styles.link} href={'/admin/forgot-password'}>Забули пароль?</Link>
 

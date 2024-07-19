@@ -7,7 +7,6 @@ export default function WithAuthProvider({
   children,
 }) {
 
-
   const router = useRouter();
   const [isShow, setIsShow] = useState();
     // Розкоментувати під час розробки

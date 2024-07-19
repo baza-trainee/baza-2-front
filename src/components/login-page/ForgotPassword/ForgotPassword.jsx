@@ -25,7 +25,7 @@ export default function ForgotPassword() {
   useEffect(() => {
     if (data) {
       // const token = data?.token;
-      router.replace(`/login/recover-password/${'token'}`);
+      router.replace(`/admin/recover-password/${'token'}`);
       //open('success')
     }
     if (isError) {
@@ -35,15 +35,15 @@ export default function ForgotPassword() {
 
   },[data,isError]);
 
-  const onSubmit = (data) => {
-   // mutate(data)
-    router.replace('/admin/recover-password/123')
-  };
+  // const onSubmit = (data) => {
+  //   mutate(data)
+  //   //router.replace('/admin/recover-password/123')
+  // };
 
   return (
     <Section title={'Забули пароль?'} text={'Вкажіть,Вашу електронну адресу,щоб підтвердити Вашу особу'}>
 
-      <FormForgotPassword onSubmit={onSubmit} isSuccess={data}/>
+      <FormForgotPassword handleMutate={mutate}/>
 
       {isPending && <Loader/>} 
 

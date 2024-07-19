@@ -9,7 +9,7 @@ import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
 
-export default function LoginForm({ handleMutate, isSuccess }) {
+export default function LoginForm({ handleMutate }) {
 
   const {
     register,
@@ -31,8 +31,6 @@ export default function LoginForm({ handleMutate, isSuccess }) {
     reset();
   }
 
-  if(isSuccess){resetForm()}
-
   useEffect(() => {
     const credentials = localStorage.getItem('credentials');
     if (credentials) {
@@ -47,6 +45,7 @@ export default function LoginForm({ handleMutate, isSuccess }) {
 
   const onSubmit = (data) => {
     handleMutate(data)
+    resetForm()
     if (remember) {
       localStorage.setItem(
         'credentials',

@@ -1,34 +1,26 @@
 "use client";
 import styles from './FormForgotPassword.module.scss'
-//import clsx from 'clsx';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-//import stateUseAlert from '@/src/state/stateUseAlert';
 import { useRouter } from '@/src/navigation';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { forgotPasswordDefaultValues, forgotPasswordSchema } from './forgotPasswordScheme';
 
-
-export default function FormForgotPassword({ onSubmit, isSuccess }) {
-  //const open = stateUseAlert(state => state.open);
+export default function FormForgotPassword({ handleMutate }) {
   const router = useRouter();
 
   const {
     register,
     handleSubmit,
-    setValue,
-    watch,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...forgotPasswordDefaultValues}, resolver: zodResolver(forgotPasswordSchema), mode: 'onBlur'});
 
-
-  const resetForm = () => {
-    reset();
-  }
-
-  if(isSuccess){ resetForm() }
+  const onSubmit = (data) => {
+    handleMutate(data)
+    reset()
+  };
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {

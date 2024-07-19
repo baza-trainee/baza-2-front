@@ -44,7 +44,6 @@ export default function RegistrationForm({ onSubmit, isSuccess }) {
             maxLength={55}
             className={styles.item}
             required={false}
-            //type='email'
             placeholder={"Електронна пошта"}
             registerOptions={register("email", { ...registrationSchema.email })}
             isError={errors.email}

@@ -65,7 +65,7 @@ export const registerAdmin = async ({
       name,
     });
 
-    token.set(response.data.token);
+    //token.set(response.data.token);
     return response;
   } catch (error) {
     throw new Error(error)
@@ -103,7 +103,7 @@ export const passwordRequestReset = async ({
     email,
     });
 
-    token.set(response.data.token);
+    //token.set(response.data.token);
     return response;
   } catch (error) {
     throw new Error(error)
