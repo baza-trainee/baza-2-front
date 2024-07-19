@@ -1,12 +1,9 @@
 "use client";
 import styles from './LoginSection.module.scss';
 import { useEffect } from 'react';
-import { useEffect } from 'react';
 import { Link, useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
 import { logIn } from '@/src/api/auth';
-import Loader from '../../shared/loader/Loader';
-import stateUseAlert from '@/src/state/stateUseAlert';
 import Loader from '../../shared/loader/Loader';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import UseAlert from '../../shared/UseAlert/UseAlert';
@@ -19,7 +16,6 @@ export default function LoginSection() {
   //   "email": "user@example.com",
   //   "password": "password123"
 
-  const { mutate, isPending, isError, data, error } = useMutation({
 
   const { mutate, isPending, isError, data, error } = useMutation({
     mutationFn: (data) => {
