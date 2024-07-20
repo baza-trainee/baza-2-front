@@ -1,17 +1,14 @@
-import FooterLinks from "@/src/components/shared/FooterLinks/FooterLinks";
 import SocialIcons from "@/src/components/shared/SocialIcons/SocialIcons";
 import HeroCard from "@/src/components/shared/HeroCard/HeroCard";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
-import ControlBtnRegistrationFormModal from "@/src/components/shared/controlButtons/ControlBtnRegistrationFormModal";
 import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
 import ContactFormSection from "@/src/components/ContactFormSection/ContactFormSection";
+import ExampleProjects from "@/src/example-data/ExampleProjects/ExampleProjects";
 
 export default function UiKit() {
   return (
     <main>
-      <FooterLinks />
-      <ControlBtnRegistrationFormModal>Test RegistrationFormModal</ControlBtnRegistrationFormModal>
-      <ControlBtnRegistrationFormModal type="partaker">Test RegistrationFormModal Partaker </ControlBtnRegistrationFormModal>
+      <ExampleProjects/>
       <HeroCard
         title="slide_1.title"
         desc="slide_1.text"

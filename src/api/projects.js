@@ -1,13 +1,16 @@
 import instance from './config/instance';
 
-export async function  getAllProjects({ page, query, limit }){
+const projects = '/projects'
+
+export async function  getAllProjects({ page, search, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
-	if (query) params.append('query', query);
+	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
+	console.log(params.toString())
 
 	try {
-		const res = await instance.get(`/projects?${params.toString()}`)
+		const res = await instance.get(`${projects}?${params.toString()}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -16,7 +19,7 @@ export async function  getAllProjects({ page, query, limit }){
 
 export async function  createNewProject(newProject){
 	try {
-		const res = await instance.post(`/projects`, newProject, {
+		const res = await instance.post(projects, newProject, {
 			headers: { 'Content-Type': 'multipart/form-data' }})
 		return res
 	} catch (error) {
@@ -26,7 +29,7 @@ export async function  createNewProject(newProject){
 
 export async function  getProjectById(id){
 	try {
-		const res = await instance.get(`/projects/${id}`)
+		const res = await instance.get(`${projects}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -35,7 +38,7 @@ export async function  getProjectById(id){
 
 export async function  deleteProjectById(id){
 	try {
-		const res = await instance.delete(`/projects/${id}`)
+		const res = await instance.delete(`${projects}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -44,7 +47,7 @@ export async function  deleteProjectById(id){
 
 export async function  updateProjectById(id, updProject){
 	try {
-		const res = await instance.patch(`/projects/${id}`, updProject, {
+		const res = await instance.patch(`${projects}/${id}`, updProject, {
 		  headers: { 'Content-Type': 'multipart/form-data' },
      })
 		return res.data

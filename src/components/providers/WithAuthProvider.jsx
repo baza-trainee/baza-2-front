@@ -9,8 +9,9 @@ export default function WithAuthProvider({
 
   const router = useRouter();
   const [isShow, setIsShow] = useState();
+
     // Розкоментувати під час розробки
-   // return <>{ children }</>
+    //return <>{ children }</>
 
   useEffect(() => {
     const getAdmin = () => {
