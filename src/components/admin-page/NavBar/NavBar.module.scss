@@ -64,7 +64,7 @@
     //float: right;
     margin-left: auto;
     margin-bottom: 20px;
-
+    height: 40px;
     border-radius: 4px 0 0 4px;
     padding: 13px 16px;
     & .icon {
@@ -101,7 +101,7 @@
     margin: 5px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     padding: 5px 12px;
     position: relative;
     &::before {
@@ -129,10 +129,9 @@
 
     .icon{
       display: block;
-      width: 25px;
-      height: 25px;
-      //stroke:#fff;
-      //fill:#fff;
+      width: 20px;
+      height: 20px;
+      margin-bottom: 2px;
     }
     .text._hide{
       display: none;

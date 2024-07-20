@@ -1,26 +1,26 @@
 'use client';
-
-import { useRouter } from '@/src/navigation';
-import React from 'react';
 import { useEffect, useState } from 'react';
+import { useRouter } from '@/src/navigation';
+import { token } from '@/src/api/auth';
 
 export default function WithAuthProvider({
   children,
 }) {
+
   const router = useRouter();
   const [isShow, setIsShow] = useState();
 
+    // Розкоментувати під час розробки
+    //return <>{ children }</>
+
   useEffect(() => {
-    const getUser = async () => {
-      const token = sessionStorage.getItem('access_token');
-      if (!token) {
-        // Тільки під час розробки
+    const getAdmin = () => {
+      if (!token.get()) {
         router.replace('/admin/login');
       } else setIsShow(true);
     };
-    getUser();
+    getAdmin();
   }, [router]);
-  // Тільки під час розробки
-  //return <>{ children }</>
+
   return <>{isShow && children}</>;
 };

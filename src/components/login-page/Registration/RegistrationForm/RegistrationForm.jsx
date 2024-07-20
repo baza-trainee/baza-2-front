@@ -1,70 +1,39 @@
 "use client";
-import styles from './loginForm.module.scss';
-import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import styles from './RegistrationForm.module.scss';
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginDefaultValues, loginSchema } from './loginScheme';
+
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
+import { registrationDefaultValues, registrationSchema } from './registrationScheme';
 
-export default function LoginForm({ handleMutate }) {
+export default function RegistrationForm({ onSubmit, isSuccess }) {
 
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors, isValid },
     reset
-  } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
-
-  //   "email": "user@example.com",
-  //   "password": "password123"
+  } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
 
   const [ visible, setVisible ] = useState(false);
-  const [ remember, setRemember ] = useState(false);
+  const [ visible1, setVisible1 ] = useState(false);
 
   const resetForm = () => {
     setVisible(false)
-    setRemember(false)
+    setVisible1(false)
     reset();
   }
 
-  useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
-    if (credentials) {
-      const { email, password, remember } = JSON.parse(
-        credentials
-      );
-      setValue('email', email);
-      setValue('password', password);
-      setRemember( remember);
-    }
-  }, []);
-
-  const onSubmit = (data) => {
-    handleMutate(data)
-    resetForm()
-    if (remember) {
-      localStorage.setItem(
-        'credentials',
-        JSON.stringify({...data, remember:remember})
-      );
-    } else {
-      localStorage.removeItem('credentials');
-    }
-  };
-
+  if(isSuccess){ resetForm() }
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
     } else return false;
   };
-
-  //   "email": "user@example.com",
-  //   "password": "password123"
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -75,9 +44,8 @@ export default function LoginForm({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
-            //type='email'
             placeholder={"Електронна пошта"}
-            registerOptions={register("email", { ...loginSchema.email })}
+            registerOptions={register("email", { ...registrationSchema.email })}
             isError={errors.email}
             isValid={isValid}
             version={"input"}
@@ -88,12 +56,12 @@ export default function LoginForm({ handleMutate }) {
         <li className={styles.list_item} >
           <InputField
             id={"password"}
-            required={false}
             maxLength={55}
+            required={false}
             className={styles.item}
             type={visible?'text':'password'}
             placeholder={"Пароль"}
-            registerOptions={register("password", { ...loginSchema.password })}
+            registerOptions={register("password", { ...registrationSchema.password })}
             isError={errors.password}
             isValid={isValid}
             version={"input"}
@@ -104,34 +72,36 @@ export default function LoginForm({ handleMutate }) {
           </button>
           {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
         </li>
-
-        <li>
-          <div className={styles.item}>
-            <label
-              htmlFor={'remember'}
-              className={clsx(styles.btn_option, styles.agree)}
-            >
-              <input
-                id={'remember'}
-                type="checkbox"
-                defaultChecked={remember}
-                onClick={(e)=>{setRemember(e.target.checked)}}
-              ></input>
-              <span className={clsx(styles.check, remember && styles._active)}>
-                <Icon name={'check'}/>
-                </span>
-
-              {"Запам’ятати пароль"}
-            </label>
-          </div>
+        <li className={styles.list_item}>
+          <InputField
+            id={"confirm_password"}
+            required={false}
+            maxLength={55}
+            className={styles.item}
+            type={visible1?'text':'password'}
+            placeholder={"Пароль"}
+            registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
+            isError={errors.confirmPassword?.message}
+            isValid={isValid}
+            version={"input"}
+            label={'Підтвердіть пароль'}
+          />
+          <button type='button' className={styles.btn} onClick={()=>{setVisible1(!visible1)}}>
+            <Icon width={24} height={24} name={visible1?'open_eye':'closed_eye'}/>
+          </button>
+         
+          {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
         </li>
+
+
       </ul>
 
       <MainButton
         type="submit"
         disabled={isDisabled()}
+        className={styles.submit}
       >
-        {'Увійти'}
+        {'Зареєструватись'}
       </MainButton>
     </form>
   )

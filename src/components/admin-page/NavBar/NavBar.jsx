@@ -8,13 +8,15 @@ import { Icon } from '../../shared/Icon/Icon';
 import { Link, usePathname, useRouter } from '@/src/navigation';
 import { links } from './linksType';
 import { createKey } from '@/src/lib/utils/createKey';
+import { token } from '@/src/api/auth';
 
 export default function NavBar() {
   const pathname = usePathname()
   const router = useRouter();
   const [hide, setHide]= useState(false)
+
   const removeToken=()=>{
-    sessionStorage.removeItem('access_token')
+    token.reset()
     router.replace('/admin/login');
   }
   return (

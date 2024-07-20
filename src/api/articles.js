@@ -18,10 +18,10 @@ import instanceBaza2 from './config/instance-baza2';
 // ]
 const articles = '/articles'
 
-export async function  getAllArticles({ page, query, limit }){
+export async function  getAllArticles({ page, search, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
-	if (query) params.append('query', query);
+	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
 	try {

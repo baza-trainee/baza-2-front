@@ -1,0 +1,15 @@
+.wrapper{
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  .content{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
