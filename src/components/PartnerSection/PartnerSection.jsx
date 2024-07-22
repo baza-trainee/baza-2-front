@@ -17,11 +17,11 @@ const PartnerSection = () => {
   const t = useTranslations("Main.partners_section");
   const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 
-  if (isError) { return <h1>Нажаль немає контенту</h1>; }
+  // if (isError) { return <h1>Нажаль немає контенту</h1>; }
 
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
         <div className={styles.titleRow}>
           <h2 className={styles.title}>{t("title")}</h2>
           <div className={styles.navigation}>
@@ -31,8 +31,9 @@ const PartnerSection = () => {
             <CarouselButton className="partner-nextBtn" />
           </div>
         </div>
-        <div className={styles.sliderContainer}>
-          <Carousel
+        <div className={styles.sliderBox}>
+
+        {data && <Carousel
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
@@ -71,7 +72,10 @@ const PartnerSection = () => {
             renderItem={(item) => (
               <PartnerCard key={item.id} item={item} />
             )}
-          />
+          />}
+
+        {isError&&<h1>Нажаль немає контенту</h1>}
+
         </div>
         <CarouselPagination
           className={clsx("partner-custom-pagination", styles.pagination)}

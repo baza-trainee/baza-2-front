@@ -12,6 +12,7 @@ export default function InputField({
   label = null,
   className,
   required=true,
+  disabled=false,
   options = {},
   ...props
 }) {
@@ -47,6 +48,8 @@ export default function InputField({
         <input
           id={id}
           maxLength={maxLength}
+          //readonly
+          disabled={disabled}
           className={clsx(
             styles.input,
             isError && styles._error,

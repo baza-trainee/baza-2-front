@@ -6,9 +6,13 @@ import { BASE_URL2 } from '@/src/constants/constants'
 const instanceBaza2 = axios.create({
 	// baseURL: process.env.api,
 	baseURL:BASE_URL2,
-	headers: {
-		'Content-Type': 'application/json'
-	}
+	 headers: {
+		'Content-Type': 'application/json',
+	},
+	//withCredentials: true,
+	// origin: "http://localhost:3000"
+	//headers: { Cookie: cookies().toString() },
+
 })
 
 export default instanceBaza2

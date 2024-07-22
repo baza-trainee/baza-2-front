@@ -34,14 +34,13 @@ export default function SettingsForm({ handleMutate }) {
   }
 
   useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
+    const credentials = sessionStorage.getItem('credentials');
     if (credentials) {
       const { email, password } = JSON.parse(
         credentials
       );
       setValue('email', email);
       setValue('password', password);
-      //setRemember( remember);
     }
   }, []);
 
@@ -77,17 +76,18 @@ export default function SettingsForm({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
+            disabled={true}
             //type='email'
-            placeholder={"Електронна пошта"}
+            placeholder={"Логін"}
             registerOptions={register("email", { ...loginSchema.email })}
-            isError={errors.email}
-            isValid={isValid}
+            //isError={errors.email}
+            //isValid={isValid}
             version={"input"}
-            label={'Електронна пошта'}
+            label={'Логін'}
           />
-          <button type='button' className={styles.btn} >
-            <Icon width={24} height={24} name='edit'/>
-          </button>
+          {/* <button type='button' className={styles.btn} > */}
+            <Icon className={styles.edit_black} width={24} height={24} name='edit'/>
+          {/* </button> */}
           {errors.email && <p className={styles.error_modal}>{errors.email.message}</p>}
         </li>
         <li className={styles.item_wrapper} >
@@ -95,13 +95,14 @@ export default function SettingsForm({ handleMutate }) {
             <InputField
               id={"password"}
               required={false}
+              disabled={true}
               maxLength={55}
               className={styles.item}
               type={visible?'text':'password'}
               placeholder={"Пароль"}
               registerOptions={register("password", { ...loginSchema.password })}
-              isError={errors.password}
-              isValid={isValid}
+              //isError={errors.password}
+              //isValid={isValid}
               version={"input"}
               label={'Пароль'}
             />
@@ -112,10 +113,10 @@ export default function SettingsForm({ handleMutate }) {
           </div>
           <MainButton
             variant='admin'
-            //className={styles.btn_cancel}
+            className={styles.btn_edit}
             //onClick={()=>{router.replace('/admin/login')}}
           >
-            <Icon width={24} height={24} name='edit'/>
+            <Icon className={styles.edit_white} width={24} height={24} name='edit'/>
           </MainButton>
         </li>
 {/* 
@@ -140,7 +141,7 @@ export default function SettingsForm({ handleMutate }) {
           </div>
         </li> */}
       </ul>
-
+{/* 
       <div className={styles.btns}>
         <MainButton
           type="submit"
@@ -157,7 +158,7 @@ export default function SettingsForm({ handleMutate }) {
           {'Скасувати'}
         </MainButton>
 
-      </div >
+      </div > */}
     </form>
   )
 }

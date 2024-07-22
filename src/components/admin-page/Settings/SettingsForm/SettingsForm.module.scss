@@ -30,8 +30,23 @@
     }
     .item_wrapper{
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       gap: 24px;
+    }
+    .btn_edit{
+      width: 40px;
+      height: 40px;
+    }
+    .edit_black{
+      position: absolute;
+      right: 10px;
+      top: 40px;
+      //fill: #030110;
+      stroke: #030110;
+    }
+    .edit_white{
+      //fill: #030110;
+      stroke: #FCFCFC;
     }
 
     .item {

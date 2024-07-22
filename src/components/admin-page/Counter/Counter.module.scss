@@ -1,0 +1,17 @@
+.section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+
+  .srroll_wrapper{
+    display: flex;
+    max-height: 800px;
+    width: 100%;
+    height: 100%;
+    //background-color: aqua;
+    overflow-y: auto;
+    padding: 32px 24px;
+  }
+}

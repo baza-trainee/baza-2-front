@@ -6,11 +6,11 @@ import instanceBaza2 from "./config/instance-baza2";
 //   "members": 392,
 //   "employed": 92
 // }
-const achievements = '/achievements'
+const achievementsEndpoint = '/achievements'
 
 export async function getData(){
 	try {
-		const res = await instanceBaza2.get(achievements)
+		const res = await instanceBaza2.get(achievementsEndpoint)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -23,7 +23,7 @@ export async function getData(){
 // }
 export async function updateEmployed(employed){
 	try {
-		const res = await instanceBaza2.patch(achievements, employed)
+		const res = await instanceBaza2.patch(achievementsEndpoint, employed)
 		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -32,7 +32,7 @@ export async function updateEmployed(employed){
 
 export async function getEmployed(){
 	try {
-		const res = await instanceBaza2.get(`${achievements}/employed`);
+		const res = await instanceBaza2.get(`${achievementsEndpoint}/employed`);
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
