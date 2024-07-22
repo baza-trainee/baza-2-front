@@ -27,7 +27,7 @@ export default function JoinProjectSection() {
   }, []);
 
   return (
-    <section ref={container} className={styles.container}>
+    <section ref={container} className={styles.wrapper}>
       <h2 className={styles.titleWrapper}>{t("main_title")}</h2>
       {items.map((item, i) => {
         const targetScale = 1 - (items.length - i) * 0.05;
