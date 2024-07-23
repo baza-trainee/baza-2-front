@@ -25,7 +25,7 @@ export const token = {
       token
     )
 
-    instanceBaza2.defaults.headers['Cookie'] = `${token}`
+    //instanceBaza2.defaults.headers['Cookie'] = `${token}`
 
     instanceBaza2.defaults.headers.common['Authorization'] = `${token}`;
     //console.log(instanceBaza2.defaults.headers.common.Authorization)
@@ -33,7 +33,7 @@ export const token = {
 
   reset: () => {
     sessionStorage.removeItem('access_token')
-    instanceBaza2.defaults.headers['Cookie'] = ''
+    //instanceBaza2.defaults.headers['Cookie'] = ''
     //instanceBaza2.defaults.headers.common['Authorization'] = '';
   },
 };
@@ -56,7 +56,6 @@ export const logIn = async ({ email, password }) => {
     });
 
     token.set(response.data.token);
-    console.log(response)
     return response;
    
   } catch (error) {
@@ -64,22 +63,7 @@ export const logIn = async ({ email, password }) => {
   }
 
 }
-// export const logIn = async ({ email, password }) => {
-//   try{
-//     const response = await axios.post(`${BASE_URL2}/${authEndpoint}/login`, {
-//       email,
-//       password,
-//     },{withCredentials: true});
 
-//     token.set(response.data.token);
-//     console.log(response)
-//     return response;
-   
-//   } catch (error) {
-//     throw new Error(error)
-//   }
-
-// }
 // Response body
 // {
 //   "_id": "66784417e8df71a9ba2e74df",

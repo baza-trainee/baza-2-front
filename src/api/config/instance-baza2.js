@@ -10,8 +10,6 @@ const instanceBaza2 = axios.create({
 		'Content-Type': 'application/json',
 	},
 	//withCredentials: true,
-	// origin: "http://localhost:3000"
-	//headers: { Cookie: cookies().toString() },
 
 })
 
