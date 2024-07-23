@@ -43,7 +43,7 @@ export const token = {
 const authEndpoint = '/auth'
 
 export const getInfoUser = async () => {
-  const res = await instanceBaza2.get(`${authEndpoint}/user`,{withCredentials: true})
+  const res = await instanceBaza2.get(`${authEndpoint}/user`)
   return res;
 }
 // {
@@ -55,7 +55,7 @@ export const logIn = async ({ email, password }) => {
     const response = await instanceBaza2.post(`${authEndpoint}/login`, {
       email,
       password,
-    });
+    },{withCredentials: true});
 
     token.set(response.data.token);
     return response;
