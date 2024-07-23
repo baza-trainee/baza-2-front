@@ -3,6 +3,7 @@
 
 .wrapp{
   min-width: 220px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
  
@@ -64,7 +65,7 @@
     //float: right;
     margin-left: auto;
     margin-bottom: 20px;
-    height: 40px;
+    min-height: 40px;
     border-radius: 4px 0 0 4px;
     padding: 13px 16px;
     & .icon {

@@ -1,4 +1,5 @@
+import Settings from "@/src/components/admin-page/Settings/Settings";
+
 export default function settings() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: admin-Settings</h2></div>
+  return <Settings/>
 };

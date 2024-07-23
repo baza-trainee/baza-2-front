@@ -13,6 +13,7 @@
   height: fit-content;
   background: var.$primary-gradient;
 
+  
   @include mixins.media-q("md") {
     gap: 32px;
     padding: 48px 40px;

@@ -22,20 +22,20 @@ export default function Registration() {
 
   useEffect(() => {
     if (data) {
-      //router.replace('/admin/login')
-      open('success')
+      //router.replace('/admin')
+      //open('success')
       console.log(data)
     }
     if (isError) {
       console.log( error?.message)
-      resetForm()
+      //resetForm()
       open('error',false)
     }
 
   },[data,isError]);
 
   const onSubmit = (data) => {
-    mutate({email:data.email, password:data.password, name:data.email })
+    mutate({email:data.email, password:data.password, name:'vlad'})
   };
 
   return (

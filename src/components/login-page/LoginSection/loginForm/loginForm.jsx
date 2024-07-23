@@ -54,6 +54,9 @@ export default function LoginForm({ handleMutate }) {
     } else {
       localStorage.removeItem('credentials');
     }
+
+    sessionStorage.setItem('credentials',
+      JSON.stringify({...data}))
   };
 
 
@@ -75,6 +78,7 @@ export default function LoginForm({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
+            
             //type='email'
             placeholder={"Електронна пошта"}
             registerOptions={register("email", { ...loginSchema.email })}
