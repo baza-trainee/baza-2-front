@@ -24,24 +24,26 @@ export const token = {
       'access_token',
       token
     )
-
+    // Cookies.set('token', `${token}`, {
+    //   expires: 1 / 48,
+    // });
     //instanceBaza2.defaults.headers['Cookie'] = `${token}`
 
-    instanceBaza2.defaults.headers.common['Authorization'] = `${token}`;
+    instanceBaza2.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     //console.log(instanceBaza2.defaults.headers.common.Authorization)
   },
 
   reset: () => {
     sessionStorage.removeItem('access_token')
     //instanceBaza2.defaults.headers['Cookie'] = ''
-    //instanceBaza2.defaults.headers.common['Authorization'] = '';
+    instanceBaza2.defaults.headers.common['Authorization'] = '';
   },
 };
 
 const authEndpoint = '/auth'
 
 export const getInfoUser = async () => {
-  const res = await instanceBaza2.get(`${authEndpoint}/user`)
+  const res = await instanceBaza2.get(`${authEndpoint}/user`,{withCredentials: true})
   return res;
 }
 // {
