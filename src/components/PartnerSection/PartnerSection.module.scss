@@ -7,17 +7,18 @@
   width: 100%;
   padding: 32px 16px;
 
-  @media (min-width: 640px) {
-    padding: 38px 10px;
-    padding: 38px 40px;
+  @include mixin.media-q("md") {
+    padding: 48px 40px;
   }
 
   @include mixin.media-q("xl") { 
     padding: 60px 16px;
   }
+
   @include mixin.media-q("xxxl") { 
     padding: 72px 16px;
   }
+
   .wrapper {
     display: flex;
     max-width: 1320px;
@@ -26,11 +27,10 @@
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    background-color: aqua;
-    @media (min-width: 640px) {
-  
-      gap: 22px;
-      }
+
+    @include mixin.media-q("md") {
+      gap: 32px;
+    }
     
     @include mixin.media-q("xl") { 
       gap: 48px;
@@ -39,94 +39,62 @@
     @include mixin.media-q("xxxl") { 
       gap: 56px;
     }
-  }
 
-}
-
-
-.title {
-  width: 100%;
-  background-color: rgb(105, 110, 110);
-  @include mixin.apply-font-styles(var.$h7-font);
-  //margin: 10px 0;
-  @include mixin.media-q("md") { 
-    @include mixin.apply-font-styles(var.$h5-font);
-    text-align: center
-  }
-  @include mixin.media-q("xl") { 
-    @include mixin.apply-font-styles(var.$h1-font);
-
-
-  }
-
-
-}
-
-.sliderBox {
-  will-change: transform;
-  width: 95vw;
-  min-height: 170px;
-  @media (min-width: 640px) {
-    min-height: 230px;
+    .titleRow {
+      position: relative;
       width: 100%;
-    }
-    @include mixin.media-q("xl") { 
 
-      min-height: 270px;
-      max-width: 1238px;
-  }
-    @include mixin.media-q("xxxl") { 
-
-      max-width: 1920px;
-    }
-  }
-
-.titleRow {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 100%;
-  //width: 320px;
-
-  @media (min-width: 640px) {
-   // width: 620px;
-  }
+      .title {
+        @include mixin.apply-font-styles(var.$h7-font);
+        text-align: center;
   
-  @include mixin.media-q("xl") { 
-  position: relative;
+        @include mixin.media-q("md") { 
+          @include mixin.apply-font-styles(var.$h5-font);
+          
+        }
+        @include mixin.media-q("xl") { 
+          @include mixin.apply-font-styles(var.$h1-font);
+        }
+      }
+      
+      .prevBtn {
+        transform: rotate(180deg);
+      }
+      
+      .navigation {
+        display: none;
+        @include mixin.media-q("md"){
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 50%;
+          right: 0;
+          transform: translate(0%, -50%);
+          gap: 16px;
+        }
+        @include mixin.media-q("xl") {
+          gap: 32px;
+        }
+      }
+    }
 
-  //width: 1236px;
-}
+    .sliderBox {
+      will-change: transform;
+      width: 90vw;
+      max-width: 500px;
+      min-height: 130px;
 
-  @include mixin.media-q("xxxl") { 
-  //width: 1320px;
+      @include mixin.media-q("md") {
+        min-height: 230px;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    .error{
+      @include mixin.apply-font-styles(var.$h7-font);
+      text-align: center;
+    }
   }
 }
-
-.prevBtn {
-  transform: rotate(180deg);
-}
-
-.navigation {
-  display: none;
-  @media (min-width: 640px) {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    right: 0;
-    gap: 16px;
-    //background-color: black;
-  }
-  @include mixin.media-q("xl") {
-    gap: 32px;
-    top: 0;
-  }
-}
-
-
-
-

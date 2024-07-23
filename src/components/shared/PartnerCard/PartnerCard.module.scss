@@ -4,7 +4,7 @@
 .partnerCardItem {
   border-radius: 8px;
   padding: 10px;
-  width: 95vw;
+  width: 100%;
   max-height: 230px;
   height: 40vw;
   background-color: var.$secondary-white;
@@ -13,6 +13,10 @@
   transition: all .8s;
   filter: blur(3px) brightness(40%);
 
+  @include mixin.media-q("md") {
+    height: 230px;
+    width: 100%;
+  }
 
   @media (any-hover: hover){
     &:hover{
@@ -23,14 +27,6 @@
   &._active{
     opacity: 1;
     filter: none;
-    @media (min-width: 640px) {
-
-      transform: translateX(-15px)
-    }
-    @include mixin.media-q("xl") { 
-      transform: translateX(-30px)
-    }
-   
   }
 
   &._disabled{
@@ -39,22 +35,11 @@
     -webkit-pointer-events: none;
     -ms-pointer-events: none;
     pointer-events: none;
- 
-    @media (min-width: 640px) {
-
-      display: flex;
-    }
-
-    @include mixin.media-q("xl") { 
-      transform: translateX(-30px)
-    }
-    @include mixin.media-q("xl") { 
-    }
-
   }
 
   .img_wrap {
     position: relative;
+    margin: auto;
     width: 100%;
     height: 100%;
 
@@ -62,15 +47,5 @@
       object-fit: contain;
       object-position: center;
     }
-  }
-
-  @media (min-width: 640px) {
-
-    width: 50vw;
-    height: 200px;
-  }
-  @include mixin.media-q("xl") { 
-    width: 470px;
-    height: 230px;
   }
 }
