@@ -23,7 +23,7 @@ export async function getData(){
 // }
 export async function updateEmployed(employed){
 	try {
-		const res = await instanceBaza2.patch(achievementsEndpoint, employed,{withCredentials: true})
+		const res = await instanceBaza2.patch(achievementsEndpoint, employed)
 		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)

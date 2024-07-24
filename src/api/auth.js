@@ -24,7 +24,7 @@ export const token = {
 const authEndpoint = '/auth'
 
 export const getInfoUser = async () => {
-  const res = await instanceBaza2.get(`${authEndpoint}/user`,{withCredentials: true})
+  const res = await instanceBaza2.get(`${authEndpoint}/user`)
   return res;
 }
 // {
@@ -36,7 +36,7 @@ export const logIn = async ({ email, password }) => {
     const response = await instanceBaza2.post(`${authEndpoint}/login`, {
       email,
       password,
-    },{withCredentials: true});
+    });
 
     token.set(response.data.token);
     return response;
@@ -67,7 +67,7 @@ export const registerAdmin = async ({
       email,
       password,
       name,
-    },{withCredentials: true});
+    });
 
     token.set(response.data.token);
     return response;
@@ -90,7 +90,7 @@ export const changePassword = async ({
   const response = await instanceBaza2.patch(`${authEndpoint}/changePassword`, {
     oldPassword,
     newPassword,
-  },{withCredentials: true});
+  });
 
   token.set(response.data.token);
   return response;
@@ -105,7 +105,7 @@ export const passwordRequestReset = async ({
   try{
     const response = await instanceBaza2.post(`${authEndpoint}/passwordRequestReset`, {
     email,
-    },{withCredentials: true});
+    });
 
     //token.set(response.data.token);
     return response;
