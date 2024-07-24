@@ -52,9 +52,10 @@ export default function Counter() {
   //   }, []);
   const employed = useQuery({ 
     queryKey: ['InfoUser'], 
-    queryFn: getInfoUser 
+    queryFn: getInfoUser
   });
 
+ // console.log(employed.data)
 
 // if(!employed.data){return null}
   //console.log(employed.data)
@@ -64,7 +65,7 @@ export default function Counter() {
       <HeaderAdmin title={'Каунтер'}/>
       <div className={styles.srroll_wrapper}>
 
-      {/* {<h1>employed: {employed.data.employed}</h1>} */}
+      {<h1>employed: {employed.data.employed}</h1>} 
       </div>
     </section>
   )

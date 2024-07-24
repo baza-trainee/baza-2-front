@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from '@/src/navigation';
-import { token } from '@/src/api/auth';
+import { getInfoUser, token } from '@/src/api/auth';
+import { useQuery } from '@tanstack/react-query';
 
 export default function WithAuthProvider({
   children,
@@ -12,7 +13,11 @@ export default function WithAuthProvider({
 
     // Розкоментувати під час розробки
     //return <>{ children }</>
-
+    const isAuth = useQuery({ 
+      queryKey: ['InfoUser'], 
+      queryFn: getInfoUser 
+    });
+    console.log(isAuth)
   useEffect(() => {
     const getAdmin = () => {
       if (!token.get()) {
@@ -20,6 +25,8 @@ export default function WithAuthProvider({
       } else setIsShow(true);
     };
     getAdmin();
+
+
   }, [router]);
 
   return <>{isShow && children}</>;
