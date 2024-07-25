@@ -1,6 +1,6 @@
 
 export const links=[
-  { content: "Слайдер", href: '/admin', icon: "slider" },
+  { content: "Слайдер", href: '/admin/slider', icon: "slider" },
   { content: "Проєкти", href: '/admin/projects', icon: "projects" },
   { content: "Каунтер", href: '/admin/counter', icon: "counter" },
   { content: "Відгуки", href: '/admin/reviews', icon: "reviews" },

@@ -17,8 +17,14 @@ export default function NavBar() {
 
   const removeToken=()=>{
     token.reset()
-    router.replace('/admin/login');
+    router.replace('/');
   }
+
+  const isActive=(name)=>{
+   return pathname.split('/').includes(name)
+  }
+
+
   return (
     <div className={clsx(styles.wrapp, hide && styles._hide)}>
       <header className={styles.header}>
@@ -37,7 +43,7 @@ export default function NavBar() {
           </li>
           {links.map((el)=>{
             return (<li key={createKey()}>  
-              <Link className={clsx(styles.link,pathname===`${el.href}`&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
+              <Link className={clsx(styles.link,isActive(el.icon)&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
             </li>)
           })}
         </ul>

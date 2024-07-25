@@ -3,10 +3,10 @@ import styles from "./HeroSection.module.scss";
 import clsx from "clsx";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { heroCardItems } from "./heroCardItems";
-import Carousel from "../shared/Carousel/Carousel";
-import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
-import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
-import HeroCard from "../shared/HeroCard/HeroCard";
+import Carousel from "../../shared/Carousel/Carousel";
+import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
+import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
+import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { isMIUI} from 'react-device-detect';
 

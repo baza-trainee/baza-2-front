@@ -10,9 +10,10 @@ import { loginDefaultValues, loginSchema } from './loginScheme';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
+import { useRouter } from '@/src/navigation';
 
 export default function SettingsForm({ handleMutate }) {
-
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -114,7 +115,7 @@ export default function SettingsForm({ handleMutate }) {
           <MainButton
             variant='admin'
             className={styles.btn_edit}
-            //onClick={()=>{router.replace('/admin/login')}}
+            onClick={()=>{router.push('/admin/settings/edit')}}
           >
             <Icon className={styles.edit_white} width={24} height={24} name='edit'/>
           </MainButton>
