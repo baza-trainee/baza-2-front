@@ -1,7 +1,7 @@
 "use client";
 import styles from './ChangePasswordForm.module.scss';
-import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+//import clsx from 'clsx';
+import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -17,12 +17,9 @@ import { useMutation } from '@tanstack/react-query';
 export default function ChangePasswordForm() {
   const router = useRouter()
 
-
-
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
@@ -32,7 +29,6 @@ export default function ChangePasswordForm() {
 
   const [ visible, setVisible ] = useState(true);
   const [ visible1, setVisible1 ] = useState(true);
-  //const [ remember, setRemember ] = useState(false);
 
   const resetForm = () => {
     setVisible(false)
@@ -62,23 +58,7 @@ export default function ChangePasswordForm() {
       resetForm()
       router.replace('/admin/settings')
       savePassword(data)
-      //queryClient.invalidateQueries('employed');
     },})
-
-
-  const onSubmit = (data) => {
-    // handleMutate(data)
-    // resetForm()
-    // if (remember) {
-    //   localStorage.setItem(
-    //     'credentials',
-    //     JSON.stringify({...data, remember:remember})
-    //   );
-    // } else {
-    //   localStorage.removeItem('credentials');
-    // }
-  };
-
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
