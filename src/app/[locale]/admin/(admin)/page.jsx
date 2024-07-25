@@ -1,4 +1,9 @@
-export default function adminPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: admin Slider</h2></div>
-};
+'use client';
+import { useEffect } from 'react';
+import { redirect } from 'next/navigation';
+
+export default function AdminPage() {
+  useEffect(() => {
+    redirect('/admin/slider');
+  }, []);
+}

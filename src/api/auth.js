@@ -24,8 +24,12 @@ export const token = {
 const authEndpoint = '/auth'
 
 export const getInfoUser = async () => {
+  try{
   const res = await instanceBaza2.get(`${authEndpoint}/user`)
   return res;
+  } catch (error) {
+    throw new Error(error)
+  }
 }
 // {
 //   "email": "user@example.com",

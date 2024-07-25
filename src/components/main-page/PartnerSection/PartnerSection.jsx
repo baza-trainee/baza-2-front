@@ -1,10 +1,10 @@
 "use client";
 
-import Carousel from "../shared/Carousel/Carousel";
-import PartnerCard from "../shared/PartnerCard/PartnerCard";
+import Carousel from "../../shared/Carousel/Carousel";
+import PartnerCard from "../../shared/PartnerCard/PartnerCard";
 import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
-import CarouselButton from "../shared/Carousel/CarouselButton/CarouselButton";
-import CarouselPagination from "../shared/Carousel/CarouselPagination/CarouselPagination";
+import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
+import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
 import { isFirefox } from 'react-device-detect';
 import { useTranslations } from "next-intl";
