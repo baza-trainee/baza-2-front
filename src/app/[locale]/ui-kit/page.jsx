@@ -8,17 +8,16 @@ import ExampleProjects from "@/src/example-data/ExampleProjects/ExampleProjects"
 export default function UiKit() {
   return (
     <main>
-      <ExampleProjects/>
-      <HeroCard
+      {/* <HeroCard
         title="slide_1.title"
         desc="slide_1.text"
         img="/images/hero_section/slide_1.jpg"
-      />
-      <JoinProjectSection />
-      <ContactFormSection />
-      <SocialIcons />
-      <RegistrationFormModal/>
-
+      /> */}
+      {/* <JoinProjectSection /> */}
+      {/* <ContactFormSection /> */}
+      {/* <SocialIcons /> */}
+    {/* <RegistrationFormModal/> */}
+      <ExampleProjects/>
     </main>
   );
 }
