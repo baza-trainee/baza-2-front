@@ -2,25 +2,25 @@
 
 import styles from './Counter.module.scss'
 import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { getEmployed, updateEmployed } from '@/src/api/achievements'
 import { useState } from 'react';
 import InputField from '../../shared/InputField/InputField';
+import Loader from '../../shared/loader/Loader';
 
 
 export default function Counter() {
-  const queryClient = useQueryClient();
-
+  const employed = useQuery({ queryKey: ['employed'], queryFn: getEmployed });
   const { mutate, isPending, isError, data, error } = useMutation({
     mutationFn:(data) => {
       return updateEmployed(data)
 
     },onSuccess: () => {
-      queryClient.invalidateQueries('employed');
+      employed.refetch()
     },})
 
     const [valueEmployed,setValueEmployed] = useState(1)
-    const employed = useQuery({ queryKey: ['employed'], queryFn: getEmployed });
+  
    
   return (
     <section className={styles.section}>
@@ -34,6 +34,7 @@ export default function Counter() {
 })}}>Змінити</p>
 
       </div>
+      {isPending && <Loader/>}
     </section>
   )
 }

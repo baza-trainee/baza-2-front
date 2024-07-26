@@ -72,7 +72,6 @@ export const registerAdmin = async ({
       password,
       name,
     });
-
     token.set(response.data.token);
     return response;
   } catch (error) {
@@ -95,8 +94,7 @@ export const changePassword = async ({
     oldPassword,
     newPassword,
   });
-
-  token.set(response.data.token);
+  //token.set(response.data.token);
   return response;
   } catch (error) {
     throw new Error(error)

@@ -9,7 +9,7 @@ import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
 
-export default function RegistrationForm({ onSubmit, isSuccess }) {
+export default function RegistrationForm({ onSubmit }) {
 
   const {
     register,
@@ -26,8 +26,6 @@ export default function RegistrationForm({ onSubmit, isSuccess }) {
     setVisible1(false)
     reset();
   }
-
-  if(isSuccess){ resetForm() }
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
@@ -56,7 +54,7 @@ export default function RegistrationForm({ onSubmit, isSuccess }) {
         <li className={styles.list_item} >
           <InputField
             id={"password"}
-            maxLength={55}
+            maxLength={15}
             required={false}
             className={styles.item}
             type={visible?'text':'password'}
@@ -76,7 +74,7 @@ export default function RegistrationForm({ onSubmit, isSuccess }) {
           <InputField
             id={"confirm_password"}
             required={false}
-            maxLength={55}
+            maxLength={15}
             className={styles.item}
             type={visible1?'text':'password'}
             placeholder={"Пароль"}

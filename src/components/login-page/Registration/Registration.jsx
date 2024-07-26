@@ -14,33 +14,30 @@ export default function Registration() {
   const open = stateUseAlert(state => state.open);
   const router = useRouter();
 
-  const { mutate, isPending, isError, data, error } = useMutation({
+  const isError=()=>{
+    sessionStorage.removeItem('credentials')
+    open('error',false)
+  }
+
+  const { mutate, isPending, data } = useMutation({
     mutationFn: (data) => {
       return registerAdmin(data)
+    },onSuccess: () => {
+      router.replace('/admin')
+    },onError: () => {
+      isError()
     },
   })
 
-  useEffect(() => {
-    if (data) {
-      //router.replace('/admin')
-      //open('success')
-      console.log(data)
-    }
-    if (isError) {
-      console.log( error?.message)
-      //resetForm()
-      open('error',false)
-    }
-
-  },[data,isError]);
-
   const onSubmit = (data) => {
     mutate({email:data.email, password:data.password, name:'vlad'})
+    sessionStorage.setItem('credentials',
+      JSON.stringify({email:data.email, password:data.password}))
   };
 
   return (
     <Section title={'Реєстрація'} text={'Зареєструйтесь в системі'}>
-      <RegistrationForm onSubmit={onSubmit} isSuccess={data?.token}/>
+      <RegistrationForm onSubmit={onSubmit}/>
 
       <p className={styles.link}>Ви маєте акаунт? <Link href={'/admin/login'}>Авторизуватись</Link></p>
 

@@ -10,10 +10,11 @@ import { loginDefaultValues, loginSchema } from './loginScheme';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
-import { useRouter } from '@/src/navigation';
+import { usePathname, useRouter } from '@/src/navigation';
 
-export default function SettingsForm({ handleMutate }) {
+export default function SettingsForm() {
   const router = useRouter()
+  const pathname = usePathname()
   const {
     register,
     handleSubmit,
@@ -27,7 +28,7 @@ export default function SettingsForm({ handleMutate }) {
 
   const [ visible, setVisible ] = useState(true);
   //const [ remember, setRemember ] = useState(false);
-
+//console.log(router.)
   const resetForm = () => {
     setVisible(true)
     //setRemember(false)
@@ -43,7 +44,7 @@ export default function SettingsForm({ handleMutate }) {
       setValue('email', email);
       setValue('password', password);
     }
-  }, []);
+  }, [pathname]);
 
   const onSubmit = (data) => {
     // handleMutate(data)
@@ -101,7 +102,7 @@ export default function SettingsForm({ handleMutate }) {
               className={styles.item}
               type={visible?'text':'password'}
               placeholder={"Пароль"}
-              registerOptions={register("password", { ...loginSchema.password })}
+             registerOptions={register("password", { ...loginSchema.password })}
               //isError={errors.password}
               //isValid={isValid}
               version={"input"}
@@ -110,7 +111,7 @@ export default function SettingsForm({ handleMutate }) {
             <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
               <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
             </button>
-            {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
+            {/* {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>} */}
           </div>
           <MainButton
             variant='admin'
@@ -120,30 +121,9 @@ export default function SettingsForm({ handleMutate }) {
             <Icon className={styles.edit_white} width={24} height={24} name='edit'/>
           </MainButton>
         </li>
-{/* 
-        <li>
-          <div className={styles.item}>
-            <label
-              htmlFor={'remember'}
-              className={clsx(styles.btn_option, styles.agree)}
-            >
-              <input
-                id={'remember'}
-                type="checkbox"
-                defaultChecked={remember}
-                onClick={(e)=>{setRemember(e.target.checked)}}
-              ></input>
-              <span className={clsx(styles.check, remember && styles._active)}>
-                <Icon name={'check'}/>
-                </span>
-
-              {"Запам’ятати пароль"}
-            </label>
-          </div>
-        </li> */}
       </ul>
-{/* 
-      <div className={styles.btns}>
+
+      {/* <div className={styles.btns}>
         <MainButton
           type="submit"
           disabled={true}

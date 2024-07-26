@@ -29,35 +29,35 @@ export default function ChangePasswordForm() {
 
   const [ visible, setVisible ] = useState(true);
   const [ visible1, setVisible1 ] = useState(true);
-
+  const [ password, setPassword ] = useState('');
+  //console.log(password)
   const resetForm = () => {
     setVisible(false)
     setVisible1(false)
-    //setRemember(false)
+    setPassword('')
     reset();
   }
 
-  const savePassword =(data)=>{
+  const savePassword =()=>{
     const credentials = sessionStorage.getItem('credentials');
     if (credentials) {
       const { email } = JSON.parse(
         credentials
       );
       sessionStorage.setItem('credentials',
-        JSON.stringify({email,password:data.newPassword}))
+        JSON.stringify({email,password:password}))
     }
-
+    resetForm()
+    router.replace('/admin/settings')
   }
 
 
-  const { mutate, isPending, isError, data, error } = useMutation({
+  const { mutate, isPending, isError, error } = useMutation({
     mutationFn:(data) => {
       return changePassword(data)
 
     },onSuccess: () => {
-      resetForm()
-      router.replace('/admin/settings')
-      savePassword(data)
+      savePassword()
     },})
 
   const isDisabled = () => {
@@ -101,6 +101,7 @@ export default function ChangePasswordForm() {
               id={"newPassword"}
               required={false}
               //disabled={true}
+              onInput={(e)=>{setPassword(e.target.value)}}
               maxLength={15}
               className={styles.item}
               type={visible1 ? 'text':'password'}
