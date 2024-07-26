@@ -30,7 +30,7 @@ export default function JoinProjectSection() {
     <section ref={container} className={styles.wrapper}>
       <h2 className={styles.titleWrapper}>{t("main_title")}</h2>
       {items.map((item, i) => {
-        const targetScale = 1 - (items.length - i) * 0.05;
+        const targetScale = 1 - (items.length - i) * 0.1;
         return (
           <JoinProjectCard
             key={i}
