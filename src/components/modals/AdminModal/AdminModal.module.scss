@@ -1,0 +1,75 @@
+@use "../../../styles/mixins" as mix;
+@use "../../../styles/variables" as var;
+
+.wrapper{
+  padding: 16px 16px 80px 16px;
+  margin: auto;
+  width: 100%;
+  @include mix.media-q("md") {
+    padding: 40px 16px;
+  }
+  
+  @include mix.media-q("xl") {
+    padding: 10vh 16px;
+  }
+
+  .modal {
+    background: #fefffe;
+    //padding: 84px 8px 45px;
+    //width: clamp(300px, 92vw, 690px);
+    //width: 600px;
+    min-height: 300px;
+    padding: 60px 50px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var.$primary-border;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 24px;
+    @include mix.apply-font-styles(var.$text-14-font);
+    //font-size: 14px;
+    text-align: center;
+    margin: auto;
+    color: #020202;
+    font-weight: 700;
+    font-size: 24px;
+    @include mix.media-q("md") {
+      width: clamp(300px, 92vw, 830px);
+      @include mix.apply-font-styles(var.$h3-font);
+      font-weight: 600;
+      font-size: 32px;
+      padding: 140px 10px 88px;
+      gap: 32px;
+    }
+
+    @include mix.media-q("xl") {
+      font-weight: 600;
+      font-size: 40px;
+      padding: 48px 10px 32px;
+    }
+    & >a{
+      font-size: 18px;
+      text-decoration: underline;
+      color: rgb(0, 26, 255);
+    }
+    .closeButton {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+
+      @include mix.media-q("md") {
+        top: 25px;
+        right: 24px;
+      }
+    }
+    .btn{
+      width: 230px;
+      height: 55px;
+    }
+  }
+}

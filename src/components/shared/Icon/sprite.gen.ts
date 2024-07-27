@@ -7,6 +7,7 @@ export interface SpritesMap {
     | "carousel-arrow"
     | "check"
     | "clock"
+    | "close_dark"
     | "close"
     | "closed_eye"
     | "complexity"
@@ -51,6 +52,7 @@ export const SPRITES_META: {
     | "carousel-arrow"
     | "check"
     | "clock"
+    | "close_dark"
     | "close"
     | "closed_eye"
     | "complexity"
@@ -95,6 +97,7 @@ export const SPRITES_META: {
     "carousel-arrow",
     "check",
     "clock",
+    "close_dark",
     "close",
     "closed_eye",
     "complexity",

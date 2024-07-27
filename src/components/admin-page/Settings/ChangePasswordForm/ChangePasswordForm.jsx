@@ -1,7 +1,6 @@
 "use client";
 import styles from './ChangePasswordForm.module.scss';
-//import clsx from 'clsx';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -12,11 +11,14 @@ import { useRouter } from '@/src/navigation';
 import { changePasswordDefaultValues, changePasswordScheme } from './ChangePasswordScheme';
 import { changePassword } from '@/src/api/auth';
 import { useMutation } from '@tanstack/react-query';
-
+import Loader from '@/src/components/shared/loader/Loader';
+import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
+import stateUseAlert from '@/src/state/stateUseAlert';
+import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 
 export default function ChangePasswordForm() {
   const router = useRouter()
-
+  const open = stateUseAlert(state => state.open);
   const {
     register,
     handleSubmit,
@@ -24,13 +26,11 @@ export default function ChangePasswordForm() {
     reset
   } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
 
-  //   "email": "user@example.com",
-  //   "password": "password123"
-
   const [ visible, setVisible ] = useState(true);
   const [ visible1, setVisible1 ] = useState(true);
   const [ password, setPassword ] = useState('');
-  //console.log(password)
+  const[ modalOpen, setmodalOpen ] = useState(false);
+
   const resetForm = () => {
     setVisible(false)
     setVisible1(false)
@@ -39,26 +39,32 @@ export default function ChangePasswordForm() {
   }
 
   const savePassword =()=>{
-    const credentials = sessionStorage.getItem('credentials');
+    const credentials = localStorage.getItem('credentials');
     if (credentials) {
       const { email } = JSON.parse(
         credentials
       );
-      sessionStorage.setItem('credentials',
+      localStorage.setItem('credentials',
         JSON.stringify({email,password:password}))
     }
     resetForm()
-    router.replace('/admin/settings')
+    setmodalOpen(true)
   }
 
+  const closeModal = useCallback(()=>{
+    setmodalOpen(false)
+    router.replace('/admin/settings')
+  })
 
-  const { mutate, isPending, isError, error } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn:(data) => {
       return changePassword(data)
 
     },onSuccess: () => {
       savePassword()
-    },})
+    },onError:()=>{
+      open('error', false)
+    }})
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
@@ -66,10 +72,8 @@ export default function ChangePasswordForm() {
     } else return false;
   };
 
-  //   "email": "user@example.com",
-  //   "password": "password123"
-
   return (
+    <>
     <form onSubmit={handleSubmit(mutate)} className={styles.form}>
       <ul className={styles.list}>
 
@@ -138,5 +142,9 @@ export default function ChangePasswordForm() {
 
       </div > 
     </form>
+    { isPending && <Loader/> }
+    <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+    <UseAlert/>
+    </>
   )
 }

@@ -1,7 +1,6 @@
 "use client";
 import styles from './SettingsForm.module.scss'
 
-//import styles from './loginForm.module.scss';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
@@ -36,7 +35,7 @@ export default function SettingsForm() {
   }
 
   useEffect(() => {
-    const credentials = sessionStorage.getItem('credentials');
+    const credentials = localStorage.getItem('credentials');
     if (credentials) {
       const { email, password } = JSON.parse(
         credentials
@@ -98,7 +97,7 @@ export default function SettingsForm() {
               id={"password"}
               required={false}
               disabled={true}
-              maxLength={55}
+              maxLength={15}
               className={styles.item}
               type={visible?'text':'password'}
               placeholder={"Пароль"}
@@ -123,12 +122,12 @@ export default function SettingsForm() {
         </li>
       </ul>
 
-      {/* <div className={styles.btns}>
+      <div className={styles.btns}>
         <MainButton
           type="submit"
           disabled={true}
         >
-          {'Підтвердити'}
+          {'Зберегти зміни'}
         </MainButton>
 
         <MainButton
@@ -139,7 +138,7 @@ export default function SettingsForm() {
           {'Скасувати'}
         </MainButton>
 
-      </div > */}
+      </div >
     </form>
   )
 }

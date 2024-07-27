@@ -90,8 +90,6 @@ export default function RegistrationForm({ onSubmit }) {
          
           {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
         </li>
-
-
       </ul>
 
       <MainButton

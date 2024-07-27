@@ -16,17 +16,19 @@ export default function LoginSection() {
   //   "email": "user@example.com",
   //   "password": "password123"
 
-  const { mutate, isPending, isError, data, error } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: (data) => {
       return logIn(data)
-    },
-  })
-
-  useEffect(() => {
-    if (isError) {
+    },onError:()=>{
       open('error', false)
     }
-  },[isError]);
+  })
+
+  // useEffect(() => {
+  //   if (isError) {
+  //     open('error', false)
+  //   }
+  // },[isError]);
 
   useEffect(() => {
     if (token.get()) {
