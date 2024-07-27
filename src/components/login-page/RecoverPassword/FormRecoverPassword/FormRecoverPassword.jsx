@@ -1,6 +1,5 @@
 "use client";
 import styles from './FormRecoverPassword.module.scss'
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from '@/src/navigation';
@@ -11,7 +10,7 @@ import { recoverPasswordDefaultValues, recoverPasswordSchema } from './recoverPa
 import { Icon } from '../../../shared/Icon/Icon';
 import { useState } from 'react';
 
-export default function FormRecoverPassword({handleMutate }) {
+export default function FormRecoverPassword({handleMutate}) {
   const router = useRouter();
 
   const {
@@ -20,7 +19,6 @@ export default function FormRecoverPassword({handleMutate }) {
     formState: { errors, isValid },
     reset
   } = useForm({ defaultValues: {...recoverPasswordDefaultValues}, resolver: zodResolver(recoverPasswordSchema), mode: 'onBlur'});
-
 
   const [ visible, setVisible ] = useState(false);
   const [ visible1, setVisible1 ] = useState(false);
@@ -69,10 +67,10 @@ export default function FormRecoverPassword({handleMutate }) {
         <InputField
           id={"confirm_password"}
           required={false}
-          maxLength={55}
+          maxLength={15}
           className={styles.item}
           type={visible1?'text':'password'}
-          placeholder={"Пароль"}
+          placeholder={"Повторіть пароль"}
           registerOptions={register("confirmPassword", { ...recoverPasswordSchema.confirmPassword })}
           isError={errors.confirmPassword?.message}
           isValid={isValid}

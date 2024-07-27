@@ -1,0 +1,110 @@
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/_mixins.scss" as mx;
+
+.article {
+  padding: 24px;
+  border: 2px solid var.$primary-hover;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      222deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    transition: all 0.3s ease 0s;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  &.hideBg {
+    &::before {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.imgContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background: linear-gradient(
+      226deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 54.85%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+  & > img {
+    object-fit: cover;
+  }
+}
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+  z-index: 6;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity var.$transition-duration-base var.$transition-timing-base
+    0s;
+  &.hidden {
+    opacity: 0;
+  }
+}
+.title {
+  @include mx.apply-font-styles(var.$h4-font);
+}
+
+.button {
+  align-self: flex-start;
+  @include mx.apply-font-styles(var.$h4-font);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #fff;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+  }
+  & > svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    @media (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

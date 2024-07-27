@@ -1,0 +1,32 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mx;
+
+.section {
+  margin-top: 120px;
+}
+
+.projectsContainer {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  @include mx.apply-font-styles(var.$h1-font);
+  margin-bottom: 20px;
+  font-size: 20px;
+  @media (min-width: 480px) {
+    margin-bottom: 32px;
+    font-size: 32px;
+  }
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}

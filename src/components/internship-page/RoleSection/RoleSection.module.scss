@@ -1,0 +1,65 @@
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins" as mx;
+
+.roleSection {
+  margin-top: 80px;
+  padding: 32px 0;
+  @media (min-width: 420px) {
+    padding: 48px 0;
+  }
+  @media (min-width: 768px) {
+    padding: 72px 0;
+  }
+}
+.container {
+  max-width: 1680px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @media (min-width: 420px) {
+    gap: 32px;
+  }
+  @media (min-width: 768px) {
+    gap: 56px;
+    padding: 0 40px;
+  }
+}
+
+.title {
+  @include mx.apply-font-styles(var.$h1-font);
+  font-size: 20px;
+  @media (min-width: 420px) {
+    font-size: 32px;
+  }
+  @media (min-width: 768px) {
+    font-size: 40px;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mobContainer {
+  max-width: 100%;
+}
+.pagination {
+  margin-top: 20px;
+}
+
+.btn {
+  @include mx.apply-font-styles(var.$text-16-font);
+}

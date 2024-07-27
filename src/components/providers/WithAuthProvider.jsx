@@ -1,12 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter } from '@/src/navigation';
+import { usePathname, useRouter } from '@/src/navigation';
 import { token } from '@/src/api/auth';
 
 export default function WithAuthProvider({
   children,
 }) {
   const router = useRouter()
+  const pathname = usePathname()
   const [isShow, setIsShow] = useState();
 
     // Розкоментувати під час розробки
@@ -22,7 +23,7 @@ export default function WithAuthProvider({
       };
     };
     getAdmin();
-  }, [router]);
+  }, [pathname]);
 
   return <>{isShow && children}</>;
 };

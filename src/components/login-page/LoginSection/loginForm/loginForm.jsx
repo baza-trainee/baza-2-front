@@ -54,9 +54,6 @@ export default function LoginForm({ handleMutate }) {
     } else {
       localStorage.removeItem('credentials');
     }
-
-    sessionStorage.setItem('credentials',
-      JSON.stringify({...data}))
   };
 
 
@@ -65,9 +62,6 @@ export default function LoginForm({ handleMutate }) {
       return true;
     } else return false;
   };
-
-  //   "email": "user@example.com",
-  //   "password": "password123"
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -78,8 +72,6 @@ export default function LoginForm({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
-            
-            //type='email'
             placeholder={"Електронна пошта"}
             registerOptions={register("email", { ...loginSchema.email })}
             isError={errors.email}
@@ -93,7 +85,7 @@ export default function LoginForm({ handleMutate }) {
           <InputField
             id={"password"}
             required={false}
-            maxLength={55}
+            maxLength={15}
             className={styles.item}
             type={visible?'text':'password'}
             placeholder={"Пароль"}

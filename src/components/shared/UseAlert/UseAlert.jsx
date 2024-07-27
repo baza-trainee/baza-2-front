@@ -7,17 +7,22 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 import { useEffect } from 'react';
 import { createPortal } from "react-dom";
 
-export default function UseAlert({title='',text=''}){
+export default function UseAlert({title='',text='',handleClose=()=>{}}){
   const t = useTranslations("Alert");
   const isOpen = stateUseAlert(state => state.isOpen);
   const type = stateUseAlert(state => state.type);
   const autoClose = stateUseAlert(state => state.autoClose);
   const close = stateUseAlert(state => state.close);
 
+  const cloceModall=()=>{
+    close()
+    handleClose()
+  }
+
   useEffect(()=>{
     if(isOpen && autoClose){
       const timeoutId = setTimeout(()=>{
-        close()
+        cloceModall()
       },5000)
       return () => clearTimeout(timeoutId);
     }
@@ -35,8 +40,8 @@ export default function UseAlert({title='',text=''}){
         <h2>{title ? title : t(`title_${type}`)}</h2> 
         { isText(type) && <p>{text ? text : t(`text_${type}`)}</p> }
 
-      <CloseBtn className={styles.close_btn} onClick={close}/>
+      <CloseBtn className={styles.close_btn} onClick={cloceModall}/>
     </div>
-  </div>, document.body
+  </div>, document?.body
   );
 }

@@ -4,7 +4,6 @@ import { patternEmail, patternEmailNonRu, patternPassword,  } from "@/src/consta
 export const loginDefaultValues= {
   email: "",
   password:"",
-  //remember:false
 }
 
 export const loginSchema = z
@@ -19,11 +18,9 @@ export const loginSchema = z
     password: z.string()
     .trim()
     .min(1, { message: 'Поле пароль не може бути порожнім' })
-    .min(6, { message: 'Пароль має містити мінімум 6 символів' })
+    .min(8, { message: 'Пароль має містити мінімум 8 символів' })
     .max(14, {message: 'Пароль має містити максимум 14 символів'})
-    .regex(patternPassword, { message: 'Пароль має складатись з 6 символів і  містити цифри та латинські літери' }),
-    
-   // remember: z.boolean()
+    .regex(patternPassword, { message: 'Пароль має складатись з 8 символів і  містити цифри та латинські літери' }),
   })
 
  

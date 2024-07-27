@@ -30,7 +30,7 @@ const LayoutModal = ({ children, isOpen, handleClose }) => {
       <div className={styles.modaScroll}>
         {children}
       </div>
-    </div>, document.body
+    </div>, document?.body
   );
 };
 

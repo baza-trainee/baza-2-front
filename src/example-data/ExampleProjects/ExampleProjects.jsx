@@ -7,54 +7,67 @@ import { useState } from 'react';
 
 import { createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl';
 import { createKey } from '@/src/lib/utils/createKey';
-import ProjectCard from '@/src/components/Projects/ProjectCard/ProjectCard';
+import ProjectCard from '@/src/components/projects-page/Projects/ProjectCard/ProjectCard';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 import InputSearch from '@/src/components/shared/InputSearch/InputSearch';
 import stateSorryModal from '@/src/state/stateSorryModal';
 import SorryModal from '@/src/components/modals/SorryModal/SorryModal';
+import Loader from '@/src/components/shared/loader/Loader';
 
 export default function ExampleProjects() {
   const open = stateSorryModal(state => state.open);
 
-  const [page,setPage]=useState(1)
+  //const [page,setPage]=useState(1)
   const [search,setSearch]=useState('')
-  const [limit,setLimit]=useState(6)
+  const [limit,setLimit]=useState(9)
 
   const { isLoading, isError, data, error} = useQuery({ 
-    queryKey: ['projects',page,limit,search], 
-    queryFn:()=> {return getAllProjects({page,search,limit})} , keepPreviousData: true, 
+    queryKey: ['projects',limit, search], 
+    queryFn:()=> {return getAllProjects({search,limit})} , keepPreviousData: true, 
   });
     //console.log(data)
 
-  if(isLoading){return <h1>{'Loading...'}</h1>}
+const setSearchParams=(value)=>{
+  setSearch(value)
+  setLimit(9)
+}
+
+  //if(isLoading){return}
 
   if(isError){return <h1>{'Error'}</h1>}
 
-  if(!data){return null}
+  //if(!data){return null}
+  // if(data){
+  //   const {results,pagination} = data;
+  // }
 
-  const {results} = data;
-
-  if(!results.length ){open()}
+//console.log(pagination)
+  if(data){
+    !data?.results.length && open()
+    
+  }
 
   return(
     <div className={styles.wrapper}>
-      <InputSearch onSubmit={setSearch}/>
+      <InputSearch onSubmit={setSearchParams}/>
      <div className={styles.content}>
-        {results.length && results.map((el)=>{
+        {data?.results.length && data?.results.map((el)=>{
           return (
             <ProjectCard data={{...el,imageUrl:createImageUrlBaza1(el.imageUrl)}} key={createKey()}/>
           )
         })}
       </div>
  
-      <MainButton onClick={()=>{
-        setSearch('')
+     {data?.pagination.totalResults > limit && <MainButton onClick={()=>{
         setLimit(limit + 3)
-        //setPage(page + 1)
       }
-        }>More...</MainButton>
+        }>More...</MainButton>}
 
-      <SorryModal handleCallback={()=>{setSearch('')}}/> 
+      <SorryModal handleCallback={()=>{
+        setSearch('')
+        setLimit(9)
+        }}/> 
+        {isLoading && <Loader/>}
     </div> 
   )
 }

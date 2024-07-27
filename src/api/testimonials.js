@@ -1,3 +1,4 @@
+import instance from './config/instance';
 import instanceBaza2 from './config/instance-baza2';
 // [
 //   {
@@ -20,7 +21,7 @@ const testimonialsEndpoint = '/testimonials'
 
 export async function  getAllTestimonials(){
 	try {
-		const res = await instanceBaza2.get(testimonialsEndpoint)
+		const res = await instance.get(testimonialsEndpoint)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
