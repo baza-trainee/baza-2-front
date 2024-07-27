@@ -7,13 +7,19 @@
   height: fit-content;
   @include mixins.media-q("md") {
     min-width: 688px;
-    position: sticky;
-    top: 150px;
-    height: 100vh;
+    
   }
 
+  @media (min-width: 990px) {
+    position: sticky;
+    top: 150px;
+    height: auto;
+    min-width: 900px;
+  }
   @include mixins.media-q("xl") { 
   min-width: 1212px;
+  max-width: 1396px;
+
   }
   @include mixins.media-q("xxxl") { 
   min-width: 1396px;
@@ -31,10 +37,8 @@
     height: fit-content;
     padding: 28px 8px;
 
-
-  
 @include mixins.media-q("md") {
-  // position: relative;  
+  // position: relative;
   // top: -50%;
     width: 100%;
     grid-template-columns: 1fr 3fr;
@@ -69,6 +73,8 @@
   @include mixins.media-q("md")  { 
     text-align: center;
     gap: 32px;
+  }
+  @include mixins.media-q("xl")  { 
     padding: 0px 50px;
   }
 }
@@ -120,7 +126,6 @@
   @include mixins.media-q("xl") { 
     width: 145px;
     height: 324px;
-
 }
 }
 
