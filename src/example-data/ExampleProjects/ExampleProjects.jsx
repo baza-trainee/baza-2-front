@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 import { createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl';
 import { createKey } from '@/src/lib/utils/createKey';
-import ProjectCard from '@/src/components/Projects/ProjectCard/ProjectCard';
+import ProjectCard from '@/src/components/projects-page/Projects/ProjectCard/ProjectCard';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 import InputSearch from '@/src/components/shared/InputSearch/InputSearch';
 import stateSorryModal from '@/src/state/stateSorryModal';

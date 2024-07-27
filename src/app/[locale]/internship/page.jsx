@@ -1,6 +1,6 @@
-import AdvantagesSection from "@/src/components/AdvantagesSection/AdvantagesSection";
-import JoinProjectSection from "@/src/components/JoinProjectSection/JoinProjectSection";
-import RoleSection from "@/src/components/RoleSection/RoleSection";
+import AdvantagesSection from "@/src/components/internship-page/AdvantagesSection/AdvantagesSection";
+import JoinProjectSection from "@/src/components/internship-page/JoinProjectSection/JoinProjectSection";
+import RoleSection from "@/src/components/internship-page/RoleSection/RoleSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 export default function Internship() {
