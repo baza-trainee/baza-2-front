@@ -25,7 +25,7 @@ export const patternText = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u0
 
 export const patternPassword = /^(?!.*[\\])[\w!@#$&*()\-.(),]{8,14}$/;
 
-
+export const patternNumberInput = /^[1-9]\d{0,}$|^[0]$|^$/;
 
 // /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'”-]{0,50}[\p{L}])?)$/ugi
 // /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'”-]{0,50}[\p{L}])?$/ugi;

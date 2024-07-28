@@ -1,40 +1,45 @@
 "use client";
 
-import styles from './Counter.module.scss'
-import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
+import { useCallback, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { getEmployed, updateEmployed } from '@/src/api/achievements'
-import { useState } from 'react';
-import InputField from '../../shared/InputField/InputField';
+import stateUseAlert from '@/src/state/stateUseAlert';
 import Loader from '../../shared/loader/Loader';
-
+import SectionAdmin from '../SectionAdmin/SectionAdmin';
+import CounterForm from './CounterForm/CounterForm';
+import AdminModal from '../../modals/AdminModal/AdminModal';
+import UseAlert from '../../shared/UseAlert/UseAlert';
 
 export default function Counter() {
+  const[ modalOpen, setmodalOpen ] = useState(false);
+  const open = stateUseAlert(state => state.open);
+
   const employed = useQuery({ queryKey: ['employed'], queryFn: getEmployed });
-  const { mutate, isPending, isError, data, error } = useMutation({
+
+  const { mutate, isPending } = useMutation({
     mutationFn:(data) => {
       return updateEmployed(data)
 
     },onSuccess: () => {
+      setmodalOpen(true)
       employed.refetch()
-    },})
+    },onError:()=>{
+      open('error', false)
+    }})
 
-    const [valueEmployed,setValueEmployed] = useState(1)
-  
-   
+  const closeModal = useCallback(()=>{
+    setmodalOpen(false)
+  })
+
+
   return (
-    <section className={styles.section}>
-      <HeaderAdmin title={'Каунтер'}/>
-      <div className={styles.srroll_wrapper}>
-       {employed.data && <h1>employed: {employed.data.employed}</h1>}
-
-       <InputField version={'input'} type='number'className={styles.input}  value={valueEmployed} onChange={(e)=>{setValueEmployed(e.target.value)}}/>
-        <p className={styles.btn} onClick={()=>{mutate({
-  "employed": Number(valueEmployed)
-})}}>Змінити</p>
-
-      </div>
+    <SectionAdmin title={'Каунтер'}>
+      <CounterForm defaultValues={employed.data} hendleMutate={mutate}/>
+  
       {isPending && <Loader/>}
-    </section>
+      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+
+      <UseAlert/>
+    </SectionAdmin>
   )
 }
