@@ -22,7 +22,7 @@ export default function ChangePasswordForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty },
     reset
   } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
 
@@ -69,8 +69,13 @@ export default function ChangePasswordForm() {
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
-    } else return false;
-  };
+    } else 
+    if (!isDirty) {
+      return true;
+    } else if(!isValid){
+      return true
+    }else return false
+  }
 
   return (
     <>
@@ -82,7 +87,6 @@ export default function ChangePasswordForm() {
             <InputField
               id={"oldPassword"}
               required={false}
-              //disabled={true}
               maxLength={15}
               className={styles.item}
               type={visible?'text':'password'}
@@ -104,7 +108,6 @@ export default function ChangePasswordForm() {
             <InputField
               id={"newPassword"}
               required={false}
-              //disabled={true}
               onInput={(e)=>{setPassword(e.target.value)}}
               maxLength={15}
               className={styles.item}

@@ -1,0 +1,43 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  max-width: 1050px;
+  
+  .list{
+    padding: 32px 12px;
+    box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
+    background: var.$primary-fon-card;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 3px;
+    gap: 24px;
+
+    .item{
+       width: 100%;
+      & > label{
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+    .error_modal{
+      @include mix.apply-font-styles(var.$text-16-font);
+      font-size: 14px;
+      color: var.$secondary-error;
+    }
+  }
+
+  .btns{
+    display: flex;
+    gap: 24px;
+    .btn_cancel{
+      padding: 15px 24px;
+      height: 55px;
+    }
+  }
+}
