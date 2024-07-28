@@ -4,7 +4,6 @@ import { patternPassword } from "@/src/constants/regulars";
 export const changePasswordDefaultValues= {
   oldPassword: "",
   newPassword:"",
- // confirmNewPassword:''
 }
 
 export const changePasswordScheme = z
@@ -22,14 +21,4 @@ export const changePasswordScheme = z
     .min(8, { message: 'Пароль має містити мінімум 8 символів' })
     .max(14, {message: 'Пароль має містити максимум 14 символів'})
     .regex(patternPassword, { message: 'Пароль має складатись з 8 символів і  містити цифри та латинські літери' }),
-
-    //confirmNewPassword: z.string()
-    // .trim()
-    // .min(1, { message: 'Поле пароль не може бути порожнім' })
-  })
-  // .refine((data) => data.newPassword === data.confirmNewPassword, {
-  //   message: 'Паролі не збігаються.Спробуйте ще раз.',
-  //    path: ['confirmNewPassword'],
-  // })
-
- 
+  }) 

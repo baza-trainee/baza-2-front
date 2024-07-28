@@ -18,6 +18,7 @@
     border-radius: 3px;
     .list_item{
       position: relative;
+    
       .btn{
         position: absolute;
         right: 10px;
@@ -30,6 +31,8 @@
     .item_wrapper{
       display: flex;
       align-items: flex-end;
+      display: grid;
+      grid-template-columns: 1fr 40px;
       gap: 24px;
     }
     .btn_edit{
@@ -40,11 +43,9 @@
       position: absolute;
       right: 10px;
       top: 40px;
-      //fill: #030110;
       stroke: #030110;
     }
     .edit_white{
-      //fill: #030110;
       stroke: #FCFCFC;
     }
 
@@ -60,50 +61,6 @@
         font-weight: 600;
         font-size: 18px;
       }
-
-      .btn_option{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        gap: 12px;
-        
-        @include mix.apply-font-styles(var.$h3-font);
-        font-weight: 600;
-        font-size: 18px;
-
-        &.agree{
-          @include mix.apply-font-styles(var.$text-16-font);
-          font-size: 16px;
-        }
-
-        & input{
-          display: none;
-        }
-
-        .check{
-          width: 24px;
-          height: 24px;
-          border-radius: 2px;
-          border: 1px solid var.$secondary-gray;
-         
-          & svg{
-            opacity: 0;
-            display: block;
-            border-radius: 2px;
-            width: 24px;
-            height: 24px;
-          }
-
-          &._active{
-            border: none;
-
-            & svg{
-              opacity: 1;
-            }
-          }
-        }
-      }
-
     }
 
     .error_modal{
