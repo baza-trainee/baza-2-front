@@ -9,10 +9,10 @@ import instanceBaza2 from './config/instance-baza2';
 // ]
 const partnersEndpoint = '/partners'
 
-export async function  getAllPartners({ page, search, limit }){
+export async function  getAllPartners({ page, query, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
-	if (search) params.append('search', search);
+	if (query) params.append('query', query);
 	if (limit) params.append('limit', limit.toString());
 
 	try {

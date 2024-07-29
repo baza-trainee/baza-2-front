@@ -35,6 +35,7 @@ export interface SpritesMap {
     | "phone"
     | "press_about"
     | "projects"
+    | "remove"
     | "reviews"
     | "scroll-top-arrow"
     | "search"
@@ -80,6 +81,7 @@ export const SPRITES_META: {
     | "phone"
     | "press_about"
     | "projects"
+    | "remove"
     | "reviews"
     | "scroll-top-arrow"
     | "search"
@@ -125,6 +127,7 @@ export const SPRITES_META: {
     "phone",
     "press_about",
     "projects",
+    "remove",
     "reviews",
     "scroll-top-arrow",
     "search",

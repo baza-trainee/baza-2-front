@@ -2,7 +2,7 @@
 import { useRouter } from "@/src/navigation";
 import MainButton from "../MainButton/MainButton";
 
-export default function ButtonLink({url='/', onClick=()=>{}, className,children }) {
+export default function ButtonLink({url='/', onClick=()=>{}, className,children, variant }) {
   const router = useRouter();
 
   const handleClick=()=>{
@@ -12,5 +12,7 @@ export default function ButtonLink({url='/', onClick=()=>{}, className,children 
   return <MainButton 
     onClick={handleClick} 
     className={className} 
-    children={children}/>
+    children={children}
+    variant={variant}
+    />
 }
