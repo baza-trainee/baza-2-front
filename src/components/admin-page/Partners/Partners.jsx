@@ -12,8 +12,8 @@ export default function Partners() {
   const router = useRouter();
   const [ search, setSearch ] = useState('')
 
-  const { isError, data } = useQuery({ queryKey: ['partners', search], 
-    queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true,});
+  const { isError, data, refetch } = useQuery({ queryKey: ['partners', search], 
+    queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true });
 
   return(
     <SectionAdmin title={'Партнери'} hendleSearch={setSearch} lang={true}>

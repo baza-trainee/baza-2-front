@@ -11,7 +11,7 @@ export default function WithAuthProvider({
   const [isShow, setIsShow] = useState();
 
     // Розкоментувати під час розробки
-    return <>{ children }</>
+    //return <>{ children }</>
 
   useEffect(() => {
     const  getAdmin = async () => {

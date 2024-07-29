@@ -16,6 +16,7 @@ export interface SpritesMap {
     | "counter"
     | "documents"
     | "donate-modal-icon"
+    | "download"
     | "edit"
     | "facebook"
     | "go_out"
@@ -62,6 +63,7 @@ export const SPRITES_META: {
     | "counter"
     | "documents"
     | "donate-modal-icon"
+    | "download"
     | "edit"
     | "facebook"
     | "go_out"
@@ -108,6 +110,7 @@ export const SPRITES_META: {
     "counter",
     "documents",
     "donate-modal-icon",
+    "download",
     "edit",
     "facebook",
     "go_out",
