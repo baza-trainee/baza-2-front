@@ -110,9 +110,10 @@ export default function ChangePasswordForm() {
         <div className={styles.btns}>
           <MainButton
             type="submit"
+            className={styles.btn}
             disabled={isDisabled()}
           >
-            {'Підтвердити'}
+            {'Зберегти зміни'}
           </MainButton>
 
           <MainButton
