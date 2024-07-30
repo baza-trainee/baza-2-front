@@ -15,9 +15,6 @@
 
   .modal {
     background: #fefffe;
-    //padding: 84px 8px 45px;
-    //width: clamp(300px, 92vw, 690px);
-    //width: 600px;
     min-height: 300px;
     padding: 60px 50px;
     border-radius: 12px;
@@ -71,5 +68,16 @@
       width: 230px;
       height: 55px;
     }
+    .btns{
+      display: flex;
+      gap: 24px;
+
+      .btn_reset{
+        width: 180px;
+        height: 55px;
+        color: #020202;
+      }
+    }
+
   }
 }

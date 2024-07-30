@@ -8,7 +8,6 @@
   gap: 36px;
 
   .list {
-    //width: 417px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -30,19 +29,12 @@
       }
     }
 
-    // .btn_edit{
-    //   width: 40px;
-    //   height: 40px;
-    // }
     .edit_black{
       position: absolute;
       right: 10px;
       top: 40px;
       stroke: #030110;
     }
-    // .edit_white{
-    //   stroke: #FCFCFC;
-    // }
 
     .item {
       width: 310px;

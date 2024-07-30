@@ -45,7 +45,7 @@ export async function  getPartnerById(id){
 export async function  deletePartnerById(id){
 	try {
 		const res = await instanceBaza2.delete(`${partnersEndpoint}/${id}`)
-		return res.data
+		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
 	}
