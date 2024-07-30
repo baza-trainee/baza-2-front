@@ -1,0 +1,24 @@
+// @use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 12px;
+
+  gap: 24px;
+  background-color: var.$primary-fon-card;
+  box-shadow:
+    0 4px 4px 0 rgba(87, 86, 89, 0.25),
+    0 2px 12px 0 rgba(40, 37, 37, 0.25);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.input {
+  margin-bottom: 29px;
+}
