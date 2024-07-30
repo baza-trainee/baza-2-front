@@ -37,33 +37,30 @@ export default function FormForgotPassword({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
-            //type='email'
             placeholder={"Електронна пошта"}
             registerOptions={register("email", { ...forgotPasswordSchema.email })}
             isError={errors.email}
             isValid={isValid}
-            version={"input"}
+            version={"input_admin"}
             label={'Електронна пошта'}
           />
-          {errors.email && <p className={styles.error_modal}>{errors.email.message}</p>}
         </li>
-          <li className={styles.btns}>
-            <MainButton
-              type="submit"
-              disabled={isDisabled()}
-            >
-              {'Підтвердити'}
-            </MainButton>
+        <li className={styles.btns}>
+          <MainButton
+            type="submit"
+            disabled={isDisabled()}
+          >
+            {'Підтвердити'}
+          </MainButton>
 
-            <MainButton
-              variant='admin'
-              className={styles.btn_cancel}
-              onClick={()=>{router.replace('/admin/login')}}
-            >
-              {'Скасувати'}
-            </MainButton>
-
-          </li>
+          <MainButton
+            variant='admin'
+            className={styles.btn_cancel}
+            onClick={()=>{router.replace('/admin/login')}}
+          >
+            {'Скасувати'}
+          </MainButton>
+        </li>
       </ul>
     </form>
   )

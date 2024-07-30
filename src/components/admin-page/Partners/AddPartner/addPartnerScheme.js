@@ -12,11 +12,13 @@ export const addPartnerDefaultValues= {
 //   "imageUrl": "image.jpg"
 // }.png, .jpg, .jpeg
 
-const MAX_FILE_SIZE = 5000000;
+const MAX_FILE_SIZE = 2000000;
 function checkFileType(file) {
+  //console.log(file)
     if (file?.name) {
-        const fileType = file.name.split(".").pop();
-        if (fileType === "JPG" || fileType === "PNG" || fileType === "WEBP"|| fileType === "JPEG") return true;
+        const fileType = file.name.split(".").pop().toLowerCase();
+        //console.log(fileType)
+        if (fileType === "jpg" || fileType === "png" || fileType === "WEBP"|| fileType === "jpeg") return true;
     }
     return false;
 }
@@ -39,9 +41,9 @@ export const addPartnerSchema = z
     // .regex(patternPassword, { message: 'Пароль має містити цифри та латинські літери' }),
 
     imageUrl: z.any()
-    .refine((file) => file?.length !== 0, "Додайте зображення"),
-    //.refine((file) => file.size > MAX_FILE_SIZE, `Max size is 5MB.`)
-    //.refine((file) => checkFileType(file), "JPG, PNG, WEBP"),
+    .refine((file) => file?.length !== 0, "Додайте логотип")
+    .refine((file) => file[0]?.size < MAX_FILE_SIZE, "Максимальний розмір 2MB")
+    .refine((file) => checkFileType(file[0]), "Формат зображення JPG, PNG, WEBP"),
 
     // imageUrl:  z
     // .any()

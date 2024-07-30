@@ -9,7 +9,6 @@ import { useMutation } from '@tanstack/react-query';
 import { createNewPartner } from '@/src/api/partners';
 import InputField from '@/src/components/shared/InputField/InputField';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
-import { Icon } from '@/src/components/shared/Icon/Icon';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
@@ -31,7 +30,7 @@ export default function AddPartner() {
   const closeModal = useCallback(()=>{
     reset()
     setmodalOpen(false)
-    router.replace('/admin/partners')
+    //router.replace('/admin/partners')
   })
 
   const resetForm = () => {
@@ -39,7 +38,7 @@ export default function AddPartner() {
     router.replace('/admin/partners')
   }
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, data } = useMutation({
     mutationFn:(data) => {
       return createNewPartner(data)
 
@@ -84,10 +83,9 @@ export default function AddPartner() {
               registerOptions={register("name", { ...addPartnerSchema.name })}
               isError={errors.name}
               isValid={isValid}
-              version={"input"}
+              version={"input_admin"}
               label={'Назва'}
             />
-            {errors.name && <p className={styles.error_modal}>{errors.name.message}</p>}
           </li>
           <li className={styles.list_item}>
             <InputField
@@ -97,15 +95,13 @@ export default function AddPartner() {
               type={'file'}
               required={false}
               accept="image/*"
-              //placeholder={"Логотип"}
+              placeholder={"Логотип"}
               registerOptions={register("imageUrl", { ...addPartnerSchema.imageUrl })}
               isError={errors.imageUrl}
               isValid={isValid}
-              version={"input"}
+              version={"file"}
               label={'Логотип'}
             />
-            <Icon className={styles.edit_black} width={24} height={24} name='download'/>
-            {errors.imageUrl && <p className={styles.error_modal}>{errors.imageUrl.message}</p>}
           </li>
 
           <li className={styles.list_item}>
@@ -118,10 +114,9 @@ export default function AddPartner() {
               registerOptions={register("homeUrl", { ...addPartnerSchema.homeUrl })}
               isError={errors.homeUrl}
               isValid={isValid}
-              version={"input"}
+              version={"input_admin"}
               label={'Посилання на сайт'}
             />
-            {errors.homeUrl && <p className={styles.error_modal}>{errors.homeUrl.message}</p>}
           </li>
         </ul>
 

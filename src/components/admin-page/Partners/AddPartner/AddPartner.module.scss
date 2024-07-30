@@ -29,46 +29,23 @@
         }
       }
     }
-    // .item_wrapper{
-    //   display: flex;
-    //   align-items: flex-end;
-    //   display: grid;
-    //   grid-template-columns: 1fr 40px;
-    //   gap: 24px;
+
+    // .btn_edit{
+    //   width: 40px;
+    //   height: 40px;
     // }
-    .btn_edit{
-      width: 40px;
-      height: 40px;
-    }
     .edit_black{
       position: absolute;
       right: 10px;
       top: 40px;
       stroke: #030110;
     }
-    .edit_white{
-      stroke: #FCFCFC;
-    }
+    // .edit_white{
+    //   stroke: #FCFCFC;
+    // }
 
     .item {
-      //width: clamp(280px, 84vw, 360px);
       width: 310px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      & > input{
-        padding: 10px 35px 10px 10px;
-      }
-      & > label{
-        font-weight: 600;
-        font-size: 18px;
-      }
-    }
-
-    .error_modal{
-      @include mix.apply-font-styles(var.$text-16-font);
-      font-size: 14px;
-      color: var.$secondary-error;
     }
   }
 

@@ -19,14 +19,9 @@ export default function LoginForm({ handleMutate }) {
     reset
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
 
-  //   "email": "user@example.com",
-  //   "password": "password123"
-
-  const [ visible, setVisible ] = useState(false);
   const [ remember, setRemember ] = useState(false);
 
   const resetForm = () => {
-    setVisible(false)
     setRemember(false)
     reset();
   }
@@ -72,33 +67,27 @@ export default function LoginForm({ handleMutate }) {
             maxLength={55}
             className={styles.item}
             required={false}
-            placeholder={"Електронна пошта"}
+            placeholder={"Логін"}
             registerOptions={register("email", { ...loginSchema.email })}
             isError={errors.email}
             isValid={isValid}
-            version={"input"}
-            label={'Електронна пошта'}
+            version={"input_admin"}
+            label={'Логін'}
           />
-          {errors.email && <p className={styles.error_modal}>{errors.email.message}</p>}
         </li>
-        <li className={styles.list_item} >
+        <li>
           <InputField
             id={"password"}
             required={false}
             maxLength={15}
             className={styles.item}
-            type={visible?'text':'password'}
             placeholder={"Пароль"}
             registerOptions={register("password", { ...loginSchema.password })}
             isError={errors.password}
             isValid={isValid}
-            version={"input"}
+            version={"password"}
             label={'Пароль'}
           />
-          <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
-            <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
-          </button>
-          {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
         </li>
 
         <li>

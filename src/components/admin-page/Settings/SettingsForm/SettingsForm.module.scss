@@ -16,18 +16,7 @@
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
-    .list_item{
-      position: relative;
-    
-      .btn{
-        position: absolute;
-        right: 10px;
-        top: 40px;
-        &svg{
-          fill:#030110;
-        }
-      }
-    }
+
     .item_wrapper{
       display: flex;
       align-items: flex-end;
@@ -39,28 +28,12 @@
       width: 40px;
       height: 40px;
     }
-    .edit_black{
-      position: absolute;
-      right: 10px;
-      top: 40px;
-      stroke: #030110;
-    }
     .edit_white{
       stroke: #FCFCFC;
     }
 
     .item {
       width: clamp(280px, 84vw, 360px);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      & > input{
-        padding: 10px 35px 10px 10px;
-      }
-      & > label{
-        font-weight: 600;
-        font-size: 18px;
-      }
     }
 
     .error_modal{
@@ -80,6 +53,9 @@
       height: 55px;
       font-weight: 600;
       font-size: 18px;
+    }
+    .btn{
+      width: 230px;
     }
     .btn_cancel{
       padding: 15px 24px;
