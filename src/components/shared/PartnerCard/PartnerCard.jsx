@@ -5,14 +5,14 @@ import clsx from "clsx";
 import { useSwiperSlide } from 'swiper/react';
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 
-export default function PartnerCard({ item }) {
+export default function PartnerCard({ item, className }) {
   const { homeUrl={}, imageUrl, name } = item;
   const swiperSlide = useSwiperSlide();
 
   return (
     <Link
       href={homeUrl}
-      className={clsx(styles.partnerCardItem, swiperSlide.isActive ? styles._active: styles._disabled)}
+      className={clsx(styles.partnerCardItem, swiperSlide?.isActive || className ? styles._active: styles._disabled, className)}
       rel="noopener noreferrer"
       target="_blank">
       <div className={styles.img_wrap}>

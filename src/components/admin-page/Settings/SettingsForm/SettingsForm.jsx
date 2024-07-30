@@ -15,7 +15,6 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 export default function SettingsForm() {
   const router = useRouter()
   const pathname = usePathname()
-  const [ visible, setVisible ] = useState(true);
   const[ modalOpen, setmodalOpen ] = useState(false);
 
   const {
@@ -26,11 +25,7 @@ export default function SettingsForm() {
     reset
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
 
-  //   "email": "user@example.com",
-  //   "password": "password123"
-
   const resetForm = () => {
-    setVisible(true)
     reset();
   }
 
@@ -78,7 +73,7 @@ export default function SettingsForm() {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <ul className={styles.list}>
-          <li className={styles.list_item}>
+          <li>
             <InputField
               id={"email"}
               maxLength={55}
@@ -88,34 +83,24 @@ export default function SettingsForm() {
               registerOptions={register("email", { ...loginSchema.email })}
               isError={errors.email}
               isValid={isValid}
-              version={"input"}
+              version={"input_admin"}
+              iconName={'edit'}
               label={'Логін'}
             />
-              <Icon className={styles.edit_black} width={24} height={24} name='edit'/>
-            {errors.email && <p className={styles.error_modal}>{errors.email.message}</p>}
           </li>
           <li className={styles.item_wrapper} >
-            <div className={styles.list_item}>
-              <InputField
-                id={"password"}
-                required={false}
-                maxLength={15}
-                className={styles.item}
-                type={visible?'text':'password'}
-                placeholder={"Пароль"}
-                registerOptions={register("password", { ...loginSchema.password })}
-                isError={errors.password}
-                isValid={isValid}
-                version={"input"}
-                label={'Пароль'}
-              />
-              <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
-                <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
-              </button>
-
-              
-              {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
-            </div>
+            <InputField
+              id={"password"}
+              required={false}
+              maxLength={15}
+              className={styles.item}
+              placeholder={"Пароль"}
+              registerOptions={register("password", { ...loginSchema.password })}
+              isError={errors.password}
+              isValid={isValid}
+              version={"password"}
+              label={'Пароль'}
+            />
             <MainButton
               variant='admin'
               className={styles.btn_edit}
@@ -128,6 +113,7 @@ export default function SettingsForm() {
 
         <div className={styles.btns}>
           <MainButton
+            className={styles.btn}
             type="submit"
             disabled={isDisabled()}
           >

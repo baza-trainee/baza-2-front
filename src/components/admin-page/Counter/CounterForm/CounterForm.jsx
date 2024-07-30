@@ -44,7 +44,7 @@ export default function CounterForm({defaultValues, hendleMutate}) {
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
         <li>
-        <InputField
+          <InputField
             id={"projects"}
             maxLength={20}
             className={styles.item}
@@ -54,14 +54,12 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             registerOptions={register("projects", { ...counterSchema.projects })}
             isError={errors.projects}
             isValid={isValid}
-            version={"input"}
+            version={"input_admin"}
             label={'Активних проєктів'}
           />
-
-          {errors.projects && <p className={styles.error_modal}>{errors.projects.message}</p>}
         </li>
         <li>
-        <InputField
+          <InputField
             id={"members"}
             maxLength={20}
             className={styles.item}
@@ -71,11 +69,9 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             registerOptions={register("members", { ...counterSchema.members })}
             isError={errors.members}
             isValid={isValid}
-            version={"input"}
+            version={"input_admin"}
             label={'Залучених учасників'}
           />
-
-          {errors.members && <p className={styles.error_modal}>{errors.members.message}</p>}
         </li>
         <li>
           <InputField
@@ -88,11 +84,9 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             registerOptions={register("employed", { ...counterSchema.employed })}
             isError={errors.employed}
             isValid={isValid}
-            version={"input"}
+            version={"input_admin"}
             label={'Працевлаштовано'}
           />
-
-          {errors.employed && <p className={styles.error_modal}>{errors.employed.message}</p>}
         </li>
       </ul>
       <div className={styles.btns}>

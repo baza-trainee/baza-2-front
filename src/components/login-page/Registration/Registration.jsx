@@ -1,6 +1,6 @@
 "use client";
 import styles from './Registration.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { registerAdmin } from '@/src/api/auth';
 import { Link, useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
@@ -9,6 +9,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import Section from '../Section/Section';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
+import AdminModal from '../../modals/AdminModal/AdminModal';
 
 export default function Registration() {
   const open = stateUseAlert(state => state.open);
@@ -49,7 +50,7 @@ export default function Registration() {
       <p className={styles.link}>Ви маєте акаунт? <Link href={'/admin/login'}>Авторизуватись</Link></p>
 
       <UseAlert/>
-      <AdminModal isOpen={modal} title={'Реєстрація успішна'}/>
+      <AdminModal isOpen={modal} closeModal={closeModal} title={'Реєстрація успішна'}/>
       {isPending && <Loader/>} 
     </Section>
   )

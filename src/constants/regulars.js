@@ -27,6 +27,9 @@ export const patternPassword = /^(?!.*[\\])[\w!@#$&*()\-.(),]{8,14}$/;
 
 export const patternNumberInput = /^[1-9]\d{0,}$|^[0]$|^$/;
 
+export const patternLink =
+/^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i;
+
 // /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'”-]{0,50}[\p{L}])?)$/ugi
 // /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'”-]{0,50}[\p{L}])?$/ugi;
 // export const patternText = /^(?!.*\s{2,}|.*[.-]{2,})(?!.*[ЁёЫыЭэЪъ])[A-Za-zА-Яа-яІіЇїЄєҐґąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s`’'-]+$/

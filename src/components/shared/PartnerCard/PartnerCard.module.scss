@@ -14,7 +14,7 @@
   filter: blur(3px) brightness(40%);
 
   @include mixin.media-q("md") {
-    height: 230px;
+    height: 200px;
     width: 100%;
   }
 
