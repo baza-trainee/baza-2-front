@@ -123,7 +123,6 @@ export default function SettingsForm() {
           <MainButton
             variant='admin'
             className={styles.btn_cancel}
-          // onClick={()=>{router.replace('/admin/login')}}
           >
             {'Скасувати'}
           </MainButton>
