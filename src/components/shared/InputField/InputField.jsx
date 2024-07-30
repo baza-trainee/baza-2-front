@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "../Icon/Icon";
 import styles from "./InputField.module.scss";
 import clsx from "clsx";
@@ -13,6 +13,7 @@ export default function InputField({
   isValid,
   version,
   iconName,
+  isDirty,
   label = null,
   className,
   required=true,
@@ -22,7 +23,12 @@ export default function InputField({
 }) {
   const [ visible, setVisible ] = useState(false);
   const [ value, setValue ] = useState('');
-  console.log(value)
+
+  useEffect(()=>{
+    if(!isDirty && version === "file"){
+      setValue('')
+    }
+  },[isDirty,version])
 
   function sub(e) {
     if(e.target.value){

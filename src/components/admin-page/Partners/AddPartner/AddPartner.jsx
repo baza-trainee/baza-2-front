@@ -35,7 +35,7 @@ export default function AddPartner() {
 
   const resetForm = () => {
     reset();
-    router.replace('/admin/partners')
+    //router.replace('/admin/partners')
   }
 
   const { mutate, isPending, data } = useMutation({
@@ -97,6 +97,7 @@ export default function AddPartner() {
               accept="image/*"
               placeholder={"Логотип"}
               registerOptions={register("imageUrl", { ...addPartnerSchema.imageUrl })}
+              isDirty={isDirty}
               isError={errors.imageUrl}
               isValid={isValid}
               version={"file"}
