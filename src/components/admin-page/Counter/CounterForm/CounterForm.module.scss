@@ -18,17 +18,12 @@
     gap: 24px;
 
     .item{
-       width: 100%;
+      width: 100%;
+      min-width: 210px;
       & > label{
         font-weight: 600;
         font-size: 18px;
       }
-    }
-
-    .error_modal{
-      @include mix.apply-font-styles(var.$text-16-font);
-      font-size: 14px;
-      color: var.$secondary-error;
     }
   }
 

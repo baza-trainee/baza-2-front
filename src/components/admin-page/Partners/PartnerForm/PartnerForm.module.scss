@@ -11,35 +11,33 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 12px;
-    gap: 20px;
+    padding: 32px 76px 32px 12px;
+    gap: 28px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
+    .list_item{
+      position: relative;
+    
+      .btn{
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        &svg{
+          fill:#030110;
+        }
+      }
+    }
 
-    .item_wrapper{
-      display: flex;
-      align-items: flex-end;
-      display: grid;
-      grid-template-columns: 1fr 40px;
-      gap: 24px;
-    }
-    .btn_edit{
-      width: 40px;
-      height: 40px;
-    }
-    .edit_white{
-      stroke: #FCFCFC;
+    .edit_black{
+      position: absolute;
+      right: 10px;
+      top: 40px;
+      stroke: #030110;
     }
 
     .item {
-      width: clamp(280px, 84vw, 360px);
-    }
-
-    .error_modal{
-      @include mix.apply-font-styles(var.$text-16-font);
-      font-size: 14px;
-      color: var.$secondary-error;
+      width: 310px;
     }
   }
 
@@ -49,13 +47,11 @@
     align-items: center;
     justify-content: space-between;
 
-    & > button{
+    .btn{
       height: 55px;
+      width: 230px;
       font-weight: 600;
       font-size: 18px;
-    }
-    .btn{
-      width: 230px;
     }
     .btn_cancel{
       padding: 15px 24px;

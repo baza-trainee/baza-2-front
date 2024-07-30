@@ -16,7 +16,7 @@ import AdminModal from '../../modals/AdminModal/AdminModal';
 export default function ForgotPassword() {
   const open = stateUseAlert(state => state.open);
   const router = useRouter();
-  const [ modalOpen, setModalOpen ] = useState(true)
+  const [ modalOpen, setModalOpen ] = useState(false)
 
   const { mutate, isPending } = useMutation({
     mutationFn: (data) => {

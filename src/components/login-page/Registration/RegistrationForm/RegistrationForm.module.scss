@@ -15,77 +15,8 @@
     flex-direction: column;
     gap: 20px;
 
-    .list_item{
-      position: relative;
-      .btn{
-        position: absolute;
-        right: 10px;
-        top: 40px;
-      }
-    }
-
     .item {
       width: clamp(280px, 84vw, 360px);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      & > input{
-        padding: 10px 35px 10px 10px;
-      }
-      & > label{
-        font-weight: 600;
-        font-size: 18px;
-      }
-
-      .btn_option{
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        gap: 12px;
-        
-        @include mix.apply-font-styles(var.$h3-font);
-        font-weight: 600;
-        font-size: 18px;
-
-        &.agree{
-          @include mix.apply-font-styles(var.$text-16-font);
-          font-size: 16px;
-        }
-
-        & input{
-          display: none;
-        }
-
-        .check{
-          width: 24px;
-          height: 24px;
-          border-radius: 2px;
-          border: 1px solid var.$secondary-gray;
-         
-          & svg{
-            opacity: 0;
-            display: block;
-            border-radius: 2px;
-            width: 24px;
-            height: 24px;
-          }
-
-          &._active{
-            border: none;
-
-            & svg{
-              opacity: 1;
-            }
-          }
-        }
-      }
-
-    }
-
-    .error_modal{
-      @include mix.apply-font-styles(var.$text-16-font);
-      font-size: 14px;
-      color: var.$secondary-error;
     }
   }
 }

@@ -1,13 +1,10 @@
 "use client";
 import styles from './RegistrationForm.module.scss';
-import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { registrationDefaultValues, registrationSchema } from './registrationScheme';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
-import { Icon } from '../../../shared/Icon/Icon';
-import { registrationDefaultValues, registrationSchema } from './registrationScheme';
 
 export default function RegistrationForm({ onSubmit }) {
 
@@ -15,17 +12,7 @@ export default function RegistrationForm({ onSubmit }) {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    reset
   } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
-
-  const [ visible, setVisible ] = useState(false);
-  const [ visible1, setVisible1 ] = useState(false);
-
-  const resetForm = () => {
-    setVisible(false)
-    setVisible1(false)
-    reset();
-  }
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
@@ -46,49 +33,37 @@ export default function RegistrationForm({ onSubmit }) {
             registerOptions={register("email", { ...registrationSchema.email })}
             isError={errors.email}
             isValid={isValid}
-            version={"input"}
+            version={"input_admin"}
             label={'Електронна пошта'}
           />
-          {errors.email && <p className={styles.error_modal}>{errors.email.message}</p>}
         </li>
-        <li className={styles.list_item} >
+        <li>
           <InputField
             id={"password"}
-            maxLength={15}
             required={false}
+            maxLength={15}
             className={styles.item}
-            type={visible?'text':'password'}
             placeholder={"Пароль"}
             registerOptions={register("password", { ...registrationSchema.password })}
             isError={errors.password}
             isValid={isValid}
-            version={"input"}
+            version={"password"}
             label={'Пароль'}
           />
-          <button type='button' className={styles.btn} onClick={()=>{setVisible(!visible)}}>
-            <Icon width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
-          </button>
-          {errors.password && <p className={styles.error_modal}>{errors.password.message}</p>}
         </li>
-        <li className={styles.list_item}>
+        <li>
           <InputField
             id={"confirm_password"}
             required={false}
             maxLength={15}
             className={styles.item}
-            type={visible1?'text':'password'}
             placeholder={"Пароль"}
             registerOptions={register("confirmPassword", { ...registrationSchema.confirmPassword })}
-            isError={errors.confirmPassword?.message}
+            isError={errors.confirmPassword}
             isValid={isValid}
-            version={"input"}
+            version={"password"}
             label={'Підтвердіть пароль'}
           />
-          <button type='button' className={styles.btn} onClick={()=>{setVisible1(!visible1)}}>
-            <Icon width={24} height={24} name={visible1?'open_eye':'closed_eye'}/>
-          </button>
-         
-          {errors.confirmPassword && <p className={styles.error_modal}>{errors.confirmPassword.message}</p>}
         </li>
       </ul>
 

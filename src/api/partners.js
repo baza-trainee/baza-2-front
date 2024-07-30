@@ -9,10 +9,10 @@ import instanceBaza2 from './config/instance-baza2';
 // ]
 const partnersEndpoint = '/partners'
 
-export async function  getAllPartners({ page, search, limit }){
+export async function  getAllPartners({ page, query, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
-	if (search) params.append('search', search);
+	if (query) params.append('query', query);
 	if (limit) params.append('limit', limit.toString());
 
 	try {
@@ -45,7 +45,7 @@ export async function  getPartnerById(id){
 export async function  deletePartnerById(id){
 	try {
 		const res = await instanceBaza2.delete(`${partnersEndpoint}/${id}`)
-		return res.data
+		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
 	}

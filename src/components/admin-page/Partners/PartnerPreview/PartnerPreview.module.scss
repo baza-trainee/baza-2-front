@@ -1,0 +1,10 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.preview{
+  //width: 360px;
+  //height: 180px;
+  .card{
+    width: 360px;
+  }
+}

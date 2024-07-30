@@ -86,7 +86,7 @@
       min-height: 130px;
 
       @include mixin.media-q("md") {
-        min-height: 230px;
+        min-height: 200px;
         max-width: 100%;
         width: 100%;
       }

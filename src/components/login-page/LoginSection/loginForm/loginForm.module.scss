@@ -12,28 +12,8 @@
     flex-direction: column;
     gap: 20px;
 
-    .list_item{
-      position: relative;
-      .btn{
-        position: absolute;
-        right: 10px;
-        top: 40px;
-      }
-    }
-
     .item {
       width: clamp(280px, 84vw, 360px);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      & > input{
-        padding: 10px 35px 10px 10px;
-      }
-      & > label{
-        font-weight: 600;
-        font-size: 18px;
-      }
-
       .btn_option{
         display: flex;
         align-items: center;
@@ -77,12 +57,6 @@
         }
       }
 
-    }
-
-    .error_modal{
-      @include mix.apply-font-styles(var.$text-16-font);
-      font-size: 14px;
-      color: var.$secondary-error;
     }
   }
 }

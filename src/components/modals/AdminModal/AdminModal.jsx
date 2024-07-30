@@ -7,11 +7,14 @@ import MainButton from '../../shared/MainButton/MainButton';
 
 export default function AdminModal(
   {handleCallback=()=>{}, 
+  handleOkCallback=()=>{}, 
   isOpen, 
   title, 
   text,
   children,
-  btn}) {
+  btn,
+  btnBlok
+  }) {
 
   return (
     <LayoutModal isOpen={isOpen} handleClose={handleCallback}>
@@ -29,6 +32,16 @@ export default function AdminModal(
           {children}
           {btn && <MainButton className={styles.btn} 
           onClick={handleCallback}>Oк</MainButton>}
+
+          {btnBlok && 
+            <div className={styles.btns}>
+              <MainButton className={styles.btn} 
+                onClick={handleOkCallback}>Видалити</MainButton>
+
+              <MainButton variant='admin' className={styles.btn_reset} 
+                onClick={handleCallback}>Скасувати</MainButton>
+            </div>
+          }
         </div>
       </div>
     </LayoutModal>

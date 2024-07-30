@@ -1,4 +1,5 @@
+import Partners from "@/src/components/admin-page/Partners/Partners";
+
 export default function partners() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: admin-Partners</h2></div>
+  return <Partners/>
 };

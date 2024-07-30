@@ -16,6 +16,7 @@ export interface SpritesMap {
     | "counter"
     | "documents"
     | "donate-modal-icon"
+    | "download"
     | "edit"
     | "facebook"
     | "go_out"
@@ -33,8 +34,10 @@ export interface SpritesMap {
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_icon"
     | "press_about"
     | "projects"
+    | "remove"
     | "reviews"
     | "scroll-top-arrow"
     | "search"
@@ -61,6 +64,7 @@ export const SPRITES_META: {
     | "counter"
     | "documents"
     | "donate-modal-icon"
+    | "download"
     | "edit"
     | "facebook"
     | "go_out"
@@ -78,8 +82,10 @@ export const SPRITES_META: {
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_icon"
     | "press_about"
     | "projects"
+    | "remove"
     | "reviews"
     | "scroll-top-arrow"
     | "search"
@@ -106,6 +112,7 @@ export const SPRITES_META: {
     "counter",
     "documents",
     "donate-modal-icon",
+    "download",
     "edit",
     "facebook",
     "go_out",
@@ -123,8 +130,10 @@ export const SPRITES_META: {
     "open_eye",
     "partners",
     "phone",
+    "plus_icon",
     "press_about",
     "projects",
+    "remove",
     "reviews",
     "scroll-top-arrow",
     "search",
