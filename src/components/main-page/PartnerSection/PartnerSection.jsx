@@ -11,13 +11,26 @@ import { useTranslations } from "next-intl";
 import styles from "./PartnerSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
+import { useEffect, useState } from "react";
 
 const PartnerSection = () => {
-  const { isError, data } = useQuery({ queryKey: ['partners'], queryFn: getAllPartners });
+  const[ screenOrien, setScreenOrien ] = useState('')
+
+  const { isError, data } = useQuery({ queryKey: ['partners',screenOrien], queryFn: getAllPartners });
 
   const t = useTranslations("Main.partners_section");
 
   const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
+
+  useEffect(()=>{
+    const refetch=()=>{
+      setScreenOrien( window?.screen.orientation.type )
+    }
+    window?.screen.orientation.addEventListener("change", refetch);
+
+    return ()=>{ window?.screen.orientation.removeEventListener("change", refetch)}
+  },[])
+
 
   // Повертає 10 випадкових елементів, якщо єлементів менше 4 - клонує елементи
   function shuffle(arr) {
