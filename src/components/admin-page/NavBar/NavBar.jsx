@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './NavBar.module.scss'
 import clsx from "clsx";
 import Logo from '../../shared/Logo/Logo';
@@ -14,7 +14,15 @@ export default function NavBar() {
   const pathname = usePathname()
   const router = useRouter();
   const [hide, setHide]= useState(false)
+ 
 
+  useEffect(()=>{
+    const screen = window.screen.width
+    if(screen < 1100){
+      setHide(true)
+    }else setHide(false)
+  },[])
+ 
   const removeToken=()=>{
     token.reset()
     router.replace('/');

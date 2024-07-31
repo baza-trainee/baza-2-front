@@ -1,28 +1,12 @@
 import { z } from "zod";
 import { patternLink, patternName } from "@/src/constants/regulars";
+import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
 
 export const addPartnerDefaultValues= {
   name: "",
   homeUrl:"",
   imageUrl:""
 }
-
-const MAX_FILE_SIZE = 2000000;
-const ACCEPTED_IMAGE_TYPES = [
-  'jpeg',
-  'png',
-  'webp',
-  'jpg',
-];
-
-function checkFileType(file) {
-  if (file?.name) {
-    const fileType = file.name.split(".").pop().toLowerCase();
-    if (ACCEPTED_IMAGE_TYPES.includes(fileType)) return true;
-  }
-  return false;
-}
-
 
 export const addPartnerSchema = z
 	.object({
@@ -38,6 +22,6 @@ export const addPartnerSchema = z
 
     imageUrl: z.any()
     .refine((file) => file?.length !== 0, "Додайте логотип")
-    .refine((file) => file[0]?.size < MAX_FILE_SIZE, "Максимальний розмір 2MB")
-    .refine((file) => checkFileType(file[0]), "Формат зображення може бути JPG, PNG або WEBP"),
+    .refine((file) => file[0]?.size < MAX_FILE_SIZE_IMG, "Максимальний розмір 2MB")
+    .refine((file) => checkFileType(file[0],ACCEPTED_IMAGE_TYPES), "Формат зображення може бути JPG, PNG або WEBP"),
 })

@@ -1,5 +1,5 @@
 'use client';
-
+import styles from './AddPartner.module.scss'
 import { useCallback, useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
@@ -10,12 +10,14 @@ import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import PartnerForm from '../PartnerForm/PartnerForm';
+import PartnerPreview from '../PartnerPreview/PartnerPreview';
 
 export default function AddPartner() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
   const[ modalOpen, setmodalOpen ] = useState(false);
-
+  const[ prevImg, setPrevImg ] = useState(null);
+  
   const closeModal = useCallback(()=>{
     setmodalOpen(false)
     router.replace('/admin/partners')
@@ -32,10 +34,18 @@ export default function AddPartner() {
       open('error', false)
     }})
 
+  const createPrevData=(url)=>{
+    return { imageUrl:URL.createObjectURL(url), name:'Попередній перегляд логотипу'}
+  }
+
+
   return (
     <SectionAdmin title={'Додати партнерів'}>
+      <div className={styles.wrapper}>
+        <PartnerForm hendleMutate={mutate} isSuccess={isSuccess} handlePrevImg={setPrevImg}/>
 
-      <PartnerForm hendleMutate={mutate} isSuccess={isSuccess}/>
+        {prevImg && typeof prevImg === 'object' && <PartnerPreview data={createPrevData(prevImg)}/>}
+      </div>
 
       { isPending && <Loader/> }
 

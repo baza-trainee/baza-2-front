@@ -12,6 +12,7 @@ import styles from "./PartnerSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
 import { useEffect, useState } from "react";
+import { createKey } from "@/src/lib/utils/createKey";
 
 const PartnerSection = () => {
   const[ screenOrien, setScreenOrien ] = useState('')
@@ -59,7 +60,7 @@ const PartnerSection = () => {
         </div>
         <div className={styles.sliderBox}>
 
-        {data && data.results.length && <Carousel
+        {data && data.results.length ? <Carousel
             delay={3000}
             modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
             paginationEl={".partner-custom-pagination"}
@@ -96,11 +97,11 @@ const PartnerSection = () => {
               slideShadows: false,
             }}
             renderItem={(item) => (
-              <PartnerCard key={item.id} item={item} />
+              <PartnerCard key={createKey()} item={item} />
             )}
-          />}
+          />:<p className={styles.error}>Нажаль немає контенту</p>}
 
-          {isError || !data?.results.length && <p className={styles.error}>Нажаль немає контенту</p>}
+          {isError || <p className={styles.error}>Нажаль сталась помилка</p>}
 
         </div>
       
