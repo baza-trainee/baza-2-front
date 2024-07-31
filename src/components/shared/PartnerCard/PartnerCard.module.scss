@@ -7,7 +7,9 @@
   width: 100%;
   max-height: 230px;
   height: 40vw;
-  background-color: var.$secondary-white;
+  //background-color: var.$secondary-white;
+  //background-color: var.$secondary-gray;
+  background-color: var.$primary-hover;
   display: flex;
   align-items: center;
   transition: all .8s;
@@ -46,6 +48,8 @@
     .img{
       object-fit: contain;
       object-position: center;
+      border-radius: 10px;
+      overflow: hidden;
     }
   }
 }

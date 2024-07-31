@@ -23,9 +23,9 @@ export default function CounterForm({defaultValues, hendleMutate}) {
   useEffect(()=>{
     if(defaultValues){
       reset()
-      setValue('projects', defaultValues.projects ? (defaultValues.projects).toString() : '');
-      setValue('members', defaultValues.members ? (defaultValues.members).toString() : '');
-      setValue('employed', defaultValues.employed ? (defaultValues.employed).toString() : '');
+      setValue('projects', defaultValues.projects ? (defaultValues.projects).toString() : '0');
+      setValue('members', defaultValues.members ? (defaultValues.members).toString() : '0');
+      setValue('employed', defaultValues.employed ? (defaultValues.employed).toString() : '0');
     }
   },[defaultValues])
 
@@ -47,13 +47,14 @@ export default function CounterForm({defaultValues, hendleMutate}) {
           <InputField
             id={"projects"}
             maxLength={20}
+            disabled={true}
             className={styles.item}
             required={false}
             type='number'
             placeholder={"Введіть дані"}
             registerOptions={register("projects", { ...counterSchema.projects })}
-            isError={errors.projects}
-            isValid={isValid}
+            //isError={errors.projects}
+            //isValid={isValid}
             version={"input_admin"}
             label={'Активних проєктів'}
           />
@@ -62,13 +63,14 @@ export default function CounterForm({defaultValues, hendleMutate}) {
           <InputField
             id={"members"}
             maxLength={20}
+            disabled={true}
             className={styles.item}
             required={false}
             type='number'
             placeholder={"Введіть дані"}
             registerOptions={register("members", { ...counterSchema.members })}
-            isError={errors.members}
-            isValid={isValid}
+            //isError={errors.members}
+            //isValid={isValid}
             version={"input_admin"}
             label={'Залучених учасників'}
           />

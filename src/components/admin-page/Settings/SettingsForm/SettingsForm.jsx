@@ -77,6 +77,7 @@ export default function SettingsForm() {
             <InputField
               id={"email"}
               maxLength={55}
+              disabled={true}
               className={styles.item}
               required={false}
               placeholder={"Логін"}
@@ -93,6 +94,7 @@ export default function SettingsForm() {
               id={"password"}
               required={false}
               maxLength={15}
+              disabled={true}
               className={styles.item}
               placeholder={"Пароль"}
               registerOptions={register("password", { ...loginSchema.password })}
@@ -111,7 +113,7 @@ export default function SettingsForm() {
           </li>
         </ul>
 
-        <div className={styles.btns}>
+        {/* <div className={styles.btns}>
           <MainButton
             className={styles.btn}
             type="submit"
@@ -126,7 +128,7 @@ export default function SettingsForm() {
           >
             {'Скасувати'}
           </MainButton>
-        </div >
+        </div > */}
       </form>
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>

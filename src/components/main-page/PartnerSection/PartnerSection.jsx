@@ -12,6 +12,7 @@ import styles from "./PartnerSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllPartners } from "@/src/api/partners";
 import { useEffect, useState } from "react";
+import { createKey } from "@/src/lib/utils/createKey";
 
 const PartnerSection = () => {
   const[ screenOrien, setScreenOrien ] = useState('')
@@ -96,7 +97,7 @@ const PartnerSection = () => {
               slideShadows: false,
             }}
             renderItem={(item) => (
-              <PartnerCard key={item.id} item={item} />
+              <PartnerCard key={createKey()} item={item} />
             )}
           />}
 

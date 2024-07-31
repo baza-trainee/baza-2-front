@@ -1,5 +1,9 @@
 .page{
+  max-width: 1900px;
+  min-width: 1100px;
   display: flex;
-  flex: 1 100%;
+ // overflow-x: auto;
+  //padding-right: 50px;
+ // flex: 1 1050px;
   max-height: 100vh;
 }
