@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as var;
-@use "../../../styles/mixins" as mx;
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mx;
 
 .section {
   margin-top: 120px;
@@ -29,4 +29,5 @@
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
+  min-height: 100vh;
 }
