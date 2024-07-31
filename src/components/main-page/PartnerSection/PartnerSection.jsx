@@ -101,7 +101,7 @@ const PartnerSection = () => {
             )}
           />:<p className={styles.error}>Нажаль немає контенту</p>}
 
-          {isError || <p className={styles.error}>Нажаль сталась помилка</p>}
+          {isError && <p className={styles.error}>Нажаль сталась помилка</p>}
 
         </div>
       
