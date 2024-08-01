@@ -9,16 +9,25 @@
 
   .list{
     padding: 32px 12px;
+    max-width: 1050px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     border-radius: 3px;
     gap: 24px;
-
+    width: 370px;
+    @media (min-width: 850px) {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 970px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .item{
       width: 100%;
       min-width: 210px;
+
       & > label{
         font-weight: 600;
         font-size: 18px;

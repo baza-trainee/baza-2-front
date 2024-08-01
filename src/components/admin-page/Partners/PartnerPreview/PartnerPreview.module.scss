@@ -3,9 +3,10 @@
 
 .preview{
   //width: 360px;
-  //height: 180px;
+  min-height: 180px;
   .card{
     width: 360px;
+    height: 180px;
   }
 
   .partnerCardItem {

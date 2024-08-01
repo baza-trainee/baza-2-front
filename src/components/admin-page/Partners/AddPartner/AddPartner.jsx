@@ -34,17 +34,12 @@ export default function AddPartner() {
       open('error', false)
     }})
 
-  const createPrevData=(url)=>{
-    return { imageUrl:URL.createObjectURL(url), name:'Попередній перегляд логотипу'}
-  }
-
-
   return (
     <SectionAdmin title={'Додати партнерів'}>
       <div className={styles.wrapper}>
         <PartnerForm hendleMutate={mutate} isSuccess={isSuccess} handlePrevImg={setPrevImg}/>
 
-        {prevImg && typeof prevImg === 'object' && <PartnerPreview data={createPrevData(prevImg)}/>}
+        <PartnerPreview imageUrl={prevImg}/>
       </div>
 
       { isPending && <Loader/> }

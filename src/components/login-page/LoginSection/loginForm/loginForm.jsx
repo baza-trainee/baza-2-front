@@ -49,6 +49,10 @@ export default function LoginForm({ handleMutate }) {
     } else {
       localStorage.removeItem('credentials');
     }
+    sessionStorage.setItem(
+      'credentials',
+      JSON.stringify({...data})
+    );
   };
 
 

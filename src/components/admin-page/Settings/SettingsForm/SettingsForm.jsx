@@ -30,7 +30,7 @@ export default function SettingsForm() {
   }
 
   useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
+    const credentials = sessionStorage.getItem('credentials');
     if (credentials) {
       const { email, password } = JSON.parse(
         credentials
@@ -41,16 +41,16 @@ export default function SettingsForm() {
   }, [pathname]);
 
   const onSubmit = (data) => {
-    console.log(data)
-    setmodalOpen(true)
+    // console.log(data)
+    // setmodalOpen(true)
 
-    localStorage.setItem(
-      'credentials',
-      JSON.stringify({...data})
-    );
-    resetForm()  
-    setValue('email', data.email);
-    setValue('password', data.password);
+    // sessionStorage.setItem(
+    //   'credentials',
+    //   JSON.stringify({...data})
+    // );
+    // resetForm()  
+    // setValue('email', data.email);
+    // setValue('password', data.password);
   };
 
 
