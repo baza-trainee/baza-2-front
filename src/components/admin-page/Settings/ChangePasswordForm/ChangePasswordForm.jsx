@@ -41,12 +41,17 @@ export default function ChangePasswordForm() {
       );
       localStorage.setItem('credentials',
         JSON.stringify({email, password:password}))
-      const credentials = sessionStorage.getItem('credentials');
-      sessionStorage.setItem(
-        'credentials',
-        JSON.stringify({email:credentials.email, password:password})
-      );  
     }
+
+    { const credentials = sessionStorage.getItem('credentials');
+      if(credentials){
+        const { email } = JSON.parse(credentials);
+        sessionStorage.setItem(
+          'credentials',
+          JSON.stringify({email, password:password})
+        ); 
+      }
+    } 
     resetForm()
     setmodalOpen(true)
   }

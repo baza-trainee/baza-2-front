@@ -41,16 +41,16 @@ export default function SettingsForm() {
   }, [pathname]);
 
   const onSubmit = (data) => {
-    console.log(data)
-    setmodalOpen(true)
+    // console.log(data)
+    // setmodalOpen(true)
 
-    sessionStorage.setItem(
-      'credentials',
-      JSON.stringify({...data})
-    );
-    resetForm()  
-    setValue('email', data.email);
-    setValue('password', data.password);
+    // sessionStorage.setItem(
+    //   'credentials',
+    //   JSON.stringify({...data})
+    // );
+    // resetForm()  
+    // setValue('email', data.email);
+    // setValue('password', data.password);
   };
 
 
