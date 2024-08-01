@@ -1,0 +1,72 @@
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins.scss" as mx;
+
+.wrapper{
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+
+  .input_file{
+    position: relative;
+    width: 100%;
+    @include mx.apply-font-styles(var.$text-16-font);
+    color: var.$secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    min-height: 48px;
+    padding: 10px;
+    padding-right: 30px;
+    background: var.$secondary-white;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+  
+    & > input{
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .placeholder{
+      color: #8b8a8a;
+    }
+
+    .icon{
+      position: absolute;
+      width: 50px;
+      height: 80%;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .btn{
+        margin: 10px;
+      }
+    }
+  }
+  .input_file._error {
+    border: 2px solid var.$secondary-error;
+  }
+  .input_file._success {
+    border: 2px solid var.$secondary-positive;
+  }
+
+  & > label{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-weight: 600;
+    font-size: 18px;
+    & > span {
+      color: var.$secondary-error;
+    }
+  }
+
+  .error{
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    color: var.$secondary-error;
+  }
+}

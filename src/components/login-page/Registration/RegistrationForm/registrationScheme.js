@@ -28,7 +28,7 @@ export const registrationSchema = z
       .min(1, { message: 'Поле пароль не може бути порожнім' })
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: 'Паролі не збігаються.Спробуйте ще раз.',
-     path: ['confirmPassword'],
+    message: 'Паролі не збігаються. Спробуйте ще раз.',
+    path: ['confirmPassword'],
   })
  

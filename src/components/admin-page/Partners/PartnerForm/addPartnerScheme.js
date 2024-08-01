@@ -5,8 +5,17 @@ import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/li
 export const addPartnerDefaultValues= {
   name: "",
   homeUrl:"",
-  imageUrl:""
+  imageUrl:null
 }
+
+const validateImage =(value)=>{
+  if(value==''){
+    return true
+  }else if(value){
+    return value[0]?.size < MAX_FILE_SIZE_IMG && checkFileType(value[0],ACCEPTED_IMAGE_TYPES)
+  }
+}
+
 
 export const addPartnerSchema = z
 	.object({
@@ -21,7 +30,5 @@ export const addPartnerSchema = z
     .regex(patternLink, { message: 'Введіть дійсний URL' }),
 
     imageUrl: z.any()
-    .refine((file) => file?.length !== 0, "Додайте логотип")
-    .refine((file) => file[0]?.size < MAX_FILE_SIZE_IMG, "Максимальний розмір 2MB")
-    .refine((file) => checkFileType(file[0],ACCEPTED_IMAGE_TYPES), "Формат зображення може бути JPG, PNG або WEBP"),
+    .refine((file) => validateImage(file),"Формат зображення JPG, PNG, WEBP, Max.розмір 2MB"),
 })

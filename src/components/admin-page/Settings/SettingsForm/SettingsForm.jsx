@@ -30,7 +30,7 @@ export default function SettingsForm() {
   }
 
   useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
+    const credentials = sessionStorage.getItem('credentials');
     if (credentials) {
       const { email, password } = JSON.parse(
         credentials
@@ -44,7 +44,7 @@ export default function SettingsForm() {
     console.log(data)
     setmodalOpen(true)
 
-    localStorage.setItem(
+    sessionStorage.setItem(
       'credentials',
       JSON.stringify({...data})
     );

@@ -40,7 +40,12 @@ export default function ChangePasswordForm() {
         credentials
       );
       localStorage.setItem('credentials',
-        JSON.stringify({email,password:password}))
+        JSON.stringify({email, password:password}))
+      const credentials = sessionStorage.getItem('credentials');
+      sessionStorage.setItem(
+        'credentials',
+        JSON.stringify({email:credentials.email, password:password})
+      );  
     }
     resetForm()
     setmodalOpen(true)
@@ -72,9 +77,16 @@ export default function ChangePasswordForm() {
     }else return false
   }
 
+  const onSubmit = (data) => {
+    console.log(data)
+    const newData={oldPassword:data.oldPassword, newPassword:data.newPassword}
+    mutate(newData)
+  };
+
+
   return (
     <>
-      <form onSubmit={handleSubmit(mutate)} className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <ul className={styles.list}>
           <li>
             <InputField
@@ -90,6 +102,7 @@ export default function ChangePasswordForm() {
               label={'Старий пароль'}
             />
           </li>
+
           <li>
             <InputField
               id={"newPassword"}
@@ -103,6 +116,21 @@ export default function ChangePasswordForm() {
               isValid={isValid}
               version={"password"}
               label={'Новий пароль'}
+            />
+          </li>
+
+          <li>
+            <InputField
+              id={"confirm_password"}
+              required={false}
+              maxLength={15}
+              className={styles.item}
+              placeholder={"Пароль"}
+              registerOptions={register("confirmPassword", { ...changePasswordScheme.confirmPassword })}
+              isError={errors.confirmPassword}
+              isValid={isValid}
+              version={"password"}
+              label={'Підтвердіть пароль'}
             />
           </li>
         </ul>
@@ -126,7 +154,9 @@ export default function ChangePasswordForm() {
 
         </div > 
       </form>
+
       { isPending && <Loader/> }
+
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
       <UseAlert/>
     </>

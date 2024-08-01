@@ -33,7 +33,7 @@ export default function Registration() {
   })
 
   const closeModal=()=>{
-    setModal(true)
+    setModal(false)
     router.replace('/admin')
   }
 

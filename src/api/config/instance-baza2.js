@@ -9,4 +9,13 @@ const instanceBaza2 = axios.create({
 	},
 })
 
+instanceBaza2.interceptors.request.use((config) => {
+  const token = window.sessionStorage.getItem('access_token');
+	if(token){
+		config.headers.Authorization = `Bearer ${token}`;
+	}else config.headers.Authorization = '';
+ 
+  return config;
+});
+
 export default instanceBaza2
