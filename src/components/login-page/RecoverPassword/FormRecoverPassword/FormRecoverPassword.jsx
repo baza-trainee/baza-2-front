@@ -7,6 +7,8 @@ import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 
 import { recoverPasswordDefaultValues, recoverPasswordSchema } from './recoverPasswordScheme';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
+import clsx from 'clsx';
 
 export default function FormRecoverPassword({handleMutate}) {
   const router = useRouter();
@@ -32,7 +34,7 @@ export default function FormRecoverPassword({handleMutate}) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <ul className={styles.list}>
-        <li className={styles.list_item} >
+        <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"password"}
             required={false}
@@ -45,6 +47,8 @@ export default function FormRecoverPassword({handleMutate}) {
             version={"password"}
             label={'Новий пароль'}
           />
+
+          <TooltipText className={styles._active} text={"Пароль обов'язково має містити принаймні одну цифру та одну латинську літеру. Він може також містити символи !@#$%^&*. Довжина пароля повинна бути від 8 до 14 символів."} position='right'/>
         </li>
 
         <li className={styles.list_item}>

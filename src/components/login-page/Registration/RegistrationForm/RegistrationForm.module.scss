@@ -18,5 +18,16 @@
     .item {
       width: clamp(280px, 84vw, 360px);
     }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip:focus ._active,
+    .tooltip:hover ._active {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }

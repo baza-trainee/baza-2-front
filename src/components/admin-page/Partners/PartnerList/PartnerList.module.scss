@@ -1,3 +1,6 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
 .list{
   width: 100%;
  // max-width: 1300px;
@@ -45,4 +48,11 @@
     }
 
   }
+}
+
+.length{
+  @include mix.apply-font-styles(var.$h2-font);
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
 }

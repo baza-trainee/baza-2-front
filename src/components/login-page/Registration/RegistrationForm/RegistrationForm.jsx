@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function RegistrationForm({ onSubmit }) {
 
@@ -37,7 +38,7 @@ export default function RegistrationForm({ onSubmit }) {
             label={'Електронна пошта'}
           />
         </li>
-        <li>
+        <li className={styles.tooltip}>
           <InputField
             id={"password"}
             required={false}
@@ -50,6 +51,7 @@ export default function RegistrationForm({ onSubmit }) {
             version={"password"}
             label={'Пароль'}
           />
+           <TooltipText className={styles._active} text={"Пароль обов'язково має містити принаймні одну цифру та одну латинську літеру. Він може також містити символи !@#$%^&*. Довжина пароля повинна бути від 8 до 14 символів."} position='right'/>
         </li>
         <li>
           <InputField
