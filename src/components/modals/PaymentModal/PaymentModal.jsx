@@ -1,5 +1,5 @@
 "use client";
-import { useCallback} from 'react';
+import { useCallback, useState} from 'react';
 import { useTranslations } from "next-intl";
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
@@ -15,11 +15,14 @@ import { PaymentService } from '@/src/api/payment';
 export default function PaymentModal() {
   // Мова сторінки.
   const { locale } = useParams();
+  const[success,setSuccess]=useState(false)
 
   const { mutate, isPending, isError, isSuccess } = useMutation({
     mutationFn: (data,locale) => {
       return PaymentService(data, locale)
-    },
+    },onSuccess:()=>{
+      setSuccess(true)
+    }
   })
 
   // Отримуємо стан.
@@ -30,8 +33,9 @@ export default function PaymentModal() {
   const t = useTranslations("Modal_support");
 
   const handleClose = useCallback(() => {
+    setSuccess(false)
     close()
-  },[])
+  })
 
   const handleSubmit = (amount) => {
     mutate(amount, locale)
@@ -42,8 +46,8 @@ export default function PaymentModal() {
       <div className={styles.card}>
         {isPending && <Loader/>}
         
-        {isError | isSuccess ?
-        <MessageCard handleClose={handleClose} isError={isError} isThanks={isSuccess}/>:
+        {isError | success ?
+        <MessageCard handleClose={handleClose} isError={isError} isThanks={success}/>:
         <FormPayment handleSubmit={handleSubmit}/>
         }
 

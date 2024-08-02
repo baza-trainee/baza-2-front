@@ -27,7 +27,7 @@ const herosliderEndpoint = '/heroslider'
 export async function getAllSliders(){
 	try {
 		const res = await instanceBaza2.get(herosliderEndpoint)
-		return res.data.results
+		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
 	}

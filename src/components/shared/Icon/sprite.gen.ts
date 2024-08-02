@@ -34,6 +34,7 @@ export interface SpritesMap {
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_black"
     | "plus_icon"
     | "press_about"
     | "projects"
@@ -82,6 +83,7 @@ export const SPRITES_META: {
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_black"
     | "plus_icon"
     | "press_about"
     | "projects"
@@ -130,6 +132,7 @@ export const SPRITES_META: {
     "open_eye",
     "partners",
     "phone",
+    "plus_black",
     "plus_icon",
     "press_about",
     "projects",
