@@ -36,10 +36,17 @@ export default function Partners() {
       }}>
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати партнера'}</MainButton >
-
-      {data?.results && !isError && <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>
+      {isError ?
+        <>
+          <p className={styles.error}>Помилка завантаження контенту.</p>
+          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
+        </>:
+        <>
+          {data?.results && 
+            <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>
+          }
+        </>
       }
-
       {deletePartner.isPending && <Loader/>}
       <UseAlert/>
     </SectionAdmin>

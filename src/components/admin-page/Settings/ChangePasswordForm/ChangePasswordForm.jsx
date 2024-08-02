@@ -13,6 +13,8 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
+import { credentialslocalStorage, credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 export default function ChangePasswordForm() {
   const router = useRouter()
@@ -34,24 +36,14 @@ export default function ChangePasswordForm() {
   }
 
   const savePassword =()=>{
-    const credentials = localStorage.getItem('credentials');
-    if (credentials) {
-      const { email } = JSON.parse(
-        credentials
-      );
-      localStorage.setItem('credentials',
-        JSON.stringify({email, password:password}))
-    }
-
-    { const credentials = sessionStorage.getItem('credentials');
-      if(credentials){
-        const { email } = JSON.parse(credentials);
-        sessionStorage.setItem(
-          'credentials',
-          JSON.stringify({email, password:password})
-        ); 
+    const credentials = credentialslocalStorage.get();
+      if (credentials) {
+        credentialslocalStorage.set({...credentials, password:password})
       }
-    } 
+    const credentialsSession = credentialsSessionStorage.get();
+      if(credentialsSession){
+        credentialsSessionStorage.set({...credentialsSession, password:password})
+      }
     resetForm()
     setmodalOpen(true)
   }
@@ -64,7 +56,6 @@ export default function ChangePasswordForm() {
   const { mutate, isPending } = useMutation({
     mutationFn:(data) => {
       return changePassword(data)
-
     },onSuccess: () => {
       savePassword()
     },onError:()=>{
@@ -83,11 +74,9 @@ export default function ChangePasswordForm() {
   }
 
   const onSubmit = (data) => {
-    console.log(data)
     const newData={oldPassword:data.oldPassword, newPassword:data.newPassword}
     mutate(newData)
   };
-
 
   return (
     <>
@@ -108,7 +97,7 @@ export default function ChangePasswordForm() {
             />
           </li>
 
-          <li>
+          <li className={styles.tooltip}>
             <InputField
               id={"newPassword"}
               required={false}
@@ -122,6 +111,7 @@ export default function ChangePasswordForm() {
               version={"password"}
               label={'Новий пароль'}
             />
+            <TooltipText className={styles._active} text={"Пароль обов'язково має містити принаймні одну цифру та одну латинську літеру. Він може також містити символи !@#$%^&*. Довжина пароля повинна бути від 8 до 14 символів."} position='right'/>
           </li>
 
           <li>

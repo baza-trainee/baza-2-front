@@ -10,6 +10,7 @@ import InputField from '../../../shared/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
+import { credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 
 export default function SettingsForm() {
@@ -30,11 +31,9 @@ export default function SettingsForm() {
   }
 
   useEffect(() => {
-    const credentials = sessionStorage.getItem('credentials');
+    const credentials = credentialsSessionStorage.get()
     if (credentials) {
-      const { email, password } = JSON.parse(
-        credentials
-      );
+      const { email, password } = credentials
       setValue('email', email);
       setValue('password', password);
     }

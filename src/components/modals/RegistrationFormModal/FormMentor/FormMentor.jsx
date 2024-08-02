@@ -15,7 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
-import TooltipText from "../TooltipText/TooltipText";
+import TooltipText from "../../../shared/TooltipText/TooltipText";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");

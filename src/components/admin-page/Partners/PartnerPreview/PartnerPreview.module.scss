@@ -34,5 +34,10 @@
         overflow: hidden;
       }
     }
+    &._noimage{
+      background: none;
+      border: 1px solid  var.$primary-hover;
+      padding: 20px;
+    }
   }
 }

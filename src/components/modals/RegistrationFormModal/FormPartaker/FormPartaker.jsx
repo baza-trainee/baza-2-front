@@ -15,7 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
 import stateModalDocumentPdf from "@/src/state/stateModalDocumentPdf";
-import TooltipText from "../TooltipText/TooltipText";
+import TooltipText from "../../../shared/TooltipText/TooltipText";
 
 
 export default function FormPartaker({handleClose}) {
