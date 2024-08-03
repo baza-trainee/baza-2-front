@@ -19,6 +19,14 @@
   gap: 24px;
 }
 
-.input {
+.icon {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+}
+.item {
   margin-bottom: 29px;
+
+  display: flex;
+  position: relative;
 }

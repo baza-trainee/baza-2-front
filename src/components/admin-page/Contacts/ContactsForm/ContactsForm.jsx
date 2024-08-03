@@ -47,7 +47,7 @@ export default function ContactsForm() {
   return (
     <div className={styles.form}>
       <div className={styles.row}>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="phone1"
             required={false}
@@ -58,8 +58,14 @@ export default function ContactsForm() {
             value={phone1}
             onChange={handlePhone1Change}
           />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="phone2"
             required={false}
@@ -70,8 +76,14 @@ export default function ContactsForm() {
             value={phone2}
             onChange={handlePhone2Change}
           />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="email"
             required={false}
@@ -82,10 +94,16 @@ export default function ContactsForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
       </div>
       <div className={styles.row}>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="telegram"
             required={false}
@@ -96,8 +114,14 @@ export default function ContactsForm() {
             value={telegram}
             onChange={(e) => setTelegram(e.target.value)}
           />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="facebook"
             required={false}
@@ -108,8 +132,14 @@ export default function ContactsForm() {
             value={facebook}
             onChange={(e) => setFacebook(e.target.value)}
           />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
-        <div className={styles.input}>
+        <div className={styles.item}>
           <InputField
             id="linkedin"
             required={false}
@@ -119,8 +149,14 @@ export default function ContactsForm() {
             label="Linkedin"
             value={linkedin}
             onChange={(e) => setLinkedin(e.target.value)}
+            className={styles.input}
           />
-          <Icon width={24} height={24} name="edit_black" />
+          <Icon
+            width={24}
+            height={24}
+            name="edit_black"
+            className={styles.icon}
+          />
         </div>
       </div>
     </div>
