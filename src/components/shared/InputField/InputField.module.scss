@@ -77,7 +77,13 @@
       align-items: center;
       justify-content: flex-end;
       background: var.$secondary-white;
-      
+      & > p{
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #000;
+        padding: 5px;
+      }
       .btn{
         margin: 10px;
         transition: all var.$transition-duration-base var.$transition-timing-base;

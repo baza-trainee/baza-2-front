@@ -10,9 +10,12 @@ import { useParams } from 'next/navigation';
 
 export default function SliderList({data, hendleRemove}) {
   const router = useRouter();
-   // Мова сторінки.
-   const { locale } = useParams();
-   
+  // Шляхи сторінок
+  const editPartnerPath = '/admin/partners/edit-partner'
+
+  // Мова сторінки.
+  const { locale } = useParams();
+ 
   const[ idPartner, setIdPartner ] = useState(null)
 
   const closeModal=()=>{
@@ -33,7 +36,7 @@ export default function SliderList({data, hendleRemove}) {
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 
-              onClick={()=>{router.push(`/admin/partners/edit-partner/${el._id}`)}}>
+              onClick={()=>{router.push(`${editPartnerPath}/${el._id}`)}}>
               <Icon  width={24} height={24} name='edit'/>
             </MainButton>
 

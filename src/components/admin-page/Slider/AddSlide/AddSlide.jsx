@@ -1,11 +1,12 @@
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
-import styles from './AddSlid.module.scss'
+import SlideForm from '../SlideForm/SlideForm'
+import styles from './AddSlide.module.scss'
 //import SectionAdmin from '../SectionAdmin/SectionAdmin'
 
-export default function AddSlid() {
+export default function AddSlide() {
  return( 
     <SectionAdmin title={'Додати слайд'} lang={true}>
-
+      <SlideForm/>
     </SectionAdmin>
   )
 }

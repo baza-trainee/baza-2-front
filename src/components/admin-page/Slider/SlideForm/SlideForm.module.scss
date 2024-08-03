@@ -4,26 +4,47 @@
 .form{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   gap: 36px;
-
+  width: 100%;
+  //min-width: 1050px;
   .list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 76px 32px 12px;
+    padding: 32px 12px;
     gap: 28px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
+    width: 100%;
+    &>li{
+      width: 100%;
+    }
+    .list_items{
+      //display: flex;
+      align-items: flex-end;
+      //justify-content: flex-start;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      //width: 100%;
+      gap: 24px;
+      //background-color: aqua;
+
+      .item{
+        //width: 320px;
+        width: 100%;
+        min-width: 210px;
+      }
+    }
   }
 
   .btns{
-    width: 100%;
+    width: 420px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     .btn{
       height: 55px;
       width: 230px;

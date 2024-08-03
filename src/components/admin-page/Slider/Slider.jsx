@@ -10,15 +10,20 @@ import SliderList from './SliderList/SliderList';
 
 export default function Slider() {
   const router = useRouter();
+
+  const addSlidePath = '/admin/slider/add-slide'
+
   const { isError, data, refetch } = useQuery({ queryKey: ['slider'], 
     queryFn:()=>{return getAllSliders()}});
 
    console.log(data?.results) 
+
+
  return( 
     <SectionAdmin title={'Слайдер'} lang={true}>
       <div className={styles.wrapper}>
         <MainButton  variant='admin' className={styles.btn} onClick={()=>{
-          router.push('/admin/slider/add-slid')
+          router.push(addSlidePath)
         }}>
           <Icon name={'plus_black'} width={24} height={24} />
           {'Додати слайд'}</MainButton >

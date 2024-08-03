@@ -15,6 +15,7 @@ export default function InputField({
   iconName,
   isDirty,
   label = null,
+  locale,
   className,
   required=true,
   disabled=false,
@@ -93,6 +94,11 @@ export default function InputField({
             <div className={styles.icon}> 
               <Icon name={iconName} className={styles.svg} width={24} height={24}/> 
             </div> 
+          }
+
+          {locale  && <div className={styles.icon}> 
+              <p>{locale }</p>  
+            </div >
           }
         </div>
         {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
