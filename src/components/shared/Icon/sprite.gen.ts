@@ -19,6 +19,7 @@ export interface SpritesMap {
     | "download"
     | "edit"
     | "facebook"
+    | "full_screen"
     | "go_out"
     | "internship-benefits-1"
     | "internship-benefits-2"
@@ -30,6 +31,7 @@ export interface SpritesMap {
     | "linkedin"
     | "logo"
     | "mail"
+    | "normal_screen"
     | "onboarding"
     | "open_eye"
     | "partners"
@@ -68,6 +70,7 @@ export const SPRITES_META: {
     | "download"
     | "edit"
     | "facebook"
+    | "full_screen"
     | "go_out"
     | "internship-benefits-1"
     | "internship-benefits-2"
@@ -79,6 +82,7 @@ export const SPRITES_META: {
     | "linkedin"
     | "logo"
     | "mail"
+    | "normal_screen"
     | "onboarding"
     | "open_eye"
     | "partners"
@@ -117,6 +121,7 @@ export const SPRITES_META: {
     "download",
     "edit",
     "facebook",
+    "full_screen",
     "go_out",
     "internship-benefits-1",
     "internship-benefits-2",
@@ -128,6 +133,7 @@ export const SPRITES_META: {
     "linkedin",
     "logo",
     "mail",
+    "normal_screen",
     "onboarding",
     "open_eye",
     "partners",

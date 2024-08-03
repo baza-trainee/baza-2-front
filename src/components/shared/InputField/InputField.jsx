@@ -95,7 +95,7 @@ export default function InputField({
             </div> 
           }
         </div>
-        {isError && <p className={styles.error}>{isError.message}</p>}
+        {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
       </div>
     );
   }
@@ -127,7 +127,7 @@ export default function InputField({
           </button>
 
         </div>
-        {isError && <p className={styles.error}>{isError.message}</p>}
+        {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
       </div>
     );
   }

@@ -12,14 +12,24 @@ export default function RegistrationForm({ onSubmit }) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    setValue,
+    formState: {isError, errors, isValid, isDirty },
   } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
 
   const isDisabled = () => {
-    if (Object.keys(errors).length > 0) {
+    if (isError) {
       return true;
-    } else return false;
+    } else 
+    if (!isDirty) {
+      return true;
+    } else if(!isValid){
+      return true
+    }else return false
   };
+
+  const resetValue=()=>{
+    setValue("confirmPassword",'')
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -38,13 +48,14 @@ export default function RegistrationForm({ onSubmit }) {
             label={'Електронна пошта'}
           />
         </li>
-        <li className={styles.tooltip}>
+        <li className={styles.tooltip} >
           <InputField
             id={"password"}
             required={false}
             maxLength={15}
             className={styles.item}
             placeholder={"Пароль"}
+            onChange={resetValue}
             registerOptions={register("password", { ...registrationSchema.password })}
             isError={errors.password}
             isValid={isValid}

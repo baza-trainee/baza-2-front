@@ -25,7 +25,7 @@ export const registrationSchema = z
 
     confirmPassword: z.string()
       .trim()
-      .min(1, { message: 'Поле пароль не може бути порожнім' })
+      .min(1, { message: 'Підтвердіть пароль' })
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: 'Паролі не збігаються. Спробуйте ще раз.',
