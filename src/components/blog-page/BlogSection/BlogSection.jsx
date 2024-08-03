@@ -2,7 +2,7 @@
 
 import { createKey } from "@/src/lib/utils/createKey";
 import BlogCard from "../../shared/BlogCard/BlogCard";
-import InputSearch from "../../shared/InputSearch/InputSearch";
+import InputSearch from "../../shared/inputs/InputSearch/InputSearch";
 import { items } from "./items";
 import styles from "./BlogSection.module.scss";
 import SocialIcons from "../../shared/SocialIcons/SocialIcons";

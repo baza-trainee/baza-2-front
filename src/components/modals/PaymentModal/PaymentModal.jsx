@@ -1,5 +1,5 @@
 "use client";
-import { useCallback} from 'react';
+import { useCallback } from 'react';
 import { useTranslations } from "next-intl";
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
@@ -16,7 +16,7 @@ export default function PaymentModal() {
   // Мова сторінки.
   const { locale } = useParams();
 
-  const { mutate, isPending, isError, isSuccess } = useMutation({
+  const { mutate, isPending, isError, isSuccess,reset } = useMutation({
     mutationFn: (data,locale) => {
       return PaymentService(data, locale)
     },
@@ -30,8 +30,9 @@ export default function PaymentModal() {
   const t = useTranslations("Modal_support");
 
   const handleClose = useCallback(() => {
+    reset()
     close()
-  },[])
+  })
 
   const handleSubmit = (amount) => {
     mutate(amount, locale)

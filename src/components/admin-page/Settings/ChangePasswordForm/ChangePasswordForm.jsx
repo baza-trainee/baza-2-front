@@ -18,23 +18,30 @@ import { credentialslocalStorage, credentialsSessionStorage } from '@/src/state/
 
 export default function ChangePasswordForm() {
   const router = useRouter()
+  // Відкриття модалки Error
   const open = stateUseAlert(state => state.open);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid, isDirty },
-    reset
-  } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
-
   const [ password, setPassword ] = useState('');
   const[ modalOpen, setmodalOpen ] = useState(false);
 
+  // Шлях для кнопки скасувати 
+  const cancelBtnPath ='/admin/settings'
+
+  // Валідація форми 
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { isError, errors, isValid, isDirty },
+    reset
+  } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
+
+  // Очищення форми
   const resetForm = () => {
     setPassword('')
     reset();
   }
 
+  // Функція оновлення пароля в localStorage
   const savePassword =()=>{
     const credentials = credentialslocalStorage.get();
       if (credentials) {
@@ -48,12 +55,8 @@ export default function ChangePasswordForm() {
     setmodalOpen(true)
   }
 
-  const closeModal = useCallback(()=>{
-    setmodalOpen(false)
-    router.replace('/admin/settings')
-  })
-
-  const { mutate, isPending } = useMutation({
+  // Запит на зміну пароля
+  const mutationChangePassword = useMutation({
     mutationFn:(data) => {
       return changePassword(data)
     },onSuccess: () => {
@@ -62,8 +65,16 @@ export default function ChangePasswordForm() {
       open('error', false)
     }})
 
+  // Зачинення модального вікна
+  const closeModal = useCallback(()=>{
+    mutationChangePassword.reset()
+    setmodalOpen(false)
+    router.replace(cancelBtnPath)
+  })
+
+  // Управління станом кнопки Submit
   const isDisabled = () => {
-    if (Object.keys(errors).length > 0) {
+    if (isError) {
       return true;
     } else 
     if (!isDirty) {
@@ -72,10 +83,15 @@ export default function ChangePasswordForm() {
       return true
     }else return false
   }
-
+  // Очищення поля повторити пароль
+  const resetValue=()=>{
+    setValue("confirmPassword",'')
+  }
+  
+  // Функція Submit
   const onSubmit = (data) => {
     const newData={oldPassword:data.oldPassword, newPassword:data.newPassword}
-    mutate(newData)
+    mutationChangePassword.mutate(newData)
   };
 
   return (
@@ -105,6 +121,7 @@ export default function ChangePasswordForm() {
               maxLength={15}
               className={styles.item}
               placeholder={"Новий пароль"}
+              onChange={resetValue}
               registerOptions={register("newPassword", { ...changePasswordScheme.newPassword })}
               isError={errors.newPassword}
               isValid={isValid}
@@ -142,7 +159,7 @@ export default function ChangePasswordForm() {
           <MainButton
             variant='admin'
             className={styles.btn_cancel}
-            onClick={()=>{router.replace('/admin/settings')}}
+            onClick={()=>{router.replace(cancelBtnPath)}}
           >
             {'Скасувати'}
           </MainButton>
@@ -150,7 +167,7 @@ export default function ChangePasswordForm() {
         </div > 
       </form>
 
-      { isPending && <Loader/> }
+      { mutationChangePassword.isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
       <UseAlert/>

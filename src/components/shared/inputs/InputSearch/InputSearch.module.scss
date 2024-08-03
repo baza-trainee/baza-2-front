@@ -1,0 +1,36 @@
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins" as mx;
+
+.wrapper {
+  position: relative;
+  min-width: 288px;
+  max-width: 625px;
+  @include mx.apply-font-styles(var.$text-16-font);
+  color: var.$secondary-black;
+  input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 68px;
+    border-radius: 8px;
+  }
+  button{
+    transition: opacity var.$transition-duration-base var.$transition-timing-base;
+    &:hover{
+      opacity: .8;
+    }
+  }
+  .close{
+    position: absolute;
+    padding: 3px;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+  }
+  .submit {
+    position: absolute;
+    padding: 3px 7px 3px 1px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
