@@ -6,7 +6,7 @@ import { usePathname, useRouter } from '@/src/navigation';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginDefaultValues, loginSchema } from './loginScheme';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';

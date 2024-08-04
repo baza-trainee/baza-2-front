@@ -20,10 +20,10 @@ export default function TextArea({
 }) {
   return (
     <div className={clsx(styles.input_textarea, className)}>
-      {label && <label htmlFor={id}>
-          {label} {required && <span>*</span>}
-        </label>
-      }
+      <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
+        {label?label:'label title'} {required && <span>*</span>}
+      </label>
+      
       <div className={styles.wrapper}>
         <textarea
           id={id}

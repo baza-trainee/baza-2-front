@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as var;
-@use "../../../styles/mixins.scss" as mx;
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins.scss" as mx;
 
 .item {
   width: clamp(280px, 84vw, 625px);
@@ -95,12 +95,15 @@
     }
   }
 
-  & > label{
+  .label{
     @include mx.apply-font-styles(var.$text-20-font);
     font-weight: 600;
     font-size: 18px;
     & > span {
       color: var.$secondary-error;
+    }
+    &._hide{
+      visibility: hidden;
     }
   }
 

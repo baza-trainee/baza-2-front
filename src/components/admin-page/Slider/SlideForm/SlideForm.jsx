@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import InputField from '@/src/components/shared/InputField/InputField'
+import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
@@ -161,7 +161,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.grid_item6)}>
           <TextArea 
             id={"text_ua"}   
-            className={styles.item} 
+            className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
             registerOptions={register("text_ua", { ...SliderScheme.text_ua })}
@@ -173,7 +173,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.grid_item7)}>
           <TextArea 
             id={"text_en"}   
-            className={styles.item} 
+            className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
             registerOptions={register("text_en", { ...SliderScheme.text_en })}
@@ -184,7 +184,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.grid_item8)}>
           <TextArea 
             id={"text_pl"}   
-            className={styles.item} 
+            className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}
             registerOptions={register("text_pl", { ...SliderScheme.text_pl })}

@@ -1,13 +1,11 @@
-
 import styles from './SliderList.module.scss'
-
+import { useState } from 'react';
+import { useParams } from 'next/navigation';
+import { useRouter } from '@/src/navigation';
+import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
-import { useRouter } from '@/src/navigation';
-import { useState } from 'react';
-import { useParams } from 'next/navigation';
-import { createKey } from '@/src/lib/utils/createKey';
 import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
 
 export default function SliderList({data, hendleRemove}) {

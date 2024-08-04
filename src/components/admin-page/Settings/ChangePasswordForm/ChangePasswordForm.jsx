@@ -11,7 +11,7 @@ import Loader from '@/src/components/shared/loader/Loader';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 import { credentialslocalStorage, credentialsSessionStorage } from '@/src/state/stateCredentials';

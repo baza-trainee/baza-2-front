@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 import { results } from "./items";
 import { createKey } from "@/src/lib/utils/createKey";
 import styles from "./Projects.module.scss";
-import InputField from "../../shared/InputField/InputField";
+import InputField from "../../shared/inputs/InputField/InputField";
 import { useTranslations } from "next-intl";
 
 const Projects = () => {

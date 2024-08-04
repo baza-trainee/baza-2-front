@@ -24,6 +24,18 @@
         width: 100%;
         min-width: 210px;
       }
+      .item_text{
+        width: 100%;
+        min-width: 210px;
+        height: 350px;
+        @media (min-width: 1200px) {
+          height: 250px;
+        }
+        @media (min-width: 1300px) {
+          height: 200px;
+        }
+      }
+
     }
     .grid_item1 { grid-area: 1 / 1 / 2 / 2; }
     .grid_item2 { grid-area: 1 / 2 / 2 / 3; }
@@ -33,7 +45,6 @@
     .grid_item6 { grid-area: 3 / 1 / 4 / 2; }
     .grid_item7 { grid-area: 3 / 2 / 4 / 3; }
     .grid_item8 { grid-area: 3 / 3 / 4 / 4; }
-
   }
 
   .btns{

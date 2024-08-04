@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "../../Icon/Icon";
 import styles from "./InputField.module.scss";
 import clsx from "clsx";
 
@@ -72,10 +72,9 @@ export default function InputField({
   if (version === "input_admin") {
     return (
       <div className={clsx(styles.input_admin, className)}>
-        {label && <label htmlFor={id}>
-            {label} {required && <span>*</span>}
-          </label>
-        }
+        <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
+          {label?label:'label title'} {required && <span>*</span>}
+        </label>
         <div className={styles.wrapper}>
           <input
             id={id}
@@ -109,10 +108,9 @@ export default function InputField({
   if (version === "password") {
     return (
       <div className={clsx(styles.input_admin, className)}>
-        {label && <label htmlFor={id}>
-            {label} {required && <span>*</span>}
-          </label>
-        }
+        <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
+          {label?label:'label title'} {required && <span>*</span>}
+        </label>
         <div className={styles.wrapper}>
           <input
             id={id}

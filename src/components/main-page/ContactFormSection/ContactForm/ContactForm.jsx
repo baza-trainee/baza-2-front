@@ -9,7 +9,7 @@ import { ContactFormService } from "@/src/api/contact-form";
 import { FeedbackSchema, feedbackDefaultValues } from "./formFeedbackSchema";
 import { Icon } from "../../../shared/Icon/Icon";
 import MainButton from "../../../shared/MainButton/MainButton";
-import InputField from "../../../shared/InputField/InputField";
+import InputField from "../../../shared/inputs/InputField/InputField";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import Loader from "../../../shared/loader/Loader";
 

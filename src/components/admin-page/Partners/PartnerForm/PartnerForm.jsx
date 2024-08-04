@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addPartnerDefaultValues, addPartnerSchema } from './addPartnerScheme';
-import InputField from '@/src/components/shared/InputField/InputField'
+import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { useRouter } from '@/src/navigation';
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';

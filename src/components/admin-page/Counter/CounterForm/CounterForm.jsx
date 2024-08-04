@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { counterDefaultValues, counterSchema } from './counterScheme';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
-import InputField from '@/src/components/shared/InputField/InputField';
+import InputField from '@/src/components/shared/inputs/InputField/InputField';
 
 export default function CounterForm({defaultValues, hendleMutate}) {
 
