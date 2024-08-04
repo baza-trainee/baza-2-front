@@ -3,7 +3,7 @@ import styles from './FormRecoverPassword.module.scss'
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from '@/src/navigation';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 
 import { recoverPasswordDefaultValues, recoverPasswordSchema } from './recoverPasswordScheme';

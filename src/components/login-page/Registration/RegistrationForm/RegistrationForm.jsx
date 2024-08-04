@@ -3,7 +3,7 @@ import styles from './RegistrationForm.module.scss';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 

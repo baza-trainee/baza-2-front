@@ -34,7 +34,8 @@ const InputSearch = ({ onSubmit, className, defaultValue='' }) => {
     <form className={clsx(styles.wrapper,className)} onSubmit={handlerClickSubmit}>
       <input
         type="text"
-        placeholder="Введіть ключове слово "
+        maxLength={300}
+        placeholder="Введіть ключове слово"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onBlur={(e) => handlerOnblur(e)}

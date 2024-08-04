@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as var;
-@use "../../../styles/mixins.scss" as mx;
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins.scss" as mx;
 
 .item {
   width: clamp(280px, 84vw, 625px);
@@ -46,6 +46,7 @@
   width: 320px;
   display: flex;
   flex-direction: column;
+  position: relative;
   .wrapper{
     position: relative;
     & > input{
@@ -77,7 +78,13 @@
       align-items: center;
       justify-content: flex-end;
       background: var.$secondary-white;
-      
+      & > p{
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #000;
+        padding: 5px;
+      }
       .btn{
         margin: 10px;
         transition: all var.$transition-duration-base var.$transition-timing-base;
@@ -88,16 +95,22 @@
     }
   }
 
-  & > label{
+  .label{
     @include mx.apply-font-styles(var.$text-20-font);
     font-weight: 600;
     font-size: 18px;
     & > span {
       color: var.$secondary-error;
     }
+    &._hide{
+      visibility: hidden;
+    }
   }
 
   .error{
+    position: absolute;
+    bottom: -22px;
+    left: 0;
     @include mx.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;

@@ -19,7 +19,7 @@ const validateImage =(value)=>{
 
 export const addPartnerSchema = z
 	.object({
-		name: z.string()
+    name: z.string()
     .trim()
     .min(2, { message: 'Поле назва не може бути порожнім' })
     .regex(patternName, { message: 'Введіть дійсну назву' }),
