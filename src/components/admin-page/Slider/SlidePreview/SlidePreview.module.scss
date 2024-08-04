@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   float: inline-start;
+
   .slideCardItem {
     position: relative;
     background-color:var.$primary-fon;
@@ -34,8 +35,10 @@
       .img{
         object-fit: contain;
         object-position: center;
-        border-radius: 10px;
-        overflow: hidden;
+      }
+
+      .img.cover{
+        object-fit: cover;
       }
     }
   }

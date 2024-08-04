@@ -1,11 +1,15 @@
 import { z } from "zod";
-import { patternLink, patternName } from "@/src/constants/regulars";
+import { patternText } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
 
 export const SliderDefaultValues= {
-  name: "",
-  homeUrl:"",
-  imageUrl:null
+  file:null,
+  title_ua: "",
+  title_en: "",
+  title_pl: "",
+  text_ua: "",
+  text_en: "",
+  text_pl: "",
 }
 
 const validateImage =(value)=>{
@@ -19,16 +23,56 @@ const validateImage =(value)=>{
 
 export const SliderScheme = z
 	.object({
-		name: z.string()
-    .trim()
-    .min(2, { message: 'Поле назва не може бути порожнім' })
-    .regex(patternName, { message: 'Введіть дійсну назву' }),
-
-    homeUrl: z.string()
-    .trim()
-    .min(1, { message: 'Поле посилання не може бути порожнім' })
-    .regex(patternLink, { message: 'Введіть дійсний URL' }),
-
-    imageUrl: z.any()
+    file: z.any()
     .refine((file) => validateImage(file),"Формат зображення JPG, PNG, WEBP, Max.розмір 2MB"),
+
+		title_ua: z.string()
+    .trim()
+    .min(1, { message: 'Поле заголовок не може бути порожнім' })
+    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+		title_en: z.string()
+    .trim()
+    .min(1, { message: 'Поле заголовок не може бути порожнім' })
+    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+		title_pl: z.string()
+    .trim()
+    .min(1, { message: 'Поле заголовок не може бути порожнім' })
+    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+    text_ua: z.string()
+    .trim()
+    .min(1, { message: 'Поле текст не може бути порожнім' })
+    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+    text_en: z.string()
+    .trim()
+    .min(1, { message: 'Поле текст не може бути порожнім' })
+    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+    text_pl: z.string()
+    .trim()
+    .min(1, { message: 'Поле текст не може бути порожнім' })
+    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
 })
+// {
+//   "title": {
+//     "en": "string",
+//     "pl": "string",
+//     "ua": "string"
+//   },
+//   "subtitle": {
+//     "en": "string",
+//     "pl": "string",
+//     "ua": "string"
+//   },
+//   "file": "string"
+// }

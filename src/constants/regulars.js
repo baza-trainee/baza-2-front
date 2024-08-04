@@ -1,6 +1,6 @@
   // регуярниі вирази блокують російські літери. 
 
-export const patternName = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’'-]{0,50}[\p{L}])?$/ugi;
+export const patternName = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’—'-]{0,50}[\p{L}])?$/ugi;
 
 export const patternEmail = /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
@@ -11,7 +11,7 @@ export const regInputPhone = /^[+1-9 ]\d{0,}$|^$/;
 
 export const patternPhone = /^\+380[\s]?\d{2}[\s]?\d{3}[\s]?\d{2}[\s]?\d{2}$/;
 
-export const patternMessage = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()_~₴#$%^&|”’`\\]{10,300}$/ugi;
+export const patternMessage = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—'-\[\]{}()_~₴#$%^&|”’`\\]{5,}$/ugi;
 
 export const patternUrlLinkedin = /^https:\/\/www\.linkedin\.com\/in\/[A-z0-9%/._-]{2,}/i;
 
@@ -21,7 +21,7 @@ export const patternCountry = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u
 
 export const patternСity = /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}`’']{2,30}(?:[\p{L} `’'”-]{2,30}[\p{L}])?)$/ugi;
 
-export const patternText = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?'-\[\]{}()_~₴#$%^&|”’`\\]{1,200}$/ugi;
+export const patternText = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—'-\[\]{}()_~₴#$%^&|”’`\\]{1,}$/ugi;
 
 export const patternPassword =  /(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!@#$%^&*]{8,14}/i
 

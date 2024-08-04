@@ -3,36 +3,31 @@
 
 .list{
   width: 100%;
- // max-width: 1300px;
- display: flex;
- flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  .card{
-    min-width: 320px;
-    height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .heroCard{
+    width: 100%;
+    height: clamp(500px, 70vh, 860px);
   }
 
   .item{
     min-width: 320px;
-    width: 33%;
-    max-width: 350px;
+    width: 100%;
     position: relative;
 
     .btns{
       width: 100%;
       min-height: 100px;
       padding: 8px;
-      //padding-top: 80px;
-      //background-color: aqua;
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
-
+      z-index: 3;
       display: flex;
+      flex-direction: column;
       gap: 10px;
-      //align-content: flex-end;
       align-items: flex-end;
       justify-content: flex-end;
       .btn{
@@ -44,9 +39,7 @@
         height: 40px;
         margin: 0;
       }
-
     }
-
   }
 }
 

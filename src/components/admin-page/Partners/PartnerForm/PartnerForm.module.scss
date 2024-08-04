@@ -32,9 +32,9 @@
     }
     .btn_cancel{
       padding: 15px 24px;
-      border: 3px solid  #c0a4b7;
+      border: 3px solid  var.$border-btn-admin;
       box-shadow: inset 3px 3px 4px 0 rgba(0, 0, 0, 0.25);
-      color: #fcfcfc;
+      color: var.$secondary-white;
     }
   }
 }

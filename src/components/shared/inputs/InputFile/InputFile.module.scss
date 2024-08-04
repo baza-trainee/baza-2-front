@@ -3,9 +3,10 @@
 
 .wrapper{
   width: 320px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
-
+  position: relative;
   .input_file{
     position: relative;
     width: 100%;
@@ -66,6 +67,10 @@
   }
 
   .error{
+    position: absolute;
+    bottom: -22px;
+    //left: 0;
+    text-wrap: nowrap;
     @include mx.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;

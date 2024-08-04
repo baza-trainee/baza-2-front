@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import styles from './SlidePreview.module.scss'
 import clsx from 'clsx'
 import { useState } from 'react'
+import Image from 'next/image'
 import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 
@@ -17,7 +17,7 @@ export default function SlidePreview({imageUrl}) {
         </button>
         <div className={styles.img_wrap}>
           <Image
-            className={styles.img}
+            className={clsx(styles.img, imageUrl && styles.cover)}
             src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill

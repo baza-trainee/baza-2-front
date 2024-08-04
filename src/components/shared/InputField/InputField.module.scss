@@ -46,6 +46,7 @@
   width: 320px;
   display: flex;
   flex-direction: column;
+  position: relative;
   .wrapper{
     position: relative;
     & > input{
@@ -104,6 +105,9 @@
   }
 
   .error{
+    position: absolute;
+    bottom: -22px;
+    left: 0;
     @include mx.apply-font-styles(var.$text-16-font);
     font-size: 14px;
     color: var.$secondary-error;

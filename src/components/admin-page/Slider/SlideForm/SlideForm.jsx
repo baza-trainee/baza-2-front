@@ -1,22 +1,31 @@
 'use client';
 import styles from './SlideForm.module.scss'
-import { useEffect } from 'react';
+import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import InputField from '@/src/components/shared/InputField/InputField'
-import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { useRouter } from '@/src/navigation';
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
+import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
+import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { SliderDefaultValues, SliderScheme } from './SliderScheme';
-import { Icon } from '@/src/components/shared/Icon/Icon';
 import SlidePreview from '../SlidePreview/SlidePreview';
 
-export default function SlideForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Зберегти зміни'}) {
+export default function SlideForm({
+  hendleMutate, 
+  isSuccess, 
+  data, 
+  submitBtnText= 'Зберегти зміни'
+}) {
   const router = useRouter();
+
+  const[ prevUrl, setPrevUrl ] = useState(null)
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
     getValues,
@@ -35,26 +44,37 @@ export default function SlideForm({hendleMutate, isSuccess, handlePrevImg, data,
 
   useEffect(()=>{
     if(data){
-      const{name, imageUrl, homeUrl} = data
-      setValue('name', name)
-      setValue('homeUrl', homeUrl)
-      setValue('imageUrl', '')
-      handlePrevImg(imageUrl)
+      const{imageUrl, title, subtitle} = data
+      setValue('title_ua',title.ua )
+      setValue('title_en',title.en )
+      setValue('title_pl',title.pl )
+      setValue('text_ua',subtitle.ua )
+      setValue('text_en',subtitle.en )
+      setValue('text_pl',subtitle.pl )
+      setValue('file', '')
+      setPrevUrl(imageUrl)
     }
   },[data])
 
   const onSubmit = (data) => {
     const newData = {
-      name: data.name,
-      homeUrl: data.homeUrl,
-      file: data.imageUrl[0],
+      title: {
+        en: data.title_en,
+        pl: data.title_pl,
+        ua: data.title_ua
+      },
+      subtitle: {
+        en: data.text_en,
+        pl: data.text_pl,
+        ua: data.text_ua
+      },
+      file: data.file[0],
     }
     hendleMutate(newData)
   };
     
   const isDisabled = () => {
-    console.log(getValues('imageUrl'))
-    if (Object.keys(errors).length > 0) {
+    if (isError) {
       return true;
     } else 
     if (!isDirty) {
@@ -68,94 +88,110 @@ export default function SlideForm({hendleMutate, isSuccess, handlePrevImg, data,
 
   return(
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+
       <ul className={styles.list}>
-        {/* <li className={styles.list_item}>
+        <li className={clsx(styles.list_item, styles.grid_item1)}>
+          <InputFile
+            id={"file"}
+            className={styles.item}
+            type={'file'}
+            getPrevImgUrl={ setPrevUrl }
+            required={false}
+            accept="image/*"
+            placeholder={"Завантажте зображення"}
+            registerOptions={register("file", { ...SliderScheme.file })}
+            isDirty={isDirty}
+            isError={errors.file}
+            isValid={isValid}
+            version={"file"}
+            label={'Зображення'}
+          />
+        </li>
+        <li className={clsx(styles.list_item, styles.grid_item2)}>
+          <SlidePreview imageUrl={prevUrl}/>
+        </li>
+
+        <li className={clsx(styles.list_item, styles.grid_item3)}>
           <InputField
-            id={"name"}
-            maxLength={55}
+            id={"title_ua"}
+            maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Назва"}
-            registerOptions={register("name", { ...SliderScheme.name })}
-            isError={errors.name}
+            placeholder={"Заголовок"}
+            registerOptions={register("title_ua", { ...SliderScheme.title_ua })}
+            isError={errors.title_ua}
             isValid={isValid}
             version={"input_admin"}
-            label={'Назва'}
+            label={'Заголовок'}
+            locale={'ua'}
           />
-        </li> */}
-        <li>
-          <ul className={styles.list_items}>
-            <li>
-              <InputFile
-                id={"imageUrl"}
-                className={styles.item}
-                type={'file'}
-                getPrevImgUrl={ handlePrevImg }
-                required={false}
-                accept="image/*"
-                placeholder={"Завантажте зображення"}
-                registerOptions={register("imageUrl", { ...SliderScheme.imageUrl })}
-                isDirty={isDirty}
-                isError={errors.imageUrl}
-                isValid={isValid}
-                version={"file"}
-                label={'Зображення'}
-              />
-            </li>
-            <li>
-              <SlidePreview/>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul className={styles.list_items}>
-            <li className={styles.list_item}>
-              <InputField
-                id={"name"}
-                maxLength={55}
-                className={styles.item}
-                required={false}
-                placeholder={"Заголовок"}
-                registerOptions={register("name", { ...SliderScheme.name })}
-                isError={errors.name}
-                isValid={isValid}
-                version={"input_admin"}
-                label={'Заголовок'}
-                locale={'ua'}
-              />
-            </li>
-            <li className={styles.list_item}>
-              <InputField
-                id={"name"}
-                maxLength={55}
-                className={styles.item}
-                required={false}
-                placeholder={"Заголовок"}
-                registerOptions={register("name", { ...SliderScheme.name })}
-                isError={errors.name}
-                isValid={isValid}
-                version={"input_admin"}
-                locale={'en'}
-              />
-            </li> 
-
-            <li className={styles.list_item}>
-              <InputField
-                id={"name"}
-                maxLength={55}
-                className={styles.item}
-                required={false}
-                placeholder={"Заголовок"}
-                registerOptions={register("name", { ...SliderScheme.name })}
-                isError={errors.name}
-                isValid={isValid}
-                version={"input_admin"}
-                locale={'pl'}
-              />
-            </li> 
-          </ul>
         </li>
 
+        <li className={clsx(styles.list_item, styles.grid_item4)}>
+          <InputField
+            id={"title_en"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Заголовок"}
+            registerOptions={register("title_en", { ...SliderScheme.title_en })}
+            isError={errors.title_en}
+            isValid={isValid}
+            version={"input_admin"}
+            locale={'en'}
+          />
+        </li> 
+
+        <li className={clsx(styles.list_item, styles.grid_item5)}>
+          <InputField
+            id={"title_pl"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Заголовок"}
+            registerOptions={register("title_pl", { ...SliderScheme.title_pl})}
+            isError={errors.title_pl}
+            isValid={isValid}
+            version={"input_admin"}
+            locale={'pl'}
+          />
+        </li> 
+
+
+        <li className={clsx(styles.list_item, styles.grid_item6)}>
+          <TextArea 
+            id={"text_ua"}   
+            className={styles.item} 
+            isError={errors.text_ua}
+            isValid={isValid}
+            registerOptions={register("text_ua", { ...SliderScheme.text_ua })}
+            required={false}
+            placeholder={"Основний текст"} 
+            label={'Основний текст'} locale={'ua'}/>
+        </li>
+
+        <li className={clsx(styles.list_item, styles.grid_item7)}>
+          <TextArea 
+            id={"text_en"}   
+            className={styles.item} 
+            isError={errors.text_en}
+            isValid={isValid}
+            registerOptions={register("text_en", { ...SliderScheme.text_en })}
+            required={false}
+            placeholder={"Основний текст"} 
+            locale={'en'}/>
+        </li>
+        <li className={clsx(styles.list_item, styles.grid_item8)}>
+          <TextArea 
+            id={"text_pl"}   
+            className={styles.item} 
+            isError={errors.text_pl}
+            isValid={isValid}
+            registerOptions={register("text_pl", { ...SliderScheme.text_pl })}
+            required={false}
+            placeholder={"Основний текст"} 
+            locale={'pl'}/>
+        </li>
       </ul>
 
       <div className={styles.btns}>
