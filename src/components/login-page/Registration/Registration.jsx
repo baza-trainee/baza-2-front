@@ -10,17 +10,18 @@ import UseAlert from '../../shared/UseAlert/UseAlert';
 import Section from '../Section/Section';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
 import AdminModal from '../../modals/AdminModal/AdminModal';
+import { credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 export default function Registration() {
   const open = stateUseAlert(state => state.open);
   const router = useRouter();
- // Шлях для кнопки скасувати 
+ // Шлях на сторінку login
   const loginPath ='/admin/login'
 
   const [ modal, setModal ] = useState(false)
 
   const isError=()=>{
-    sessionStorage.removeItem('credentials')
+    credentialsSessionStorage.reset()
     open('error',false)
   }
 
@@ -40,9 +41,8 @@ export default function Registration() {
   }
 
   const onSubmit = (data) => {
-    mutate({email:data.email, password:data.password, name:'vlad'})
-    sessionStorage.setItem('credentials',
-      JSON.stringify({email:data.email, password:data.password}))
+    mutate({email:data.email, password:data.password, name:'admin'})
+    credentialsSessionStorage.set({email:data.email, password:data.password})
   };
 
   return (
