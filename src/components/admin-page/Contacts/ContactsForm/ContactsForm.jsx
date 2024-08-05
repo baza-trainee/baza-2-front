@@ -9,7 +9,7 @@ import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import InputField from "@/src/components/shared/inputs/InputField/InputField";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 
-export default function ContactsForm() {
+export default function ContactsForm({ onSuccess, onPending }) {
   const { data: contactsData } = useQuery({
     queryKey: ["contacts"],
     queryFn: getContacts,
@@ -32,7 +32,6 @@ export default function ContactsForm() {
   const mutation = useMutation({
     mutationFn: updateContacts,
     onSuccess: (data) => {
-      // Обновляем оригинальные данные после успешного обновления
       setOriginalPhone1(phone1);
       setOriginalPhone2(phone2);
       setOriginalEmail(email);
@@ -40,10 +39,11 @@ export default function ContactsForm() {
       setOriginalFacebook(facebook);
       setOriginalLinkedin(linkedin);
 
-      console.log("Дані успішно оновлено", data);
+      if (onSuccess) onSuccess();
     },
     onError: (error) => {
       console.error("Помилка при оновлені даних", error.message);
+      if (onPending) onPending();
     },
   });
 
@@ -85,8 +85,8 @@ export default function ContactsForm() {
 
     const updatedContacts = {
       contactsDataList: {
-        phone1: formatPhoneNumber(phone1, true),
-        phone2: formatPhoneNumber(phone2, true),
+        phone1: Number(formatPhoneNumber(phone1, true)),
+        phone2: Number(formatPhoneNumber(phone2, true)),
         email: email,
       },
       socialsMediaList: {
@@ -96,6 +96,7 @@ export default function ContactsForm() {
       },
     };
 
+    if (onPending) onPending();
     mutation.mutate(updatedContacts);
   };
 
