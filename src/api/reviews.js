@@ -1,16 +1,12 @@
+import instance from './config/instance';
 import instanceBaza2 from './config/instance-baza2';
 // Example Value Schema
 
-const reviewsEndpoint = '/reviews'
+const reviewsEndpoint = '/testimonials'
 
-export async function  getAllReviews({ page, search, limit }){
-	const params = new URLSearchParams();
-	if (page) params.append('page', page.toString());
-	if (search) params.append('search', search);
-	if (limit) params.append('limit', limit.toString());
-
+export async function  getAllReviews(){
 	try {
-		const res = await instanceBaza2.get(`${reviewsEndpoint}?${params.toString()}`)
+		const res = await instance.get(reviewsEndpoint)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)

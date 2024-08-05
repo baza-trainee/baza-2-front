@@ -15,9 +15,9 @@ export default function Reviews() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
   const addReviewPath = '/admin/reviews/add-review'
-
-  const { isError, data, refetch } = useQuery({ queryKey: ['review'], 
-    queryFn:()=>{return getAllReviews()}});
+  // Запит на базу 1
+  const { isError, data, refetch } = useQuery({ queryKey: ['reviews'], 
+    queryFn:getAllReviews});
 
   const deleteReview = useMutation({
     mutationFn:(id) => {
@@ -28,7 +28,7 @@ export default function Reviews() {
       open('error', false)
     }})
 
-
+console.log(data)
  return( 
     <SectionAdmin title={'Відгуки'} lang={true}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
@@ -43,7 +43,7 @@ export default function Reviews() {
           <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
         </>:
         <>
-          {data?.results && <ReviewList data={data?.results} hendleRemove={ deleteReview.mutate }/>}
+          {data && <ReviewList data={data} hendleRemove={ deleteReview.mutate }/>}
         </>
       }
 

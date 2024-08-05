@@ -7,26 +7,28 @@
   flex-direction: column;
   gap: 32px;
 
-  .heroCard{
+  .card{
     width: 100%;
-    height: clamp(500px, 70vh, 860px);
   }
 
   .item{
     min-width: 320px;
     width: 100%;
     position: relative;
-
+    padding: 32px 12px;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
+    background: var.$primary-fon-card;
     .btns{
       width: 100%;
       min-height: 100px;
       padding: 8px;
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       z-index: 3;
       display: flex;
-      flex-direction: column;
+      //flex-direction: column;
       gap: 10px;
       align-items: flex-end;
       justify-content: flex-end;

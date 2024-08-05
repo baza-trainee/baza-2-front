@@ -6,41 +6,63 @@ import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
-import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
+import FeedbackCard from '@/src/components/shared/FeedbackCard/FeedbackCard';
+import { formatDate } from '@/src/lib/utils/formatData';
 
-export default function SliderList({data, hendleRemove}) {
+export default function ReviewList({data, hendleRemove}) {
   const router = useRouter();
   // Шляхи сторінок
-  const editSlidePath = '/admin/slider/edit-slide'
+  const editReviewPath = '/admin/reviews/edit-review'
 
   // Мова сторінки.
   const { locale } = useParams();
  
-  const[ idSlide, setIdIdSlide ] = useState(null)
+  const[ idReview, setIdIdReview ] = useState(null)
 
   const closeModal=()=>{
-    setIdIdSlide(null)
+    setIdIdReview(null)
   }
 
   const okRemove=()=>{
     hendleRemove(idSlide)
-    setIdIdSlide(null)
+    setIdIdReview(null)
   }
+
+//   {
+//     "name": {
+//         "en": "Vitaliy",
+//         "pl": "Witalij",
+//         "ua": "Віталій"
+//     },
+//     "review": {
+//         "en": "The project is built on the win-win principle, when both parties reinforce each other for the benefit of the community. Great idea!",
+//         "pl": "Projekt opiera się na zasadzie win-win, gdy obie strony wzmacniają się nawzajem z korzyścią dla społeczności. Świetny pomysł!",
+//         "ua": "Проєкт побудовано за принципом win-win, коли обидві сторони підсилюють один одного на користь спільноти. Чудова ідея!"
+//     },
+//     "_id": "6515c10b812102a60b6458a5",
+//     "role": "БФ",
+//     "date": 1684800000000,
+//     "imageUrl": "1697453993471.png",
+//     "__v": 0
+// }
+  //console.log(data)
+  //{ image, name, role, date, text }
+
 
   return(
     <>
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-            <HeroCard title={el.title[locale]} desc={el.subtitle[locale]} className={styles.heroCard} img={el.imageUrl}/>
+            <FeedbackCard {...el}/>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 
-                onClick={()=>{router.push(`${editSlidePath}/${el._id}`)}}>
+                onClick={()=>{router.push(`${editReviewPath}/${el._id}`)}}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
-              <MainButton variant='admin' onClick={()=>{setIdIdSlide(el._id)}} className={styles.btn}>
+              <MainButton variant='admin' onClick={()=>{setIdIdReview(el._id)}} className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>
@@ -49,11 +71,11 @@ export default function SliderList({data, hendleRemove}) {
         </ul> : 
         <>
           <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-          <p className={styles.length}>Додайте слайд.</p>
+          <p className={styles.length}>Додайте відгук.</p>
         </>
       }
 
-      <AdminModal isOpen={idSlide} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити слайд?'} btnBlok={true}></AdminModal>
+      <AdminModal isOpen={idReview} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити відгук?'} btnBlok={true}></AdminModal>
     </>
   )
 }
