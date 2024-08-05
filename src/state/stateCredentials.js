@@ -13,6 +13,10 @@ export const credentialsSessionStorage={
       JSON.stringify({...data})
     )
   },
+
+  reset: () => {
+    sessionStorage.removeItem('credentials')
+  },
 }
 
 export const credentialslocalStorage={

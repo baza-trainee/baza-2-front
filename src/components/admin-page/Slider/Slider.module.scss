@@ -10,14 +10,16 @@
   box-shadow: 0 4px 4px 0 rgba(234, 232, 232, 0.25), 0 2px 12px 0 rgba(234, 232, 232, 0.25);
   background: var.$secondary-hover;
   margin-bottom: 60px;
+  border-radius: 5px;
   .btn{
     padding: 15px 24px;
-    color: #030110;
+    color: var.$secondary-black;
     font-weight: 600;
     font-size: 18px;
     gap: 5px;
     &:hover{
-      background-color: #03011010
+      background-color: #c0a4b74f;
+      box-shadow: inset 1px 1px #c0a4b7ad, inset -1px -1px #c0a4b7ad;
     }
   }
 }
