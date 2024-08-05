@@ -4,23 +4,29 @@ import {
   patternLink,
   patternPhone,
 } from "@/src/constants/regulars";
+import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { z } from "zod";
 
+export const contactsDefaultValues = {
+  phone1: "",
+  phone2: "",
+  email: "",
+  telegram: "",
+  facebook: "",
+  linkedin: "",
+};
+
 export const ContactsScheme = z.object({
-  phone: z
+  phone1: z
     .string()
     .trim()
-    .regex(patternPhone, { message: "incorrect_phone" })
-    .transform((value) => formatPhoneNumber(value, true)),
-
-  email: z
+    .transform((value) => Number(formatPhoneNumber(value, true))),
+  phone2: z
     .string()
     .trim()
-    .regex(patternEmail, { message: "incorrect_email" })
-    .regex(patternEmailNonRu, { message: "invalid_ru" }),
-
-  validUrl: z
-    .string()
-    .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .transform((value) => Number(formatPhoneNumber(value, true))),
+  email: z.string().trim(),
+  telegram: z.string().trim(),
+  facebook: z.string().trim(),
+  linkedin: z.string().trim(),
 });
