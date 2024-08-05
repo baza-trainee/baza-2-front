@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import styles from "./ContactsForm.module.scss";
 import { Icon } from "@/src/components/shared/Icon/Icon";
-import { useQuery } from "@tanstack/react-query";
-import { getContacts } from "@/src/api/contacts";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { getContacts, updateContacts } from "@/src/api/contacts";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import InputField from "@/src/components/shared/inputs/InputField/InputField";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
@@ -21,6 +21,16 @@ export default function ContactsForm() {
   const [telegram, setTelegram] = useState("");
   const [facebook, setFacebook] = useState("");
   const [linkedin, setLinkedin] = useState("");
+
+  const mutation = useMutation({
+    mutationFn: updateContacts,
+    onSuccess: (data) => {
+      console.log("Дані успішно оновлено", data);
+    },
+    onError: (error) => {
+      console.error("Помилка при оновлені даних", error.message);
+    },
+  });
 
   useEffect(() => {
     if (contactsData) {
@@ -43,6 +53,26 @@ export default function ContactsForm() {
 
   const handlePhone2Change = (e) => {
     setPhone2(formatPhoneNumber(e.target.value));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const updatedContacts = {
+      contactsDataList: {
+        phone1: formatPhoneNumber(phone1, true),
+        phone2: formatPhoneNumber(phone2, true),
+        email: email,
+      },
+      socialsMediaList: {
+        telegram: telegram,
+        facebook: facebook,
+        linkedin: linkedin,
+      },
+    };
+
+    console.log("Надіслані дані:", updatedContacts);
+    mutation.mutate(updatedContacts);
   };
 
   const isDisabled = () => {
@@ -79,7 +109,7 @@ export default function ContactsForm() {
 
   return (
     <>
-      <div className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.row}>
           <div className={styles.input}>
             <InputField
@@ -192,20 +222,20 @@ export default function ContactsForm() {
             />
           </div>
         </div>
-      </div>
-      <div className={styles.btns}>
-        <MainButton type="submit" disabled={isDisabled()}>
-          {"Зберегти зміни"}
-        </MainButton>
+        <div className={styles.btns}>
+          <MainButton type="submit" disabled={isDisabled()}>
+            {"Зберегти зміни"}
+          </MainButton>
 
-        <MainButton
-          variant="admin"
-          className={styles.btn_cancel}
-          onClick={reset}
-        >
-          {"Скасувати"}
-        </MainButton>
-      </div>
+          <MainButton
+            variant="admin"
+            className={styles.btn_cancel}
+            onClick={reset}
+          >
+            {"Скасувати"}
+          </MainButton>
+        </div>
+      </form>
     </>
   );
 }
