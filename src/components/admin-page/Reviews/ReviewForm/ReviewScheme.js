@@ -1,15 +1,17 @@
 import { z } from "zod";
-import { patternText } from "@/src/constants/regulars";
+import { patternName, patternText } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
 
 export const ReviewDefaultValues = {
   file:null,
-  title_ua: "",
-  title_en: "",
-  title_pl: "",
+  name_ua: "",
+  name_en: "",
+  name_pl: "",
   text_ua: "",
   text_en: "",
   text_pl: "",
+  role:"",
+  date:""
 }
 
 const validateImage =(value)=>{
@@ -24,25 +26,25 @@ const validateImage =(value)=>{
 export const ReviewScheme = z
 	.object({
     file: z.any()
-    .refine((file) => validateImage(file),"Формат зображення JPG, PNG, WEBP, Max.розмір 2MB"),
+    .refine((file) => validateImage(file),"Формат JPG, PNG, WEBP, Max.розмір 2MB"),
 
-		title_ua: z.string()
+		name_ua: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(2, { message: 'Ім’я повинно мати не менше 2 знаків' })
+    .max(30, { message: 'Ім’я повинно бути не більше 30 знаків' })
+    .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
-		title_en: z.string()
+		name_en: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(2, { message: 'Ім’я повинно мати не менше 2 знаків' })
+    .max(30, { message: 'Ім’я повинно бути не більше 30 знаків' })
+    .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
-		title_pl: z.string()
+		name_pl: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(2, { message: 'Ім’я повинно мати не менше 2 знаків' })
+    .max(30, { message: 'Ім’я повинно бути не більше 30 знаків' })
+    .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
     text_ua: z.string()
     .trim()
@@ -62,17 +64,31 @@ export const ReviewScheme = z
     .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
     .regex(patternText, { message: 'Не використовуйте російські літери' }),
 
+    role:z.string()
+    .trim()
+    .min(1, { message: 'Поле текст не може бути порожнім' })
+    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
+    date:z.string()
+    .trim()
+    .min(1, { message: 'Поле текст не може бути порожнім' })
+    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
+    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+
 })
 // {
-//   "title": {
+//   "name": {
 //     "en": "string",
 //     "pl": "string",
 //     "ua": "string"
 //   },
-//   "subtitle": {
+//   "review": {
 //     "en": "string",
 //     "pl": "string",
 //     "ua": "string"
 //   },
-//   "file": "string"
+//   "role": "string",
+//   "date": 0,
+//   "imageUrl": "string"
 // }

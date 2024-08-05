@@ -9,7 +9,7 @@ export default function ReviewPreview({imageUrl}) {
   const[ full, setFull ] = useState(false)
 
   return (
-    <div className={clsx(styles.preview,full && styles._full)}>
+    <div className={clsx(styles.preview, full && styles._full)}>
       <div className={styles.slideCardItem}>
 
         <button type='button' onClick={()=>{setFull(!full)}}>
@@ -17,7 +17,7 @@ export default function ReviewPreview({imageUrl}) {
         </button>
         <div className={styles.img_wrap}>
           <Image
-            className={clsx(styles.img, imageUrl && styles.cover)}
+            className={styles.img}
             src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill

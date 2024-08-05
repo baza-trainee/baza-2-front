@@ -16,7 +16,7 @@ export default function ReviewForm({
   hendleMutate, 
   isSuccess, 
   data, 
-  submitBtnText= 'Зберегти зміни'
+  submitBtnText= 'Додати'
 }) {
   const router = useRouter();
 
@@ -57,20 +57,21 @@ export default function ReviewForm({
   },[data])
 
   const onSubmit = (data) => {
-    const newData = {
-      title: {
-        en: data.title_en,
-        pl: data.title_pl,
-        ua: data.title_ua
-      },
-      subtitle: {
-        en: data.text_en,
-        pl: data.text_pl,
-        ua: data.text_ua
-      },
-      file: data.file[0],
-    }
-    hendleMutate(newData)
+    console.log(data)
+    // const newData = {
+    //   title: {
+    //     en: data.title_en,
+    //     pl: data.title_pl,
+    //     ua: data.title_ua
+    //   },
+    //   subtitle: {
+    //     en: data.text_en,
+    //     pl: data.text_pl,
+    //     ua: data.text_ua
+    //   },
+    //   file: data.file[0],
+    // }
+    //hendleMutate(newData)
   };
     
   const isDisabled = () => {
@@ -90,7 +91,86 @@ export default function ReviewForm({
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 
       <ul className={styles.list}>
-        <li className={clsx(styles.list_item, styles.grid_item1)}>
+
+        <li className={clsx(styles.list_item, styles.grid_item3)}>
+          <InputField
+            id={"name_ua"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Ім’я"}
+            registerOptions={register("name_ua", { ...ReviewScheme.name_ua })}
+            isError={errors.name_ua}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Ім’я'}
+            locale={'ua'}
+          />
+        </li>
+
+        <li className={clsx(styles.list_item, styles.grid_item4)}>
+          <InputField
+            id={"name_en"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Name"}
+            registerOptions={register("name_en", { ...ReviewScheme.name_en })}
+            isError={errors.name_en}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Ім’я'}
+            locale={'en'}
+          />
+        </li> 
+
+        <li className={clsx(styles.list_item, styles.grid_item5)}>
+          <InputField
+            id={"name_pl"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Imię"}
+            registerOptions={register("name_pl", { ...ReviewScheme.name_pl})}
+            isError={errors.name_pl}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Ім’я'}
+            locale={'pl'}
+          />
+        </li> 
+
+        <li className={clsx(styles.list_item, styles.grid_item5)}>
+          <InputField
+            id={"role"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Введіть дані"}
+            registerOptions={register("role", { ...ReviewScheme.role})}
+            isError={errors.role}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Спеціалізація'}
+          />
+        </li> 
+        <li className={clsx(styles.list_item, styles.grid_item5)}>
+          <InputField
+            id={"date"}
+            maxLength={100}
+            className={styles.item}
+            required={false}
+            placeholder={"Введіть дату"}
+            registerOptions={register("date", { ...ReviewScheme.date})}
+            isError={errors.date}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Дата'}
+            iconName={'calendar_dark'}
+          />
+        </li> 
+
+        <li className={clsx(styles.list_item, styles.item_prev)}>
           <InputFile
             id={"file"}
             className={styles.item}
@@ -98,67 +178,18 @@ export default function ReviewForm({
             getPrevImgUrl={ setPrevUrl }
             required={false}
             accept="image/*"
-            placeholder={"Завантажте зображення"}
+            placeholder={"Завантажте фото"}
             registerOptions={register("file", { ...ReviewScheme.file })}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
             version={"file"}
-            label={'Зображення'}
+            label={'Фото'}
           />
-        </li>
-        <li className={clsx(styles.list_item, styles.grid_item2)}>
-          <ReviewPreview imageUrl={prevUrl}/>
+            <ReviewPreview imageUrl={prevUrl}/>
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item3)}>
-          <InputField
-            id={"title_ua"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Заголовок"}
-            registerOptions={register("title_ua", { ...ReviewScheme.title_ua })}
-            isError={errors.title_ua}
-            isValid={isValid}
-            version={"input_admin"}
-            label={'Заголовок'}
-            locale={'ua'}
-          />
-        </li>
-
-        <li className={clsx(styles.list_item, styles.grid_item4)}>
-          <InputField
-            id={"title_en"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Заголовок"}
-            registerOptions={register("title_en", { ...ReviewScheme.title_en })}
-            isError={errors.title_en}
-            isValid={isValid}
-            version={"input_admin"}
-            locale={'en'}
-          />
-        </li> 
-
-        <li className={clsx(styles.list_item, styles.grid_item5)}>
-          <InputField
-            id={"title_pl"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Заголовок"}
-            registerOptions={register("title_pl", { ...ReviewScheme.title_pl})}
-            isError={errors.title_pl}
-            isValid={isValid}
-            version={"input_admin"}
-            locale={'pl'}
-          />
-        </li> 
-
-
-        <li className={clsx(styles.list_item, styles.grid_item6)}>
+        <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_ua"}   
             className={styles.item_text} 
@@ -166,11 +197,12 @@ export default function ReviewForm({
             isValid={isValid}
             registerOptions={register("text_ua", { ...ReviewScheme.text_ua })}
             required={false}
-            placeholder={"Основний текст"} 
-            label={'Основний текст'} locale={'ua'}/>
+            placeholder={"Текст"} 
+            label={'Текст'} 
+            locale={'ua'}/>
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item7)}>
+        <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_en"}   
             className={styles.item_text} 
@@ -178,10 +210,10 @@ export default function ReviewForm({
             isValid={isValid}
             registerOptions={register("text_en", { ...ReviewScheme.text_en })}
             required={false}
-            placeholder={"Основний текст"} 
+            placeholder={"Текст"} 
             locale={'en'}/>
         </li>
-        <li className={clsx(styles.list_item, styles.grid_item8)}>
+        <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_pl"}   
             className={styles.item_text} 
@@ -189,7 +221,7 @@ export default function ReviewForm({
             isValid={isValid}
             registerOptions={register("text_pl", { ...ReviewScheme.text_pl })}
             required={false}
-            placeholder={"Основний текст"} 
+            placeholder={"Текст"}  
             locale={'pl'}/>
         </li>
       </ul>
@@ -198,7 +230,7 @@ export default function ReviewForm({
         <MainButton
           type="submit"
           className={styles.btn}
-          disabled={isDisabled()}
+          //disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>

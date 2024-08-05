@@ -1,21 +1,16 @@
 import styles from './ReviewList.module.scss'
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import FeedbackCard from '@/src/components/shared/FeedbackCard/FeedbackCard';
-import { formatDate } from '@/src/lib/utils/formatData';
 
 export default function ReviewList({data, hendleRemove}) {
   const router = useRouter();
   // Шляхи сторінок
   const editReviewPath = '/admin/reviews/edit-review'
-
-  // Мова сторінки.
-  const { locale } = useParams();
  
   const[ idReview, setIdIdReview ] = useState(null)
 
@@ -27,27 +22,6 @@ export default function ReviewList({data, hendleRemove}) {
     hendleRemove(idSlide)
     setIdIdReview(null)
   }
-
-//   {
-//     "name": {
-//         "en": "Vitaliy",
-//         "pl": "Witalij",
-//         "ua": "Віталій"
-//     },
-//     "review": {
-//         "en": "The project is built on the win-win principle, when both parties reinforce each other for the benefit of the community. Great idea!",
-//         "pl": "Projekt opiera się na zasadzie win-win, gdy obie strony wzmacniają się nawzajem z korzyścią dla społeczności. Świetny pomysł!",
-//         "ua": "Проєкт побудовано за принципом win-win, коли обидві сторони підсилюють один одного на користь спільноти. Чудова ідея!"
-//     },
-//     "_id": "6515c10b812102a60b6458a5",
-//     "role": "БФ",
-//     "date": 1684800000000,
-//     "imageUrl": "1697453993471.png",
-//     "__v": 0
-// }
-  //console.log(data)
-  //{ image, name, role, date, text }
-
 
   return(
     <>

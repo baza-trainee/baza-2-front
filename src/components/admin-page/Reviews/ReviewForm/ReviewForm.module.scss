@@ -35,16 +35,21 @@
           height: 200px;
         }
       }
-
+ 
     }
-    .grid_item1 { grid-area: 1 / 1 / 2 / 2; }
-    .grid_item2 { grid-area: 1 / 2 / 2 / 3; }
-    .grid_item3 { grid-area: 2 / 1 / 3 / 2; }
-    .grid_item4 { grid-area: 2 / 2 / 3 / 3; }
-    .grid_item5 { grid-area: 2 / 3 / 3 / 4; }
-    .grid_item6 { grid-area: 3 / 1 / 4 / 2; }
-    .grid_item7 { grid-area: 3 / 2 / 4 / 3; }
-    .grid_item8 { grid-area: 3 / 3 / 4 / 4; }
+    .item_prev{
+      display: flex;
+      gap: 5px;
+    }
+
+    // .grid_item1 { grid-area: 1 / 1 / 2 / 2; }
+    // .grid_item2 { grid-area: 1 / 2 / 2 / 3; }
+    // .grid_item3 { grid-area: 2 / 1 / 3 / 2; }
+    // .grid_item4 { grid-area: 2 / 2 / 3 / 3; }
+    // .grid_item5 { grid-area: 2 / 3 / 3 / 4; }
+    // .grid_item6 { grid-area: 3 / 1 / 4 / 2; }
+    // .grid_item7 { grid-area: 3 / 2 / 4 / 3; }
+    // .grid_item8 { grid-area: 3 / 3 / 4 / 4; }
   }
 
   .btns{
