@@ -5,9 +5,10 @@ import { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginDefaultValues, loginSchema } from './loginScheme';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
+import { credentialslocalStorage, credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 export default function LoginForm({ handleMutate }) {
 
@@ -27,11 +28,9 @@ export default function LoginForm({ handleMutate }) {
   }
 
   useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
+    const credentials = credentialslocalStorage.get()
     if (credentials) {
-      const { email, password, remember } = JSON.parse(
-        credentials
-      );
+      const { email, password, remember } = credentials
       setValue('email', email);
       setValue('password', password);
       setRemember( remember);
@@ -42,13 +41,11 @@ export default function LoginForm({ handleMutate }) {
     handleMutate(data)
     resetForm()
     if (remember) {
-      localStorage.setItem(
-        'credentials',
-        JSON.stringify({...data, remember:remember})
-      );
+      credentialslocalStorage.set({...data, remember:remember})
     } else {
-      localStorage.removeItem('credentials');
+      credentialslocalStorage.reset()
     }
+    credentialsSessionStorage.set({...data})
   };
 
 

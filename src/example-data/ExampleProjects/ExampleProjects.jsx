@@ -7,12 +7,12 @@ import { useState } from "react";
 
 import { createImageUrlBaza1 } from "@/src/lib/hooks/createImageUrl";
 import { createKey } from "@/src/lib/utils/createKey";
+import ProjectCard from "@/src/components/projects-page/Projects/ProjectCard/ProjectCard";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
-import InputSearch from "@/src/components/shared/InputSearch/InputSearch";
+import InputSearch from "@/src/components/shared/inputs/InputSearch/InputSearch";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import SorryModal from "@/src/components/modals/SorryModal/SorryModal";
 import Loader from "@/src/components/shared/loader/Loader";
-import ProjectCard from "@/src/components/projects-page/ProjectCard/ProjectCard";
 
 export default function ExampleProjects() {
   const open = stateSorryModal((state) => state.open);

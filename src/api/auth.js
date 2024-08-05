@@ -12,12 +12,12 @@ export const token = {
       'access_token',
       token
     )
-    instanceBaza2.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+   // instanceBaza2.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   },
 
   reset: () => {
     sessionStorage.removeItem('access_token')
-    instanceBaza2.defaults.headers.common['Authorization'] = '';
+    //instanceBaza2.defaults.headers.common['Authorization'] = '';
   },
 };
 
@@ -72,7 +72,7 @@ export const registerAdmin = async ({
       password,
       name,
     });
-    token.set(response.data.token);
+    //token.set(response.data.token);
     return response;
   } catch (error) {
     throw new Error(error)
@@ -126,7 +126,7 @@ export const passwordReset = async ({
       userId,
       token,
       password,
-    },{withCredentials: true});
+    });
     return response;
   } catch (error) {
     throw new Error(error)

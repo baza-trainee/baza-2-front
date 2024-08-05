@@ -30,16 +30,23 @@ export default function Partners() {
     }})
 
   return(
-    <SectionAdmin title={'Партнери'} hendleSearch={setSearch} lang={true}>
+    <SectionAdmin title={'Партнери'} hendleSearch={setSearch} lang={true} defaultValue={search}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
         router.push('/admin/partners/add-partner')
       }}>
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати партнера'}</MainButton >
-
-      {data?.results && !isError && <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>
+      {isError ?
+        <>
+          <p className={styles.error}>Помилка завантаження контенту.</p>
+          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
+        </>:
+        <>
+          {data?.results && 
+            <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>
+          }
+        </>
       }
-
       {deletePartner.isPending && <Loader/>}
       <UseAlert/>
     </SectionAdmin>

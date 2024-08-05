@@ -3,22 +3,33 @@ import styles from './RegistrationForm.module.scss';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registrationDefaultValues, registrationSchema } from './registrationScheme';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function RegistrationForm({ onSubmit }) {
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    setValue,
+    formState: {isError, errors, isValid, isDirty },
   } = useForm({ defaultValues: {...registrationDefaultValues}, resolver: zodResolver(registrationSchema), mode: 'onBlur'});
 
   const isDisabled = () => {
-    if (Object.keys(errors).length > 0) {
+    if (isError) {
       return true;
-    } else return false;
+    } else 
+    if (!isDirty) {
+      return true;
+    } else if(!isValid){
+      return true
+    }else return false
   };
+
+  const resetValue=()=>{
+    setValue("confirmPassword",'')
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -37,19 +48,21 @@ export default function RegistrationForm({ onSubmit }) {
             label={'Електронна пошта'}
           />
         </li>
-        <li>
+        <li className={styles.tooltip} >
           <InputField
             id={"password"}
             required={false}
             maxLength={15}
             className={styles.item}
             placeholder={"Пароль"}
+            onChange={resetValue}
             registerOptions={register("password", { ...registrationSchema.password })}
             isError={errors.password}
             isValid={isValid}
             version={"password"}
             label={'Пароль'}
           />
+           <TooltipText className={styles._active} text={"Пароль обов'язково має містити принаймні одну цифру та одну латинську літеру. Він може також містити символи !@#$%^&*. Довжина пароля повинна бути від 8 до 14 символів."} position='right'/>
         </li>
         <li>
           <InputField

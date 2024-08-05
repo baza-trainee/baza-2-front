@@ -27,7 +27,7 @@ const herosliderEndpoint = '/heroslider'
 export async function getAllSliders(){
 	try {
 		const res = await instanceBaza2.get(herosliderEndpoint)
-		return res.data.results
+		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
 	}
@@ -46,7 +46,7 @@ export async function getAllSliders(){
 //   },
 //   "imageUrl": "string"
 // }
-export async function createNewSliders(newSlider){
+export async function createNewSlide(newSlider){
 	try {
 		const res = await instanceBaza2.post(herosliderEndpoint, newSlider, {
       headers: { 'Content-Type': 'multipart/form-data' }})
@@ -56,7 +56,7 @@ export async function createNewSliders(newSlider){
 	}
 }
 
-export async function getById(id){
+export async function getSlideById(id){
 	try {
 		const res = await instanceBaza2.get(`${herosliderEndpoint}/${id}`);
 		return res.data
@@ -65,10 +65,19 @@ export async function getById(id){
 	}
 }
 
-export async function updateSlideById(id,updSlide){
+export async function updateSlideById(id, updSlide){
 	try {
 		const res = await instanceBaza2.patch(`${herosliderEndpoint}/${id}`, updSlide, {
       headers: { 'Content-Type': 'multipart/form-data' }});
+		return res
+	} catch (error) {
+		throw new Error(error?.response?.data?.message)
+	}
+}
+
+export async function deleteSlideById(id){
+	try {
+		const res = await instanceBaza2.delete(`${herosliderEndpoint}/${id}`);
 		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)

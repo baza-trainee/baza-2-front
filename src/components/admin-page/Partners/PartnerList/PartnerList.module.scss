@@ -1,13 +1,14 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
 .list{
   width: 100%;
- // max-width: 1300px;
  display: flex;
  flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   .card{
     min-width: 320px;
+    height: 180px;
   }
 
   .item{
@@ -20,15 +21,12 @@
       width: 100%;
       min-height: 100px;
       padding: 8px;
-      //padding-top: 80px;
-      //background-color: aqua;
       position: absolute;
       bottom: 0;
       left: 0;
 
       display: flex;
       gap: 10px;
-      //align-content: flex-end;
       align-items: flex-end;
       justify-content: flex-end;
       .btn{
@@ -44,4 +42,11 @@
     }
 
   }
+}
+
+.length{
+  @include mix.apply-font-styles(var.$h2-font);
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
 }

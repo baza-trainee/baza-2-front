@@ -3,6 +3,7 @@ export interface SpritesMap {
     | "arrow-back"
     | "baza-skill-logo"
     | "blog"
+    | "calendar_dark"
     | "calendar"
     | "carousel-arrow"
     | "check"
@@ -19,6 +20,7 @@ export interface SpritesMap {
     | "download"
     | "edit"
     | "facebook"
+    | "full_screen"
     | "go_out"
     | "internship-benefits-1"
     | "internship-benefits-2"
@@ -30,10 +32,12 @@ export interface SpritesMap {
     | "linkedin"
     | "logo"
     | "mail"
+    | "normal_screen"
     | "onboarding"
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_black"
     | "plus_icon"
     | "press_about"
     | "projects"
@@ -51,6 +55,7 @@ export const SPRITES_META: {
     | "arrow-back"
     | "baza-skill-logo"
     | "blog"
+    | "calendar_dark"
     | "calendar"
     | "carousel-arrow"
     | "check"
@@ -67,6 +72,7 @@ export const SPRITES_META: {
     | "download"
     | "edit"
     | "facebook"
+    | "full_screen"
     | "go_out"
     | "internship-benefits-1"
     | "internship-benefits-2"
@@ -78,10 +84,12 @@ export const SPRITES_META: {
     | "linkedin"
     | "logo"
     | "mail"
+    | "normal_screen"
     | "onboarding"
     | "open_eye"
     | "partners"
     | "phone"
+    | "plus_black"
     | "plus_icon"
     | "press_about"
     | "projects"
@@ -99,6 +107,7 @@ export const SPRITES_META: {
     "arrow-back",
     "baza-skill-logo",
     "blog",
+    "calendar_dark",
     "calendar",
     "carousel-arrow",
     "check",
@@ -115,6 +124,7 @@ export const SPRITES_META: {
     "download",
     "edit",
     "facebook",
+    "full_screen",
     "go_out",
     "internship-benefits-1",
     "internship-benefits-2",
@@ -126,10 +136,12 @@ export const SPRITES_META: {
     "linkedin",
     "logo",
     "mail",
+    "normal_screen",
     "onboarding",
     "open_eye",
     "partners",
     "phone",
+    "plus_black",
     "plus_icon",
     "press_about",
     "projects",
