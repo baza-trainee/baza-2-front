@@ -1,84 +1,62 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./ContactsForm.module.scss";
 import { Icon } from "@/src/components/shared/Icon/Icon";
-import { useQuery } from "@tanstack/react-query";
-import { getContacts } from "@/src/api/contacts";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import InputField from "@/src/components/shared/inputs/InputField/InputField";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
+import { useForm } from "react-hook-form";
+import { contactsDefaultValues, contactsScheme } from "./conctactFormScheme";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function ContactsForm() {
-  const { data: contactsData } = useQuery({
-    queryKey: ["contacts"],
-    queryFn: getContacts,
+export default function ContactsForm({ defaultValues, handleMutate }) {
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    reset,
+    formState: { errors, isValid, isDirty },
+  } = useForm({
+    defaultValues: { ...contactsDefaultValues },
+    resolver: zodResolver(contactsScheme),
+    mode: "onBlur",
   });
 
-  const [phone1, setPhone1] = useState("");
-  const [phone2, setPhone2] = useState("");
-  const [email, setEmail] = useState("");
-  const [telegram, setTelegram] = useState("");
-  const [facebook, setFacebook] = useState("");
-  const [linkedin, setLinkedin] = useState("");
+  const onSubmit = (data) => {
+    handleMutate({ contactsData: data.contactsData });
+  };
 
   useEffect(() => {
-    if (contactsData) {
-      setPhone1(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone1 || ""))
+    if (defaultValues) {
+      setValue(
+        "phone1",
+        formatPhoneNumber(String(defaultValues.contactsDataList?.phone1) || "")
       );
-      setPhone2(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone2 || ""))
+      setValue(
+        "phone2",
+        formatPhoneNumber(String(defaultValues.contactsDataList?.phone1) || "")
       );
-      setEmail(contactsData.contactsDataList?.email || "");
-      setTelegram(contactsData.socialsMediaList?.telegram || "");
-      setFacebook(contactsData.socialsMediaList?.facebook || "");
-      setLinkedin(contactsData.socialsMediaList?.linkedin || "");
+      setValue("email", defaultValues.contactsDataList?.email || "");
+      setValue("telegram", defaultValues.socialsMediaList?.telegram || "");
+      setValue("facebook", defaultValues.socialsMediaList?.facebook || "");
+      setValue("linkedin", defaultValues.socialsMediaList?.linkedin || "");
     }
-  }, [contactsData]);
-
-  const handlePhone1Change = (e) => {
-    setPhone1(formatPhoneNumber(e.target.value));
-  };
-
-  const handlePhone2Change = (e) => {
-    setPhone2(formatPhoneNumber(e.target.value));
-  };
+  }, [defaultValues]);
 
   const isDisabled = () => {
-    return (
-      phone1 ===
-        formatPhoneNumber(
-          String(contactsData?.contactsDataList?.phone1 || "")
-        ) &&
-      phone2 ===
-        formatPhoneNumber(
-          String(contactsData?.contactsDataList?.phone2 || "")
-        ) &&
-      email === (contactsData?.contactsDataList?.email || "") &&
-      telegram === (contactsData?.socialsMediaList?.telegram || "") &&
-      facebook === (contactsData?.socialsMediaList?.facebook || "") &&
-      linkedin === (contactsData?.socialsMediaList?.linkedin || "")
-    );
-  };
-
-  const reset = () => {
-    if (contactsData) {
-      setPhone1(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone1 || ""))
-      );
-      setPhone2(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone2 || ""))
-      );
-      setEmail(contactsData.contactsDataList?.email || "");
-      setTelegram(contactsData.socialsMediaList?.telegram || "");
-      setFacebook(contactsData.socialsMediaList?.facebook || "");
-      setLinkedin(contactsData.socialsMediaList?.linkedin || "");
-    }
+    console.log("Errors:", errors);
+    console.log("Is Dirty:", isDirty);
+    console.log("Is Valid:", isValid);
+    if (Object.keys(errors).length > 0) {
+      return true;
+    } else if (!isDirty) {
+      return true;
+    } else if (!isValid) {
+      return true;
+    } else return false;
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>
         <div className={styles.row}>
           <div className={styles.input}>
@@ -87,10 +65,9 @@ export default function ContactsForm() {
               required={false}
               type="textArea"
               placeholder="Введіть телефон"
+              registerOptions={register("phone1", { ...contactsScheme.phone1 })}
               version="input_admin"
               label="Телефон"
-              value={phone1}
-              onChange={handlePhone1Change}
             />
             <Icon
               width={24}
@@ -107,8 +84,7 @@ export default function ContactsForm() {
               placeholder="Введіть телефон"
               version="input_admin"
               label="Телефон"
-              value={phone2}
-              onChange={handlePhone2Change}
+              registerOptions={register("phone2", { ...contactsScheme.phone2 })}
             />
             <Icon
               width={24}
@@ -125,8 +101,7 @@ export default function ContactsForm() {
               placeholder="Введіть електронну пошту"
               version="input_admin"
               label="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              registerOptions={register("email", { ...contactsScheme.email })}
             />
             <Icon
               width={24}
@@ -145,8 +120,9 @@ export default function ContactsForm() {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Telegram"
-              value={telegram}
-              onChange={(e) => setTelegram(e.target.value)}
+              registerOptions={register("telegram", {
+                ...contactsScheme.telegram,
+              })}
             />
             <Icon
               width={24}
@@ -163,8 +139,9 @@ export default function ContactsForm() {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Facebook"
-              value={facebook}
-              onChange={(e) => setFacebook(e.target.value)}
+              registerOptions={register("facebook", {
+                ...contactsScheme.facebook,
+              })}
             />
             <Icon
               width={24}
@@ -181,8 +158,9 @@ export default function ContactsForm() {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Linkedin"
-              value={linkedin}
-              onChange={(e) => setLinkedin(e.target.value)}
+              registerOptions={register("linkedin", {
+                ...contactsScheme.linkedin,
+              })}
             />
             <Icon
               width={24}
@@ -206,6 +184,6 @@ export default function ContactsForm() {
           {"Скасувати"}
         </MainButton>
       </div>
-    </>
+    </form>
   );
 }
