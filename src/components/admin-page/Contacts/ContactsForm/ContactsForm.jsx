@@ -22,9 +22,24 @@ export default function ContactsForm() {
   const [facebook, setFacebook] = useState("");
   const [linkedin, setLinkedin] = useState("");
 
+  const [originalPhone1, setOriginalPhone1] = useState("");
+  const [originalPhone2, setOriginalPhone2] = useState("");
+  const [originalEmail, setOriginalEmail] = useState("");
+  const [originalTelegram, setOriginalTelegram] = useState("");
+  const [originalFacebook, setOriginalFacebook] = useState("");
+  const [originalLinkedin, setOriginalLinkedin] = useState("");
+
   const mutation = useMutation({
     mutationFn: updateContacts,
     onSuccess: (data) => {
+      // Обновляем оригинальные данные после успешного обновления
+      setOriginalPhone1(phone1);
+      setOriginalPhone2(phone2);
+      setOriginalEmail(email);
+      setOriginalTelegram(telegram);
+      setOriginalFacebook(facebook);
+      setOriginalLinkedin(linkedin);
+
       console.log("Дані успішно оновлено", data);
     },
     onError: (error) => {
@@ -34,16 +49,26 @@ export default function ContactsForm() {
 
   useEffect(() => {
     if (contactsData) {
-      setPhone1(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone1 || ""))
+      const phone1Value = formatPhoneNumber(
+        String(contactsData.contactsDataList?.phone1 || "")
       );
-      setPhone2(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone2 || ""))
+      const phone2Value = formatPhoneNumber(
+        String(contactsData.contactsDataList?.phone2 || "")
       );
+
+      setPhone1(phone1Value);
+      setPhone2(phone2Value);
       setEmail(contactsData.contactsDataList?.email || "");
       setTelegram(contactsData.socialsMediaList?.telegram || "");
       setFacebook(contactsData.socialsMediaList?.facebook || "");
       setLinkedin(contactsData.socialsMediaList?.linkedin || "");
+
+      setOriginalPhone1(phone1Value);
+      setOriginalPhone2(phone2Value);
+      setOriginalEmail(contactsData.contactsDataList?.email || "");
+      setOriginalTelegram(contactsData.socialsMediaList?.telegram || "");
+      setOriginalFacebook(contactsData.socialsMediaList?.facebook || "");
+      setOriginalLinkedin(contactsData.socialsMediaList?.linkedin || "");
     }
   }, [contactsData]);
 
@@ -71,40 +96,27 @@ export default function ContactsForm() {
       },
     };
 
-    console.log("Надіслані дані:", updatedContacts);
     mutation.mutate(updatedContacts);
   };
 
   const isDisabled = () => {
     return (
-      phone1 ===
-        formatPhoneNumber(
-          String(contactsData?.contactsDataList?.phone1 || "")
-        ) &&
-      phone2 ===
-        formatPhoneNumber(
-          String(contactsData?.contactsDataList?.phone2 || "")
-        ) &&
-      email === (contactsData?.contactsDataList?.email || "") &&
-      telegram === (contactsData?.socialsMediaList?.telegram || "") &&
-      facebook === (contactsData?.socialsMediaList?.facebook || "") &&
-      linkedin === (contactsData?.socialsMediaList?.linkedin || "")
+      phone1 === originalPhone1 &&
+      phone2 === originalPhone2 &&
+      email === originalEmail &&
+      telegram === originalTelegram &&
+      facebook === originalFacebook &&
+      linkedin === originalLinkedin
     );
   };
 
   const reset = () => {
-    if (contactsData) {
-      setPhone1(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone1 || ""))
-      );
-      setPhone2(
-        formatPhoneNumber(String(contactsData.contactsDataList?.phone2 || ""))
-      );
-      setEmail(contactsData.contactsDataList?.email || "");
-      setTelegram(contactsData.socialsMediaList?.telegram || "");
-      setFacebook(contactsData.socialsMediaList?.facebook || "");
-      setLinkedin(contactsData.socialsMediaList?.linkedin || "");
-    }
+    setPhone1(originalPhone1);
+    setPhone2(originalPhone2);
+    setEmail(originalEmail);
+    setTelegram(originalTelegram);
+    setFacebook(originalFacebook);
+    setLinkedin(originalLinkedin);
   };
 
   return (
