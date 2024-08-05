@@ -25,6 +25,14 @@
 
 .sliderContainer {
   padding-bottom: 48px;
+  min-height: 320px;
+  @media (min-width: 421px) {
+    min-height: 360px;
+  }
+
+  @media (min-width: 611px) {
+    min-height: 200px;
+  }
 }
 
 .titleRow {

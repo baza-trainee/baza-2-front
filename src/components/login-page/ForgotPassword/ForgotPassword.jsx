@@ -37,7 +37,7 @@ export default function ForgotPassword() {
   const url = `${document?.location.origin}/admin/recover-password?token=0d4edd6644700fcb2a84d2b597d3413b819cae2631acbfed424a35dac4ef260e&id=650fec0015d612e0367f5ba6`
 
   return (
-    <Section title={'Забули пароль?'} text={'Вкажіть,Вашу електронну адресу,щоб підтвердити Вашу особу'}>
+    <Section title={'Забули пароль?'} text={'Вкажіть Вашу електронну адресу, щоб підтвердити Вашу особу'}>
 
       <FormForgotPassword handleMutate={mutate}/>
 
