@@ -3,6 +3,7 @@ export interface SpritesMap {
     | "arrow-back"
     | "baza-skill-logo"
     | "blog"
+    | "calendar_dark"
     | "calendar"
     | "carousel-arrow"
     | "check"
@@ -54,6 +55,7 @@ export const SPRITES_META: {
     | "arrow-back"
     | "baza-skill-logo"
     | "blog"
+    | "calendar_dark"
     | "calendar"
     | "carousel-arrow"
     | "check"
@@ -105,6 +107,7 @@ export const SPRITES_META: {
     "arrow-back",
     "baza-skill-logo",
     "blog",
+    "calendar_dark",
     "calendar",
     "carousel-arrow",
     "check",

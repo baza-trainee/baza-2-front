@@ -14,6 +14,8 @@ import AdminModal from '../../modals/AdminModal/AdminModal';
 export default function Registration() {
   const open = stateUseAlert(state => state.open);
   const router = useRouter();
+ // Шлях для кнопки скасувати 
+  const loginPath ='/admin/login'
 
   const [ modal, setModal ] = useState(false)
 
@@ -34,7 +36,7 @@ export default function Registration() {
 
   const closeModal=()=>{
     setModal(false)
-    router.replace('/admin')
+    router.replace(loginPath)
   }
 
   const onSubmit = (data) => {
@@ -47,11 +49,13 @@ export default function Registration() {
     <Section title={'Реєстрація'} text={'Зареєструйтесь в системі'}>
       <RegistrationForm onSubmit={onSubmit}/>
 
-      <p className={styles.link}>Ви маєте акаунт? <Link href={'/admin/login'}>Авторизуватись</Link></p>
+      <p className={styles.link}>Ви маєте акаунт? <Link href={loginPath}>Авторизуватись</Link></p>
+
+      {isPending && <Loader/>} 
+     
+      <AdminModal isOpen={modal} handleCallback={closeModal} title={'Реєстрація успішна'}/>
 
       <UseAlert/>
-      <AdminModal isOpen={modal} closeModal={closeModal} title={'Реєстрація успішна'}/>
-      {isPending && <Loader/>} 
     </Section>
   )
 }
