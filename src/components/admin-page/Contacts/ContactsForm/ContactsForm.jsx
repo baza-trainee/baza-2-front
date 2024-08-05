@@ -85,8 +85,8 @@ export default function ContactsForm({ onSuccess, onPending }) {
 
     const updatedContacts = {
       contactsDataList: {
-        phone1: Number(formatPhoneNumber(phone1, true)),
-        phone2: Number(formatPhoneNumber(phone2, true)),
+        phone1: formatPhoneNumber(phone1, true),
+        phone2: formatPhoneNumber(phone2, true),
         email: email,
       },
       socialsMediaList: {
