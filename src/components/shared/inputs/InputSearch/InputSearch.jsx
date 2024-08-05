@@ -1,28 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./InputSearch.module.scss";
 import { Icon } from "../../Icon/Icon";
 import clsx from "clsx";
 
-const InputSearch = ({ onSubmit, className, defaultValue='' }) => {
+const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
   const [value, setValue] = useState("");
+  const inputRef = useRef(null);
   // Очищає поле по дефолту
-  useEffect(()=>{
-    if(defaultValue == ''){
-      setValue('')
-    }
-  },[defaultValue])
+  // useEffect(() => {
+  //   if (defaultValue == "") {
+  //     setValue("");
+  //   }
+  // }, [defaultValue]);
 
-  const handlerClickSubmit = (e) => {
-    e.preventDefault();
-
-    if (e.target.value?.trim() === "") {
-      return "error";
+  const handleSearch = () => {
+    if (value.trim() === "") {
+      return;
     }
     onSubmit(value);
   };
- // Робить запит як що користувач очистив поле
+  // Робить запит як що користувач очистив поле
   const handlerOnblur = (e) => {
     e.preventDefault();
     if (e.target.value?.trim() === "") {
@@ -31,8 +30,9 @@ const InputSearch = ({ onSubmit, className, defaultValue='' }) => {
   };
 
   return (
-    <form className={clsx(styles.wrapper,className)} onSubmit={handlerClickSubmit}>
+    <form className={clsx(styles.wrapper, className)}>
       <input
+        ref={inputRef}
         type="text"
         maxLength={300}
         placeholder="Введіть ключове слово"
@@ -41,18 +41,23 @@ const InputSearch = ({ onSubmit, className, defaultValue='' }) => {
         onBlur={(e) => handlerOnblur(e)}
       />
 
-    {value.length ? <button type="button" 
-      className={styles.close} 
-      onClick={()=>
-      {
-        onSubmit('')
-        setValue('')
-      }}>
+      <button
+        type="button"
+        className={clsx(styles.close, value.length > 0 && styles.show)}
+        onClick={() => {
+          setValue("");
+          inputRef.current.focus();
+        }}
+      >
         <Icon name="close_dark" width={18} height={18} />
-      </button> : null
-    }
+      </button>
 
-      <button type="submit" className={styles.submit}>
+      <button
+        onClick={handleSearch}
+        // disabled={isSearchBtnDisabled}
+        type="button"
+        className={styles.submit}
+      >
         <Icon name="search" width={32} height={32} />
       </button>
     </form>

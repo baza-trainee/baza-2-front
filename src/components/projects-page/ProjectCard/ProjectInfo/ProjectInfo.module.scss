@@ -13,19 +13,32 @@
   column-gap: 20px;
   row-gap: 10px;
   flex-wrap: wrap;
+  & > p {
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 12px;
+    @media (min-width: 810px) {
+      font-size: 16px;
+    }
+  }
 }
 .name {
   @include mx.apply-font-styles(var.$text-20-font);
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 8px;
   & > svg {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
-  & > p {
-    @include mx.apply-font-styles(var.$text-16-font);
+  @media (min-width: 810px) {
+    font-size: 20px;
+    & > svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 .complexity {
@@ -35,13 +48,17 @@
 }
 .circle {
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: var.$secondary-white;
   border: 1px solid #030110;
   &.circleActive {
     border: 1px solid var.$primary-border;
     background-color: var.$primary-border;
+  }
+  @media (min-width: 810px) {
+    width: 16px;
+    height: 16px;
   }
 }
