@@ -1,7 +1,7 @@
-@use "../../../../styles/mixins" as mix;
-@use "../../../../styles/variables" as var;
+@use "../../../styles/mixins" as mix;
+@use "../../../styles/variables" as var;
   
-.tooltiptext {
+.tooltiptext{
   width: 100%;
   visibility: hidden;
   background-color: var.$secondary-hover;
@@ -9,7 +9,7 @@
   padding: 16px;
   border-radius: 8px;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 110%;
   left: 0;
   opacity: 0;
@@ -46,8 +46,45 @@
     }
   }
 }
+.tooltiptext._right {
+  bottom: 100%;
+  top: auto;
+  left: 50%;
+  margin-left: -50%; 
 
-.tooltiptext::after {
+  @media (min-width: 1120px) {
+    bottom: auto;
+    top: -50%;
+    left: 105%;
+    margin-left: 0; 
+  }
+}
+.tooltiptext._right::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var.$secondary-hover transparent transparent transparent;
+
+  @media (min-width: 1120px) {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var.$secondary-hover transparent transparent;
+    margin-left: -50%; 
+  }
+
+}
+
+.tooltiptext._bottom::after {
   content: " ";
   position: absolute;
   bottom: 100%; 
@@ -57,3 +94,4 @@
   border-style: solid;
   border-color: transparent transparent var.$secondary-hover  transparent;
 }
+

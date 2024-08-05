@@ -22,5 +22,3 @@ export const loginSchema = z
     .max(14, {message: 'Пароль має містити максимум 14 символів'})
     .regex(patternPassword, { message: 'Пароль має містити цифри та латинські літери' }),
   })
-
- 

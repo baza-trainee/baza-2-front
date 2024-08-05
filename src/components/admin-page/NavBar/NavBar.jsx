@@ -14,7 +14,7 @@ export default function NavBar() {
   const pathname = usePathname()
   const router = useRouter();
   const [hide, setHide]= useState(false)
-
+ 
   const removeToken=()=>{
     token.reset()
     router.replace('/');
@@ -33,24 +33,19 @@ export default function NavBar() {
       <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
         <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
       </MainButton>
-      <div className={styles.skroll}>
+      <nav className={styles.skroll}>
 
         <ul className={styles.list}>
-          <li>
-            {/* <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
-              <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
-            </MainButton> */}
-          </li>
           {links.map((el)=>{
             return (<li key={createKey()}>  
-              <Link className={clsx(styles.link,isActive(el.icon)&& styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={clsx(styles.text, hide && styles._hide)}>{el.content}</span></Link>
+              <Link className={clsx(styles.link,isActive(el.icon) && styles._active)} href={el.href}><Icon name={el.icon} className={styles.icon}/><span className={styles.text}>{el.content}</span></Link>
             </li>)
           })}
         </ul>
         <MainButton variant='admin' className={styles.btn_exit} onClick={removeToken}>
-          <Icon className={styles.icon} name="go_out"/> <span className={clsx(styles.text, hide && styles._hide)}>Вийти</span>
+          <Icon className={styles.icon} name="go_out"/> <span className={styles.text}>Вийти</span>
         </MainButton>
-      </div>
+      </nav>
     </div>
   )
 }

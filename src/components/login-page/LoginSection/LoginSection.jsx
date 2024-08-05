@@ -24,12 +24,6 @@ export default function LoginSection() {
     }
   })
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     open('error', false)
-  //   }
-  // },[isError]);
-
   useEffect(() => {
     if (token.get()) {
       router.replace('/admin');

@@ -1,32 +1,45 @@
 'use client';
 import styles from './PartnerForm.module.scss'
 import { useEffect } from 'react';
-import { useRouter } from '@/src/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addPartnerDefaultValues, addPartnerSchema } from './addPartnerScheme';
-import InputField from '@/src/components/shared/InputField/InputField'
+import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
+import { useRouter } from '@/src/navigation';
+import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
-export default function PartnerForm({hendleMutate, isSuccess}) {
-
+export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Додати'}) {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-    reset
+    reset,
+    setValue,
+    getValues,
   } = useForm({ defaultValues: {...addPartnerDefaultValues}, resolver: zodResolver(addPartnerSchema), mode: 'onChange'});
 
   const resetForm = () => {
+    router.replace('/admin/partners')
     reset();
   }
 
   useEffect(()=>{
     if(isSuccess){
-      resetForm()
+      reset();
     }
   },[isSuccess])
 
+  useEffect(()=>{
+    if(data){
+      const{name, imageUrl, homeUrl} = data
+      setValue('name', name)
+      setValue('homeUrl', homeUrl)
+      setValue('imageUrl', '')
+      handlePrevImg(imageUrl)
+    }
+  },[data])
 
   const onSubmit = (data) => {
     const newData = {
@@ -36,16 +49,19 @@ export default function PartnerForm({hendleMutate, isSuccess}) {
     }
     hendleMutate(newData)
   };
-
+    
   const isDisabled = () => {
+    console.log(getValues('imageUrl'))
     if (Object.keys(errors).length > 0) {
       return true;
     } else 
     if (!isDirty) {
       return true;
-    } else if(!isValid){
+    } 
+    else if(!isValid){
       return true
-    }else return false
+    }
+    else return false
   }
 
   return(
@@ -65,15 +81,16 @@ export default function PartnerForm({hendleMutate, isSuccess}) {
             label={'Назва'}
           />
         </li>
+
         <li className={styles.list_item}>
-          <InputField
+          <InputFile
             id={"imageUrl"}
-            maxLength={55}
             className={styles.item}
             type={'file'}
+            getPrevImgUrl={ handlePrevImg }
             required={false}
             accept="image/*"
-            placeholder={"Логотип"}
+            placeholder={"Оберіть файл JPG, PNG, WEBP"}
             registerOptions={register("imageUrl", { ...addPartnerSchema.imageUrl })}
             isDirty={isDirty}
             isError={errors.imageUrl}
@@ -82,7 +99,6 @@ export default function PartnerForm({hendleMutate, isSuccess}) {
             label={'Логотип'}
           />
         </li>
-
         <li className={styles.list_item}>
           <InputField
             id={"homeUrl"}
@@ -105,7 +121,7 @@ export default function PartnerForm({hendleMutate, isSuccess}) {
           className={styles.btn}
           disabled={isDisabled()}
         >
-          {'Додати'}
+          {submitBtnText}
         </MainButton>
 
         <MainButton

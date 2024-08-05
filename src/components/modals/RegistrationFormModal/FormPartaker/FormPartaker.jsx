@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { PartakerSchema, partakerDefaultValues } from "./formPartakeScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
-import InputField from "../../../shared/InputField/InputField";
+import InputField from "../../../shared/inputs/InputField/InputField";
 import { optionsQuestionnaire, optionsSpec } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 import stateUseAlert from "@/src/state/stateUseAlert";
@@ -15,7 +15,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
 import stateModalDocumentPdf from "@/src/state/stateModalDocumentPdf";
-import TooltipText from "../TooltipText/TooltipText";
+import TooltipText from "../../../shared/TooltipText/TooltipText";
 
 
 export default function FormPartaker({handleClose}) {

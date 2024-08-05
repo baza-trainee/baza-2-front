@@ -38,7 +38,11 @@ export default function PartnerList({data, hendleRemove}) {
           </div>
         </li>
       })}
-    </ul>: null
+    </ul> : 
+    <>
+      <p className={styles.length}>Вибачте, інформації не знайдено.</p>
+      <p className={styles.length}>Додайте партнера або уточніть запит.</p>
+    </>
     }
 
     <AdminModal isOpen={idPartner} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити партнера?'} btnBlok={true}></AdminModal>

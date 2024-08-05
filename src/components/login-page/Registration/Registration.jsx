@@ -10,15 +10,18 @@ import UseAlert from '../../shared/UseAlert/UseAlert';
 import Section from '../Section/Section';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
 import AdminModal from '../../modals/AdminModal/AdminModal';
+import { credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 export default function Registration() {
   const open = stateUseAlert(state => state.open);
   const router = useRouter();
+ // Шлях на сторінку login
+  const loginPath ='/admin/login'
 
   const [ modal, setModal ] = useState(false)
 
   const isError=()=>{
-    sessionStorage.removeItem('credentials')
+    credentialsSessionStorage.reset()
     open('error',false)
   }
 
@@ -33,25 +36,26 @@ export default function Registration() {
   })
 
   const closeModal=()=>{
-    setModal(true)
-    router.replace('/admin')
+    setModal(false)
+    router.replace(loginPath)
   }
 
   const onSubmit = (data) => {
-    mutate({email:data.email, password:data.password, name:'vlad'})
-    sessionStorage.setItem('credentials',
-      JSON.stringify({email:data.email, password:data.password}))
+    mutate({email:data.email, password:data.password, name:'admin'})
+    credentialsSessionStorage.set({email:data.email, password:data.password})
   };
 
   return (
     <Section title={'Реєстрація'} text={'Зареєструйтесь в системі'}>
       <RegistrationForm onSubmit={onSubmit}/>
 
-      <p className={styles.link}>Ви маєте акаунт? <Link href={'/admin/login'}>Авторизуватись</Link></p>
+      <p className={styles.link}>Ви маєте акаунт? <Link href={loginPath}>Авторизуватись</Link></p>
+
+      {isPending && <Loader/>} 
+     
+      <AdminModal isOpen={modal} handleCallback={closeModal} title={'Реєстрація успішна'}/>
 
       <UseAlert/>
-      <AdminModal isOpen={modal} closeModal={closeModal} title={'Реєстрація успішна'}/>
-      {isPending && <Loader/>} 
     </Section>
   )
 }

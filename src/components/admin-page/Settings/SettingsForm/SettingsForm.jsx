@@ -6,10 +6,11 @@ import { usePathname, useRouter } from '@/src/navigation';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginDefaultValues, loginSchema } from './loginScheme';
-import InputField from '../../../shared/InputField/InputField';
+import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import { Icon } from '../../../shared/Icon/Icon';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
+import { credentialsSessionStorage } from '@/src/state/stateCredentials';
 
 
 export default function SettingsForm() {
@@ -30,27 +31,25 @@ export default function SettingsForm() {
   }
 
   useEffect(() => {
-    const credentials = localStorage.getItem('credentials');
+    const credentials = credentialsSessionStorage.get()
     if (credentials) {
-      const { email, password } = JSON.parse(
-        credentials
-      );
+      const { email, password } = credentials
       setValue('email', email);
       setValue('password', password);
     }
   }, [pathname]);
 
   const onSubmit = (data) => {
-    console.log(data)
-    setmodalOpen(true)
+    // console.log(data)
+    // setmodalOpen(true)
 
-    localStorage.setItem(
-      'credentials',
-      JSON.stringify({...data})
-    );
-    resetForm()  
-    setValue('email', data.email);
-    setValue('password', data.password);
+    // sessionStorage.setItem(
+    //   'credentials',
+    //   JSON.stringify({...data})
+    // );
+    // resetForm()  
+    // setValue('email', data.email);
+    // setValue('password', data.password);
   };
 
 
@@ -77,6 +76,7 @@ export default function SettingsForm() {
             <InputField
               id={"email"}
               maxLength={55}
+              disabled={true}
               className={styles.item}
               required={false}
               placeholder={"Логін"}
@@ -93,6 +93,7 @@ export default function SettingsForm() {
               id={"password"}
               required={false}
               maxLength={15}
+              disabled={true}
               className={styles.item}
               placeholder={"Пароль"}
               registerOptions={register("password", { ...loginSchema.password })}
@@ -111,7 +112,7 @@ export default function SettingsForm() {
           </li>
         </ul>
 
-        <div className={styles.btns}>
+        {/* <div className={styles.btns}>
           <MainButton
             className={styles.btn}
             type="submit"
@@ -123,11 +124,10 @@ export default function SettingsForm() {
           <MainButton
             variant='admin'
             className={styles.btn_cancel}
-          // onClick={()=>{router.replace('/admin/login')}}
           >
             {'Скасувати'}
           </MainButton>
-        </div >
+        </div > */}
       </form>
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
