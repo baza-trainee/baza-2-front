@@ -2,7 +2,6 @@
 
 import { createKey } from "@/src/lib/utils/createKey";
 import { useTranslations } from "next-intl";
-import InputSearch from "../shared/InputSearch/InputSearch";
 import { useEffect, useState } from "react";
 import LoadMore from "../shared/LoadMore/LoadMore";
 import { createImageUrlBaza1 } from "@/src/lib/hooks/createImageUrl";
@@ -10,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getAllProjects } from "@/src/api/projects";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import styles from "./Projects.module.scss";
+import InputSearch from "../shared/inputs/InputSearch/InputSearch";
 
 const Projects = () => {
   const t = useTranslations("Projects");
@@ -56,7 +56,7 @@ const Projects = () => {
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
         <h1 className={styles.title}>{t("title")}</h1>
-        <InputSearch onSubmit={searchProject} />
+        <InputSearch className={styles.search} onSubmit={searchProject} />
         <div className={styles.content}>
           {projectsData &&
             projectsData.map((project) => (
