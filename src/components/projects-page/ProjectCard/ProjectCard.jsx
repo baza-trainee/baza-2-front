@@ -7,20 +7,19 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import ProjectInfo from "./ProjectInfo/ProjectInfo";
 import ProjectCardTeam from "./ProjectCardTeam/ProjectCardTeam";
-import { Icon } from "../../../shared/Icon/Icon";
+import { Icon } from "../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
 import ProjectStatus from "./ProjectStatus/ProjectStatus";
 
-const ProjectCard = ({ data }) => {
+const ProjectCard = ({ project, coverImgUrl }) => {
   const {
     complexity,
-    imageUrl,
     title,
     creationDate,
     launchDate,
     teamMembers,
     isTeamRequired,
-  } = data;
+  } = project;
   const { locale } = useParams();
   const t = useTranslations("Projects.card");
   const [isTeamShowed, setIsTeamShowed] = useState(false);
@@ -32,7 +31,7 @@ const ProjectCard = ({ data }) => {
   return (
     <article className={clsx(styles.article, isTeamShowed && styles.hideBg)}>
       <div className={styles.imgContainer}>
-        <Image src={imageUrl} fill sizes="100%" alt={title[locale]} />
+        <Image src={coverImgUrl} fill sizes="100%" alt={title[locale]} />
       </div>
       <div className={clsx(styles.content, isTeamShowed && styles.hidden)}>
         <ProjectStatus
@@ -49,15 +48,15 @@ const ProjectCard = ({ data }) => {
         <button
           onClick={handleClose}
           type="button"
-          className={clsx(styles.button, teamMembers && styles.show)}
+          className={clsx(styles.button, teamMembers.length > 0 && styles.show)}
         >
           <Icon name="team" />
           <span>{t("team")}</span>
         </button>
       </div>
-      {teamMembers && (
+      {teamMembers.length > 0 && (
         <ProjectCardTeam
-          project={data}
+          project={project}
           isShowed={isTeamShowed}
           handleClose={handleClose}
         />
