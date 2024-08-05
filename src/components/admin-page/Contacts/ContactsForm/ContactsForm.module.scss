@@ -30,3 +30,12 @@
   right: 10px;
   top: 40px;
 }
+
+.btns {
+  display: flex;
+  gap: 24px;
+  .btn_cancel {
+    padding: 15px 24px;
+    height: 55px;
+  }
+}
