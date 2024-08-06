@@ -18,6 +18,7 @@ export interface SpritesMap {
     | "documents"
     | "donate-modal-icon"
     | "download"
+    | "edit_black"
     | "edit"
     | "facebook"
     | "full_screen"
@@ -70,6 +71,7 @@ export const SPRITES_META: {
     | "documents"
     | "donate-modal-icon"
     | "download"
+    | "edit_black"
     | "edit"
     | "facebook"
     | "full_screen"
@@ -122,6 +124,7 @@ export const SPRITES_META: {
     "documents",
     "donate-modal-icon",
     "download",
+    "edit_black",
     "edit",
     "facebook",
     "full_screen",
