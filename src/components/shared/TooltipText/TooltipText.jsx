@@ -6,7 +6,6 @@ import { useTranslations } from 'use-intl';
 export default function TooltipText({className, text, position='bottom' }) {
   const t = useTranslations("Modal_form");
 
-
   return(
     <div className={clsx(styles.tooltiptext, styles[`_${position}`], className)}>
 

@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { patternText } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
 
 export const SliderDefaultValues= {
@@ -20,47 +19,46 @@ const validateImage =(value)=>{
   }
 }
 
-
 export const SliderScheme = z
 	.object({
     file: z.any()
-    .refine((file) => validateImage(file),"Формат зображення JPG, PNG, WEBP, Max.розмір 2MB"),
+    .refine((file) => validateImage(file),"Формат фото JPG, PNG, WEBP, Max.розмір 2MB"),
 
 		title_ua: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(5, { message: 'Заголовок мінімум 5 знаків' })
+    .max(40, { message: 'Заголовок максимум 40 знаків' }),
 
 		title_en: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(5, { message: 'Заголовок мінімум 5 знаків'})
+    .max(40, { message: 'Заголовок максимум 40 знаків' }),
 
 		title_pl: z.string()
     .trim()
-    .min(1, { message: 'Поле заголовок не може бути порожнім' })
-    .min(5, { message: 'Заголовок повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(5, { message: 'Заголовок мінімум 5 знаків' })
+    .max(40, { message: 'Заголовок максимум 40 знаків' }),
 
     text_ua: z.string()
     .trim()
-    .min(1, { message: 'Поле текст не може бути порожнім' })
-    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(5, { message: 'Текст мінімум 5 знаків'})
+    .max(350, { message: 'Текст максимум 350 знаків' }),
 
     text_en: z.string()
     .trim()
-    .min(1, { message: 'Поле текст не може бути порожнім' })
-    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(5, { message: 'Текст мінімум 5 знаків' })
+    .max(350, { message: 'Текст максимум 350 знаків' }),
 
     text_pl: z.string()
     .trim()
-    .min(1, { message: 'Поле текст не може бути порожнім' })
-    .min(5, { message: 'Текст повинен мати не менше 5 знаків' })
-    .regex(patternText, { message: 'Не використовуйте російські літери' }),
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(5, { message: 'Текст мінімум 5 знаків' })
+    .max(350, { message: 'Текст максимум 350 знаків' }),
 
 })
 // {

@@ -10,7 +10,7 @@
   .list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 
     .item {
       width: clamp(280px, 84vw, 360px);
