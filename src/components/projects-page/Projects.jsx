@@ -10,19 +10,18 @@ import { getAllProjects } from "@/src/api/projects";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import styles from "./Projects.module.scss";
 import InputSearch from "../shared/inputs/InputSearch/InputSearch";
+import clsx from "clsx";
 
 const Projects = () => {
   const t = useTranslations("Projects");
-
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(6);
   const [projectsData, setProjectsData] = useState(null);
 
-  const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["projects", page, limit, search],
+  const { isLoading, isError, data, isFetching } = useQuery({
+    queryKey: ["projects", page, search],
     queryFn: () => {
-      return getAllProjects({ page, search, limit });
+      return getAllProjects({ page, search });
     },
     keepPreviousData: true,
   });
@@ -32,6 +31,7 @@ const Projects = () => {
   };
 
   const searchProject = (search) => {
+    setProjectsData(null);
     setSearch(search);
   };
 
@@ -56,7 +56,11 @@ const Projects = () => {
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
         <h1 className={styles.title}>{t("title")}</h1>
-        <InputSearch className={styles.search} onSubmit={searchProject} />
+        <InputSearch
+          className={styles.search}
+          onSubmit={searchProject}
+          isSearchBtnDisabled={search?.length ? false : true}
+        />
         <div className={styles.content}>
           {projectsData &&
             projectsData.map((project) => (
@@ -67,7 +71,16 @@ const Projects = () => {
               />
             ))}
         </div>
-        <LoadMore onClick={loadMore} className={styles.loadMore} />
+        {
+          <LoadMore
+            disabled={isFetching}
+            onClick={loadMore}
+            className={clsx(
+              styles.loadMore,
+              page >= data?.pagination.totalPages && styles.hidden
+            )}
+          />
+        }
       </div>
     </section>
   );

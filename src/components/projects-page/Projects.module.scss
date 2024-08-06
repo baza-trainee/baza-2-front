@@ -31,8 +31,13 @@
 .content {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  min-height: 100vh;
+  grid-template-columns: 1fr;
+  @media (min-width: 550px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .search {
@@ -48,7 +53,10 @@
 .loadMore {
   align-self: center;
   margin-top: 32px;
-  @media (min-width: 1440px) {
+  &.hidden {
+    display: none;
+  }
+  @media (min-width: 768px) {
     margin-top: 48px;
   }
 }

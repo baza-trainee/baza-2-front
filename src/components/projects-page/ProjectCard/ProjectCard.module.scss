@@ -2,11 +2,14 @@
 @use "../../../styles/_mixins.scss" as mx;
 
 .article {
-  padding: 24px;
+  padding: 16px;
   border: 2px solid var.$primary-hover;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
+  @media (min-width: 810px) {
+    padding: 24px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -68,24 +71,33 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 10px;
   position: relative;
   z-index: 6;
   justify-content: space-between;
   opacity: 1;
   transition: opacity var.$transition-duration-base var.$transition-timing-base
     0s;
+  @media (min-width: 810px) {
+    gap: 80px;
+  }
   &.hidden {
     opacity: 0;
   }
 }
 .title {
   @include mx.apply-font-styles(var.$h4-font);
+  font-size: 20px;
+  margin: 10px 0;
+  @media (min-width: 810px) {
+    font-size: 24px;
+  }
 }
 
 .button {
   align-self: flex-start;
   @include mx.apply-font-styles(var.$h4-font);
+  font-size: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -102,7 +114,10 @@
     display: block;
     width: 24px;
     height: 24px;
-    @media (min-width: 768px) {
+  }
+  @media (min-width: 810px) {
+    font-size: 24px;
+    & > svg {
       width: 32px;
       height: 32px;
     }
