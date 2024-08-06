@@ -19,7 +19,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
   } = useForm({
     defaultValues: { ...contactsDefaultValues },
     resolver: zodResolver(ContactsScheme),
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const onSubmit = (data) => {
@@ -87,6 +87,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Введіть телефон"
               version="input_admin"
               label="Телефон"
+              isError={errors.phone1}
+              isValid={isValid}
               registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
             />
             <Icon
@@ -104,6 +106,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Введіть телефон"
               version="input_admin"
               label="Телефон"
+              isError={errors.phone2}
+              isValid={isValid}
               registerOptions={register("phone2", { ...ContactsScheme.phone2 })}
             />
             <Icon
@@ -121,6 +125,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Введіть електронну пошту"
               version="input_admin"
               label="Email"
+              isError={errors.email}
+              isValid={isValid}
               registerOptions={register("email", { ...ContactsScheme.email })}
             />
             <Icon
@@ -140,6 +146,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Telegram"
+              isError={errors.telegram}
+              isValid={isValid}
               registerOptions={register("telegram", {
                 ...ContactsScheme.telegram,
               })}
@@ -159,6 +167,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Facebook"
+              isError={errors.facebook}
+              isValid={isValid}
               registerOptions={register("facebook", {
                 ...ContactsScheme.facebook,
               })}
@@ -178,6 +188,8 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               placeholder="Додайте посилання"
               version="input_admin"
               label="Linkedin"
+              isError={errors.linkedin}
+              isValid={isValid}
               registerOptions={register("linkedin", {
                 ...ContactsScheme.linkedin,
               })}
