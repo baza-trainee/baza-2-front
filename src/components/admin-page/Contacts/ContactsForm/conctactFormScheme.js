@@ -33,7 +33,12 @@ export const ContactsScheme = z.object({
       message: "Введіть дійсний номер",
     })
     .transform((value) => formatPhoneNumber(value, true)),
-  email: z.string().trim().optional(),
+  email: z
+    .string()
+    .trim()
+    .optional()
+    .regex(patternEmail, { message: "incorrect_email" })
+    .regex(patternEmailNonRu, { message: "invalid_ru" }),
   telegram: z
     .string()
     .trim()
