@@ -11,7 +11,7 @@ const ProjectInfo = ({ complexity, creationDate, launchDate }) => {
   const { locale } = useParams();
   const t = useTranslations("Projects.card.info");
 
-  const date = formatDate(creationDate, locale === "ua" ? "uk-UA" : locale);
+  const date = formatDate(creationDate, locale);
 
   const launch = launchDate ? launchDate : Date.now();
   const numOfWeeks = Math.floor(
