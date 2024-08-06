@@ -190,21 +190,21 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             />
           </div>
         </div>
-        <div className={styles.btns}>
-          <MainButton type="submit" disabled={isDisabled()}>
-            {"Зберегти зміни"}
-          </MainButton>
+      </div>
+      <div className={styles.btns}>
+        <MainButton type="submit" disabled={isDisabled()}>
+          {"Зберегти зміни"}
+        </MainButton>
 
-          <MainButton
-            variant="admin"
-            className={styles.btn_cancel}
-            onClick={() => {
-              reset();
-            }}
-          >
-            {"Скасувати"}
-          </MainButton>
-        </div>
+        <MainButton
+          variant="admin"
+          className={styles.btn_cancel}
+          onClick={() => {
+            reset();
+          }}
+        >
+          {"Скасувати"}
+        </MainButton>
       </div>
     </form>
   );
