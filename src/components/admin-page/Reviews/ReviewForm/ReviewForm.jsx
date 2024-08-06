@@ -11,6 +11,8 @@ import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { ReviewDefaultValues, ReviewScheme } from './ReviewScheme';
 import ReviewPreview from '../ReviewPreview/ReviewPreview';
+import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
+import { formatDateToNumeric } from '@/src/lib/utils/formatData';
 
 export default function ReviewForm({
   hendleMutate, 
@@ -21,6 +23,7 @@ export default function ReviewForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
+  const[ valueDate, setValueDate ] = useState('')
 
   const {
     register,
@@ -42,15 +45,22 @@ export default function ReviewForm({
     }
   },[isSuccess])
 
+
+  //const date = Date.now();
+  console.log(valueDate)
+
   useEffect(()=>{
     if(data){
-      const{imageUrl, title, subtitle} = data
-      setValue('title_ua',title.ua )
-      setValue('title_en',title.en )
-      setValue('title_pl',title.pl )
-      setValue('text_ua',subtitle.ua )
-      setValue('text_en',subtitle.en )
-      setValue('text_pl',subtitle.pl )
+      const{imageUrl, name, review, role, date } = data
+      setValue('name_ua',name.ua )
+      setValue('name_en',name.en )
+      setValue('name_pl',name.pl )
+      setValue('text_ua',review.ua )
+      setValue('text_en',review.en )
+      setValue('text_pl',review.pl )
+      setValue('role',role )
+      //setValue('date',new Date(date))
+      setValueDate(date)
       setValue('file', '')
       setPrevUrl(imageUrl)
     }
@@ -155,7 +165,23 @@ export default function ReviewForm({
           />
         </li> 
         <li className={clsx(styles.list_item, styles.grid_item5)}>
-          <InputField
+        
+          <InputDate
+            id={"date"}
+            //maxLength={100}
+            className={styles.item}
+            required={false}
+            //placeholder={"Введіть дату"}
+            registerOptions={register("date", { ...ReviewScheme.date})}
+            onInput={(e)=>{setValueDate(e.target.valueAsNumber)}}
+            isError={errors.date}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Дата'}
+            //iconName={'calendar_dark'}
+          />
+          <span>{valueDate}</span>
+          {/* <InputField
             id={"date"}
             maxLength={100}
             className={styles.item}
@@ -167,7 +193,7 @@ export default function ReviewForm({
             version={"input_admin"}
             label={'Дата'}
             iconName={'calendar_dark'}
-          />
+          /> */}
         </li> 
 
         <li className={clsx(styles.list_item, styles.item_prev)}>

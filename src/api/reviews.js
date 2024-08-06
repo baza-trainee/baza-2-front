@@ -25,7 +25,7 @@ export async function  createNewReview(newReview){
 
 export async function  getReviewById(id){
 	try {
-		const res = await instanceBaza2.get(`${reviewsEndpoint}/${id}`)
+		const res = await instance.get(`${reviewsEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
