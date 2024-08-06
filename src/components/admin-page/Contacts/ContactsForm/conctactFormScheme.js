@@ -23,15 +23,22 @@ export const ContactsScheme = z.object({
     .optional()
     .refine((value) => !value || patternPhone.test(value), {
       message: "Введіть дійсний номер",
-    }),
+    })
+    .transform((value) => formatPhoneNumber(value, true)),
   phone2: z
     .string()
     .trim()
     .optional()
     .refine((value) => !value || patternPhone.test(value), {
       message: "Введіть дійсний номер",
-    }),
-  email: z.string().trim().optional(),
+    })
+    .transform((value) => formatPhoneNumber(value, true)),
+  email: z
+    .string()
+    .trim()
+    .regex(patternEmail, { message: "incorrect_email" })
+    .regex(patternEmailNonRu, { message: "invalid_ru" })
+    .optional(),
   telegram: z
     .string()
     .trim()
