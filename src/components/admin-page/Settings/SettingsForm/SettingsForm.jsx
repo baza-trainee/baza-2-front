@@ -84,7 +84,7 @@ export default function SettingsForm() {
               isError={errors.email}
               isValid={isValid}
               version={"input_admin"}
-              iconName={'edit'}
+              iconName={'edit_black'}
               label={'Логін'}
             />
           </li>

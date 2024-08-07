@@ -36,8 +36,8 @@ export const ContactsScheme = z.object({
   email: z
     .string()
     .trim()
-    .regex(patternEmail, { message: "incorrect_email" })
-    .regex(patternEmailNonRu, { message: "invalid_ru" })
+    .regex(patternEmail, { message: "Введіть дійсний Email" })
+    .regex(patternEmailNonRu, { message: "Домени .ru і .by не допускаються" })
     .optional(),
   telegram: z
     .string()

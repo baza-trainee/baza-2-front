@@ -79,9 +79,10 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.form}>
         <div className={styles.row}>
-          <div className={styles.input}>
+          <div>
             <InputField
               id="phone1"
+              className={styles.input}
               required={false}
               type="tel"
               placeholder="Введіть телефон"
@@ -89,14 +90,15 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               label="Телефон"
               isError={errors.phone1}
               isValid={isValid}
+              iconName={"edit_black"}
               registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -109,13 +111,14 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               isError={errors.phone2}
               isValid={isValid}
               registerOptions={register("phone2", { ...ContactsScheme.phone2 })}
+              iconName={"edit_black"}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -128,13 +131,14 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               isError={errors.email}
               isValid={isValid}
               registerOptions={register("email", { ...ContactsScheme.email })}
+              iconName={"edit_black"}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
         </div>
         <div className={styles.row}>
@@ -150,13 +154,14 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               registerOptions={register("telegram", {
                 ...ContactsScheme.telegram,
               })}
+              iconName={"edit_black"}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -170,13 +175,14 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               registerOptions={register("facebook", {
                 ...ContactsScheme.facebook,
               })}
+              iconName={"edit_black"}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -190,13 +196,14 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               registerOptions={register("linkedin", {
                 ...ContactsScheme.linkedin,
               })}
+              iconName={"edit_black"}
             />
-            <Icon
+            {/* <Icon
               width={24}
               height={24}
               name="edit_black"
               className={styles.icon}
-            />
+            /> */}
           </div>
         </div>
       </div>

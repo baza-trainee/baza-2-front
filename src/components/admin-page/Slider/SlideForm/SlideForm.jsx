@@ -11,6 +11,7 @@ import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { SliderDefaultValues, SliderScheme } from './SliderScheme';
 import SlidePreview from '../SlidePreview/SlidePreview';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function SlideForm({
   hendleMutate, 
@@ -21,6 +22,10 @@ export default function SlideForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
+  const[ tooltip, setTooltip ] = useState(false)
+
+  const tooltipTitleMessage = 'Рекомендована довжина заголовка від 5 до 30 символів. Максимальна 40 символів';
+  const tooltipTextMessage = 'Рекомендована довжина основного тексту від 5 до 300 символів. Максимальна 350 символів';
 
   const {
     register,
@@ -55,6 +60,14 @@ export default function SlideForm({
       setPrevUrl(imageUrl)
     }
   },[data])
+
+  const validateTitle=(name, maxLength)=>{
+    if(getValues(name).length > maxLength){
+      setTooltip(name)
+    }else {
+      setTooltip(null)
+    }
+  }
 
   const onSubmit = (data) => {
     const newData = {
@@ -111,86 +124,116 @@ export default function SlideForm({
           <SlidePreview imageUrl={prevUrl}/>
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item3)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item3)}>
           <InputField
             id={"title_ua"}
-            maxLength={100}
+            lang={"uk"}
+            maxLength={41}
             className={styles.item}
             required={false}
             placeholder={"Заголовок"}
             registerOptions={register("title_ua", { ...SliderScheme.title_ua })}
+            onInput={()=>{validateTitle("title_ua", 30)}}
             isError={errors.title_ua}
             isValid={isValid}
             version={"input_admin"}
             label={'Заголовок'}
             locale={'ua'}
           />
+
+          <TooltipText className={clsx(tooltip === "title_ua" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item4)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item4)}>
           <InputField
             id={"title_en"}
-            maxLength={100}
+            lang={"en"}
+            maxLength={41}
             className={styles.item}
             required={false}
             placeholder={"Заголовок"}
             registerOptions={register("title_en", { ...SliderScheme.title_en })}
+            onInput={()=>{validateTitle("title_en", 30)}}
             isError={errors.title_en}
             isValid={isValid}
             version={"input_admin"}
             locale={'en'}
           />
+
+          <TooltipText className={clsx(tooltip === "title_en" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li> 
 
-        <li className={clsx(styles.list_item, styles.grid_item5)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item5)}>
           <InputField
             id={"title_pl"}
-            maxLength={100}
+            lang={"pl"}
+            maxLength={41}
             className={styles.item}
             required={false}
             placeholder={"Заголовок"}
             registerOptions={register("title_pl", { ...SliderScheme.title_pl})}
+            onInput={()=>{validateTitle("title_pl", 30)}}
             isError={errors.title_pl}
             isValid={isValid}
             version={"input_admin"}
             locale={'pl'}
           />
+          <TooltipText className={clsx(tooltip === "title_pl" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li> 
 
-
-        <li className={clsx(styles.list_item, styles.grid_item6)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item6)}>
           <TextArea 
-            id={"text_ua"}   
+            id={"text_ua"}  
+            lang={"uk"}
+            maxLength={351}
             className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
             registerOptions={register("text_ua", { ...SliderScheme.text_ua })}
+            onInput={()=>{validateTitle("text_ua", 300)}}
             required={false}
+            spellcheck="true"
             placeholder={"Основний текст"} 
-            label={'Основний текст'} locale={'ua'}/>
+            label={'Основний текст'} 
+            locale={'ua'}/>
+
+          <TooltipText className={clsx(tooltip === "text_ua"  && styles._active)} text={tooltipTextMessage} position='bottom'/>   
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item7)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item7)}>
           <TextArea 
             id={"text_en"}   
+            lang={"en"}
+            maxLength={351}
             className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
             registerOptions={register("text_en", { ...SliderScheme.text_en })}
+            onInput={()=>{validateTitle("text_en", 300)}}
             required={false}
+            spellcheck="true"
             placeholder={"Основний текст"} 
             locale={'en'}/>
+
+          <TooltipText className={clsx(tooltip === "text_en"  && styles._active)} text={tooltipTextMessage} position='bottom'/>  
         </li>
-        <li className={clsx(styles.list_item, styles.grid_item8)}>
+
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item8)}>
           <TextArea 
-            id={"text_pl"}   
+            id={"text_pl"}  
+            lang={'pl'}
+            maxLength={351}
             className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}
             registerOptions={register("text_pl", { ...SliderScheme.text_pl })}
+            onInput={()=>{validateTitle("text_pl", 300)}}
             required={false}
+             spellcheck="true"
             placeholder={"Основний текст"} 
             locale={'pl'}/>
+
+          <TooltipText className={clsx(tooltip === "text_pl" && styles._active)} text={tooltipTextMessage} position='bottom'/>   
         </li>
       </ul>
 
