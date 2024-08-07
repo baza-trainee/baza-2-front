@@ -12,6 +12,7 @@
   z-index: 5;
   top: 110%;
   left: 0;
+  bottom: auto;
   opacity: 0;
   transition: all var.$transition-duration-base var.$transition-timing-base;
 
@@ -59,6 +60,8 @@
     margin-left: 0; 
   }
 }
+
+
 .tooltiptext._right::after {
   content: " ";
   position: absolute;

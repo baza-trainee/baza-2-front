@@ -13,12 +13,18 @@
   height: fit-content;
   background: var.$primary-gradient;
 
+
   
   @include mixins.media-q("md") {
     gap: 32px;
     padding: 48px 40px;
     min-width: 768px;
    }
+
+   @media (min-width: 990px) {
+    min-width: 890px;
+    max-width: 1200px;
+  }
 
   @include mixins.media-q("xl") { 
   gap: 48px;

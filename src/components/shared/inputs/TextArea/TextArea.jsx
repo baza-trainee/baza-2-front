@@ -1,11 +1,12 @@
 "use client";
 import styles from "./TextArea.module.scss";
 import clsx from "clsx";
-import { Icon } from "../../Icon/Icon";
+//import { Icon } from "../../Icon/Icon";
 
 export default function TextArea({
   id,
-  maxLength=500,
+  lang='uk',
+  maxLength=300,
   placeholder = "",
   registerOptions = {},
   isError,
@@ -15,6 +16,7 @@ export default function TextArea({
   locale,
   className,
   required=true,
+  spellcheck='false',
   options = {},
   ...props
 }) {
@@ -27,6 +29,7 @@ export default function TextArea({
       <div className={styles.wrapper}>
         <textarea
           id={id}
+          lang={lang}
           maxLength={maxLength}
           className={clsx(
             styles.textarea,
@@ -36,6 +39,7 @@ export default function TextArea({
           {...registerOptions}
           placeholder={placeholder}
           {...props}
+          spellcheck={spellcheck}
         />
 
         {/* {iconName && 
@@ -49,7 +53,7 @@ export default function TextArea({
           </div >
         }
       </div>
-      {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
+      <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
     </div>
   );
 }

@@ -79,7 +79,8 @@ export default function InputFile({
             <Icon name={'download'} className={styles.btn} width={24} height={24}/> 
           </div> 
         </label>
-      {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
+      {/* {isError && !isValid && <p className={styles.error}>{isError.message}</p>} */}
+      <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
     </div>
   );
 }

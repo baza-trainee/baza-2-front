@@ -11,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 12px;
-    gap: 20px;
+    padding: 32px 12px 20px 12px;
+    gap: 5px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
@@ -27,6 +27,7 @@
     .btn_edit{
       width: 40px;
       height: 40px;
+      margin-bottom: 18px;
     }
     .edit_white{
       stroke: #FCFCFC;

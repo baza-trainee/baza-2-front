@@ -2,13 +2,14 @@
 @use "../../../styles/variables" as var;
 
 .btn{
-  padding: 15px 24px;
   min-width: 240px;
+  min-height: 55px;
   margin-bottom: 24px;
   font-weight: 600;
   font-size: 18px;
   gap: 5px;
 }
+
 .error{
   @include mix.apply-font-styles(var.$h2-font);
   width: 100%;

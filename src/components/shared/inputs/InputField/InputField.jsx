@@ -69,6 +69,7 @@ export default function InputField({
       </div>
     );
   }
+
   if (version === "input_admin") {
     return (
       <div className={clsx(styles.input_admin, className)}>
@@ -100,7 +101,7 @@ export default function InputField({
             </div >
           }
         </div>
-        {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
+        <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
       </div>
     );
   }
@@ -127,11 +128,11 @@ export default function InputField({
             {...props}
           />
           <button type='button' className={styles.icon} onClick={()=>{setVisible(!visible)}}>
-            <Icon className={styles.btn} width={24} height={24} name={visible?'open_eye':'closed_eye'}/>
+            <Icon className={styles.btn} width={24} height={24} name={visible ?'closed_eye':'open_eye'}/>
           </button>
 
         </div>
-        {isError && !isValid && <p className={styles.error}>{isError.message}</p>}
+        <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
       </div>
     );
   }

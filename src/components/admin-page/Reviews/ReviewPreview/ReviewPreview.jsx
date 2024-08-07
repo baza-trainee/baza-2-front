@@ -2,7 +2,7 @@ import styles from './ReviewPreview.module.scss'
 import clsx from 'clsx'
 import { useState } from 'react'
 import Image from 'next/image'
-import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
+import { createImageUrl, createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 
 export default function ReviewPreview({imageUrl}) {
@@ -18,7 +18,7 @@ export default function ReviewPreview({imageUrl}) {
         <div className={styles.img_wrap}>
           <Image
             className={styles.img}
-            src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
+            src={imageUrl ? createImageUrlBaza1(imageUrl) :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill
             sizes="100%"
