@@ -83,7 +83,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="phone1"
               required={false}
-              type="textArea"
+              type="tel"
               placeholder="Введіть телефон"
               version="input_admin"
               label="Телефон"
@@ -103,7 +103,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="phone2"
               required={false}
-              type="textArea"
+              type="tel"
               placeholder="Введіть телефон"
               version="input_admin"
               label="Телефон"
@@ -143,7 +143,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="telegram"
               required={false}
-              type="textArea"
               placeholder="Додайте посилання"
               version="input_admin"
               label="Telegram"
@@ -164,7 +163,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="facebook"
               required={false}
-              type="textArea"
               placeholder="Додайте посилання"
               version="input_admin"
               label="Facebook"
@@ -185,7 +183,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="linkedin"
               required={false}
-              type="textArea"
               placeholder="Додайте посилання"
               version="input_admin"
               label="Linkedin"
