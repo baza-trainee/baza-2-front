@@ -89,6 +89,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               label="Телефон"
               isError={errors.phone1}
               isValid={isValid}
+              iconName={"edit_black"}
               registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
             />
             <Icon
@@ -121,7 +122,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
             <InputField
               id="email"
               required={false}
-              type="textArea"
+              type="email"
               placeholder="Введіть електронну пошту"
               version="input_admin"
               label="Email"
