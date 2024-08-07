@@ -1,8 +1,9 @@
 import { z } from "zod";
 import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
+import { patternText } from "@/src/constants/regulars";
 
 export const SliderDefaultValues= {
-  file:null,
+  file: null,
   title_ua: "",
   title_en: "",
   title_pl: "",
@@ -28,7 +29,8 @@ export const SliderScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Заголовок мінімум 5 знаків' })
-    .max(40, { message: 'Заголовок максимум 40 знаків' }),
+    .max(40, { message: 'Заголовок максимум 40 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' }),
 
 		title_en: z.string()
     .trim()
@@ -40,28 +42,33 @@ export const SliderScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Заголовок мінімум 5 знаків' })
-    .max(40, { message: 'Заголовок максимум 40 знаків' }),
+    .max(40, { message: 'Заголовок максимум 40 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     text_ua: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків'})
-    .max(350, { message: 'Текст максимум 350 знаків' }),
+    .max(350, { message: 'Текст максимум 350 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків' })
-    .max(350, { message: 'Текст максимум 350 знаків' }),
+    .max(350, { message: 'Текст максимум 350 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Текст мінімум 5 знаків' })
-    .max(350, { message: 'Текст максимум 350 знаків' }),
+    .max(350, { message: 'Текст максимум 350 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' }),
 
 })
-// {
+
+// Схема відправки на бекенд:{
 //   "title": {
 //     "en": "string",
 //     "pl": "string",
@@ -72,5 +79,5 @@ export const SliderScheme = z
 //     "pl": "string",
 //     "ua": "string"
 //   },
-//   "file": "string"
+//   "file": "object"
 // }

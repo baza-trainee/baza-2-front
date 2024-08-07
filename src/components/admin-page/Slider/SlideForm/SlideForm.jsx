@@ -63,8 +63,10 @@ export default function SlideForm({
 
   const validateTitle=(name, maxLength)=>{
     if(getValues(name).length > maxLength){
-      setTooltip(true)
-    }else setTooltip(false)
+      setTooltip(name)
+    }else {
+      setTooltip(null)
+    }
   }
 
   const onSubmit = (data) => {
@@ -139,7 +141,7 @@ export default function SlideForm({
             locale={'ua'}
           />
 
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTitleMessage} position='bottom'/>
+          <TooltipText className={clsx(tooltip === "title_ua" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li>
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item4)}>
@@ -158,7 +160,7 @@ export default function SlideForm({
             locale={'en'}
           />
 
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTitleMessage} position='bottom'/>
+          <TooltipText className={clsx(tooltip === "title_en" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li> 
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item5)}>
@@ -176,7 +178,7 @@ export default function SlideForm({
             version={"input_admin"}
             locale={'pl'}
           />
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTitleMessage} position='bottom'/>
+          <TooltipText className={clsx(tooltip === "title_pl" && styles._active)} text={tooltipTitleMessage} position='bottom'/>
         </li> 
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item6)}>
@@ -195,7 +197,7 @@ export default function SlideForm({
             label={'Основний текст'} 
             locale={'ua'}/>
 
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTextMessage} position='bottom'/>   
+          <TooltipText className={clsx(tooltip === "text_ua"  && styles._active)} text={tooltipTextMessage} position='bottom'/>   
         </li>
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item7)}>
@@ -213,7 +215,7 @@ export default function SlideForm({
             placeholder={"Основний текст"} 
             locale={'en'}/>
 
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTextMessage} position='bottom'/>  
+          <TooltipText className={clsx(tooltip === "text_en"  && styles._active)} text={tooltipTextMessage} position='bottom'/>  
         </li>
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item8)}>
@@ -231,7 +233,7 @@ export default function SlideForm({
             placeholder={"Основний текст"} 
             locale={'pl'}/>
 
-          <TooltipText className={clsx(tooltip && styles._active)} text={tooltipTextMessage} position='bottom'/>   
+          <TooltipText className={clsx(tooltip === "text_pl" && styles._active)} text={tooltipTextMessage} position='bottom'/>   
         </li>
       </ul>
 

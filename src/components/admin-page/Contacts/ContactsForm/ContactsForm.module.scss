@@ -6,7 +6,7 @@
   flex-direction: column;
   padding: 32px 12px;
 
-  gap: 24px;
+  gap: 10px;
   background-color: var.$primary-fon-card;
   box-shadow:
     0 4px 4px 0 rgba(87, 86, 89, 0.25),
@@ -19,17 +19,17 @@
   gap: 24px;
 }
 
-.input {
-  margin-bottom: 29px;
-  display: flex;
-  position: relative;
-}
+// .input {
+//   margin-bottom: 29px;
+//   display: flex;
+//   position: relative;
+// }
 
-.icon {
-  position: absolute;
-  right: 10px;
-  top: 40px;
-}
+// .icon {
+//   position: absolute;
+//   right: 10px;
+//   top: 40px;
+// }
 
 .btns {
   display: flex;
