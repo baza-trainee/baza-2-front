@@ -39,7 +39,7 @@ export default function TextArea({
           {...registerOptions}
           placeholder={placeholder}
           {...props}
-          spellcheck={spellcheck}
+          spellCheck={spellcheck}
         />
 
         {/* {iconName && 

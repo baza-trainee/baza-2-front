@@ -84,7 +84,9 @@ export default function InputField({
             className={clsx(
               styles.input,
               isError && styles._error,
-              isValid && styles._success
+              isValid && styles._success,
+              iconName && styles._icon,
+              locale && styles._icon,
             )}
             {...registerOptions}
             placeholder={placeholder}

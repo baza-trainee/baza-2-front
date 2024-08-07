@@ -30,7 +30,7 @@ export const patternNumberInput = /^[1-9]\d{0,}$|^[0]$|^$/;
 export const patternLink =
 /^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i;
 
-
+export const patternRole =  /^[a-zA-Z]+([ -—\/][a-zA-Z]+)*$/
 
 
 // \w

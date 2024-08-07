@@ -51,7 +51,7 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
   };
     
   const isDisabled = () => {
-    console.log(getValues('imageUrl'))
+
     if (Object.keys(errors).length > 0) {
       return true;
     } else 

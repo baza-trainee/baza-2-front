@@ -19,7 +19,7 @@ export default function ReviewList({data, hendleRemove}) {
   }
 
   const okRemove=()=>{
-    hendleRemove(idSlide)
+    hendleRemove(idReview)
     setIdIdReview(null)
   }
 

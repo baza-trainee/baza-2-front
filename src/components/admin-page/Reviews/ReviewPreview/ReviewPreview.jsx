@@ -18,7 +18,7 @@ export default function ReviewPreview({imageUrl}) {
         <div className={styles.img_wrap}>
           <Image
             className={styles.img}
-            src={imageUrl ? createImageUrlBaza1(imageUrl) :'/images/placeholder-image/no-image.png'}
+            src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill
             sizes="100%"

@@ -68,9 +68,13 @@
     .input._success {
       border: 2px solid var.$secondary-positive;
     }
+    .input._icon{
+      padding-right: 38px;
+    }
+
     .icon{
       position: absolute;
-      width: 50px;
+      width: 30px;
       height: 80%;
       right: 4px;
       top: 50%;
