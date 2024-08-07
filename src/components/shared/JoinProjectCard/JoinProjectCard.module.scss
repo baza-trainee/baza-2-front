@@ -38,14 +38,17 @@
     padding: 28px 8px;
 
 @include mixins.media-q("md") {
-  // position: relative;
-  // top: -50%;
     width: 100%;
     grid-template-columns: 1fr 3fr;
     overflow: hidden;
  
   }
   
+  @media (min-width: 990px) {
+  position: relative;
+  top: 10%;
+  }
+
   @include mixins.media-q("xl") { 
     grid-template-columns: 1fr 3fr;
     min-width: 1212px;

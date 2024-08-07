@@ -1,7 +1,4 @@
-"use client";
-
 import styles from "./ContactsForm.module.scss";
-import { Icon } from "@/src/components/shared/Icon/Icon";
 import InputField from "@/src/components/shared/inputs/InputField/InputField";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import { useForm } from "react-hook-form";
@@ -35,15 +32,11 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
         linkedin: data.linkedin,
       },
     };
-
-    console.log("Form data submitted:", updatedContacts);
     handleMutate(updatedContacts);
   };
 
   useEffect(() => {
     if (defaultValues) {
-      console.log("Полученные данные в ContactsForm:", defaultValues);
-
       reset({
         phone1:
           formatPhoneNumber(String(defaultValues.contactsDataList?.phone1)) ||
@@ -61,16 +54,12 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
-      console.log("Форма неактивна из-за ошибок:", errors);
       return true;
     } else if (!isDirty) {
-      console.log("Форма неактивна, потому что не было изменений.");
       return true;
     } else if (!isValid) {
-      console.log("Форма неактивна, потому что данные не валидны.");
       return true;
     } else {
-      console.log("Форма активна и доступна для отправки.");
       return false;
     }
   };
@@ -93,12 +82,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               iconName={"edit_black"}
               registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -113,12 +96,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               registerOptions={register("phone2", { ...ContactsScheme.phone2 })}
               iconName={"edit_black"}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -133,12 +110,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               registerOptions={register("email", { ...ContactsScheme.email })}
               iconName={"edit_black"}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
         </div>
         <div className={styles.row}>
@@ -156,12 +127,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               })}
               iconName={"edit_black"}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -177,12 +142,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               })}
               iconName={"edit_black"}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
           <div className={styles.input}>
             <InputField
@@ -198,12 +157,6 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
               })}
               iconName={"edit_black"}
             />
-            {/* <Icon
-              width={24}
-              height={24}
-              name="edit_black"
-              className={styles.icon}
-            /> */}
           </div>
         </div>
       </div>
