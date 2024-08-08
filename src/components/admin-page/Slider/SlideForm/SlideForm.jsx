@@ -81,7 +81,7 @@ export default function SlideForm({
         pl: data.text_pl,
         ua: data.text_ua
       },
-      file: data.file[0],
+      file: data.file,
     }
     hendleMutate(newData)
   };

@@ -17,12 +17,10 @@
     border-radius: 8px;
     min-height: 48px;
     padding: 10px;
-    padding-right: 30px;
+    padding-right: 40px;
     background: var.$secondary-white;
     transition: all var.$transition-duration-base var.$transition-timing-base;
-    overflow: hidden;
-    text-wrap: nowrap;
-    & > input{
+    .input{
       width: 0.1px;
       height: 0.1px;
       opacity: 0;
@@ -33,6 +31,9 @@
 
     .placeholder{
       color: #8b8a8a;
+      max-width: 250px;
+      text-wrap: nowrap;
+      overflow: hidden;
     }
 
     .icon{
@@ -45,7 +46,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      background: var.$secondary-white;
+      //background: var.$secondary-white;
       .btn{
         margin: 10px;
       }

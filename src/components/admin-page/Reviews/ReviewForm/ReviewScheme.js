@@ -1,10 +1,11 @@
 import { z } from "zod";
 import { patternName, patternText, patternRole } from "@/src/constants/regulars";
-import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
+import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
+import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
 
 export const ReviewDefaultValues = {
-  file:null,
+  file: null,
   name_ua: "",
   name_en: "",
   name_pl: "",
@@ -14,20 +15,30 @@ export const ReviewDefaultValues = {
   role:"",
   date:""
 }
+const MAX_SIZE_IMG = 512000
 
-const validateImage =(value)=>{
-  if(value==''){
+const validateImageTypes =(value)=>{
+  if(value == ''){
     return true
   }else if(value){
-    return value[0]?.size < 512000 && checkFileType(value[0],ACCEPTED_IMAGE_TYPES)
+    return checkFileType(value[0], ACCEPTED_IMAGE_TYPES)
   }
 }
 
+const transformImageValue = (value)=>{
+  if(value === ''){
+    return ''
+  }else if(value){
+    return value[0]
+  }
+}
 
 export const ReviewScheme = z
 	.object({
     file: z.any()
-    .refine((file) => validateImage(file),"Формат JPG, PNG, WEBP, Max.розмір 512KB"),
+    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 512КБ")
+    .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
+    .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		name_ua: z.string()
     .trim()
@@ -82,11 +93,6 @@ export const ReviewScheme = z
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .transform((value) => formatDateToNumericInputDate({dateString:value})),
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(5, { message: 'Текст повинен мати не менше 5 знаків' }),
-    //.regex(patternText, { message: 'Не використовуйте російські літери' }),
-
 })
 //  Схема відправки на бекенд:{
 //   "name": {
@@ -101,5 +107,5 @@ export const ReviewScheme = z
 //   },
 //   "role": "string",
 //   "date": number,
-//   "imageUrl": "object"
+//   "file": "object"
 // }

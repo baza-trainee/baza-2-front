@@ -54,8 +54,11 @@
   z-index: 3;
 
   .slideCardItem{
-    width: 90%;
-    height: 90%;
+    width: 50%;
+    height: 50%;
+    width: 500px;
+    height: 500px;
+    padding: 60px 10px 10px 60px;
     transition: all .6s;
     & > button{
       right: auto;

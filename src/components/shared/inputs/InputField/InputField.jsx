@@ -110,7 +110,7 @@ export default function InputField({
 
   if (version === "password") {
     return (
-      <div className={clsx(styles.input_admin, className)}>
+      <div className={clsx(styles.input_password, className)}>
         <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
           {label?label:'label title'} {required && <span>*</span>}
         </label>

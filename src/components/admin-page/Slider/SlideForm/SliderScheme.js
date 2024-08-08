@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from "@/src/lib/hooks/checkFileType";
+import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
 import { patternText } from "@/src/constants/regulars";
+import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
 
 export const SliderDefaultValues= {
   file: null,
@@ -12,18 +13,30 @@ export const SliderDefaultValues= {
   text_pl: "",
 }
 
-const validateImage =(value)=>{
-  if(value==''){
+const MAX_SIZE_IMG = 1048576
+
+const validateImageTypes =(value)=>{
+  if(value == ''){
     return true
   }else if(value){
-    return value[0]?.size < MAX_FILE_SIZE_IMG && checkFileType(value[0],ACCEPTED_IMAGE_TYPES)
+    return checkFileType(value[0], ACCEPTED_IMAGE_TYPES)
+  }
+}
+
+const transformImageValue = (value)=>{
+  if(value === ''){
+    return ''
+  }else if(value){
+    return value[0]
   }
 }
 
 export const SliderScheme = z
 	.object({
     file: z.any()
-    .refine((file) => validateImage(file),"Формат фото JPG, PNG, WEBP, Max.розмір 2MB"),
+    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 130КБ")
+    .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
+    .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		title_ua: z.string()
     .trim()

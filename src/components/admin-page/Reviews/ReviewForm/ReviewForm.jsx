@@ -56,10 +56,10 @@ export default function ReviewForm({
       setValue('text_pl',review.pl )
       setValue('role',role )
       setValue('date',formatDateToNumericInputDate({timestamp:date}))
-      //setValueDate(date)
       setValue('file', '')
       setPrevUrl(imageUrl)
-    }
+    }else setValue('date',formatDateToNumericInputDate({timestamp:Date.now()}))
+    
   },[data])
 
   const onSubmit = (data) => {
@@ -76,7 +76,7 @@ export default function ReviewForm({
       },
       role: data.role,
       date: data.date,
-      file: data.file[0]
+      file: data.file,
     }
     console.log(newData)
     hendleMutate(newData)
@@ -127,7 +127,7 @@ export default function ReviewForm({
             isError={errors.name_en}
             isValid={isValid}
             version={"input_admin"}
-            label={'Ім’я'}
+            //label={'Ім’я'}
             locale={'en'}
           />
         </li> 
@@ -143,7 +143,7 @@ export default function ReviewForm({
             isError={errors.name_pl}
             isValid={isValid}
             version={"input_admin"}
-            label={'Ім’я'}
+            //label={'Ім’я'}
             locale={'pl'}
           />
         </li> 
@@ -167,33 +167,15 @@ export default function ReviewForm({
         
           <InputDate
             id={"date"}
-            //maxLength={100}
+            min={'2024-07-01'}
             className={styles.item}
             required={false}
-            //placeholder={"Введіть дату"}
             registerOptions={register("date", { ...ReviewScheme.date})}
-            // onInput={(e)=>{setValueDate(formatDateToNumericInputDate({dateString: e.target.value}))}}
-            //value={valueDate ? valueDate:null}
             isError={errors.date}
             isValid={isValid}
             version={"input_admin"}
             label={'Дата'}
-            //iconName={'calendar_dark'}
           />
-          {/* <span>{valueDate}</span> */}
-          {/* <InputField
-            id={"date"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Введіть дату"}
-            registerOptions={register("date", { ...ReviewScheme.date})}
-            isError={errors.date}
-            isValid={isValid}
-            version={"input_admin"}
-            label={'Дата'}
-            iconName={'calendar_dark'}
-          /> */}
         </li> 
 
         <li className={clsx(styles.list_item, styles.item_prev)}>
@@ -259,7 +241,7 @@ export default function ReviewForm({
         <MainButton
           type="submit"
           className={styles.btn}
-          //disabled={isDisabled()}
+          disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>

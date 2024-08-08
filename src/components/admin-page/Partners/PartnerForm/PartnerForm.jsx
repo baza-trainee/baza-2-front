@@ -45,7 +45,7 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
     const newData = {
       name: data.name,
       homeUrl: data.homeUrl,
-      file: data.imageUrl[0],
+      file: data.file,
     }
     hendleMutate(newData)
   };
@@ -84,16 +84,16 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
 
         <li className={styles.list_item}>
           <InputFile
-            id={"imageUrl"}
+            id={"file"}
             className={styles.item}
             type={'file'}
             getPrevImgUrl={ handlePrevImg }
             required={false}
             accept="image/*"
-            placeholder={"Оберіть файл JPG, PNG, WEBP"}
-            registerOptions={register("imageUrl", { ...addPartnerSchema.imageUrl })}
+            placeholder={"Оберіть фото"}
+            registerOptions={register("file", { ...addPartnerSchema.file })}
             isDirty={isDirty}
-            isError={errors.imageUrl}
+            isError={errors.file}
             isValid={isValid}
             version={"file"}
             label={'Логотип'}
@@ -102,7 +102,6 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
         <li className={styles.list_item}>
           <InputField
             id={"homeUrl"}
-            maxLength={55}
             className={styles.item}
             required={false}
             placeholder={"Посилання на сайт"}

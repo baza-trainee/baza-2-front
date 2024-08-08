@@ -44,6 +44,9 @@
 
 .input_admin{
   width: 320px;
+  // min-width: 280px;
+  // max-width: 360px;
+  // width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -75,6 +78,85 @@
     .icon{
       position: absolute;
       width: 30px;
+      height: 80%;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background: var.$secondary-white;
+      & > p{
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #000;
+        padding: 5px;
+      }
+      .btn{
+        margin: 10px;
+        transition: all var.$transition-duration-base var.$transition-timing-base;
+      }
+      .btn:hover{
+        opacity: .7;
+      }
+    }
+  }
+
+  .label{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-weight: 600;
+    font-size: 18px;
+    & > span {
+      color: var.$secondary-error;
+    }
+    &._hide{
+      visibility: hidden;
+    }
+  }
+
+  .error{
+    min-height: 18px;
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    line-height: normal;
+    color: var.$secondary-error;
+  }
+}
+
+.input_password{
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  .wrapper{
+    position: relative;
+    .input{
+      width: 100%;
+      @include mx.apply-font-styles(var.$text-16-font);
+      color: var.$secondary-black;
+      border: 2px solid transparent;
+      border-radius: 8px;
+
+      padding: 10px;
+      outline: 0;
+      background: var.$secondary-white;
+      transition: all var.$transition-duration-base var.$transition-timing-base;
+    }
+    .input._error {
+      border: 2px solid var.$secondary-error;
+    }
+    .input._success {
+      border: 2px solid var.$secondary-positive;
+    }
+    .input._icon{
+      padding-right: 38px;
+    }
+
+    .icon{
+      position: absolute;
+      width: 50px;
       height: 80%;
       right: 4px;
       top: 50%;
