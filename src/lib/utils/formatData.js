@@ -1,18 +1,28 @@
 import { useFormatter } from "next-intl";
 
-export const formatDate = (timestamp, locale) => {
+export const formatDate = (timestamp, locale, variant = 'default') => {
 	const date = new Date(timestamp);
 
 	const currentLocale = locale === 'ua' ? 'uk-UA' : locale
 
-	const formattedDate = new Intl.DateTimeFormat(currentLocale, {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric'
-	}).format(date);
+	if (variant === 'default') {
+		const formattedDate = new Intl.DateTimeFormat(currentLocale, {
+			day: 'numeric',
+			month: 'long',
+			year: 'numeric'
+		}).format(date);
 
-	if (currentLocale === 'uk-UA') return formattedDate.replace(/ р\./, '')
-	return formattedDate
+		if (currentLocale === 'uk-UA') return formattedDate.replace(/ р\./, '')
+		return formattedDate
+	} else if (variant === 'feedback') {
+		const formattedDate = new Intl.DateTimeFormat(currentLocale, {
+			month: 'long',
+			year: 'numeric'
+		}).format(date);
+
+		if (currentLocale === 'uk-UA') return formattedDate.replace(/ р\./, '')
+		return formattedDate
+	}
 }
 
 export const formatDateToNumeric = (timestamp) => {
