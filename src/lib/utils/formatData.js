@@ -25,7 +25,7 @@ export const formatDate = (timestamp, locale, variant = 'default') => {
 	}
 }
 
-export const formatDateToNumeric = (timestamp, variant) => {
+export const formatDateToNumeric = (timestamp) => {
 	const format = useFormatter();
 	const dateTime = new Date(timestamp);
 

@@ -19,7 +19,7 @@ const FeedbackCard = ({ imageUrl, name, role, date, review, className }) => {
           <div className={styles.personInfo}>
             <p className={styles.name}>{name[locale]}</p>
             <p className={styles.role}>{role}</p>
-            <p className={styles.date}>{formatDate(date, locale)}</p>
+            <p className={styles.date}>{formatDate(date, locale,'feedback')}</p>
           </div>
         </div>
       </div>
