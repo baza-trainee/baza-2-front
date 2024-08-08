@@ -36,7 +36,7 @@ const transformImageValue = (value)=>{
 export const ReviewScheme = z
 	.object({
     file: z.any()
-    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 512КБ")
+    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
     .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
     .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
 
