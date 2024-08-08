@@ -28,6 +28,20 @@ export default function Reviews() {
       open('error', false)
     }})
 
+  // Сортує елементи по даті створення.
+  function sortData(arr) {
+    const array = arr.sort(function (a, b) {
+        if (a.date < b.date) {
+          return 1;
+        }
+        if (a.date > b.date) {
+          return -1;
+        }
+        return 0;
+      });
+    return array
+  }
+
  return( 
     <SectionAdmin title={'Відгуки'} lang={true}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
@@ -42,7 +56,7 @@ export default function Reviews() {
           <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
         </>:
         <>
-          {data && <ReviewList data={data} hendleRemove={ deleteReview.mutate }/>}
+          {data && <ReviewList data={sortData(data)} hendleRemove={ deleteReview.mutate }/>}
         </>
       }
 

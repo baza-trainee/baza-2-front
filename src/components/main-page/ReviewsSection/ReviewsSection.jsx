@@ -18,6 +18,19 @@ const ReviewsSection = () => {
   const { isError, data } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});
 
+  // Повертає 10 елементів, якщо їх більше та сортує по даті,
+  function sortData(arr) {
+    const array = arr.sort(function (a, b) {
+      if (a.date < b.date) {
+        return 1;
+      }
+      if (a.date > b.date) {
+        return -1;
+      }
+      return 0;
+    });
+    return array.length > 10 ? array.slice(0, 10) : array
+  }
 
   return (
     <section className={styles.section}>
@@ -41,7 +54,7 @@ const ReviewsSection = () => {
           { data?.length && <Carousel
             modules={[Navigation, Pagination]}
             paginationEl={".feedback-custom-pagination"}
-            items={data}
+            items={sortData(data)}
             prevEl={".feedback-prevBtn"}
             nextEl={".feedback-nextBtn"}
             renderItem={(item) => <FeedbackCard {...item} />}

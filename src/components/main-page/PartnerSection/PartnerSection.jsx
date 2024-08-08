@@ -32,7 +32,6 @@ const PartnerSection = () => {
     return ()=>{ window?.screen.orientation.removeEventListener("change", refetch)}
   },[])
 
-
   // Повертає 10 випадкових елементів, якщо єлементів менше 4 - клонує елементи
   function shuffle(arr) {
     const array = arr.length > 4 ? [...arr]: [...arr,...arr]
@@ -42,7 +41,6 @@ const PartnerSection = () => {
     }
     return array.length > 10 ? array.slice(0, 10) : array
   }
-
 
   return (
     <section className={styles.section}>
