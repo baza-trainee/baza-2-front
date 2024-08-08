@@ -16,19 +16,22 @@ export default function LoginSection() {
   //   "email": "user@example.com",
   //   "password": "password123"
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, reset } = useMutation({
     mutationFn: (data) => {
       return logIn(data)
+    },onSuccess:()=>{
+      router.replace('/admin')
+      reset()
     },onError:()=>{
       open('error', false)
     }
   })
 
-  useEffect(() => {
-    if (token.get()) {
-      router.replace('/admin');
-    }
-  });
+  // useEffect(() => {
+  //   if (token.get()) {
+  //     router.replace('/admin');
+  //   }
+  // });
 
   return (
     <Section title={'Вхід'} text={ 'Введіть дані для входу' }>
