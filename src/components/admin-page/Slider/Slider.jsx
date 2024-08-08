@@ -31,13 +31,19 @@ export default function Slider() {
 
  return( 
     <SectionAdmin title={'Слайдер'} lang={true}>
-      <div className={styles.wrapper}>
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
-          router.push(addSlidePath)
-        }}>
-          <Icon name={'plus_black'} width={24} height={24} />
-          {'Додати слайд'}</MainButton >
-      </div>
+      {data?.results.length < 5 ? 
+        <div className={styles.wrapper}>
+          <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+              router.push(addSlidePath)
+            }}>
+              <Icon name={'plus_black'} width={24} height={24} />
+              {'Додати слайд'}</MainButton >
+        </div>:
+        <div className={styles.info}>
+          <p className={styles.error}>Максимальна кількість п'ять слайдів.</p>
+          <p className={styles.error}>Доступне лише редагування.</p>
+        </div>
+      }
       
       {isError ?
         <>

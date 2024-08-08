@@ -88,6 +88,7 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             isValid={isValid}
             version={"input_admin"}
             label={'Працевлаштовано'}
+            iconName={"edit_black"}
           />
         </li>
       </ul>

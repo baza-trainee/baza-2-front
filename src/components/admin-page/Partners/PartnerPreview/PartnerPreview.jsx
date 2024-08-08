@@ -7,7 +7,7 @@ export default function PartnerPreview({imageUrl}) {
 
   return (
     <div className={styles.preview}>
-      <div className={clsx(styles.partnerCardItem,!imageUrl&& styles._noimage)}>
+      <div className={clsx(styles.partnerCardItem,!imageUrl && styles._noimage)}>
         <div className={styles.img_wrap}>
           <Image
             className={styles.img}

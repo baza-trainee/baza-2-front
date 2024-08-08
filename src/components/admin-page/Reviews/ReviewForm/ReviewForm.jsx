@@ -12,7 +12,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { ReviewDefaultValues, ReviewScheme } from './ReviewScheme';
 import ReviewPreview from '../ReviewPreview/ReviewPreview';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
-import { formatDateToNumeric } from '@/src/lib/utils/formatData';
+import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 
 export default function ReviewForm({
   hendleMutate, 
@@ -23,7 +23,6 @@ export default function ReviewForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
-  const[ valueDate, setValueDate ] = useState('')
 
   const {
     register,
@@ -45,10 +44,6 @@ export default function ReviewForm({
     }
   },[isSuccess])
 
-
-  //const date = Date.now();
-  console.log(valueDate)
-
   useEffect(()=>{
     if(data){
       const{imageUrl, name, review, role, date } = data
@@ -59,31 +54,33 @@ export default function ReviewForm({
       setValue('text_en',review.en )
       setValue('text_pl',review.pl )
       setValue('role',role )
-      //setValue('date',new Date(date))
-      setValueDate(date)
+      setValue('date',formatDateToNumericInputDate({timestamp:date}))
       setValue('file', '')
       setPrevUrl(imageUrl)
-    }
+    }else setValue('date',formatDateToNumericInputDate({timestamp:Date.now()}))
+    
   },[data])
 
   const onSubmit = (data) => {
-    console.log(data)
-    // const newData = {
-    //   title: {
-    //     en: data.title_en,
-    //     pl: data.title_pl,
-    //     ua: data.title_ua
-    //   },
-    //   subtitle: {
-    //     en: data.text_en,
-    //     pl: data.text_pl,
-    //     ua: data.text_ua
-    //   },
-    //   file: data.file[0],
-    // }
-    //hendleMutate(newData)
+    const newData = {
+      name: {
+        en: data.name_en,
+        pl: data.name_pl,
+        ua: data.name_ua,
+      },
+      review: {
+        en: data.text_en,
+        pl: data.text_pl,
+        ua: data.text_ua,
+      },
+      role: data.role,
+      date: data.date,
+      file: data.file,
+    }
+    console.log(newData)
+    hendleMutate(newData)
   };
-    
+
   const isDisabled = () => {
     if (isError) {
       return true;
@@ -129,7 +126,7 @@ export default function ReviewForm({
             isError={errors.name_en}
             isValid={isValid}
             version={"input_admin"}
-            label={'Ім’я'}
+            //label={'Ім’я'}
             locale={'en'}
           />
         </li> 
@@ -145,7 +142,7 @@ export default function ReviewForm({
             isError={errors.name_pl}
             isValid={isValid}
             version={"input_admin"}
-            label={'Ім’я'}
+            //label={'Ім’я'}
             locale={'pl'}
           />
         </li> 
@@ -162,38 +159,22 @@ export default function ReviewForm({
             isValid={isValid}
             version={"input_admin"}
             label={'Спеціалізація'}
+            locale={'en'}
           />
         </li> 
         <li className={clsx(styles.list_item, styles.grid_item5)}>
         
           <InputDate
             id={"date"}
-            //maxLength={100}
+            min={'2024-07-01'}
             className={styles.item}
             required={false}
-            //placeholder={"Введіть дату"}
             registerOptions={register("date", { ...ReviewScheme.date})}
-            onInput={(e)=>{setValueDate(e.target.valueAsNumber)}}
             isError={errors.date}
             isValid={isValid}
             version={"input_admin"}
             label={'Дата'}
-            //iconName={'calendar_dark'}
           />
-          <span>{valueDate}</span>
-          {/* <InputField
-            id={"date"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Введіть дату"}
-            registerOptions={register("date", { ...ReviewScheme.date})}
-            isError={errors.date}
-            isValid={isValid}
-            version={"input_admin"}
-            label={'Дата'}
-            iconName={'calendar_dark'}
-          /> */}
         </li> 
 
         <li className={clsx(styles.list_item, styles.item_prev)}>
@@ -218,6 +199,7 @@ export default function ReviewForm({
         <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_ua"}   
+            maxLength={301}
             className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
@@ -231,6 +213,7 @@ export default function ReviewForm({
         <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_en"}   
+            maxLength={301}
             className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
@@ -242,6 +225,7 @@ export default function ReviewForm({
         <li className={clsx(styles.list_item)}>
           <TextArea 
             id={"text_pl"}   
+            maxLength={301}
             className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}
@@ -256,7 +240,7 @@ export default function ReviewForm({
         <MainButton
           type="submit"
           className={styles.btn}
-          //disabled={isDisabled()}
+          disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>

@@ -28,7 +28,7 @@ export default function Reviews() {
       open('error', false)
     }})
 
-console.log(data)
+//console.log(data)
  return( 
     <SectionAdmin title={'Відгуки'} lang={true}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{

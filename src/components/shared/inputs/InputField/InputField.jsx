@@ -84,7 +84,9 @@ export default function InputField({
             className={clsx(
               styles.input,
               isError && styles._error,
-              isValid && styles._success
+              isValid && styles._success,
+              iconName && styles._icon,
+              locale && styles._icon,
             )}
             {...registerOptions}
             placeholder={placeholder}
@@ -108,7 +110,7 @@ export default function InputField({
 
   if (version === "password") {
     return (
-      <div className={clsx(styles.input_admin, className)}>
+      <div className={clsx(styles.input_password, className)}>
         <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
           {label?label:'label title'} {required && <span>*</span>}
         </label>
