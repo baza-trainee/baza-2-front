@@ -23,7 +23,6 @@ export default function ReviewForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
-  //const[ valueDate, setValueDate ] = useState('')
 
   const {
     register,
