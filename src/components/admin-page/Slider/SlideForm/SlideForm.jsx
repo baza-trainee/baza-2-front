@@ -22,7 +22,7 @@ export default function SlideForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
-  const[ tooltip, setTooltip ] = useState(false)
+  const[ tooltip, setTooltip ] = useState(null)
 
   const tooltipTitleMessage = 'Рекомендована довжина заголовка від 5 до 30 символів. Максимальна 40 символів';
   const tooltipTextMessage = 'Рекомендована довжина основного тексту від 5 до 300 символів. Максимальна 350 символів';
@@ -43,6 +43,8 @@ export default function SlideForm({
 
   useEffect(()=>{
     if(isSuccess){
+      setTooltip(null)
+      setTooltip(null)
       reset();
     }
   },[isSuccess])
@@ -134,6 +136,7 @@ export default function SlideForm({
             placeholder={"Заголовок"}
             registerOptions={register("title_ua", { ...SliderScheme.title_ua })}
             onInput={()=>{validateTitle("title_ua", 30)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.title_ua}
             isValid={isValid}
             version={"input_admin"}
@@ -154,6 +157,7 @@ export default function SlideForm({
             placeholder={"Заголовок"}
             registerOptions={register("title_en", { ...SliderScheme.title_en })}
             onInput={()=>{validateTitle("title_en", 30)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.title_en}
             isValid={isValid}
             version={"input_admin"}
@@ -173,6 +177,7 @@ export default function SlideForm({
             placeholder={"Заголовок"}
             registerOptions={register("title_pl", { ...SliderScheme.title_pl})}
             onInput={()=>{validateTitle("title_pl", 30)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.title_pl}
             isValid={isValid}
             version={"input_admin"}
@@ -191,6 +196,7 @@ export default function SlideForm({
             isValid={isValid}
             registerOptions={register("text_ua", { ...SliderScheme.text_ua })}
             onInput={()=>{validateTitle("text_ua", 300)}}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
             spellcheck="true"
             placeholder={"Основний текст"} 
@@ -210,6 +216,7 @@ export default function SlideForm({
             isValid={isValid}
             registerOptions={register("text_en", { ...SliderScheme.text_en })}
             onInput={()=>{validateTitle("text_en", 300)}}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
             spellcheck="true"
             placeholder={"Основний текст"} 
@@ -228,6 +235,7 @@ export default function SlideForm({
             isValid={isValid}
             registerOptions={register("text_pl", { ...SliderScheme.text_pl })}
             onInput={()=>{validateTitle("text_pl", 300)}}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
              spellcheck="true"
             placeholder={"Основний текст"} 

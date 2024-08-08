@@ -23,6 +23,10 @@ export default function ReviewList({data, hendleRemove}) {
     setIdIdReview(null)
   }
 
+  const reverseData=(data)=>{
+    return data.reverse()
+  }
+  //.reverse()
   return(
     <>
       {data?.length ? <ul className={styles.list}>
