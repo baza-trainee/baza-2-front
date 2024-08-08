@@ -42,8 +42,8 @@
     .tooltip {
       position: relative;
     }
-
-    ._active {
+    .tooltip:focus ._active,
+    .tooltip:hover ._active {
       visibility: visible;
       opacity: 1;
       top: 105%;
