@@ -1,4 +1,5 @@
-export default function projects() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: admin-Projects</h2></div>
+import Projects from "@/src/components/admin-page/Projects/Projects";
+
+export default function projectsPage() {
+  return <Projects/>
 };
