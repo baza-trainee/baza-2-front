@@ -42,7 +42,7 @@
     .tooltip {
       position: relative;
     }
-    .tooltip:hover ._active,
+    .tooltip:focus ._active,
     .tooltip:hover ._active {
       visibility: visible;
       opacity: 1;

@@ -39,7 +39,13 @@
   border-radius: 12px;
   overflow: hidden;
   & > img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
+    //object-position: top;
+    object-position: 50% 20%;
   }
 }
 

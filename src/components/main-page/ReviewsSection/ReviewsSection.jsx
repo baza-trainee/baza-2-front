@@ -6,7 +6,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import clsx from "clsx";
-//import { items } from "./data";
 import { useTranslations } from "next-intl";
 import styles from "./ReviewsSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
@@ -14,7 +13,7 @@ import { getAllReviews } from "@/src/api/reviews";
 
 const ReviewsSection = () => {
   const t = useTranslations("Main.reviews_section");
-  // Запит на базу 1
+  // Запит на базу
   const { isError, data } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});
 
@@ -46,10 +45,8 @@ const ReviewsSection = () => {
           </div>
         }
 
-          
         </div>
         <div className={styles.sliderContainer}>
-
 
           { data?.length && <Carousel
             modules={[Navigation, Pagination]}

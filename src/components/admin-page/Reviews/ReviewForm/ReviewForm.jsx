@@ -10,9 +10,10 @@ import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { ReviewDefaultValues, ReviewScheme } from './ReviewScheme';
-import ReviewPreview from '../ReviewPreview/ReviewPreview';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
+import ImagePreview from '../../ImagePreview/ImagePreview';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function ReviewForm({
   hendleMutate, 
@@ -23,6 +24,10 @@ export default function ReviewForm({
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
+  const[ tooltip, setTooltip ] = useState(null)
+
+  const tooltipTitNameMessage = 'Рекомендована довжина до 16 символів. Максимальна 20 символів';
+  const tooltipRoleMessage = 'Рекомендована довжина до 16 символів. Максимальна 20 символів';
 
   const {
     register,
@@ -61,6 +66,13 @@ export default function ReviewForm({
     
   },[data])
 
+  const validateTitle=(name, maxLength)=>{
+    if(getValues(name).length > maxLength){
+      setTooltip(name)
+    }else {
+      setTooltip(null)
+    }
+  }
   const onSubmit = (data) => {
     const newData = {
       name: {
@@ -77,7 +89,6 @@ export default function ReviewForm({
       date: data.date,
       file: data.file,
     }
-    console.log(newData)
     hendleMutate(newData)
   };
 
@@ -99,7 +110,7 @@ export default function ReviewForm({
 
       <ul className={styles.list}>
 
-        <li className={clsx(styles.list_item, styles.grid_item3)}>
+        <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"name_ua"}
             maxLength={100}
@@ -107,15 +118,19 @@ export default function ReviewForm({
             required={false}
             placeholder={"Ім’я"}
             registerOptions={register("name_ua", { ...ReviewScheme.name_ua })}
+            onInput={()=>{validateTitle("name_ua", 18)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.name_ua}
             isValid={isValid}
             version={"input_admin"}
             label={'Ім’я'}
             locale={'ua'}
           />
+
+          <TooltipText className={clsx(tooltip === "name_ua" && styles._active)} text={tooltipTitNameMessage } position='bottom'/>
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid_item4)}>
+        <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"name_en"}
             maxLength={100}
@@ -123,15 +138,18 @@ export default function ReviewForm({
             required={false}
             placeholder={"Name"}
             registerOptions={register("name_en", { ...ReviewScheme.name_en })}
+            onInput={()=>{validateTitle("name_en", 18)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.name_en}
             isValid={isValid}
             version={"input_admin"}
-            //label={'Ім’я'}
             locale={'en'}
           />
+
+          <TooltipText className={clsx(tooltip === "name_en" && styles._active)} text={tooltipTitNameMessage } position='bottom'/>
         </li> 
 
-        <li className={clsx(styles.list_item, styles.grid_item5)}>
+        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item5)}>
           <InputField
             id={"name_pl"}
             maxLength={100}
@@ -139,15 +157,18 @@ export default function ReviewForm({
             required={false}
             placeholder={"Imię"}
             registerOptions={register("name_pl", { ...ReviewScheme.name_pl})}
+            onInput={()=>{validateTitle("name_pl", 18)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.name_pl}
             isValid={isValid}
             version={"input_admin"}
-            //label={'Ім’я'}
             locale={'pl'}
           />
+
+          <TooltipText className={clsx(tooltip === "name_pl" && styles._active)} text={tooltipTitNameMessage } position='bottom'/>
         </li> 
 
-        <li className={clsx(styles.list_item, styles.grid_item5)}>
+        <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"role"}
             maxLength={100}
@@ -155,14 +176,19 @@ export default function ReviewForm({
             required={false}
             placeholder={"Введіть дані"}
             registerOptions={register("role", { ...ReviewScheme.role})}
+            onInput={()=>{validateTitle("role", 16)}}
+            onFocus={()=>{setTooltip(null)}}
             isError={errors.role}
             isValid={isValid}
             version={"input_admin"}
             label={'Спеціалізація'}
             locale={'en'}
           />
+
+          <TooltipText className={clsx(tooltip === "role" && styles._active)} text={tooltipRoleMessage} position='bottom'/>
+
         </li> 
-        <li className={clsx(styles.list_item, styles.grid_item5)}>
+        <li className={ styles.list_item }>
         
           <InputDate
             id={"date"}
@@ -170,6 +196,7 @@ export default function ReviewForm({
             className={styles.item}
             required={false}
             registerOptions={register("date", { ...ReviewScheme.date})}
+            onClick={()=>{setTooltip(null)}}
             isError={errors.date}
             isValid={isValid}
             version={"input_admin"}
@@ -187,13 +214,14 @@ export default function ReviewForm({
             accept="image/*"
             placeholder={"Завантажте фото"}
             registerOptions={register("file", { ...ReviewScheme.file })}
+            onClick={()=>{setTooltip(null)}}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
             version={"file"}
             label={'Фото'}
           />
-            <ReviewPreview imageUrl={prevUrl}/>
+            <ImagePreview imageUrl={prevUrl} variant='review'/>
         </li>
 
         <li className={clsx(styles.list_item)}>
@@ -204,6 +232,7 @@ export default function ReviewForm({
             isError={errors.text_ua}
             isValid={isValid}
             registerOptions={register("text_ua", { ...ReviewScheme.text_ua })}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"} 
             label={'Текст'} 
@@ -218,6 +247,7 @@ export default function ReviewForm({
             isError={errors.text_en}
             isValid={isValid}
             registerOptions={register("text_en", { ...ReviewScheme.text_en })}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"} 
             locale={'en'}/>
@@ -230,6 +260,7 @@ export default function ReviewForm({
             isError={errors.text_pl}
             isValid={isValid}
             registerOptions={register("text_pl", { ...ReviewScheme.text_pl })}
+            onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"}  
             locale={'pl'}/>

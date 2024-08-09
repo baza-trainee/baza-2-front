@@ -10,7 +10,7 @@ import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { SliderDefaultValues, SliderScheme } from './SliderScheme';
-import SlidePreview from '../SlidePreview/SlidePreview';
+import ImagePreview from '../../ImagePreview/ImagePreview';
 import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function SlideForm({
@@ -123,7 +123,7 @@ export default function SlideForm({
           />
         </li>
         <li className={clsx(styles.list_item, styles.grid_item2)}>
-          <SlidePreview imageUrl={prevUrl}/>
+          <ImagePreview imageUrl={prevUrl}/>
         </li>
 
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item3)}>

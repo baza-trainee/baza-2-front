@@ -15,7 +15,7 @@ export default function Reviews() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
   const addReviewPath = '/admin/reviews/add-review'
-  // Запит на базу 1
+  // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});
 
@@ -28,17 +28,9 @@ export default function Reviews() {
       open('error', false)
     }})
 
-  // Сортує елементи по даті створення.
-  function sortData(arr) {
-    const array = arr.sort(function (a, b) {
-        if (a.date < b.date) {
-          return 1;
-        }
-        if (a.date > b.date) {
-          return -1;
-        }
-        return 0;
-      });
+  // Розвертае масив. Щоб додані відгуки були на початку.
+  function reverseData(arr) {
+    const array = [...arr].reverse()
     return array
   }
 
@@ -56,7 +48,7 @@ export default function Reviews() {
           <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
         </>:
         <>
-          {data && <ReviewList data={sortData(data)} hendleRemove={ deleteReview.mutate }/>}
+          {data && <ReviewList data={reverseData(data)} hendleRemove={ deleteReview.mutate }/>}
         </>
       }
 
