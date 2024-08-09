@@ -65,99 +65,100 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.form}>
-        <div className={styles.row}>
-          <div>
-            <InputField
-              id="phone1"
-              className={styles.input}
-              required={false}
-              type="tel"
-              placeholder="Введіть телефон"
-              version="input_admin"
-              label="Телефон"
-              isError={errors.phone1}
-              isValid={isValid}
-              iconName={"edit_black"}
-              registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
-            />
-          </div>
-          <div className={styles.input}>
-            <InputField
-              id="phone2"
-              required={false}
-              type="tel"
-              placeholder="Введіть телефон"
-              version="input_admin"
-              label="Телефон"
-              isError={errors.phone2}
-              isValid={isValid}
-              registerOptions={register("phone2", { ...ContactsScheme.phone2 })}
-              iconName={"edit_black"}
-            />
-          </div>
-          <div className={styles.input}>
-            <InputField
-              id="email"
-              required={false}
-              type="email"
-              placeholder="Введіть електронну пошту"
-              version="input_admin"
-              label="Email"
-              isError={errors.email}
-              isValid={isValid}
-              registerOptions={register("email", { ...ContactsScheme.email })}
-              iconName={"edit_black"}
-            />
-          </div>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.list}>
+        <div>
+          <InputField
+            id="phone1"
+            className={styles.item}
+            required={false}
+            type="tel"
+            placeholder="Введіть телефон"
+            version="input_admin"
+            label="Телефон"
+            isError={errors.phone1}
+            isValid={isValid}
+            iconName={"edit_black"}
+            registerOptions={register("phone1", { ...ContactsScheme.phone1 })}
+          />
         </div>
-        <div className={styles.row}>
-          <div className={styles.input}>
-            <InputField
-              id="telegram"
-              required={false}
-              placeholder="Додайте посилання"
-              version="input_admin"
-              label="Telegram"
-              isError={errors.telegram}
-              isValid={isValid}
-              registerOptions={register("telegram", {
-                ...ContactsScheme.telegram,
-              })}
-              iconName={"edit_black"}
-            />
-          </div>
-          <div className={styles.input}>
-            <InputField
-              id="facebook"
-              required={false}
-              placeholder="Додайте посилання"
-              version="input_admin"
-              label="Facebook"
-              isError={errors.facebook}
-              isValid={isValid}
-              registerOptions={register("facebook", {
-                ...ContactsScheme.facebook,
-              })}
-              iconName={"edit_black"}
-            />
-          </div>
-          <div className={styles.input}>
-            <InputField
-              id="linkedin"
-              required={false}
-              placeholder="Додайте посилання"
-              version="input_admin"
-              label="Linkedin"
-              isError={errors.linkedin}
-              isValid={isValid}
-              registerOptions={register("linkedin", {
-                ...ContactsScheme.linkedin,
-              })}
-              iconName={"edit_black"}
-            />
-          </div>
+        <div>
+          <InputField
+            id="phone2"
+            required={false}
+            type="tel"
+            className={styles.item}
+            placeholder="Введіть телефон"
+            version="input_admin"
+            label="Телефон"
+            isError={errors.phone2}
+            isValid={isValid}
+            registerOptions={register("phone2", { ...ContactsScheme.phone2 })}
+            iconName={"edit_black"}
+          />
+        </div>
+        <div>
+          <InputField
+            id="email"
+            required={false}
+            type="email"
+            className={styles.item}
+            placeholder="Введіть електронну пошту"
+            version="input_admin"
+            label="Email"
+            isError={errors.email}
+            isValid={isValid}
+            registerOptions={register("email", { ...ContactsScheme.email })}
+            iconName={"edit_black"}
+          />
+        </div>
+        <div>
+          <InputField
+            id="telegram"
+            required={false}
+            className={styles.item}
+            placeholder="Додайте посилання"
+            version="input_admin"
+            label="Telegram"
+            isError={errors.telegram}
+            isValid={isValid}
+            registerOptions={register("telegram", {
+              ...ContactsScheme.telegram,
+            })}
+            iconName={"edit_black"}
+          />
+        </div>
+        <div>
+          <InputField
+            id="facebook"
+            required={false}
+            className={styles.item}
+            placeholder="Додайте посилання"
+            version="input_admin"
+            label="Facebook"
+            isError={errors.facebook}
+            isValid={isValid}
+            registerOptions={register("facebook", {
+              ...ContactsScheme.facebook,
+            })}
+            iconName={"edit_black"}
+          />
+        </div>
+        <div>
+          <InputField
+            id="linkedin"
+            required={false}
+            className={styles.item}
+            placeholder="Додайте посилання"
+            version="input_admin"
+            label="Linkedin"
+            isError={errors.linkedin}
+            isValid={isValid}
+            registerOptions={register("linkedin", {
+              ...ContactsScheme.linkedin,
+            })}
+            iconName={"edit_black"}
+          />
         </div>
       </div>
       <div className={styles.btns}>
