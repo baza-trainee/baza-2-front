@@ -9,7 +9,7 @@
   padding: 10px 16px;
   flex-direction: column;
 
-  @media (min-width: 421px) {
+  @media (min-width: 480px) {
     align-items: center;
     padding: 25px 0;
   }
@@ -29,6 +29,11 @@
   display: flex;
   align-items: flex-start;
   position: relative;
+  margin-bottom: 40px;
+  @media (min-width: 609px) {
+    margin-bottom: 20px;
+  }
+
 }
 
 .imageContainer {
@@ -55,15 +60,24 @@
   //left: 140px;
   padding: 6px 12px;
   border-radius: 12px;
-  background: rgba(210, 210, 210, 0.5);
+  background: rgba(210, 210, 210, 0.637);
   text-align: left;
-  top: 39px;
+  //top: 39px;
+  bottom: -40px;
+  left: 50px;
   @media (min-width: 421px) {
-    top: -25px;
+    left: 120px;
+  }
+  @media (min-width: 900px) {
+    //top: 0px;
+    //bottom: 140px;
   }
   @media (min-width: 1367px) {
-    top: 0px;
+    //top: 0px;
+    bottom: -40px;
   }
+
+
 }
 
 .personInfo {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./FeedbackCard.module.scss";
-import { createImageUrl, createImageUrlBaza1 } from "@/src/lib/hooks/createImageUrl";
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import clsx from "clsx";
 import { useParams } from "next/navigation";
 import { formatDate } from "@/src/lib/utils/formatData";
@@ -11,11 +11,11 @@ const FeedbackCard = ({ imageUrl, name, role, date, review, className }) => {
 
   return (
     <div className={clsx(styles.card, className)}>
-      <div className={styles.person}>
-        <div className={styles.imageContainer}>
+      <div className={clsx(styles.person, styles.parent)}>
+        <div className={clsx(styles.imageContainer, styles.grid1)}>
           <Image fill sizes="100%" src={createImageUrl(imageUrl)} alt={name[locale]} />
         </div>
-        <div className={styles.profile}>
+        <div className={clsx(styles.profile, styles.grid2)}>
           <div className={styles.personInfo}>
             <p className={styles.name}>{name[locale]}</p>
             <p className={styles.role}>{role}</p>
@@ -23,7 +23,7 @@ const FeedbackCard = ({ imageUrl, name, role, date, review, className }) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className={styles.message}>
         <p className={styles.text}>“{review[locale]}”</p>
       </div>
     </div>

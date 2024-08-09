@@ -26,8 +26,8 @@ export default function ReviewForm({
   const[ prevUrl, setPrevUrl ] = useState(null)
   const[ tooltip, setTooltip ] = useState(null)
 
-  const tooltipTitNameMessage = 'Рекомендована довжина до 16 символів. Максимальна 20 символів';
-  const tooltipRoleMessage = 'Рекомендована довжина до 16 символів. Максимальна 20 символів';
+  const tooltipTitNameMessage = 'Рекомендована довжина до 16 символів. Максимальна 18 символів';
+  const tooltipRoleMessage = 'Рекомендована довжина до 18 символів. Максимальна 20 символів';
 
   const {
     register,
@@ -118,7 +118,7 @@ export default function ReviewForm({
             required={false}
             placeholder={"Ім’я"}
             registerOptions={register("name_ua", { ...ReviewScheme.name_ua })}
-            onInput={()=>{validateTitle("name_ua", 18)}}
+            onInput={()=>{validateTitle("name_ua", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_ua}
             isValid={isValid}
@@ -138,7 +138,7 @@ export default function ReviewForm({
             required={false}
             placeholder={"Name"}
             registerOptions={register("name_en", { ...ReviewScheme.name_en })}
-            onInput={()=>{validateTitle("name_en", 18)}}
+            onInput={()=>{validateTitle("name_en", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_en}
             isValid={isValid}
@@ -157,7 +157,7 @@ export default function ReviewForm({
             required={false}
             placeholder={"Imię"}
             registerOptions={register("name_pl", { ...ReviewScheme.name_pl})}
-            onInput={()=>{validateTitle("name_pl", 18)}}
+            onInput={()=>{validateTitle("name_pl", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_pl}
             isValid={isValid}
@@ -176,7 +176,7 @@ export default function ReviewForm({
             required={false}
             placeholder={"Введіть дані"}
             registerOptions={register("role", { ...ReviewScheme.role})}
-            onInput={()=>{validateTitle("role", 16)}}
+            onInput={()=>{validateTitle("role", 18)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.role}
             isValid={isValid}
@@ -192,7 +192,6 @@ export default function ReviewForm({
         
           <InputDate
             id={"date"}
-            min={'2024-07-01'}
             className={styles.item}
             required={false}
             registerOptions={register("date", { ...ReviewScheme.date})}
