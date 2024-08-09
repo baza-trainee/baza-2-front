@@ -44,42 +44,42 @@ export const ReviewScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(2, { message: 'Мінімум 2 символа' })
-    .max(20, { message: 'Максимум 20 знаків' })
+    .max(18, { message: 'Максимум 18 знаків' })
     .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
 		name_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(2, { message: 'Мінімум 2 символа' })
-    .max(20, { message: 'Максимум 20 знаків' })
+    .max(18, { message: 'Максимум 18 знаків' })
     .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
 		name_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(2, { message: 'Мінімум 2 символа' })
-    .max(20, { message: 'Максимум 20 знаків' })
+    .max(18, { message: 'Максимум 18 знаків' })
     .regex(patternName, { message: 'Введіть коректне ім’я' }),
 
     text_ua: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(300, { message: 'Максимум 300 знаків' })
+    .max(250, { message: 'Максимум 250 знаків' })
     .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(300, { message: 'Максимум 300 знаків' })
+    .max(250, { message: 'Максимум 250 знаків' })
     .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(300, { message: 'Максимум 300 знаків' })
+    .max(250, { message: 'Максимум 250 знаків' })
     .regex(patternText, { message: 'Присутні не коректні символи' }),
 
     role:z.string()
@@ -89,10 +89,17 @@ export const ReviewScheme = z
       .max(20, { message: 'Максимум 20 знаків' })
       .regex(patternRole, { message: 'Не коректна назва' }),
 
-    date:z.string()
-      .trim()
-      .min(1, { message: "Це поле обов'язкове"})
-      .transform((value) => formatDateToNumericInputDate({dateString:value})),
+    // date:z.string()
+    //   .trim()
+    //   .min(1, { message: "Це поле обов'язкове"})
+    //   .transform((value) => formatDateToNumericInputDate({dateString:value})),
+
+      date:z.coerce
+      .date({
+        required_error: "Це поле обов'язкове",
+      })
+      .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
+      .transform((value) => formatDateToNumericInputDate({dateString:value})), 
 })
 //  Схема відправки на бекенд:{
 //   "name": {
