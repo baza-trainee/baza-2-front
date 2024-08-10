@@ -3,10 +3,21 @@
 export const patternName =
   /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}](?:[\p{L} `’—'-]{0,50}[\p{L}])?$/giu;
 
-export const patternEmail = /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+//export const patternEmail = /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-export const patternEmailNonRu =
-  /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.(?!ru$|by$)[A-Z]{2,}$/i;
+// export const patternEmail =
+//   /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+
+
+export const patternEmail =/^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/
+
+// export const patternEmail =  /^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)@(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}|(\d{1,3}\.){3}\d{1,3}|[\[([a-zA-Z0-9]{1,4}:){7}[a-zA-Z0-9]{1,4}\]])$/
+
+// export const patternEmailNonRu =
+//   /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.(?!ru$|by$)[A-Z]{2,}$/i;
+
+  export const patternEmailNonRu =
+  /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+(?!ru$|by$)[A-Z]{2,}$/i;
 
 // Регулярка символів телефону
 export const regInputPhone = /^[+1-9 ]\d{0,}$|^$/;
@@ -53,6 +64,9 @@ export const patterTelegram =
 // export const patternText = /^(?!.*\s{2,}|.*[.-]{2,})(?!.*[ЁёЫыЭэЪъ])[A-Za-zА-Яа-яІіЇїЄєҐґąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s`’'-]+$/
 // const emailPattern =
 //   /^[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+
+
+
 
 // const nonRussianLettersPattern =
 //   /^(?!.*\s{2,}|.*[.-]{2,})(?!.*[ЁёЫыЭэЪъ])[A-Za-zА-Яа-яІіЇїЄєҐґąćęłńóśźżĄĆĘŁŃÓŚŹŻ\s`’'-]+$/;
