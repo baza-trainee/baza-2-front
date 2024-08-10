@@ -17,11 +17,24 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 export default function Projects() {
   const router = useRouter();
-  const [ search, setSearch ] = useState('')
+  const addProjectPath = '/admin/projects/add-project'
   const open = stateUseAlert(state => state.open);
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['projects', search], 
-    queryFn:()=>{return getAllProjects({query:search})}, keepPreviousData: true });
+  const [ params, setParams] = useState({
+    search:'',
+    page:1
+  })
+
+  const hendleSetSearch = (value) => {
+    setParams({page:1,search:value})
+  }
+
+  const hendleSetPage = (value) => {
+    setParams({page:value, search:''})
+  }
+
+  const { isError, data, refetch } = useQuery({ queryKey: ['projects', params.search, params.page], 
+    queryFn:()=>{return getAllProjects({...params, limit:6})}, keepPreviousData: true });
 
   const deleteProject = useMutation({
     mutationFn:(id) => {
@@ -33,10 +46,17 @@ export default function Projects() {
     }})
 
   return(
-    <SectionAdmin title={'Проєкти'} hendleSearch={setSearch} lang={true} defaultValue={search}>
-      <MainButton  variant='admin' className={styles.btn} onClick={()=>{
-        router.push('/admin/projects/add-project')
-      }}>
+    <SectionAdmin 
+      title={'Проєкти'} 
+      hendleSearch={hendleSetSearch} 
+      lang={true} 
+      defaultValue={params.search}>
+
+      <MainButton  variant='admin' 
+        className={styles.btn} 
+        onClick={()=>{
+          router.push(addProjectPath)
+        }}>
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати проєкт'}</MainButton >
       {isError ?
@@ -46,11 +66,12 @@ export default function Projects() {
         </>:
         <>
           {data?.results && 
-            <PartnerList data={data?.results} hendleRemove={deleteProject.mutate}/>
+            <PartnerList data={data} hendleRemove={deleteProject.mutate} hendleSetPage={hendleSetPage}/>
           }
         </>
       }
-      {/* {deletePartner.isPending && <Loader/>} */}
+
+      {deleteProject.isPending && <Loader/>}
       <UseAlert/>
     </SectionAdmin>
   )

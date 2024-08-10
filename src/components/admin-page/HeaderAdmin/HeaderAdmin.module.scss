@@ -1,25 +1,80 @@
-.header{
-  padding: 32px 24px;
-  //padding: 24px 24px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@use "../../../styles/variables" as var;
+@use "../../../styles/mixins.scss" as mx;
 
-  & h1{
-    font-weight: 600;
-    font-size: 40px;
-  }
-  .options{
+.wrapper{
+  padding: 32px 24px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .header{
     display: flex;
     align-items: center;
-    gap: 24px;
-    .inputSearch{
-      width: auto;
-      font-size: 14px;
-      @media (min-width: 1050px) {
-        width: 470px;
+    justify-content: space-between;
+  
+    & h1{
+      font-weight: 600;
+      font-size: 40px;
+    }
+    .options{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      .inputSearch{
+        width: auto;
+        font-size: 14px;
+        @media (min-width: 1050px) {
+          width: 470px;
+        }
+  
       }
+    }
+  }
 
+  .nav{
+    display: flex;
+    gap: 15px;
+
+    .link{
+      @include mx.apply-font-styles(var.$text-16-font);
+      font-weight: 400;
+      font-size: 20px;
+      transition: all .5s;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 12px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var.$primary-hover;
+        transition: all 0.3s ease 0s;
+      }
+  
+      &._active,
+      &:hover  {
+        color: var.$primary-hover;
+        & > svg{
+          opacity: .5;
+        }
+  
+        &::before {
+          width: 100%;
+        }
+      }
+  
+      .icon{
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 2px;
+      }
     }
   }
 }
+

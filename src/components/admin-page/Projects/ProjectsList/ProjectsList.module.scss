@@ -2,38 +2,43 @@
 @use "../../../../styles/variables" as var;
 
 .list{
+  max-width: 1050px;
   //width: 100%;
   // display: flex;
   // flex-wrap: wrap;
   display: grid;
-
-  gap: 14px;
+  //background-color: aqua;
+  gap: 20px;
   grid-template-columns: 1fr;
   @media (min-width: 550px) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 1280px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  // .card{
-  //   min-width: 320px;
-  //   height: 180px;
-  // }
+  .card{
+    width: 100%;
+  }
 
   .item{
     min-width: 320px;
+    display: flex;
+    & article{
+      width: 100%;
+    }
     //width: 33%;
     //max-width: 350px;
     position: relative;
 
     .btns{
-      width: 100%;
-      min-height: 100px;
+      //width: 100%;
+      //min-height: 100px;
+      //background-color: aqua;
       padding: 8px;
       position: absolute;
       bottom: 0;
-      left: 0;
+      right: 0;
       z-index: 6;
       display: flex;
       gap: 10px;
@@ -51,6 +56,10 @@
 
     }
 
+  }
+
+  .pagination{
+    grid-column: 1 / 3;
   }
 }
 
