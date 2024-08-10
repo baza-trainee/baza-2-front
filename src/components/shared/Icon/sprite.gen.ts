@@ -48,6 +48,7 @@ export interface SpritesMap {
     | "search"
     | "settings"
     | "slider"
+    | "team_admin"
     | "team"
     | "telegram";
 }
@@ -101,6 +102,7 @@ export const SPRITES_META: {
     | "search"
     | "settings"
     | "slider"
+    | "team_admin"
     | "team"
     | "telegram"
   >;
@@ -154,6 +156,7 @@ export const SPRITES_META: {
     "search",
     "settings",
     "slider",
+    "team_admin",
     "team",
     "telegram",
   ],

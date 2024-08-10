@@ -1,4 +1,5 @@
+import AddProject from "@/src/components/admin-page/Projects/AddProject/AddProject";
+
 export default function addProjectPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: addProjectPage</h2></div>
+  return <AddProject/>
 };

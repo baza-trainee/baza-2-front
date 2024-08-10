@@ -16,6 +16,7 @@ export default function Partners() {
   const router = useRouter();
   const [ search, setSearch ] = useState('')
   const open = stateUseAlert(state => state.open);
+  const addPartnerPath = '/admin/partners/add-partner'
 
   const { isError, data, refetch } = useQuery({ queryKey: ['partners', search], 
     queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true });
@@ -32,7 +33,7 @@ export default function Partners() {
   return(
     <SectionAdmin title={'Партнери'} hendleSearch={setSearch} lang={true} defaultValue={search}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
-        router.push('/admin/partners/add-partner')
+        router.push(addPartnerPath)
       }}>
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати партнера'}</MainButton >

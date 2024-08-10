@@ -10,11 +10,14 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
+import Pagination from '../../Pagination/Pagination'
 
 
-export default function PartnerList({data, hendleRemove}) {
+export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   const[ idPartner, setIdPartner ] = useState(null)
+
+  const editProjectPath = '/admin/projects/edit-project'
 
   const closeModal=()=>{
     setIdPartner(null)
@@ -26,16 +29,17 @@ export default function PartnerList({data, hendleRemove}) {
   }
   
   return ( <>
-    {data?.length ? <ul className={styles.list}>
-      {data.map((el)=>{
+    {data?.results.length ? <ul className={styles.list}>
+      {data?.results.map((el)=>{
         return <li key={createKey()} className={styles.item}>
-          <ProjectCard   
+          <ProjectCard 
+            className={styles.card}  
             project={el}
             coverImgUrl={createImageUrlBaza1(el.imageUrl)} />
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 
-              onClick={()=>{router.push(`/admin/projects/edit-project/${el._id}`)}}>
+              onClick={()=>{router.push(`${editProjectPath}/${el._id}`)}}>
               <Icon  width={24} height={24} name='edit'/>
             </MainButton>
 
@@ -45,13 +49,18 @@ export default function PartnerList({data, hendleRemove}) {
           </div>
         </li>
       })}
+
+      {data.pagination.totalPages > 1 && <li className={styles.pagination}>
+        <Pagination pagination={data.pagination} 
+          hendleSetPage={hendleSetPage}/>
+        </li>
+      }
     </ul> : 
     <>
       <p className={styles.length}>Вибачте, інформації не знайдено.</p>
       <p className={styles.length}>Додайте партнера або уточніть запит.</p>
     </>
     }
-
     <AdminModal isOpen={idPartner} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити партнера?'} btnBlok={true}></AdminModal>
   </>
   )
