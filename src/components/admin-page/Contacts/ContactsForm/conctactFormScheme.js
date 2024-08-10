@@ -1,8 +1,11 @@
 import {
   patternEmail,
   patternEmailNonRu,
+  patternFacebook,
   patternLink,
   patternPhone,
+  patternUrlLinkedin,
+  patterTelegram,
 } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { z } from "zod";
@@ -35,13 +38,13 @@ export const ContactsScheme = z.object({
   telegram: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patterTelegram, { message: "Введіть дійсний URL" }),
   facebook: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patternFacebook, { message: "Введіть дійсний URL" }),
   linkedin: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patternUrlLinkedin, { message: "Введіть дійсний URL" }),
 });
