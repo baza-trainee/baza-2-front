@@ -129,7 +129,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item3)}>
           <InputField
             id={"title_ua"}
-            lang={"uk"}
             maxLength={41}
             className={styles.item}
             required={false}
@@ -150,7 +149,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item4)}>
           <InputField
             id={"title_en"}
-            lang={"en"}
             maxLength={41}
             className={styles.item}
             required={false}
@@ -170,7 +168,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item5)}>
           <InputField
             id={"title_pl"}
-            lang={"pl"}
             maxLength={41}
             className={styles.item}
             required={false}
@@ -189,7 +186,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item6)}>
           <TextArea 
             id={"text_ua"}  
-            lang={"uk"}
             maxLength={351}
             className={styles.item_text} 
             isError={errors.text_ua}
@@ -198,6 +194,7 @@ export default function SlideForm({
             onInput={()=>{validateTitle("text_ua", 300)}}
             onFocus={()=>{setTooltip(null)}}
             required={false}
+            version='input_textarea'
             spellcheck="true"
             placeholder={"Основний текст"} 
             label={'Основний текст'} 
@@ -209,7 +206,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item7)}>
           <TextArea 
             id={"text_en"}   
-            lang={"en"}
             maxLength={351}
             className={styles.item_text} 
             isError={errors.text_en}
@@ -228,7 +224,6 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item8)}>
           <TextArea 
             id={"text_pl"}  
-            lang={'pl'}
             maxLength={351}
             className={styles.item_text} 
             isError={errors.text_pl}
