@@ -34,21 +34,6 @@
   flex-direction: column;
   gap: 24px;
   margin-bottom: 16px;
-  .error{
-    @include mx.apply-font-styles(var.$text-20-font);
-    font-size: 16px;
-    color: var.$secondary-error;
-
-    @include mx.media-q("md") {
-      font-size: 20px;
-    }
-  }
-  .error._hide{
-    display: none;
-    @include mx.media-q("md") {
-      display: block;
-    }
-  }
 
   @include mx.media-q("md") {
     margin-bottom: 32px;

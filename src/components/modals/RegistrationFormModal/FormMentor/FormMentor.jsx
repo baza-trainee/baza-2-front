@@ -88,12 +88,11 @@ export default function FormMentor({handleClose}) {
             placeholder={t("firstName")}
             registerOptions={register("firstName", { ...MentorSchema.firstName})}
             isError={errors.firstName}
+            errorMessage={errors.firstName && t(`error_message.${errors.firstName.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("firstName")}
           />
-
-          {errors.firstName && <p className={styles.error_modal}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
 
         <li>
@@ -104,12 +103,11 @@ export default function FormMentor({handleClose}) {
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...MentorSchema.lastName})}
             isError={errors.lastName}
+            errorMessage={errors.lastName && t(`error_message.${errors.lastName.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
           />
-
-          {errors.lastName && <p className={styles.error_modal}>{t(`error_message.${errors.lastName.message}`)}</p>}
         </li>
 
         <li>
@@ -143,15 +141,15 @@ export default function FormMentor({handleClose}) {
             id={"email"}
             maxLength={55}
             className={styles.item}
-            //type='email'
+            type='email'
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...MentorSchema.email })}
             isError={errors.email}
+            errorMessage={errors.email && t(`error_message.${errors.email.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <p className={styles.error_modal}>{t(`error_message.${errors.email.message}`)}</p>}
         </li>
 
         <li>
@@ -166,11 +164,11 @@ export default function FormMentor({handleClose}) {
             onInput={(e)=>{inputValidPhone(e)}}
             registerOptions={register("phone", { ...MentorSchema.phone })}
             isError={errors.phone}
+            errorMessage={errors.phone && t(`error_message.${errors.phone.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <p className={styles.error_modal}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
         <li className={styles.tooltip}>
@@ -181,14 +179,13 @@ export default function FormMentor({handleClose}) {
             placeholder={t("discord")}
             registerOptions={register("discord", { ...MentorSchema.discord })}
             isError={errors.discord}
+            errorMessage={errors.discord && t(`error_message.${errors.discord.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("discord")}
           />
 
           <TooltipText className={styles._active}/>
-
-          {errors.discord && <p className={styles.error_modal}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 
         <li>
@@ -199,11 +196,11 @@ export default function FormMentor({handleClose}) {
             placeholder={t("linkedin_placeholder")}
             registerOptions={register("linkedin", { ...MentorSchema.linkedin })}
             isError={errors.linkedin}
+            errorMessage={errors.linkedin && t(`error_message.${errors.linkedin.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <p className={styles.error_modal}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
 
         <li>

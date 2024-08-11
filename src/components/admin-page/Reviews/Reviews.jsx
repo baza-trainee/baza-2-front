@@ -14,7 +14,7 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 export default function Reviews() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const addReviewPath = '/admin/reviews/add-review'
+  const addReviewPath = '/admin/reviews/add'
   // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});

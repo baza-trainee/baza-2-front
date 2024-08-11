@@ -16,7 +16,7 @@ export default function Partners() {
   const router = useRouter();
   const [ search, setSearch ] = useState('')
   const open = stateUseAlert(state => state.open);
-  const addPartnerPath = '/admin/partners/add-partner'
+  const addPartnerPath = '/admin/partners/add'
 
   const { isError, data, refetch } = useQuery({ queryKey: ['partners', search], 
     queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true });

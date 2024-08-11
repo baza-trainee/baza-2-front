@@ -11,7 +11,7 @@ import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
 export default function SliderList({data, hendleRemove}) {
   const router = useRouter();
   // Шляхи сторінок
-  const editSlidePath = '/admin/slider/edit-slide'
+  const editSlidePath = '/admin/slider/edit'
 
   // Мова сторінки.
   const { locale } = useParams();

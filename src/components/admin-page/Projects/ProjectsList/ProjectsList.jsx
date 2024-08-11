@@ -17,7 +17,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   const[ idPartner, setIdPartner ] = useState(null)
 
-  const editProjectPath = '/admin/projects/edit-project'
+  const editProjectPath = '/admin/projects/edit'
 
   const closeModal=()=>{
     setIdPartner(null)
@@ -33,7 +33,6 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
       {data?.results.map((el)=>{
         return <li key={createKey()} className={styles.item}>
           <ProjectCard 
-            className={styles.card}  
             project={el}
             coverImgUrl={createImageUrlBaza1(el.imageUrl)} />
           <div className={styles.btns}>

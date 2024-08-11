@@ -34,6 +34,7 @@ export default function FormForgotPassword({ handleMutate }) {
         <li>
           <InputField
             id={"email"}
+            type='email'
             maxLength={55}
             className={styles.item}
             required={false}

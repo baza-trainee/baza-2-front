@@ -32,12 +32,13 @@ export const addPartnerSchema = z
 	.object({
     name: z.string()
     .trim()
-    .min(2, { message: 'Поле назва не може бути порожнім' })
+    .min(2, { message: 'Мінімум 2 символи' })
+    .min(30, { message: 'Максимум 30 символів' })
     .regex(patternName, { message: 'Введіть дійсну назву' }),
 
     homeUrl: z.string()
     .trim()
-    .min(1, { message: 'Поле посилання не може бути порожнім' })
+    .min(1, { message: "Це поле обов'язкове" })
     .regex(patternLink, { message: 'Введіть дійсний URL' }),
 
     file: z.any()

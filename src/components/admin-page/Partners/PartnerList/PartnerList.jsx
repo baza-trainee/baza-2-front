@@ -9,7 +9,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 
 export default function PartnerList({data, hendleRemove}) {
   const router = useRouter();
-  const editPartnerPath = '/admin/partners/edit-partner'
+  const editPartnerPath = '/admin/partners/edit'
 
   const[ idPartner, setIdPartner ] = useState(null)
 

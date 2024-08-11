@@ -1,15 +1,22 @@
 'use client';
 import clsx from 'clsx'
+import { usePathname, useRouter } from '@/src/navigation';
 import InputSearch from '../../shared/inputs/InputSearch/InputSearch'
 import LangDropdown from '../../shared/LangDropdown/LangDropdown'
 import styles from './HeaderAdmin.module.scss'
 import { Icon } from '../../shared/Icon/Icon'
-import { useState } from 'react'
 
-export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, nav, hendleNav=()=>{} }) {
+export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, nav }) {
 
-  const[ subpageName, setSubpageName ] = useState('description');
+  const router = useRouter();
+  const pathname = usePathname()
+  const addDescriptionPath = '/admin/projects/add/description'
+  const addTeamPath = '/admin/projects/add/team'
 
+  const isActive=(name)=>{
+   return pathname.split('/').includes(name)
+  }
+  
   return(
     <header className={styles.wrapper}>
       <div className={styles.header}>
@@ -20,18 +27,15 @@ export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, n
         </div>
       </div>
       {nav && <div className={styles.nav}>
-
-          <button type="button" className={clsx(styles.link,subpageName==='description'&& styles._active)} onClick={()=>{
-            setSubpageName('description')
-            hendleNav('description')
+          <button type="button" className={clsx(styles.link, isActive('description') && styles._active)} onClick={()=>{
+            router.replace(addDescriptionPath)
           }}>
             <span className={styles.text}>{'Опис'}</span> 
             <Icon name={'press_about'} className={styles.icon}/>
           </button>
 
-          <button type="button" className={clsx(styles.link,subpageName==='team'&& styles._active)} onClick={()=>{
-            setSubpageName('team')
-            hendleNav('team')
+          <button type="button" className={clsx(styles.link, isActive('team') && styles._active)} onClick={()=>{
+            router.replace(addTeamPath)
           }}>
             <span className={styles.text}>{'Команда'}</span> 
             <Icon name={'team_admin'} className={styles.icon}/>
