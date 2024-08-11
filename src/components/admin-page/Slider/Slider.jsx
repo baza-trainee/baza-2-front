@@ -14,7 +14,7 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 export default function Slider() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const addSlidePath = '/admin/slider/add-slide'
+  const addSlidePath = '/admin/slider/add'
 
   const { isError, data, refetch } = useQuery({ queryKey: ['slider'], 
     queryFn:()=>{return getAllSliders()}});

@@ -1,8 +1,6 @@
 import {
   patternEmail,
-  patternEmailNonRu,
   patternFacebook,
-  patternLink,
   patternPhone,
   patternUrlLinkedin,
   patterTelegram,
@@ -34,7 +32,11 @@ export const ContactsScheme = z.object({
     .string()
     .trim()
     .regex(patternEmail, { message: "Введіть дійсний Email" })
-    .regex(patternEmailNonRu, { message: "Домени .ru і .by не допускаються" }),
+    .refine(
+      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+      {
+        message: 'Домени .ru і .by не допускаються',
+      }),
   telegram: z
     .string()
     .trim()

@@ -39,7 +39,11 @@ export const MentorSchema = z
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'incorrect_email' })
-    .regex(patternEmailNonRu, { message: 'invalid_ru' }),
+    .refine(
+      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+      {
+        message: 'invalid_ru',
+      }),
 
     phone: z.string()
     .trim()

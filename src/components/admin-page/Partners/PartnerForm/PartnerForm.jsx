@@ -1,12 +1,12 @@
 'use client';
 import styles from './PartnerForm.module.scss'
 import { useEffect } from 'react';
+import { useRouter } from '@/src/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addPartnerDefaultValues, addPartnerSchema } from './addPartnerScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { useRouter } from '@/src/navigation';
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
 export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Додати'}) {
@@ -17,7 +17,6 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
     formState: { errors, isValid, isDirty },
     reset,
     setValue,
-    getValues,
   } = useForm({ defaultValues: {...addPartnerDefaultValues}, resolver: zodResolver(addPartnerSchema), mode: 'onChange'});
 
   const resetForm = () => {

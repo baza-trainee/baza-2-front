@@ -89,11 +89,6 @@ export const ReviewScheme = z
       .max(20, { message: 'Максимум 20 знаків' })
       .regex(patternRole, { message: 'Не коректна назва' }),
 
-    // date:z.string()
-    //   .trim()
-    //   .min(1, { message: "Це поле обов'язкове"})
-    //   .transform((value) => formatDateToNumericInputDate({dateString:value})),
-
       date:z.coerce
       .date({
         required_error: "Це поле обов'язкове",

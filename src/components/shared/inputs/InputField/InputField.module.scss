@@ -8,6 +8,11 @@
   & > label {
     @include mx.apply-font-styles(var.$text-20-font);
     font-size: 14px;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+
     & > span {
       color: var.$secondary-error;
     }
@@ -17,7 +22,8 @@
     }
 
   }
-  & > input {
+
+  .input {
     @include mx.apply-font-styles(var.$text-16-font);
     color: var.$secondary-black;
     border: 2px solid transparent;
@@ -27,20 +33,90 @@
     background: var.$secondary-white;
     transition: all var.$transition-duration-base var.$transition-timing-base;
   }
-  & > textarea {
-    @include mx.apply-font-styles(var.$text-16-font);
-    color: var.$secondary-black;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 10px;
-    outline: 0;
-    background: var.$secondary-white;
-    min-height: 132px;
-    resize: none;
-    transition: all var.$transition-duration-base var.$transition-timing-base;
+
+  .input._error {
+    border: 2px solid var.$secondary-error;
   }
+  .input._success {
+    border: 2px solid var.$secondary-positive;
+  }
+
+  // .error{
+  //   min-height: 18px;
+  //   @include mx.apply-font-styles(var.$text-16-font);
+  //   font-size: 14px;
+  //   line-height: normal;
+  //   color: var.$secondary-error;
+  // }
+  .error{
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    color: var.$secondary-error;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+  }
+
+  // .error{
+  //   @include mx.apply-font-styles(var.$text-20-font);
+  //   font-size: 16px;
+  //   color: var.$secondary-error;
+  //   line-height: normal;
+
+  //   @include mx.media-q("md") {
+  //     font-size: 20px;
+  //   }
+  // }
 }
 
+
+.input_feedback {
+  width: clamp(280px, 84vw, 625px);
+  display: flex;
+  flex-direction: column;
+  & > label {
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 14px;
+    & > span {
+      color: var.$secondary-error;
+    }
+    
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+
+  }
+  .input {
+    @include mx.apply-font-styles(var.$text-16-font);
+    color: var.$secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    outline: 0;
+    background: var.$secondary-white;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+  }
+  .input._error {
+    border: 2px solid var.$secondary-error;
+  }
+  .input._success {
+    border: 2px solid var.$secondary-positive;
+  }
+
+  .error{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 16px;
+    color: var.$secondary-error;
+    line-height: normal;
+    display: none;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+      display: block;
+    }
+  }
+}
 
 .input_admin{
   width: 320px;
