@@ -1,5 +1,9 @@
-import AddProject from "@/src/components/admin-page/Projects/AddProject/AddProject";
+'use client';
+import { useEffect } from 'react';
+import { redirect } from 'next/navigation';
 
-export default function addProjectPage() {
-  return <AddProject/>
-};
+export default function projectsAddPage() {
+  useEffect(() => {
+    redirect('/admin/projects/add/description');
+  }, []);
+}
