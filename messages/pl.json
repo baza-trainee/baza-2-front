@@ -28,8 +28,8 @@
 				"text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
 			},
 			"card_4": {
-				"text1": "Fullstack developerzy posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
-				"text2": "Fullstack developerzy tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
+				"text1": "Fullstack developers posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
+				"text2": "Fullstack developers tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
 			},
 			"card_5": {
 				"text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
