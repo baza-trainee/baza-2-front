@@ -30,8 +30,9 @@ const transformImageValue = (value)=>{
     return value[0]
   }
 }
-//const normalize = (text) => text.replaceAll('\r\n', '\n');
+
 const normalize = (text) => text.replace(/\r?\n|\r/g, '');
+
 export const SliderScheme = z
 	.object({
     file: z.any()
@@ -70,7 +71,7 @@ export const SliderScheme = z
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Текст мінімум 5 знаків' })
+    .min(5, { message: 'Текст мінімум 5 знаків' }) 
     .transform(normalize)
     .pipe(z.string().max(350, { message: 'Текст максимум 350 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
 

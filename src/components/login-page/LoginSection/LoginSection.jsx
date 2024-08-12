@@ -20,18 +20,13 @@ export default function LoginSection() {
     mutationFn: (data) => {
       return logIn(data)
     },onSuccess:()=>{
-      router.replace('/admin')
+      router.replace('/admin/slider')
       reset()
     },onError:()=>{
       open('error', false)
     }
   })
 
-  // useEffect(() => {
-  //   if (token.get()) {
-  //     router.replace('/admin');
-  //   }
-  // });
 
   return (
     <Section title={'Вхід'} text={ 'Введіть дані для входу' }>

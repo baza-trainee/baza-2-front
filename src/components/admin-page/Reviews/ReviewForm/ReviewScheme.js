@@ -33,6 +33,8 @@ const transformImageValue = (value)=>{
   }
 }
 
+const normalize = (text) => text.replace(/\r?\n|\r/g, '');
+
 export const ReviewScheme = z
 	.object({
     file: z.any()
@@ -65,22 +67,28 @@ export const ReviewScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(250, { message: 'Максимум 250 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .transform(normalize)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' })),
 
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(250, { message: 'Максимум 250 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .transform(normalize)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' })),
 
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 знаків' })
-    .max(250, { message: 'Максимум 250 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .transform(normalize)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків' })
+    .regex(patternText, { message: 'Присутні не коректні символи' })),
 
     role:z.string()
       .trim()
