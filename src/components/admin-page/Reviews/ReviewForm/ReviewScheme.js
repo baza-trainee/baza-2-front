@@ -61,21 +61,21 @@ export const ReviewScheme = z
     .min(1, { message: "Це поле обов'язкове"})
     .min(2, { message: 'Мінімум 2 символа' })
     .max(18, { message: 'Максимум 18 знаків' })
-    .regex(patternName, { message: 'Введіть коректне ім’я' }),
+    .regex(patternName, { message: 'Введіть коректне ім’я'}),
 
     text_ua: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 знаків' })
+    .min(30, { message: 'Мінімум 30 знаків'})
     .transform(normalize)
     .pipe(z.string()
-    .max(250, { message: 'Текст максимум 250 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' })),
+    .max(250, { message: 'Текст максимум 250 знаків'})
+    .regex(patternText, { message: 'Присутні не коректні символи'})),
 
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 знаків' })
+    .min(30, { message: 'Мінімум 30 знаків' })
     .transform(normalize)
     .pipe(z.string()
     .max(250, { message: 'Текст максимум 250 знаків' })
@@ -84,7 +84,7 @@ export const ReviewScheme = z
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 знаків' })
+    .min(30, { message: 'Мінімум 30 знаків' })
     .transform(normalize)
     .pipe(z.string()
     .max(250, { message: 'Текст максимум 250 знаків' })

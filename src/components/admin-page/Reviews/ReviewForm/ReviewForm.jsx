@@ -136,7 +136,7 @@ export default function ReviewForm({
             maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Name"}
+            placeholder={"Ім’я"}
             registerOptions={register("name_en", { ...ReviewScheme.name_en })}
             onInput={()=>{validateTitle("name_en", 16)}}
             onFocus={()=>{setTooltip(null)}}
@@ -149,13 +149,13 @@ export default function ReviewForm({
           <TooltipText className={clsx(tooltip === "name_en" && styles._active)} text={tooltipTitNameMessage } position='bottom'/>
         </li> 
 
-        <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item5)}>
+        <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"name_pl"}
             maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Imię"}
+            placeholder={"Ім’я"}
             registerOptions={register("name_pl", { ...ReviewScheme.name_pl})}
             onInput={()=>{validateTitle("name_pl", 16)}}
             onFocus={()=>{setTooltip(null)}}
@@ -171,7 +171,7 @@ export default function ReviewForm({
         <li className={clsx(styles.list_item, styles.tooltip)}>
           <InputField
             id={"role"}
-            maxLength={100}
+            maxLength={25}
             className={styles.item}
             required={false}
             placeholder={"Введіть дані"}

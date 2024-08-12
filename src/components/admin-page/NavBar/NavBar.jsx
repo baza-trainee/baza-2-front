@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './NavBar.module.scss'
 import clsx from "clsx";
 import Logo from '../../shared/Logo/Logo';
@@ -14,7 +14,7 @@ export default function NavBar() {
   const pathname = usePathname()
   const router = useRouter();
   const [hide, setHide]= useState(false)
-  const [hideMenu, setHideMenu]= useState(false)
+  const [hideMenu, setHideMenu]= useState(true)
 
   const removeToken=()=>{
     token.reset()
@@ -24,6 +24,12 @@ export default function NavBar() {
   const isActive=(name)=>{
    return pathname.split('/').includes(name)
   }
+  // Зачиняє меню як що не проєкти
+  useEffect(()=>{
+    if(!isActive('projects')){
+      setHideMenu(true)
+    }
+  },[pathname])
 
   const subMenu=(el)=>{
     return(
