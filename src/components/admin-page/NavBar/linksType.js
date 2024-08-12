@@ -18,7 +18,7 @@ export const links=[
       {name: "specialization", 
       content: "Спеціалізація", 
       href: '/admin/specialization', 
-      icon: "partners"}
+      icon: "specialization"}
     ] 
   },
 

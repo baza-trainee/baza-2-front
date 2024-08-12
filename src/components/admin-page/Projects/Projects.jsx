@@ -30,7 +30,7 @@ export default function Projects() {
   }
 
   const hendleSetPage = (value) => {
-    setParams({page:value, search:''})
+    setParams({...params, page:value})
   }
 
   const { isError, data, refetch } = useQuery({ queryKey: ['projects', params.search, params.page], 

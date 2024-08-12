@@ -3,6 +3,8 @@ import { patternEmail, patternMessage, patternName } from "@/src/constants/regul
 
 export const feedbackDefaultValues = { firstName: '', email:'', message:''};
 
+const normalize = (text) => text.replace(/\r?\n|\r/g, '');
+
 export const FeedbackSchema = z
 	.object({
 		firstName: z.string()
@@ -27,6 +29,9 @@ export const FeedbackSchema = z
     .trim()
     .min(1, { message: 'message' })
     .min(10, { message: 'message_min' })
+    .transform(normalize)
+    .pipe(z.string()
     .max(300, { message: 'message_max' })
-    .regex(patternMessage, { message: 'incorrect_message' }),
+    .regex(patternMessage, { message: 'incorrect_message' })),
+
 	});
