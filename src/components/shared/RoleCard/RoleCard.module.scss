@@ -46,7 +46,7 @@
   text-overflow: ellipsis;
 }
 .readMore {
-  font-size: 16px;
+  @include mixin.apply-font-styles(var.$text-16-font);
   align-self: flex-end;
   font-weight: 400;
   position: relative;
