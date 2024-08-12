@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternEmailNonRu, patternCountry, patternСity} from "@/src/constants/regulars";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternCountry, patternСity} from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 
 export const partakerDefaultValues= {
@@ -44,7 +44,11 @@ export const PartakerSchema = z
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'incorrect_email' })
-    .regex(patternEmailNonRu, { message: 'invalid_ru' }),
+    .refine(
+      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+      {
+        message: 'invalid_ru',
+      }),
 
     phone: z.string()
     .trim()

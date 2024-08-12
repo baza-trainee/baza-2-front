@@ -39,7 +39,7 @@ export default function EditReview() {
   
   return (
     <SectionAdmin title={'Редагувати відгук'}>
-      <ReviewForm hendleMutate={mutate} isSuccess={isSuccess} data={reviewById.data}/>
+      <ReviewForm hendleMutate={mutate} isSuccess={isSuccess} data={reviewById.data} submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 

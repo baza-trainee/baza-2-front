@@ -10,6 +10,7 @@ export default function InputField({
   placeholder = "",
   registerOptions = {},
   isError,
+  errorMessage='',
   isValid,
   version,
   iconName,
@@ -24,16 +25,17 @@ export default function InputField({
 }) {
   const [ visible, setVisible ] = useState(false);
 
-  if (version === "textArea") {
+  if (version === "input") {
     return (
-      <div className={styles.item}>
-        { label && <label htmlFor={id}>
+      <div className={clsx(styles.item, className)}>
+        {label && <label htmlFor={id}>
             {label} {required && <span>*</span>}
           </label>
         }
-        <textarea
+        <input
           id={id}
           maxLength={maxLength}
+          disabled={disabled}
           className={clsx(
             styles.input,
             isError && styles._error,
@@ -41,13 +43,16 @@ export default function InputField({
           )}
           {...registerOptions}
           placeholder={placeholder}
+          {...props}
         />
+         {errorMessage && !isValid && <p className={clsx(styles.error, styles.err)}>{errorMessage}</p>}
       </div>
     );
   }
-  if (version === "input") {
+
+  if (version === "input_feedback") {
     return (
-      <div className={clsx(styles.item, className)}>
+      <div className={clsx(styles.input_feedback, className)}>
         {label && <label htmlFor={id}>
             {label} {required && <span>*</span>}
           </label>
@@ -66,6 +71,7 @@ export default function InputField({
           placeholder={placeholder}
           {...props}
         />
+         {errorMessage && !isValid && <p className={styles.error}>{errorMessage}</p>}
       </div>
     );
   }
@@ -84,7 +90,9 @@ export default function InputField({
             className={clsx(
               styles.input,
               isError && styles._error,
-              isValid && styles._success
+              isValid && styles._success,
+              iconName && styles._icon,
+              locale && styles._icon,
             )}
             {...registerOptions}
             placeholder={placeholder}
@@ -108,7 +116,7 @@ export default function InputField({
 
   if (version === "password") {
     return (
-      <div className={clsx(styles.input_admin, className)}>
+      <div className={clsx(styles.input_password, className)}>
         <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
           {label?label:'label title'} {required && <span>*</span>}
         </label>

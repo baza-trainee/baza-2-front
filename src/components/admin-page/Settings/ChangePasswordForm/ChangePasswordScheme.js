@@ -7,6 +7,11 @@ export const changePasswordDefaultValues= {
   confirmPassword:''
 }
 
+const validatePassword=(str,value)=>{
+  const myExp = new RegExp(str);
+  return myExp.test(value)
+}
+
 export const changePasswordScheme = z
 	.object({
     oldPassword: z.string()
@@ -24,7 +29,15 @@ export const changePasswordScheme = z
     .trim()
     .min(1, { message: 'Підтвердіть пароль' })
   }) 
-  .refine((data) => data.newPassword === data.confirmPassword, {
+  .refine((data) => validatePassword(data.newPassword, data.confirmPassword), {
     message: 'Паролі не збігаються. Спробуйте ще раз.',
     path: ['confirmPassword'],
   })
+  // .refine((data) => !validatePassword(data.oldPassword, data.newPassword), {
+  //   message: 'Паролі не збігаються. Спробуйте ще раз.',
+  //   path: ['newPassword'],
+  // })
+  // .refine((data) => data.newPassword === data.confirmPassword, {
+  //   message: 'Паролі не збігаються. Спробуйте ще раз.',
+  //   path: ['confirmPassword'],
+  // })

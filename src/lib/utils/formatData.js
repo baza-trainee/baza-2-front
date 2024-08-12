@@ -37,3 +37,21 @@ export const formatDateToNumeric = (timestamp) => {
 
 	return formattedDate
 }
+
+export const formatDateToNumericInputDate = ({timestamp, dateString}) => {
+
+	if(timestamp){
+		const dateTime = new Date(timestamp);
+		const options = {
+			year: 'numeric',
+			month: 'numeric',
+			day: 'numeric',
+		};
+		const formattedDate = dateTime.toLocaleDateString('uk', options)
+		return formattedDate.split('.').reverse().join('-')
+	}
+	if(dateString){
+		const timestamp = Date.parse(dateString)
+		return timestamp
+	}
+}

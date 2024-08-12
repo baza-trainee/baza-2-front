@@ -14,8 +14,8 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 export default function Reviews() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const addReviewPath = '/admin/reviews/add-review'
-  // Запит на базу 1
+  const addReviewPath = '/admin/reviews/add'
+  // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});
 
@@ -28,7 +28,12 @@ export default function Reviews() {
       open('error', false)
     }})
 
-console.log(data)
+  // Розвертае масив. Щоб додані відгуки були на початку.
+  function reverseData(arr) {
+    const array = [...arr].reverse()
+    return array
+  }
+
  return( 
     <SectionAdmin title={'Відгуки'} lang={true}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
@@ -43,7 +48,7 @@ console.log(data)
           <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
         </>:
         <>
-          {data && <ReviewList data={data} hendleRemove={ deleteReview.mutate }/>}
+          {data && <ReviewList data={reverseData(data)} hendleRemove={ deleteReview.mutate }/>}
         </>
       }
 

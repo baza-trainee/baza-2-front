@@ -65,21 +65,16 @@ export default function InputFile({
           id={id}
           disabled={disabled}
           onInput={(e)=>{sub(e)}}
-          className={clsx(
-            styles.input,
-            isError && styles._error,
-            isValid && styles._success
-          )}
+          className={styles.input}
           {...registerOptions}
           required={required}
           {...props}
         />
-        {value ? value : <span className={styles.placeholder}>{placeholder}</span>}
+        {<p className={styles.placeholder}>{value ? value : placeholder}</p>}
           <div className={styles.icon}> 
             <Icon name={'download'} className={styles.btn} width={24} height={24}/> 
           </div> 
         </label>
-      {/* {isError && !isValid && <p className={styles.error}>{isError.message}</p>} */}
       <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
     </div>
   );

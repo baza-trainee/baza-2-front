@@ -1,6 +1,5 @@
 "use client";
 import styles from "./ContactForm.module.scss";
-import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from "next-intl";
@@ -12,6 +11,7 @@ import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/inputs/InputField/InputField";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import Loader from "../../../shared/loader/Loader";
+import TextArea from "@/src/components/shared/inputs/TextArea/TextArea";
 
 export default function ContactForm() {
   const t = useTranslations("Main.feedback_form");
@@ -58,12 +58,11 @@ export default function ContactForm() {
             placeholder={t("name")}
             registerOptions={register("firstName", { ...FeedbackSchema.firstName})}
             isError={errors.firstName}
+            errorMessage={errors.firstName && t(`error_message.${errors.firstName.message}`)}
             isValid={isValid}
-            version={"input"}
+            version={"input_feedback"}
             label={t("name")}
           />
-
-          {errors.firstName && <p className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
         <li>
           <InputField
@@ -74,26 +73,24 @@ export default function ContactForm() {
             type='email'
             registerOptions={register("email", { ...FeedbackSchema.email })}
             isError={errors.email}
+            errorMessage={errors.email && t(`error_message.${errors.email.message}`)}
             isValid={isValid}
-            version={"input"}
+            version={"input_feedback"}
             label={t("email")}
           />
-
-          {errors.email && <p className={clsx(styles.error, styles._hide)}>{t(`error_message.${errors.email.message}`)}</p>}
         </li>
         <li>
-          <InputField
+          <TextArea
             id={"message"}
             maxLength={305}
             placeholder={t("message_placeholder")}
             registerOptions={register("message", { ...FeedbackSchema.message })}
             isError={errors.message}
+            errorMessage={errors.message && t(`error_message.${errors.message.message}`)}
             isValid={isValid}
-            version={"textArea"}
+            version={"textarea_feedback"}
             label={t("message")}
           />
-          
-          {errors.message && <p className={styles.error}>{t(`error_message.${errors.message.message}`)}</p>}
         </li>
       </ul>
       

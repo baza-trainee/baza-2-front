@@ -1,12 +1,12 @@
 'use client';
 import styles from './PartnerForm.module.scss'
 import { useEffect } from 'react';
+import { useRouter } from '@/src/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { addPartnerDefaultValues, addPartnerSchema } from './addPartnerScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { useRouter } from '@/src/navigation';
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
 export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Додати'}) {
@@ -17,7 +17,6 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
     formState: { errors, isValid, isDirty },
     reset,
     setValue,
-    getValues,
   } = useForm({ defaultValues: {...addPartnerDefaultValues}, resolver: zodResolver(addPartnerSchema), mode: 'onChange'});
 
   const resetForm = () => {
@@ -45,13 +44,13 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
     const newData = {
       name: data.name,
       homeUrl: data.homeUrl,
-      file: data.imageUrl[0],
+      file: data.file,
     }
     hendleMutate(newData)
   };
     
   const isDisabled = () => {
-    console.log(getValues('imageUrl'))
+
     if (Object.keys(errors).length > 0) {
       return true;
     } else 
@@ -84,16 +83,16 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
 
         <li className={styles.list_item}>
           <InputFile
-            id={"imageUrl"}
+            id={"file"}
             className={styles.item}
             type={'file'}
             getPrevImgUrl={ handlePrevImg }
             required={false}
             accept="image/*"
-            placeholder={"Оберіть файл JPG, PNG, WEBP"}
-            registerOptions={register("imageUrl", { ...addPartnerSchema.imageUrl })}
+            placeholder={"Оберіть фото"}
+            registerOptions={register("file", { ...addPartnerSchema.file })}
             isDirty={isDirty}
-            isError={errors.imageUrl}
+            isError={errors.file}
             isValid={isValid}
             version={"file"}
             label={'Логотип'}
@@ -102,7 +101,6 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
         <li className={styles.list_item}>
           <InputField
             id={"homeUrl"}
-            maxLength={55}
             className={styles.item}
             required={false}
             placeholder={"Посилання на сайт"}

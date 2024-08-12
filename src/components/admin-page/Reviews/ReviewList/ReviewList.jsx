@@ -10,7 +10,7 @@ import FeedbackCard from '@/src/components/shared/FeedbackCard/FeedbackCard';
 export default function ReviewList({data, hendleRemove}) {
   const router = useRouter();
   // Шляхи сторінок
-  const editReviewPath = '/admin/reviews/edit-review'
+  const editReviewPath = '/admin/reviews/edit'
  
   const[ idReview, setIdIdReview ] = useState(null)
 
@@ -19,7 +19,7 @@ export default function ReviewList({data, hendleRemove}) {
   }
 
   const okRemove=()=>{
-    hendleRemove(idSlide)
+    hendleRemove(idReview)
     setIdIdReview(null)
   }
 

@@ -23,7 +23,13 @@
     }
   }
 }
-
+.info{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(234, 232, 232, 0.25), 0 2px 12px 0 rgba(234, 232, 232, 0.25);
+  margin-bottom: 40px;
+}
 .error{
   @include mix.apply-font-styles(var.$h2-font);
   width: 100%;

@@ -1,8 +1,9 @@
 import {
   patternEmail,
-  patternEmailNonRu,
-  patternLink,
+  patternFacebook,
   patternPhone,
+  patternUrlLinkedin,
+  patterTelegram,
 } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { z } from "zod";
@@ -31,17 +32,21 @@ export const ContactsScheme = z.object({
     .string()
     .trim()
     .regex(patternEmail, { message: "Введіть дійсний Email" })
-    .regex(patternEmailNonRu, { message: "Домени .ru і .by не допускаються" }),
+    .refine(
+      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+      {
+        message: 'Домени .ru і .by не допускаються',
+      }),
   telegram: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patterTelegram, { message: "Введіть дійсний URL" }),
   facebook: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patternFacebook, { message: "Введіть дійсний URL" }),
   linkedin: z
     .string()
     .trim()
-    .regex(patternLink, { message: "Введіть дійсний URL" }),
+    .regex(patternUrlLinkedin, { message: "Введіть дійсний URL" }),
 });
