@@ -29,7 +29,7 @@
 			},
 			"card_4": {
 				"text1": "Fullstack developers have programming skills in both frontend (client-side) and backend (server-side) development. They are capable of developing a complete product from start to finish and are highly valued in the market as versatile professionals.",
-				"text2": "Fullstack developers create websites and web applications, responsible for both their frontend and backend. The frontend is the part of the website or application that users see in their browser. It includes headings, subheadings, images, links, and buttons. The backend, on the other hand, is the logic and functionality behind the operation of the website or application. It encompasses everything hidden under the hood—the mechanics of actions, data storage, and more."
+				"text2": "Fullstack developers create websites and web applications, responsible for both their frontend and backend. The frontend is the part of the website or application that users see in their browsers. It includes headings, subheadings, images, links, and buttons. The backend, on the other hand, is the logic and functionality behind the operation of the website or application. It encompasses everything hidden under the hood—the mechanics of actions, data storage, and more."
 			},
 			"card_5": {
 				"text1": "A QA engineer is responsible for developing testing plans for applications and websites. They identify issues in the functionality of the product, and most importantly, they help prevent these issues from occurring in the future.",
