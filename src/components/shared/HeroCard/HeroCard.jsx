@@ -11,14 +11,14 @@ const HeroCard = ({ title, desc, img, className }) => {
       <Image
         fill
         sizes="100%"
-        src={className ? createImageUrl(img) : img}
+        src={createImageUrl(img)}
         alt={title}
         className={styles.image}
         quality={60}
       />
       <div className={styles.wrapper}>
-        <h2>{className ? title : t(title)}</h2>
-        <p>{className ? desc :t(desc)}</p>
+        <h2>{title}</h2>
+        <p>{desc}</p>
       </div>
     </div>
   );

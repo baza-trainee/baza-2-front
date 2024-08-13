@@ -186,7 +186,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item6)}>
           <TextArea 
             id={"text_ua"}  
-            maxLength={351}
+            maxLength={355}
             className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
@@ -206,7 +206,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item7)}>
           <TextArea 
             id={"text_en"}   
-            maxLength={351}
+            maxLength={355}
             className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
@@ -224,7 +224,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item8)}>
           <TextArea 
             id={"text_pl"}  
-            maxLength={351}
+            maxLength={355}
             className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}

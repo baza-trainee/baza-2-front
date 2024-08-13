@@ -5,7 +5,13 @@
   //компенсує висоту хедер
   margin-top: 80px;
   position: relative;
-
+  min-height: 450px;
+  .error{
+    @include mx.apply-font-styles(var.$h2-font);
+    font-size: 18px;
+    text-align: center;
+    margin-top: 40vh;
+  }
   .buttons {
     width: 100%;
     position: absolute;
