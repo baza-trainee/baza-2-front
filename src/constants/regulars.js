@@ -28,14 +28,14 @@ export const patternСity =
 export const patternText =
   /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—'-\[\]{}()_~₴#$%^&№|”’`"\\]+$/giu;
 
-export const patternPassword = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{1,}[a-zA-Z\d!@#$%^&*]{8,}$/;
+export const patternPassword = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d!@#$%^&*]{8,}$/;
 
 export const patternNumberInput = /^[1-9]\d{0,}$|^[0]$|^$/;
 
 export const patternLink =
   /^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(#[-a-z\d_]*)?$/i;
 
-export const patternRole = /^(?!.*[\d.,!?'\[\]{}()_~₴#$%^&№|”’`"\\])[a-zA-Z]{1,}([ -—\/][a-zA-Z]{1,})*$/;
+export const patternRole = /^(?!.*[ \-—\/]{2})(?!.*[^a-zA-Z \-—\/])[a-zA-Z]+([ \-—\/][a-zA-Z]+)*$/
 
 export const patternFacebook =
   /^https?:\/\/(www\.)?facebook\.com\/[a-zA-Z0-9(\.\-_)\/?=]+\/?$/;

@@ -1,7 +1,7 @@
-@use "../../../../styles/variables" as var;
-@use "../../../../styles/mixins.scss" as mx;
+@use "../../../../../../styles/variables" as var;
+@use "../../../../../../styles/mixins.scss" as mx;
 
-.input_password{
+.input_select{
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,9 @@
         transform: scale(1.02);
         background: rgba(0, 0, 0, 0.7);
       }
-
+      &._active{
+        background: rgba(0, 0, 0, 0.8);
+      }
     }
     &._hide{
       //bottom: 0;

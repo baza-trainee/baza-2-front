@@ -6,11 +6,6 @@ export const recoverPasswordDefaultValues= {
   confirmPassword:''
 }
 
-const validatePassword=(str,value)=>{
-  const myExp = new RegExp(str);
-  return myExp.test(value)
-}
-
 export const recoverPasswordSchema = z
 	.object({
     password: z.string()
@@ -24,7 +19,7 @@ export const recoverPasswordSchema = z
       .trim()
       .min(1, { message: 'Поле пароль не може бути порожнім' })
   })
-  .refine((data) => validatePassword(data.password, data.confirmPassword), {
+  .refine((data) => data.password === data.confirmPassword, {
     message: 'Паролі не збігаються. Спробуйте ще раз.',
     path: ['confirmPassword'],
   })

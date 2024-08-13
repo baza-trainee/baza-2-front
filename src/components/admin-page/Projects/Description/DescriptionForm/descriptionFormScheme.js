@@ -9,12 +9,12 @@ export const ProjectDefaultValues = {
   title_en: "",
   title_pl: "",
   creationDate: "",
-  launchDate: "",
-  isTeamRequired: '',
-  complexity: 1,
+  launchDate: '',
+  //isTeamRequired: '',
+  //complexity: 0,
   deployUrl:"",
   file: null,
-  teamMembers:[]
+  //teamMembers:[]
 }
 const MAX_SIZE_IMG = 512000
 
@@ -59,39 +59,40 @@ export const ProjectScheme = z
     .max(18, { message: 'Максимум 18 знаків' })
     .regex(patternText, { message: 'Введіть коректне ім’я' }),
 
-    creationDate:z.coerce
+    creationDate: z.coerce
     .date({
       required_error: "Це поле обов'язкове",
     })
     .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
     .transform((value) => formatDateToNumericInputDate({dateString:value})),
 
-    launchDate:z.coerce
+    launchDate: z.string().transform((value) => formatDateToNumericInputDate({dateString:value})) || z.coerce
     .date({
       required_error: "Це поле обов'язкове",
     })
     .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
     .transform((value) => formatDateToNumericInputDate({dateString:value})),
 
-    isTeamRequired:z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"}),
+    // isTeamRequired:z.string()
+    // .trim()
+    // .min(1, { message: "Це поле обов'язкове"}),
 
-    complexity:z.string()
-    .trim(),
+    // complexity:z.string()
+    // .trim(),
 
 
     deployUrl:z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"}),
+    .trim().optional(),
+    //.min(1, { message: "Це поле обов'язкове"}),
 
     file: z.any()
+    //.refine((file)=>{ file==='' },"Це поле обов'язкове")
     .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
     .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
     .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
 
-    teamMembers:z.string()
-    .trim(),
+    // teamMembers:z.string()
+    // .trim(),
 
     // text_ua: z.string()
     // .trim()
@@ -114,12 +115,12 @@ export const ProjectScheme = z
 
 
 
-    date:z.coerce
-    .date({
-      required_error: "Це поле обов'язкове",
-    })
-    .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
-    .transform((value) => formatDateToNumericInputDate({dateString:value})), 
+    // date:z.coerce
+    // .date({
+    //   required_error: "Це поле обов'язкове",
+    // })
+    // .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
+    // .transform((value) => formatDateToNumericInputDate({dateString:value})), 
 })
 //  Схема відправки на бекенд: {
 //   "title": {
