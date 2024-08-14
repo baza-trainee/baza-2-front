@@ -28,7 +28,6 @@ export default function Slider() {
       open('error', false)
     }})
 
-
  return( 
     <SectionAdmin title={'Слайдер'} lang={true}>
       <div className={styles.wrapper}>

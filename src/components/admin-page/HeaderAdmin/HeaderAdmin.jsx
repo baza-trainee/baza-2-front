@@ -3,10 +3,10 @@ import InputSearch from '../../shared/inputs/InputSearch/InputSearch'
 import LangDropdown from '../../shared/LangDropdown/LangDropdown'
 import styles from './HeaderAdmin.module.scss'
 
-export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue }) {
+export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, customHeader }) {
 
   return(
-    <header className={styles.header}>
+    <header className={clsx(styles.header, customHeader)}>
       <h1>{title}</h1>
 
       <div className={clsx(styles.options)}>

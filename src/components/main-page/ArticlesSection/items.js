@@ -1,5 +1,6 @@
 export const items = [
 	{
+		id: "1",
 		img: "/images/articles/img1.jpg",
 		title: "article_1.title",
 		description: "article_1.text",
@@ -7,6 +8,7 @@ export const items = [
 		date: '27.05.2024',
 	},
 	{
+		id: "2",
 		img: "/images/articles/img2.jpg",
 		title: "article_2.title",
 		description: "article_2.text",
@@ -14,6 +16,7 @@ export const items = [
 		date: '27.05.2024',
 	},
 	{
+		id: "3",
 		img: "/images/articles/img3.jpg",
 		title: "article_3.title",
 		description: "article_3.text",
@@ -21,6 +24,7 @@ export const items = [
 		date: '27.05.2024',
 	},
 	{
+		id: "4",
 		img: "/images/articles/img1.jpg",
 		title: "article_1.title",
 		description: "article_1.text",
@@ -28,6 +32,7 @@ export const items = [
 		date: '27.05.2024',
 	},
 	{
+		id: "5",
 		img: "/images/articles/img1.jpg",
 		title: "article_1.title",
 		description: "article_1.text",
