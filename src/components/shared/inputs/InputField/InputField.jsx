@@ -20,7 +20,6 @@ export default function InputField({
   className,
   required=true,
   disabled=false,
-  options = {},
   ...props
 }) {
   const [ visible, setVisible ] = useState(false);

@@ -23,7 +23,6 @@ export async function  getAllProjects({ page, search, limit }){
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
-	console.log(params.toString())
 
 	try {
 		const res = await instance.get(`${projectsEndpoint}?${params.toString()}`)

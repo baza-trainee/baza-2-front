@@ -12,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { ProjectDefaultValues, ProjectScheme } from './descriptionFormScheme';
 import Select from '@/src/components/admin-page/Projects/Description/DescriptionForm/Select/Select';
 import InputComplexity from './InputComplexity/InputComplexity';
+import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 
 
 
@@ -29,8 +30,8 @@ export default function DescriptionForm({
   // const[ tooltip, setTooltip ] = useState(null)
 
   // const tooltipTitNameMessage = 'Рекомендована довжина до 16 символів. Максимальна 18 символів';
-  // const tooltipRoleMessage = 'Рекомендована довжина до 18 символів. Максимальна 20 символів';
-
+  // const tooltipRoleMessage = 'Рекомендована довжина до 18 символів. Максимальна 20 символів'; teamFormation
+//console.log(getValues("isTeamRequired"))
   const {
     register,
     handleSubmit,
@@ -38,7 +39,16 @@ export default function DescriptionForm({
     reset,
     setValue,
     getValues,
+    watch,
+    trigger,
   } = useForm({ defaultValues: {...ProjectDefaultValues}, resolver: zodResolver(ProjectScheme), mode: 'onChange'});
+
+  const hendleSetValue =(value)=>{
+    setValueStateProject(value)
+    setValue('isTeamRequired', value)
+    trigger("launchDate")
+  }
+ //console.log(errors)
 
   // const resetForm = () => {
   //   router.replace('/admin/reviews')
@@ -84,19 +94,19 @@ export default function DescriptionForm({
         ua: data.title_ua,
       },
       file: data.file,
-      isTeamRequired: valueStateProject === 'teamFormation',
+      isTeamRequired: data.isTeamRequired === 'teamFormation',
       creationDate: data.creationDate,
       complexity: complexity
     }
     
     if(data.deployUrl){ newData.deployUrl = data.deployUrl }
 
-    if(data.launchDate){ newData.launchDate = data.launchDate }
+    if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}
 
     if(data.teamMembers){ newData.teamMembers = data.teamMembers }
 
-    console.log(newData)
-    //hendleMutate(newData)
+   // console.log(newData)
+    hendleMutate(newData)
   };
 
   const isDisabled = () => {
@@ -115,9 +125,15 @@ export default function DescriptionForm({
 //   setValue("isTeamRequired",value)
 //  }
   const isDoneProject=()=>{
-    if(valueStateProject === 'done'){
+    if(getValues("isTeamRequired") === 'done'){
+      //trigger("launchDate")
       return false
-    }else return true
+    }else{ 
+      setValue("launchDate",'')
+      //trigger("launchDate")
+      //reset(getValues("launchDate"))
+      return true
+    }
   }
 
   return(
@@ -193,7 +209,7 @@ export default function DescriptionForm({
             required={false}
             registerOptions={register("launchDate", { ...ProjectScheme.launchDate})}
             isError={errors.launchDate}
-            isValid={!isDoneProject() && isValid}
+            isValid={isValid}
             label={'Дата завершення'}
           />
         </li> 
@@ -207,8 +223,13 @@ export default function DescriptionForm({
             className={styles.item}
             required={false}
             value={valueStateProject}
-            setValueStateProject={setValueStateProject}
+            //value={getValues("isTeamRequired")}
+            //useDefaultValue={getValues("isTeamRequired")}
+          
+            registerOptions={register("isTeamRequired", { ...ProjectScheme.isTeamRequired})}
+            setValueStateProject={hendleSetValue}
             isValid={isValid}
+            isError={errors.isTeamRequired}
             label={'Стан'}
           />
         </li> 

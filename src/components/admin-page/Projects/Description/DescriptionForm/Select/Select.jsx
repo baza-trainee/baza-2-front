@@ -14,7 +14,8 @@ export default function Select({
   className,
   required,
   value,
-  registerOptions,
+  //useDefaultValue,
+  registerOptions = {},
   setValueStateProject=()=>{},
   ...props
 }) {
@@ -22,6 +23,8 @@ export default function Select({
 
   const menuRef = useRef(null);
   const submenuRef = useRef(null);
+
+ // const [ valueOption, setValueOption ] = useState(value);
 
   const handleOutsideClick = (event) => {
     if (
@@ -39,6 +42,9 @@ export default function Select({
     setValueStateProject(el.id)
     setIsOpen(true)
   }
+  const getName=(value)=>{
+    return names[value]
+  }
 
   useEffect(() => {
     window.addEventListener("click", handleOutsideClick);
@@ -51,20 +57,28 @@ export default function Select({
         {label?label:'label title'} {required && <span>*</span>}
       </label>
       <div className={styles.wrapper} onClick={()=>{setIsOpen(!isOpen)}}>
+        <label className={clsx(
+          styles.input,
+          isError &&  styles._error,
+          isValid && styles._success
+        )} >
         <input
           id={id}
           readOnly
-          value={names[value]}
+          value={value}
           
-          className={clsx(
-            styles.input,
-            isError && styles._error,
-            isValid && styles._success
-          )}
+          // className={clsx(
+          //   styles.input,
+          //   isError && styles._error,
+          //   isValid && styles._success
+          // )}
           {...registerOptions}
           placeholder={placeholder}
-          {...props}
+           {...props}
         />
+          {getName(value)}
+        </label>
+        
         <button type='button' className={styles.icon}>
           <Icon className={clsx(styles.btn, isOpen && styles._active)} width={15} height={15} name={'carousel-arrow'}/>
         </button>
