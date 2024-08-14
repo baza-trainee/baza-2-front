@@ -113,7 +113,51 @@
       margin-bottom: 2px;
     }
   }
+  .menu{
+    .menu_btn{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      .link{
+        width: 100%;
+      }
+      .option_btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        .btn_icon{
+          width: 15px;
+          height: 15px;
+          fill: #fff;
+          transform: rotate(-90deg);
+          &._active{
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    .menu_option{
+      overflow: hidden;
+      &._hide_menu{
+        height: 0;
+      }
+      .link{
+        background: #4d0959;
+        border-radius: 4px;
+        justify-content: center;
+      }
 
+      .link._active{
+        background: #8c10a1;
+      }
+    }
+
+  }
   .btn_exit{
     width: 80%;
     margin: 0 auto;

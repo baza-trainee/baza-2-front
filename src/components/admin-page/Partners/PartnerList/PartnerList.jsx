@@ -9,6 +9,8 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 
 export default function PartnerList({data, hendleRemove}) {
   const router = useRouter();
+  const editPartnerPath = '/admin/partners/edit'
+
   const[ idPartner, setIdPartner ] = useState(null)
 
   const closeModal=()=>{
@@ -28,7 +30,7 @@ export default function PartnerList({data, hendleRemove}) {
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 
-              onClick={()=>{router.push(`/admin/partners/edit-partner/${el._id}`)}}>
+              onClick={()=>{router.push(`${editPartnerPath}/${el._id}`)}}>
               <Icon  width={24} height={24} name='edit'/>
             </MainButton>
 

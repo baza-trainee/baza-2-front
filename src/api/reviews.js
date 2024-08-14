@@ -6,7 +6,7 @@ const reviewsEndpoint = '/testimonials'
 
 export async function  getAllReviews(){
 	try {
-		const res = await instance.get(reviewsEndpoint)
+		const res = await instanceBaza2.get(reviewsEndpoint)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -25,7 +25,7 @@ export async function  createNewReview(newReview){
 
 export async function  getReviewById(id){
 	try {
-		const res = await instance.get(`${reviewsEndpoint}/${id}`)
+		const res = await instanceBaza2.get(`${reviewsEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)

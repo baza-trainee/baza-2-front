@@ -1,7 +1,9 @@
 import { z } from "zod";
-import { patternEmail, patternEmailNonRu, patternMessage, patternName } from "@/src/constants/regulars";
+import { patternEmail, patternMessage, patternName } from "@/src/constants/regulars";
 
 export const feedbackDefaultValues = { firstName: '', email:'', message:''};
+
+const normalize = (text) => text.replace(/\r?\n|\r/g, '');
 
 export const FeedbackSchema = z
 	.object({
@@ -17,12 +19,19 @@ export const FeedbackSchema = z
     .min(2, { message: 'email' })
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'incorrect_email' })
-    .regex(patternEmailNonRu, { message: 'invalid_ru' }),
+    .refine(
+      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+      {
+        message: 'invalid_ru',
+      }),
 
     message: z.string()
     .trim()
     .min(1, { message: 'message' })
     .min(10, { message: 'message_min' })
+    .transform(normalize)
+    .pipe(z.string()
     .max(300, { message: 'message_max' })
-    .regex(patternMessage, { message: 'incorrect_message' }),
+    .regex(patternMessage, { message: 'incorrect_message' })),
+
 	});

@@ -1,0 +1,62 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.list{
+  max-width: 1050px;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 1050px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item{
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & article{
+      width: 100%;
+      height: 100%;
+    }
+    position: relative;
+
+    .btns{
+      padding: 8px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 6;
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      justify-content: flex-end;
+      .btn{
+        background-color: black;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  .pagination{
+    @media (min-width: 1050px) {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.length{
+  @include mix.apply-font-styles(var.$h2-font);
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}

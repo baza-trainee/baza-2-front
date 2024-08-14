@@ -14,7 +14,7 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 export default function Slider() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const addSlidePath = '/admin/slider/add-slide'
+  const addSlidePath = '/admin/slider/add'
 
   const { isError, data, refetch } = useQuery({ queryKey: ['slider'], 
     queryFn:()=>{return getAllSliders()}});
@@ -30,13 +30,19 @@ export default function Slider() {
 
  return( 
     <SectionAdmin title={'Слайдер'} lang={true}>
-      <div className={styles.wrapper}>
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
-          router.push(addSlidePath)
-        }}>
-          <Icon name={'plus_black'} width={24} height={24} />
-          {'Додати слайд'}</MainButton >
-      </div>
+      {data?.results.length < 5 ? 
+        <div className={styles.wrapper}>
+          <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+              router.push(addSlidePath)
+            }}>
+              <Icon name={'plus_black'} width={24} height={24} />
+              {'Додати слайд'}</MainButton >
+        </div>:
+        <div className={styles.info}>
+          <p className={styles.error}>Максимальна кількість п'ять слайдів.</p>
+          <p className={styles.error}>Доступне лише редагування.</p>
+        </div>
+      }
       
       {isError ?
         <>

@@ -1,0 +1,42 @@
+@use "../../../styles/mixins" as mx;
+@use "../../../styles/variables" as var;
+
+.pagination{
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  .btn{
+    transition: all .3s;
+    .icon_next{
+      fill: var.$secondary-white;
+    }
+    .icon_prev{
+      fill: var.$secondary-white;
+      transform: rotate(180deg)
+    }
+    &:disabled{
+      opacity: .7;
+      cursor: default;
+      transition: none;
+    }
+    &:hover{
+      opacity: .7;
+    }
+  }
+  .info{
+    @include mx.apply-font-styles(var.$text-16-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+
+    & >span{
+      font-size: 16px;
+    }
+
+  }
+}

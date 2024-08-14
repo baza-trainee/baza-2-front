@@ -32,11 +32,6 @@ export default function Contacts() {
   const closeModal = useCallback(() => {
     setmodalOpen(false);
   });
-  useEffect(() => {
-    if (contacts.data) {
-      console.log("Данные контактов:", contacts.data);
-    }
-  }, [contacts.data]);
 
   return (
     <SectionAdmin title={"Контакти"}>

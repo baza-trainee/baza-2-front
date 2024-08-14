@@ -37,6 +37,7 @@ export default function RegistrationForm({ onSubmit }) {
         <li>
           <InputField
             id={"email"}
+            type='email'
             maxLength={55}
             className={styles.item}
             required={false}

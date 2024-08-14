@@ -1,16 +1,16 @@
 "use client";
-import { useState } from "react";
 import styles from './FormPartaker.module.scss';
 import clsx from "clsx";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { PartakerSchema, partakerDefaultValues } from "./formPartakeScheme";
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/inputs/InputField/InputField";
 import { optionsQuestionnaire, optionsSpec } from "./options";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import { zodResolver } from "@hookform/resolvers/zod";
 import Loader from "@/src/components/shared/loader/Loader";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
@@ -95,12 +95,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("firstName")}
             registerOptions={register("firstName", { ...PartakerSchema.firstName})}
             isError={errors.firstName}
+            errorMessage={errors.firstName && t(`error_message.${errors.firstName.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("firstName")}
           />
-
-          {errors.firstName && <p className={styles.error_partaker}>{t(`error_message.${errors.firstName.message}`)}</p>}
         </li>
 
         <li>
@@ -111,12 +110,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("lastName")}
             registerOptions={register("lastName", { ...PartakerSchema.lastName})}
             isError={errors.lastName}
+            errorMessage={errors.lastName && t(`error_message.${errors.lastName.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("lastName")}
           />
-
-          {errors.lastName && <p className={styles.error_partaker}>{t(`error_message.${errors.lastName.message}`)}</p>}
         </li>
 
         <li>
@@ -150,16 +148,16 @@ export default function FormPartaker({handleClose}) {
           <InputField
             id={"email"}
             maxLength={55}
-            //type='email'
+            type='email'
             className={styles.item}
             placeholder={"email@gmail.com"}
             registerOptions={register("email", { ...PartakerSchema.email })}
             isError={errors.email}
+            errorMessage={errors.email && t(`error_message.${errors.email.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("email")}
           />
-          {errors.email && <p className={styles.error_partaker}>{t(`error_message.${errors.email.message}`)}</p>}
         </li>
 
         <li>
@@ -174,11 +172,11 @@ export default function FormPartaker({handleClose}) {
             onInput={(e)=>{inputValidPhone(e)}}
             registerOptions={register("phone", { ...PartakerSchema.phone })}
             isError={errors.phone}
+            errorMessage={errors.phone && t(`error_message.${errors.phone.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("phone")}
           />
-          {errors.phone && <p className={styles.error_partaker}>{t(`error_message.${errors.phone.message}`)}</p>}
         </li>
 
         <li>
@@ -190,11 +188,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("city_placeholder")}
             registerOptions={register("city", { ...PartakerSchema.city })}
             isError={errors.city}
+            errorMessage={errors.city && t(`error_message.${errors.city.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("city")}
           />
-          {errors.city && <p className={styles.error_partaker}>{t(`error_message.${errors.city.message}`)}</p>}
         </li>
 
         <li>
@@ -206,11 +204,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("country_placeholder")}
             registerOptions={register("country", { ...PartakerSchema.country })}
             isError={errors.country}
+            errorMessage={errors.country && t(`error_message.${errors.country.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("country")}
           />
-          {errors.country && <p className={styles.error_partaker}>{t(`error_message.${errors.country.message}`)}</p>}
         </li>
 
         <li className={styles.tooltip}>
@@ -221,14 +219,13 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("discord")}
             registerOptions={register("discord", { ...PartakerSchema.discord })}
             isError={errors.discord}
+            errorMessage={errors.discord && t(`error_message.${errors.discord.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("discord")}
           />
 
           <TooltipText className={styles._active}/>
-
-          {errors.discord && <p className={styles.error_partaker}>{t(`error_message.${errors.discord.message}`)}</p>}
         </li>
 
         <li>
@@ -239,11 +236,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("linkedin_placeholder")}
             registerOptions={register("linkedin", { ...PartakerSchema.linkedin })}
             isError={errors.linkedin}
+            errorMessage={errors.linkedin && t(`error_message.${errors.linkedin.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("linkedin")}
           />
-          {errors.linkedin && <p className={styles.error_partaker}>{t(`error_message.${errors.linkedin.message}`)}</p>}
         </li>
 
         <li>
@@ -289,12 +286,11 @@ export default function FormPartaker({handleClose}) {
             placeholder={t("your_answer")}
             registerOptions={register("motivation", { ...PartakerSchema.motivation})}
             isError={errors.motivation}
+            errorMessage={errors.motivation && t(`error_message.${errors.motivation.message}`)}
             isValid={isValid}
             version={"input"}
             label={t("motivation")}
           />
-
-          {errors.motivation && <p className={styles.error_partaker}>{t(`error_message.${errors.motivation.message}`)}</p>}
         </li>
 
         <li>
@@ -322,7 +318,7 @@ export default function FormPartaker({handleClose}) {
             {errors.sawQuestionnaire && <p className={clsx(styles.error_partaker, styles._list)}>{t("error_message.saw_questionnaire")}</p>}
           </div>
         </li>
-        {/* <span>*</span> */}
+
         <li>
           <div className={styles.item}>
             <h4>{t("rules_participation")}</h4>

@@ -8,6 +8,11 @@
   & > label {
     @include mx.apply-font-styles(var.$text-20-font);
     font-size: 14px;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+
     & > span {
       color: var.$secondary-error;
     }
@@ -17,7 +22,8 @@
     }
 
   }
-  & > input {
+
+  .input {
     @include mx.apply-font-styles(var.$text-16-font);
     color: var.$secondary-black;
     border: 2px solid transparent;
@@ -27,22 +33,174 @@
     background: var.$secondary-white;
     transition: all var.$transition-duration-base var.$transition-timing-base;
   }
-  & > textarea {
-    @include mx.apply-font-styles(var.$text-16-font);
-    color: var.$secondary-black;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 10px;
-    outline: 0;
-    background: var.$secondary-white;
-    min-height: 132px;
-    resize: none;
-    transition: all var.$transition-duration-base var.$transition-timing-base;
+
+  .input._error {
+    border: 2px solid var.$secondary-error;
   }
+  .input._success {
+    border: 2px solid var.$secondary-positive;
+  }
+
+  // .error{
+  //   min-height: 18px;
+  //   @include mx.apply-font-styles(var.$text-16-font);
+  //   font-size: 14px;
+  //   line-height: normal;
+  //   color: var.$secondary-error;
+  // }
+  .error{
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    color: var.$secondary-error;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+  }
+
+  // .error{
+  //   @include mx.apply-font-styles(var.$text-20-font);
+  //   font-size: 16px;
+  //   color: var.$secondary-error;
+  //   line-height: normal;
+
+  //   @include mx.media-q("md") {
+  //     font-size: 20px;
+  //   }
+  // }
 }
 
 
+.input_feedback {
+  width: clamp(280px, 84vw, 625px);
+  display: flex;
+  flex-direction: column;
+  & > label {
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 14px;
+    & > span {
+      color: var.$secondary-error;
+    }
+    
+    @include mx.media-q("md") {
+      font-size: 20px;
+    }
+
+  }
+  .input {
+    @include mx.apply-font-styles(var.$text-16-font);
+    color: var.$secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    outline: 0;
+    background: var.$secondary-white;
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+  }
+  .input._error {
+    border: 2px solid var.$secondary-error;
+  }
+  .input._success {
+    border: 2px solid var.$secondary-positive;
+  }
+
+  .error{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-size: 16px;
+    color: var.$secondary-error;
+    line-height: normal;
+    display: none;
+
+    @include mx.media-q("md") {
+      font-size: 20px;
+      display: block;
+    }
+  }
+}
+
 .input_admin{
+  width: 320px;
+  // min-width: 280px;
+  // max-width: 360px;
+  // width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  .wrapper{
+    position: relative;
+    .input{
+      width: 100%;
+      @include mx.apply-font-styles(var.$text-16-font);
+      color: var.$secondary-black;
+      border: 2px solid transparent;
+      border-radius: 8px;
+
+      padding: 10px;
+      outline: 0;
+      background: var.$secondary-white;
+      transition: all var.$transition-duration-base var.$transition-timing-base;
+    }
+    .input._error {
+      border: 2px solid var.$secondary-error;
+    }
+    .input._success {
+      border: 2px solid var.$secondary-positive;
+    }
+    .input._icon{
+      padding-right: 38px;
+    }
+
+    .icon{
+      position: absolute;
+      width: 30px;
+      height: 80%;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background: var.$secondary-white;
+      & > p{
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #000;
+        padding: 5px;
+      }
+      .btn{
+        margin: 10px;
+        transition: all var.$transition-duration-base var.$transition-timing-base;
+      }
+      .btn:hover{
+        opacity: .7;
+      }
+    }
+  }
+
+  .label{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-weight: 600;
+    font-size: 18px;
+    & > span {
+      color: var.$secondary-error;
+    }
+    &._hide{
+      visibility: hidden;
+    }
+  }
+
+  .error{
+    min-height: 18px;
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    line-height: normal;
+    color: var.$secondary-error;
+  }
+}
+
+.input_password{
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -68,6 +226,10 @@
     .input._success {
       border: 2px solid var.$secondary-positive;
     }
+    .input._icon{
+      padding-right: 38px;
+    }
+
     .icon{
       position: absolute;
       width: 50px;
