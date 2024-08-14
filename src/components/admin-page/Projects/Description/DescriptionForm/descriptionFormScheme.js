@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { date, z } from "zod";
 import { patternName, patternText, patternRole } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
@@ -10,7 +10,7 @@ export const ProjectDefaultValues = {
   title_pl: "",
   creationDate: "",
   launchDate: '',
-  //isTeamRequired: '',
+  isTeamRequired: 'teamFormation',
   //complexity: 0,
   deployUrl:"",
   file: null,
@@ -34,7 +34,28 @@ const transformImageValue = (value)=>{
   }
 }
 
-const normalize = (text) => text.replace(/\r?\n|\r/g, '');
+//const normalize = (text) => text.replace(/\r?\n|\r/g, '');
+
+const patternDateValue = /^\d{4}-\d{2}-\d{2}$/
+
+const minDateValue=(value, minDate="2023-04-01")=>{
+  if(value===''){
+    return true
+  }else {
+   return formatDateToNumericInputDate({dateString:value}) >= formatDateToNumericInputDate({dateString:minDate})
+  }
+}
+
+const validateLaunchDate=(state, date)=>{
+  if(state === 'done'){
+    if(date === ''){
+      return false
+    }else{ 
+      return true
+    }
+  }else return true
+}
+
 
 export const ProjectScheme = z
 	.object({
@@ -42,44 +63,39 @@ export const ProjectScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 символів'})
-    .max(18, { message: 'Максимум 18 знаків' })
-    .regex(patternText, { message: 'Введіть коректне ім’я' }),
+    .max(50, { message: 'Максимум 50 знаків' })
+    .regex(patternText, { message: 'Введіть коректний заголовок' }),
 
 		title_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 символів'})
-    .max(18, { message: 'Максимум 18 знаків' })
-    .regex(patternText, { message: 'Введіть коректне ім’я' }),
+    .max(50, { message: 'Максимум 50 знаків' })
+    .regex(patternText, { message: 'Введіть коректний заголовок' }),
 
 		title_pl: z.string()
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(5, { message: 'Мінімум 5 символів'})
+      .max(50, { message: 'Максимум 50 знаків' })
+      .regex(patternText, { message: 'Введіть коректний заголовок' }),
+
+    creationDate: z.string()
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .regex(patternDateValue, { message: 'Введіть коректну дату' })
+      .refine((value) => minDateValue(value),{ message: "Мінімальна дата 01-04-2023" }).transform((value) => formatDateToNumericInputDate({dateString:value})),
+
+
+    launchDate: z.string()
     .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 символів'})
-    .max(18, { message: 'Максимум 18 знаків' })
-    .regex(patternText, { message: 'Введіть коректне ім’я' }),
+    //.min(1, { message: "Це поле обов'язкове"})
+    //.regex(patternDateValue, { message: 'Введіть коректну дату' })
+    .refine((value) => minDateValue(value, formatDateToNumericInputDate({timestamp:Date.now()})), { message: "Дата не може бути меньша за сьогодні" }),
 
-    creationDate: z.coerce
-    .date({
-      required_error: "Це поле обов'язкове",
-    })
-    .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
-    .transform((value) => formatDateToNumericInputDate({dateString:value})),
-
-    launchDate: z.string().transform((value) => formatDateToNumericInputDate({dateString:value})) || z.coerce
-    .date({
-      required_error: "Це поле обов'язкове",
-    })
-    .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
-    .transform((value) => formatDateToNumericInputDate({dateString:value})),
-
-    // isTeamRequired:z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"}),
-
-    // complexity:z.string()
-    // .trim(),
-
+    isTeamRequired:z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"}),
 
     deployUrl:z.string()
     .trim().optional(),
@@ -91,37 +107,15 @@ export const ProjectScheme = z
     .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
     .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
 
-    // teamMembers:z.string()
-    // .trim(),
-
-    // text_ua: z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(5, { message: 'Мінімум 5 знаків' })
-    // .transform(normalize)
-    // .pipe(z.string()
-    // .max(250, { message: 'Текст максимум 250 знаків' })
-    // .regex(patternText, { message: 'Присутні не коректні символи' })),
-
-    // text_en: z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(5, { message: 'Мінімум 5 знаків' })
-    // .transform(normalize)
-    // .pipe(z.string()
-    // .max(250, { message: 'Текст максимум 250 знаків' })
-    // .regex(patternText, { message: 'Присутні не коректні символи' })),
-
-
-
-
-    // date:z.coerce
-    // .date({
-    //   required_error: "Це поле обов'язкове",
-    // })
-    // .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
-    // .transform((value) => formatDateToNumericInputDate({dateString:value})), 
+ 
+})  
+.refine((data) => validateLaunchDate(data.isTeamRequired , data.launchDate), {
+  message: "Це поле обов'язкове",
+  path: ['launchDate'],
 })
+
+
+
 //  Схема відправки на бекенд: {
 //   "title": {
 //     "en": "Project A",

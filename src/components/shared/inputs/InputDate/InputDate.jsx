@@ -9,9 +9,7 @@ export default function InputDate({
   isValid,
   min,
   max,
-  // valueAsDate,
-  //value,
-  // valueAsNumber,
+
   isDirty,
   label = null,
   locale,
@@ -40,8 +38,8 @@ export default function InputDate({
           disabled={disabled}
           className={clsx(
             styles.input,
-            isError && styles._error,
-            isValid && styles._success,
+            !disabled && isError && styles._error,
+            !disabled && isValid && styles._success,
           )}
           {...registerOptions}
           //placeholder={placeholder}

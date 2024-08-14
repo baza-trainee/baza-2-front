@@ -28,11 +28,16 @@
       display: block;
       width: 18px;
       height: 18px;
-      border: 1px solid black;
+      border: 1px solid var.$secondary-black;
       border-radius: 50%;
-
+      transition: all .3s;
+      &:hover{
+        //background-color: #f87bd0
+        opacity: .7;
+      }
       &._active{
-        background-color: black
+        border-color: var.$primary-border;
+        background-color: var.$primary-border;
       }
     }
   }

@@ -35,6 +35,15 @@ const transformImageValue = (value)=>{
 
 const normalize = (text) => text.replace(/\r?\n|\r/g, '');
 
+const patternDateValue = /^\d{4}-\d{2}-\d{2}$/
+
+const minDateValue=(value, minDate="2023-04-01")=>{
+  if(value===''){
+    return true
+  }else {
+   return formatDateToNumericInputDate({dateString:value}) >= formatDateToNumericInputDate({dateString:minDate})
+  }
+}
 export const ReviewScheme = z
 	.object({
     file: z.any()
@@ -97,12 +106,19 @@ export const ReviewScheme = z
       .max(20, { message: 'Максимум 20 знаків' })
       .regex(patternRole, { message: 'Не коректна назва' }),
 
-      date:z.coerce
-      .date({
-        required_error: "Це поле обов'язкове",
-      })
-      .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
-      .transform((value) => formatDateToNumericInputDate({dateString:value})), 
+      date:z.string()
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .regex(patternDateValue, { message: 'Введіть коректну дату' })
+      .refine((value) => minDateValue(value),{ message: "Мінімальна дата 01-04-2023" })
+      .transform((value) => formatDateToNumericInputDate({dateString:value})),
+      
+      // z.coerce
+      // .date({
+      //   required_error: "Це поле обов'язкове",
+      // })
+      // .min(new Date("2023-04-01"), { message: "Мінімальна дата 01-04-2023" })
+      // .transform((value) => formatDateToNumericInputDate({dateString:value})), 
 })
 //  Схема відправки на бекенд:{
 //   "name": {
