@@ -20,6 +20,11 @@ export const FeedbackSchema = z
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'incorrect_email' })
     .refine(
+      (value) => value.split('@')[0].length > 1,
+      {
+        message: 'incorrect_email',
+      })
+    .refine(
       (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
       {
         message: 'invalid_ru',

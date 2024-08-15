@@ -11,9 +11,14 @@ export const registrationSchema = z
 	.object({
 		email: z.string()
     .trim()
-    .min(2, { message: 'Поле email не може бути порожнім' })
+    .min(1, { message: 'Поле email не може бути порожнім' })
     .email({ message: 'Введіть дійсний email' })
     .regex(patternEmail, { message: 'Введіть дійсний email' })
+    .refine(
+      (value) => value.split('@')[0].length > 1,
+      {
+        message: 'Введіть дійсний email',
+      })
     .refine(
       (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
       {
