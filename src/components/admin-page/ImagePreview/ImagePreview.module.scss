@@ -114,3 +114,49 @@
     }
   }
 }
+
+.preview._project._full{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.473);
+  z-index: 3;
+
+  .slideCardItem{
+    min-width: 400px;
+    min-height: 500px;
+    width: 35%;
+    height: 95%;
+    transition: all .6s;
+    border-radius: 12px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    .img_wrap {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+
+      .img{
+        object-fit: cover;
+        object-position: 50% 20%;
+        object-position: top;
+      }
+    }
+
+    & > button{
+      right: auto;
+      top: 5px;
+      left: 5px;
+      bottom: auto;
+      background: rgba(0, 0, 0, 0.486);
+      & > svg{
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

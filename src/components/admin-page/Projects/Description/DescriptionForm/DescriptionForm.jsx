@@ -1,20 +1,19 @@
 'use client';
 import clsx from 'clsx'
 import styles from './DescriptionForm.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from '@/src/navigation';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ProjectDefaultValues, ProjectScheme } from './descriptionFormScheme';
+import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate'
 import ImagePreview from '../../../ImagePreview/ImagePreview'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile'
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ProjectDefaultValues, ProjectScheme } from './descriptionFormScheme';
-import Select from '@/src/components/admin-page/Projects/Description/DescriptionForm/Select/Select';
 import InputComplexity from './InputComplexity/InputComplexity';
-import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-
-
+import Select from './Select/Select';
 
 export default function DescriptionForm({
   hendleMutate, 
@@ -22,16 +21,12 @@ export default function DescriptionForm({
   data, 
   submitBtnText= 'Додати'
 }) {
-  // const router = useRoute();
+  const router = useRouter();
 
- const[ prevUrl, setPrevUrl ] = useState(null)
- const [ valueStateProject, setValueStateProject ] = useState('teamFormation');
- const[ complexity, setComplexity ] = useState(0)
-  // const[ tooltip, setTooltip ] = useState(null)
+  const[ prevUrl, setPrevUrl ] = useState(null)
+  const [ valueStateProject, setValueStateProject ] = useState('teamFormation');
+  const[ complexity, setComplexity ] = useState(0)
 
-  // const tooltipTitNameMessage = 'Рекомендована довжина до 16 символів. Максимальна 18 символів';
-  // const tooltipRoleMessage = 'Рекомендована довжина до 18 символів. Максимальна 20 символів'; teamFormation
-//console.log(getValues("isTeamRequired"))
   const {
     register,
     handleSubmit,
@@ -48,12 +43,11 @@ export default function DescriptionForm({
     setValue('isTeamRequired', value)
     trigger("launchDate")
   }
- //console.log(errors)
 
-  // const resetForm = () => {
-  //   router.replace('/admin/reviews')
-  //   reset();
-  // }
+  const resetForm = () => {
+    router.replace('/admin/projects')
+    reset();
+  }
 
   // useEffect(()=>{
   //   if(isSuccess){
@@ -61,30 +55,35 @@ export default function DescriptionForm({
   //   }
   // },[isSuccess])
 
-  // useEffect(()=>{
-  //   if(data){
-  //     const{imageUrl, name, review, role, date } = data
-  //     setValue('name_ua',name.ua )
-  //     setValue('name_en',name.en )
-  //     setValue('name_pl',name.pl )
-  //     setValue('text_ua',review.ua )
-  //     setValue('text_en',review.en )
-  //     setValue('text_pl',review.pl )
-  //     setValue('role',role )
-  //     setValue('date',formatDateToNumericInputDate({timestamp:date}))
-  //     setValue('file', '')
-  //     setPrevUrl(imageUrl)
-  //   }else setValue('date',formatDateToNumericInputDate({timestamp:Date.now()}))
-    
-  // },[data])
 
-  // const validateTitle=(name, maxLength)=>{
-  //   if(getValues(name).length > maxLength){
-  //     setTooltip(name)
-  //   }else {
-  //     setTooltip(null)
-  //   }
-  // }
+  const getStatusName=(isTeamRequired, launchDate)=>{
+    if(isTeamRequired){ return 'teamFormation' }
+    if(launchDate){ return 'done' }
+    return 'inDevelopment'
+  }
+
+  useEffect(()=>{
+    if(data){
+      const{title, imageUrl, isTeamRequired, creationDate, launchDate,   complexity, deployUrl} = data
+      setValue('title_ua',title.ua )
+      setValue('title_en',title.en )
+      setValue('title_pl',title.pl )
+      setPrevUrl(imageUrl)
+
+      setValue('isTeamRequired',  getStatusName(isTeamRequired, launchDate))
+      setValue('deployUrl', deployUrl)
+      setValueStateProject(getStatusName(isTeamRequired, launchDate))
+      setValue('creationDate',formatDateToNumericInputDate({timestamp:creationDate}))
+      setValue('launchDate',launchDate ? formatDateToNumericInputDate({timestamp:launchDate}):'')
+
+      setComplexity(complexity)
+      setValue('file', '')
+      trigger('isTeamRequired')
+    }else {
+      setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
+    }
+    
+  },[data])
 
   const onSubmit = (data) => {
     const newData = {
@@ -93,15 +92,15 @@ export default function DescriptionForm({
         pl: data.title_pl,
         ua: data.title_ua,
       },
-      file: data.file,
+      
       isTeamRequired: data.isTeamRequired === 'teamFormation',
       creationDate: data.creationDate,
-      complexity: complexity
+      complexity: complexity,
     }
-    
+    if(data.file){newData.file = data.file}
     if(data.deployUrl){ newData.deployUrl = data.deployUrl }
 
-    if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}
+    if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
     if(data.teamMembers){ newData.teamMembers = data.teamMembers }
 
@@ -121,17 +120,12 @@ export default function DescriptionForm({
     }
     else return false
   }
-//  const hendlrSetValue=(value)=>{
-//   setValue("isTeamRequired",value)
-//  }
+
   const isDoneProject=()=>{
     if(getValues("isTeamRequired") === 'done'){
-      //trigger("launchDate")
       return false
     }else{ 
       setValue("launchDate",'')
-      //trigger("launchDate")
-      //reset(getValues("launchDate"))
       return true
     }
   }
@@ -187,7 +181,6 @@ export default function DescriptionForm({
         </li>
       </ul>
 
-
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <InputDate
@@ -216,16 +209,14 @@ export default function DescriptionForm({
       </ul>
 
       <ul className={styles.list}>
-         <li className={ styles.list_item }>
+        <li className={ styles.list_item }>
           <Select
             id={"isTeamRequired"}
             placeholder={'Оберіть стан'}
             className={styles.item}
             required={false}
             value={valueStateProject}
-            //value={getValues("isTeamRequired")}
-            //useDefaultValue={getValues("isTeamRequired")}
-          
+
             registerOptions={register("isTeamRequired", { ...ProjectScheme.isTeamRequired})}
             setValueStateProject={hendleSetValue}
             isValid={isValid}
@@ -248,18 +239,18 @@ export default function DescriptionForm({
       </ul>
 
       <ul className={styles.list}>
-         <li className={ styles.list_item }>
-            <InputField
-              id={"deployUrl"}
-              className={styles.item}
-              required={false}
-              placeholder={"Введіть адресу"}
-              registerOptions={register("deployUrl", { ...ProjectScheme.deployUrl })}
-              isError={errors.deployUrl}
-              isValid={isValid}
-              version={"input_admin"}
-              label={'Адреса сайту'}
-            />
+        <li className={ styles.list_item }>
+          <InputField
+            id={"deployUrl"}
+            className={styles.item}
+            required={false}
+            placeholder={"Введіть адресу"}
+            registerOptions={register("deployUrl", { ...ProjectScheme.deployUrl })}
+            isError={errors.deployUrl}
+            isValid={isValid}
+            version={"input_admin"}
+            label={'Адреса сайту'}
+          />
         </li> 
 
         <li className={clsx(styles.list_item )}>
@@ -280,7 +271,7 @@ export default function DescriptionForm({
           />
         </li>
         <li className={ clsx(styles.list_item,styles.item_prev )}>
-          <ImagePreview imageUrl={prevUrl} variant='review'/>
+          <ImagePreview imageUrl={prevUrl} variant='project'/>
         </li>
       </ul>
       
@@ -296,7 +287,7 @@ export default function DescriptionForm({
         <MainButton
           variant='admin'
           className={styles.btn_cancel}
-          //onClick={()=>{resetForm()}}
+          onClick={()=>{resetForm()}}
         >
           {'Скасувати'}
         </MainButton>
