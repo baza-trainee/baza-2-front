@@ -66,21 +66,21 @@ export const SliderScheme = z
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків'})
     .transform(normalize)
-    .pipe(z.string().max(350, { message: 'Текст максимум 350 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
  
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків' }) 
     .transform(normalize)
-    .pipe(z.string().max(350, { message: 'Текст максимум 350 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
 
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Текст мінімум 5 знаків' })
     .transform(normalize)
-    .pipe(z.string().max(350, { message: 'Текст максимум 350 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
 
 })
 
