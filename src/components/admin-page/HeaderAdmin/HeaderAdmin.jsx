@@ -5,18 +5,19 @@ import InputSearch from '../../shared/inputs/InputSearch/InputSearch'
 import LangDropdown from '../../shared/LangDropdown/LangDropdown'
 import styles from './HeaderAdmin.module.scss'
 import { Icon } from '../../shared/Icon/Icon'
+import { useParams } from 'next/navigation';
 
 export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, nav }) {
 
   const router = useRouter();
   const pathname = usePathname()
-  const addDescriptionPath = '/admin/projects/add/description'
-  const addTeamPath = '/admin/projects/add/team'
+  const {id}= useParams()
 
   const isActive=(name)=>{
    return pathname.split('/').includes(name)
   }
-  
+  const addDescriptionPath = `/admin/projects/${isActive('add')?'add':`edit/${id}`}/description`
+  const addTeamPath = `/admin/projects/${isActive('add')?'add':`edit/${id}`}/team`
   return(
     <header className={styles.wrapper}>
       <div className={styles.header}>

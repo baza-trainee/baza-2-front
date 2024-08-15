@@ -2,7 +2,7 @@ import AddProjectLayout from "@/src/components/admin-page/Projects/AddProjectLay
 
 export default function addProjectLayout({children}) {
   return (
-  <AddProjectLayout title="Додати проєкт">
+  <AddProjectLayout title="Редагувати проєкт">
     {children}
   </AddProjectLayout>)
 };
