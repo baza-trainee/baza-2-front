@@ -14,6 +14,7 @@ import ImagePreview from '../../../ImagePreview/ImagePreview'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile'
 import InputComplexity from './InputComplexity/InputComplexity';
 import Select from './Select/Select';
+import { useFormData } from '../../FormContext';
 
 export default function DescriptionForm({
   hendleMutate, 
@@ -22,6 +23,13 @@ export default function DescriptionForm({
   submitBtnText= 'Додати'
 }) {
   const router = useRouter();
+
+  const { updateFormData } = useFormData();
+
+  const handleNext = (data) => {
+    updateFormData(data);
+    //history.push('/review');
+  };
 
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ valueStateProject, setValueStateProject ] = useState('teamFormation');
@@ -63,12 +71,16 @@ export default function DescriptionForm({
   }
 
   useEffect(()=>{
-    if(data){
-      const{title, imageUrl, isTeamRequired, creationDate, launchDate,   complexity, deployUrl} = data
+    if(Object.keys(data).length){
+      const{title, imageUrl,file, isTeamRequired, creationDate, launchDate,   complexity, deployUrl} = data
       setValue('title_ua',title.ua )
       setValue('title_en',title.en )
       setValue('title_pl',title.pl )
-      setPrevUrl(imageUrl)
+      if(imageUrl){setPrevUrl(imageUrl)}
+      if(file){
+        setValue('file',file )
+        setPrevUrl(URL.createObjectURL(file))
+      }
 
       setValue('isTeamRequired',  getStatusName(isTeamRequired, launchDate))
       setValue('deployUrl', deployUrl)
@@ -103,9 +115,9 @@ export default function DescriptionForm({
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
     if(data.teamMembers){ newData.teamMembers = data.teamMembers }
-
+    handleNext(newData)
    // console.log(newData)
-    hendleMutate(newData)
+   // hendleMutate(newData)
   };
 
   const isDisabled = () => {

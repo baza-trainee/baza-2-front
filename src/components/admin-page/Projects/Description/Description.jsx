@@ -9,6 +9,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 import { useCallback, useState } from "react";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
+import { useFormData } from "../FormContext";
 
 
 export default function Description() {
@@ -23,6 +24,9 @@ export default function Description() {
     router.replace(projectsPath)
   })
  
+  const { formData } = useFormData();
+
+  console.log(formData)
 
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
@@ -37,7 +41,7 @@ export default function Description() {
 
   return (
     <>
-      <DescriptionForm hendleMutate={mutate}/>
+      <DescriptionForm hendleMutate={mutate} data={formData}/>
 
       { isPending && <Loader/> }
 

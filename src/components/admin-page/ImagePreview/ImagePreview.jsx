@@ -7,7 +7,7 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 
 export default function ImagePreview({imageUrl, variant=''}) {
   const[ full, setFull ] = useState(false)
-
+console.log(imageUrl)
   return (
     <div className={clsx(styles.preview, variant && styles[`_${variant}`], full && styles._full)}>
       <div className={styles.slideCardItem}>
