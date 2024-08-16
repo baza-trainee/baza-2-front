@@ -10,6 +10,7 @@ import ProjectCardTeam from "./ProjectCardTeam/ProjectCardTeam";
 import { Icon } from "../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
 import ProjectStatus from "./ProjectStatus/ProjectStatus";
+import Link from "next/link";
 
 const ProjectCard = ({ project, coverImgUrl }) => {
   const {
@@ -19,6 +20,7 @@ const ProjectCard = ({ project, coverImgUrl }) => {
     launchDate,
     teamMembers,
     isTeamRequired,
+    deployUrl,
   } = project;
   const { locale } = useParams();
   const t = useTranslations("Projects.card");
@@ -44,7 +46,9 @@ const ProjectCard = ({ project, coverImgUrl }) => {
           complexity={complexity}
           creationDate={creationDate}
           launchDate={launchDate}
+          deployUrl={deployUrl ?? null}
         />
+
         <button
           onClick={handleClose}
           type="button"
