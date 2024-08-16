@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 20px;
 }
 .infoRow {
   display: flex;
@@ -60,5 +61,18 @@
   @media (min-width: 810px) {
     width: 16px;
     height: 16px;
+  }
+}
+
+.deployUrl {
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 }

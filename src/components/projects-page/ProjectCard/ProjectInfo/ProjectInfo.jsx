@@ -6,11 +6,11 @@ import { Icon } from "@/src/components/shared/Icon/Icon";
 import { useParams } from "next/navigation";
 import { formatDate } from "@/src/lib/utils/formatData";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-const ProjectInfo = ({ complexity, creationDate, launchDate }) => {
+const ProjectInfo = ({ complexity, creationDate, launchDate, deployUrl }) => {
   const { locale } = useParams();
   const t = useTranslations("Projects.card.info");
-
   const date = formatDate(creationDate, locale);
 
   const launch = launchDate ? launchDate : Date.now();
@@ -19,43 +19,52 @@ const ProjectInfo = ({ complexity, creationDate, launchDate }) => {
   );
 
   return (
-    <div className={styles.info}>
-      <div className={styles.infoRow}>
-        <div className={styles.name}>
-          <Icon name="calendar" />
-          <span>{t("start")}</span>
+    <div className="">
+      <div className={styles.info}>
+        <div className={styles.infoRow}>
+          <div className={styles.name}>
+            <Icon name="calendar" />
+            <span>{t("start")}</span>
+          </div>
+          <p>{date}</p>
         </div>
-        <p>{date}</p>
+        {numOfWeeks >= 0 && (
+          <div className={styles.infoRow}>
+            <div className={styles.name}>
+              <Icon name="clock" />
+              <span>{t("duration")}</span>
+            </div>
+            <p>
+              {t("weeks", {
+                count: numOfWeeks,
+                ordinal: true,
+              })}
+            </p>
+          </div>
+        )}
+        <div className={styles.infoRow}>
+          <div className={styles.name}>
+            <Icon name="complexity" />
+            <span>{t("complexity")}</span>
+          </div>
+          <div className={styles.complexity}>
+            {Array.from({ length: 5 }, (_, index) => (
+              <span
+                key={createKey()}
+                className={clsx(
+                  styles.circle,
+                  complexity >= index + 1 && styles.circleActive
+                )}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <div className={styles.infoRow}>
-        <div className={styles.name}>
-          <Icon name="clock" />
-          <span>{t("duration")}</span>
-        </div>
-        <p>
-          {t("weeks", {
-            count: numOfWeeks,
-            ordinal: true,
-          })}
-        </p>
-      </div>
-      <div className={styles.infoRow}>
-        <div className={styles.name}>
-          <Icon name="complexity" />
-          <span>{t("complexity")}</span>
-        </div>
-        <div className={styles.complexity}>
-          {Array.from({ length: 5 }, (_, index) => (
-            <span
-              key={createKey()}
-              className={clsx(
-                styles.circle,
-                complexity >= index + 1 && styles.circleActive
-              )}
-            />
-          ))}
-        </div>
-      </div>
+      {deployUrl && (
+        <Link target="_blank" href={deployUrl} className={styles.deployUrl}>
+          {deployUrl}
+        </Link>
+      )}
     </div>
   );
 };
