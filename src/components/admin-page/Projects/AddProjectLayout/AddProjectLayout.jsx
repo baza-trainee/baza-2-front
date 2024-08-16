@@ -1,9 +1,15 @@
+'use client';
+import switchTabProject from '@/src/state/switchTabProject';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
+import Description from '../Description/Description'
 
-export default function AddProjectLayout({title = 'Додати проєкт', children}) {
+export default function AddProjectLayout() {
+  const tabName = switchTabProject(state => state.tabName);
+
  return( 
-    <SectionAdmin title={title} nav={true}>
-      {children}
+    <SectionAdmin title={'Додати проєкт'} nav={true}>
+      {tabName=='description'&& <Description/>}
+      {tabName=='team'&& <p>team</p>}
     </SectionAdmin>
   )
 }
