@@ -1,0 +1,66 @@
+@use "../../../../../../styles/variables" as var;
+@use "../../../../../../styles/mixins.scss" as mx;
+
+.wrapper{
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 18px;
+  .input{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    height: 48px;
+    //@include mx.apply-font-styles(var.$text-16-font);
+    //color: var.$secondary-black;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 0 10px;
+    background: var.$secondary-white;
+
+    transition: all var.$transition-duration-base var.$transition-timing-base;
+
+
+    .btn{
+      display: block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var.$secondary-black;
+      border-radius: 50%;
+      transition: all .3s;
+      &:hover{
+        //background-color: #f87bd0
+        opacity: .7;
+      }
+      &._active{
+        border-color: var.$primary-border;
+        background-color: var.$primary-border;
+      }
+    }
+  }
+  .input._success {
+    border: 2px solid var.$secondary-positive;
+  }
+  .label{
+    @include mx.apply-font-styles(var.$text-20-font);
+    font-weight: 600;
+    font-size: 18px;
+    & > span {
+      color: var.$secondary-error;
+    }
+    &._hide{
+      visibility: hidden;
+    }
+  }
+
+  .error{
+    min-height: 18px;
+    @include mx.apply-font-styles(var.$text-16-font);
+    font-size: 14px;
+    line-height: normal;
+    color: var.$secondary-error;
+  }
+}

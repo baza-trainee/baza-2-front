@@ -1,8 +1,8 @@
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
 
-export default function AddProjectLayout({children}) {
+export default function AddProjectLayout({title = 'Додати проєкт', children}) {
  return( 
-    <SectionAdmin title={'Додати проєкт'} nav={true}>
+    <SectionAdmin title={title} nav={true}>
       {children}
     </SectionAdmin>
   )

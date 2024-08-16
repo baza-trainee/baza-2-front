@@ -2,7 +2,7 @@ import styles from './ProjectsList.module.scss'
 import { useState } from 'react'
 import { useRouter } from '@/src/navigation'
 import { createKey } from '@/src/lib/utils/createKey'
-import { createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl'
+import { createImageUrl, createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl'
 //import PartnerCard from '@/src/components/shared/PartnerCard/PartnerCard'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
@@ -34,7 +34,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
         return <li key={createKey()} className={styles.item}>
           <ProjectCard 
             project={el}
-            coverImgUrl={createImageUrlBaza1(el.imageUrl)} />
+            coverImgUrl={createImageUrl(el.imageUrl)} />
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 

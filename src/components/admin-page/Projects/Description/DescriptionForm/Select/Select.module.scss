@@ -1,7 +1,7 @@
-@use "../../../../styles/variables" as var;
-@use "../../../../styles/mixins.scss" as mx;
+@use "../../../../../../styles/variables" as var;
+@use "../../../../../../styles/mixins.scss" as mx;
 
-.input_password{
+.input_select{
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@
     position: relative;
     .input{
       width: 100%;
+      display: block;
       @include mx.apply-font-styles(var.$text-16-font);
       color: var.$secondary-black;
       border: 2px solid transparent;
@@ -20,6 +21,15 @@
       outline: 0;
       background: var.$secondary-white;
       transition: all var.$transition-duration-base var.$transition-timing-base;
+
+      & > input{
+        //width: 2px;
+        //height: 2px;
+        //background-color: aqua;
+        opacity: 0;
+        position: absolute;
+        //opacity: ;
+      }
     }
     .input._error {
       border: 2px solid var.$secondary-error;
@@ -93,7 +103,9 @@
         transform: scale(1.02);
         background: rgba(0, 0, 0, 0.7);
       }
-
+      &._active{
+        background: rgba(0, 0, 0, 0.8);
+      }
     }
     &._hide{
       //bottom: 0;

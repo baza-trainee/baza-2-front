@@ -26,9 +26,8 @@ export default function NavBar() {
   }
   // Зачиняє меню як що не проєкти
   useEffect(()=>{
-    if(!isActive('projects')){
-      setHideMenu(true)
-    }
+    if(isActive('projects') || isActive('members')|| isActive('specialization')){return}
+     setHideMenu(true)
   },[pathname])
 
   const subMenu=(el)=>{

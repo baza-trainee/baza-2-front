@@ -12,7 +12,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import PartnerList from './ProjectsList/ProjectsList';
-import { deleteProjectById, getAllProjects } from '@/src/api/projects';
+import { deleteProjectById, getAllProjects, getAllProjects2 } from '@/src/api/projects';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 export default function Projects() {
@@ -34,7 +34,7 @@ export default function Projects() {
   }
 
   const { isError, data, refetch } = useQuery({ queryKey: ['projects', params.search, params.page], 
-    queryFn:()=>{return getAllProjects({...params, limit:6})}, keepPreviousData: true });
+    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true });
 
   const deleteProject = useMutation({
     mutationFn:(id) => {

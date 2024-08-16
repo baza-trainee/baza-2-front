@@ -4,12 +4,12 @@ import styles from "./counter.module.scss";
 import { useTranslations } from "next-intl";
 import { createKey } from "@/src/lib/utils/createKey";
 import { useQuery } from "@tanstack/react-query";
-import { getEmployed } from "@/src/api/achievements";
+import { getData } from "@/src/api/achievements";
 
 const CounterComponent = () => {
   const t = useTranslations("Main.counter_section");
   // Функція запиту 
-  const employed = useQuery({ queryKey: ['employed'], queryFn: getEmployed });
+  const employed = useQuery({ queryKey: ['employed'], queryFn: getData });
 
   const data = [
     {

@@ -45,6 +45,11 @@ export const PartakerSchema = z
     .email({ message: 'incorrect_email' })
     .regex(patternEmail, { message: 'incorrect_email' })
     .refine(
+      (value) => value.split('@')[0].length > 1,
+      {
+        message: 'incorrect_email',
+      })
+    .refine(
       (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
       {
         message: 'invalid_ru',
@@ -54,7 +59,7 @@ export const PartakerSchema = z
     .trim()
     .min(1, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' })
-    .transform(value=>  formatPhoneNumber(value,true)),
+    .transform(value=>  formatPhoneNumber(value, true)),
 
     city: z.string()
     .trim()

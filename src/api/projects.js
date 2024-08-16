@@ -8,7 +8,6 @@ export async function  getAllProjects2({ page, search, limit }){
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
-	console.log(params.toString())
 
 	try {
 		const res = await instanceBaza2.get(`${projectsEndpoint}?${params.toString()}`)
@@ -23,7 +22,6 @@ export async function  getAllProjects({ page, search, limit }){
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
-	console.log(params.toString())
 
 	try {
 		const res = await instance.get(`${projectsEndpoint}?${params.toString()}`)
@@ -45,9 +43,10 @@ export async function  createNewProject(newProject){
 
 export async function  getProjectById(id){
 	try {
-		const res = await instance.get(`${projectsEndpoint}/${id}`)
+		const res = await instanceBaza2.get(`${projectsEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
+		console.log(error)
 		throw new Error(error?.response?.data?.message)
 	}
 }
@@ -63,10 +62,10 @@ export async function  deleteProjectById(id){
 
 export async function  updateProjectById(id, updProject){
 	try {
-		const res = await instanceBaza2.patch(`${projectsEndpoint}/${id}`, updProject, {
+		const res = await instanceBaza2.put(`${projectsEndpoint}/${id}`, updProject, {
 		  headers: { 'Content-Type': 'multipart/form-data' },
      })
-		return res.data
+		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
 	}
