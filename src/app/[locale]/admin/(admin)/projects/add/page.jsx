@@ -1,5 +1,9 @@
-import AddProjectLayout from "@/src/components/admin-page/Projects/AddProjectLayout/AddProjectLayout";
+import AddProject from "@/src/components/admin-page/Projects/AddProject/AddProject";
+import ProjectLayout from "@/src/components/admin-page/Projects/ProjectLayout/ProjectLayout";
 
-export default function addProjectPage({children}) {
-  return <AddProjectLayout title="Додати проєкт"/>
+export default function addProjectPage() {
+  return (
+  <ProjectLayout title="Додати проєкт">
+    <AddProject/>
+  </ProjectLayout>)
 };

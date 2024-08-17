@@ -1,5 +1,9 @@
-import EditProjectLayout from "@/src/components/admin-page/Projects/EditProjectLayout/EditProjectLayout";
+import EditProject from "@/src/components/admin-page/Projects/EditProject/EditProject";
+import ProjectLayout from "@/src/components/admin-page/Projects/ProjectLayout/ProjectLayout";
 
-export default function editProjectPage() {
-  return <EditProjectLayout/>
+export default function EditProjectPage() {
+  return (
+  <ProjectLayout title="Редагувати проєкт">
+    <EditProject/>
+  </ProjectLayout>)
 };

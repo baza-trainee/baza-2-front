@@ -1,124 +1,31 @@
-'use client';
+import styles from './ProjectForm.module.scss'
 import clsx from 'clsx'
-import styles from './DescriptionForm.module.scss'
-import { useEffect, useState } from 'react'
-import { useRouter } from '@/src/navigation';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ProjectDefaultValues, ProjectScheme } from './descriptionFormScheme';
-import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-import InputField from '@/src/components/shared/inputs/InputField/InputField'
+
+import { useProjectFormContext } from '../ProjectFormProvider/ProjectFormProvider'
+import { ProjectScheme } from '../ProjectFormProvider/projectFormScheme'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
+import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate'
-import ImagePreview from '../../../ImagePreview/ImagePreview'
+import Select from '../Select/Select'
+import InputComplexity from '../InputComplexity/InputComplexity'
+import ImagePreview from '../../ImagePreview/ImagePreview'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile'
-import InputComplexity from './InputComplexity/InputComplexity';
-import Select from './Select/Select';
-import { useFormData } from '../../FormContext';
 
-export default function DescriptionForm({
-  hendleMutate, 
-  isSuccess, 
-  data, 
-  submitBtnText= 'Додати'
-}) {
-  const router = useRouter();
+export default function ProjectForm( {submitBtnText}) {
 
-  const { updateFormData } = useFormData();
-
-  const handleNext = (data) => {
-    updateFormData(data);
-    //history.push('/review');
-  };
-
-  const[ prevUrl, setPrevUrl ] = useState(null)
-  const [ valueStateProject, setValueStateProject ] = useState('teamFormation');
-  const[ complexity, setComplexity ] = useState(0)
-
-  const {
+  const{ onSubmit, 
+    errors, 
+    isValid, 
+    control, 
     register,
-    handleSubmit,
-    formState: { errors, isValid, isError, isDirty },
-    reset,
-    setValue,
-    getValues,
-    watch,
     trigger,
-  } = useForm({ defaultValues: {...ProjectDefaultValues}, resolver: zodResolver(ProjectScheme), mode: 'onChange'});
-
-  const hendleSetValue =(value)=>{
-    setValueStateProject(value)
-    setValue('isTeamRequired', value)
-    trigger("launchDate")
-  }
-
-  const resetForm = () => {
-    router.replace('/admin/projects')
-    reset();
-  }
-
-  // useEffect(()=>{
-  //   if(isSuccess){
-  //     reset();
-  //   }
-  // },[isSuccess])
-
-
-  const getStatusName=(isTeamRequired, launchDate)=>{
-    if(isTeamRequired){ return 'teamFormation' }
-    if(launchDate){ return 'done' }
-    return 'inDevelopment'
-  }
-
-  useEffect(()=>{
-    if(Object.keys(data).length){
-      const{title, imageUrl,file, isTeamRequired, creationDate, launchDate,   complexity, deployUrl} = data
-      setValue('title_ua',title.ua )
-      setValue('title_en',title.en )
-      setValue('title_pl',title.pl )
-      if(imageUrl){setPrevUrl(imageUrl)}
-      if(file){
-        setValue('file',file )
-        setPrevUrl(URL.createObjectURL(file))
-      }
-
-      setValue('isTeamRequired',  getStatusName(isTeamRequired, launchDate))
-      setValue('deployUrl', deployUrl)
-      setValueStateProject(getStatusName(isTeamRequired, launchDate))
-      setValue('creationDate',formatDateToNumericInputDate({timestamp:creationDate}))
-      setValue('launchDate',launchDate ? formatDateToNumericInputDate({timestamp:launchDate}):'')
-
-      setComplexity(complexity)
-      setValue('file', '')
-      trigger('isTeamRequired')
-    }else {
-      setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
-    }
-    
-  },[data])
-
-  const onSubmit = (data) => {
-    const newData = {
-      title:{
-        en: data.title_en,
-        pl: data.title_pl,
-        ua: data.title_ua,
-      },
-      
-      isTeamRequired: data.isTeamRequired === 'teamFormation',
-      creationDate: data.creationDate,
-      complexity: complexity,
-    }
-    if(data.file){newData.file = data.file}
-    if(data.deployUrl){ newData.deployUrl = data.deployUrl }
-
-    if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
-
-    if(data.teamMembers){ newData.teamMembers = data.teamMembers }
-    handleNext(newData)
-   // console.log(newData)
-   // hendleMutate(newData)
-  };
+    setValue,
+    getValues, 
+    isError,
+    isDirty,
+    prevUrl, 
+    setPrevUrl, 
+    resetForm} = useProjectFormContext()
 
   const isDisabled = () => {
     if (isError) {
@@ -143,12 +50,13 @@ export default function DescriptionForm({
   }
 
   return(
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={onSubmit} autoComplete='of'>
 
       <ul className={styles.list}>
         <li className={clsx(styles.list_item)}>
-          <InputField
+         <InputField
             id={"title_ua"}
+            control={control}
             maxLength={100}
             className={styles.item}
             required={false}
@@ -165,6 +73,7 @@ export default function DescriptionForm({
         <li className={clsx(styles.list_item)}>
           <InputField
             id={"title_en"}
+            control={control}
             maxLength={100}
             className={styles.item}
             required={false}
@@ -180,6 +89,7 @@ export default function DescriptionForm({
         <li className={clsx(styles.list_item)}>
           <InputField
             id={"title_pl"}
+            control={control}
             maxLength={100}
             className={styles.item}
             required={false}
@@ -190,13 +100,14 @@ export default function DescriptionForm({
             version={"input_admin"}
             locale={'pl'}
           />
-        </li>
+        </li> 
       </ul>
 
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <InputDate
             id={"creationDate"}
+            control={control}
             className={styles.item}
             required={false}
             registerOptions={register("creationDate", { ...ProjectScheme.creationDate})}
@@ -211,6 +122,7 @@ export default function DescriptionForm({
             id={"launchDate"}
             disabled={isDoneProject()}
             className={styles.item}
+            control={control}
             required={false}
             registerOptions={register("launchDate", { ...ProjectScheme.launchDate})}
             isError={errors.launchDate}
@@ -219,7 +131,6 @@ export default function DescriptionForm({
           />
         </li> 
       </ul>
-
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <Select
@@ -227,10 +138,10 @@ export default function DescriptionForm({
             placeholder={'Оберіть стан'}
             className={styles.item}
             required={false}
-            value={valueStateProject}
-
-            registerOptions={register("isTeamRequired", { ...ProjectScheme.isTeamRequired})}
-            setValueStateProject={hendleSetValue}
+            control={control}
+            value={getValues("isTeamRequired")}
+            setValueStateProject={setValue}
+            target={trigger}
             isValid={isValid}
             isError={errors.isTeamRequired}
             label={'Стан'}
@@ -239,22 +150,23 @@ export default function DescriptionForm({
 
         <li className={ styles.list_item }>
           <InputComplexity
-            id={"complexity"}
             className={styles.item}
+            //control={control}
             required={false}
-            value={complexity}
-            setValue={setComplexity}
+            value={getValues("complexity")}
+            registerOptions={register("complexity", { ...ProjectScheme.complexity})}
+            setValue={setValue}
             isValid={isValid}
             label={'Складність проєкту'}
           />
         </li> 
       </ul>
-
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <InputField
             id={"deployUrl"}
             className={styles.item}
+            control={control}
             required={false}
             placeholder={"Введіть адресу"}
             registerOptions={register("deployUrl", { ...ProjectScheme.deployUrl })}
@@ -268,6 +180,7 @@ export default function DescriptionForm({
         <li className={clsx(styles.list_item )}>
           <InputFile
             id={"file"}
+            control={control}
             className={styles.item}
             type={'file'}
             getPrevImgUrl={ setPrevUrl }
@@ -275,6 +188,7 @@ export default function DescriptionForm({
             accept="image/*"
             placeholder={"Завантажте зображення"}
             registerOptions={register("file", { ...ProjectScheme.file })}
+            defaultValue={getValues("file")}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
@@ -285,8 +199,8 @@ export default function DescriptionForm({
         <li className={ clsx(styles.list_item,styles.item_prev )}>
           <ImagePreview imageUrl={prevUrl} variant='project'/>
         </li>
-      </ul>
-      
+      </ul>  
+
       <div className={styles.btns}>
         <MainButton
           type="submit"
