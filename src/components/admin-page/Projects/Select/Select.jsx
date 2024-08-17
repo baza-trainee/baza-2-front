@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import styles from './Select.module.scss'
-import { Icon } from '../../../../../shared/Icon/Icon'
+import { Icon } from '../../../shared/Icon/Icon'
 import { useEffect, useRef, useState } from 'react';
 import { names, options } from './options';
 import { createKey } from '@/src/lib/utils/createKey';
@@ -13,18 +13,19 @@ export default function Select({
   isError,
   className,
   required,
+  control,
+  target,
   value,
-  //useDefaultValue,
   registerOptions = {},
   setValueStateProject=()=>{},
   ...props
 }) {
   const [ isOpen, setIsOpen ] = useState(true);
-
+//console.log(control)
   const menuRef = useRef(null);
   const submenuRef = useRef(null);
 
- // const [ valueOption, setValueOption ] = useState(value);
+  const [ valueOption, setValueOption ] = useState(value);
 
   const handleOutsideClick = (event) => {
     if (
@@ -39,7 +40,9 @@ export default function Select({
   };
 
   const hendleSetValue=(el)=>{
-    setValueStateProject(el.id)
+    setValueOption(el.id)
+    setValueStateProject("isTeamRequired",el.id)
+    target("isTeamRequired")
     setIsOpen(true)
   }
   const getName=(value)=>{
@@ -52,7 +55,7 @@ export default function Select({
   }, [isOpen]);
 
   return(
-    <div className={clsx(styles.input_select, className)} ref={menuRef} >
+    <div className={clsx(styles.input_select, className)} ref={menuRef}{ ...props}>
       <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
         {label?label:'label title'} {required && <span>*</span>}
       </label>
@@ -62,21 +65,22 @@ export default function Select({
           isError &&  styles._error,
           isValid && styles._success
         )} >
+          
         <input
           id={id}
           readOnly
-          value={value}
-          
+          value={valueOption}
+
           // className={clsx(
           //   styles.input,
           //   isError && styles._error,
           //   isValid && styles._success
           // )}
           {...registerOptions}
-          placeholder={placeholder}
+          //placeholder={placeholder}
            {...props}
         />
-          {getName(value)}
+          {valueOption ? getName(valueOption): placeholder}
         </label>
         
         <button type='button' className={styles.icon}>
@@ -91,7 +95,7 @@ export default function Select({
           {options.map((el)=>{
             return (
               <li key={createKey()} 
-              className={clsx(value == el.id && styles._active)}
+              className={clsx(valueOption == el.id && styles._active)}
               onClick={()=>{
                 hendleSetValue(el)
               }}>{el.name}</li>

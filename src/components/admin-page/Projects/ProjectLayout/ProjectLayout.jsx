@@ -1,18 +1,9 @@
-'use client';
-import switchTabProject from '@/src/state/switchTabProject';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
-import Description from '../Description/Description'
-import { FormProvider } from '../FormContext';
 
-export default function AddProjectLayout() {
-  const tabName = switchTabProject(state => state.tabName);
-
+export default function ProjectLayout({title, children}) {
  return( 
-    <SectionAdmin title={'Додати проєкт'} nav={true}>
-      <FormProvider>
-        {tabName=='description'&& <Description/>}
-        {tabName=='team'&& <p>team</p>}
-      </FormProvider>
+    <SectionAdmin title={title} nav={true}>
+      {children}
     </SectionAdmin>
   )
 }

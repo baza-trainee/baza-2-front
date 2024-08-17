@@ -1,8 +1,8 @@
 'use client';
 
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { createNewProject, getProjectById, updateProjectById } from "@/src/api/projects";
-import DescriptionForm from "./DescriptionForm/DescriptionForm";
+import { getProjectById, updateProjectById } from "@/src/api/projects";
+//import DescriptionForm from "./DescriptionForm/DescriptionForm";
 import { useRouter } from "@/src/navigation";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import Loader from "@/src/components/shared/loader/Loader";
@@ -10,11 +10,15 @@ import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 import { useCallback, useState } from "react";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import { useParams } from "next/navigation";
+import ProjectForm from "../ProjectForm/ProjectForm";
+import switchTabProject from "@/src/state/switchTabProject";
+import { ProjectFormProvider } from "../ProjectFormProvider/ProjectFormProvider";
 
 
-export default function EditDescription() {
+export default function EditProject() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
+  const tabName = switchTabProject(state => state.tabName);
   const[ modalOpen, setModalOpen ] = useState(false);
   const {id}= useParams()
 
@@ -27,7 +31,7 @@ export default function EditDescription() {
  
   const getProject = useQuery({ queryKey: ['project', id], 
     queryFn:()=>{return getProjectById(id)}});
-console.log(getProject.data)
+//console.log(getProject.data)
 
 
   const { mutate, isPending, error, reset } = useMutation({
@@ -50,13 +54,15 @@ console.log(getProject.data)
 
 
   return (
-    <>
-      <DescriptionForm hendleMutate={mutate} submitBtnText="Зберегти зміни" data={getProject.data}/>
+    <ProjectFormProvider hendleMutate={mutate} data={getProject.data}>
+
+      {tabName=='description' && <ProjectForm submitBtnText="Зберегти зміни"/>}
+      {tabName=='team'&& <p>team</p>}
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Проєкт успішно оновлено'} btn={true}></AdminModal>
+      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Проєкт успішно додано'} btn={true}></AdminModal>
       <UseAlert text={error && error?.message}/>
-    </>
+    </ProjectFormProvider>
   )
 }

@@ -10,8 +10,8 @@ export const ProjectDefaultValues = {
   title_pl: "",
   creationDate: "",
   launchDate: '',
-  isTeamRequired: 'teamFormation',
-  //complexity: 0,
+  isTeamRequired: '',
+  complexity: 0,
   deployUrl:"",
   file: null,
   //teamMembers:[]
@@ -96,6 +96,8 @@ export const ProjectScheme = z
     isTeamRequired:z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"}),
+    
+    complexity:z.number(),
 
     deployUrl:z.string()
     .trim().optional(),
