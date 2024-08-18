@@ -35,19 +35,10 @@ export async function  getAllMembers({ page, search, limit }){
 		throw new Error(error?.response?.data?.message)
 	}
 }
-// Example Value Schema
-// {
-//   "name": {
-//     "en": "John Doe",
-//     "pl": "Jan Kowalski",
-//     "ua": "Іван Петрович"
-//   },
-//   "profileUrl": "https://www.linkedin.com/in/johndoe"
-// }
+
 export async function  createNewMember(newMember){
 	try {
-		const res = await instanceBaza2.post(membersEndpoint, newMember, {
-			headers: { 'Content-Type': 'multipart/form-data' }})
+		const res = await instanceBaza2.post(membersEndpoint, newMember)
 		return res
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -74,9 +65,7 @@ export async function  deleteMemberById(id){
 
 export async function  updateMemberById(id, updMember){
 	try {
-		const res = await instanceBaza2.patch(`${membersEndpoint}/${id}`, updMember, {
-		  headers: { 'Content-Type': 'multipart/form-data' },
-     })
+		const res = await instanceBaza2.patch(`${membersEndpoint}/${id}`, updMember)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
