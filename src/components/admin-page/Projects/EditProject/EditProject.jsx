@@ -61,7 +61,7 @@ export default function EditProject() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Проєкт успішно додано'} btn={true}></AdminModal>
+      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно змінено'} btn={true}></AdminModal>
       <UseAlert text={error && error?.message}/>
     </ProjectFormProvider>
   )

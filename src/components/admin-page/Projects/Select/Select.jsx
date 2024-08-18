@@ -42,7 +42,8 @@ export default function Select({
   const hendleSetValue=(el)=>{
     setValueOption(el.id)
     setValueStateProject("isTeamRequired",el.id)
-    target("isTeamRequired")
+    //target("isTeamRequired")
+    target("launchDate")
     setIsOpen(true)
   }
   const getName=(value)=>{
