@@ -134,15 +134,15 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
       isTeamRequired: data.isTeamRequired === 'teamFormation',
       creationDate: data.creationDate,
       complexity: data.complexity,
+      deployUrl:data.deployUrl ? data.deployUrl : undefined
     }
     if(data.file){newData.file = data.file}
-    if(data.deployUrl){ newData.deployUrl = data.deployUrl }
 
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
     if(teamMemberData){ newData.teamMembers = teamMemberData }
 
-    console.log(newData)
+  
    hendleMutate(newData)
    //return newData
   };

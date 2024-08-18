@@ -17,9 +17,11 @@
 //     "totalResults": 0
 //   }
 
+import instance from "./config/instance";
 import instanceBaza2 from "./config/instance-baza2";
 
-// }
+const membersEndpoint = '/members'
+
 export async function  getAllMembers({ page, search, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
@@ -27,7 +29,7 @@ export async function  getAllMembers({ page, search, limit }){
 	if (limit) params.append('limit', limit.toString());
 
 	try {
-		const res = await instanceBaza2.get(`/members?${params.toString()}`)
+		const res = await instanceBaza2.get(`${membersEndpoint}?${params.toString()}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -44,7 +46,7 @@ export async function  getAllMembers({ page, search, limit }){
 // }
 export async function  createNewMember(newMember){
 	try {
-		const res = await instanceBaza2.post(`/members`, newMember, {
+		const res = await instanceBaza2.post(membersEndpoint, newMember, {
 			headers: { 'Content-Type': 'multipart/form-data' }})
 		return res
 	} catch (error) {
@@ -54,7 +56,7 @@ export async function  createNewMember(newMember){
 
 export async function  getMemberById(id){
 	try {
-		const res = await instanceBaza2.get(`/members/${id}`)
+		const res = await instanceBaza2.get(`${membersEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -63,7 +65,7 @@ export async function  getMemberById(id){
 
 export async function  deleteMemberById(id){
 	try {
-		const res = await instanceBaza2.delete(`/members/${id}`)
+		const res = await instanceBaza2.delete(`${membersEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
 		throw new Error(error?.response?.data?.message)
@@ -72,7 +74,7 @@ export async function  deleteMemberById(id){
 
 export async function  updateMemberById(id, updMember){
 	try {
-		const res = await instanceBaza2.patch(`/members/${id}`, updMember, {
+		const res = await instanceBaza2.patch(`${membersEndpoint}/${id}`, updMember, {
 		  headers: { 'Content-Type': 'multipart/form-data' },
      })
 		return res.data

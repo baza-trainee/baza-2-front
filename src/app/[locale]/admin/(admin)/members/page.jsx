@@ -1,4 +1,5 @@
+import Members from "@/src/components/admin-page/Members/Members";
+
 export default function membersPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: membersPage</h2></div>
+  return <Members/>
 };

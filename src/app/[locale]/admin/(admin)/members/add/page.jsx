@@ -1,4 +1,5 @@
+import AddMember from "@/src/components/admin-page/Members/AddMember/AddMember";
+
 export default function addMemberPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: addMemberPage</h2></div>
+  return <AddMember/>
 };

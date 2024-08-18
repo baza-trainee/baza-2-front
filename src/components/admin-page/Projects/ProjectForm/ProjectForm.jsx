@@ -42,6 +42,8 @@ export default function ProjectForm( {submitBtnText}) {
 
   const isDoneProject=()=>{
     if(getValues("isTeamRequired") === 'done'){
+      //setValue("launchDate",'')
+      //trigger("launchDate")
       return false
     }else{ 
       setValue("launchDate",'')
@@ -188,7 +190,6 @@ export default function ProjectForm( {submitBtnText}) {
             accept="image/*"
             placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
             registerOptions={register("file", { ...ProjectScheme.file })}
-            //defaultValue={getValues("file")}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
