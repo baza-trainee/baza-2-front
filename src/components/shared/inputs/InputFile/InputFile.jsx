@@ -17,7 +17,6 @@ export default function InputFile({
   required=true,
   disabled=false,
   options = {},
-  defaultValue,
   getPrevImgUrl=()=>{},
   ...props
 }) {

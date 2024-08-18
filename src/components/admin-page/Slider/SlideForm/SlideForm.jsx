@@ -113,7 +113,7 @@ export default function SlideForm({
             getPrevImgUrl={ setPrevUrl }
             required={false}
             accept="image/*"
-            placeholder={"Завантажте зображення"}
+            placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
             registerOptions={register("file", { ...SliderScheme.file })}
             isDirty={isDirty}
             isError={errors.file}

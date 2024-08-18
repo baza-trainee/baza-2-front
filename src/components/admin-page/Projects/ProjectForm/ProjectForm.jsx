@@ -186,9 +186,9 @@ export default function ProjectForm( {submitBtnText}) {
             getPrevImgUrl={ setPrevUrl }
             required={false}
             accept="image/*"
-            placeholder={"Завантажте зображення"}
+            placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
             registerOptions={register("file", { ...ProjectScheme.file })}
-            defaultValue={getValues("file")}
+            //defaultValue={getValues("file")}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
