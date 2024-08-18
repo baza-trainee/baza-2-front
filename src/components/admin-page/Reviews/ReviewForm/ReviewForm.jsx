@@ -211,7 +211,7 @@ export default function ReviewForm({
             getPrevImgUrl={ setPrevUrl }
             required={false}
             accept="image/*"
-            placeholder={"Завантажте фото"}
+            placeholder={ prevUrl ? prevUrl: "Завантажте фото"}
             registerOptions={register("file", { ...ReviewScheme.file })}
             onClick={()=>{setTooltip(null)}}
             isDirty={isDirty}
