@@ -1,23 +1,3 @@
-//import instance from './config/instance';
-// Example Value Schema
-// {
-//   "results": [
-//     {
-//       "name": {
-//         "en": "John Doe",
-//         "pl": "Jan Kowalski",
-//         "ua": "Іван Петрович"
-//       },
-//       "profileUrl": "https://www.linkedin.com/in/johndoe"
-//     }
-//   ],
-//   "pagination": {
-//     "currentPage": 0,
-//     "totalPages": 0,
-//     "totalResults": 0
-//   }
-
-import instance from "./config/instance";
 import instanceBaza2 from "./config/instance-baza2";
 
 const membersEndpoint = '/members'
