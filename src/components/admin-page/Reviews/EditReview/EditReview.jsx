@@ -26,7 +26,7 @@ export default function EditReview() {
   const reviewById = useQuery({ queryKey: ['review', id], 
     queryFn:()=>{return getReviewById(id)}, keepPreviousData: true });
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
 
     mutationFn:(data) => {
       return updateReviewById(id, data)
@@ -39,12 +39,12 @@ export default function EditReview() {
   
   return (
     <SectionAdmin title={'Редагувати відгук'}>
-      <ReviewForm hendleMutate={mutate} isSuccess={isSuccess} data={reviewById.data} submitBtnText='Зберегти зміни'/>
+      <ReviewForm hendleMutate={mutate} data={reviewById.data} submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

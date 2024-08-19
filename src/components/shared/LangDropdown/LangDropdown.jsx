@@ -8,7 +8,7 @@ import { Icon } from "../Icon/Icon";
 import clsx from "clsx";
 import switchLocaleAdmin from "@/src/state/switchLocaleAdmin";
 
-export default function LangDropdown(type) {
+export default function LangDropdown({type}) {
   const router = useRouter();
   const path = usePathname();
   const locale = useLocale();

@@ -9,7 +9,7 @@ import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
-export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Додати', prevImg}) {
+export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtnText= 'Додати', prevImg}) {
   const router = useRouter();
   const {
     register,
@@ -23,12 +23,6 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
     router.replace('/admin/partners')
     reset();
   }
-
-  useEffect(()=>{
-    if(isSuccess){
-      reset();
-    }
-  },[isSuccess])
 
   useEffect(()=>{
     if(data){

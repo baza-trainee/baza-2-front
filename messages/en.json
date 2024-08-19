@@ -341,6 +341,7 @@
 			"incorrect_city": "Enter the correct city name",
 			"experience": "Choose the availability of experience",
 			"motivation": "State your motivation",
+			"motivation_min": "The text must be at least 5 characters",
 			"motivation_max": "The text should not exceed 50 characters",
 			"incorrect_motivation": "Enter the correct text",
 			"saw_questionnaire": "Choose where you saw the questionnaire",

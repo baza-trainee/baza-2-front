@@ -17,7 +17,6 @@ import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function ReviewForm({
   hendleMutate, 
-  isSuccess, 
   data, 
   submitBtnText= 'Додати'
 }) {
@@ -42,12 +41,6 @@ export default function ReviewForm({
     router.replace('/admin/reviews')
     reset();
   }
-
-  useEffect(()=>{
-    if(isSuccess){
-      reset();
-    }
-  },[isSuccess])
 
   useEffect(()=>{
     if(data){
