@@ -3,15 +3,15 @@ import { useCallback, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { getRoleById, updateRoleById } from '@/src/api/roles';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin';
 import Loader from '@/src/components/shared/loader/Loader';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
-import MemberForm from '../MemberForm/MemberForm';
-import { getMemberById, updateMemberById } from '@/src/api/members';
+import SpecializationForm from '../SpecializationForm/SpecializationForm';
 
-export default function EditMember() {
+export default function EditSpecialization() {
   const router = useRouter();
   const {id}= useParams()
   const open = stateUseAlert(state => state.open);
@@ -19,15 +19,15 @@ export default function EditMember() {
   
   const closeModal = useCallback(()=>{
     setmodalOpen(false)
-    router.replace('/admin/members')
+    router.replace('/admin/specialization')
   })
 
-  const memberById = useQuery({ queryKey: ['member', id], 
-    queryFn:()=>{return getMemberById(id)}, keepPreviousData: true });
+  const roleById = useQuery({ queryKey: ['specialization', id], 
+    queryFn:()=>{return getRoleById(id)}, keepPreviousData: true });
 
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn:(data) => {
-      return updateMemberById(id, data)
+      return updateRoleById(id, data)
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{
@@ -35,8 +35,8 @@ export default function EditMember() {
     }})
 
   return (
-    <SectionAdmin title={'Редагувати учасника'}>
-      <MemberForm hendleMutate={mutate} isSuccess={isSuccess} data={memberById.data} submitBtnText='Зберегти зміни'/>
+    <SectionAdmin title={'Редагувати спеціалізацію'}>
+      <SpecializationForm hendleMutate={mutate} isSuccess={isSuccess} data={roleById.data} submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 

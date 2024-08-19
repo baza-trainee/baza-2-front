@@ -20,7 +20,7 @@ export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, n
         <h1>{title}</h1>
         <div className={clsx(styles.options)}>
           {hendleSearch && <InputSearch onSubmit={hendleSearch} defaultValue={defaultValue} className={styles.inputSearch}/>}
-          {lang && <LangDropdown/>}
+          {lang && <LangDropdown type='admin'/>}
         </div>
       </div>
       {nav && <div className={styles.nav}>

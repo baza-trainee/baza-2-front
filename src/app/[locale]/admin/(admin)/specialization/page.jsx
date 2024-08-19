@@ -1,4 +1,5 @@
+import Specialization from "@/src/components/admin-page/Specialization/Specialization";
+
 export default function specializationtPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: editProjectPage</h2></div>
+  return <Specialization/>
 };

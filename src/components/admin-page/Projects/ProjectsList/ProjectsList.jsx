@@ -11,10 +11,13 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
 import Pagination from '../../Pagination/Pagination'
+import switchLocaleAdmin from '@/src/state/switchLocaleAdmin'
 
 
 export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
+  // Мова сторінки.
+  const locale = switchLocaleAdmin(state => state.localeAdmin);
   const[ idPartner, setIdPartner ] = useState(null)
 
   const editProjectPath = '/admin/projects/edit'
@@ -34,7 +37,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
         return <li key={createKey()} className={styles.item}>
           <ProjectCard 
             project={el}
-            coverImgUrl={createImageUrl(el.imageUrl)} />
+            coverImgUrl={createImageUrl(el.imageUrl)} locale={locale}/>
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 

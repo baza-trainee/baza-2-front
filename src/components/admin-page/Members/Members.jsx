@@ -34,7 +34,6 @@ export default function Members() {
 
  return( 
     <SectionAdmin title={'Учасники'} hendleSearch={setSearch} lang={true}>
-
       <div className={styles.wrapper}>
         <h2>Прізвище та Ім’я</h2>
         <MainButton  variant='admin' className={styles.btn} onClick={()=>{
@@ -44,7 +43,6 @@ export default function Members() {
           {'Додати'}</MainButton >
       </div>
 
-      
       {isError ?
         <>
           <p className={styles.error}>Помилка завантаження контенту.</p>
