@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 //import useSWR from 'swr';
 //import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { date } from 'zod';
+
 import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
@@ -39,7 +39,11 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ teamMemberData, setTeamMemberData ] = useState([]);
-
+  const emptyLngs={
+    ua:'',
+    en:'',
+    pl:''
+  }
   const addTeamMember = (newMember) => {
     const updatedTeamMembers = [
       ...teamMemberData,

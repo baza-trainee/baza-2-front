@@ -1,0 +1,27 @@
+@use "../../../../styles/mixins" as mix;
+@use "../../../../styles/variables" as var;
+
+.wrapper{
+  width: 100%;
+  //display: flex;
+  // flex: 2,1,1;
+  // align-items: center;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr 160px;
+  align-items: center;
+  gap: 10px;
+
+  background: #581946;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 6px 12px;
+  @include mix.apply-font-styles(var.$text-20-font);
+}
+.btn{
+  min-height: 55px;
+  min-width: 150px;
+  font-weight: 600;
+  font-size: 18px;
+  gap: 5px;
+}
