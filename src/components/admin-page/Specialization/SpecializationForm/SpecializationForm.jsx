@@ -1,16 +1,16 @@
 'use client';
-import styles from './MemberForm.module.scss'
+import styles from './SpecializationForm.module.scss'
+import clsx from 'clsx';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { memberDefaultValues, MemberScheme } from './memberFormScheme';
+import { roleDefaultValues, RoleScheme } from './SpecializationFormScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 
-export default function MemberForm({
+export default function SpecializationForm({
   hendleMutate, 
-  isSuccess, 
   data, 
   submitBtnText= 'Додати'
 }) {
@@ -22,26 +22,19 @@ export default function MemberForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...memberDefaultValues}, resolver: zodResolver(MemberScheme), mode: 'onChange'});
+  } = useForm({ defaultValues: {...roleDefaultValues}, resolver: zodResolver(RoleScheme), mode: 'onChange'});
 
   const resetForm = () => {
-    router.replace('/admin/members')
+    router.replace('/admin/specialization')
     reset();
   }
 
   useEffect(()=>{
-    if(isSuccess){
-      reset();
-    }
-  },[isSuccess])
-
-  useEffect(()=>{
     if(data){
-      const{ name, profileUrl} = data
+      const{ name } = data
       setValue('name_ua',name.ua )
       setValue('name_en',name.en )
       setValue('name_pl',name.pl )
-      setValue('profileUrl',profileUrl )
     }
   },[data])
 
@@ -52,7 +45,6 @@ export default function MemberForm({
         pl: data.name_pl,
         ua: data.name_ua,
       },
-      profileUrl: data.profileUrl,
     }
     hendleMutate(newData)
   };
@@ -79,12 +71,12 @@ export default function MemberForm({
             maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Ім’я та Прізвище"}
-            registerOptions={register("name_ua", { ...MemberScheme.name_ua })}
+            placeholder={"Назва спеціалізації"}
+            registerOptions={register("name_ua", { ...RoleScheme.name_ua })}
             isError={errors.name_ua}
             isValid={isValid}
             version={"input_admin"}
-            label={'Учасник'}
+            label={'Спеціалізація'}
             locale={'ua'}
           />
         </li>
@@ -95,8 +87,8 @@ export default function MemberForm({
             maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Ім’я та Прізвище"}
-            registerOptions={register("name_en", { ...MemberScheme.name_en })}
+            placeholder={"Назва спеціалізації"}
+            registerOptions={register("name_en", { ...RoleScheme.name_en })}
             isError={errors.name_en}
             isValid={isValid}
             version={"input_admin"}
@@ -110,29 +102,14 @@ export default function MemberForm({
             maxLength={100}
             className={styles.item}
             required={false}
-            placeholder={"Ім’я та Прізвище"}
-            registerOptions={register("name_pl", { ...MemberScheme.name_pl})}
+            placeholder={"Назва спеціалізації"}
+            registerOptions={register("name_pl", { ...RoleScheme.name_pl})}
             isError={errors.name_pl}
             isValid={isValid}
             version={"input_admin"}
             locale={'pl'}
           />
         </li> 
-
-        <li className={styles.list_item}>
-          <InputField
-            id={"profileUrl"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Додайте посилання"}
-            registerOptions={register("profileUrl", { ...MemberScheme.profileUrl})}
-            isError={errors.profileUrl}
-            isValid={isValid}
-            version={"input_admin"}
-            label={'Linkedin'}
-          />
-        </li>
       </ul>
 
       <div className={styles.btns}>

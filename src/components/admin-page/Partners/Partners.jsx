@@ -31,7 +31,7 @@ export default function Partners() {
     }})
 
   return(
-    <SectionAdmin title={'Партнери'} hendleSearch={setSearch} lang={true} defaultValue={search}>
+    <SectionAdmin title={'Партнери'} hendleSearch={setSearch} defaultValue={search}>
       <MainButton  variant='admin' className={styles.btn} onClick={()=>{
         router.push(addPartnerPath)
       }}>

@@ -1,15 +1,22 @@
-//import { bazaAPI } from './config';
-
+import instance from "./config/instance";
 import instanceBaza2 from "./config/instance-baza2";
 
-// import { TMemberRoleReq, TMemberRoleResp } from '@/types/projectsTypes';
-// import { TResponseRoles } from '@/types/typesAPI';
-
 const rolesEndpoint = '/roles';
+// {
+//   "name": {
+//     "en": "Developer",
+//     "pl": "Programista",
+//     "ua": "Розробник"
+//   }
+// }
 
+export async function getAllRoles({ page, search, limit }) {
+	const params = new URLSearchParams();
+	if (page) params.append('page', page.toString());
+	if (search) params.append('search', search);
+	if (limit) params.append('limit', limit.toString());
 
-export async function getAllRoles() {
-  const res = await instanceBaza2.get()
+  const res = await instanceBaza2.get(`${rolesEndpoint}?${params.toString()}`)
   return res.data
 }
 

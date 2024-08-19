@@ -5,9 +5,9 @@ import clsx from "clsx";
 import { useParams } from "next/navigation";
 import { formatDate } from "@/src/lib/utils/formatData";
 
-const FeedbackCard = ({ imageUrl, name, role, date, review, className }) => {
+const FeedbackCard = ({ imageUrl, name, role, date, review, className, locale}) => {
  // Мова сторінки.
- const { locale } = useParams();
+ //const { locale } = useParams();
 
   return (
     <div className={clsx(styles.card, className)}>

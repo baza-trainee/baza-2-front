@@ -1,4 +1,4 @@
-import styles from './MembersList.module.scss'
+import styles from './SpecializationList.module.scss'
 import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
@@ -7,22 +7,22 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 
-export default function MembersList({data, hendleRemove}) {
+export default function SpecializationList({data, hendleRemove}) {
   const router = useRouter();
   // Мова сторінки.
   const locale = switchLocaleAdmin(state => state.localeAdmin);
   // Шляхи сторінок
-  const editMemberPath = '/admin/members/edit'
+  const editRolePath = '/admin/specialization/edit'
  
-  const[ idMember, setIdIdMember] = useState(null)
+  const[ idRole, setIdIdRole] = useState(null)
 
   const closeModal=()=>{
-    setIdIdMember(null)
+    setIdIdRole(null)
   }
 
   const okRemove=()=>{
-    hendleRemove(idMember)
-    setIdIdMember(null)
+    hendleRemove( idRole)
+    setIdIdRole(null)
   }
 
   return(
@@ -34,11 +34,11 @@ export default function MembersList({data, hendleRemove}) {
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 
-                onClick={()=>{router.push(`${editMemberPath}/${el._id}`)}}>
+                onClick={()=>{router.push(`${editRolePath}/${el._id}`)}}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
-              <MainButton variant='admin' onClick={()=>{setIdIdMember(el._id)}} className={styles.btn}>
+              <MainButton variant='admin' onClick={()=>{setIdIdRole(el._id)}} className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>
@@ -47,11 +47,11 @@ export default function MembersList({data, hendleRemove}) {
         </ul> : 
         <>
           <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-          <p className={styles.length}>Додайте учасника.</p>
+          <p className={styles.length}>Додайте спеціалізацію.</p>
         </>
       }
 
-      <AdminModal isOpen={idMember} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
+      <AdminModal isOpen={ idRole} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити спеціалізацію?'} btnBlok={true}></AdminModal>
     </>
   )
 }
