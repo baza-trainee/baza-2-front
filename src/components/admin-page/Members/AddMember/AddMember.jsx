@@ -20,7 +20,7 @@ export default function AddMember() {
     router.replace('/admin/members')
   })
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return createNewMember(data)
 
@@ -33,13 +33,13 @@ export default function AddMember() {
 
  return( 
     <SectionAdmin title={'Додати учасника'}>
-      <MemberForm hendleMutate={mutate} isSuccess={isSuccess}/>
+      <MemberForm hendleMutate={mutate}/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Учасника успішно додано'} btn={true}></AdminModal>
 
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

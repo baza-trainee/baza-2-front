@@ -25,7 +25,7 @@ export default function EditSpecialization() {
   const roleById = useQuery({ queryKey: ['specialization', id], 
     queryFn:()=>{return getRoleById(id)}, keepPreviousData: true });
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return updateRoleById(id, data)
     },onSuccess: () => {
@@ -36,12 +36,12 @@ export default function EditSpecialization() {
 
   return (
     <SectionAdmin title={'Редагувати спеціалізацію'}>
-      <SpecializationForm hendleMutate={mutate} isSuccess={isSuccess} data={roleById.data} submitBtnText='Зберегти зміни'/>
+      <SpecializationForm hendleMutate={mutate} data={roleById.data} submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

@@ -21,7 +21,7 @@ export default function AddReview() {
     router.replace('/admin/reviews')
   })
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error} = useMutation({
     mutationFn:(data) => {
       return createNewReview(data)
 
@@ -34,13 +34,13 @@ export default function AddReview() {
 
  return( 
     <SectionAdmin title={'Додати відгук'} lang={true}>
-      <ReviewForm hendleMutate={mutate} isSuccess={isSuccess}/>
+      <ReviewForm hendleMutate={mutate}/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Відгук успішно додано'} btn={true}></AdminModal>
 
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

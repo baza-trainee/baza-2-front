@@ -25,7 +25,7 @@ export default function EditMember() {
   const memberById = useQuery({ queryKey: ['member', id], 
     queryFn:()=>{return getMemberById(id)}, keepPreviousData: true });
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return updateMemberById(id, data)
     },onSuccess: () => {
@@ -36,12 +36,12 @@ export default function EditMember() {
 
   return (
     <SectionAdmin title={'Редагувати учасника'}>
-      <MemberForm hendleMutate={mutate} isSuccess={isSuccess} data={memberById.data} submitBtnText='Зберегти зміни'/>
+      <MemberForm hendleMutate={mutate} data={memberById.data} submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

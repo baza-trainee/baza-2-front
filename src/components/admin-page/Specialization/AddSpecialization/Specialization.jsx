@@ -20,7 +20,7 @@ export default function AddSpecialization() {
     router.replace('/admin/specialization')
   })
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return createNewRole(data)
     },onSuccess: () => {
@@ -29,15 +29,15 @@ export default function AddSpecialization() {
       open('error', false)
     }})
 
- return( 
+  return( 
     <SectionAdmin title={'Додати спеціалізацію'}>
-      <SpecializationForm hendleMutate={mutate} isSuccess={isSuccess}/>
+      <SpecializationForm hendleMutate={mutate}/>
 
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Спеціалізацію успішно додано'} btn={true}></AdminModal>
 
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

@@ -10,7 +10,6 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 
 export default function MemberForm({
   hendleMutate, 
-  isSuccess, 
   data, 
   submitBtnText= 'Додати'
 }) {
@@ -28,12 +27,6 @@ export default function MemberForm({
     router.replace('/admin/members')
     reset();
   }
-
-  useEffect(()=>{
-    if(isSuccess){
-      reset();
-    }
-  },[isSuccess])
 
   useEffect(()=>{
     if(data){

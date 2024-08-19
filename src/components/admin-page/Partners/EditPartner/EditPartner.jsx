@@ -29,7 +29,7 @@ export default function EditPartner() {
   const partnerById = useQuery({ queryKey: ['partner', id], 
     queryFn:()=>{return getPartnerById(id)}, keepPreviousData: true });
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error} = useMutation({
 
     mutationFn:(data) => {
       return updatePartnerById(id, data)
@@ -51,7 +51,7 @@ export default function EditPartner() {
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
 
     </SectionAdmin>
   )
