@@ -2,7 +2,6 @@
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getProjectById, updateProjectById } from "@/src/api/projects";
-//import DescriptionForm from "./DescriptionForm/DescriptionForm";
 import { useRouter } from "@/src/navigation";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import Loader from "@/src/components/shared/loader/Loader";
@@ -13,6 +12,7 @@ import { useParams } from "next/navigation";
 import ProjectForm from "../ProjectForm/ProjectForm";
 import switchTabProject from "@/src/state/switchTabProject";
 import { ProjectFormProvider } from "../ProjectFormProvider/ProjectFormProvider";
+import Team from "../Team/Team";
 
 
 export default function EditProject() {
@@ -57,7 +57,7 @@ export default function EditProject() {
     <ProjectFormProvider hendleMutate={mutate} data={getProject.data}>
 
       {tabName=='description' && <ProjectForm submitBtnText="Зберегти зміни"/>}
-      {tabName=='team'&& <p>team</p>}
+      {tabName=='team'&& <Team/>}
 
       { isPending && <Loader/> }
 

@@ -1,14 +1,14 @@
 import { z } from "zod";
 import { patternName, patternUrlLinkedin } from "@/src/constants/regulars";
 
-export const memberDefaultValues = {
+export const teamDefaultValues = {
   name_ua: "",
   name_en: "",
   name_pl: "",
   profileUrl:'',
 }
 
-export const MemberScheme = z
+export const TeamScheme = z
 	.object({
 		name_ua: z.string()
     .trim()
@@ -36,12 +36,3 @@ export const MemberScheme = z
     .min(1, { message: "Це поле обов'язкове"})
     .regex(patternUrlLinkedin, { message: 'Введіть дійсний URL'}),
 })
-//  Схема відправки на бекенд:
-// {
-//   "name": {
-//     "en": "John Doe",
-//     "pl": "Jan Kowalski",
-//     "ua": "Іван Петрович"
-//   },
-//   "profileUrl": "https://www.linkedin.com/in/johndoe"
-// }

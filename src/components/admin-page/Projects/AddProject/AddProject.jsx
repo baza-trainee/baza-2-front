@@ -11,6 +11,7 @@ import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import { ProjectFormProvider } from "../ProjectFormProvider/ProjectFormProvider";
 import switchTabProject from "@/src/state/switchTabProject";
 import ProjectForm from "../ProjectForm/ProjectForm";
+import Team from "../Team/Team";
 
 export default function AddProject() {
   const router = useRouter();
@@ -41,7 +42,7 @@ export default function AddProject() {
     <ProjectFormProvider hendleMutate={mutate}>
 
       {tabName=='description'&& <ProjectForm submitBtnText="Додати"/>}
-      {tabName=='team'&& <p>team</p>}
+      {tabName=='team'&& <Team/>}
 
       { isPending && <Loader/> }
 
