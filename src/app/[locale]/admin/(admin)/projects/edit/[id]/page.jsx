@@ -1,11 +1,9 @@
-'use client';
-import { useEffect } from 'react';
-import { redirect } from 'next/navigation';
-import { usePathname } from '@/src/navigation';
+import EditProject from "@/src/components/admin-page/Projects/EditProject/EditProject";
+import ProjectLayout from "@/src/components/admin-page/Projects/ProjectLayout/ProjectLayout";
 
-export default function projectsAddPage() {
-  const pathname = usePathname()
-  useEffect(() => {
-    redirect(`${pathname}/description`);
-  }, []);
-}
+export default function EditProjectPage() {
+  return (
+  <ProjectLayout title="Редагувати проєкт">
+    <EditProject/>
+  </ProjectLayout>)
+};

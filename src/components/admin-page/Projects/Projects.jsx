@@ -17,7 +17,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 export default function Projects() {
   const router = useRouter();
-  const addProjectPath = '/admin/projects/add/description'
+  const addProjectPath = '/admin/projects/add'
   const open = stateUseAlert(state => state.open);
 
   const [ params, setParams] = useState({

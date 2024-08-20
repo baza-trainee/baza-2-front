@@ -7,6 +7,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
+import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 
 export default function SliderList({data, hendleRemove}) {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function SliderList({data, hendleRemove}) {
   const editSlidePath = '/admin/slider/edit'
 
   // Мова сторінки.
-  const { locale } = useParams();
+  const locale = switchLocaleAdmin(state => state.localeAdmin);
  
   const[ idSlide, setIdIdSlide ] = useState(null)
 

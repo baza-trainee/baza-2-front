@@ -1,9 +1,9 @@
-'use client';
-import { useEffect } from 'react';
-import { redirect } from 'next/navigation';
+import AddProject from "@/src/components/admin-page/Projects/AddProject/AddProject";
+import ProjectLayout from "@/src/components/admin-page/Projects/ProjectLayout/ProjectLayout";
 
-export default function projectsAddPage() {
-  useEffect(() => {
-    redirect('/admin/projects/add/description');
-  }, []);
-}
+export default function addProjectPage() {
+  return (
+  <ProjectLayout title="Додати проєкт">
+    <AddProject/>
+  </ProjectLayout>)
+};
