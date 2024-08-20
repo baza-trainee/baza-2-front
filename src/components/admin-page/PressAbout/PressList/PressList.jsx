@@ -29,7 +29,7 @@ export default function PressList({ items = [] }) {
     <div className={styles.list}>
       {items.map((item) => {
         return(
-          <li key={createKey()} className={styles.item}>
+          <div key={createKey()} className={styles.item}>
           <ArticleCard item={item} className={styles.card} />
           <div className={styles.btns}>
             <MainButton 
@@ -47,7 +47,7 @@ export default function PressList({ items = [] }) {
               <Icon width={24} height={24} name='remove' />
             </MainButton>
           </div>
-        </li>
+        </div>
         )
       })}
     </div>
