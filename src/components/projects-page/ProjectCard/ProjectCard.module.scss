@@ -79,7 +79,7 @@
   transition: opacity var.$transition-duration-base var.$transition-timing-base
     0s;
   @media (min-width: 810px) {
-    gap: 80px;
+    gap: 50px;
   }
   &.hidden {
     opacity: 0;

@@ -1,7 +1,7 @@
 "use client";
 
 import { createKey } from "@/src/lib/utils/createKey";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import LoadMore from "../shared/LoadMore/LoadMore";
 import { createImageUrlBaza1 } from "@/src/lib/hooks/createImageUrl";
@@ -14,6 +14,7 @@ import clsx from "clsx";
 
 const Projects = () => {
   const t = useTranslations("Projects");
+  const locale = useLocale();
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [projectsData, setProjectsData] = useState(null);
@@ -67,6 +68,7 @@ const Projects = () => {
               <ProjectCard
                 key={createKey()}
                 project={project}
+                locale={locale}
                 coverImgUrl={createImageUrlBaza1(project.imageUrl)}
               />
             ))}
