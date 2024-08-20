@@ -17,11 +17,11 @@ export default function PressAbout() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
   const [search, setSearch] = useState("");
-  const addPressPath = '/admin/press-about/add-press'
+  const addPressPath = '/admin/press-about/add'
 
   const deletePress = useMutation({
     mutationFn:(id) => {
-      return deletePressById(id)
+      //return deletePressById(id)
     },onSuccess: () => {
       refetch()
     },onError:()=>{

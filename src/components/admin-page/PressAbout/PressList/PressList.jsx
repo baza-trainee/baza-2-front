@@ -12,7 +12,7 @@ export default function PressList({ items = [] }) {
   const router = useRouter();
   
   // Шляхи сторінок
-  const editPressPath = '/admin/press/edit-press';
+  const editPressPath = '/admin/press-about/edit';
   const [idPress, setIdPress] = useState(null);
 
   const closeModal = () => {

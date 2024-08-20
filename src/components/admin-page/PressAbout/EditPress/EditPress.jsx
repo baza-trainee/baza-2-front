@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './EditPress.module.scss'
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin';
@@ -12,7 +12,8 @@ import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import PressForm from '../PressForm/PressForm';
 import stateUseAlert from '@/src/state/stateUseAlert';
-import {items} from '../../main-page/ArticlesSection/items';
+import { items } from '@/src/components/main-page/ArticlesSection/items';
+//import {items} from '../../main-page/ArticlesSection/items';
 
 
 export default function EditPress() {
@@ -48,8 +49,7 @@ export default function EditPress() {
     <SectionAdmin title={'Редагувати статтю'}>
       <div className={styles.wrapper}>
         <PressForm hendleMutate={mutate} isSuccess={isSuccess} data={pressById} submitBtnText='Зберегти зміни' />
-
-        <PressPrewiev imageUrl={prevImg}/>
+        
       </div>
 
       { isPending && <Loader/> }

@@ -10,6 +10,7 @@ import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { PressDefaultValues, PressScheme } from './addPressScheme';
+import ImagePreview from '../../ImagePreview/ImagePreview';
 // import PressPreview from '../PressPreview/PressPreview';
 
 
@@ -21,6 +22,7 @@ export default function PressForm({
 }) {
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
+
   const[ valueDate, setValueDate ] = useState('')
 
   const {
@@ -48,8 +50,8 @@ export default function PressForm({
   useEffect(()=>{
     if(data){
       const{imageUrl, title, press} = data
-      setValue('title_ua',title.ua )
-      setValue('text_ua',text.ua )
+      setValue('title_ua',title )
+      setValue('text_ua',press )
       setValue('file', '')
       setPrevUrl(imageUrl)
     }
@@ -111,6 +113,7 @@ export default function PressForm({
             version={"file"}
             label={'Зображення'}
           />
+          <ImagePreview imageUrl={prevUrl}/>
         </li>
 
         <li className={clsx(styles.list_item, styles.grid_item3)}>
