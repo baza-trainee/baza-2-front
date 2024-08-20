@@ -65,7 +65,7 @@
 			"card_4": {
 				"title": "Communication with the team",
 				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
-				"text_2": "Complete the task, release the product and declare the availability of practical experience",
+				"text_2": "Complete the task, release the product, and declare the availability of practical experience",
 				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
 			}
 		},
@@ -149,7 +149,7 @@
 			"title": "Our structure",
 			"item_1": {
 				"title": "BAZA TRAINEE UKRAINE",
-				"text": "A public project for juniors and IT switchers, focused on creating digital projects for the social sphere of Ukraine."
+				"text": "A public project for juniors and IT switchers focused on creating digital projects for the social sphere of Ukraine."
 			},
 			"item_2": {
 				"title": "BAZA SKILL",
@@ -185,7 +185,7 @@
 			},
 			"question_5": {
 				"title": "Can I choose the programming language I want to participate in?",
-				"text": "Yes. If there are two or more programmers who want to practice Vue.js or Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!"
+				"text": "Yes. If there are two or more programmers who want to practice Vue.js, Angular or Flask, we will select a project for the chosen technology. Come with your friends, it will be fun!"
 			},
 			"btn_support_project": "Donate"
 		},
@@ -341,6 +341,7 @@
 			"incorrect_city": "Enter the correct city name",
 			"experience": "Choose the availability of experience",
 			"motivation": "State your motivation",
+			"motivation_min": "The text must be at least 5 characters",
 			"motivation_max": "The text should not exceed 50 characters",
 			"incorrect_motivation": "Enter the correct text",
 			"saw_questionnaire": "Choose where you saw the questionnaire",

@@ -10,9 +10,12 @@ import { useTranslations } from "next-intl";
 import styles from "./ReviewsSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllReviews } from "@/src/api/reviews";
+import { useParams } from "next/navigation";
 
 const ReviewsSection = () => {
   const t = useTranslations("Main.reviews_section");
+  // Мова сторінки.
+  const { locale } = useParams();
   // Запит на базу
   const { isError, data } = useQuery({ queryKey: ['reviews'], 
     queryFn:getAllReviews});
@@ -54,7 +57,7 @@ const ReviewsSection = () => {
             items={sortData(data)}
             prevEl={".feedback-prevBtn"}
             nextEl={".feedback-nextBtn"}
-            renderItem={(item) => <FeedbackCard {...item} />}
+            renderItem={(item) => <FeedbackCard {...item} locale={locale}/>}
           />
           }
           {isError && <p>Помилка завантаження</p>}

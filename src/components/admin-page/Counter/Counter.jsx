@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getEmployed, updateEmployed } from '@/src/api/achievements'
+import { getData, updateEmployed } from '@/src/api/achievements'
 import stateUseAlert from '@/src/state/stateUseAlert';
 import Loader from '../../shared/loader/Loader';
 import SectionAdmin from '../SectionAdmin/SectionAdmin';
@@ -14,7 +14,7 @@ export default function Counter() {
   const[ modalOpen, setmodalOpen ] = useState(false);
   const open = stateUseAlert(state => state.open);
 
-  const employed = useQuery({ queryKey: ['employed'], queryFn: getEmployed });
+  const employed = useQuery({ queryKey: ['employed'], queryFn: getData });
 
   const { mutate, isPending } = useMutation({
     mutationFn:(data) => {

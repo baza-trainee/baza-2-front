@@ -25,7 +25,7 @@ export default function SlideForm({
   const[ tooltip, setTooltip ] = useState(null)
 
   const tooltipTitleMessage = 'Рекомендована довжина заголовка від 5 до 30 символів. Максимальна 40 символів';
-  const tooltipTextMessage = 'Рекомендована довжина основного тексту від 5 до 300 символів. Максимальна 350 символів';
+  const tooltipTextMessage = 'Рекомендована довжина основного тексту від 5 до 300 символів. Максимальна 360 символів';
 
   const {
     register,
@@ -113,7 +113,7 @@ export default function SlideForm({
             getPrevImgUrl={ setPrevUrl }
             required={false}
             accept="image/*"
-            placeholder={"Завантажте зображення"}
+            placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
             registerOptions={register("file", { ...SliderScheme.file })}
             isDirty={isDirty}
             isError={errors.file}
@@ -186,7 +186,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item6)}>
           <TextArea 
             id={"text_ua"}  
-            maxLength={355}
+            maxLength={380}
             className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
@@ -206,7 +206,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item7)}>
           <TextArea 
             id={"text_en"}   
-            maxLength={355}
+            maxLength={380}
             className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
@@ -224,7 +224,7 @@ export default function SlideForm({
         <li className={clsx(styles.list_item, styles.tooltip, styles.grid_item8)}>
           <TextArea 
             id={"text_pl"}  
-            maxLength={355}
+            maxLength={380}
             className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}

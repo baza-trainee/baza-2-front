@@ -6,12 +6,16 @@ import { locales } from "@/src/i18n";
 import { usePathname, useRouter } from "@/src/navigation";
 import { Icon } from "../Icon/Icon";
 import clsx from "clsx";
+import switchLocaleAdmin from "@/src/state/switchLocaleAdmin";
 
-export default function LangDropdown() {
+export default function LangDropdown({type}) {
   const router = useRouter();
   const path = usePathname();
   const locale = useLocale();
-  const [currentLocale, setCurrentLocale] = useState(locale);
+  const localeAdmin = switchLocaleAdmin(state => state.localeAdmin);
+  const switchLocale = switchLocaleAdmin(state => state.switchLocale);
+
+  const [currentLocale, setCurrentLocale] = useState(type ? localeAdmin : locale);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const submenuRef = useRef(null);
@@ -19,7 +23,9 @@ export default function LangDropdown() {
   const handleCheckLocale = (item) => {
     setIsOpen(!isOpen);
     setCurrentLocale(item);
-    router.replace(path, { locale: item });
+    if(type){
+      switchLocale(item)
+    }else router.replace(path, { locale: item });
   };
 
   const handleOutsideClick = (event) => {

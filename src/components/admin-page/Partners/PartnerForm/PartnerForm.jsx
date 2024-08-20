@@ -9,7 +9,7 @@ import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
-export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, data,submitBtnText= 'Додати'}) {
+export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtnText= 'Додати', prevImg}) {
   const router = useRouter();
   const {
     register,
@@ -25,17 +25,11 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
   }
 
   useEffect(()=>{
-    if(isSuccess){
-      reset();
-    }
-  },[isSuccess])
-
-  useEffect(()=>{
     if(data){
       const{name, imageUrl, homeUrl} = data
       setValue('name', name)
       setValue('homeUrl', homeUrl)
-      setValue('imageUrl', '')
+      setValue('file', '')
       handlePrevImg(imageUrl)
     }
   },[data])
@@ -89,7 +83,7 @@ export default function PartnerForm({hendleMutate, isSuccess, handlePrevImg, dat
             getPrevImgUrl={ handlePrevImg }
             required={false}
             accept="image/*"
-            placeholder={"Оберіть фото"}
+            placeholder={prevImg ? prevImg : "Оберіть фото"}
             registerOptions={register("file", { ...addPartnerSchema.file })}
             isDirty={isDirty}
             isError={errors.file}

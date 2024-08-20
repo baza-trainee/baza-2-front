@@ -23,7 +23,7 @@ export default function AddPartner() {
     router.replace('/admin/partners')
   })
 
-  const { mutate, isPending, isSuccess } = useMutation({
+  const { mutate, isPending, error } = useMutation({
 
     mutationFn:(data) => {
       return createNewPartner(data)
@@ -37,7 +37,7 @@ export default function AddPartner() {
   return (
     <SectionAdmin title={'Додати партнерів'}>
       <div className={styles.wrapper}>
-        <PartnerForm hendleMutate={mutate} isSuccess={isSuccess} handlePrevImg={setPrevImg}/>
+        <PartnerForm hendleMutate={mutate} handlePrevImg={setPrevImg}/>
 
         <PartnerPreview imageUrl={prevImg}/>
       </div>
@@ -45,7 +45,7 @@ export default function AddPartner() {
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Партнера успішно додано'} btn={true}></AdminModal>
-      <UseAlert/>
+      <UseAlert text={error && error.message}/>
 
     </SectionAdmin>
   )
