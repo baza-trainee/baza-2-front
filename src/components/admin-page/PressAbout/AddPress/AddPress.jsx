@@ -10,6 +10,7 @@ import PressForm from '../PressForm/PressForm';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
+import PressPreview from '../PressPrewiev/PressPrewiev';
 
 //тимчасовий
 const createNewPress = (data) => {
@@ -48,6 +49,7 @@ export default function AddPress() {
       <div className={styles.wrapper}>
 
         <PressForm handleMutate={mutate} isSuccess={isSuccess} />
+        <PressPreview imageUrl={prevImg}/>
 
       {isLoading && <Loader />}
     </div>
