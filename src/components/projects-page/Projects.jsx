@@ -33,6 +33,7 @@ const Projects = () => {
 
   const searchProject = (search) => {
     setProjectsData(null);
+    setPage(1);
     setSearch(search);
   };
 

@@ -10,7 +10,7 @@ import { Icon } from "../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
 import ProjectStatus from "./ProjectStatus/ProjectStatus";
 
-const ProjectCard = ({ project, coverImgUrl, locale }) => {
+const ProjectCard = ({ project, coverImgUrl, locale = "ua" }) => {
   const {
     complexity,
     title,
