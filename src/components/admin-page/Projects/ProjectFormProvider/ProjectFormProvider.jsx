@@ -1,79 +1,32 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
-//import useSWR from 'swr';
-//import { useRouter } from 'next/navigation';
-import { SubmitHandler, useForm } from 'react-hook-form';
-
+import { useForm } from 'react-hook-form';
 import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-
-// import { defaultValues, emptyLngs } from './initFormData';
-// import { extractMembersId, prepareProject } from './projectUtils';
-// import { IFormContext, TFormInput, TProvider } from './types';
-// import { AxiosError } from 'axios';
-
-// import {
-//   TMemberBioResp,
-//   TMemberResp,
-//   TMemberRoleResp,
-//   TProjectReq,
-//   TProjectResp,
-// } from '@/types';
-
-// import { useProjectsSWR } from '@/hooks/SWR/useProjectsSWR';
-// import { useTranslator } from '@/hooks/SWR/useTranslatorSWR';
-
-// import { convertDate } from '@/utils/formatDate';
-// import { useRequestNotifiers } from '@/hooks/SWR/useRequestNotifiers';
-// import { projectsApi } from '@/utils/API/projects';
+;
 
 const ProjectFormContext = createContext();
 
 export const useProjectFormContext = () => useContext(ProjectFormContext);
 
 export const ProjectFormProvider = ({hendleMutate, children, data}) => {
-  const dataMembers = [
-    {
-      teamMember: {
-        id: "6471fa06933513f26024a990",
-        name: {
-          en: "John Doe",
-          pl: "Jan Kowalski",
-          ua: "Іван Петрович"
-        },
-        profileUrl: "https://www.linkedin.com/in/johndoe"
-      },
-      teamMemberRole: {
-        _id: "6471f9a29c17ac2190eb8791",
-        name: {
-          en: "Developer",
-          pl: "Programista",
-          ua: "Розробник"
-        }
-      }
-    }
-  ]
+
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ teamMemberData, setTeamMemberData ] = useState([]);
 
-  const emptyLngs={
-    ua:'',
-    en:'',
-    pl:''
-  }
+  // Додавання учасника
   const addTeamMember = (newMember) => {
     const updatedTeamMembers = [
-      ...teamMemberData,{ teamMember: {...newMember.teamMember
-      }, teamMemberRole: {...newMember.teamMemberRole} },
-      // { teamMember: newMember, teamMemberRole: { _id: '', name: emptyLngs } },
+      ...teamMemberData, newMember
     ];
     setTeamMemberData(updatedTeamMembers);
   };
 
+  // Зміна спеціальності учасника
   const updTeamMemberRole = (
     memberId,
     oldRoleId,
@@ -87,9 +40,10 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     setTeamMemberData(updatedTeamMembers);
   };
 
-  const deleteMember = (memberId) => {
+  // Видалення учасника
+  const deleteMember = (memberId, roleId) => {
     const updatedTeamMembers = teamMemberData.filter(
-      (item) => item.teamMember._id !== memberId
+      (item) => `${item.teamMember._id}${item.teamMemberRole._id}` !== `${memberId}${roleId}`
     );
     setTeamMemberData(updatedTeamMembers);
   };

@@ -10,6 +10,7 @@ import { teamDefaultValues, TeamScheme } from './teamFormScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
+import { createKey } from '@/src/lib/utils/createKey';
 
 export default function TeamForm({
   hendleMutate, 
@@ -167,7 +168,7 @@ export default function TeamForm({
             {roles &&
               roles.length > 0 &&
               roles.map((item) => (
-                <option key={item._id} 
+                <option key={createKey()} 
                   className={styles.option}
                   value={item._id}>
                   {item.name.en}
@@ -198,7 +199,7 @@ export default function TeamForm({
           <>
             <h4>Оберіть учасника зі списку</h4>
             {data.results.map((el)=>{
-              return <p key={el._id} onClick={()=>{
+              return <p key={createKey()} onClick={()=>{
                 setMember(el)
               }
               }>{el.name[locale]}</p>

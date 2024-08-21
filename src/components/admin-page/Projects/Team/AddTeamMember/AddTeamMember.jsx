@@ -9,7 +9,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 
-export default function AddTeamMember({hendleCancel}) {
+export default function AddTeamMember({hendleCancel, roles}) {
   const open = stateUseAlert(state => state.open);
   const[ modalOpen, setModalOpen ] = useState(false);
 
@@ -20,8 +20,8 @@ export default function AddTeamMember({hendleCancel}) {
     } = useProjectFormContext()  
 
   // Отримуємо всі спеціальності
-  const getRoles = useQuery({ queryKey: ['roles'], 
-    queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+  // const getRoles = useQuery({ queryKey: ['roles'], 
+  //   queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
 
   // Додавання учасника до бази  
   const createMember= useMutation({
@@ -63,7 +63,8 @@ export default function AddTeamMember({hendleCancel}) {
   return(
     <>  
       <TeamForm hendleMutate={onSubmit} 
-        roles={getRoles.data?.results} 
+        //roles={getRoles.data?.results} 
+        roles={roles}
         hendleCancel={hendleCancel}
         selectedRole={selectedRole} 
         setSelectedRole={setSelectedRole}/>

@@ -5,24 +5,28 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { useProjectFormContext } from '../ProjectFormProvider/ProjectFormProvider';
 import TeamListList from './TeamList/TeamList';
 import { useCallback, useState } from 'react';
-import MemberForm from '../../Members/MemberForm/MemberForm';
-import TeamForm from './TeamForm/TeamForm';
 import AddTeamMember from './AddTeamMember/AddTeamMember';
+import EditRoleMember from './EditRoleMember/EditRoleMember';
+import { useQuery } from '@tanstack/react-query';
+import { getAllRoles } from '@/src/api/roles';
 
 export default function Team() {
-
-  
+  // Контекст форми
   const{ 
     teamMemberData, 
-    addTeamMember,
+    deleteMember,
    } = useProjectFormContext()
+
   const[ pageName, setPageName ] = useState('list')
+
+  // Отримуємо всі спеціальності
+  const getRoles = useQuery({ queryKey: ['roles'], 
+    queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+
 
   const hendleCancel = useCallback(()=>{
     setPageName('list')
   })
-
-
 
   return (
     <>
@@ -36,11 +40,13 @@ export default function Team() {
                 <Icon name={'plus_icon'} width={24} height={24} />
               {'Додати'}</MainButton >
           </div>
-          <TeamListList data={teamMemberData}/>
+          <TeamListList data={teamMemberData} hendleRemove={deleteMember} roles={getRoles.data?.results}/>
         </>
       }  
 
-      {pageName === 'add_member' && <AddTeamMember hendleCancel={hendleCancel}/>}
+      {pageName === 'add_member' && <AddTeamMember hendleCancel={hendleCancel} roles={getRoles.data?.results}/>}
+
+      {/* <EditRoleMember/> */}
     </>
   )
 }
