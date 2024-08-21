@@ -1,45 +1,41 @@
 'use client';
 import styles from './TeamForm.module.scss'
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getAllMembers } from '@/src/api/members';
 import { useForm } from 'react-hook-form';
-import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { teamDefaultValues, TeamScheme } from './teamFormScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import clsx from 'clsx';
-import { useQuery } from '@tanstack/react-query';
-import { getAllMembers } from '@/src/api/members';
+import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 
-//teamFormScheme
 export default function TeamForm({
   hendleMutate, 
-  data1,
   hendleCancel,
+  setSelectedRole,
   roles,
   submitBtnText= 'Додати'
 }) {
-  const router = useRouter();
-
+  // Мова сторінки.
+  const locale = switchLocaleAdmin(state => state.localeAdmin);
   const [ search, setSearch ] = useState('')
   const [ member, setMember ] = useState(null)
+  const [selectedRoleId, setSelectedRoleId] = useState('');
 
-  const {  data, refetch } = useQuery({ queryKey: ['members', search], 
+  // Шукаємо учасника в базі
+  const { data } = useQuery({ queryKey: ['members', search], 
     queryFn:()=>{return getAllMembers({search:search})}, keepPreviousData: true });
-
-
+  // Валідація данних
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, isError, isDirty },
+    formState: { errors, isValid, isError },
     reset,
     trigger,
     setValue,
   } = useForm({ defaultValues: {...teamDefaultValues}, resolver: zodResolver(TeamScheme), mode: 'onChange'});
-
-
-
-
 
   const resetForm = () => {
     reset();
@@ -57,30 +53,33 @@ export default function TeamForm({
     }
   },[member])
 
+
+
   const onSubmit = (data) => {
-    const newData = {
-      name: {
-        en: data.name_en,
-        pl: data.name_pl,
-        ua: data.name_ua,
-      },
-      profileUrl: data.profileUrl,
-      specialization:data.specialization
+    const newData={}
+    // Якщо учасник є в базі
+    if(member){
+      hendleMutate(member) 
+    }else{
+      // Данні нового учасника
+      newData.name= {
+          en: data.name_en,
+          pl: data.name_pl,
+          ua: data.name_ua,
+        }
+      newData.profileUrl= data.profileUrl
+      hendleMutate(newData)
     }
-    console.log(newData)
-    //hendleMutate(newData)
   };
 
-
-  const [selectedRoleId, setSelectedRoleId] = useState('');
-
+  // Функція вибору спеціальності
   const handleOptionSelect = (e) => {
     const selectedRole = roles?.find((item) => item._id === e.target.value);
     if (selectedRole) {
       setSelectedRoleId(e.target.value);
-      // setValue('specialization', e.target.value )
+      setValue('specialization', e.target.value )
       trigger("specialization")
-      // updTeamMemberRole(teamMember._id, teamMemberRole._id, selectedRole);
+      setSelectedRole(selectedRole)
     }
   };
 
@@ -88,10 +87,7 @@ export default function TeamForm({
   const isDisabled = () => {
     if (isError) {
       return true;
-    } else 
-    if (!isDirty) {
-      return true;
-    } 
+    }  
     else if(!isValid){
       return true
     }
@@ -158,27 +154,27 @@ export default function TeamForm({
           <div className={styles.wrapper}>
             <h4 className={styles.label}>Спеціалізація</h4>
           <select
-            // registerOptions={register("specialization", { ...TeamScheme.specialization})}
             {...register("specialization", { ...TeamScheme.specialization})}
-            className={styles.select}
-              // className="w-full rounded-lg border border-neutral-100 bg-transparent p-3 placeholder-gray-400"
+            className={clsx(
+              styles.select,
+              errors?.specialization && styles._error,
+              isValid && styles._success
+            )}
               onChange={handleOptionSelect}
-              value={selectedRoleId}
+              //value={selectedRoleId}
             >
-            <option value="" className={styles.option} readOnly>Оберіть спеціалізацію</option>
-            {!selectedRoleId && <option />}
+            {!selectedRoleId && <option value="" className={styles.option} readOnly>Оберіть спеціалізацію</option>}
             {roles &&
               roles.length > 0 &&
               roles.map((item) => (
                 <option key={item._id} 
                   className={styles.option}
-                  //className="rounded-md py-3" 
                   value={item._id}>
                   {item.name.en}
                 </option>
               ))}
           </select>
-          <p>{errors?.specialization?.message}</p>
+          <p className={styles.error}>{errors?.specialization?.message}</p>
           </div>
         </li>
 
@@ -197,22 +193,30 @@ export default function TeamForm({
             label={'Linkedin'}
           />
         </li>
- { !member && <li className={clsx(styles.list_item, styles.grid6)}>
-    {data &&  data.results.map((el)=>{
-        return <p key={el._id} onClick={()=>{
-          setMember(el)
-          
+        { !member && <li className={clsx(styles.list_item, styles.grid6)}>
+          {data && data.results.length ? 
+          <>
+            <h4>Оберіть учасника зі списку</h4>
+            {data.results.map((el)=>{
+              return <p key={el._id} onClick={()=>{
+                setMember(el)
+              }
+              }>{el.name[locale]}</p>
+            })}</> : 
+            <>
+              <h4>Такого учасника не знайдено. </h4>
+              <h4>Додайте нового учасника до бази</h4>
+            </>
+          }
+        </li>
         }
-        }>{el.name['ua']}</p>
-    }) }
-        </li>}
       </ul>
 
       <div className={styles.btns}>
         <MainButton
           type="submit"
           className={styles.btn}
-          //disabled={isDisabled()}
+          disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>

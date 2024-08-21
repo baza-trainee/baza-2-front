@@ -14,7 +14,7 @@ export default function Team() {
   
   const{ 
     teamMemberData, 
-
+    addTeamMember,
    } = useProjectFormContext()
   const[ pageName, setPageName ] = useState('list')
 
@@ -22,27 +22,6 @@ export default function Team() {
     setPageName('list')
   })
 
-  // const data = [
-  //   {
-  //     teamMember: {
-  //       id: "6471fa06933513f26024a990",
-  //       name: {
-  //         en: "John Doe",
-  //         pl: "Jan Kowalski",
-  //         ua: "Іван Петрович"
-  //       },
-  //       profileUrl: "https://www.linkedin.com/in/johndoe"
-  //     },
-  //     teamMemberRole: {
-  //       _id: "6471f9a29c17ac2190eb8791",
-  //       name: {
-  //         en: "Developer",
-  //         pl: "Programista",
-  //         ua: "Розробник"
-  //       }
-  //     }
-  //   }
-  // ]
 
 
   return (

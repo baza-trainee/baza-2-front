@@ -1,100 +1,78 @@
+import { useCallback, useState } from "react";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { getAllRoles } from "@/src/api/roles";
+import { createNewMember } from "@/src/api/members";
+import { useProjectFormContext } from "../../ProjectFormProvider/ProjectFormProvider";
+import stateUseAlert from "@/src/state/stateUseAlert";
 import TeamForm from "../TeamForm/TeamForm";
+import Loader from "@/src/components/shared/loader/Loader";
+import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
+import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 
 export default function AddTeamMember({hendleCancel}) {
-const roles =  [
-    {
-        "name": {
-            "en": "Back-end",
-            "pl": "Back-end",
-            "ua": "Бек-енд"
-        },
-        "_id": "66c3071850455c07796f26db",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Business Analyst",
-            "pl": "Analityk biznesowy",
-            "ua": "Бізнес-аналітик"
-        },
-        "_id": "66c3068950455c07796f26d9",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Product Owner",
-            "pl": "Właściciel produktu",
-            "ua": "Власник продукту"
-        },
-        "_id": "66c3072050455c07796f26dd",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Design",
-            "pl": "Projektowanie",
-            "ua": "Дизайн"
-        },
-        "_id": "66c3072950455c07796f26df",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Quality Assurance",
-            "pl": "Zapewnienie jakości",
-            "ua": "Забезпечення якості"
-        },
-        "_id": "66c3073350455c07796f26e1",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Project Manager",
-            "pl": "Kierownik projektu",
-            "ua": "Менеджер проекту"
-        },
-        "_id": "66c3073e50455c07796f26e3",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Business Analyst Mentor",
-            "pl": "Mentor analityka biznesowego",
-            "ua": "Ментор бізнес-аналітика"
-        },
-        "_id": "66c3074950455c07796f26e5",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Project Manager Mentor",
-            "pl": "Mentor menadżera projektu",
-            "ua": "Ментор менеджера проекту"
-        },
-        "_id": "66c3075850455c07796f26e7",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Front-end",
-            "pl": "Front-end",
-            "ua": "Фронт-енд"
-        },
-        "_id": "66c3076250455c07796f26e9",
-        "__v": 0
-    },
-    {
-        "name": {
-            "en": "Full Stack",
-            "pl": "Pełny stos",
-            "ua": "Фул стек"
-        },
-        "_id": "66c3076a50455c07796f26eb",
-        "__v": 0
+  const open = stateUseAlert(state => state.open);
+  const[ modalOpen, setModalOpen ] = useState(false);
+
+  const[ selectedRole, setSelectedRole ] = useState(null)
+  // Контекст форми
+  const{  
+    addTeamMember,
+    } = useProjectFormContext()  
+
+  // Отримуємо всі спеціальності
+  const getRoles = useQuery({ queryKey: ['roles'], 
+    queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+
+  // Додавання учасника до бази  
+  const createMember= useMutation({
+    mutationFn:(data) => {
+      return createNewMember(data)
+    },onSuccess: () => {
+      setModalOpen(true)
+    },onError:()=>{
+      open('error', false)
+    }})
+
+
+  const closeModal = useCallback(()=>{
+    // Додавання нового учасника до проєкту 
+    const newData={
+      teamMemberRole:selectedRole
     }
-]
+    newData.teamMember = createMember.data.data
+    addTeamMember(newData)
+    setModalOpen(false)
+    hendleCancel()
+  })
+ 
+  const onSubmit = (data)=>{
+    const newData={
+      teamMemberRole:selectedRole
+    }
+    // Як що учасник є в базі - додаємо до проєкту 
+    if(data._id){
+      newData.teamMember = data
+      addTeamMember(newData)
+      hendleCancel()
+    }else{
+      // Як що учасник новий - додаємо до бази - потім до проєкту 
+      createMember.mutate(data)
+    }
+  }
 
   return(
-    <TeamForm hendleCancel={hendleCancel} roles={roles}/>
+    <>  
+      <TeamForm hendleMutate={onSubmit} 
+        roles={getRoles.data?.results} 
+        hendleCancel={hendleCancel}
+        selectedRole={selectedRole} 
+        setSelectedRole={setSelectedRole}/>
+
+      { createMember.isPending && <Loader/> }
+
+      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Новий учасник успішно доданий до бази та проєкту'} btn={true}></AdminModal>
+
+      <UseAlert text={createMember.error && createMember.error?.message}/>
+    </>
   )
 }

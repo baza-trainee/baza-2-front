@@ -58,7 +58,8 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
   ]
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
-  const [ teamMemberData, setTeamMemberData ] = useState(dataMembers);
+  const [ teamMemberData, setTeamMemberData ] = useState([]);
+
   const emptyLngs={
     ua:'',
     en:'',
@@ -66,8 +67,9 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
   }
   const addTeamMember = (newMember) => {
     const updatedTeamMembers = [
-      ...teamMemberData,
-      { teamMember: newMember, teamMemberRole: { _id: '', name: emptyLngs } },
+      ...teamMemberData,{ teamMember: {...newMember.teamMember
+      }, teamMemberRole: {...newMember.teamMemberRole} },
+      // { teamMember: newMember, teamMemberRole: { _id: '', name: emptyLngs } },
     ];
     setTeamMemberData(updatedTeamMembers);
   };
@@ -139,7 +141,7 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
       setValue('file', '')
 
-      if(teamMembers){setTeamMemberData(teamMembers)}
+      if(teamMembers){setTeamMemberData([teamMembers])}
       //trigger()
     }else {
       setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
@@ -164,7 +166,7 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
-    if(teamMemberData){ newData.teamMembers = teamMemberData }
+    if(teamMemberData){ newData.teamMembers = teamMemberData}
 
   
    hendleMutate(newData)
