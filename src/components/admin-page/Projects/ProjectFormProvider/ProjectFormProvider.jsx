@@ -35,10 +35,30 @@ const ProjectFormContext = createContext();
 export const useProjectFormContext = () => useContext(ProjectFormContext);
 
 export const ProjectFormProvider = ({hendleMutate, children, data}) => {
-
+  const dataMembers = [
+    {
+      teamMember: {
+        id: "6471fa06933513f26024a990",
+        name: {
+          en: "John Doe",
+          pl: "Jan Kowalski",
+          ua: "Іван Петрович"
+        },
+        profileUrl: "https://www.linkedin.com/in/johndoe"
+      },
+      teamMemberRole: {
+        _id: "6471f9a29c17ac2190eb8791",
+        name: {
+          en: "Developer",
+          pl: "Programista",
+          ua: "Розробник"
+        }
+      }
+    }
+  ]
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
-  const [ teamMemberData, setTeamMemberData ] = useState([]);
+  const [ teamMemberData, setTeamMemberData ] = useState(dataMembers);
   const emptyLngs={
     ua:'',
     en:'',

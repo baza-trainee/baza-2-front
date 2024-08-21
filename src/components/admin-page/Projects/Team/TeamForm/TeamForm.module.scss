@@ -25,6 +25,38 @@
         width: 100%;
         min-width: 210px;
       }
+
+
+      .wrapper{
+        display: flex;
+        flex-direction: column;
+        .label{
+          @include mix.apply-font-styles(var.$text-20-font);
+          font-weight: 600;
+          font-size: 18px;
+        }
+        .select{
+          width: 100%;
+          @include mix.apply-font-styles(var.$text-16-font);
+          color: var.$secondary-black;
+          border: 2px solid transparent;
+          border-radius: 8px;
+    
+          padding: 10px;
+          outline: 0;
+          background: var.$secondary-white;
+          transition: all var.$transition-duration-base var.$transition-timing-base;
+          .option{
+            padding: 20px;
+            border-radius: 8px;
+          }
+        }
+
+
+      }
+
+ 
+
     }
     .grid1 { grid-area: 1 / 1 / 2 / 2; }
     .grid2 { grid-area: 1 / 2 / 2 / 3; }

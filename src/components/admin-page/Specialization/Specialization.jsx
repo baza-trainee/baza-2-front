@@ -20,7 +20,7 @@ export default function Specialization() {
   // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['specialization', search], 
     queryFn:()=>{return getAllRoles({search:search})}, keepPreviousData: true });
-    
+   console.log(data) 
 // Запит на видалення
   const deleteRole = useMutation({
     mutationFn:(id) => {

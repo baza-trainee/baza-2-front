@@ -15,12 +15,15 @@ import { getAllMembers } from '@/src/api/members';
 export default function TeamForm({
   hendleMutate, 
   data1,
+  hendleCancel,
+  roles,
   submitBtnText= 'Додати'
 }) {
   const router = useRouter();
 
   const [ search, setSearch ] = useState('')
   const [ member, setMember ] = useState(null)
+
   const {  data, refetch } = useQuery({ queryKey: ['members', search], 
     queryFn:()=>{return getAllMembers({search:search})}, keepPreviousData: true });
 
@@ -39,8 +42,8 @@ export default function TeamForm({
 
 
   const resetForm = () => {
-    //router.replace('/admin/members')
     reset();
+    hendleCancel()
   }
 
   useEffect(()=>{
@@ -50,6 +53,7 @@ export default function TeamForm({
       setValue('name_en',name.en )
       setValue('name_pl',name.pl )
       setValue('profileUrl',profileUrl )
+      trigger("name_ua")
     }
   },[member])
 
@@ -61,9 +65,25 @@ export default function TeamForm({
         ua: data.name_ua,
       },
       profileUrl: data.profileUrl,
+      specialization:data.specialization
     }
-    hendleMutate(newData)
+    console.log(newData)
+    //hendleMutate(newData)
   };
+
+
+  const [selectedRoleId, setSelectedRoleId] = useState('');
+
+  const handleOptionSelect = (e) => {
+    const selectedRole = roles?.find((item) => item._id === e.target.value);
+    if (selectedRole) {
+      setSelectedRoleId(e.target.value);
+      // setValue('specialization', e.target.value )
+      trigger("specialization")
+      // updTeamMemberRole(teamMember._id, teamMemberRole._id, selectedRole);
+    }
+  };
+
 
   const isDisabled = () => {
     if (isError) {
@@ -93,6 +113,7 @@ export default function TeamForm({
               setMember(null)
               setSearch(e.target.value)}
             }
+            readOnly={member}
             isError={errors.name_ua}
             isValid={isValid}
             version={"input_admin"}
@@ -109,6 +130,7 @@ export default function TeamForm({
             required={false}
             placeholder={"Ім’я та Прізвище"}
             registerOptions={register("name_en", { ...TeamScheme.name_en })}
+            readOnly={member}
             isError={errors.name_en}
             isValid={isValid}
             version={"input_admin"}
@@ -124,6 +146,7 @@ export default function TeamForm({
             required={false}
             placeholder={"Ім’я та Прізвище"}
             registerOptions={register("name_pl", { ...TeamScheme.name_pl})}
+            readOnly={member}
             isError={errors.name_pl}
             isValid={isValid}
             version={"input_admin"}
@@ -132,18 +155,31 @@ export default function TeamForm({
         </li> 
 
         <li className={clsx(styles.list_item, styles.grid4)}>
-          <InputField
-            id={"profileUrlgg"}
-            maxLength={100}
-            className={styles.item}
-            required={false}
-            placeholder={"Додайте посилання"}
-            registerOptions={register("profileUrl", { ...TeamScheme.profileUrl})}
-            isError={errors.profileUrl}
-            isValid={isValid}
-            version={"input_admin"}
-            label={'Спеціалізація'}
-          />
+          <div className={styles.wrapper}>
+            <h4 className={styles.label}>Спеціалізація</h4>
+          <select
+            // registerOptions={register("specialization", { ...TeamScheme.specialization})}
+            {...register("specialization", { ...TeamScheme.specialization})}
+            className={styles.select}
+              // className="w-full rounded-lg border border-neutral-100 bg-transparent p-3 placeholder-gray-400"
+              onChange={handleOptionSelect}
+              value={selectedRoleId}
+            >
+            <option value="" className={styles.option} readOnly>Оберіть спеціалізацію</option>
+            {!selectedRoleId && <option />}
+            {roles &&
+              roles.length > 0 &&
+              roles.map((item) => (
+                <option key={item._id} 
+                  className={styles.option}
+                  //className="rounded-md py-3" 
+                  value={item._id}>
+                  {item.name.en}
+                </option>
+              ))}
+          </select>
+          <p>{errors?.specialization?.message}</p>
+          </div>
         </li>
 
         <li className={clsx(styles.list_item, styles.grid5)}>
@@ -154,6 +190,7 @@ export default function TeamForm({
             required={false}
             placeholder={"Додайте посилання"}
             registerOptions={register("profileUrl", { ...TeamScheme.profileUrl})}
+            readOnly={member}
             isError={errors.profileUrl}
             isValid={isValid}
             version={"input_admin"}
@@ -164,7 +201,7 @@ export default function TeamForm({
     {data &&  data.results.map((el)=>{
         return <p key={el._id} onClick={()=>{
           setMember(el)
-          trigger("name_ua")
+          
         }
         }>{el.name['ua']}</p>
     }) }
@@ -175,7 +212,7 @@ export default function TeamForm({
         <MainButton
           type="submit"
           className={styles.btn}
-          disabled={isDisabled()}
+          //disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>
