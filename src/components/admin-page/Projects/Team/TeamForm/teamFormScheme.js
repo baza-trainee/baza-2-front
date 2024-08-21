@@ -6,6 +6,7 @@ export const teamDefaultValues = {
   name_en: "",
   name_pl: "",
   profileUrl:'',
+  specialization:''
 }
 
 export const TeamScheme = z
@@ -35,4 +36,8 @@ export const TeamScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .regex(patternUrlLinkedin, { message: 'Введіть дійсний URL'}),
+
+    specialization: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
 })

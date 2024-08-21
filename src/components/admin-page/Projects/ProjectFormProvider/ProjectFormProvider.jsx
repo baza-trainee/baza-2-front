@@ -1,34 +1,12 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
-//import useSWR from 'swr';
-//import { useRouter } from 'next/navigation';
-import { SubmitHandler, useForm } from 'react-hook-form';
-
+import { useForm } from 'react-hook-form';
 import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-
-// import { defaultValues, emptyLngs } from './initFormData';
-// import { extractMembersId, prepareProject } from './projectUtils';
-// import { IFormContext, TFormInput, TProvider } from './types';
-// import { AxiosError } from 'axios';
-
-// import {
-//   TMemberBioResp,
-//   TMemberResp,
-//   TMemberRoleResp,
-//   TProjectReq,
-//   TProjectResp,
-// } from '@/types';
-
-// import { useProjectsSWR } from '@/hooks/SWR/useProjectsSWR';
-// import { useTranslator } from '@/hooks/SWR/useTranslatorSWR';
-
-// import { convertDate } from '@/utils/formatDate';
-// import { useRequestNotifiers } from '@/hooks/SWR/useRequestNotifiers';
-// import { projectsApi } from '@/utils/API/projects';
+;
 
 const ProjectFormContext = createContext();
 
@@ -39,19 +17,16 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ teamMemberData, setTeamMemberData ] = useState([]);
-  const emptyLngs={
-    ua:'',
-    en:'',
-    pl:''
-  }
+
+  // Додавання учасника
   const addTeamMember = (newMember) => {
     const updatedTeamMembers = [
-      ...teamMemberData,
-      { teamMember: newMember, teamMemberRole: { _id: '', name: emptyLngs } },
+      ...teamMemberData, newMember
     ];
     setTeamMemberData(updatedTeamMembers);
   };
 
+  // Зміна спеціальності учасника
   const updTeamMemberRole = (
     memberId,
     oldRoleId,
@@ -65,9 +40,10 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     setTeamMemberData(updatedTeamMembers);
   };
 
-  const deleteMember = (memberId) => {
+  // Видалення учасника
+  const deleteMember = (memberId, roleId) => {
     const updatedTeamMembers = teamMemberData.filter(
-      (item) => item.teamMember._id !== memberId
+      (item) => `${item.teamMember._id}${item.teamMemberRole._id}` !== `${memberId}${roleId}`
     );
     setTeamMemberData(updatedTeamMembers);
   };
@@ -119,7 +95,7 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
       setValue('file', '')
 
-      if(teamMembers){setTeamMemberData(teamMembers)}
+      if(teamMembers){setTeamMemberData([teamMembers])}
       //trigger()
     }else {
       setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
@@ -144,7 +120,7 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
-    if(teamMemberData){ newData.teamMembers = teamMemberData }
+    if(teamMemberData){ newData.teamMembers = teamMemberData}
 
   
    hendleMutate(newData)
