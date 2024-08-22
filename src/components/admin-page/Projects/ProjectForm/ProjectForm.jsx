@@ -42,8 +42,6 @@ export default function ProjectForm( {submitBtnText}) {
 
   const isDoneProject=()=>{
     if(getValues("isTeamRequired") === 'done'){
-      //setValue("launchDate",'')
-      //trigger("launchDate")
       return false
     }else{ 
       setValue("launchDate",'')

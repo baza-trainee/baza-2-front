@@ -6,7 +6,7 @@ import { useRouter } from "@/src/navigation";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import Loader from "@/src/components/shared/loader/Loader";
 import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import { ProjectFormProvider } from "../ProjectFormProvider/ProjectFormProvider";
 import switchTabProject from "@/src/state/switchTabProject";
@@ -15,13 +15,21 @@ import Team from "../Team/Team";
 
 export default function AddProject() {
   const router = useRouter();
+  
+
   const open = stateUseAlert(state => state.open);
   const tabName = switchTabProject(state => state.tabName);
+  const switchtabName= switchTabProject(state => state.switch);
 
   const[ modalOpen, setModalOpen ] = useState(false);
 
   const projectsPath = '/admin/projects'
   
+
+  useEffect(()=>{
+    switchtabName('description')
+  },[])
+
   const closeModal = useCallback(()=>{
     setModalOpen(false)
     router.replace(projectsPath)

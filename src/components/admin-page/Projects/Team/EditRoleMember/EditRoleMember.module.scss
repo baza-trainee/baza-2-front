@@ -8,20 +8,20 @@
   top: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.678);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   .card{
-
+    position: relative;
+    min-width: 70%;
     display: flex;
     align-items: center;
-    //background-color: rgb(22, 22, 22);
+    justify-content: space-between;
     border: 1px solid  var.$secondary-white;
     border-radius: 8px;
     gap: 50px;
-    //padding: 20px;
-    padding: 32px;
+    padding: 60px 32px 32px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 8px;
@@ -60,11 +60,21 @@
 
     .btn{
       height: 55px;
-      //width: 230px;
       font-weight: 600;
       font-size: 18px;
     }
-  }
+    .close{
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      &>svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
 
+  }
 }
 

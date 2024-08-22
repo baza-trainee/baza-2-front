@@ -1,19 +1,15 @@
 'use client';
 import styles from './Projects.module.scss'
+import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
-//import { useMutation, useQuery } from '@tanstack/react-query';
-//import { deletePartnerById, getAllPartners } from '@/src/api/partners';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import SectionAdmin from "../SectionAdmin/SectionAdmin";
 import MainButton from '../../shared/MainButton/MainButton';
-//import PartnerList from './PartnerList/PartnerList';
-import { useState } from 'react';
 import { Icon } from '../../shared/Icon/Icon';
 import Loader from '../../shared/loader/Loader';
-import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import PartnerList from './ProjectsList/ProjectsList';
 import { deleteProjectById, getAllProjects, getAllProjects2 } from '@/src/api/projects';
-import { useMutation, useQuery } from '@tanstack/react-query';
 
 export default function Projects() {
   const router = useRouter();

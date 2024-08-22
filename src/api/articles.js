@@ -28,7 +28,7 @@ export async function  getAllArticles({ page, search, limit }){
 		const res = await instanceBaza2.get(`${articlesEndpoint}?${params.toString()}`)
 		return res.data
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error?.message)
 	}
 }
 
@@ -38,7 +38,7 @@ export async function  createNewArticle(newArticle){
 			headers: { 'Content-Type': 'multipart/form-data' }})
 		return res
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error?.message)
 	}
 }
 
@@ -47,7 +47,7 @@ export async function  getArticleById(id){
 		const res = await instanceBaza2.get(`${articlesEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error?.message)
 	}
 }
 
@@ -56,7 +56,7 @@ export async function  deleteArticleById(id){
 		const res = await instanceBaza2.delete(`${articlesEndpoint}/${id}`)
 		return res.data
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error?.message)
 	}
 }
 
@@ -67,6 +67,6 @@ export async function  updateArticleById(id, updArticle){
      })
 		return res.data
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error?.message)
 	}
 }
