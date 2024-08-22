@@ -388,7 +388,8 @@
 				"complexity": "Złożoność"
 			},
 			"team": "Zespół"
-		}
+		},
+		"load_more": "Więcej projektów"
 	},
 	"sorryModal": {
 		"title": "Przepraszamy, nie znaleziono żadnych informacji.",
