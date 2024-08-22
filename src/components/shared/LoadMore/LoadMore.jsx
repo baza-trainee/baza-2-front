@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import styles from "./LoadMore.module.scss";
 
-const LoadMore = ({ onClick, className, disabled }) => {
+const LoadMore = ({ onClick, className, disabled, text = "Load more" }) => {
   return (
     <button
       onClick={onClick}
@@ -11,7 +11,7 @@ const LoadMore = ({ onClick, className, disabled }) => {
       disabled={disabled}
       type="button"
     >
-      Load more
+      {text}
     </button>
   );
 };
