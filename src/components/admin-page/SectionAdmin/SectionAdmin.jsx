@@ -1,5 +1,5 @@
-import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
 import styles from './SectionAdmin.module.scss'
+import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
 
 export default function SectionAdmin({title,  children, hendleSearch, lang, defaultValue, nav}) {
   return  (

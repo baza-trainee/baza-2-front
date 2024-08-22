@@ -1,26 +1,37 @@
 @use "../../../styles/mixins" as mix;
 @use "../../../styles/variables" as var;
 
-.title{
-  @include mix.apply-font-styles(var.$h2-font);
+.wrapper{
   width: 100%;
-  text-align: center;
-  font-size: 28px;
-  padding: 24px;
-}
-.text{
-  @include mix.apply-font-styles(var.$h2-font);
-  width: 100%;
-  font-weight: 400;
-  font-size: 22px;
-  padding:10px 34px;
+  height: 100vh;
+  background:linear-gradient(200deg,rgba(15, 3, 31, 0.85)40%,rgba(15, 3, 31, 0.8)) ,url('/images/hero_section/slide_3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  //background-color: aqua;
+  .title{
+    @include mix.apply-font-styles(var.$h2-font);
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    padding: 24px;
+  }
+  .text{
+    @include mix.apply-font-styles(var.$h2-font);
+    width: 100%;
+    font-weight: 400;
+    font-size: 22px;
+    padding:10px 34px;
+  }
+  
+  .sub_text{
+    @include mix.apply-font-styles(var.$h2-font);
+    width: 100%;
+    font-weight: 400;
+    text-align: end;
+    font-size: 16px;
+    padding:34px;
+    font-style:oblique;
+  }
 }
 
-.sub_text{
-  @include mix.apply-font-styles(var.$h3-font);
-  width: 100%;
-  font-weight: 400;
-  text-align: end;
-  font-size: 16px;
-  padding:34px;
-}
