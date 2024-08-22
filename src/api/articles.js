@@ -1,21 +1,21 @@
 import instanceBaza2 from './config/instance-baza2';
-// Example Value Schema
-// [
+// Example Value Schema post
 //   {
-//     "title": {
-//     "en": "Article",
-//     "pl": "Article",
-//     "ua": "Article"
-//   },
-//   "text": {
-//     "en": "text",
-//     "pl": "text",
-//     "ua": "text"
-//   },
-//     "homeUrl": "https://example.com",
+//     "title": "example",
+//     "description": "Long text",
+//     "link": "https://example.com",
+//     "date": 1669872000000,
+//     "file": "image file (JPG, PNG, WEBP)"
+//   }
+
+// Example Value Schema get
+//   {
+//     "title": "example",
+//     "description": "Long text",
+//     "link": "https://example.com",
+//     "date": 1669872000000,
 //     "imageUrl": "image.jpg"
 //   }
-// ]
 const articlesEndpoint = '/articles'
 
 export async function  getAllArticles({ page, search, limit }){
