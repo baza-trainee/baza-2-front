@@ -1,28 +1,28 @@
 import styles from './TeamList.module.scss'
 import { useState } from 'react';
-import { useRouter } from '@/src/navigation';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
+import EditRoleMember from '../EditRoleMember/EditRoleMember';
 
-export default function TeamListList({data, hendleRemove=()=>{}}) {
-  const router = useRouter();
+export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
   // Мова сторінки.
   const locale = switchLocaleAdmin(state => state.localeAdmin);
-  // Шляхи сторінок
-  //const editMemberPath = '/admin/members/edit'
  
   const[ idMember, setIdIdMember] = useState(null)
+  const[ idRole, setIdIdRole] = useState(null)
 
   const closeModal=()=>{
     setIdIdMember(null)
+    setIdIdRole(null)
   }
 
   const okRemove=()=>{
-    hendleRemove(idMember)
+    hendleRemove(idMember,idRole)
     setIdIdMember(null)
+    setIdIdRole(null)
   }
 
   return(
@@ -35,12 +35,17 @@ export default function TeamListList({data, hendleRemove=()=>{}}) {
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 
-                // onClick={()=>{router.push(`${editMemberPath}/${el._id}`)}}
-                >
+                onClick={()=>{ 
+                  setIdIdRole(el.teamMemberRole._id)
+                  setIdIdMember(el.teamMember._id)
+                }}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
-              <MainButton variant='admin' onClick={()=>{setIdIdMember(el._id)}} className={styles.btn}>
+              <MainButton variant='admin' onClick={()=>{
+                setIdIdRole(el.teamMemberRole._id)
+                setIdIdMember(el.teamMember._id)}
+                } className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>
@@ -54,6 +59,9 @@ export default function TeamListList({data, hendleRemove=()=>{}}) {
       }
 
       <AdminModal isOpen={idMember} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
+
+
+    {/* <EditRoleMember roles={roles}/> */}
     </>
   )
 }

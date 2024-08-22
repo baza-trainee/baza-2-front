@@ -1,0 +1,70 @@
+@use "../../../../../styles/mixins" as mix;
+@use "../../../../../styles/variables" as var;
+
+.modal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.678);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card{
+
+    display: flex;
+    align-items: center;
+    //background-color: rgb(22, 22, 22);
+    border: 1px solid  var.$secondary-white;
+    border-radius: 8px;
+    gap: 50px;
+    //padding: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
+    background: var.$primary-fon-card;
+    border-radius: 8px;
+
+    &>h3{
+      @include mix.apply-font-styles(var.$text-20-font);
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      .label{
+        @include mix.apply-font-styles(var.$text-20-font);
+        font-weight: 600;
+        font-size: 18px;
+      }
+      .select{
+        width: 100%;
+        @include mix.apply-font-styles(var.$text-16-font);
+        color: var.$secondary-black;
+        border: 2px solid transparent;
+        border-radius: 8px;
+    
+        padding: 10px;
+        outline: 0;
+        background: var.$secondary-white;
+        transition: all var.$transition-duration-base var.$transition-timing-base;
+        .option{
+          padding: 20px;
+          border-radius: 8px;
+        }
+      }
+    
+    }
+
+    .btn{
+      height: 55px;
+      //width: 230px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+}
+

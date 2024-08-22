@@ -4,38 +4,29 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { useProjectFormContext } from '../ProjectFormProvider/ProjectFormProvider';
 import TeamListList from './TeamList/TeamList';
-import { useState } from 'react';
-import MemberForm from '../../Members/MemberForm/MemberForm';
-import TeamForm from './TeamForm/TeamForm';
+import { useCallback, useState } from 'react';
+import AddTeamMember from './AddTeamMember/AddTeamMember';
+import EditRoleMember from './EditRoleMember/EditRoleMember';
+import { useQuery } from '@tanstack/react-query';
+import { getAllRoles } from '@/src/api/roles';
 
 export default function Team() {
+  // Контекст форми
   const{ 
     teamMemberData, 
-
+    deleteMember,
    } = useProjectFormContext()
-  const[ pageName, setPageName ] = useState('list')
-  const data = [
-    {
-      teamMember: {
-        id: "6471fa06933513f26024a990",
-        name: {
-          en: "John Doe",
-          pl: "Jan Kowalski",
-          ua: "Іван Петрович"
-        },
-        profileUrl: "https://www.linkedin.com/in/johndoe"
-      },
-      teamMemberRole: {
-        _id: "6471f9a29c17ac2190eb8791",
-        name: {
-          en: "Developer",
-          pl: "Programista",
-          ua: "Розробник"
-        }
-      }
-    }
-  ]
 
+  const[ pageName, setPageName ] = useState('list')
+
+  // Отримуємо всі спеціальності
+  const getRoles = useQuery({ queryKey: ['roles'], 
+    queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+
+
+  const hendleCancel = useCallback(()=>{
+    setPageName('list')
+  })
 
   return (
     <>
@@ -49,11 +40,13 @@ export default function Team() {
                 <Icon name={'plus_icon'} width={24} height={24} />
               {'Додати'}</MainButton >
           </div>
-          <TeamListList data={data}/>
+          <TeamListList data={teamMemberData} hendleRemove={deleteMember} roles={getRoles.data?.results}/>
         </>
       }  
 
-      {pageName === 'add_member' && <TeamForm/>}
+      {pageName === 'add_member' && <AddTeamMember hendleCancel={hendleCancel} roles={getRoles.data?.results}/>}
+
+      {/* <EditRoleMember/> */}
     </>
   )
 }
