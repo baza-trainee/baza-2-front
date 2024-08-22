@@ -78,6 +78,7 @@ const Projects = () => {
           <LoadMore
             disabled={isFetching}
             onClick={loadMore}
+            text={t("load_more")}
             className={clsx(
               styles.loadMore,
               page >= data?.pagination.totalPages && styles.hidden

@@ -389,7 +389,8 @@
 				"complexity": "Complexity"
 			},
 			"team": "Project team"
-		}
+		},
+		"load_more": "More projects"
 	},
 	"sorryModal": {
 		"title": "Sorry, no information found.",
