@@ -6,7 +6,6 @@ import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-;
 
 const ProjectFormContext = createContext();
 
@@ -52,7 +51,6 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
   const {
     handleSubmit,
     getValues,
-    setFocus,
     setValue,
     reset,
     control,
@@ -87,7 +85,6 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
       setValue('isTeamRequired',  getStatusName(isTeamRequired, launchDate))
       setValue('deployUrl', deployUrl)
-      //setValueStateProject(getStatusName(isTeamRequired, launchDate))
       setValue('creationDate',formatDateToNumericInputDate({timestamp:creationDate}))
       setValue('launchDate',launchDate ? formatDateToNumericInputDate({timestamp:launchDate}):'')
 
@@ -96,7 +93,6 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
       setValue('file', '')
 
       if(teamMembers){setTeamMemberData([teamMembers])}
-      //trigger()
     }else {
       setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
     }
@@ -117,14 +113,12 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
       deployUrl:data.deployUrl ? data.deployUrl : undefined
     }
     if(data.file){newData.file = data.file}
-
+  
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
     if(teamMemberData){ newData.teamMembers = teamMemberData}
 
-  
    hendleMutate(newData)
-   //return newData
   };
   const onSubmit = handleSubmit(prepareData);
 

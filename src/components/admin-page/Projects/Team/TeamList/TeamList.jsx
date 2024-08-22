@@ -14,15 +14,24 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
   const[ idMember, setIdIdMember] = useState(null)
   const[ idRole, setIdIdRole] = useState(null)
 
+  const[ removeModal, setRemoveModal] = useState(false)
+  const[ editRole, setEditRole] = useState(null)
+
   const closeModal=()=>{
     setIdIdMember(null)
     setIdIdRole(null)
+    setRemoveModal(false)
   }
-
+  const closeEditModal=()=>{
+    setIdIdMember(null)
+    setIdIdRole(null)
+    setEditRole(null)
+  }
   const okRemove=()=>{
     hendleRemove(idMember,idRole)
     setIdIdMember(null)
     setIdIdRole(null)
+    setRemoveModal(false)
   }
 
   return(
@@ -38,13 +47,15 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
                 onClick={()=>{ 
                   setIdIdRole(el.teamMemberRole._id)
                   setIdIdMember(el.teamMember._id)
+                  setEditRole(el)
                 }}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
               <MainButton variant='admin' onClick={()=>{
                 setIdIdRole(el.teamMemberRole._id)
-                setIdIdMember(el.teamMember._id)}
+                setIdIdMember(el.teamMember._id)
+                setRemoveModal(true)}
                 } className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
@@ -58,10 +69,10 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
         </>
       }
 
-      <AdminModal isOpen={idMember} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
+      <AdminModal isOpen={removeModal} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
 
 
-    {/* <EditRoleMember roles={roles}/> */}
+    {editRole && <EditRoleMember roles={roles} member={editRole} close={closeEditModal}/>}
     </>
   )
 }

@@ -1,8 +1,10 @@
 import styles from './ProjectsList.module.scss'
 import { useState } from 'react'
 import { useRouter } from '@/src/navigation'
+import { useParams } from 'next/navigation'
 import { createKey } from '@/src/lib/utils/createKey'
 import { createImageUrl, createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl'
+
 //import PartnerCard from '@/src/components/shared/PartnerCard/PartnerCard'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
@@ -11,13 +13,14 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
 import Pagination from '../../Pagination/Pagination'
-import switchLocaleAdmin from '@/src/state/switchLocaleAdmin'
+
 
 
 export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   // Мова сторінки.
-  const locale = switchLocaleAdmin(state => state.localeAdmin);
+  //const locale = switchLocaleAdmin(state => state.localeAdmin);
+  const { locale } = useParams();
   const[ idPartner, setIdPartner ] = useState(null)
 
   const editProjectPath = '/admin/projects/edit'
@@ -63,6 +66,8 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
       <p className={styles.length}>Додайте партнера або уточніть запит.</p>
     </>
     }
+
+    
     <AdminModal isOpen={idPartner} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити партнера?'} btnBlok={true}></AdminModal>
   </>
   )
