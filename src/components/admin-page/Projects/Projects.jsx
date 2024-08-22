@@ -10,6 +10,7 @@ import Loader from '../../shared/loader/Loader';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import PartnerList from './ProjectsList/ProjectsList';
 import { deleteProjectById, getAllProjects, getAllProjects2 } from '@/src/api/projects';
+import UseAlert from '../../shared/UseAlert/UseAlert';
 
 export default function Projects() {
   const router = useRouter();
