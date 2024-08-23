@@ -47,10 +47,7 @@ export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtn
 
     if (Object.keys(errors).length > 0) {
       return true;
-    } else 
-    if (!isDirty) {
-      return true;
-    } 
+    }
     else if(!isValid){
       return true
     }

@@ -32,10 +32,7 @@ export default function ProjectForm( {submitBtnText}) {
   const isDisabled = () => {
     if (isError) {
       return true;
-    } else 
-    if (!isDirty) {
-      return true;
-    } 
+    }
     else if(!isValid){
       return true
     }

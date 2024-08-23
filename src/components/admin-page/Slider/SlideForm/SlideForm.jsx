@@ -91,10 +91,7 @@ export default function SlideForm({
   const isDisabled = () => {
     if (isError) {
       return true;
-    } else 
-    if (!isDirty) {
-      return true;
-    } 
+    }
     else if(!isValid){
       return true
     }
