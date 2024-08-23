@@ -5,7 +5,7 @@ import styles from "./InputSearch.module.scss";
 import { Icon } from "../../Icon/Icon";
 import clsx from "clsx";
 
-const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
+const InputSearch = ({ onSubmit, className, defaultValue = "" ,placeholder="Введіть ключове слово"}) => {
   const [value, setValue] = useState("");
   const inputRef = useRef(null);
   // Очищає поле по дефолту
@@ -35,7 +35,7 @@ const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
         ref={inputRef}
         type="text"
         maxLength={300}
-        placeholder="Введіть ключове слово"
+        placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onBlur={(e) => handlerOnblur(e)}

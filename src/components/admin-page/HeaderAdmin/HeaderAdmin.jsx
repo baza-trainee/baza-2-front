@@ -7,7 +7,7 @@ import { Icon } from '../../shared/Icon/Icon'
 import switchTabProject from '@/src/state/switchTabProject';
 import { usePathname } from '@/src/navigation';
 
-export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, nav }) {
+export default function HeaderAdmin({ title, hendleSearch, lang, nav }) {
   const pathname = usePathname()
   const tabName = switchTabProject(state => state.tabName);
   const switchName = switchTabProject(state => state.switch);
@@ -25,7 +25,7 @@ export default function HeaderAdmin({ title, hendleSearch, lang, defaultValue, n
       <div className={styles.header}>
         <h1>{title}</h1>
         <div className={clsx(styles.options)}>
-          {hendleSearch && <InputSearch onSubmit={hendleSearch} defaultValue={defaultValue} className={styles.inputSearch}/>}
+          {hendleSearch && <InputSearch onSubmit={hendleSearch} className={styles.inputSearch} placeholder='Введіть ключюве слово для пошуку'/>}
           {lang && <LangDropdown type={isActiveProject('projects') ? '':'admin'}/>}
         </div>
       </div>

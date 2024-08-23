@@ -1,0 +1,22 @@
+@use "../../../styles/mixins" as mix;
+@use "../../../styles/variables" as var;
+
+.btn{
+  min-height: 55px;
+  min-width: 220px;
+  font-weight: 600;
+  font-size: 18px;
+  gap: 5px;
+  margin-bottom: 30px
+}
+
+.pagination{
+  padding-top: 15px
+}
+
+.error{
+  @include mix.apply-font-styles(var.$h2-font);
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}

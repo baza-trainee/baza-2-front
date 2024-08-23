@@ -15,7 +15,6 @@ import MembersList from './MembersList/MembersList';
 export default function Members() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const [ search, setSearch ] = useState('')
 
   const [ params, setParams] = useState({
     search:'',
