@@ -22,11 +22,13 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
     setIdIdRole(null)
     setRemoveModal(false)
   }
+  
   const closeEditModal=()=>{
     setIdIdMember(null)
     setIdIdRole(null)
     setEditRole(null)
   }
+
   const okRemove=()=>{
     hendleRemove(idMember,idRole)
     setIdIdMember(null)
@@ -38,29 +40,32 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
     <>
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
-          return <li key={createKey()} className={styles.item}>
-           <h3>{el.teamMember.name[locale]}</h3>
-           <p>{el.teamMemberRole.name[locale]}</p>
+          if(el.teamMember){ 
+          return (
+          <li key={createKey()} className={styles.item}>
+            <h3>{el.teamMember?.name[locale]}</h3>
+            <p>{el.teamMemberRole?.name[locale]}</p>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 
                 onClick={()=>{ 
-                  setIdIdRole(el.teamMemberRole._id)
-                  setIdIdMember(el.teamMember._id)
+                  setIdIdRole(el.teamMemberRole?._id)
+                  setIdIdMember(el.teamMember?._id)
                   setEditRole(el)
                 }}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
               <MainButton variant='admin' onClick={()=>{
-                setIdIdRole(el.teamMemberRole._id)
-                setIdIdMember(el.teamMember._id)
+                setIdIdRole(el.teamMemberRole?._id)
+                setIdIdMember(el.teamMember?._id)
                 setRemoveModal(true)}
                 } className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>
           </li>
+          )}else return null
         })}
         </ul> : 
         <>
@@ -69,10 +74,19 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
         </>
       }
 
-      <AdminModal isOpen={removeModal} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
+      <AdminModal 
+        isOpen={removeModal} 
+        handleCallback={closeModal} 
+        handleOkCallback={okRemove} 
+        title={'Ви впевнені, що хочете видалити учасника?'} 
+        btnBlok={true}>
+      </AdminModal>
 
-
-    {editRole && <EditRoleMember roles={roles} member={editRole} close={closeEditModal}/>}
+      {editRole && <EditRoleMember 
+        roles={roles} 
+        member={editRole} 
+        close={closeEditModal}/>
+      }
     </>
   )
 }

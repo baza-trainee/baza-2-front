@@ -1,9 +1,9 @@
 'use client';
 import styles from './EditRoleMember.module.scss'
 import { useState } from 'react';
-import MainButton from '@/src/components/shared/MainButton/MainButton';
 import { createKey } from '@/src/lib/utils/createKey';
 import { useProjectFormContext } from '../../ProjectFormProvider/ProjectFormProvider';
+import MainButton from '@/src/components/shared/MainButton/MainButton';
 import CloseBtn from '@/src/components/shared/CloseBtn/CloseBtn';
 
 export default function EditRoleMember({roles, member, close }) {

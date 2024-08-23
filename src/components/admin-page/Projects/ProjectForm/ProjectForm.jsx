@@ -12,8 +12,9 @@ import ImagePreview from '../../ImagePreview/ImagePreview'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile'
 
 export default function ProjectForm( {submitBtnText}) {
-
-  const{ onSubmit, 
+  // Контекст форми
+  const{ 
+    onSubmit, 
     errors, 
     isValid, 
     control, 
@@ -27,6 +28,7 @@ export default function ProjectForm( {submitBtnText}) {
     setPrevUrl, 
     resetForm} = useProjectFormContext()
 
+  // Стан кнопки submit
   const isDisabled = () => {
     if (isError) {
       return true;
@@ -40,6 +42,7 @@ export default function ProjectForm( {submitBtnText}) {
     else return false
   }
 
+ // Стан проєкту
   const isDoneProject=()=>{
     if(getValues("isTeamRequired") === 'done'){
       return false
@@ -51,13 +54,12 @@ export default function ProjectForm( {submitBtnText}) {
 
   return(
     <form className={styles.form} onSubmit={onSubmit} autoComplete='of'>
-
       <ul className={styles.list}>
         <li className={clsx(styles.list_item)}>
          <InputField
             id={"title_ua"}
             control={control}
-            maxLength={100}
+            maxLength={102}
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
@@ -74,7 +76,7 @@ export default function ProjectForm( {submitBtnText}) {
           <InputField
             id={"title_en"}
             control={control}
-            maxLength={100}
+            maxLength={102}
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
@@ -90,7 +92,7 @@ export default function ProjectForm( {submitBtnText}) {
           <InputField
             id={"title_pl"}
             control={control}
-            maxLength={100}
+            maxLength={102}
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
@@ -131,6 +133,7 @@ export default function ProjectForm( {submitBtnText}) {
           />
         </li> 
       </ul>
+
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <Select
@@ -138,7 +141,6 @@ export default function ProjectForm( {submitBtnText}) {
             placeholder={'Оберіть стан'}
             className={styles.item}
             required={false}
-            control={control}
             value={getValues("isTeamRequired")}
             setValueStateProject={setValue}
             target={trigger}
@@ -151,16 +153,15 @@ export default function ProjectForm( {submitBtnText}) {
         <li className={ styles.list_item }>
           <InputComplexity
             className={styles.item}
-            //control={control}
             required={false}
             value={getValues("complexity")}
-            registerOptions={register("complexity", { ...ProjectScheme.complexity})}
             setValue={setValue}
             isValid={isValid}
             label={'Складність проєкту'}
           />
         </li> 
       </ul>
+      
       <ul className={styles.list}>
         <li className={ styles.list_item }>
           <InputField

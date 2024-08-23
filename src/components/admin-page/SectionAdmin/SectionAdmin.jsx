@@ -1,9 +1,10 @@
-import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
 import styles from './SectionAdmin.module.scss'
+import clsx from 'clsx'
+import HeaderAdmin from '../HeaderAdmin/HeaderAdmin'
 
-export default function SectionAdmin({title,  children, hendleSearch, lang, defaultValue, nav}) {
+export default function SectionAdmin({title,  children, hendleSearch, lang, defaultValue, nav, className}) {
   return  (
-    <section className={styles.section}>
+    <section className={clsx(styles.section, className)}>
       <HeaderAdmin 
         title={title} 
         hendleSearch={hendleSearch} 
