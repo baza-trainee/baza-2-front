@@ -1,4 +1,9 @@
-export default function pressAboutPage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: admin-press-about</h2></div>
+import PressAbout from "@/src/components/admin-page/PressAbout/PressAbout"
+
+export default function pressAbout() {
+  return (
+
+    <PressAbout/>
+
+  )
 };
