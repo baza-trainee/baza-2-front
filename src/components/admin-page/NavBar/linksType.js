@@ -34,7 +34,7 @@ export const links=[
     icon: "reviews" 
   },
 
-  { name: "press_about", 
+  { name: "press-about", 
     content: "Преса про нас", 
     href: '/admin/press-about', 
     icon: "press_about" 
