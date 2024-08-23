@@ -5,7 +5,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin';
-// import PressPrewiev from '../PressPrewiev/PressPrewiev';
 import Loader from '@/src/components/shared/loader/Loader';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
@@ -49,11 +48,8 @@ export default function EditPress() {
     <SectionAdmin title={'Редагувати статтю'}>
       <div className={styles.wrapper}>
         <PressForm hendleMutate={mutate} isSuccess={isSuccess} data={pressById} submitBtnText='Зберегти зміни' />
-        
       </div>
-
       { isPending && <Loader/> }
-
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
       <UseAlert/>
 

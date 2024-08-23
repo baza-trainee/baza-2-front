@@ -44,7 +44,8 @@ export default function EditPartner() {
     <SectionAdmin title={'Редагувати партнера'}>
       <div className={styles.wrapper}>
         <PartnerForm hendleMutate={mutate} isSuccess={isSuccess} handlePrevImg={setPrevImg} data={partnerById.data} prevImg={prevImg} submitBtnText='Зберегти зміни' />
-        <PressPreview imageUrl={prevImg}/>
+
+        <PartnerPreview imageUrl={prevImg}/>
       </div>
 
       { isPending && <Loader/> }

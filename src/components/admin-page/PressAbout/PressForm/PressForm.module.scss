@@ -8,22 +8,61 @@
   width: 100%;
 
   .list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 76px 32px 12px;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr,1fr,1fr, 1fr;
+    grid-template-rows: 1fr,1fr,1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 10px;
+    align-items: flex-end;
+    padding: 32px 12px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
+    width: 100%;
+    .list_item{
+      .item{
+        width: 100%;
+        min-width: 250px;
+      }
+      .item_text{
+        width: 100%;
+        min-width: 210px;
+        height: 350px;
+        @media (min-width: 1200px) {
+          height: 250px;
+        }
+        @media (min-width: 1300px) {
+          height: 200px;
+        }
+      }
+
+  
+    }
+
+    .tooltip {
+      position: relative;
+    }
+    .tooltip:focus ._active,
+    .tooltip:hover ._active {
+      visibility: visible;
+      opacity: 1;
+      top: 105%;
+    }
+    .grid_item1 { grid-area: 1 / 1 / 1 / 2; }
+    .grid_item2 { 
+      padding-bottom: 16px;
+      grid-area: 1 / 2 / 1 / 2; 
+    }
+    .grid_item3 { grid-area: 2 / 1 / 2 / 3; } /// nazva satti
+    .grid_item4 { grid-area: 3 / 1 / 3 / 3; } /// sama stattya
+    .grid_item5 { grid-area: 4 / 1 / 4 / 3; } ///text
   }
 
   .btns{
-    width: 100%;
+    width: 420px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     .btn{
       height: 55px;
       width: 230px;

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from './PressPreview.module.scss'
+import styles from './PressPrewiev.module.scss'
 import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
 import clsx from 'clsx'
 

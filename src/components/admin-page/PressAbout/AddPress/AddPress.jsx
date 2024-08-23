@@ -10,7 +10,6 @@ import PressForm from '../PressForm/PressForm';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
-import PressPreview from '../PressPrewiev/PressPrewiev';
 
 //тимчасовий
 const createNewPress = (data) => {
@@ -26,6 +25,8 @@ export default function AddPress() {
   const router = useRouter();
   const open = stateUseAlert((state) => state.open);
   const [modalOpen, setModalOpen] = useState(false);
+  const[ prevImg, setPrevImg ] = useState(null);
+
 
   const closeModal = useCallback(() => {
     setModalOpen(false);
@@ -47,14 +48,9 @@ export default function AddPress() {
   return (
     <SectionAdmin title={'Додати статтю'} lang={true}>
       <div className={styles.wrapper}>
-
         <PressForm handleMutate={mutate} isSuccess={isSuccess} />
-        <PressPreview imageUrl={prevImg}/>
-
-
+      </div>
       {isLoading && <Loader />}
-    </div>
-
       <AdminModal
         isOpen={modalOpen}
         hendleCallback={closeModal}
