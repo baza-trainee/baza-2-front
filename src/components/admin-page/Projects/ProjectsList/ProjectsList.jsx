@@ -3,23 +3,16 @@ import { useState } from 'react'
 import { useRouter } from '@/src/navigation'
 import { useParams } from 'next/navigation'
 import { createKey } from '@/src/lib/utils/createKey'
-import { createImageUrl, createImageUrlBaza1 } from '@/src/lib/hooks/createImageUrl'
-
-//import PartnerCard from '@/src/components/shared/PartnerCard/PartnerCard'
+import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
-
-
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
 import Pagination from '../../Pagination/Pagination'
 
-
-
 export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   // Мова сторінки.
-  //const locale = switchLocaleAdmin(state => state.localeAdmin);
   const { locale } = useParams();
   const[ idPartner, setIdPartner ] = useState(null)
 
@@ -67,8 +60,13 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
     </>
     }
 
-    
-    <AdminModal isOpen={idPartner} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити партнера?'} btnBlok={true}></AdminModal>
+    <AdminModal 
+      isOpen={idPartner} 
+      handleCallback={closeModal} 
+      handleOkCallback={okRemove} 
+      title={'Ви впевнені, що хочете видалити партнера?'} 
+      btnBlok={true}>
+    </AdminModal>
   </>
   )
 }

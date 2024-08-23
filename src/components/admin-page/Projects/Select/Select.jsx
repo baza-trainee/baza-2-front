@@ -13,19 +13,19 @@ export default function Select({
   isError,
   className,
   required,
-  control,
   target,
   value,
-  registerOptions = {},
   setValueStateProject=()=>{},
-  ...props
 }) {
   const [ isOpen, setIsOpen ] = useState(true);
-//console.log(control)
   const menuRef = useRef(null);
   const submenuRef = useRef(null);
 
-  const [ valueOption, setValueOption ] = useState(value);
+  const [ valueOption, setValueOption ] = useState('');
+
+  useEffect(()=>{
+    setValueOption(value)
+  },[value])
 
   const handleOutsideClick = (event) => {
     if (
@@ -42,7 +42,6 @@ export default function Select({
   const hendleSetValue=(el)=>{
     setValueOption(el.id)
     setValueStateProject("isTeamRequired",el.id)
-    //target("isTeamRequired")
     target("launchDate")
     setIsOpen(true)
   }
@@ -56,7 +55,7 @@ export default function Select({
   }, [isOpen]);
 
   return(
-    <div className={clsx(styles.input_select, className)} ref={menuRef}{ ...props}>
+    <div className={clsx(styles.input_select, className)} ref={menuRef}>
       <label htmlFor={id} className={clsx(styles.label, !label && styles._hide)}>
         {label?label:'label title'} {required && <span>*</span>}
       </label>
@@ -71,15 +70,6 @@ export default function Select({
           id={id}
           readOnly
           value={valueOption}
-
-          // className={clsx(
-          //   styles.input,
-          //   isError && styles._error,
-          //   isValid && styles._success
-          // )}
-          {...registerOptions}
-          //placeholder={placeholder}
-           {...props}
         />
           {valueOption ? getName(valueOption): placeholder}
         </label>

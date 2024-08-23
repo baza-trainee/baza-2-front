@@ -6,8 +6,9 @@ import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
+import Pagination from '../../Pagination/Pagination';
 
-export default function MembersList({data, hendleRemove}) {
+export default function MembersList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   // Мова сторінки.
   const locale = switchLocaleAdmin(state => state.localeAdmin);
@@ -27,8 +28,8 @@ export default function MembersList({data, hendleRemove}) {
 
   return(
     <>
-      {data?.length ? <ul className={styles.list}>
-        {data.map((el)=>{
+      {data?.results?.length ? <ul className={styles.list}>
+        {data.results.map((el)=>{
           return <li key={createKey()} className={styles.item}>
            <h3>{el.name[locale]}</h3>
             <div className={styles.btns}>
@@ -44,6 +45,12 @@ export default function MembersList({data, hendleRemove}) {
             </div>
           </li>
         })}
+        {data.pagination.totalPages > 1 && <li className={styles.pagination}>
+        <Pagination pagination={data.pagination} 
+          hendleSetPage={hendleSetPage}
+          />
+        </li>
+      }
         </ul> : 
         <>
           <p className={styles.length}>Вибачте, інформації не знайдено.</p>

@@ -2,30 +2,25 @@ import clsx from 'clsx'
 import styles from './InputComplexity.module.scss'
 import { options } from './options'
 import { createKey } from '@/src/lib/utils/createKey'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function InputComplexity({
-  id,
   required,
   label,
   className,
   value,
   isValid,
   setValue=()=>{},
-  registerOptions={}
-
 }) {
+  const[ complexity, setComplexity ] = useState(1)
 
-  const[ complexity, setComplexity ] = useState(value)
+  useEffect(()=>{
+    setComplexity(value)
+  },[value])
 
   const hendleSetValue =(id)=>{
-    if(id==1 && complexity === 1){
-      setComplexity(0)
-      setValue("complexity", 0)
-    }else {
-      setComplexity(id)
-      setValue("complexity",id)
-    }
+    setComplexity(id)
+    setValue("complexity",id)
   }
 
   return (
