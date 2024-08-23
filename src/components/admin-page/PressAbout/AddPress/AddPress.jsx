@@ -25,7 +25,7 @@ export default function AddPress() {
   const router = useRouter();
   const open = stateUseAlert((state) => state.open);
   const [modalOpen, setModalOpen] = useState(false);
-  const[ prevImg, setPrevImg ] = useState(null);
+
 
 
   const closeModal = useCallback(() => {
@@ -54,7 +54,7 @@ export default function AddPress() {
       <AdminModal
         isOpen={modalOpen}
         hendleCallback={closeModal}
-        title={'Відгук успішно додано'}
+        title={'Стаття успішно додано'}
         btn={true}
       ></AdminModal>
 
