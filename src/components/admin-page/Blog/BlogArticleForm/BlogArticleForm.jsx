@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { articleDefaultValues, ArticleScheme } from './BlogArticleFormScheme';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
-import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import ImagePreview from '../../ImagePreview/ImagePreview';
 
 export default function BlogArticleForm({
@@ -20,7 +20,6 @@ export default function BlogArticleForm({
   submitBtnText= 'Додати'
 }) {
   const router = useRouter();
-
   const[ prevUrl, setPrevUrl ] = useState(null)
 
   const {
@@ -29,7 +28,6 @@ export default function BlogArticleForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-    getValues,
   } = useForm({ defaultValues: {...articleDefaultValues}, resolver: zodResolver(ArticleScheme), mode: 'onChange'});
 
   const resetForm = () => {
@@ -52,20 +50,12 @@ export default function BlogArticleForm({
   },[data])
 
   const onSubmit = (data) => {
-    // const newData = {
-    //   title:data.name_ua,
-    //   description: data.text_ua,
-    //   link: "https://example.com",
-    //   date: data.date,
-    //   file: data.file,
-    // }
     const newData = {
       title:data.title,
       text: data.text,
       date: data.date,
       file: data.file,
     }
-
     hendleMutate(newData)
   };
 

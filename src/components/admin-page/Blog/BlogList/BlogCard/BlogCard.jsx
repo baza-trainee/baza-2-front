@@ -1,17 +1,11 @@
 import Image from 'next/image'
 import styles from './BlogCard.module.scss'
 import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
-import { formatDateToNumeric, formatDateToNumericInputDate } from '@/src/lib/utils/formatData'
+import { formatDateToNumeric } from '@/src/lib/utils/formatData'
 
-export default function BlogCard({data}) {
+export default function BlogCard({data, hendleclick}) {
 
-  const {title, text, date, imageUrl} = data
-//   {
-//     "title": "example",
-//     "text": "Long text",
-//     "date": 1669872000000,
-//     "imageUrl": "image.jpg"
-//   }
+  const {title, text, date, imageUrl, _id} = data
 
   return (
     <div className={styles.wrapper}>
@@ -24,6 +18,9 @@ export default function BlogCard({data}) {
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.text}>{text}</p>
+      <button 
+        className={styles.btn} 
+        type="button" onClick={()=>{hendleclick(_id)}}>Читати статтю</button>
     </div>
   )
 }

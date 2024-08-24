@@ -2,33 +2,30 @@ import styles from './BlogList.module.scss'
 import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { createKey } from '@/src/lib/utils/createKey';
-import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
+import MainButton from '@/src/components/shared/MainButton/MainButton'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
-import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import Pagination from '../../Pagination/Pagination';
-
-import { createImageUrl } from '@/src/lib/hooks/createImageUrl';
-import { formatDate, formatDateToNumeric } from '@/src/lib/utils/formatData';
 import BlogCard from './BlogCard/BlogCard';
+import BlogArticle from './BlogArticle/BlogArticle';
 
 export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
 
-  // Мова сторінки.
-    const locale = switchLocaleAdmin(state => state.localeAdmin);
   // Шляхи сторінок
   const editBlogArticlePath = '/admin/blog/edit'
  
-  const[ idArticle, setIdIdArticle ] = useState(null)
+  const[ idArticle, setIdArticle ] = useState(null)
+  const[ fullIdArticle, setFullIdArticle ] = useState(null)
+
 
   const closeModal=()=>{
-    setIdIdArticle(null)
+    setIdArticle(null)
   }
 
   const okRemove=()=>{
     hendleRemove(idArticle)
-    setIdIdArticle(null)
+    setIdArticle(null)
   }
 
   return(
@@ -37,7 +34,10 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
         {data.results?.map((el)=>{
           return <li key={createKey()} className={styles.item}>
 
-            <BlogCard data={el}/>
+            {fullIdArticle === el._id ? 
+              <BlogArticle data={el} close={setFullIdArticle}/> :
+              <BlogCard data={el} hendleclick={setFullIdArticle}/>
+            }
 
             <div className={styles.btns}>
               <MainButton variant='admin' 
@@ -46,7 +46,7 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
-              <MainButton variant='admin' onClick={()=>{setIdIdArticle(el._id)}} className={styles.btn}>
+              <MainButton variant='admin' onClick={()=>{setIdArticle(el._id)}} className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>

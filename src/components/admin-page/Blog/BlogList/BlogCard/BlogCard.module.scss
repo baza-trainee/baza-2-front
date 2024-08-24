@@ -7,10 +7,9 @@
   border: 2px solid var.$primary-border;
   background-color: var.$primary-bg-card-blog;
   padding: 16px 8px;
-  max-width: 1061px;
   display: grid;
   grid-template-columns: .5fr 1fr;
-  grid-template-rows: .2fr 1fr;
+  grid-template-rows: .2fr 1fr .2fr;
 
   .img{
     width: 300px;
@@ -19,7 +18,9 @@
     grid-area: 1 / 1 / 3 / 2;
     border-radius: 5px;
     overflow: hidden;
-    &>img{
+    margin-right: 15px;
+    
+    & > img{
       display: block;
       width: 100%;
     }
@@ -50,10 +51,21 @@
     grid-area: 2 / 2 / 3 / 3;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-clamp: 2;
+    line-clamp: 4;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     color: var.$secondary-black;
+  }
+  .btn{
+    @include mix.apply-font-styles(var.$text-16-font);
+    font-size: 16px;
+    grid-area: 3 / 3 / 3 / 3;
+    margin-top: 15px;
+    color: var.$secondary-black;
+    padding: 10px;
+    &:hover{
+      opacity: .8;
+    }
   }
 }
