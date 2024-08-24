@@ -20,7 +20,7 @@ export default function BlogCard({data, hendleclick}) {
       <p className={styles.text}>{text}</p>
       <button 
         className={styles.btn} 
-        type="button" onClick={()=>{hendleclick(_id)}}>Читати статтю</button>
+        type="button" onClick={()=>{hendleclick(_id)}}>Читати матеріал</button>
     </div>
   )
 }

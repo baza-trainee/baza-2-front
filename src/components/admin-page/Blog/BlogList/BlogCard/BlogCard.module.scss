@@ -1,7 +1,6 @@
 @use "../../../../../styles/mixins" as mix;
 @use "../../../../../styles/variables" as var;
 
-
 .wrapper{
   border-radius: 16px;
   border: 2px solid var.$primary-border;
@@ -19,7 +18,7 @@
     border-radius: 5px;
     overflow: hidden;
     margin-right: 15px;
-    
+
     & > img{
       display: block;
       width: 100%;
