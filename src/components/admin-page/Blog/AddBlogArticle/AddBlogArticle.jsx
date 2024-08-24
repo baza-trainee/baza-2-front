@@ -2,13 +2,12 @@
 import { useCallback, useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
+import { createNewBlogArticle } from '@/src/api/blog';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin'
-
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
-import { createNewBlogArticle } from '@/src/api/blog';
 import BlogArticleForm from '../BlogArticleForm/BlogArticleForm';
 
 export default function AddBlogArticle() {
@@ -24,7 +23,6 @@ export default function AddBlogArticle() {
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return createNewBlogArticle(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternName, patternText, patternRole } from "@/src/constants/regulars";
+import { patternText } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
@@ -10,6 +10,7 @@ export const articleDefaultValues = {
   text: "",
   date:""
 }
+
 const MAX_SIZE_IMG = 512000
 
 const validateImageTypes =(value)=>{
@@ -39,6 +40,7 @@ const minDateValue=(value, minDate="2023-04-01")=>{
    return formatDateToNumericInputDate({dateString:value}) >= formatDateToNumericInputDate({dateString:minDate})
   }
 }
+
 export const ArticleScheme = z
 	.object({
     file: z.any()
@@ -60,7 +62,7 @@ export const ArticleScheme = z
     .min(50, { message: 'Мінімум 50 знаків'})
     .transform(normalize)
     .pipe(z.string()
-    .max(1000, { message: 'Текст максимум 1000 знаків'})
+    .max(2000, { message: 'Текст максимум 2000 символів'})
     .regex(patternText, { message: 'Присутні не коректні символи'})),
 
     date:z.string()

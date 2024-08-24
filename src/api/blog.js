@@ -21,51 +21,31 @@ export async function  getAllBlogArticles({ page, search, limit }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
-	if (limit) params.append('limit', limit.toString());
+	if (limit && limit < 25) params.append('limit', limit.toString());
 
-	try {
-		const res = await instanceBaza2.get(`${blogEndpoint}?${params.toString()}`)
+	const res = await instanceBaza2.get(`${blogEndpoint}?${params.toString()}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.message)
-	}
 }
 
 export async function  createNewBlogArticle(newArticle){
-	try {
-		const res = await instanceBaza2.post(blogEndpoint, newArticle, {
-			headers: { 'Content-Type': 'multipart/form-data' }})
-		return res
-	} catch (error) {
-		throw new Error(error?.message)
-	}
+	const res = await instanceBaza2.post(blogEndpoint, newArticle, {
+		headers: { 'Content-Type': 'multipart/form-data' }})
+	return res.data
 }
 
 export async function  getBlogArticleById(id){
-	try {
-		const res = await instanceBaza2.get(`${blogEndpoint}/${id}`)
-		return res.data
-	} catch (error) {
-		throw new Error(error?.message)
-	}
+	const res = await instanceBaza2.get(`${blogEndpoint}/${id}`)
+	return res.data
 }
 
 export async function  deleteBlogArticleById(id){
-	try {
-		const res = await instanceBaza2.delete(`${blogEndpoint}/${id}`)
-		return res.data
-	} catch (error) {
-		throw new Error(error?.message)
-	}
+	const res = await instanceBaza2.delete(`${blogEndpoint}/${id}`)
+	return res
 }
 
 export async function  updateBlogArticleById(id, updArticle){
-	try {
-		const res = await instanceBaza2.patch(`${blogEndpoint}/${id}`, updArticle, {
-		  headers: { 'Content-Type': 'multipart/form-data' },
-     })
+	const res = await instanceBaza2.patch(`${blogEndpoint}/${id}`, updArticle, {
+		headers: { 'Content-Type': 'multipart/form-data' },
+    })
 		return res.data
-	} catch (error) {
-		throw new Error(error?.message)
-	}
 }

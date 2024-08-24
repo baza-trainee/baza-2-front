@@ -128,13 +128,17 @@ export default function BlogArticleForm({
             version={"file"}
             label={'Зображення'}
           />
-            <ImagePreview imageUrl={prevUrl} variant='review'/>
+            
         </li>
 
-        <li className={clsx(styles.list_item, styles.grid4)}>
+        <li className={clsx(styles.list_item, styles.item_prev, styles.grid4)}>
+          <ImagePreview imageUrl={prevUrl} variant='blog'/>
+        </li>
+
+        <li className={clsx(styles.list_item, styles.grid5)}>
           <TextArea 
             id={"text"}   
-            maxLength={1005}
+            maxLength={2005}
             className={styles.item_text} 
             isError={errors.text}
             isValid={isValid}

@@ -22,7 +22,7 @@ export default function Blog() {
   })
 
   const hendleSetSearch = (value) => {
-    setParams({page:1,search:value})
+    setParams({ page:1, search:value })
   }
 
   const hendleSetPage = (value) => {
@@ -34,7 +34,7 @@ export default function Blog() {
 
   // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['articles-blog',  params.search, params.page], 
-    queryFn:()=>{return getAllBlogArticles({...params})}, keepPreviousData: true });
+    queryFn:()=>{return getAllBlogArticles({...params,limit:2})}, keepPreviousData: true });
  
   // Запит на видалення
   const deleteArticle = useMutation({

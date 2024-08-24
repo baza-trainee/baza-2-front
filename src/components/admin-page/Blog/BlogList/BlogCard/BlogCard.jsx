@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './BlogCard.module.scss'
 import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
-import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData'
+import { formatDateToNumeric, formatDateToNumericInputDate } from '@/src/lib/utils/formatData'
 
 export default function BlogCard({data}) {
 
@@ -20,7 +20,7 @@ export default function BlogCard({data}) {
           alt={title}
           fill
           sizes="100%"/>
-        <p className={styles.date}>{formatDateToNumericInputDate({timestamp:date})}</p>
+        <p className={styles.date}>{formatDateToNumeric(date)}</p>
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.text}>{text}</p>
