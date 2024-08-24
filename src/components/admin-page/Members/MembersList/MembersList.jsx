@@ -46,11 +46,11 @@ export default function MembersList({data, hendleRemove, hendleSetPage}) {
           </li>
         })}
         {data.pagination.totalPages > 1 && <li className={styles.pagination}>
-        <Pagination pagination={data.pagination} 
-          hendleSetPage={hendleSetPage}
-          />
-        </li>
-      }
+          <Pagination pagination={data.pagination} 
+            hendleSetPage={hendleSetPage}
+            />
+          </li>
+        }
         </ul> : 
         <>
           <p className={styles.length}>Вибачте, інформації не знайдено.</p>

@@ -9,8 +9,8 @@
 
   .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr,1fr,2fr;
+    grid-template-columns: repeat(2, .5fr) 1fr;
+    grid-template-rows: repeat(2, .3fr) 1fr;
     grid-column-gap: 24px;
     grid-row-gap: 5px;
     align-items: flex-end;
@@ -27,12 +27,12 @@
       .item_text{
         width: 100%;
         min-width: 210px;
-        height: 350px;
+        height: 450px;
         @media (min-width: 1200px) {
-          height: 250px;
+          height: 350px;
         }
         @media (min-width: 1300px) {
-          height: 200px;
+          height: 300px;
         }
       }
  
@@ -41,15 +41,11 @@
       display: flex;
       gap: 5px;
     }
-  }
-  .tooltip {
-    position: relative;
-  }
-  .tooltip:focus ._active,
-  .tooltip:hover ._active {
-    visibility: visible;
-    opacity: 1;
-    top: 105%;
+    .grid1 { grid-area: 1 / 1 / 2 / 4; }
+    .grid2 { grid-area: 2 / 1 / 3 / 2; }
+    .grid3 { grid-area: 2 / 2 / 3 / 3; }
+    .grid4 { grid-area: 2 / 3 / 3 / 4; }
+    .grid5 { grid-area: 3 / 1 / 4 / 4; }
   }
 
   .btns{

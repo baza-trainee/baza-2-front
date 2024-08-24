@@ -1,6 +1,5 @@
-import TestBlogArticles from "@/src/components/admin-page/TestBlogArticles/TestBlogArticles";
+import Blog from "@/src/components/admin-page/Blog/Blog";
 
 export default function blog() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <TestBlogArticles/>
-};
+  return <Blog/>
+}
