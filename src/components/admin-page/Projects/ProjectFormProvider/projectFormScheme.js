@@ -1,8 +1,11 @@
 import { z } from "zod";
-import { patternText, patternLink } from "@/src/constants/regulars";
-import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
+import { patternText, patternLink, patternDateValue } from "@/src/constants/regulars";
+import { ACCEPTED_IMAGE_TYPES } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
+import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
+import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
+import { maxDateValue, minDateValue } from "@/src/lib/hooks/minMaxDate";
 
 export const ProjectDefaultValues = {
   title_ua: "",
@@ -16,24 +19,10 @@ export const ProjectDefaultValues = {
   file: null,
 }
 
+// максимальний розмір файла 1MB
 const MAX_SIZE_IMG = 1048576
 
-const validateImageTypes =(value)=>{
-  if(value == ''){
-    return true
-  }else if(value){
-    return checkFileType(value[0], ACCEPTED_IMAGE_TYPES)
-  }
-}
-
-const transformImageValue = (value)=>{
-  if(value === ''){
-    return ''
-  }else if(value){
-    return value[0]
-  }
-}
-
+// Перевірка Url
 const validateUrl =(url)=>{
   if(url===''){
     return true
@@ -42,29 +31,13 @@ const validateUrl =(url)=>{
   }
 }
 
+// Повідомлення помилки
 const messageError= {
   message: "Це поле обов'язкове",
   path: ['launchDate'],
 }
 
-const patternDateValue = /^\d{4}-\d{2}-\d{2}$/
-
-const minDateValue=(value, minDate="2023-04-01")=>{
-  if(value === ''){
-    return true
-  }else {
-    return formatDateToNumericInputDate({dateString:value}) >= formatDateToNumericInputDate({dateString:minDate})
-  }
-}
-
-const maxDateValue=(value, maxDate)=>{
-  if(value===''){
-    return true
-  }else {
-   return formatDateToNumericInputDate({dateString:value}) <= formatDateToNumericInputDate({dateString:maxDate})
-  }
-}
-
+// Перевірка дати завершення проєкту
 const validateLaunchDate=(state, date, startDate)=>{
   if(state === 'done'){
     if(date === ''){
@@ -83,18 +56,18 @@ const validateLaunchDate=(state, date, startDate)=>{
 export const ProjectScheme = z
 	.object({
 		title_ua: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 символів'})
-    .max(100, { message: 'Максимум 100 символів' })
-    .regex(patternText, { message: 'Введіть коректний заголовок' }),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(5, { message: 'Мінімум 5 символів'})
+      .max(100, { message: 'Максимум 100 символів' })
+      .regex(patternText, { message: 'Введіть коректний заголовок' }),
 
 		title_en: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 символів'})
-    .max(100, { message: 'Максимум 100 символів' })
-    .regex(patternText, { message: 'Введіть коректний заголовок' }),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(5, { message: 'Мінімум 5 символів'})
+      .max(100, { message: 'Максимум 100 символів' })
+      .regex(patternText, { message: 'Введіть коректний заголовок' }),
 
 		title_pl: z.string()
       .trim()
@@ -111,25 +84,24 @@ export const ProjectScheme = z
       .refine((value) => maxDateValue(value, formatDateToNumericInputDate({timestamp:Date.now()})), { message: "Дата не може бути більша ніж сьогодні" })
       .transform((value) => formatDateToNumericInputDate({dateString:value})),
 
-
     launchDate: z.string()
-    .trim(),
+      .trim(),
 
     isTeamRequired:z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"}),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"}),
     
     complexity:z.number().min(1, { message: "Це поле обов'язкове"}),
 
     deployUrl:z.string()
-    .trim()
-    .refine((value) => validateUrl(value),{ message: "Введіть дійсний URL" })
-    .optional(),
+      .trim()
+      .refine((value) => validateUrl(value),{ message: "Введіть дійсний URL" })
+      .optional(),
 
     file: z.any()
-    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 1MB")
-    .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
-    .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)),
+      .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 1MB")
+      .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+      .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 
 })  
 .refine((data) => validateLaunchDate(data.isTeamRequired , data.launchDate, data.creationDate), messageError

@@ -48,14 +48,9 @@
   .text{
     @include mix.apply-font-styles(var.$text-16-font);
     grid-area: 2 / 2 / 3 / 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 4;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
     color: var.$secondary-black;
   }
+
   .btn{
     @include mix.apply-font-styles(var.$text-16-font);
     font-size: 16px;

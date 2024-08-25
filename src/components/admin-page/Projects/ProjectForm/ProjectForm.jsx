@@ -153,6 +153,7 @@ export default function ProjectForm( {submitBtnText}) {
             required={false}
             value={getValues("complexity")}
             setValue={setValue}
+            trigger={trigger}
             isValid={isValid}
             label={'Складність проєкту'}
           />

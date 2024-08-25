@@ -33,7 +33,7 @@ export default function Blog() {
 
   // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['articles-blog',  params.search, params.page], 
-    queryFn:()=>{return getAllBlogArticles({...params})}, keepPreviousData: true });
+    queryFn:()=>{return getAllBlogArticles({...params,limit:4})}, keepPreviousData: true });
  
   // Запит на видалення
   const deleteArticle = useMutation({
@@ -71,7 +71,7 @@ export default function Blog() {
 
       { deleteArticle.isPending && <Loader/> }
 
-      <UseAlert/>  
+      <UseAlert text={deleteArticle.error?.message}/>  
     </SectionAdmin>
   )
 }

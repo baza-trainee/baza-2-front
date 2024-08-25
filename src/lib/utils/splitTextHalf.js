@@ -1,4 +1,4 @@
-export const splitTextHalf = (str,min=300) => {
+export const splitTextHalf = (str, min=300) => {
   // Якщо текст коротший за 300 символів-не розділяємо
   if(str.length < min){return { strA:str }}
 
