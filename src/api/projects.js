@@ -23,12 +23,8 @@ export async function  getAllProjects({ page, search, limit }){
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
-	try {
-		const res = await instance.get(`${projectsEndpoint}?${params.toString()}`)
+	const res = await instance.get(`${projectsEndpoint}?${params.toString()}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  createNewProject(newProject){

@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+//import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import styles from "./ExampleProjects.module.scss";
 import { getAllProjects } from "@/src/api/projects";
 import { useState } from "react";
@@ -9,81 +9,108 @@ import { createImageUrlBaza1 } from "@/src/lib/hooks/createImageUrl";
 import { createKey } from "@/src/lib/utils/createKey";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import InputSearch from "@/src/components/shared/inputs/InputSearch/InputSearch";
-import stateSorryModal from "@/src/state/stateSorryModal";
-import SorryModal from "@/src/components/modals/SorryModal/SorryModal";
 import Loader from "@/src/components/shared/loader/Loader";
 import ProjectCard from "@/src/components/projects-page/ProjectCard/ProjectCard";
+import { QueryClient, useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
+//import React, { useState } from 'react';
+//import { useInfiniteQuery } from 'react-query';
+//import { getAllProjects } from './api'; // Імпортуємо вашу функцію
+
 
 export default function ExampleProjects() {
-  const open = stateSorryModal((state) => state.open);
+  const [searchQuery, setSearchQuery] = useState(''); // Стан для пошуку
+  const [limit, setLimit] = useState(6); // Обмеження кількості елементів на сторінку
+  const [queryKey, setQueryKey] = useState(['projects', '']);
+  // const queryClient = useQueryClient(); // Ініціалізуємо queryClient для керування кешем
 
-  //const [page,setPage]=useState(1)
-  const [search, setSearch] = useState("");
-  const [limit, setLimit] = useState(9);
-
-  const { isLoading, isError, data, error } = useQuery({
-    queryKey: ["projects", limit, search],
-    queryFn: () => {
-      return getAllProjects({ search, limit });
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    status,
+    refetch,
+    reset,
+  } = useInfiniteQuery({
+    queryKey: queryKey, // Передаємо ключ запиту та пошук
+    queryFn: ({ pageParam = 1 }) => getAllProjects({ page: pageParam, search: searchQuery, limit }), // Використовуємо вашу функцію з параметрами
+    getNextPageParam: (lastPage, allPages) => {
+      // Логіка для визначення наступної сторінки
+    
+      const morePagesExist = lastPage?.results?.length === limit;
+    
+       // Якщо кількість проектів дорівнює ліміту, значить є ще сторінки
+      return morePagesExist ? allPages.length + 1 : undefined; 
     },
-    keepPreviousData: true,
+    keepPreviousData: false,
+    //enabled: false, // Автоматичне завантаження вимкнене
   });
-  //console.log(data)
 
-  const setSearchParams = (value) => {
-    setSearch(value);
-    setLimit(9);
+  // const handleSearch = () => {
+  //   refetch(); // Оновлюємо запит при натисканні на кнопку
+  // };
+
+  const handleSearchChange = (value) => {
+    setSearchQuery(value);
+    setQueryKey(['projects', value]);
+    data.pages.length = 1
+    refetch(); 
+    //data.pages.length
+    // Інвалідовуємо запит, щоб очистити кешовані сторінки
+    // queryClient.invalidateQueries(['projects',searchQuery]);
+
+    // refetch()
+    // Якщо поле очищене, скидаємо всі дані і перезапускаємо запит
+    // if (value === '') {
+    //   //queryClient.invalidateQueries({ queryKey: ["projects"] })
+    //   //reset(); // Очищуємо кеш запиту
+    //   refetch(); // Повторно завантажуємо дані з першої сторінки
+    // } else {
+    //   refetch(); // Виконуємо пошук з новим запитом
+    // }
   };
-
-  //if(isLoading){return}
-
-  if (isError) {
-    return <h1>{"Error"}</h1>;
-  }
-
-  //if(!data){return null}
-  // if(data){
-  //   const {results,pagination} = data;
-  // }
-
-  //console.log(pagination)
-  if (data) {
-    !data?.results.length && open();
-  }
 
   return (
     <div className={styles.wrapper}>
-      <InputSearch onSubmit={setSearchParams} />
-      <div className={styles.content}>
-        {data?.results.length &&
-          data?.results.map((el) => {
-            return (
+      {/* Поле для введення пошукового запиту */}
+      {/* <input
+        type="text"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder="Пошук проектів..."
+      />
+      <button onClick={handleSearch}>Знайти</button> */}
+      <InputSearch onSubmit={handleSearchChange} />
+      {/* Обробка статусів */}
+      {status === 'loading' && <Loader />}
+      {status === 'error' && <div>Сталася помилка</div>}
+
+      {/* Відображення проектів */}
+      {data?.pages.map((page, i) => (
+  
+        <div key={i} className={styles.content}>
+
+          {page.results.map((el) => (
+  
               <ProjectCard
                 project={el}
                 coverImgUrl={createImageUrlBaza1(el.imageUrl)}
                 key={createKey()}
               />
-            );
-          })}
-      </div>
+          ))}
+        </div>
+      ))}
 
-      {data?.pagination.totalResults > limit && (
+      {/* Кнопка для завантаження більше проектів */}
+      {hasNextPage && (
         <MainButton
-          onClick={() => {
-            setLimit(limit + 3);
-          }}
+        onClick={() => fetchNextPage()}
+        disabled={isFetchingNextPage}
         >
-          More...
+         {isFetchingNextPage ? 'Завантаження...' : 'Завантажити ще'}
         </MainButton>
       )}
-
-      <SorryModal
-        handleCallback={() => {
-          setSearch("");
-          setLimit(9);
-        }}
-      />
-      {isLoading && <Loader />}
     </div>
   );
-}
+};
+  
