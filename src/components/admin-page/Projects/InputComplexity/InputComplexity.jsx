@@ -11,16 +11,19 @@ export default function InputComplexity({
   value,
   isValid,
   setValue=()=>{},
+  trigger
 }) {
   const[ complexity, setComplexity ] = useState(1)
 
   useEffect(()=>{
     setComplexity(value)
+  
   },[value])
 
   const hendleSetValue =(id)=>{
     setComplexity(id)
     setValue("complexity",id)
+    trigger("complexity")
   }
 
   return (
