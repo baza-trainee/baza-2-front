@@ -16,7 +16,7 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const editBlogArticlePath = '/admin/blog/edit'
  
   const[ idArticle, setIdArticle ] = useState(null)
-  const[ fullIdArticle, setFullIdArticle ] = useState(null)
+  const[ fullArticle, setFullArticle ] = useState(null)
 
 
   const closeModal=()=>{
@@ -26,6 +26,14 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const okRemove=()=>{
     hendleRemove(idArticle)
     setIdArticle(null)
+    setFullArticle(null)
+  }
+
+  const readFullArticle=(value)=>{
+    setFullArticle(value)
+  }
+  if(fullArticle){
+    return <BlogArticle data={fullArticle } close={readFullArticle}/>
   }
 
   return(
@@ -33,11 +41,7 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
       {data?.results?.length ? <ul className={styles.list}>
         {data.results?.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-
-            {fullIdArticle === el._id ? 
-              <BlogArticle data={el} close={setFullIdArticle}/> :
-              <BlogCard data={el} hendleclick={setFullIdArticle}/>
-            }
+            <BlogCard data={el} hendleclick={readFullArticle}/>
 
             <div className={styles.btns}>
               <MainButton variant='admin' 
@@ -61,12 +65,14 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
         }
 
         </ul> : 
-        <>
-          <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-          <p className={styles.length}>Додайте статтю.</p>
-        </>
+        ( <>
+            <p className={styles.length}>Вибачте, інформації не знайдено.</p>
+            <p className={styles.length}>Додайте статтю.</p>
+          </>
+        )
       }
 
+      
       <AdminModal 
         isOpen={idArticle} 
         handleCallback={closeModal} 

@@ -1,7 +1,9 @@
 import { z } from "zod";
 import { patternLink, patternName } from "@/src/constants/regulars";
-import { ACCEPTED_IMAGE_TYPES, checkFileType } from "@/src/lib/hooks/checkFileType";
+import { ACCEPTED_IMAGE_TYPES } from "@/src/lib/hooks/checkFileType";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
+import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
+import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
 
 export const addPartnerDefaultValues= {
   name: "",
@@ -9,24 +11,8 @@ export const addPartnerDefaultValues= {
   file: null,
 }
 
+// максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
-
-const validateImageTypes =(value)=>{
-  if(value == ''){
-    return true
-  }else if(value){
-    return checkFileType(value[0], ACCEPTED_IMAGE_TYPES)
-  }
-}
-
-const transformImageValue = (value)=>{
-  if(value === ''){
-    return ''
-  }else if(value){
-    return value[0]
-  }
-}
-
 
 export const addPartnerSchema = z
 	.object({
@@ -43,6 +29,6 @@ export const addPartnerSchema = z
 
     file: z.any()
     .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
-    .refine((file) => validateImageTypes(file),"Формат JPG, PNG, WEBP")
-    .transform((value) => transformImageValue(value, ACCEPTED_IMAGE_TYPES)), 
+    .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+    .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)), 
 })

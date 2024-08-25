@@ -43,7 +43,8 @@ export const patternFacebook =
 export const patterTelegram =
   /^https?:\/\/(www\.)?t\.me\/(?:[a-zA-Z0-9_]{5,32}|[+][a-zA-Z0-9_]{5,64})\/?$/;
 
-
+// формат дати в інпут.
+export const patternDateValue = /^\d{4}-\d{2}-\d{2}$/
 
 
 //export const patternEmail = /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.[A-Z]{2,}$/i;

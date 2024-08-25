@@ -7,6 +7,10 @@ export const ACCEPTED_IMAGE_TYPES = [
   'jpg',
 ];
 
+export const ACCEPTED_DOCUMENTS_TYPES = [
+  'pdf',
+];
+
 export function checkFileType(file,types) {
   if (file?.name) {
     const fileType = file.name.split(".").pop().toLowerCase();
