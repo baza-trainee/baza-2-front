@@ -67,7 +67,7 @@ const Projects = () => {
         />
         {data?.pages.map((page, i) => (
           <div key={i} className={styles.content}>
-            {page.results.map((el) => (
+            {page.results.map((project) => (
               <ProjectCard
                 key={createKey()}
                 project={project}
