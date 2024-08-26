@@ -43,6 +43,7 @@ export default function ExampleProjects() {
   const handleSearchChange = (value='') => {
     setSearchQuery(value);
     // Інвалідовуємо запит, щоб очистити кешовані сторінки
+    // Як що не робити після очищення пошуку виведе всі попередні сторінки
     if (value === '') {
       queryClient.resetQueries(['projects'], { exact: true });
     }
