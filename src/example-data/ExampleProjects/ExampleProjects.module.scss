@@ -7,11 +7,20 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  .content{
+  .content_wrapper{
     min-height: 100vh;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    
+    .content{
+
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 

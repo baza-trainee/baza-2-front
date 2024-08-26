@@ -1,4 +1,3 @@
-import instance from "./config/instance";
 import instanceBaza2 from "./config/instance-baza2";
 
 const rolesEndpoint = '/roles';

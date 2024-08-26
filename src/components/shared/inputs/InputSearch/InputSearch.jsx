@@ -1,19 +1,16 @@
 "use client";
-
-import { useEffect, useRef, useState } from "react";
 import styles from "./InputSearch.module.scss";
-import { Icon } from "../../Icon/Icon";
 import clsx from "clsx";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Icon } from "../../Icon/Icon";
 
-const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
-  const [value, setValue] = useState("");
+const InputSearch = ({ onSubmit, className, placeholder="Введіть ключове слово", defaultValue=''}) => {
+  const [value, setValue] = useState(defaultValue);
   const inputRef = useRef(null);
-  // Очищає поле по дефолту
-  // useEffect(() => {
-  //   if (defaultValue == "") {
-  //     setValue("");
-  //   }
-  // }, [defaultValue]);
+
+  useEffect(()=>{
+    setValue(defaultValue)
+  },[defaultValue])
 
   const handleSearch = () => {
     if (value.trim() === "") {
@@ -21,6 +18,7 @@ const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
     }
     onSubmit(value);
   };
+
   // Робить запит як що користувач очистив поле
   const handlerOnblur = (e) => {
     e.preventDefault();
@@ -29,13 +27,31 @@ const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
     }
   };
 
+
+  const pushOnEnter = useCallback(
+    (e) => {
+      if (e.key === "Enter") {
+        handleSearch();
+      }
+    },
+    [handleSearch]
+  );
+
+  useEffect(() => {
+    document.body.addEventListener("keydown", pushOnEnter);
+    return () => {
+      document.body.removeEventListener("keydown", pushOnEnter);
+    };
+  }, [pushOnEnter]);
+
+
   return (
-    <form className={clsx(styles.wrapper, className)}>
+    <div className={clsx(styles.wrapper, className)}>
       <input
         ref={inputRef}
         type="text"
         maxLength={300}
-        placeholder="Введіть ключове слово"
+        placeholder={placeholder}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onBlur={(e) => handlerOnblur(e)}
@@ -54,13 +70,12 @@ const InputSearch = ({ onSubmit, className, defaultValue = "" }) => {
 
       <button
         onClick={handleSearch}
-        // disabled={isSearchBtnDisabled}
         type="button"
         className={styles.submit}
       >
         <Icon name="search" width={32} height={32} />
       </button>
-    </form>
+    </div>
   );
 };
 

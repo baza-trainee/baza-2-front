@@ -15,11 +15,25 @@ import MembersList from './MembersList/MembersList';
 export default function Members() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
-  const [ search, setSearch ] = useState('')
+
+  const [ params, setParams] = useState({
+    search:'',
+    page:1
+  })
+
+  const hendleSetSearch = (value) => {
+    setParams({page:1,search:value})
+  }
+
+  const hendleSetPage = (value) => {
+    setParams({...params, page:value})
+  }
+
+
   const addMembePath = '/admin/members/add'
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['members', search], 
-    queryFn:()=>{return getAllMembers({search:search})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ queryKey: ['members',  params.search, params.page], 
+    queryFn:()=>{return getAllMembers({...params})}, keepPreviousData: true });
     
 // Запит на видалення
   const deleteMember = useMutation({
@@ -33,7 +47,7 @@ export default function Members() {
 
 
  return( 
-    <SectionAdmin title={'Учасники'} hendleSearch={setSearch} lang={true}>
+    <SectionAdmin title={'Учасники'} hendleSearch={hendleSetSearch} lang={true}>
       <div className={styles.wrapper}>
         <h2>Прізвище та Ім’я</h2>
         <MainButton  variant='admin' className={styles.btn} onClick={()=>{
@@ -49,7 +63,10 @@ export default function Members() {
           <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
         </>:
         <>
-          {data && <MembersList data={data.results} hendleRemove={ deleteMember.mutate }/>}
+          {data && <MembersList 
+            data={data} 
+            hendleRemove={ deleteMember.mutate} 
+            hendleSetPage={hendleSetPage}/>}
         </>
       }
 

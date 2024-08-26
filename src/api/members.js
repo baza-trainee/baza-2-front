@@ -8,46 +8,26 @@ export async function  getAllMembers({ page, search, limit }){
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
-	try {
-		const res = await instanceBaza2.get(`${membersEndpoint}?${params.toString()}`)
+	const res = await instanceBaza2.get(`${membersEndpoint}?${params.toString()}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  createNewMember(newMember){
-	try {
-		const res = await instanceBaza2.post(membersEndpoint, newMember)
+	const res = await instanceBaza2.post(membersEndpoint, newMember)
 		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  getMemberById(id){
-	try {
-		const res = await instanceBaza2.get(`${membersEndpoint}/${id}`)
+	const res = await instanceBaza2.get(`${membersEndpoint}/${id}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  deleteMemberById(id){
-	try {
-		const res = await instanceBaza2.delete(`${membersEndpoint}/${id}`)
+	const res = await instanceBaza2.delete(`${membersEndpoint}/${id}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  updateMemberById(id, updMember){
-	try {
-		const res = await instanceBaza2.patch(`${membersEndpoint}/${id}`, updMember)
+	const res = await instanceBaza2.patch(`${membersEndpoint}/${id}`, updMember)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }

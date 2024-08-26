@@ -26,7 +26,7 @@ export const patternСity =
   /^(?:|(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}`’']{2,30}(?:[\p{L} `’'”-]{2,30}[\p{L}])?)$/giu;
 
 export const patternText =
-  /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—'-\[\]{}()_~₴#$%^&№|”’`"\\]+$/giu;
+  /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—':;\[\]{}()_~₴#$%^&№:;|— -”’`"\\]+$/giu;
 
 export const patternPassword = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d!@#$%^&*]{8,}$/;
 
@@ -43,7 +43,8 @@ export const patternFacebook =
 export const patterTelegram =
   /^https?:\/\/(www\.)?t\.me\/(?:[a-zA-Z0-9_]{5,32}|[+][a-zA-Z0-9_]{5,64})\/?$/;
 
-
+// формат дати в інпут.
+export const patternDateValue = /^\d{4}-\d{2}-\d{2}$/
 
 
 //export const patternEmail = /^[A-Z0-9._%+-]{2,}@[A-Z0-9.-]+\.[A-Z]{2,}$/i;

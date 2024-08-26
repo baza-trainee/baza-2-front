@@ -6,19 +6,17 @@ import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-;
 
 const ProjectFormContext = createContext();
 
 export const useProjectFormContext = () => useContext(ProjectFormContext);
 
 export const ProjectFormProvider = ({hendleMutate, children, data}) => {
-
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ teamMemberData, setTeamMemberData ] = useState([]);
 
-  // Додавання учасника
+  // Додавання учасника та спеціальності.
   const addTeamMember = (newMember) => {
     const updatedTeamMembers = [
       ...teamMemberData, newMember
@@ -47,12 +45,11 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     );
     setTeamMemberData(updatedTeamMembers);
   };
-;
 
+  // Форма додавання та валідації проєкту
   const {
     handleSubmit,
     getValues,
-    setFocus,
     setValue,
     reset,
     control,
@@ -61,18 +58,25 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     formState: { errors, isValid, isError, isDirty },
   } = useForm({ defaultValues:{...ProjectDefaultValues},  resolver: zodResolver(ProjectScheme), mode: 'onChange'});
 
-
+  // Очищення форми
   const resetForm = () => {
     router.replace('/admin/projects')
     reset();
   }
 
+  // Статус проєкту
   const getStatusName=(isTeamRequired, launchDate)=>{
     if(isTeamRequired){ return 'teamFormation' }
     if(launchDate){ return 'done' }
     return 'inDevelopment'
   }
 
+  // Перевірка чи є користувач та його роль
+  const prepareTeamMembers=(data)=>{
+    return data.filter((el) => el.teamMember && el.teamMemberRole)
+  }
+
+  // Заповнення полів данними проєкту який редагується.
   useEffect(()=>{
     if(data && Object.keys(data).length){
       const{title, imageUrl,file, isTeamRequired, creationDate, launchDate,   complexity, deployUrl, teamMembers} = data
@@ -87,7 +91,6 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
       setValue('isTeamRequired',  getStatusName(isTeamRequired, launchDate))
       setValue('deployUrl', deployUrl)
-      //setValueStateProject(getStatusName(isTeamRequired, launchDate))
       setValue('creationDate',formatDateToNumericInputDate({timestamp:creationDate}))
       setValue('launchDate',launchDate ? formatDateToNumericInputDate({timestamp:launchDate}):'')
 
@@ -95,14 +98,13 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
 
       setValue('file', '')
 
-      if(teamMembers){setTeamMemberData([teamMembers])}
-      //trigger()
+      if(teamMembers){setTeamMemberData(prepareTeamMembers(teamMembers))}
     }else {
       setValue('creationDate',formatDateToNumericInputDate({timestamp:Date.now()}))
     }
-    
   },[data])
 
+// Модифікація об'єкту перед відправкою
   const prepareData = (data) => {
     const newData = {
       title:{
@@ -117,18 +119,17 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
       deployUrl:data.deployUrl ? data.deployUrl : undefined
     }
     if(data.file){newData.file = data.file}
-
+  
     if(data.launchDate){ newData.launchDate = formatDateToNumericInputDate({dateString:data.launchDate})}else newData.launchDate = 0
 
-    if(teamMemberData){ newData.teamMembers = teamMemberData}
+    if(teamMemberData){newData.teamMembers = prepareTeamMembers(teamMemberData)}
 
-  
    hendleMutate(newData)
-   //return newData
   };
+  // Функція Submit 
   const onSubmit = handleSubmit(prepareData);
-
-
+  
+  // Контекст форми 
   const contextValue = {
     teamMemberData,
     onSubmit,

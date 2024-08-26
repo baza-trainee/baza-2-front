@@ -20,7 +20,7 @@ export default function LoginSection() {
     mutationFn: (data) => {
       return logIn(data)
     },onSuccess:()=>{
-      router.replace('/admin/slider')
+      router.replace('/admin')
       reset()
     },onError:()=>{
       open('error', false)

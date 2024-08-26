@@ -14,42 +14,58 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
   const[ idMember, setIdIdMember] = useState(null)
   const[ idRole, setIdIdRole] = useState(null)
 
+  const[ removeModal, setRemoveModal] = useState(false)
+  const[ editRole, setEditRole] = useState(null)
+
   const closeModal=()=>{
     setIdIdMember(null)
     setIdIdRole(null)
+    setRemoveModal(false)
+  }
+  
+  const closeEditModal=()=>{
+    setIdIdMember(null)
+    setIdIdRole(null)
+    setEditRole(null)
   }
 
   const okRemove=()=>{
     hendleRemove(idMember,idRole)
     setIdIdMember(null)
     setIdIdRole(null)
+    setRemoveModal(false)
   }
 
   return(
     <>
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
-          return <li key={createKey()} className={styles.item}>
-           <h3>{el.teamMember.name[locale]}</h3>
-           <p>{el.teamMemberRole.name[locale]}</p>
+          if(el.teamMember){ 
+          return (
+          <li key={createKey()} className={styles.item}>
+            <h3>{el.teamMember?.name[locale]}</h3>
+            <p>{el.teamMemberRole?.name[locale]}</p>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 
                 onClick={()=>{ 
-                  setIdIdRole(el.teamMemberRole._id)
-                  setIdIdMember(el.teamMember._id)
+                  setIdIdRole(el.teamMemberRole?._id)
+                  setIdIdMember(el.teamMember?._id)
+                  setEditRole(el)
                 }}>
                 <Icon  width={24} height={24} name='edit'/>
               </MainButton>
 
               <MainButton variant='admin' onClick={()=>{
-                setIdIdRole(el.teamMemberRole._id)
-                setIdIdMember(el.teamMember._id)}
+                setIdIdRole(el.teamMemberRole?._id)
+                setIdIdMember(el.teamMember?._id)
+                setRemoveModal(true)}
                 } className={styles.btn}>
                 <Icon width={24} height={24} name='remove'/>
               </MainButton>
             </div>
           </li>
+          )}else return null
         })}
         </ul> : 
         <>
@@ -58,10 +74,19 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
         </>
       }
 
-      <AdminModal isOpen={idMember} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>
+      <AdminModal 
+        isOpen={removeModal} 
+        handleCallback={closeModal} 
+        handleOkCallback={okRemove} 
+        title={'Ви впевнені, що хочете видалити учасника?'} 
+        btnBlok={true}>
+      </AdminModal>
 
-
-    {/* <EditRoleMember roles={roles}/> */}
+      {editRole && <EditRoleMember 
+        roles={roles} 
+        member={editRole} 
+        close={closeEditModal}/>
+      }
     </>
   )
 }

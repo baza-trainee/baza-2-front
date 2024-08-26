@@ -1,27 +1,24 @@
 import { useCallback, useState } from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { getAllRoles } from "@/src/api/roles";
+import { useMutation } from "@tanstack/react-query";
 import { createNewMember } from "@/src/api/members";
 import { useProjectFormContext } from "../../ProjectFormProvider/ProjectFormProvider";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import TeamForm from "../TeamForm/TeamForm";
 import Loader from "@/src/components/shared/loader/Loader";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
-import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 
 export default function AddTeamMember({hendleCancel, roles}) {
   const open = stateUseAlert(state => state.open);
   const[ modalOpen, setModalOpen ] = useState(false);
 
   const[ selectedRole, setSelectedRole ] = useState(null)
+  const[ errorModal, setErrorModal ] = useState(false)
+
   // Контекст форми
   const{  
     addTeamMember,
-    } = useProjectFormContext()  
-
-  // Отримуємо всі спеціальності
-  // const getRoles = useQuery({ queryKey: ['roles'], 
-  //   queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+    teamMemberData,
+  } = useProjectFormContext()  
 
   // Додавання учасника до бази  
   const createMember= useMutation({
@@ -33,6 +30,19 @@ export default function AddTeamMember({hendleCancel, roles}) {
       open('error', false)
     }})
 
+  const memberIsProject=(idMember)=>{
+    const res = teamMemberData.find((el)=>{
+      return el.teamMember._id === idMember
+    })
+    if(res){
+      return true
+    }else return false
+  }
+
+  const closeErrorModal=useCallback(()=>{
+    setErrorModal(false)
+    hendleCancel()
+  })
 
   const closeModal = useCallback(()=>{
     // Додавання нового учасника до проєкту 
@@ -44,16 +54,22 @@ export default function AddTeamMember({hendleCancel, roles}) {
     setModalOpen(false)
     hendleCancel()
   })
- 
+
   const onSubmit = (data)=>{
     const newData={
       teamMemberRole:selectedRole
     }
     // Як що учасник є в базі - додаємо до проєкту 
     if(data._id){
-      newData.teamMember = data
-      addTeamMember(newData)
-      hendleCancel()
+      if(memberIsProject(data._id)){
+        //'Такий учасник вже є на проєкті'
+        setErrorModal(true)
+        return
+      }else{
+        newData.teamMember = data
+        addTeamMember(newData)
+        hendleCancel()
+      }
     }else{
       // Як що учасник новий - додаємо до бази - потім до проєкту 
       createMember.mutate(data)
@@ -63,7 +79,6 @@ export default function AddTeamMember({hendleCancel, roles}) {
   return(
     <>  
       <TeamForm hendleMutate={onSubmit} 
-        //roles={getRoles.data?.results} 
         roles={roles}
         hendleCancel={hendleCancel}
         selectedRole={selectedRole} 
@@ -73,7 +88,7 @@ export default function AddTeamMember({hendleCancel, roles}) {
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Новий учасник успішно доданий до бази та проєкту'} btn={true}></AdminModal>
 
-      <UseAlert text={createMember.error && createMember.error?.message}/>
+      <AdminModal isOpen={errorModal} handleCallback={closeErrorModal} title={'Такий учасник вже є на проєкті'} btn={true}></AdminModal>
     </>
   )
-}
+} 

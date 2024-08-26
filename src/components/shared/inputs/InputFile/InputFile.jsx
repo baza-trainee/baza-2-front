@@ -44,7 +44,6 @@ export default function InputFile({
       }else{
         getPrevImgUrl(null)
       }
-
       setValue(file.name)
     }
   }

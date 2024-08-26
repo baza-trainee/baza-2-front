@@ -1,4 +1,5 @@
-export default function editArticlePage() {
-  // !! Замінити  <div> на готові компоненти !!
-  return <div><h2>Сторінка: editArticlePaget</h2></div>
+import EditPress from "@/src/components/admin-page/PressAbout/EditPress/EditPress";
+
+export default function editPressPage() {
+  return <EditPress/>
 };

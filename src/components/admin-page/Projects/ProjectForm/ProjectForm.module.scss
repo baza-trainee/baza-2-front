@@ -10,7 +10,6 @@
   .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    //grid-template-rows: 1fr,1fr,2fr;
     grid-column-gap: 24px;
     grid-row-gap: 5px;
     align-items: flex-end;
@@ -36,22 +35,10 @@
           height: 200px;
         }
       }
- 
     }
     .item_prev{
       padding-bottom: 16px;
     }
-  }
-
-
-  .tooltip {
-    position: relative;
-  }
-  .tooltip:focus ._active,
-  .tooltip:hover ._active {
-    visibility: visible;
-    opacity: 1;
-    top: 105%;
   }
 
   .btns{

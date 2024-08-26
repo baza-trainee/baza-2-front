@@ -1,42 +1,49 @@
 'use client';
 import styles from './EditRoleMember.module.scss'
-import { useQuery } from '@tanstack/react-query';
-import { getAllRoles } from '@/src/api/roles';
 import { useState } from 'react';
-import MainButton from '@/src/components/shared/MainButton/MainButton';
 import { createKey } from '@/src/lib/utils/createKey';
+import { useProjectFormContext } from '../../ProjectFormProvider/ProjectFormProvider';
+import MainButton from '@/src/components/shared/MainButton/MainButton';
+import CloseBtn from '@/src/components/shared/CloseBtn/CloseBtn';
 
-export default function EditRoleMember({roles, data}) {
-
-  const[ selectedRole, setSelectedRole ] = useState(null)
+export default function EditRoleMember({roles, member, close }) {
+  const[ selectedRole, setSelectedRole ] = useState(member.teamMemberRole.name['ua'])
   const [selectedRoleId, setSelectedRoleId] = useState('');
 
-  // Отримуємо всі спеціальності
-//   const getRoles = useQuery({ queryKey: ['editroles'], 
-//     queryFn:()=>{return getAllRoles()}, keepPreviousData: true });
-// console.log(getRoles)
+  // Контекст форми
+  const{ 
+    updTeamMemberRole, 
+   } = useProjectFormContext()
+
+  const hendleUpdate=()=>{
+    if(selectedRoleId && member.teamMemberRole._id!==selectedRoleId){
+      updTeamMemberRole(member.teamMember._id,member.teamMemberRole._id,selectedRole)
+      setSelectedRoleId('')
+      close()
+    }
+  }
+
   // Функція вибору спеціальності
   const handleOptionSelect = (e) => {
     const selectedRole = roles.find((item) => item._id === e.target.value);
     if (selectedRole) {
       setSelectedRoleId(e.target.value);
-      // setValue('specialization', e.target.value )
-      // trigger("specialization")
       setSelectedRole(selectedRole)
     }
   };
+
+
   return (
     <div className={styles.modal}>
       <div className={styles.card}>
-        <h3>Name</h3>
+        <h3>{member.teamMember.name['ua']}</h3>
         <div className={styles.wrapper}>
-          {/* <h4 className={styles.label}>Спеціалізація</h4> */}
           <select
             className={styles.select}
               onChange={handleOptionSelect}
               value={selectedRoleId}
             >
-            {!selectedRoleId && <option value="" className={styles.option} readOnly>Оберіть спеціалізацію</option>}
+            {!selectedRoleId && <option value="" className={styles.option} readOnly>{selectedRole}</option>}
             {roles &&
               roles.length > 0 &&
               roles.map((item) => (
@@ -50,15 +57,15 @@ export default function EditRoleMember({roles, data}) {
         </div>
 
         <MainButton
-          //type="submit"
+          onClick={hendleUpdate}
           className={styles.btn}
-          //disabled={isDisabled()}
+          disabled={!selectedRoleId}
         >
           {'Зберегти зміни'}
         </MainButton>
+
+        <CloseBtn className={styles.close} onClick={()=>{close()}}/>
       </div>
-
-
     </div>
   )
 }

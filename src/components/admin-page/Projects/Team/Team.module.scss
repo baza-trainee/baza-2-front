@@ -3,10 +3,6 @@
 
 .wrapper{
   width: 100%;
-  //display: flex;
-  // flex: 2,1,1;
-  // align-items: center;
-  // justify-content: space-between;
   display: grid;
   grid-template-columns: 2fr 1fr 160px;
   align-items: center;
