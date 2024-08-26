@@ -3,12 +3,8 @@ import instanceBaza2 from "./config/instance-baza2";
 const contactsEndpoint = '/contacts'
 
 export async function getContacts(){
-	try {
-		const res = await instanceBaza2.get(contactsEndpoint)
+	const res = await instanceBaza2.get(contactsEndpoint)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 // Example Value Schema
@@ -26,10 +22,6 @@ export async function getContacts(){
 // }
 
 export async function updateContacts(contacts){
-	try {
-		const res = await instanceBaza2.patch(contactsEndpoint, contacts);
+	const res = await instanceBaza2.patch(contactsEndpoint, contacts);
 		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }

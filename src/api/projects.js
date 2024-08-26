@@ -9,12 +9,8 @@ export async function  getAllProjects2({ page, search, limit }){
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
-	try {
 		const res = await instanceBaza2.get(`${projectsEndpoint}?${params.toString()}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  getAllProjects({ page, search, limit }){
@@ -28,43 +24,26 @@ export async function  getAllProjects({ page, search, limit }){
 }
 
 export async function  createNewProject(newProject){
-	try {
-		const res = await instanceBaza2.post(projectsEndpoint, newProject, {
-			headers: { 'Content-Type': 'multipart/form-data' }})
+	const res = await instanceBaza2.post(projectsEndpoint, newProject, {
+		headers: { 'Content-Type': 'multipart/form-data' }})
 		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  getProjectById(id){
-	try {
-		const res = await instanceBaza2.get(`${projectsEndpoint}/${id}`)
+	const res = await instanceBaza2.get(`${projectsEndpoint}/${id}`)
 		return res.data
-	} catch (error) {
-		console.log(error)
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  deleteProjectById(id){
-	try {
-		const res = await instanceBaza2.delete(`${projectsEndpoint}/${id}`)
-		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
+	const res = await instanceBaza2.delete(`${projectsEndpoint}/${id}`)
+		return res
 }
 
 export async function  updateProjectById(id, updProject){
-	try {
-		const res = await instanceBaza2.put(`${projectsEndpoint}/${id}`, updProject, {
+	const res = await instanceBaza2.put(`${projectsEndpoint}/${id}`, updProject, {
 		  headers: { 'Content-Type': 'multipart/form-data' },
      })
-		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
+		return res.data
 }
 
 // Example Value Schema
