@@ -25,7 +25,7 @@ const stateModalDocumentPdf = create((set,get) => ({
   isOpen: false,
   files:{...filesDefault},
   document:'',
-  open: (fileName) => set({ isOpen: true, document:get().files[fileName]}),
+  open: (fileName='privacyPolicy') => set({ isOpen: true, document:get().files[fileName]}),
   close: () => set({ isOpen: false, document:''}),
   
   filesUpdate: (data) => {

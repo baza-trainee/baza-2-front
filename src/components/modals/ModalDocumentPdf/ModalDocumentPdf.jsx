@@ -12,11 +12,16 @@ const PDFViewer = dynamic(() => import("@/src/components/shared/PdfViewer/PdfVie
   ssr: false
 });
 
-export default function ModalDocumentPdf() {
+export default function ModalDocumentPdf({url,hedleClose=()=>{}}) {
  // Отримуємо стан.
   const isOpen = stateModalDocumentPdf(state => state.isOpen);
   const file = stateModalDocumentPdf(state => state.document);
-  const onClose = stateModalDocumentPdf(state => state.close);
+  const close = stateModalDocumentPdf(state => state.close);
+
+  const onClose=()=>{
+    hedleClose()
+    close()
+  }
 
   useBodyLock(isOpen);
 
@@ -32,7 +37,7 @@ export default function ModalDocumentPdf() {
         <div className={styles.modal} >
           <CloseBtn className={styles.closeButton}
           onClick={onClose}/>
-          <PDFViewer file={file} onClose={onClose}/>
+          <PDFViewer file={url ? url : file} onClose={onClose}/>
         </div>
       </div>
     </LayoutModal>
