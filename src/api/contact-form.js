@@ -13,10 +13,6 @@ export async function ContactFormService(data){
     }
   }
 
-	try {
-		const res = await instanceBaza2.post('/feedback/sendFeedback', {...body(data)})
+	const res = await instanceBaza2.post('/feedback/sendFeedback', {...body(data)})
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }

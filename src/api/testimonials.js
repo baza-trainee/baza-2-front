@@ -20,12 +20,8 @@ import instanceBaza2 from './config/instance-baza2';
 const testimonialsEndpoint = '/testimonials'
 
 export async function  getAllTestimonials(){
-	try {
-		const res = await instance.get(testimonialsEndpoint)
+	const res = await instance.get(testimonialsEndpoint)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 // name[en]
 // string
@@ -65,40 +61,24 @@ export async function  getAllTestimonials(){
 
 
 export async function  createNewtesTestimonial(newTestimonial){
-	try {
-		const res = await instanceBaza2.post(testimonialsEndpoint, newTestimonial, {
-			headers: { 'Content-Type': 'multipart/form-data' }})
-		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
+	const res = await instanceBaza2.post(testimonialsEndpoint, newTestimonial, {
+		headers: { 'Content-Type': 'multipart/form-data' }})
+	return res
 }
 
 export async function  getTestimonialById(id){
-	try {
-		const res = await instanceBaza2.get(`${testimonialsEndpoint}/${id}`)
+	const res = await instanceBaza2.get(`${testimonialsEndpoint}/${id}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  deleteTestimonialById(id){
-	try {
-		const res = await instanceBaza2.delete(`${testimonialsEndpoint}/${id}`)
+	const res = await instanceBaza2.delete(`${testimonialsEndpoint}/${id}`)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function  updateTestimonialById(id, updTestimonial){
-	try {
-		const res = await instanceBaza2.patch(`${testimonialsEndpoint}/${id}`, updTestimonial, {
-		  headers: { 'Content-Type': 'multipart/form-data' },
-     })
+	const res = await instanceBaza2.patch(`${testimonialsEndpoint}/${id}`, updTestimonial, {
+		headers: { 'Content-Type': 'multipart/form-data' },
+  })
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
