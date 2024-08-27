@@ -389,7 +389,8 @@
 			},
 			"team": "Zespół"
 		},
-		"load_more": "Więcej projektów"
+		"load_more": "Więcej projektów",
+		"placeholder": "Wprowadź słowo kluczowe do wyszukania"
 	},
 	"sorryModal": {
 		"title": "Przepraszamy, nie znaleziono żadnych informacji.",

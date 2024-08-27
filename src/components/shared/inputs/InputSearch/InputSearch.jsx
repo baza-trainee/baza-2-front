@@ -4,9 +4,13 @@ import clsx from "clsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "../../Icon/Icon";
 
-const InputSearch = ({ onSubmit, className, placeholder="Введіть ключове слово"}) => {
-  const [value, setValue] = useState("");
+const InputSearch = ({ onSubmit, className, placeholder="Введіть ключове слово", defaultValue=''}) => {
+  const [value, setValue] = useState(defaultValue);
   const inputRef = useRef(null);
+
+  useEffect(()=>{
+    setValue(defaultValue)
+  },[defaultValue])
 
   const handleSearch = () => {
     if (value.trim() === "") {
@@ -22,6 +26,7 @@ const InputSearch = ({ onSubmit, className, placeholder="Введіть ключ
       onSubmit(value);
     }
   };
+
 
   const pushOnEnter = useCallback(
     (e) => {
