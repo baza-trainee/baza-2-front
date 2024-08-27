@@ -13,6 +13,7 @@ import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import Loader from "../shared/loader/Loader";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import styles from "./Projects.module.scss";
+import SorryModal from "../modals/SorryModal/SorryModal";
 
 const Projects = () => {
   const t = useTranslations("Projects");
@@ -65,18 +66,20 @@ const Projects = () => {
           onSubmit={handleSearchChange}
           placeholder={t("placeholder")}
         />
-        {data?.pages.map((page, i) => (
-          <div key={i} className={styles.content}>
-            {page.results.map((el) => (
-              <ProjectCard
-                key={createKey()}
-                project={project}
-                locale={locale}
-                coverImgUrl={createImageUrlBaza1(project.imageUrl)}
-              />
-            ))}
-          </div>
-        ))}
+        <div className={styles.pagesWrapper}>
+          {data?.pages.map((page, i) => (
+            <div key={i} className={styles.content}>
+              {page.results.map((project) => (
+                <ProjectCard
+                  key={createKey()}
+                  project={project}
+                  locale={locale}
+                  coverImgUrl={createImageUrlBaza1(project.imageUrl)}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
         <LoadMore
           disabled={isFetchingNextPage}
           onClick={() => fetchNextPage()}
@@ -84,6 +87,7 @@ const Projects = () => {
           className={clsx(styles.loadMore, !hasNextPage && styles.hidden)}
         />
       </div>
+      <SorryModal handleCallback={handleSearchChange} />
     </section>
   );
 };
