@@ -3,23 +3,22 @@ import styles from './DocumentsForm.module.scss'
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useRouter } from '@/src/navigation';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import InputField from '@/src/components/shared/inputs/InputField/InputField'
+
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
-import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
+
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-//import { ReviewScheme } from './ReviewScheme';
-import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
-import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
-import ImagePreview from '../../ImagePreview/ImagePreview';
-import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
+
+
+
 import { documentsDefaultValues, documentsScheme } from './documentsFormScheme';
 import { Icon } from '@/src/components/shared/Icon/Icon';
-import ModalDocumentPdf from '@/src/components/modals/ModalDocumentPdf/ModalDocumentPdf';
+
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 
-export default function DocumentsForm({data, hendleMutate, submitBtnText='Зберегти зміни', hendleSetPrev}){
+
+export default function DocumentsForm({data, hendleMutate, submitBtnText='Зберегти зміни', hendleSetPrev, isSuccess}){
 
   const[ prevUrlReport, setPrevUrlReport ] = useState(null)
   const[ prevUrlStatute, setPrevUrlStatute ] = useState(null)
@@ -29,14 +28,12 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
 
   const open = stateModalDocumentPdf(state => state.open);
 
-
   const {
     register,
     handleSubmit,
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-    getValues,
   } = useForm({ defaultValues: {...documentsDefaultValues}, resolver: zodResolver(documentsScheme), mode: 'onChange'});
 
   const resetForm = () => {
@@ -48,22 +45,41 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
     reset();
   }
 
+  // useEffect(()=>{
+  //   if(isSuccess){
+  //     resetForm()
+  //   }
+  // },[isSuccess])
+
+
   useEffect(()=>{
+    if(isSuccess){
+      resetForm()
+    }
+
     if(data){
       const{report, statute, privacyPolicy, termsOfUse, rules } = data
-      setValue('report', '')
-      setValue('statute', '')
-      setValue('privacy_policy', '')
-      setValue('terms_of_use', '')
-      setValue('rules', '')
+      setValue('report', report ? '' : null)
+      setValue('statute', statute ? '' : null)
+      setValue('privacy_policy',privacyPolicy.ua ? '' : null)
+      setValue('terms_of_use', termsOfUse.ua ? '' : null)
+      setValue('rules', report ? '' : null)
 
       setPrevUrlReport(report ? report : '')
       setPrevUrlStatute(statute ? statute : '')
       setPrevUrlPrivacyPolicy(privacyPolicy.ua ? privacyPolicy.ua : '')
       setPrevUrlTermsOfUse(termsOfUse.ua ? termsOfUse.ua : '')
-      setPrevUrlRules(statute ? statute : '')
+      setPrevUrlRules(rules ? rules : '')
+
     }
-  },[data])
+    // else{
+    //   setPrevUrlReport(null)
+    //   setPrevUrlStatute(null)
+    //   setPrevUrlPrivacyPolicy(null)
+    //   setPrevUrlTermsOfUse(null)
+    //   setPrevUrlRules(null)
+    // }
+  },[data, isSuccess])
 
   const onSubmit = (data) => {
     const newData = {
@@ -79,14 +95,17 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
     if(data.terms_of_use){newData.termsOfUse.ua = data.terms_of_use}
     if(data.rules){newData.rules = data.rules}
 
-  console.log(newData)
-    //hendleMutate(newData)
+    console.log(newData)
+    //resetForm()
+    hendleMutate(newData)
   };
 
   const isDisabled = () => {
     if (isError) {
       return true;
-    } 
+    }else if(!isDirty){
+      return true
+    }
     else if(!isValid){
       return true
     }
@@ -268,7 +287,7 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
         <MainButton
           type="submit"
           className={styles.btn}
-          //disabled={isDisabled()}
+          disabled={isDisabled()}
         >
           {submitBtnText}
         </MainButton>

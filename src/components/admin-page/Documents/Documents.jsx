@@ -22,26 +22,28 @@ export default function Documents() {
 
   const documents = useQuery({ queryKey: ["documents"], queryFn: getDocuments });
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, reset ,isSuccess} = useMutation({
     mutationFn: (data) => {
       return updateDocuments(data);
     },
     onSuccess: () => {
-      setmodalOpen(true);
       documents.refetch();
+      setmodalOpen(true);
     },
     onError: () => {
       open("error", false);
     },
   });
-
+console.log(isSuccess)
   const closeModal = useCallback(() => {
+    //documents.refetch();
+    reset()
     setmodalOpen(false);
   });
-
+console.log(documents.data)
   return (
     <SectionAdmin title={"Документи"}>
-      <DocumentsForm data={documents.data} hendleMutate={mutate} hendleSetPrev={setPrevUrl}/>
+      <DocumentsForm data={documents.data} hendleMutate={mutate} hendleSetPrev={setPrevUrl} isSuccess={isSuccess}/>
 
       {isPending && <Loader />}
       <AdminModal
