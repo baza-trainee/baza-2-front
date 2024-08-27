@@ -41,25 +41,25 @@ export const ArticleScheme = z
     .max(100, { message: 'Максимум 100 знаків' })
     .regex(patternText, { message: 'Введіть коректну назву' }),
 
-    text: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(50, { message: 'Мінімум 50 знаків'})
-    .max(2000, { message: 'Текст максимум 2000 символів'})
-    .refine((value) => validateText(value), { message: "Присутні не коректні символи" }),
+    // text: z.string()
+    // .trim()
+    // .min(1, { message: "Це поле обов'язкове"})
+    // .min(50, { message: 'Мінімум 50 знаків'})
+    // .max(2000, { message: 'Текст максимум 2000 символів'})
+    // .refine((value) => validateText(value), { message: "Присутні не коректні символи" }),
     // .transform(normalizeTextValue)
     // .pipe(z.string()
     // .max(2000, { message: 'Текст максимум 2000 символів'})
     // .regex(patternText, { message: 'Присутні не коректні символи'})),
 
-    // text: z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(50, { message: 'Мінімум 50 знаків'})
-    // .transform(normalizeTextValue)
-    // .pipe(z.string()
-    // .max(2000, { message: 'Текст максимум 2000 символів'})
-    // .regex(patternText, { message: 'Присутні не коректні символи'})),
+    text: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(50, { message: 'Мінімум 50 знаків'})
+    .transform(normalizeTextValue)
+    .pipe(z.string()
+    .max(2000, { message: 'Текст максимум 2000 символів'})
+    .regex(patternText, { message: 'Присутні не коректні символи'})),
 
     date:z.string()
       .trim()
