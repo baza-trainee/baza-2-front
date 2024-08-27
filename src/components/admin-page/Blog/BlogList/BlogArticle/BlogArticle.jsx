@@ -4,6 +4,7 @@ import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
 import CloseBtn from '@/src/components/shared/CloseBtn/CloseBtn'
 import { formatDateToNumeric } from '@/src/lib/utils/formatData'
 import { splitTextHalf } from '@/src/lib/utils/splitTextHalf'
+import FormaterBlogText from '@/src/components/shared/FormaterBlogText/FormaterBlogText'
 
 export default function BlogArticle({data, close}) {
   const{ title, text, date, imageUrl } = data
@@ -16,7 +17,9 @@ export default function BlogArticle({data, close}) {
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.date}>{formatDateToNumeric(date)}</p>
 
-      {texts.strA && <p className={styles.text}>{texts.strA}</p> }
+      {texts.strA && <div className={styles.text}>
+        {FormaterBlogText(texts.strA)}
+      </div> }
 
       <div className={styles.img}>
         <Image src={createImageUrl(imageUrl)}
@@ -25,7 +28,9 @@ export default function BlogArticle({data, close}) {
           sizes="100%"/>
       </div>
 
-      {texts.strB && <p className={styles.text}>{texts.strB}</p>}
+      {texts.strB && <div className={styles.text}>
+        {FormaterBlogText(texts.strB)}
+      </div> }
 
     </div>
   )

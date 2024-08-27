@@ -18,6 +18,15 @@ export const articleDefaultValues = {
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
 
+// Валідація текст враховуючи перенесення строки
+const validateText =(value)=>{
+  const text = normalizeTextValue(value)
+  console.log(patternText.test(text))
+  if(patternText.test(text)){
+    return true
+  }else return false
+}
+
 export const ArticleScheme = z
 	.object({
     file: z.any()
@@ -36,10 +45,21 @@ export const ArticleScheme = z
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(50, { message: 'Мінімум 50 знаків'})
-    .transform(normalizeTextValue)
-    .pipe(z.string()
     .max(2000, { message: 'Текст максимум 2000 символів'})
-    .regex(patternText, { message: 'Присутні не коректні символи'})),
+    .refine((value) => validateText(value), { message: "Присутні не коректні символи" }),
+    // .transform(normalizeTextValue)
+    // .pipe(z.string()
+    // .max(2000, { message: 'Текст максимум 2000 символів'})
+    // .regex(patternText, { message: 'Присутні не коректні символи'})),
+
+    // text: z.string()
+    // .trim()
+    // .min(1, { message: "Це поле обов'язкове"})
+    // .min(50, { message: 'Мінімум 50 знаків'})
+    // .transform(normalizeTextValue)
+    // .pipe(z.string()
+    // .max(2000, { message: 'Текст максимум 2000 символів'})
+    // .regex(patternText, { message: 'Присутні не коректні символи'})),
 
     date:z.string()
       .trim()
