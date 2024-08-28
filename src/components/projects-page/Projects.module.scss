@@ -28,6 +28,11 @@
   }
 }
 
+.pagesWrapper {
+  display: grid;
+  gap: 20px;
+}
+
 .content {
   display: grid;
   gap: 20px;

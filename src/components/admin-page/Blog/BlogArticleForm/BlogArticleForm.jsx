@@ -89,7 +89,6 @@ export default function BlogArticleForm({
         </li>
 
         <li className={clsx(styles.list_item,styles.grid2 )}>
-        
           <InputDate
             id={"date"}
             className={styles.item}
