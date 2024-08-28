@@ -12,38 +12,38 @@ export const documentsDefaultValues = {
   rules: null,
 }
 
-// максимальний розмір файла 500КБ
-const MAX_SIZE_DOC = 512000
+// максимальний розмір файла 3MB
+const MAX_SIZE_DOC = 3000000
 
 export const documentsScheme = z
 	.object({
     report: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 500КБ")
+      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 3MB")
       .refine((file) => validateFileTypes(file, ACCEPTED_DOCUMENTS_TYPES),"Формат PDF")
       .transform((value) => transformFileValue(value, ACCEPTED_DOCUMENTS_TYPES)),
 
     statute: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 500КБ")
+      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 3MB")
       .refine((file) => validateFileTypes(file, ACCEPTED_DOCUMENTS_TYPES),"Формат PDF")
       .transform((value) => transformFileValue(value, ACCEPTED_DOCUMENTS_TYPES)),
 
     privacy_policy: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 500КБ")
+      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 3MB")
       .refine((file) => validateFileTypes(file, ACCEPTED_DOCUMENTS_TYPES),"Формат PDF")
       .transform((value) => transformFileValue(value, ACCEPTED_DOCUMENTS_TYPES)),    
       
     terms_of_use: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 500КБ")
+      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 3MB")
       .refine((file) => validateFileTypes(file, ACCEPTED_DOCUMENTS_TYPES),"Формат PDF")
       .transform((value) => transformFileValue(value, ACCEPTED_DOCUMENTS_TYPES)),
       
     rules: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 500КБ")
+      .refine((file) => checkFileSize(file, MAX_SIZE_DOC),"Max.розмір 3MB")
       .refine((file) => validateFileTypes(file, ACCEPTED_DOCUMENTS_TYPES),"Формат PDF")
       .transform((value) => transformFileValue(value, ACCEPTED_DOCUMENTS_TYPES)),     
 })
 //  Схема відправки на бекенд:{
-// maximum limit of 512000 bytes"
+// maximum limit of 3000000 bytes"
 
 // { 
 //   report: "report.pdf",
