@@ -1,6 +1,5 @@
 'use client';
 import styles from './SpecializationForm.module.scss'
-import clsx from 'clsx';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
@@ -32,9 +31,9 @@ export default function SpecializationForm({
   useEffect(()=>{
     if(data){
       const{ name } = data
-      setValue('name_ua',name.ua )
-      setValue('name_en',name.en )
-      setValue('name_pl',name.pl )
+      setValue('name_ua', name.ua )
+      setValue('name_en', name.en )
+      setValue('name_pl', name.pl )
     }
   },[data])
 
@@ -68,7 +67,7 @@ export default function SpecializationForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_ua"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Назва спеціалізації"}
@@ -84,7 +83,7 @@ export default function SpecializationForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_en"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Назва спеціалізації"}
@@ -99,7 +98,7 @@ export default function SpecializationForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_pl"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Назва спеціалізації"}
