@@ -49,7 +49,7 @@ export default function Members() {
  return( 
     <SectionAdmin title={'Учасники'} hendleSearch={hendleSetSearch} lang={true}>
       <div className={styles.wrapper}>
-        <h2>Прізвище та Ім’я</h2>
+        <h2>Ім’я та Прізвище</h2>
         <MainButton  variant='admin' className={styles.btn} onClick={()=>{
             router.push(addMembePath)
           }}>
