@@ -10,6 +10,7 @@ import PressForm from '../PressForm/PressForm';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
+import { createNewArticle } from '@/src/api/articles';
 
 //тимчасовий
 const createNewPress = (data) => {
@@ -35,7 +36,7 @@ export default function AddPress() {
 
   const { mutate, isLoading, isSuccess } = useMutation({
     mutationFn: (data) => {
-      return createNewPress(data);
+      return createNewArticle(data);
     },
     onSuccess: () => {
       setModalOpen(true);
@@ -46,11 +47,13 @@ export default function AddPress() {
   });
 
   return (
-    <SectionAdmin title={'Додати статтю'} lang={true}>
+    <SectionAdmin title={'Додати статтю'}>
       <div className={styles.wrapper}>
         <PressForm handleMutate={mutate} isSuccess={isSuccess} />
       </div>
+
       {isLoading && <Loader />}
+
       <AdminModal
         isOpen={modalOpen}
         hendleCallback={closeModal}
