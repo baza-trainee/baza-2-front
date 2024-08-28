@@ -1,7 +1,6 @@
 "use client";
 import styles from "./TextArea.module.scss";
 import clsx from "clsx";
-//import { Icon } from "../../Icon/Icon";
 
 export default function TextArea({
   id,
@@ -51,7 +50,11 @@ export default function TextArea({
             </div >
           }
         </div>
-        <p className={styles.error}>{isError && !isValid ? isError.message :''}</p>
+        <p className={styles.error}>
+          {isError && !isValid ? 
+          isError.message ? isError.message : 'Присутні не коректні символи' :
+          ''}
+        </p>
       </div>
     );
   }

@@ -37,6 +37,7 @@ export interface SpritesMap {
     | "onboarding"
     | "open_eye"
     | "partners"
+    | "pdf-placeholder"
     | "phone"
     | "plus_black"
     | "plus_icon"
@@ -92,6 +93,7 @@ export const SPRITES_META: {
     | "onboarding"
     | "open_eye"
     | "partners"
+    | "pdf-placeholder"
     | "phone"
     | "plus_black"
     | "plus_icon"
@@ -147,6 +149,7 @@ export const SPRITES_META: {
     "onboarding",
     "open_eye",
     "partners",
+    "pdf-placeholder",
     "phone",
     "plus_black",
     "plus_icon",
