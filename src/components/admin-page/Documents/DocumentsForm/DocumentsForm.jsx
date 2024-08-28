@@ -3,31 +3,32 @@ import styles from './DocumentsForm.module.scss'
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
-
-import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
-
-import MainButton from '@/src/components/shared/MainButton/MainButton'
-
-
-
 import { documentsDefaultValues, documentsScheme } from './documentsFormScheme';
+import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
+import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon';
-
 import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 
+export default function DocumentsForm({
+  data, 
+  hendleMutate, 
+  submitBtnText='Зберегти зміни', 
+  hendleSetPrev, 
+  isSuccess}){
 
-export default function DocumentsForm({data, hendleMutate, submitBtnText='Зберегти зміни', hendleSetPrev, isSuccess}){
-
+  const router = useRouter();
+  // Стан попереднього перегляду
   const[ prevUrlReport, setPrevUrlReport ] = useState(null)
   const[ prevUrlStatute, setPrevUrlStatute ] = useState(null)
   const[ prevUrlPrivacyPolicy, setPrevUrlPrivacyPolicy ] = useState(null)
   const[ prevUrlTermsOfUse, setPrevUrlTermsOfUse ] = useState(null)
   const[ prevUrlRules, setPrevUrlRules ] = useState(null)
-
+  // Стан модалки попереднього перегляду
   const open = stateModalDocumentPdf(state => state.open);
 
+  // Керування формою useForm
   const {
     register,
     handleSubmit,
@@ -36,6 +37,7 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
     setValue,
   } = useForm({ defaultValues: {...documentsDefaultValues}, resolver: zodResolver(documentsScheme), mode: 'onChange'});
 
+  // Функція очищення форми
   const resetForm = () => {
     setPrevUrlReport(null)
     setPrevUrlStatute(null)
@@ -44,14 +46,7 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
     setPrevUrlRules(null)
     reset();
   }
-
-  // useEffect(()=>{
-  //   if(isSuccess){
-  //     resetForm()
-  //   }
-  // },[isSuccess])
-
-
+ // Заповнення форми данними для редагування
   useEffect(()=>{
     if(isSuccess){
       resetForm()
@@ -70,17 +65,10 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
       setPrevUrlPrivacyPolicy(privacyPolicy.ua ? privacyPolicy.ua : '')
       setPrevUrlTermsOfUse(termsOfUse.ua ? termsOfUse.ua : '')
       setPrevUrlRules(rules ? rules : '')
-
     }
-    // else{
-    //   setPrevUrlReport(null)
-    //   setPrevUrlStatute(null)
-    //   setPrevUrlPrivacyPolicy(null)
-    //   setPrevUrlTermsOfUse(null)
-    //   setPrevUrlRules(null)
-    // }
   },[data, isSuccess])
 
+  // Функція підготовки данних для відправки
   const onSubmit = (data) => {
     const newData = {
       privacyPolicy: {
@@ -95,11 +83,9 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
     if(data.terms_of_use){newData.termsOfUse.ua = data.terms_of_use}
     if(data.rules){newData.rules = data.rules}
 
-    console.log(newData)
-    //resetForm()
     hendleMutate(newData)
   };
-
+  // Блокування кнопки відправки
   const isDisabled = () => {
     if (isError) {
       return true;
@@ -132,7 +118,6 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
             version={"file"}
             label={'Політика конфіденційності'}
           />
-           
         </li>
         <li className={clsx(styles.list_item)}>
           <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
@@ -233,7 +218,6 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
             version={"file"}
             label={'Звітність'}
           />
-           
         </li>
         <li className={clsx(styles.list_item)}>
           <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
@@ -267,7 +251,6 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
             version={"file"}
             label={'Правила участі'}
           />
-           
         </li>
         <li className={clsx(styles.list_item)}>
           <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
@@ -295,20 +278,11 @@ export default function DocumentsForm({data, hendleMutate, submitBtnText='Збе
         <MainButton
           variant='admin'
           className={styles.btn_cancel}
-          onClick={()=>{resetForm()}}
+          onClick={()=>{router.replace('/admin')}}
         >
           {'Скасувати'}
         </MainButton>
       </div >
-
-     
     </form>
   )
 }
-
-
-// export default function DocumentsForm({data, handleMutate}) {
-//   return(
-//     <div>documentsFormScheme</div>
-//   )
-// }

@@ -10,7 +10,6 @@
   .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    //grid-template-rows: 1fr,1fr,2fr;
     grid-column-gap: 24px;
     grid-row-gap: 5px;
     align-items: flex-end;
@@ -31,11 +30,10 @@
         min-height: auto;
         height: 100%;
         position: relative;
-        //background-color: aqua;
         .svg{
           width: 70px;
           height: 70px;
-          fill: #f94949;
+          fill: var.$secondary-error;
           border-radius: 5px;
         }
 

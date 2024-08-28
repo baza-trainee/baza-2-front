@@ -13,7 +13,7 @@ export const documentsDefaultValues = {
 }
 
 // максимальний розмір файла 500КБ
-const MAX_SIZE_DOC = 1512000
+const MAX_SIZE_DOC = 512000
 
 export const documentsScheme = z
 	.object({
