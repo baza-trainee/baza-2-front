@@ -1,33 +1,33 @@
 import { z } from "zod";
-import { patternDateValue, patternText } from "@/src/constants/regulars";
+import { patternDateValue, patternText, patternUrlLinkedin } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
 import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
 import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
-import { normalizeTextValue } from "@/src/lib/utils/normalizeTextValue";
 import { minDateValue } from "@/src/lib/hooks/minMaxDate";
+import { normalizeTextValue } from "@/src/lib/utils/normalizeTextValue";
 
-export const articleDefaultValues = {
+export const pressDefaultValues = {
   file: null,
   title: "",
-  text: "",
+  description: "",
+  link: '',
   date:""
 }
 
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
 
-// Валідація текст враховуючи перенесення строки
-const validateText =(value)=>{
-  const text = normalizeTextValue(value)
-  console.log(patternText.test(text))
-  if(patternText.test(text)){
-    return true
-  }else return false
-}
+// Перетворюємо рядок на масив рядків
+const strToArr = (str) => {
+  const regul = /\r?\n|\r/g;
+  const result = str.split(regul);
+  return result.length ? result : [str]; 
+};
 
-export const ArticleScheme = z
+
+export const PressFormScheme = z
 	.object({
     file: z.any()
     .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
@@ -35,31 +35,25 @@ export const ArticleScheme = z
     .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		title: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 символа' })
-    .max(100, { message: 'Максимум 100 знаків' })
-    .regex(patternText, { message: 'Введіть коректну назву' }),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(5, { message: 'Мінімум 5 символа' })
+      .max(100, { message: 'Максимум 100 знаків' })
+      .regex(patternText, { message: 'Введіть коректну назву' }),
 
-    text: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(50, { message: 'Мінімум 50 знаків'})
-    .max(2000, { message: 'Текст максимум 2000 символів'})
-    .refine(async (value) => validateText(value), { message: "Присутні не коректні символи" }),
-    // .transform(normalizeTextValue)
-    // .pipe(z.string()
-    // .max(2000, { message: 'Текст максимум 2000 символів'})
-    // .regex(patternText, { message: 'Присутні не коректні символи'})),
+    description: z.string()
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(50, { message: 'Мінімум 50 знаків'})
+      .transform(normalizeTextValue)
+      .pipe(z.string()
+      .max(250, { message: 'Текст максимум 250 знаків'})
+      .regex(patternText, { message: 'Присутні не коректні символи'})),
 
-    // text: z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(50, { message: 'Мінімум 50 знаків'})
-    // .transform(normalizeTextValue)
-    // .pipe(z.string()
-    // .max(2000, { message: 'Текст максимум 2000 символів'})
-    // .regex(patternText, { message: 'Присутні не коректні символи'})),
+    link: z.string()
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"}),
+      // .regex(patternUrlLinkedin, { message: 'Введіть дійсний URL'}),
 
     date:z.string()
       .trim()

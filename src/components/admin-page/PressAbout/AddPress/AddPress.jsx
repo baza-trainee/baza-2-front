@@ -6,21 +6,22 @@ import { useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin';
-import PressForm from '../PressForm/PressForm';
+//import PressForm from '../PressForm/PressForm';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import Loader from '@/src/components/shared/loader/Loader';
 import { createNewArticle } from '@/src/api/articles';
+import PressForm from '../PressForm/PressForm';
 
 //тимчасовий
-const createNewPress = (data) => {
-  return new Promise((resolve) => {
-    console.log('New Press Data:', data);
-    setTimeout(() => {
-      resolve({ success: true });
-    }, 1000); 
-  });
-};
+// const createNewPress = (data) => {
+//   return new Promise((resolve) => {
+//     console.log('New Press Data:', data);
+//     setTimeout(() => {
+//       resolve({ success: true });
+//     }, 1000); 
+//   });
+// };
 
 export default function AddPress() {
   const router = useRouter();
@@ -31,10 +32,10 @@ export default function AddPress() {
 
   const closeModal = useCallback(() => {
     setModalOpen(false);
-    router.replace('/admin/press');
+    router.replace('/admin/press-about');
   });
 
-  const { mutate, isLoading, isSuccess } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: (data) => {
       return createNewArticle(data);
     },
@@ -48,15 +49,14 @@ export default function AddPress() {
 
   return (
     <SectionAdmin title={'Додати статтю'}>
-      <div className={styles.wrapper}>
-        <PressForm handleMutate={mutate} isSuccess={isSuccess} />
-      </div>
+      <PressForm hendleMutate={mutate}/>
 
-      {isLoading && <Loader />}
+
+      {isPending && <Loader />}
 
       <AdminModal
         isOpen={modalOpen}
-        hendleCallback={closeModal}
+        handleCallback={closeModal}
         title={'Стаття успішно додано'}
         btn={true}
       ></AdminModal>
