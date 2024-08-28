@@ -61,7 +61,6 @@ export const MentorSchema = z
     .trim()
     .min(1, { message: 'phone' })
     .regex(patternPhone, { message: 'incorrect_phone' }),
-    // .transform(value=>  formatPhoneNumber(value, true)),
 
     discord: z.string()
     .trim()
