@@ -35,7 +35,6 @@ export default function ContactForm() {
 
   const onSubmit = (data) => {
     mutate(data)
-    console.log(data)
     reset();
   };
 
