@@ -64,6 +64,7 @@ const Projects = () => {
         <InputSearch
           className={styles.search}
           onSubmit={handleSearchChange}
+          defaultValue={searchQuery}
           placeholder={t("placeholder")}
         />
         <div className={styles.pagesWrapper}>

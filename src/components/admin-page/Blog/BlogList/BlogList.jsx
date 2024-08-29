@@ -33,7 +33,29 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
     setFullArticle(value)
   }
   if(fullArticle){
-    return <BlogArticle data={fullArticle } close={readFullArticle}/>
+    return (
+      <div className={styles.item}>
+
+        <BlogArticle data={fullArticle } close={readFullArticle}/>
+
+        <div className={styles.btns}>
+          <MainButton variant='admin' 
+            className={styles.btn} 
+            onClick={()=>{
+              router.push(`${editBlogArticlePath}/${fullArticle._id}`)}
+            }>
+            <Icon  width={24} height={24} name='edit'/>
+          </MainButton>
+
+          <MainButton variant='admin' onClick={()=>{
+            setIdArticle(fullArticle._id)
+            setFullArticle(null)
+            }} className={styles.btn}>
+            <Icon width={24} height={24} name='remove'/>
+          </MainButton>
+        </div>
+      </div>
+    )
   }
 
   return(
@@ -83,5 +105,3 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
     </>
   )
 }
-
-const str= "За останні кілька років сфера розробки програмного забезпеченнязазнала революційних інновацій та трансформаційних змін. У міру того,як світовий ринок розробки програмного забезпечення наближається дооціночної оцінки в 507,2 мільярда доларів, трансформаційний впливнових тенденцій стає все більш очевидним. Розуміння та адаптаціяостанніх тенденцій розробки програмного забезпечення є стратегічноюнеобхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність.Навіщо витрачати свій час на вивчення цих тенденцій? Переваги багатогранні. Бути в курсі останніх досягнень дозволяє вашому бізнесу використовувати найсучасніші технології, що призводить до підвищення операційної ефективності, покращення якості обслуговування клієнтів і явної ринкової переваги. Незалежно від того, чи є ви технічним директором, менеджером проектів або підприємцем, розуміння цих тенденцій має важливе значення для максимізації потенціалу ваших програмних проектів і залишатися в авангарді технологічного прогресу "
