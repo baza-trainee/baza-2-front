@@ -37,7 +37,33 @@
     }
   }
 }
+.item{
+  min-width: 320px;
+  width: 100%;
+  position: relative;
 
+  .btns{
+    min-width: 180px;
+    min-height: 100px;
+    padding: 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    .btn{
+      background-color: black;
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+    }
+  }
+}
 .length{
   @include mix.apply-font-styles(var.$h2-font);
   width: 100%;
