@@ -22,7 +22,7 @@ export default function AddPress() {
   });
 
   // Запит на створення нової статті
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn: (data) => {
       return createNewArticle(data);
     },
@@ -47,7 +47,7 @@ export default function AddPress() {
         btn={true}
       ></AdminModal>
 
-      <UseAlert />
+      <UseAlert text={error && error?.message}/>
     </SectionAdmin>
   );
 }

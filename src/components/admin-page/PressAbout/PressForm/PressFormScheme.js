@@ -22,24 +22,24 @@ const MAX_SIZE_IMG = 512000
 export const PressFormScheme = z
 	.object({
     file: z.any()
-    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
-    .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
-    .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
+      .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
+      .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+      .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		title: z.string()
       .trim()
-      .min(1, { message: "Це поле обов'язкове"})
+      .min(1, { message: "Це поле обов'язкове" })
       .min(5, { message: 'Мінімум 5 символа' })
-      .max(100, { message: 'Максимум 100 знаків' })
+      .max(100, { message: 'Максимум 100 символів' })
       .regex(patternText, { message: 'Введіть коректну назву' }),
 
     description: z.string()
       .trim()
-      .min(1, { message: "Це поле обов'язкове"})
-      .min(50, { message: 'Мінімум 50 знаків'})
+      .min(1, { message: "Це поле обов'язкове" })
+      .min(50, { message: 'Мінімум 50 символів' })
       .transform(normalizeTextValue)
       .pipe(z.string()
-      .max(250, { message: 'Текст максимум 250 знаків'})
+      .max(300, { message: 'Текст максимум 300 символів'})
       .regex(patternText, { message: 'Присутні не коректні символи'})),
 
     link: z.string()

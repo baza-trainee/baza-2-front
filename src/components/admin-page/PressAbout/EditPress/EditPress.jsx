@@ -23,14 +23,14 @@ export default function EditPress() {
   })
 
   // Запит на отримання статті по id
-  const { data } = useQuery({ queryKey: ['article', id], 
+  const { data, isError } = useQuery({ queryKey: ['article', id], 
     queryFn:()=>{return getArticleById(id)},
     onError:()=>{
       open('error', false)
     }})
 
  // Запит на редагування статті
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return updateArticleById(id, data)
     },onSuccess: () => {
@@ -56,7 +56,9 @@ export default function EditPress() {
         btn={true}>
       </AdminModal>
 
-      <UseAlert/>
+      <UseAlert 
+        text={error && error?.message} 
+        handleClose={isError && closeModal}/>
     </SectionAdmin>
   )
 }

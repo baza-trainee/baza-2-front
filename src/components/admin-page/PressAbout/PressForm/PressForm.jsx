@@ -139,7 +139,7 @@ export default function PressForm({
         <li className={clsx(styles.list_item, styles.grid5)}>
           <TextArea 
             id={"description"}   
-            maxLength={2005}
+            maxLength={305}
             className={styles.item_text} 
             isError={errors.description}
             isValid={isValid}
