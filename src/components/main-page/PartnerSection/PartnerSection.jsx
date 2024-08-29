@@ -1,25 +1,24 @@
 "use client";
-
+import styles from "./PartnerSection.module.scss";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { isFirefox } from 'react-device-detect';
+import { useTranslations } from "next-intl";
+import { useQuery } from "@tanstack/react-query";
+import { getAllPartners } from "@/src/api/partners";
 import Carousel from "../../shared/Carousel/Carousel";
-import PartnerCard from "../../shared/PartnerCard/PartnerCard";
+
 import { Navigation, Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
-import clsx from "clsx";
-import { isFirefox } from 'react-device-detect';
-import { useTranslations } from "next-intl";
-import styles from "./PartnerSection.module.scss";
-import { useQuery } from "@tanstack/react-query";
-import { getAllPartners } from "@/src/api/partners";
-import { useEffect, useState } from "react";
+import PartnerCard from "../../shared/PartnerCard/PartnerCard";
 import { createKey } from "@/src/lib/utils/createKey";
 
 const PartnerSection = () => {
   const[ screenOrien, setScreenOrien ] = useState('')
-
-  const { isError, data } = useQuery({ queryKey: ['partners',screenOrien], queryFn: getAllPartners });
-
   const t = useTranslations("Main.partners_section");
+
+  const { isError, data } = useQuery({ queryKey: ['partners', screenOrien], queryFn: getAllPartners });
 
   const isMobileFirefox = isFirefox && /Android/i.test(navigator.userAgent);
 

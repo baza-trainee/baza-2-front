@@ -39,14 +39,11 @@ export default function BlogArticleForm({
     if(data){
       const{imageUrl, title, text, date } = data
       setValue('title',title )
-
       setValue('text',text )
-
       setValue('date',formatDateToNumericInputDate({timestamp:date}))
       setValue('file', '')
       setPrevUrl(imageUrl)
     }else setValue('date',formatDateToNumericInputDate({timestamp:Date.now()}))
-    
   },[data])
 
   const onSubmit = (data) => {

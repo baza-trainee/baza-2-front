@@ -1,11 +1,10 @@
-import Image from "next/image";
-import styles from "./HeroCard.module.scss";
-import { useTranslations } from "next-intl";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import clsx from "clsx";
+import styles from "./HeroCard.module.scss";
+import Image from "next/image";
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 
 const HeroCard = ({ title, desc, img, className }) => {
-  const t = useTranslations("Main.hero_carousel_section");
+
   return (
     <div className={clsx(styles.card, className)}>
       <Image
