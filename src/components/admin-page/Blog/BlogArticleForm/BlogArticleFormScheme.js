@@ -5,7 +5,6 @@ import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
 import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
 import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
-import { normalizeTextValue } from "@/src/lib/utils/normalizeTextValue";
 import { minDateValue } from "@/src/lib/hooks/minMaxDate";
 
 export const articleDefaultValues = {
@@ -18,14 +17,13 @@ export const articleDefaultValues = {
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
 
-// Валідація текст враховуючи перенесення строки
-const validateText =(value)=>{
-  const text = normalizeTextValue(value)
-  console.log(patternText.test(text))
-  if(patternText.test(text)){
-    return true
-  }else return false
-}
+// Перетворюємо рядок на масив рядків
+const strToArr = (str) => {
+  const regul = /\r?\n|\r/g;
+  const result = str.split(regul);
+  return result.length ? result : [str]; 
+};
+
 
 export const ArticleScheme = z
 	.object({
@@ -35,31 +33,23 @@ export const ArticleScheme = z
     .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		title: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(5, { message: 'Мінімум 5 символа' })
-    .max(100, { message: 'Максимум 100 знаків' })
-    .regex(patternText, { message: 'Введіть коректну назву' }),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(5, { message: 'Мінімум 5 символа' })
+      .max(100, { message: 'Максимум 100 знаків' })
+      .regex(patternText, { message: 'Введіть коректну назву' }),
 
     text: z.string()
-    .trim()
-    .min(1, { message: "Це поле обов'язкове"})
-    .min(50, { message: 'Мінімум 50 знаків'})
-    .max(2000, { message: 'Текст максимум 2000 символів'})
-    .refine((value) => validateText(value), { message: "Присутні не коректні символи" }),
-    // .transform(normalizeTextValue)
-    // .pipe(z.string()
-    // .max(2000, { message: 'Текст максимум 2000 символів'})
-    // .regex(patternText, { message: 'Присутні не коректні символи'})),
-
-    // text: z.string()
-    // .trim()
-    // .min(1, { message: "Це поле обов'язкове"})
-    // .min(50, { message: 'Мінімум 50 знаків'})
-    // .transform(normalizeTextValue)
-    // .pipe(z.string()
-    // .max(2000, { message: 'Текст максимум 2000 символів'})
-    // .regex(patternText, { message: 'Присутні не коректні символи'})),
+      .trim()
+      .min(1, { message: "Це поле обов'язкове"})
+      .min(50, { message: 'Мінімум 50 знаків'})
+      .max(2000, { message: 'Текст максимум 2000 символів'})
+      .transform(strToArr) // Перетворюємо рядок на масив рядків
+      .pipe(z.array(
+        z.string()
+        .regex(patternText) // Валідуємо кожен рядок у масиві
+      )
+      .transform((value)=> value.join('\r'))), // Перетворюємо масив назад на рядок з переносами
 
     date:z.string()
       .trim()

@@ -23,7 +23,7 @@
 
    @media (min-width: 990px) {
     min-width: 890px;
-    max-width: 1200px;
+
   }
 
   @include mixins.media-q("xl") { 
