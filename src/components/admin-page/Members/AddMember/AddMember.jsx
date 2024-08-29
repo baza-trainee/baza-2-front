@@ -39,7 +39,7 @@ export default function AddMember() {
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Учасника успішно додано'} btn={true}></AdminModal>
 
-      <UseAlert text={error && error.message}/>
+      <UseAlert title='Учасник з таким LinkedIn вже існує.' text={error && error.message}/>
     </SectionAdmin>
   )
 }

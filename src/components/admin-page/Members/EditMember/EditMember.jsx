@@ -41,7 +41,7 @@ export default function EditMember() {
       { isPending && <Loader/> }
 
       <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert text={error && error.message}/>
+      <UseAlert title='Учасник з таким LinkedIn вже існує.' text={error && error.message}/>
     </SectionAdmin>
   )
 }
