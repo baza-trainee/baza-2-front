@@ -11,16 +11,15 @@ import BlogArticle from './BlogArticle/BlogArticle';
 
 export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
-
   // Шляхи сторінок
   const editBlogArticlePath = '/admin/blog/edit'
  
   const[ idArticle, setIdArticle ] = useState(null)
   const[ fullArticle, setFullArticle ] = useState(null)
 
-
   const closeModal=()=>{
     setIdArticle(null)
+    setFullArticle(null)
   }
 
   const okRemove=()=>{
@@ -32,10 +31,10 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const readFullArticle=(value)=>{
     setFullArticle(value)
   }
+
   if(fullArticle){
     return (
       <div className={styles.item}>
-
         <BlogArticle data={fullArticle } close={readFullArticle}/>
 
         <div className={styles.btns}>
@@ -94,7 +93,6 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
         )
       }
 
-      
       <AdminModal 
         isOpen={idArticle} 
         handleCallback={closeModal} 

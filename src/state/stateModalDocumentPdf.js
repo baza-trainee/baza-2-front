@@ -2,19 +2,19 @@ import { create } from 'zustand';
 import { createImageUrl } from '../lib/hooks/createImageUrl';
 
 const filesDefault={
-  privacyPolicy:'/documents/privacy_policy.pdf',
-  report:'/documents/Reports_test.pdf',
-  rules:'/documents/rules_participation.pdf',
-  statut:'/documents/Statut.pdf',
-  termsOfUse:'/documents/terms_of_use.pdf',
+  privacyPolicy:'',
+  report:'',
+  rules:'',
+  statut:'',
+  termsOfUse:'',
 }
 
-function filesUpdate({privacyPolicy,report,rules,statut,termsOfUse}) {
+function filesUpdate({privacyPolicy, report, rules, statute, termsOfUse}) {
   const newData={}
   if(privacyPolicy?.ua){newData.privacyPolicy = createImageUrl(privacyPolicy?.ua)}
   if(report){newData.report = createImageUrl(report)}
   if(rules){newData.rules = createImageUrl(rules)}
-  if(statut){newData.statut = createImageUrl(statut)}
+  if(statute){newData.statut = createImageUrl(statute)}
   if(termsOfUse?.ua){newData.termsOfUse = createImageUrl(termsOfUse?.ua)}
 
   return newData
