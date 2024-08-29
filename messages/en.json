@@ -12,99 +12,7 @@
 		"contacts": "Contacts",
 		"btn_support_project": "Donate"
 	},
-	"Internship": {
-		"invite_participate": {
-			"title": "We invite you to participate",
-			"card_1": {
-				"text1": "UI\\UX designers specialize in the usability and appearance of applications and websites. They create convenient, attractive, and intuitive designs that allow users to navigate and utilize the product clearly and efficiently.",
-				"text2": "A web designer is a specialist who creates the visual representation of a brand on the internet. They design the interfaces of websites, online stores, landing pages, and applications for clients. They handle both the logical and visual aspects of the product."
-			},
-			"card_2": {
-				"text1": "A front-end developer is a programmer who develops the client-side part of a product—the elements of websites, programs, and applications that allow users to interact with them. They are responsible for creating a user-friendly and aesthetically pleasing appearance of web pages across various devices and implementing animations and other effects.",
-				"text2": "A front-end developer writes code and builds the part of the page that the user sees and interacts with. For example, every image, button, and text on this site was created by a front-end developer based on a designer's layout. It is an interesting job because each new line of code enhances the appearance and functionality of the site."
-			},
-			"card_3": {
-				"text1": "A back-end developer is responsible for creating and configuring the server-side of an application, including data processing logic, interaction with databases, API development, and ensuring information security.",
-				"text2": "A back-end developer is also responsible for developing and integrating components such as authentication systems, authorization, caching, message queues, and other elements that ensure the functionality and performance of the entire application. They create the 'core' of the project—writing the pathways that make everything work."
-			},
-			"card_4": {
-				"text1": "Fullstack developers have programming skills in both frontend (client-side) and backend (server-side) development. They are capable of developing a complete product from start to finish and are highly valued in the market as versatile professionals.",
-				"text2": "Fullstack developers create websites and web applications, responsible for both their frontend and backend. The frontend is the part of the website or application that users see in their browsers. It includes headings, subheadings, images, links, and buttons. The backend, on the other hand, is the logic and functionality behind the operation of the website or application. It encompasses everything hidden under the hood—the mechanics of actions, data storage, and more."
-			},
-			"card_5": {
-				"text1": "A QA engineer is responsible for developing testing plans for applications and websites. They identify issues in the functionality of the product, and most importantly, they help prevent these issues from occurring in the future.",
-				"text2": "A tester improves programs but doesn't write code. They find errors (bugs), describe them, and report them to developers. Simply put, a tester ensures that everything works correctly and meets the requirements."
-			},
-			"card_6": {
-				"text1": "A project manager manages the product development process from inception to release, being responsible for both team work and customer contacts.",
-				"text2": "A complex role requires many skills: understanding the development process and technical details of the project, the ability to manage risks, and communicate with various groups involved in the creation of the product. There are no limits to improvement in this field, as you can grow both in terms of product complexity and management."
-			},
-			"card_link": "Read more",
-			"btn_text": "Join the project"
-		},
-		"join_project_section": {
-			"main_title": "How to join the project",
-			"card_1": {
-				"title": "Filling out the questionnaire",
-				"text_1": "Fill out the questionnaire on the website by clicking the Join the community button",
-				"text_2": "Accept the invitation to join the server in Discord",
-				"text_3": "Add a specialization to your nickname so that the team can identify your role"
-			},
-			"card_2": {
-				"title": "Accept the invitation",
-				"text_1": "Accept the invitation to the Baza Trainee Ukraine server, which will arrive after filling out the form within 48 hours",
-				"text_2": "Follow weekly announcements about the start of projects in the General channel",
-				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
-			},
-			"card_3": {
-				"title": "Get onboarded",
-				"text_1": "Take a video onboarding about the rules of participation and work in the project management software",
-				"text_2": "Confirm the agreement to participate in the project and the NDA",
-				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
-			},
-			"card_4": {
-				"title": "Communication with the team",
-				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
-				"text_2": "Complete the task, release the product, and declare the availability of practical experience",
-				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
-			}
-		},
-		"benefits_internship": {
-			"title": "Benefits of internship",
-			"cards": {
-				"item_1": "We apply and confirm theoretical knowledge",
-				"item_2": "We gain experience working in a team",
-				"item_3": "We get rid of uncertainty, reduce stress",
-				"item_4": "We understand what the project is for",
-				"item_5": "We form a portfolio of real projects",
-				"item_6": "We carefully choose an employer"
-			},
-			"btn_text": "Join the project"
-		}
-	},
 	"Main": {
-		"hero_carousel_section": {
-			"slide_1": {
-				"title": "Baza Trainee Ukraine",
-				"text": "A public organization that provides initial work experience to those who are just starting their journey in IT."
-			},
-			"slide_2": {
-				"title": "About us",
-				"text": "Baza Trainee Ukraine is an educational and training platform that was built in response to Ukrainian society’s growing demands in the field of IT. It is a website that brings together two groups of users — students of IT and social projects in need of IT support."
-			},
-			"slide_3": {
-				"title": "Our Target Audience",
-				"text": "Ukrainians who are acquiring skills in the IT field, regardless of their age and experience level, form one side of our target audience. This includes trainees, juniors, career switchers, and mentors. On the other side, our audience consists of charitable organizations, volunteering communities, and civic initiatives in Ukraine."
-			},
-			"slide_4": {
-				"title": "Our goal",
-				"text": "To match students of IT and nonprofits in joint activities that benefit both sides. The former group will gain real practical experience in creating a live project, while the latter group will receive a functional digital product that works and contributes to the development of their social initiative."
-			},
-			"slide_5": {
-				"title": "Principle of Action",
-				"text": "Train our participants in the technologies of their choice and facilitate their employment. When creating a project, our students develop deeper expertise in the technologies they are already familiar with which allows them to grow as an expert and provide our nonprofit partners with a high-quality product."
-			}
-		},
 		"history_project_section": {
 			"title": "Project history",
 			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",
@@ -352,6 +260,76 @@
 	"cookies": {
 		"text": "This site uses cookies for proper operation and service improvement. If you agree to their use, click OK. More information in",
 		"privacy_policy": "Privacy policy."
+	},
+	"Internship": {
+		"invite_participate": {
+			"title": "We invite you to participate",
+			"card_1": {
+				"text1": "UI\\UX designers specialize in the usability and appearance of applications and websites. They create convenient, attractive, and intuitive designs that allow users to navigate and utilize the product clearly and efficiently.",
+				"text2": "A web designer is a specialist who creates the visual representation of a brand on the internet. They design the interfaces of websites, online stores, landing pages, and applications for clients. They handle both the logical and visual aspects of the product."
+			},
+			"card_2": {
+				"text1": "A front-end developer is a programmer who develops the client-side part of a product—the elements of websites, programs, and applications that allow users to interact with them. They are responsible for creating a user-friendly and aesthetically pleasing appearance of web pages across various devices and implementing animations and other effects.",
+				"text2": "A front-end developer writes code and builds the part of the page that the user sees and interacts with. For example, every image, button, and text on this site was created by a front-end developer based on a designer's layout. It is an interesting job because each new line of code enhances the appearance and functionality of the site."
+			},
+			"card_3": {
+				"text1": "A back-end developer is responsible for creating and configuring the server-side of an application, including data processing logic, interaction with databases, API development, and ensuring information security.",
+				"text2": "A back-end developer is also responsible for developing and integrating components such as authentication systems, authorization, caching, message queues, and other elements that ensure the functionality and performance of the entire application. They create the 'core' of the project—writing the pathways that make everything work."
+			},
+			"card_4": {
+				"text1": "Fullstack developers have programming skills in both frontend (client-side) and backend (server-side) development. They are capable of developing a complete product from start to finish and are highly valued in the market as versatile professionals.",
+				"text2": "Fullstack developers create websites and web applications, responsible for both their frontend and backend. The frontend is the part of the website or application that users see in their browsers. It includes headings, subheadings, images, links, and buttons. The backend, on the other hand, is the logic and functionality behind the operation of the website or application. It encompasses everything hidden under the hood—the mechanics of actions, data storage, and more."
+			},
+			"card_5": {
+				"text1": "A QA engineer is responsible for developing testing plans for applications and websites. They identify issues in the functionality of the product, and most importantly, they help prevent these issues from occurring in the future.",
+				"text2": "A tester improves programs but doesn't write code. They find errors (bugs), describe them, and report them to developers. Simply put, a tester ensures that everything works correctly and meets the requirements."
+			},
+			"card_6": {
+				"text1": "A project manager manages the product development process from inception to release, being responsible for both team work and customer contacts.",
+				"text2": "A complex role requires many skills: understanding the development process and technical details of the project, the ability to manage risks, and communicate with various groups involved in the creation of the product. There are no limits to improvement in this field, as you can grow both in terms of product complexity and management."
+			},
+			"card_link": "Read more",
+			"btn_text": "Join the project"
+		},
+		"join_project_section": {
+			"main_title": "How to join the project",
+			"card_1": {
+				"title": "Filling out the questionnaire",
+				"text_1": "Fill out the questionnaire on the website by clicking the Join the community button",
+				"text_2": "Accept the invitation to join the server in Discord",
+				"text_3": "Add a specialization to your nickname so that the team can identify your role"
+			},
+			"card_2": {
+				"title": "Accept the invitation",
+				"text_1": "Accept the invitation to the Baza Trainee Ukraine server, which will arrive after filling out the form within 48 hours",
+				"text_2": "Follow weekly announcements about the start of projects in the General channel",
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
+			},
+			"card_3": {
+				"title": "Get onboarded",
+				"text_1": "Take a video onboarding about the rules of participation and work in the project management software",
+				"text_2": "Confirm the agreement to participate in the project and the NDA",
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
+			},
+			"card_4": {
+				"title": "Communication with the team",
+				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
+				"text_2": "Complete the task, release the product, and declare the availability of practical experience",
+				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
+			}
+		},
+		"benefits_internship": {
+			"title": "Benefits of internship",
+			"cards": {
+				"item_1": "We apply and confirm theoretical knowledge",
+				"item_2": "We gain experience working in a team",
+				"item_3": "We get rid of uncertainty, reduce stress",
+				"item_4": "We understand what the project is for",
+				"item_5": "We form a portfolio of real projects",
+				"item_6": "We carefully choose an employer"
+			},
+			"btn_text": "Join the project"
+		}
 	},
 	"Blog": {
 		"blog_section": {
