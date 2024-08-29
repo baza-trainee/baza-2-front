@@ -16,6 +16,8 @@ import stateUseAlert from "@/src/state/stateUseAlert";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
 import { createKey } from "@/src/lib/utils/createKey";
 import TooltipText from "../../../shared/TooltipText/TooltipText";
+import { useMutation } from "@tanstack/react-query";
+import { MentorFormService } from "@/src/api/contact-form";
 
 export default function FormMentor({handleClose}) {
   const t = useTranslations("Modal_form");
@@ -33,35 +35,29 @@ export default function FormMentor({handleClose}) {
   const [ phone, setPhone ] = useState('');
   const [ convenientTime, setConvenientTime ] = useState('');
   const [ agree, setAgree ] = useState(false);
-  const [ loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setSpecialization('')
     setPhone('')
     setConvenientTime('')
     setAgree(false)
-    setIsLoader(false)
     reset();
     handleClose()
   }
-  const isSubmitted = (res) => {
-    setIsLoader(false)
-    if(res === 'error'){
-      open('error')
-    }
-    open(res)
-    resetForm()
-  }
 
-  const onSubmit = (data) => {
-    setIsLoader(true)
-    // Імітація відправки форми
-    setTimeout(()=>{
-      isSubmitted('success')
-      console.log(data);
-    },3000)
-  };
-  
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data) => {
+      return MentorFormService(data)
+    },
+    onSuccess:()=>{
+      open('success')
+      resetForm()
+    },
+    onError: () => {
+      open('error')
+    },
+  })
+
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
       return true;
@@ -76,7 +72,7 @@ export default function FormMentor({handleClose}) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form_mtntor}>
+    <form onSubmit={handleSubmit(mutate)} className={styles.form_mtntor}>
       <h2>{t("title_mentor")}</h2>
 
       <ul className={styles.list}>
@@ -261,7 +257,7 @@ export default function FormMentor({handleClose}) {
       >
         {t("btn_send")}
       </MainButton>
-      {loader && <Loader/>}
+      {isPending && <Loader/>}
     </form>
   )
 }

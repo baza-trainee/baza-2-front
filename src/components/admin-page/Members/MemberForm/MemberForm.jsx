@@ -69,7 +69,7 @@ export default function MemberForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_ua"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Ім’я та Прізвище"}
@@ -85,7 +85,7 @@ export default function MemberForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_en"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Ім’я та Прізвище"}
@@ -100,7 +100,7 @@ export default function MemberForm({
         <li className={styles.list_item}>
           <InputField
             id={"name_pl"}
-            maxLength={100}
+            maxLength={52}
             className={styles.item}
             required={false}
             placeholder={"Ім’я та Прізвище"}
