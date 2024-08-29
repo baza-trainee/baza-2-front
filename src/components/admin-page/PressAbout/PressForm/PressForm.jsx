@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { pressDefaultValues, PressFormScheme } from './PressFormScheme';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
@@ -12,7 +13,6 @@ import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
 import ImagePreview from '../../ImagePreview/ImagePreview';
-import { pressDefaultValues, PressFormScheme } from './PressFormScheme';
 
 export default function PressForm({
   hendleMutate, 
@@ -38,7 +38,7 @@ export default function PressForm({
 
   useEffect(()=>{
     if(data){
-      const{imageUrl, title, description, date } = data
+      const{imageUrl, title, description, date, link } = data
       setValue('title',title )
 
       setValue('description', description )
@@ -106,7 +106,6 @@ export default function PressForm({
         <li className={clsx(styles.list_item, styles.item_prev, styles.grid3)}>
           <InputField
             id={"link"}
-            maxLength={105}
             className={styles.item}
             required={false}
             placeholder={"Додайте посилання"}
@@ -114,7 +113,7 @@ export default function PressForm({
             isError={errors.link}
             isValid={isValid}
             version={"input_admin"}
-            label={'Стаття в Linkedin'}
+            label={'Посилання на статтю'}
           />
         </li>
 

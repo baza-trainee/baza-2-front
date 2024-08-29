@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { patternDateValue, patternText, patternUrlLinkedin } from "@/src/constants/regulars";
+import { patternDateValue, patternLink, patternText } from "@/src/constants/regulars";
 import { ACCEPTED_IMAGE_TYPES } from "@/src/lib/hooks/checkFileType";
 import { formatDateToNumericInputDate } from "@/src/lib/utils/formatData";
 import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
@@ -18,14 +18,6 @@ export const pressDefaultValues = {
 
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
-
-// Перетворюємо рядок на масив рядків
-const strToArr = (str) => {
-  const regul = /\r?\n|\r/g;
-  const result = str.split(regul);
-  return result.length ? result : [str]; 
-};
-
 
 export const PressFormScheme = z
 	.object({
@@ -52,8 +44,8 @@ export const PressFormScheme = z
 
     link: z.string()
       .trim()
-      .min(1, { message: "Це поле обов'язкове"}),
-      // .regex(patternUrlLinkedin, { message: 'Введіть дійсний URL'}),
+      .min(1, { message: "Це поле обов'язкове"})
+      .regex(patternLink, { message: 'Введіть дійсний URL'}),
 
     date:z.string()
       .trim()
@@ -67,7 +59,8 @@ export const PressFormScheme = z
 //  Схема відправки на бекенд:{
 // {
 //   "title": "example",
-//   "text": "Long text",
+//   "description": "Long text",
+//   "link": string
 //   "date": 888888444440,
 //   "file": "image file (JPG, PNG, WEBP)"
 // }

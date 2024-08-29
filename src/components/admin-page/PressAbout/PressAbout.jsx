@@ -32,9 +32,9 @@ export default function PressAbout() {
     setParams({...params, page:value})
   }
 
-  // Запит на базу
+  // Запит на базу  limit:6 - можливо краще 4
   const { isError, data, refetch } = useQuery({ queryKey: ['articles',  params.search, params.page], 
-    queryFn:()=>{return getAllArticles({...params, limit:4})}, keepPreviousData: true });
+    queryFn:()=>{return getAllArticles({...params, limit:6})}, keepPreviousData: true });
  
   // Запит на видалення
   const deleteArticle = useMutation({
