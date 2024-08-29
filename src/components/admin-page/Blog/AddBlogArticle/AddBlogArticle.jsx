@@ -36,7 +36,12 @@ export default function AddBlogArticle() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Статтю успішно додано'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Статтю успішно додано'} 
+        btn={true}>
+      </AdminModal>
 
       <UseAlert text={error && error.message}/>
     </SectionAdmin>

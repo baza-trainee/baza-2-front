@@ -28,7 +28,6 @@ export default function EditBlogArticle() {
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return updateBlogArticleById(id,data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{
