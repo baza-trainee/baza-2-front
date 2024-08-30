@@ -374,5 +374,9 @@
 	"sorryModal": {
 		"title": "Sorry, no information found.",
 		"text": "Specify the request"
+	},
+	"ErrorMessageLoading": {
+		"title": "Error loading content.",
+		"text": "Please refresh the page or try again later."
 	}
 }

@@ -11,6 +11,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import MembersList from './MembersList/MembersList';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Members() {
   const router = useRouter();
@@ -21,8 +22,8 @@ export default function Members() {
     page:1
   })
 
-  const hendleSetSearch = (value) => {
-    setParams({page:1,search:value})
+  const hendleSetSearch = (value='') => {
+    setParams({page:1, search:value})
   }
 
   const hendleSetPage = (value) => {
@@ -32,14 +33,18 @@ export default function Members() {
 
   const addMembePath = '/admin/members/add'
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['members',  params.search, params.page], 
-    queryFn:()=>{return getAllMembers({...params})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['members',  params.search, params.page], 
+    queryFn:()=>{return getAllMembers({...params})}, 
+    keepPreviousData: true 
+  });
     
 // Запит на видалення
   const deleteMember = useMutation({
     mutationFn:(id) => {
       return deleteMemberById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)
@@ -58,10 +63,7 @@ export default function Members() {
       </div>
 
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data && <MembersList 
             data={data} 
