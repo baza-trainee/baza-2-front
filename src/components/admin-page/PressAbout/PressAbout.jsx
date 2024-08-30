@@ -11,6 +11,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import PressList from './PressList/PressList';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function PressAbout() {
   const router = useRouter();
@@ -24,7 +25,7 @@ export default function PressAbout() {
   })
 
   // Функція пошуку
-  const hendleSetSearch = (value) => {
+  const hendleSetSearch = (value='') => {
     setParams({ page:1, search:value })
   }
   // Функція пагінації
@@ -33,7 +34,8 @@ export default function PressAbout() {
   }
 
   // Запит на базу  limit:6 - можливо краще 4
-  const { isError, data, refetch } = useQuery({ queryKey: ['articles',  params.search, params.page], 
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['articles',  params.search, params.page], 
     queryFn:()=>{return getAllArticles({...params, limit:6})}, keepPreviousData: true });
  
   // Запит на видалення
@@ -41,6 +43,7 @@ export default function PressAbout() {
     mutationFn:(id) => {
       return deleteArticleById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)
@@ -62,10 +65,7 @@ export default function PressAbout() {
         { deleteArticle.isPending && <Loader/> }
 
         {isError ?
-          <>
-            <p className={styles.error}>Помилка завантаження контенту.</p>
-            <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-          </>:
+          <MessageErrorLoading variant='admin'/> :
           <>
             {data && <PressList 
               data={data} 

@@ -45,9 +45,3 @@
     max-width: 840px;
   }
 }
-.length{
-  @include mix.apply-font-styles(var.$h2-font);
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-}

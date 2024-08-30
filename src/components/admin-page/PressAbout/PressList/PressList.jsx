@@ -10,6 +10,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 
 import Pagination from '../../Pagination/Pagination';
 import { ArticleCard } from './ArticleCard/ArticleCard';
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 
 export default function PressList({ 
@@ -61,11 +62,7 @@ export default function PressList({
           })
         }
         </ul>: 
-        ( <>
-            <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-            <p className={styles.length}>Змініть умови пошуку або додайте статтю.</p>
-          </>
-        )
+        <MessageErrorLoading variant='search'/>
       }
 
     {data?.pagination.totalPages > 1 && <div className={styles.pagination}>
