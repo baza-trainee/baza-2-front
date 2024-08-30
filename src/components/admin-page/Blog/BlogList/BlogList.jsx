@@ -8,6 +8,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import Pagination from '../../Pagination/Pagination';
 import BlogCard from './BlogCard/BlogCard';
 import BlogArticle from './BlogArticle/BlogArticle';
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
@@ -84,13 +85,8 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
             />
           </li>
         }
-
         </ul> : 
-        ( <>
-            <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-            <p className={styles.length}>Додайте статтю.</p>
-          </>
-        )
+        <MessageErrorLoading variant='search'/> 
       }
 
       <AdminModal 

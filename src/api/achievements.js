@@ -9,12 +9,8 @@ import instanceBaza2 from "./config/instance-baza2";
 const achievementsEndpoint = '/achievements'
 
 export async function getData(){
-	try {
-		const res = await instanceBaza2.get(achievementsEndpoint)
+	const res = await instanceBaza2.get(achievementsEndpoint)
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 // Schema
@@ -22,19 +18,11 @@ export async function getData(){
 //   "employed": 5
 // }
 export async function updateEmployed(employed){
-	try {
-		const res = await instanceBaza2.patch(achievementsEndpoint, employed)
+	const res = await instanceBaza2.patch(achievementsEndpoint, employed)
 		return res
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }
 
 export async function getEmployed(){
-	try {
-		const res = await instanceBaza2.get(`${achievementsEndpoint}/employed`);
+	const res = await instanceBaza2.get(`${achievementsEndpoint}/employed`);
 		return res.data
-	} catch (error) {
-		throw new Error(error?.response?.data?.message)
-	}
 }

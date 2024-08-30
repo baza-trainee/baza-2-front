@@ -373,5 +373,9 @@
 	"sorryModal": {
 		"title": "Przepraszamy, nie znaleziono żadnych informacji.",
 		"text": "Określ żądanie"
+	},
+	"ErrorMessageLoading": {
+		"title": "Błąd ładowania treści.",
+		"text": "Odśwież stronę lub spróbuj ponownie później."
 	}
 }

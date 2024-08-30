@@ -36,6 +36,10 @@
         object-fit: contain;
         object-position: center;
       }
+      .img._no_image{
+        object-fit: contain;
+        object-position: center;
+      }
     }
   }
 }
@@ -53,9 +57,14 @@
     width: 90%;
     height: 90%;
     transition: all .6s;
-    .img.cover{
+    .img{
       object-fit: cover;
     }
+    .img._no_image{
+      object-fit: contain;
+      object-position: center;
+    }
+
     & > button{
       right: auto;
       top: 5px;
@@ -97,7 +106,10 @@
       .img{
         object-fit: cover;
         object-position: 50% 20%;
-
+      }
+      .img._no_image{
+        object-fit: contain;
+        object-position: center;
       }
     }
 
@@ -144,6 +156,11 @@
         object-fit: cover;
         object-position: top;
       }
+      .img._no_image{
+        object-fit: contain;
+        object-position: center;
+      }
+
     }
 
     & > button{
@@ -187,6 +204,10 @@
 
       .img{
         object-fit: cover;
+        object-position: center;
+      }
+      .img._no_image{
+        object-fit: contain;
         object-position: center;
       }
     }

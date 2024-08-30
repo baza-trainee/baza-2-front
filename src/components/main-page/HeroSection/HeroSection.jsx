@@ -11,6 +11,7 @@ import CarouselPagination from "../../shared/Carousel/CarouselPagination/Carouse
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { useParams } from "next/navigation";
+import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
 export default function HeroSection() {
   const open = stateUseAlert(state => state.open);
@@ -23,7 +24,7 @@ export default function HeroSection() {
 
   return (
     <section className={styles.section}>
-      {data && <>
+      {!isError && data && <>
         <Carousel
           modules={[Navigation, Pagination, Autoplay]}
           paginationEl={".custom-pagination-hero"}
@@ -50,11 +51,8 @@ export default function HeroSection() {
           className={clsx("custom-pagination-hero", styles.pagination)}
         /></>
       }
-      {isError && <div className={styles.error}>
-          <h2>Помилка завантаження контенту.</h2>
-          <p>Оновіть сторінку або спробуйте пізніше.</p>
-        </div>
-      }
+
+      {isError && <MessageErrorLoading/>}
     </section>
   );
 }
