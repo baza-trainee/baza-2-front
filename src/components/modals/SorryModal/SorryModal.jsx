@@ -20,14 +20,8 @@ export default function SorryModal({ handleCallback }) {
 
   return (
     <LayoutModal isOpen={isOpen} handleClose={handleOk}>
-      <div
-        className={styles.wrapper}
-        onClick={(e) => {
-          handleOk();
-          e.stopPropagation();
-        }}
-      >
-        <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.wrapper}>
+        <div className={styles.modal}>
           <CloseBtn className={styles.closeButton} onClick={handleOk} />
           <h3>{t("title")}</h3>
           <p>{t("text")}</p>
