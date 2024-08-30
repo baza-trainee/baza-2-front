@@ -3,7 +3,8 @@ import JoinProjectSection from "@/src/components/internship-page/JoinProjectSect
 import RoleSection from "@/src/components/internship-page/RoleSection/RoleSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
-export default function Internship() {
+
+export default function InternshipPage() {
   return (
     <main>
       <HiddenTtitlePage namePage={'internship'}/>

@@ -19,10 +19,13 @@ export default function Specialization() {
   const [ search, setSearch ] = useState('')
   const addMembePath = '/admin/specialization/add'
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['specialization', search], 
-    queryFn:()=>{return getAllRoles({search:search})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['specialization', search], 
+    queryFn:()=>{return getAllRoles({search:search})}, 
+    keepPreviousData: true 
+  });
 
-// Запит на видалення
+  // Запит на видалення
   const deleteRole = useMutation({
     mutationFn:(id) => {
       return deleteRoleById(id)

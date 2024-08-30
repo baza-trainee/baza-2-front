@@ -12,7 +12,7 @@ import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <HiddenTtitlePage namePage={'main'}/>

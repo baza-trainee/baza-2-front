@@ -22,8 +22,8 @@ export default function Members() {
     page:1
   })
 
-  const hendleSetSearch = (value) => {
-    setParams({page:1,search:value})
+  const hendleSetSearch = (value='') => {
+    setParams({page:1, search:value})
   }
 
   const hendleSetPage = (value) => {
@@ -33,14 +33,18 @@ export default function Members() {
 
   const addMembePath = '/admin/members/add'
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['members',  params.search, params.page], 
-    queryFn:()=>{return getAllMembers({...params})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['members',  params.search, params.page], 
+    queryFn:()=>{return getAllMembers({...params})}, 
+    keepPreviousData: true 
+  });
     
 // Запит на видалення
   const deleteMember = useMutation({
     mutationFn:(id) => {
       return deleteMemberById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)

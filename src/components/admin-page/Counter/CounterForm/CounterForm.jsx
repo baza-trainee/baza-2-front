@@ -16,7 +16,11 @@ export default function CounterForm({defaultValues, hendleMutate}) {
     setValue,
     reset,
     formState: { errors, isValid, isDirty },
-  } = useForm({ defaultValues: {...counterDefaultValues}, resolver: zodResolver(counterSchema), mode: 'onBlur'});
+  } = useForm({ 
+    defaultValues: {...counterDefaultValues}, 
+    resolver: zodResolver(counterSchema), 
+    mode: 'onBlur'
+  });
 
   const cancel = ()=>{
     router.replace('/admin')

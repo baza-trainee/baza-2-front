@@ -22,7 +22,7 @@ export default function Blog() {
     page:1
   })
 
-  const hendleSetSearch = (value) => {
+  const hendleSetSearch = (value='') => {
     setParams({ page:1, search:value })
   }
 
@@ -41,6 +41,7 @@ export default function Blog() {
     mutationFn:(id) => {
       return deleteBlogArticleById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)

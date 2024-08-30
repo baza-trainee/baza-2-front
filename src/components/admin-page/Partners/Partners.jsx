@@ -19,8 +19,11 @@ export default function Partners() {
   const open = stateUseAlert(state => state.open);
   const addPartnerPath = '/admin/partners/add'
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['partners', search], 
-    queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['partners', search], 
+    queryFn:()=>{return getAllPartners({query:search})}, 
+    keepPreviousData: true 
+  });
 
   const deletePartner = useMutation({
     mutationFn:(id) => {

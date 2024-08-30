@@ -23,7 +23,7 @@ export default function Projects() {
     page:1
   })
 
-  const hendleSetSearch = (value) => {
+  const hendleSetSearch = (value='') => {
     setParams({page:1,search:value})
   }
 
@@ -31,13 +31,16 @@ export default function Projects() {
     setParams({...params, page:value})
   }
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['projects', params.search, params.page], 
-    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['projects', params.search, params.page], 
+    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true 
+  });
 
   const deleteProject = useMutation({
     mutationFn:(id) => {
       return deleteProjectById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)
