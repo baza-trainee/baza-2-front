@@ -21,21 +21,3 @@
   font-size: 18px;
   gap: 5px;
 }
-
-// .btn{
-//   padding: 15px 24px;
-//   //color: var.$secondary-black;
-//   font-weight: 600;
-//   font-size: 18px;
-//   gap: 5px;
-//   // &:hover{
-//   //   background-color: #c0a4b74f;
-//   //   box-shadow: inset 1px 1px #c0a4b7ad, inset -1px -1px #c0a4b7ad;
-//   // }
-// }
-.error{
-  @include mix.apply-font-styles(var.$h2-font);
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-}

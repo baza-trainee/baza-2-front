@@ -11,6 +11,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import SpecializationList from './SpecializationList/SpecializationList';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Specialization() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Specialization() {
   // Запит на базу
   const { isError, data, refetch } = useQuery({ queryKey: ['specialization', search], 
     queryFn:()=>{return getAllRoles({search:search})}, keepPreviousData: true });
-   console.log(data) 
+
 // Запит на видалення
   const deleteRole = useMutation({
     mutationFn:(id) => {
@@ -45,10 +46,7 @@ export default function Specialization() {
 
       
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data && <SpecializationList data={data.results} hendleRemove={ deleteRole.mutate }/>}
         </>

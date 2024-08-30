@@ -7,6 +7,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import Pagination from '../../Pagination/Pagination';
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function MembersList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
@@ -52,10 +53,7 @@ export default function MembersList({data, hendleRemove, hendleSetPage}) {
           </li>
         }
         </ul> : 
-        <>
-          <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-          <p className={styles.length}>Додайте учасника.</p>
-        </>
+       <MessageErrorLoading variant='search'/> 
       }
 
       <AdminModal isOpen={idMember} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити учасника?'} btnBlok={true}></AdminModal>

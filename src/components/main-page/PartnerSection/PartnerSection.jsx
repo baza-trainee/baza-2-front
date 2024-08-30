@@ -13,6 +13,7 @@ import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton"
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import PartnerCard from "../../shared/PartnerCard/PartnerCard";
 import { createKey } from "@/src/lib/utils/createKey";
+import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
 const PartnerSection = () => {
   const[ screenOrien, setScreenOrien ] = useState('')
@@ -98,8 +99,7 @@ const PartnerSection = () => {
             )}
           />:<p className={styles.error}>Нажаль немає контенту</p>}
 
-          {isError && <p className={styles.error}>Нажаль сталась помилка</p>}
-
+          {isError && <MessageErrorLoading/>}
         </div>
       
         {data && data.results.length && <CarouselPagination

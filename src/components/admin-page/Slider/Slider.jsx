@@ -47,10 +47,7 @@ export default function Slider() {
       }
       
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+       <MessageErrorLoading variant='admin'/> :
         <>
           {data?.results && <SliderList data={data?.results} hendleRemove={ deleteSlide.mutate }/>}
         </>

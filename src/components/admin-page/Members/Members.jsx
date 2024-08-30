@@ -11,6 +11,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import MembersList from './MembersList/MembersList';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Members() {
   const router = useRouter();
@@ -58,10 +59,7 @@ export default function Members() {
       </div>
 
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data && <MembersList 
             data={data} 

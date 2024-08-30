@@ -10,6 +10,7 @@ import Carousel from "../../shared/Carousel/Carousel";
 import { Navigation, Pagination } from "swiper/modules";
 import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
+import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
 const ReviewsSection = () => {
   const t = useTranslations("Main.reviews_section");
@@ -59,7 +60,7 @@ const ReviewsSection = () => {
             renderItem={(item) => <FeedbackCard {...item} locale={locale}/>}
           />
           }
-          {isError && <p>Помилка завантаження</p>}
+          {isError && <MessageErrorLoading/>}
 
         </div>
        {data?.length && <CarouselPagination

@@ -11,6 +11,7 @@ import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import BlogList from './BlogList/BlogList';
 import stateUseAlert from '@/src/state/stateUseAlert';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Blog() {
   const router = useRouter();
@@ -57,17 +58,14 @@ export default function Blog() {
         </MainButton >
 
         {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
-        <>
-          {data && <BlogList 
-            data={data} 
-            hendleRemove={deleteArticle.mutate} 
-            hendleSetPage={hendleSetPage}/>}
-        </>
-      }
+          <MessageErrorLoading variant='admin'/> :
+          <>
+            {data && <BlogList 
+              data={data} 
+              hendleRemove={deleteArticle.mutate} 
+              hendleSetPage={hendleSetPage}/>}
+          </>
+        }
 
       { deleteArticle.isPending && <Loader/> }
 
