@@ -40,7 +40,7 @@ export async function getAllSliders(){
 //     "pl": "string",
 //     "ua": "string"
 //   },
-//   "imageUrl": "string"
+//   "file": file($binary)
 // }
 export async function createNewSlide(newSlider){
 	const res = await instanceBaza2.post(herosliderEndpoint, newSlider, {

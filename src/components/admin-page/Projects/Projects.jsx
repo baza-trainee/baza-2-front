@@ -11,6 +11,7 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 import PartnerList from './ProjectsList/ProjectsList';
 import { deleteProjectById, getAllProjects, getAllProjects2 } from '@/src/api/projects';
 import UseAlert from '../../shared/UseAlert/UseAlert';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Projects() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function Projects() {
     page:1
   })
 
-  const hendleSetSearch = (value) => {
+  const hendleSetSearch = (value='') => {
     setParams({page:1,search:value})
   }
 
@@ -30,13 +31,16 @@ export default function Projects() {
     setParams({...params, page:value})
   }
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['projects', params.search, params.page], 
-    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['projects', params.search, params.page], 
+    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true 
+  });
 
   const deleteProject = useMutation({
     mutationFn:(id) => {
       return deleteProjectById(id)
     },onSuccess: () => {
+      hendleSetSearch()
       refetch()
     },onError:()=>{
       open('error', false)
@@ -57,10 +61,7 @@ export default function Projects() {
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати проєкт'}</MainButton >
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data?.results && 
             <PartnerList data={data} hendleRemove={deleteProject.mutate} hendleSetPage={hendleSetPage}/>

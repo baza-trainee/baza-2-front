@@ -17,7 +17,7 @@ export default function ImagePreview({imageUrl, variant=''}) {
         </button>
         <div className={styles.img_wrap}>
           <Image
-            className={ styles.img }
+            className={clsx(styles.img , !imageUrl && styles._no_image )}
             src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill

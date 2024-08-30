@@ -23,42 +23,6 @@ export async function  getAllTestimonials(){
 	const res = await instance.get(testimonialsEndpoint)
 		return res.data
 }
-// name[en]
-// string
-// Name in English
-
-// name[pl]
-// string
-// Name in Polish
-
-// name[ua]
-// string
-// Name in Ukrainian
-
-// review[en]
-// string
-// Review in English
-
-// review[pl]
-// string
-// Review in Polish
-
-// review[ua]
-// string
-// Review in Ukrainian
-
-// role
-// string
-// Author's specialization
-
-// date
-// number
-// Date of the testimonial
-
-// file
-// file($binary)
-// Testimonial image file (JPG, PNG, WEBP)
-
 
 export async function  createNewtesTestimonial(newTestimonial){
 	const res = await instanceBaza2.post(testimonialsEndpoint, newTestimonial, {

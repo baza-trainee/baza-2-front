@@ -11,6 +11,7 @@ import { Icon } from '../../shared/Icon/Icon';
 import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Partners() {
   const router = useRouter();
@@ -18,8 +19,11 @@ export default function Partners() {
   const open = stateUseAlert(state => state.open);
   const addPartnerPath = '/admin/partners/add'
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['partners', search], 
-    queryFn:()=>{return getAllPartners({query:search})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['partners', search], 
+    queryFn:()=>{return getAllPartners({query:search})}, 
+    keepPreviousData: true 
+  });
 
   const deletePartner = useMutation({
     mutationFn:(id) => {
@@ -38,10 +42,7 @@ export default function Partners() {
         <Icon name={'plus_icon'} width={24} height={24}/>
         {'Додати партнера'}</MainButton >
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data?.results && 
             <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>

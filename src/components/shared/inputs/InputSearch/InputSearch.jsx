@@ -48,6 +48,7 @@ const InputSearch = ({ onSubmit, className, placeholder="Введіть ключ
   return (
     <div className={clsx(styles.wrapper, className)}>
       <input
+        id="Search"
         ref={inputRef}
         type="text"
         maxLength={300}

@@ -12,6 +12,7 @@ import Loader from "@/src/components/shared/loader/Loader";
 import ProjectCard from "@/src/components/projects-page/ProjectCard/ProjectCard";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import SorryModal from "@/src/components/modals/SorryModal/SorryModal";
+import MessageErrorLoading from "@/src/components/shared/MessageErrorLoading/MessageErrorLoading";
 
 export default function ExampleProjects() {
   const [searchQuery, setSearchQuery] = useState(''); // Стан для пошуку
@@ -64,7 +65,7 @@ export default function ExampleProjects() {
 
       {/* Обробка статусів */}
       {isLoading && <Loader />}
-      {isError && <p>Сталася помилка</p>}
+      {isError && <MessageErrorLoading/>}
 
       {/* Відображення проектів */}
       <div className={styles.content_wrapper}>
