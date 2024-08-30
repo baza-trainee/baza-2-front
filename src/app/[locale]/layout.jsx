@@ -6,8 +6,8 @@ import QueryProvider from "@/src/components/providers/queryProvider";
 import LayoutProvider from "@/src/components/providers/LayoutProvider";
 
 export const metadata = {
-  title: "Baza trainee 2",
-  description: "Baza trainee web site",
+  title: "Baza Trainee 2",
+  description: "Baza Trainee web site",
   icons: {
     icon: ["/favicons/favicon.svg"],
   },
