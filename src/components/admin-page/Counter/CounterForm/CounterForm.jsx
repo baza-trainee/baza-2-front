@@ -1,5 +1,6 @@
 import styles from './CounterForm.module.scss';
 import { useEffect } from 'react';
+import { useRouter } from '@/src/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { counterDefaultValues, counterSchema } from './counterScheme';
@@ -7,6 +8,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton';
 import InputField from '@/src/components/shared/inputs/InputField/InputField';
 
 export default function CounterForm({defaultValues, hendleMutate}) {
+  const router = useRouter();
 
   const {
     register,
@@ -15,6 +17,11 @@ export default function CounterForm({defaultValues, hendleMutate}) {
     reset,
     formState: { errors, isValid, isDirty },
   } = useForm({ defaultValues: {...counterDefaultValues}, resolver: zodResolver(counterSchema), mode: 'onBlur'});
+
+  const cancel = ()=>{
+    router.replace('/admin')
+    reset()
+  }
 
   const onSubmit = (data) => {
    hendleMutate({employed:Number(data.employed)})
@@ -53,8 +60,6 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             type='number'
             placeholder={"Введіть дані"}
             registerOptions={register("projects", { ...counterSchema.projects })}
-            //isError={errors.projects}
-            //isValid={isValid}
             version={"input_admin"}
             label={'Активних проєктів'}
           />
@@ -69,8 +74,6 @@ export default function CounterForm({defaultValues, hendleMutate}) {
             type='number'
             placeholder={"Введіть дані"}
             registerOptions={register("members", { ...counterSchema.members })}
-            //isError={errors.members}
-            //isValid={isValid}
             version={"input_admin"}
             label={'Залучених учасників'}
           />
@@ -103,7 +106,7 @@ export default function CounterForm({defaultValues, hendleMutate}) {
         <MainButton
           variant='admin'
           className={styles.btn_cancel}
-          onClick={()=>{reset()}}
+          onClick={cancel}
         >
           {'Скасувати'}
         </MainButton>
