@@ -1,0 +1,22 @@
+.placeholder{
+  width: 150px;
+  padding: 5px;
+  min-height: auto;
+  height: 100%;
+  position: relative;
+  
+  .svg{
+    border-radius: 5px;
+  }
+
+  &:disabled{
+    cursor: default;
+    opacity: .8;
+  }
+
+  .icon_screen{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+  }
+}

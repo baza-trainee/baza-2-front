@@ -23,31 +23,6 @@
         width: 100%;
         min-width: 210px;
       }
-
-      .placeholder{
-        width: 150px;
-        padding: 5px;
-        min-height: auto;
-        height: 100%;
-        position: relative;
-        .svg{
-          width: 70px;
-          height: 70px;
-          fill: var.$secondary-error;
-          border-radius: 5px;
-        }
-
-        &:disabled{
-          cursor: default;
-          opacity: .8;
-        }
-
-        .icon_screen{
-          position: absolute;
-          bottom: 2px;
-          right: 2px;
-        }
-      }
     }
     .item_prev{
       display: flex;

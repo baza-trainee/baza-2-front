@@ -8,8 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { documentsDefaultValues, documentsScheme } from './documentsFormScheme';
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { Icon } from '@/src/components/shared/Icon/Icon';
-import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
+import PrevDocumentButton from '../PrevDocumentButton/PrevDocumentButton';
 
 export default function DocumentsForm({
   data, 
@@ -25,8 +24,6 @@ export default function DocumentsForm({
   const[ prevUrlPrivacyPolicy, setPrevUrlPrivacyPolicy ] = useState(null)
   const[ prevUrlTermsOfUse, setPrevUrlTermsOfUse ] = useState(null)
   const[ prevUrlRules, setPrevUrlRules ] = useState(null)
-  // Стан модалки попереднього перегляду
-  const open = stateModalDocumentPdf(state => state.open);
 
   // Керування формою useForm
   const {
@@ -35,7 +32,11 @@ export default function DocumentsForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...documentsDefaultValues}, resolver: zodResolver(documentsScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...documentsDefaultValues}, 
+    resolver: zodResolver(documentsScheme), 
+    mode: 'onChange'
+  });
 
   // Функція очищення форми
   const resetForm = () => {
@@ -120,16 +121,9 @@ export default function DocumentsForm({
           />
         </li>
         <li className={clsx(styles.list_item)}>
-          <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
-            if(prevUrlPrivacyPolicy){
-              hendleSetPrev(prevUrlPrivacyPolicy)
-              open()
-            }
-            
-            }} disabled={!prevUrlPrivacyPolicy}>
-            <Icon className={styles.svg} name={'pdf-placeholder'}/>
-            <Icon className={styles.icon_screen} name={'full_screen'} width={30} height={30}/>
-          </MainButton>
+          <PrevDocumentButton 
+            prevUrl={prevUrlPrivacyPolicy} 
+            hendleSetPrev={hendleSetPrev}/>
         </li>
       </ul>
 
@@ -154,16 +148,9 @@ export default function DocumentsForm({
            
         </li>
         <li className={clsx(styles.list_item)}>
-          <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
-            if(prevUrlTermsOfUse){
-              hendleSetPrev(prevUrlTermsOfUse)
-              open()
-            }
-            
-            }} disabled={!prevUrlTermsOfUse}>
-            <Icon className={styles.svg} name={'pdf-placeholder'}/>
-            <Icon className={styles.icon_screen} name={'full_screen'} width={30} height={30}/>
-          </MainButton>
+          <PrevDocumentButton 
+            prevUrl={prevUrlTermsOfUse} 
+            hendleSetPrev={hendleSetPrev}/>
         </li>
       </ul>
 
@@ -187,16 +174,9 @@ export default function DocumentsForm({
           />
         </li>
         <li className={clsx(styles.list_item)}>
-          <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
-            if(prevUrlStatute){
-              hendleSetPrev(prevUrlStatute)
-              open()
-            }
-            
-            }} disabled={!prevUrlStatute}>
-            <Icon className={styles.svg} name={'pdf-placeholder'}/>
-            <Icon className={styles.icon_screen} name={'full_screen'} width={30} height={30}/>
-          </MainButton>
+          <PrevDocumentButton 
+            prevUrl={prevUrlStatute} 
+            hendleSetPrev={hendleSetPrev}/>
         </li>
       </ul>
 
@@ -220,16 +200,9 @@ export default function DocumentsForm({
           />
         </li>
         <li className={clsx(styles.list_item)}>
-          <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
-            if(prevUrlReport){
-              hendleSetPrev(prevUrlReport)
-              open()
-            }
-            
-            }} disabled={!prevUrlReport}>
-            <Icon className={styles.svg} name={'pdf-placeholder'}/>
-            <Icon className={styles.icon_screen} name={'full_screen'} width={30} height={30}/>
-          </MainButton>
+          <PrevDocumentButton 
+            prevUrl={prevUrlReport} 
+            hendleSetPrev={hendleSetPrev}/>
         </li>
       </ul>
 
@@ -253,16 +226,9 @@ export default function DocumentsForm({
           />
         </li>
         <li className={clsx(styles.list_item)}>
-          <MainButton  variant='admin' className={styles.placeholder} onClick={()=>{
-            if(prevUrlRules){
-              hendleSetPrev(prevUrlRules)
-              open()
-            }
-            
-            }} disabled={!prevUrlRules}>
-            <Icon className={styles.svg} name={'pdf-placeholder'}/>
-            <Icon className={styles.icon_screen} name={'full_screen'} width={30} height={30}/>
-          </MainButton>
+          <PrevDocumentButton 
+            prevUrl={prevUrlRules} 
+            hendleSetPrev={hendleSetPrev}/>
         </li>
       </ul>
 
