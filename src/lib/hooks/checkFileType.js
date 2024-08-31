@@ -1,4 +1,4 @@
-export const MAX_FILE_SIZE_IMG = 2000000;
+export const MAX_FILE_SIZE_IMG = 5000000;
 
 export const ACCEPTED_IMAGE_TYPES = [
   'jpeg',

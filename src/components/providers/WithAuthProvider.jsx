@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from '@/src/navigation';
 import { token } from '@/src/api/auth';
+import Loader from '../shared/loader/Loader';
 
 export default function WithAuthProvider({
   children,
@@ -25,5 +26,5 @@ export default function WithAuthProvider({
     getAdmin();
   }, [pathname]);
 
-  return <>{isShow && children}</>;
+  return <>{isShow ? children : <Loader/>}</>;
 };
