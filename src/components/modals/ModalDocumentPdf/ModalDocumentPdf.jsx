@@ -12,7 +12,7 @@ const PDFViewer = dynamic(() => import("@/src/components/shared/PdfViewer/PdfVie
   ssr: false
 });
 
-export default function ModalDocumentPdf({url,hedleClose=()=>{}}) {
+export default function ModalDocumentPdf({url, hedleClose=()=>{}}) {
  // Отримуємо стан.
   const isOpen = stateModalDocumentPdf(state => state.isOpen);
   const file = stateModalDocumentPdf(state => state.document);

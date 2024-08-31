@@ -1,6 +1,5 @@
 import styles from './SliderList.module.scss'
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
