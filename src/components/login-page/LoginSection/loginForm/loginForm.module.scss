@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 36px;
+  margin-bottom: 10px;
 
   .list {
     display: flex;
@@ -56,7 +57,6 @@
           }
         }
       }
-
     }
   }
 }
