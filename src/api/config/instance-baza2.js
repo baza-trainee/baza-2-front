@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { BASE_URL2 } from '@/src/constants/constants'
+//const baseURL = 'https://baza2.crabdance.com/api/v1';
+// baza-trainee 2
 
 const instanceBaza2 = axios.create({
-	// baseURL: process.env.api,
-	baseURL:BASE_URL2,
+	baseURL: process.env.NEXT_PUBLIC_API2_URL,
 	 headers: {
 		'Content-Type': 'application/json',
 	},
