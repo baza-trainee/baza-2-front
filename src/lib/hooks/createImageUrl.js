@@ -1,4 +1,5 @@
-import { BASE_URL, BASE_URL2 } from "@/src/constants/constants"
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL
+const BASE_URL2 = process.env.NEXT_PUBLIC_API2_URL
 
 function isValidUrl(string) {
   try {
