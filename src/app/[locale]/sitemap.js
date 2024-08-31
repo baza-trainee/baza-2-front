@@ -1,5 +1,5 @@
 export default async function sitemap(){
-  let blogs = [];
+  let blogs = null;
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API2_URL}/blog`);
     blogs = await response.json();
