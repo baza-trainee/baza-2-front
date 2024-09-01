@@ -27,7 +27,7 @@ export default function TeamForm({
 
   // Шукаємо учасника в базі
   const { data } = useQuery({ queryKey: ['members', search], 
-    queryFn:()=>{return getAllMembers({search:search})}, keepPreviousData: true });
+    queryFn:()=>{return getAllMembers({ search:search, limit:100 })}, keepPreviousData: true });
   // Валідація данних
   const {
     register,

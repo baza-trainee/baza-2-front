@@ -62,7 +62,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
       isOpen={idPartner} 
       handleCallback={closeModal} 
       handleOkCallback={okRemove} 
-      title={'Ви впевнені, що хочете видалити партнера?'} 
+      title={'Ви впевнені, що хочете видалити проєкт?'} 
       btnBlok={true}>
     </AdminModal>
   </>

@@ -25,7 +25,7 @@ export default function HeaderAdmin({ title, hendleSearch, lang, nav }) {
       <div className={styles.header}>
         <h1>{title}</h1>
         <div className={clsx(styles.options)}>
-          {hendleSearch && <InputSearch onSubmit={hendleSearch} className={styles.inputSearch} placeholder='Введіть ключюве слово для пошуку'/>}
+          {hendleSearch && <InputSearch onSubmit={hendleSearch} className={styles.inputSearch} placeholder='Введіть ключове слово для пошуку'/>}
           {lang && <LangDropdown type={isActiveProject('projects') ? '':'admin'}/>}
         </div>
       </div>

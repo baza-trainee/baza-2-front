@@ -44,8 +44,8 @@ const validateLaunchDate=(state, date, startDate)=>{
       messageError.message = "Це поле обов'язкове"
       return false
     }else{ 
-      messageError.message ='Дата не може бути менша дати створення'
-      return formatDateToNumericInputDate({dateString:date}) >= startDate
+      messageError.message ='Дата менша дати створення + тиждень'
+      return formatDateToNumericInputDate({dateString:date}) - 604800000 >= startDate
     }
   }else {
     messageError.message = "Це поле обов'язкове"
