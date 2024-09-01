@@ -2,7 +2,7 @@ import instanceBaza2 from "./config/instance-baza2";
 
 const membersEndpoint = '/members'
 
-export async function  getAllMembers({ page, search, limit }){
+export async function  getAllMembers({ page, search, limit=100 }){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);

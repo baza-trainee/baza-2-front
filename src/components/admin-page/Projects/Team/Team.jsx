@@ -32,7 +32,7 @@ export default function Team() {
     <>
       { pageName === 'list' &&  <>
           <div className={styles.wrapper}>
-            <h2>Прізвище та Ім’я</h2>
+            <h2>Ім’я та Прізвище</h2>
             <p>Спеціалізація</p>
             <MainButton  variant='admin' className={styles.btn} onClick={()=>{
                 setPageName('add_member')
