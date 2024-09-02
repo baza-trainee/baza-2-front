@@ -19,8 +19,14 @@ const{ currentPage, totalPages } = pagination;
 
   return (
     <div className={styles.pagination}>
-      <button type='button' disabled={currentPage === 1} className={clsx(styles.btn)} onClick={prevtPage}>  
-        <Icon name={'carousel-arrow'} className={styles.icon_prev} width={30} height={30}/>
+      <button type='button' 
+        disabled={currentPage === 1} 
+        className={clsx(styles.btn)} 
+        onClick={prevtPage}>  
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_prev} 
+          width={30} height={30}/>
       </button>
 
       <div className={styles.info}>
@@ -29,8 +35,14 @@ const{ currentPage, totalPages } = pagination;
         <p>{totalPages}</p>
       </div>
 
-      <button type='button' disabled={currentPage === totalPages} className={styles.btn} onClick={nextPage}>  
-        <Icon name={'carousel-arrow'} className={styles.icon_next} width={30} height={30}/>
+      <button type='button' 
+        disabled={currentPage === totalPages} 
+        className={styles.btn} 
+        onClick={nextPage}>  
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_next} 
+          width={30} height={30}/>
       </button>
     </div>
   )

@@ -22,8 +22,11 @@ export default function EditSpecialization() {
     router.replace('/admin/specialization')
   })
 
-  const roleById = useQuery({ queryKey: ['specialization', id], 
-    queryFn:()=>{return getRoleById(id)}, keepPreviousData: true });
+  const roleById = useQuery({ 
+    queryKey: ['specialization', id], 
+    queryFn:()=>{return getRoleById(id)}, 
+    keepPreviousData: true 
+  });
 
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {

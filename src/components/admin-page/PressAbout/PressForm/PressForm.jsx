@@ -40,7 +40,6 @@ export default function PressForm({
     if(data){
       const{imageUrl, title, description, date, link } = data
       setValue('title',title )
-
       setValue('description', description )
       setValue('link', link )
       setValue('date',formatDateToNumericInputDate({timestamp:date}))

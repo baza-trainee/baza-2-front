@@ -34,7 +34,11 @@ export default function SlideForm({
     reset,
     setValue,
     getValues,
-  } = useForm({ defaultValues: {...SliderDefaultValues}, resolver: zodResolver(SliderScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...SliderDefaultValues}, 
+    resolver: zodResolver(SliderScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/slider')

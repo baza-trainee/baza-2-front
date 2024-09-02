@@ -1,12 +1,12 @@
 'use client';
 import styles from './Partners.module.scss'
+import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { deletePartnerById, getAllPartners } from '@/src/api/partners';
 import SectionAdmin from "../SectionAdmin/SectionAdmin";
 import MainButton from '../../shared/MainButton/MainButton';
 import PartnerList from './PartnerList/PartnerList';
-import { useState } from 'react';
 import { Icon } from '../../shared/Icon/Icon';
 import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';

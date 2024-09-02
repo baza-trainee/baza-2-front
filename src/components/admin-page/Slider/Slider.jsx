@@ -17,8 +17,10 @@ export default function Slider() {
  
   const addSlidePath = '/admin/slider/add'
 
-  const { isError, data, refetch } = useQuery({ queryKey: ['slider'], 
-    queryFn:()=>{return getAllSliders()}});
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['slider'], 
+    queryFn:()=>{return getAllSliders()
+    }});
 
   const deleteSlide = useMutation({
     mutationFn:(id) => {

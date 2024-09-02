@@ -25,7 +25,7 @@ const BlogArticle = () => {
         <div className={styles.wrapperImg}>
           <Image
             className={styles.img}
-            src={"/images/hero_section/slide_3.jpg"}
+            src={"/images/articles/img2.jpg"}
             fill
             sizes="100%"
             alt="aa"

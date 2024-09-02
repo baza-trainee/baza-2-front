@@ -23,7 +23,6 @@ export default function AddMember() {
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return createNewMember(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{
