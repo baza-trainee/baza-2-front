@@ -369,7 +369,7 @@
 			"team": "Project team"
 		},
 		"load_more": "More projects",
-		"placeholder": "Enter a keyword to search"
+		"placeholder": "Enter keyword"
 	},
 	"sorryModal": {
 		"title": "Sorry, no information found.",
