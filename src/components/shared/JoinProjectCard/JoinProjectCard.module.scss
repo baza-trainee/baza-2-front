@@ -2,11 +2,9 @@
 @use "../../../styles/variables" as var;
 
 .cardContainer {
-  min-width: 278px;
-  max-width: 100%;
+  width: 100%;
   height: fit-content;
   @include mixins.media-q("md") {
-    min-width: 688px;
     
   }
 
@@ -14,15 +12,16 @@
     position: sticky;
     top: 150px;
     height: auto;
-    min-width: 900px;
+
   }
   @include mixins.media-q("xl") { 
-  min-width: 1212px;
-  max-width: 1396px;
+    max-width: 1700px;
 
   }
   @include mixins.media-q("xxxl") { 
-  min-width: 1396px;
+    width: 100%;
+    max-width: 1700px;
+
 
   }
 }
@@ -38,7 +37,6 @@
     padding: 28px 8px;
 
 @include mixins.media-q("md") {
-    width: 100%;
     grid-template-columns: 1fr 3fr;
     overflow: hidden;
  
@@ -50,14 +48,11 @@
   }
 
   @include mixins.media-q("xl") { 
-    grid-template-columns: 1fr 3fr;
-    min-width: 1212px;
-    max-width: 1396px;
+
   }
 
 @include mixins.media-q("xxxl") { 
   padding: 48px;
-  max-width: 1396px;
 
 
 }
@@ -105,9 +100,6 @@
   @include mixins.apply-font-styles(var.$h1-font);
 
 }
-@include mixins.media-q("xxxl") { 
-  @include mixins.apply-font-styles(var.$h5-font);
-}
 }
 
 .iconTitle {
@@ -147,10 +139,6 @@
     text-align: start;
     @include mixins.apply-font-styles(var.$text-18-font);
    }
-  
-  @include mixins.media-q("xxxl") { 
-    @include mixins.apply-font-styles(var.$text-20-font);
-  }
 }
 
 
