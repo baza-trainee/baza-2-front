@@ -7,6 +7,7 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import FeedbackCard from '@/src/components/shared/FeedbackCard/FeedbackCard';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function ReviewList({data, hendleRemove}) {
   const router = useRouter();
@@ -47,10 +48,7 @@ export default function ReviewList({data, hendleRemove}) {
           </li>
         })}
         </ul> : 
-        <>
-          <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-          <p className={styles.length}>Додайте відгук.</p>
-        </>
+        <MessageErrorLoading variant='search'/> 
       }
 
       <AdminModal isOpen={idReview} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити відгук?'} btnBlok={true}></AdminModal>

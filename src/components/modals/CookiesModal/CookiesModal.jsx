@@ -1,28 +1,30 @@
 "use client"
+import styles from './CookiesModal.module.scss';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import { Icon } from '../../shared/Icon/Icon';
-import MainButton from '../../shared/MainButton/MainButton';
-import styles from './CookiesModal.module.scss';
-import CloseBtn from '../../shared/CloseBtn/CloseBtn';
-import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
 import { useQuery } from "@tanstack/react-query";
 import { getDocuments } from '@/src/api/documents';
+import { Icon } from '../../shared/Icon/Icon';
+import MainButton from '../../shared/MainButton/MainButton';
+import CloseBtn from '../../shared/CloseBtn/CloseBtn';
+import stateModalDocumentPdf from '@/src/state/stateModalDocumentPdf';
+
 // Examples Cookies:  expires: 365 днів.
 // Cookies.set('name', 'value', { expires: 365 })
 // Cookies.get('name') // => 'value'
 // Cookies.remove('name')
 
 export default function CookiesModal() {
-  const { isLoading, isError, data }= useQuery({ queryKey: ['documents'], queryFn: getDocuments })
+  // Запит на  отримати документи
+  const { data }= useQuery({ queryKey: ['documents'], queryFn: getDocuments })
 
   // контент.
   const t = useTranslations("cookies");
 
   const open = stateModalDocumentPdf(state => state.open);
+  // Зберігаємо документи в глобальний стейт
   const filesUpdate = stateModalDocumentPdf(state => state.filesUpdate);
-
   if(data){filesUpdate(data)}
 
   // локальний стан.          

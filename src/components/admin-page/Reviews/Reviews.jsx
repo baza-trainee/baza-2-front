@@ -10,6 +10,7 @@ import ReviewList from './ReviewList/ReviewList';
 import Loader from '../../shared/loader/Loader';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import stateUseAlert from '@/src/state/stateUseAlert';
+import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function Reviews() {
   const router = useRouter();
@@ -43,10 +44,7 @@ export default function Reviews() {
         {'Додати відгук'}</MainButton >
       
       {isError ?
-        <>
-          <p className={styles.error}>Помилка завантаження контенту.</p>
-          <p className={styles.error}>Оновіть сторінку або спробуйте пізніше.</p>
-        </>:
+        <MessageErrorLoading variant='admin'/> :
         <>
           {data && <ReviewList data={reverseData(data)} hendleRemove={ deleteReview.mutate }/>}
         </>

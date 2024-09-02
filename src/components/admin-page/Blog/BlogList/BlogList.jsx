@@ -8,19 +8,19 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import Pagination from '../../Pagination/Pagination';
 import BlogCard from './BlogCard/BlogCard';
 import BlogArticle from './BlogArticle/BlogArticle';
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
-
   // Шляхи сторінок
   const editBlogArticlePath = '/admin/blog/edit'
  
   const[ idArticle, setIdArticle ] = useState(null)
   const[ fullArticle, setFullArticle ] = useState(null)
 
-
   const closeModal=()=>{
     setIdArticle(null)
+    setFullArticle(null)
   }
 
   const okRemove=()=>{
@@ -32,8 +32,30 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
   const readFullArticle=(value)=>{
     setFullArticle(value)
   }
+
   if(fullArticle){
-    return <BlogArticle data={fullArticle } close={readFullArticle}/>
+    return (
+      <div className={styles.item}>
+        <BlogArticle data={fullArticle } close={readFullArticle}/>
+
+        <div className={styles.btns}>
+          <MainButton variant='admin' 
+            className={styles.btn} 
+            onClick={()=>{
+              router.push(`${editBlogArticlePath}/${fullArticle._id}`)}
+            }>
+            <Icon  width={24} height={24} name='edit'/>
+          </MainButton>
+
+          <MainButton variant='admin' onClick={()=>{
+            setIdArticle(fullArticle._id)
+            setFullArticle(null)
+            }} className={styles.btn}>
+            <Icon width={24} height={24} name='remove'/>
+          </MainButton>
+        </div>
+      </div>
+    )
   }
 
   return(
@@ -63,16 +85,10 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
             />
           </li>
         }
-
         </ul> : 
-        ( <>
-            <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-            <p className={styles.length}>Додайте статтю.</p>
-          </>
-        )
+        <MessageErrorLoading variant='search'/> 
       }
 
-      
       <AdminModal 
         isOpen={idArticle} 
         handleCallback={closeModal} 
@@ -83,5 +99,3 @@ export default function BlogList({data, hendleRemove, hendleSetPage}) {
     </>
   )
 }
-
-const str= "За останні кілька років сфера розробки програмного забезпеченнязазнала революційних інновацій та трансформаційних змін. У міру того,як світовий ринок розробки програмного забезпечення наближається дооціночної оцінки в 507,2 мільярда доларів, трансформаційний впливнових тенденцій стає все більш очевидним. Розуміння та адаптаціяостанніх тенденцій розробки програмного забезпечення є стратегічноюнеобхідністю для компаній, які прагнуть підтримувати конкурентоспроможність та актуальність.Навіщо витрачати свій час на вивчення цих тенденцій? Переваги багатогранні. Бути в курсі останніх досягнень дозволяє вашому бізнесу використовувати найсучасніші технології, що призводить до підвищення операційної ефективності, покращення якості обслуговування клієнтів і явної ринкової переваги. Незалежно від того, чи є ви технічним директором, менеджером проектів або підприємцем, розуміння цих тенденцій має важливе значення для максимізації потенціалу ваших програмних проектів і залишатися в авангарді технологічного прогресу "

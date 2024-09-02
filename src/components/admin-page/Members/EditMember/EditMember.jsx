@@ -3,13 +3,13 @@ import { useCallback, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
+import { getMemberById, updateMemberById } from '@/src/api/members';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import SectionAdmin from '../../SectionAdmin/SectionAdmin';
 import Loader from '@/src/components/shared/loader/Loader';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import UseAlert from '@/src/components/shared/UseAlert/UseAlert';
 import MemberForm from '../MemberForm/MemberForm';
-import { getMemberById, updateMemberById } from '@/src/api/members';
 
 export default function EditMember() {
   const router = useRouter();
@@ -40,8 +40,16 @@ export default function EditMember() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert text={error && error.message}/>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
+
+      <UseAlert 
+        title='Учасник з таким LinkedIn вже існує.' 
+        text={error && error.message}/>
     </SectionAdmin>
   )
 }

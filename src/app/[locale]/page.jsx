@@ -11,8 +11,31 @@ import ArticlesSection from "@/src/components/main-page/ArticlesSection/Articles
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 
+// metadata
+const metadataMainPage ={
+  ua:{
+    title: "Baza Trainee Ukraine",
+    description : "Baza Trainee Ukraine"
+  },
+  en:{
+    title: "Baza Trainee Ukraine",
+    description : "Baza Trainee Ukraine"
+  }, 
+  pl:{
+    title: "Baza Trainee Ukraine",
+    description : "Baza Trainee Ukraine"
+  },
+}
 
-export default function Home() {
+export const generateMetadata = ({ params }) => {
+  return {
+    title: metadataMainPage[params.locale].title,
+    description: metadataMainPage[params.locale].description,
+  };
+};
+
+
+export default function HomePage() {
   return (
     <main>
       <HiddenTtitlePage namePage={'main'}/>

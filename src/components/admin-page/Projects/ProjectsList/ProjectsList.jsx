@@ -9,6 +9,7 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
 import Pagination from '../../Pagination/Pagination'
+import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading'
 
 export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
@@ -54,17 +55,14 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
         </li>
       }
     </ul> : 
-    <>
-      <p className={styles.length}>Вибачте, інформації не знайдено.</p>
-      <p className={styles.length}>Додайте партнера або уточніть запит.</p>
-    </>
+    <MessageErrorLoading variant='search'/> 
     }
 
     <AdminModal 
       isOpen={idPartner} 
       handleCallback={closeModal} 
       handleOkCallback={okRemove} 
-      title={'Ви впевнені, що хочете видалити партнера?'} 
+      title={'Ви впевнені, що хочете видалити проєкт?'} 
       btnBlok={true}>
     </AdminModal>
   </>

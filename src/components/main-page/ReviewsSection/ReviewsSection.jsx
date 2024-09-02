@@ -1,16 +1,16 @@
 "use client";
-
-import Carousel from "../../shared/Carousel/Carousel";
-import FeedbackCard from "../../shared/FeedbackCard/FeedbackCard";
-import { Navigation, Pagination } from "swiper/modules";
-import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
-import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
+import styles from "./ReviewsSection.module.scss";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import styles from "./ReviewsSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getAllReviews } from "@/src/api/reviews";
 import { useParams } from "next/navigation";
+import FeedbackCard from "../../shared/FeedbackCard/FeedbackCard";
+import Carousel from "../../shared/Carousel/Carousel";
+import { Navigation, Pagination } from "swiper/modules";
+import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton";
+import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
+import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
 const ReviewsSection = () => {
   const t = useTranslations("Main.reviews_section");
@@ -60,7 +60,7 @@ const ReviewsSection = () => {
             renderItem={(item) => <FeedbackCard {...item} locale={locale}/>}
           />
           }
-          {isError && <p>Помилка завантаження</p>}
+          {isError && <MessageErrorLoading/>}
 
         </div>
        {data?.length && <CarouselPagination

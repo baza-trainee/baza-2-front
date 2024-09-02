@@ -14,12 +14,16 @@ export default function Counter() {
   const[ modalOpen, setmodalOpen ] = useState(false);
   const open = stateUseAlert(state => state.open);
 
-  const employed = useQuery({ queryKey: ['employed'], queryFn: getData });
+  const employed = useQuery({ 
+    queryKey: ['employed'], 
+    queryFn: getData,
+    onError:()=>{
+      open('error', false)
+    }});
 
   const { mutate, isPending } = useMutation({
     mutationFn:(data) => {
       return updateEmployed(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
       employed.refetch()
@@ -37,7 +41,13 @@ export default function Counter() {
       <CounterForm defaultValues={employed.data} hendleMutate={mutate}/>
   
       {isPending && <Loader/>}
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
 
       <UseAlert/>
     </SectionAdmin>

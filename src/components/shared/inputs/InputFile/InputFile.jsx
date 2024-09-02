@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './InputFile.module.scss'
 import { Icon } from '../../Icon/Icon';
 import clsx from 'clsx';
-import { ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from '@/src/lib/hooks/checkFileType';
+import { ACCEPTED_DOCUMENTS_TYPES, ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE_SIZE_IMG } from '@/src/lib/hooks/checkFileType';
 
 export default function InputFile({
   id,
@@ -17,11 +17,13 @@ export default function InputFile({
   required=true,
   disabled=false,
   options = {},
+  fileType,
   getPrevImgUrl=()=>{},
   ...props
 }) {
 
   const [ value, setValue ] = useState('');
+  const type = fileType ? ACCEPTED_DOCUMENTS_TYPES : ACCEPTED_IMAGE_TYPES
 
   useEffect(()=>{
     if(!isDirty){
@@ -38,7 +40,7 @@ export default function InputFile({
     const file = e.target.files[0];
     if(file && typeof file === 'object'){
 
-      if(file ?.size < MAX_FILE_SIZE_IMG && checkFileType(file,ACCEPTED_IMAGE_TYPES)){
+      if(file ?.size < MAX_FILE_SIZE_IMG && checkFileType(file, type)){
         setValue(file.name)
         getPrevImgUrl(URL.createObjectURL(file))
       }else{

@@ -29,10 +29,10 @@
       left: 0;
       z-index: 3;
       display: flex;
-      //flex-direction: column;
       gap: 10px;
       align-items: flex-end;
       justify-content: flex-end;
+
       .btn{
         background-color: black;
         border: 1px solid white;
@@ -44,11 +44,4 @@
       }
     }
   }
-}
-
-.length{
-  @include mix.apply-font-styles(var.$h2-font);
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
 }

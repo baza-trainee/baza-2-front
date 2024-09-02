@@ -12,99 +12,7 @@
 		"contacts": "Kontakty",
 		"btn_support_project": "Wspierać projekt"
 	},
-	"Internship": {
-		"invite_participate": {
-			"title": "Zapraszamy do udziału",
-			"card_1": {
-				"text1": "Projektanci UI\\UX specjalizują się w użyteczności i wyglądzie aplikacji oraz stron. To oni tworzą wygodny, atrakcyjny i intuicyjny design, który pozwala jasno i efektywnie korzystać z produktu.",
-				"text2": "Web designer to specjalista, który tworzy wizualną oprawę marki w internecie. Projektuje interfejsy stron, sklepów online, landing page'y i aplikacje dla klienta. Opiekuję się logiczną i wizualną częścią produktu."
-			},
-			"card_2": {
-				"text1": "Frontend developer to programista, który tworzy zewnętrzną część produktu - elementy stron, programów i aplikacji, umożliwiające interakcję z użytkownikiem. Odpowiada za tworzenie wygodnego i estetycznego wyglądu strony na różnych urządzeniach, a także implementuje animacje i inne efekty.",
-				"text2": "Frontend developer pisze kod i tworzy tę część strony, którą widzi i z którą wchodzi w interakcję użytkownik. Na przykład, każdy obrazek, przycisk i litekę na tej stronie stworzył Frontend developer według projektu designera. To ciekawa praca, bo każda nowa linia kodu poprawia wygląd i funkcjonalność strony."
-			},
-			"card_3": {
-				"text1": "Backend developer odpowiada za tworzenie i konfigurację serwerowej części aplikacji, w tym logikę przetwarzania danych, interakcję z bazami danych, rozwój API i zapewnienie bezpieczeństwa informacji.",
-				"text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
-			},
-			"card_4": {
-				"text1": "Fullstack developers posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
-				"text2": "Fullstack developers tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
-			},
-			"card_5": {
-				"text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
-				"text2": "Tester ulepsza programy, ale nie pisze kodu. Znajduje błędy (bugi), opisuje je i przekazuje deweloperom. Mówiąc prosto, tester dba o to, aby wszystko działało poprawnie i spełniało wymagania."
-			},
-			"card_6": {
-				"text1": "Project manager zarządza procesem rozwoju produktu od początku do wydania, odpowiadając zarówno za pracę zespołu, jak i za kontakty z klientem.",
-				"text2": "Ta złożona rola wymaga wielu umiejętności: rozumienia procesu rozwoju i technicznych detali projektu, umiejętności zarządzania ryzykami, komunikacji z różnymi grupami zaangażowanymi w tworzenie produktu. W tej dziedzinie nie ma granic doskonalenia, ponieważ można rozwijać się zarówno w zakresie złożoności produktów, jak i w zarządzaniu."
-			},
-			"card_link": "Czytaj więcej",
-			"btn_text": "Dołącz do projektu"
-		},
-		"join_project_section": {
-			"main_title": "Jak dołączyć do projektu",
-			"card_1": {
-				"title": "Wypełnienie ankiety",
-				"text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
-				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
-				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
-			},
-			"card_2": {
-				"title": "Przyjąć zaproszenie",
-				"text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
-				"text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_3": {
-				"title": "Dołącz do nas",
-				"text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
-				"text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_4": {
-				"title": "Komunikacja z zespołem",
-				"text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
-				"text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
-				"text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
-			}
-		},
-		"benefits_internship": {
-			"title": "Korzyści ze stażu",
-			"cards": {
-				"item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
-				"item_2": "Doświadczenie zdobywamy pracując w zespole",
-				"item_3": "Pozbywamy się niepewności i redukujemy stres",
-				"item_4": "Rozumiemy, czemu ma służyć ten projekt",
-				"item_5": "Tworzymy portfolio realnych projektów",
-				"item_6": "Wybieramy pracodawcę świadomie"
-			},
-			"btn_text": "Dołącz do projektu"
-		}
-	},
 	"Main": {
-		"hero_carousel_section": {
-			"slide_1": {
-				"title": "Baza Trainee Ukraine",
-				"text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
-			},
-			"slide_2": {
-				"title": "O nas",
-				"text": "Inicjatywa Baza Trainee Ukraine jako platforma edukacyjno-szkoleniowa jest odpowiedzią na zapotrzebowanie społeczne, które pojawiło się na Ukrainie w latach 2022-2023 na zatrudnienie w obszarze technologii informatycznych. Jest to strona internetowa, która łączy dwie grupy społeczne użytkowników."
-			},
-			"slide_3": {
-				"title": "Nasza grupa docelowa",
-				"text": "Ukraińcy, którzy opanowują specjalizacje IT bez względu na wiek i doświadczenie - stażyści, juniorzy, pocieszyciele, mentorzy z jednej strony, a ukraińskie społeczności i organizacje w dziedzinie działalności charytatywnej, wolontariatu i inicjatyw publicznych z drugiej strony."
-			},
-			"slide_4": {
-				"title": "Nasz cel",
-				"text": "Połączenie tych kategorii we wspólnych działaniach w sposób przynoszący korzyści obu stronom. Dla pierwszej grupy oznacza to zdobycie prawdziwego praktycznego doświadczenia w tworzeniu projektu na żywo, podczas gdy dla drugiej grupy oznacza to otrzymanie funkcjonalnego produktu cyfrowego, który działa i przyczynia się do rozwoju inicjatywy społecznej."
-			},
-			"slide_5": {
-				"title": "Zasada działania",
-				"text": "Przeszkolenie uczestnika w obszarze technologii, które są mu już znane i ułatwienie mu zatrudnienia. Podczas realizacji projektu zastosuj technologie, w których uczestnik chce dalej się rozwijać. Najistotniejsze będzie dostarczenie klientowi rozwiązania wysokiej jakości."
-			}
-		},
 		"history_project_section": {
 			"title": "Historia projektu",
 			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
@@ -352,6 +260,76 @@
 		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
 		"privacy_policy": "Polityka prywatności."
 	},
+	"Internship": {
+		"invite_participate": {
+			"title": "Zapraszamy do udziału",
+			"card_1": {
+				"text1": "Projektanci UI\\UX specjalizują się w użyteczności i wyglądzie aplikacji oraz stron. To oni tworzą wygodny, atrakcyjny i intuicyjny design, który pozwala jasno i efektywnie korzystać z produktu.",
+				"text2": "Web designer to specjalista, który tworzy wizualną oprawę marki w internecie. Projektuje interfejsy stron, sklepów online, landing page'y i aplikacje dla klienta. Opiekuję się logiczną i wizualną częścią produktu."
+			},
+			"card_2": {
+				"text1": "Frontend developer to programista, który tworzy zewnętrzną część produktu - elementy stron, programów i aplikacji, umożliwiające interakcję z użytkownikiem. Odpowiada za tworzenie wygodnego i estetycznego wyglądu strony na różnych urządzeniach, a także implementuje animacje i inne efekty.",
+				"text2": "Frontend developer pisze kod i tworzy tę część strony, którą widzi i z którą wchodzi w interakcję użytkownik. Na przykład, każdy obrazek, przycisk i litekę na tej stronie stworzył Frontend developer według projektu designera. To ciekawa praca, bo każda nowa linia kodu poprawia wygląd i funkcjonalność strony."
+			},
+			"card_3": {
+				"text1": "Backend developer odpowiada za tworzenie i konfigurację serwerowej części aplikacji, w tym logikę przetwarzania danych, interakcję z bazami danych, rozwój API i zapewnienie bezpieczeństwa informacji.",
+				"text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
+			},
+			"card_4": {
+				"text1": "Fullstack developers posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
+				"text2": "Fullstack developers tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
+			},
+			"card_5": {
+				"text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
+				"text2": "Tester ulepsza programy, ale nie pisze kodu. Znajduje błędy (bugi), opisuje je i przekazuje deweloperom. Mówiąc prosto, tester dba o to, aby wszystko działało poprawnie i spełniało wymagania."
+			},
+			"card_6": {
+				"text1": "Project manager zarządza procesem rozwoju produktu od początku do wydania, odpowiadając zarówno za pracę zespołu, jak i za kontakty z klientem.",
+				"text2": "Ta złożona rola wymaga wielu umiejętności: rozumienia procesu rozwoju i technicznych detali projektu, umiejętności zarządzania ryzykami, komunikacji z różnymi grupami zaangażowanymi w tworzenie produktu. W tej dziedzinie nie ma granic doskonalenia, ponieważ można rozwijać się zarówno w zakresie złożoności produktów, jak i w zarządzaniu."
+			},
+			"card_link": "Czytaj więcej",
+			"btn_text": "Dołącz do projektu"
+		},
+		"join_project_section": {
+			"main_title": "Jak dołączyć do projektu",
+			"card_1": {
+				"title": "Wypełnienie ankiety",
+				"text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
+				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
+				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
+			},
+			"card_2": {
+				"title": "Przyjąć zaproszenie",
+				"text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
+				"text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
+				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+			},
+			"card_3": {
+				"title": "Dołącz do nas",
+				"text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
+				"text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
+				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+			},
+			"card_4": {
+				"title": "Komunikacja z zespołem",
+				"text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
+				"text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
+				"text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
+			}
+		},
+		"benefits_internship": {
+			"title": "Korzyści ze stażu",
+			"cards": {
+				"item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
+				"item_2": "Doświadczenie zdobywamy pracując w zespole",
+				"item_3": "Pozbywamy się niepewności i redukujemy stres",
+				"item_4": "Rozumiemy, czemu ma służyć ten projekt",
+				"item_5": "Tworzymy portfolio realnych projektów",
+				"item_6": "Wybieramy pracodawcę świadomie"
+			},
+			"btn_text": "Dołącz do projektu"
+		}
+	},
 	"Blog": {
 		"blog_section": {
 			"article_1": {
@@ -395,5 +373,9 @@
 	"sorryModal": {
 		"title": "Przepraszamy, nie znaleziono żadnych informacji.",
 		"text": "Określ żądanie"
+	},
+	"ErrorMessageLoading": {
+		"title": "Błąd ładowania treści.",
+		"text": "Odśwież stronę lub spróbuj ponownie później."
 	}
 }
