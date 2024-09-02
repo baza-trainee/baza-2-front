@@ -24,10 +24,8 @@ export default function AddPartner() {
   })
 
   const { mutate, isPending, error } = useMutation({
-
     mutationFn:(data) => {
       return createNewPartner(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

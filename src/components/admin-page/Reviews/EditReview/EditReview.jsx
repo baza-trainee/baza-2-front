@@ -30,7 +30,6 @@ export default function EditReview() {
 
     mutationFn:(data) => {
       return updateReviewById(id, data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

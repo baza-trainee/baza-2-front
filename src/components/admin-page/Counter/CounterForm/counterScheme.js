@@ -10,16 +10,19 @@ export const counterDefaultValues= {
 export const counterSchema = z
 	.object({
     projects: z.string()
-    .trim()
-    .regex(patternNumberInput, { message: 'Введіть коректне значення' }).optional(),
+      .trim()
+      .regex(patternNumberInput, { message: 'Введіть коректне значення' })
+      .optional(),
 
     members: z.string()
-    .trim()
-    .regex(patternNumberInput, { message: 'Введіть коректне значення' }).optional(),
+      .trim()
+      .regex(patternNumberInput, { message: 'Введіть коректне значення' })
+      .optional(),
 
     employed: z.string()
-    .trim()
-    .regex(patternNumberInput, { message: 'Введіть коректне значення' }).optional(), 
+      .trim()
+      .regex(patternNumberInput, { message: 'Введіть коректне значення' })
+      .optional(), 
   })
 
   // {

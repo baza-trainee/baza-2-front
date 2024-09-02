@@ -12,19 +12,19 @@ import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 
 // metadata
-const metadataMainPage ={
-  ua:{
-    title: "Baza Trainee Ukraine",
-    description : "Baza Trainee Ukraine"
-  },
-  en:{
-    title: "Baza Trainee Ukraine",
-    description : "Baza Trainee Ukraine"
+const metadataMainPage ={ 
+  ua:{ 
+    title: "Baza Trainee Ukraine – стажування для trainee і junior розробників", 
+    description : "Baza Trainee Ukraine – ми подбаємо, щоб ти отримав практику. Отримай унікальний досвід командної роботи" 
   }, 
-  pl:{
-    title: "Baza Trainee Ukraine",
-    description : "Baza Trainee Ukraine"
-  },
+  en:{ 
+    title: "Baza Trainee Ukraine: internships for trainee and junior developers", 
+    description : "Baza Trainee Ukraine - we will make sure you get an internship. Get a unique experience of teamwork" 
+  }, 
+  pl:{ 
+    title: "Baza Trainee Ukraine - praktyka dla stażystów i junior programistów", 
+    description : "Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie"
+  }, 
 }
 
 export const generateMetadata = ({ params }) => {

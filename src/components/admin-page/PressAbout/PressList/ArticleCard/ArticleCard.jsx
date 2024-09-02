@@ -4,7 +4,7 @@ import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import MainLink from "@/src/components/shared/MainLink/MainLink";
 import linkTypes from "@/src/components/shared/MainLink/constants";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
-
+// Тимчасове рішення до завершення головної сторінки
 export const ArticleCard = ({ data }) => {
   const { imageUrl, title, description, link, date } = data;
 

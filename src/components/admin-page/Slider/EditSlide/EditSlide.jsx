@@ -1,5 +1,4 @@
 "use client"
-
 import { useCallback, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from '@/src/navigation';
@@ -23,14 +22,15 @@ export default function EditSlide() {
     router.replace('/admin/slider')
   })
 
-  const slideById = useQuery({ queryKey: ['slider', id], 
-    queryFn:()=>{return getSlideById(id)}, keepPreviousData: true });
+  const slideById = useQuery({ 
+    queryKey: ['slider', id], 
+    queryFn:()=>{return getSlideById(id)}, 
+    keepPreviousData: true 
+  });
 
   const { mutate, isPending, isSuccess } = useMutation({
-
     mutationFn:(data) => {
       return updateSlideById(id, data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

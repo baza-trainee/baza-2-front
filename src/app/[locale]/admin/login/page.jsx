@@ -1,8 +1,8 @@
 import LoginSection from "@/src/components/login-page/LoginSection/LoginSection";
 
 export const metadata = {
-  title: "Baza Trainee 2 Login",
-  description: "Baza Trainee page Login",
+  title: "Baza Trainee Ukraine Admin Login",
+  description: "Baza Trainee Ukraine Admin Login page",
 };
 
 export default function loginPage() {

@@ -5,20 +5,21 @@ import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
 
 // metadata
-const metadataInternshipPage ={
-  ua:{
-    title: "Стажування",
-    description : "Baza Trainee Ukraine Стажування"
-  },
-  en:{
-    title: "Internship",
-    description : "Baza Trainee Ukraine Internship"
+const metadataInternshipPage ={ 
+  ua:{ 
+    title: " Baza Trainee Ukraine Стажування – єдине практичне стажування в розробці", 
+    description : "Baza Trainee Ukraine: З нуля до джуна за 6 місяців - наша практика доступна в будь-який час" 
   }, 
-  pl:{
-    title: "Praktyka",
-    description : "Baza Trainee Ukraine Praktyka"
-  },
+  en:{ 
+    title: "Baza Trainee Ukraine Internship - the only practical internship in development ", 
+    description : "Baza Trainee Ukraine Internship: From zero to junior in 6 months - our practice is available at any time" 
+  }, 
+  pl:{ 
+    title: "Praktyka", 
+    description : "Baza Trainee Ukraine Praktyka: Od zera do juniora w 6 miesięcy - nasza praktyka jest dostępna w każdej chwili" 
+  }, 
 }
+
 
 export const generateMetadata = ({ params }) => {
   return {

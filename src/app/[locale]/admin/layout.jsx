@@ -1,6 +1,6 @@
 export default function layout( {children}) {
   return (
-    <main>
+    <main lang="uk">
       {children}
     </main>
   )

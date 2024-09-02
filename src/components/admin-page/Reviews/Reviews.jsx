@@ -17,8 +17,10 @@ export default function Reviews() {
   const open = stateUseAlert(state => state.open);
   const addReviewPath = '/admin/reviews/add'
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['reviews'], 
-    queryFn:getAllReviews});
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['reviews'], 
+    queryFn:getAllReviews
+  });
 
   const deleteReview = useMutation({
     mutationFn:(id) => {

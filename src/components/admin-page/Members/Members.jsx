@@ -30,7 +30,6 @@ export default function Members() {
     setParams({...params, page:value})
   }
 
-
   const addMembePath = '/admin/members/add'
   // Запит на базу
   const { isError, data, refetch } = useQuery({ 
@@ -55,7 +54,8 @@ export default function Members() {
     <SectionAdmin title={'Учасники'} hendleSearch={hendleSetSearch} lang={true}>
       <div className={styles.wrapper}>
         <h2>Ім’я та Прізвище</h2>
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+        <MainButton  variant='admin' className={styles.btn} 
+          onClick={()=>{
             router.push(addMembePath)
           }}>
             <Icon name={'plus_icon'} width={24} height={24} />

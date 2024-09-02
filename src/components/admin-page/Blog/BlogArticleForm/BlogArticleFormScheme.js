@@ -27,9 +27,9 @@ const strToArr = (str) => {
 export const ArticleScheme = z
 	.object({
     file: z.any()
-    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
-    .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
-    .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
+      .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
+      .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+      .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 
 		title: z.string()
       .trim()

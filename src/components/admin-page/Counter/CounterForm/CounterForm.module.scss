@@ -17,6 +17,7 @@
     border-radius: 3px;
     gap: 24px;
     width: 370px;
+    
     @media (min-width: 850px) {
       width: 100%;
       grid-template-columns: repeat(2, 1fr);

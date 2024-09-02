@@ -1,17 +1,15 @@
 'use client';
+import styles from './PressList.module.scss';
+import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { createKey } from '@/src/lib/utils/createKey';
 //import { ArticleCard } from '../../../shared/ArticleCard/ArticleCard';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 import { Icon } from '@/src/components/shared/Icon/Icon';
-import styles from './PressList.module.scss';
-import { useState } from 'react';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
-
 import Pagination from '../../Pagination/Pagination';
 import { ArticleCard } from './ArticleCard/ArticleCard';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
-
 
 export default function PressList({ 
   data,  
@@ -19,7 +17,6 @@ export default function PressList({
   hendleSetPage
 }) {
   const router = useRouter();
-  // console.log(data.results)
   // Шляхи сторінок
   const editPressPath = '/admin/press-about/edit';
   const [idPress, setIdPress] = useState(null);

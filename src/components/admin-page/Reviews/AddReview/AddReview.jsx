@@ -1,5 +1,4 @@
 'use client';
-
 import { useCallback, useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
@@ -24,7 +23,6 @@ export default function AddReview() {
   const { mutate, isPending, error} = useMutation({
     mutationFn:(data) => {
       return createNewReview(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

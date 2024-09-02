@@ -2,7 +2,6 @@
 @use '../../../../styles/mixins' as mixin;
 
 .preview{
-  //width: 360px;
   min-height: 180px;
   .card{
     width: 360px;
@@ -15,9 +14,6 @@
     width: 360px;
     height: 180px;
     background-color: var.$primary-hover;
-    //background-color: var.$secondary-white;
-    //background-color: var.$secondary-gray;
-    
     display: flex;
     align-items: center;
 

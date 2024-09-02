@@ -14,6 +14,7 @@ import Loader from "../shared/loader/Loader";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import styles from "./Projects.module.scss";
 import SorryModal from "../modals/SorryModal/SorryModal";
+import MessageErrorLoading from "../shared/MessageErrorLoading/MessageErrorLoading";
 
 const Projects = () => {
   const t = useTranslations("Projects");
@@ -59,7 +60,7 @@ const Projects = () => {
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
         {isLoading && <Loader />}
-        {isError && <p>Something went wrong!</p>}
+        {isError && <MessageErrorLoading/>}
         <h1 className={styles.title}>{t("title")}</h1>
         <InputSearch
           className={styles.search}
