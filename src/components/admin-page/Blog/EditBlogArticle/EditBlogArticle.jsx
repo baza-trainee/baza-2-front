@@ -22,8 +22,11 @@ export default function EditBlogArticle() {
     router.replace('/admin/blog')
   })
 
-  const articleById = useQuery({ queryKey: ['article', id], 
-    queryFn:()=>{return getBlogArticleById(id)}, keepPreviousData: true });
+  const articleById = useQuery({ 
+    queryKey: ['article', id], 
+    queryFn:()=>{return getBlogArticleById(id)}, 
+    keepPreviousData: true 
+  });
 
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {

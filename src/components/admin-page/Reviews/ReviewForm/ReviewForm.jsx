@@ -35,7 +35,11 @@ export default function ReviewForm({
     reset,
     setValue,
     getValues,
-  } = useForm({ defaultValues: {...ReviewDefaultValues}, resolver: zodResolver(ReviewScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...ReviewDefaultValues}, 
+    resolver: zodResolver(ReviewScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/reviews')

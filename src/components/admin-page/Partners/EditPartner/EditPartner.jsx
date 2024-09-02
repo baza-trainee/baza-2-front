@@ -1,5 +1,4 @@
 "use client"
-
 import styles from './EditPartner.module.scss'
 import { useCallback, useState } from 'react';
 import { useParams } from 'next/navigation';
@@ -26,14 +25,16 @@ export default function EditPartner() {
     router.replace('/admin/partners')
   })
 
-  const partnerById = useQuery({ queryKey: ['partner', id], 
-    queryFn:()=>{return getPartnerById(id)}, keepPreviousData: true });
+  const partnerById = useQuery({ 
+    queryKey: ['partner', id], 
+    queryFn:()=>{return getPartnerById(id)}, 
+    keepPreviousData: true 
+  });
 
   const { mutate, isPending, error} = useMutation({
 
     mutationFn:(data) => {
       return updatePartnerById(id, data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{

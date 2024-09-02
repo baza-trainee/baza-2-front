@@ -1,20 +1,20 @@
 "use client";
-import { useEffect, useState } from 'react';
 import styles from './NavBar.module.scss'
 import clsx from "clsx";
+import { useEffect, useState } from 'react';
+import { Link, usePathname, useRouter } from '@/src/navigation';
+import { createKey } from '@/src/lib/utils/createKey';
+import { token } from '@/src/api/auth';
 import Logo from '../../shared/Logo/Logo';
 import MainButton from '../../shared/MainButton/MainButton';
 import { Icon } from '../../shared/Icon/Icon';
-import { Link, usePathname, useRouter } from '@/src/navigation';
 import { links } from './linksType';
-import { createKey } from '@/src/lib/utils/createKey';
-import { token } from '@/src/api/auth';
 
 export default function NavBar() {
   const pathname = usePathname()
   const router = useRouter();
-  const [hide, setHide]= useState(false)
-  const [hideMenu, setHideMenu]= useState(true)
+  const [ hide, setHide ]= useState(false)
+  const [ hideMenu, setHideMenu ]= useState(true)
 
   const removeToken=()=>{
     token.reset()

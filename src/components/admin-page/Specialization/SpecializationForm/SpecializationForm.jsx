@@ -21,7 +21,11 @@ export default function SpecializationForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...roleDefaultValues}, resolver: zodResolver(RoleScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...roleDefaultValues}, 
+    resolver: zodResolver(RoleScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/specialization')

@@ -1,5 +1,4 @@
 'use client';
-
 import { useCallback, useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useMutation } from '@tanstack/react-query';
@@ -24,13 +23,11 @@ export default function AddSlide() {
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn:(data) => {
       return createNewSlide(data)
-
     },onSuccess: () => {
       setmodalOpen(true)
     },onError:()=>{
       open('error', false)
     }})
-
 
  return( 
     <SectionAdmin title={'Додати слайд'} lang={true}>

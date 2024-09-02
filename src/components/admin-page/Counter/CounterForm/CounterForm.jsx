@@ -85,7 +85,6 @@ export default function CounterForm({defaultValues, hendleMutate}) {
         <li>
           <InputField
             id={"employed"}
-            maxLength={20}
             className={styles.item}
             required={false}
             type='number'

@@ -33,7 +33,11 @@ export default function ChangePasswordForm() {
     setValue,
     formState: { isError, errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: {...changePasswordDefaultValues}, resolver: zodResolver(changePasswordScheme), mode: 'onBlur'});
+  } = useForm({ 
+    defaultValues: {...changePasswordDefaultValues}, 
+    resolver: zodResolver(changePasswordScheme), 
+    mode: 'onBlur'
+  });
 
   // Очищення форми
   const resetForm = () => {

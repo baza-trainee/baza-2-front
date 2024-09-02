@@ -33,8 +33,10 @@ export default function Blog() {
   const addBlogArticlePath = '/admin/blog/add'
 
   // Запит на базу
-  const { isError, data, refetch } = useQuery({ queryKey: ['articles-blog',  params.search, params.page], 
-    queryFn:()=>{return getAllBlogArticles({...params,limit:4})}, keepPreviousData: true });
+  const { isError, data, refetch } = useQuery({ 
+    queryKey: ['articles-blog',  params.search, params.page], 
+    queryFn:()=>{return getAllBlogArticles({...params, limit:4})}, keepPreviousData: true 
+  });
  
   // Запит на видалення
   const deleteArticle = useMutation({
@@ -64,7 +66,8 @@ export default function Blog() {
             {data && <BlogList 
               data={data} 
               hendleRemove={deleteArticle.mutate} 
-              hendleSetPage={hendleSetPage}/>}
+              hendleSetPage={hendleSetPage}/>
+            }
           </>
         }
 

@@ -9,7 +9,13 @@ import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 
-export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtnText= 'Додати', prevImg}) {
+export default function PartnerForm({
+  hendleMutate, 
+  handlePrevImg, 
+  data,
+  submitBtnText= 'Додати', 
+  prevImg
+}) {
   const router = useRouter();
   const {
     register,
@@ -17,7 +23,11 @@ export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtn
     formState: { errors, isValid, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...addPartnerDefaultValues}, resolver: zodResolver(addPartnerSchema), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...addPartnerDefaultValues}, 
+    resolver: zodResolver(addPartnerSchema), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/partners')
@@ -44,7 +54,6 @@ export default function PartnerForm({hendleMutate, handlePrevImg, data,submitBtn
   };
     
   const isDisabled = () => {
-
     if (Object.keys(errors).length > 0) {
       return true;
     }

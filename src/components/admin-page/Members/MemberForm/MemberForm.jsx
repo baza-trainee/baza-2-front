@@ -21,7 +21,11 @@ export default function MemberForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...memberDefaultValues}, resolver: zodResolver(MemberScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...memberDefaultValues}, 
+    resolver: zodResolver(MemberScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/members')

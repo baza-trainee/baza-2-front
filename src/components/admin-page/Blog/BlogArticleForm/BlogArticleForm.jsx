@@ -28,7 +28,11 @@ export default function BlogArticleForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...articleDefaultValues}, resolver: zodResolver(ArticleScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...articleDefaultValues}, 
+    resolver: zodResolver(ArticleScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/blog')

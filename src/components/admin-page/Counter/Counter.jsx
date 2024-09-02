@@ -35,7 +35,6 @@ export default function Counter() {
     setmodalOpen(false)
   })
 
-
   return (
     <SectionAdmin title={'Каунтер'}>
       <CounterForm defaultValues={employed.data} hendleMutate={mutate}/>

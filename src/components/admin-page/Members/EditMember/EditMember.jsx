@@ -22,8 +22,11 @@ export default function EditMember() {
     router.replace('/admin/members')
   })
 
-  const memberById = useQuery({ queryKey: ['member', id], 
-    queryFn:()=>{return getMemberById(id)}, keepPreviousData: true });
+  const memberById = useQuery({ 
+    queryKey: ['member', id], 
+    queryFn:()=>{return getMemberById(id)}, 
+    keepPreviousData: true 
+  });
 
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {

@@ -1,10 +1,10 @@
+import styles from './PartnerList.module.scss'
+import { useState } from 'react'
 import { useRouter } from '@/src/navigation'
 import { createKey } from '@/src/lib/utils/createKey'
 import PartnerCard from '@/src/components/shared/PartnerCard/PartnerCard'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
-import styles from './PartnerList.module.scss'
-import { useState } from 'react'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading'
 
