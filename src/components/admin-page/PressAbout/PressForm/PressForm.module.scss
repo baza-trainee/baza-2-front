@@ -9,53 +9,44 @@
 
   .list {
     display: grid;
-    grid-template-columns: 1fr,1fr,1fr, 1fr;
-    grid-template-rows: 1fr,1fr,1fr;
+    grid-template-columns: .5fr 1fr 1fr;
+    grid-template-rows: repeat(2, .3fr) 1fr;
     grid-column-gap: 24px;
-    grid-row-gap: 10px;
+    grid-row-gap: 5px;
     align-items: flex-end;
     padding: 32px 12px;
     box-shadow: 0 4px 4px 0 rgba(87, 86, 89, 0.25), 0 2px 12px 0 rgba(40, 37, 37, 0.25);
     background: var.$primary-fon-card;
     border-radius: 3px;
     width: 100%;
+    
     .list_item{
       .item{
         width: 100%;
-        min-width: 250px;
+        min-width: 210px;
       }
       .item_text{
         width: 100%;
         min-width: 210px;
-        height: 350px;
+        height: 450px;
         @media (min-width: 1200px) {
-          height: 250px;
+          height: 350px;
         }
         @media (min-width: 1300px) {
-          height: 200px;
+          height: 300px;
         }
       }
-
-  
+ 
     }
-
-    .tooltip {
-      position: relative;
+    .item_prev{
+      display: flex;
+      gap: 5px;
     }
-    .tooltip:focus ._active,
-    .tooltip:hover ._active {
-      visibility: visible;
-      opacity: 1;
-      top: 105%;
-    }
-    .grid_item1 { grid-area: 1 / 1 / 1 / 2; }
-    .grid_item2 { 
-      padding-bottom: 16px;
-      grid-area: 1 / 2 / 1 / 2; 
-    }
-    .grid_item3 { grid-area: 2 / 1 / 2 / 3; } /// nazva satti
-    .grid_item4 { grid-area: 3 / 1 / 3 / 3; } /// sama stattya
-    .grid_item5 { grid-area: 4 / 1 / 4 / 3; } ///text
+    .grid1 { grid-area: 1 / 1 / 2 / 4; }
+    .grid2 { grid-area: 2 / 1 / 3 / 2; }
+    .grid3 { grid-area: 2 / 2 / 3 / 3; }
+    .grid4 { grid-area: 2 / 3 / 3 / 4; }
+    .grid5 { grid-area: 3 / 1 / 4 / 4; }
   }
 
   .btns{
