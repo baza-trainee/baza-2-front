@@ -27,7 +27,8 @@ export default function TeamForm({
 
   // Шукаємо учасника в базі
   const { data } = useQuery({ queryKey: ['members', search], 
-    queryFn:()=>{return getAllMembers({ search:search, limit:100 })}, keepPreviousData: true });
+    queryFn:()=>{return getAllMembers({ search:search, limit:100 })}, keepPreviousData: true 
+  });
   // Валідація данних
   const {
     register,
@@ -36,7 +37,11 @@ export default function TeamForm({
     reset,
     trigger,
     setValue,
-  } = useForm({ defaultValues: {...teamDefaultValues}, resolver: zodResolver(TeamScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...teamDefaultValues}, 
+    resolver: zodResolver(TeamScheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     reset();
@@ -162,7 +167,7 @@ export default function TeamForm({
               isValid && styles._success
             )}
               onChange={handleOptionSelect}
-              //value={selectedRoleId}
+              value={selectedRoleId}
             >
             {!selectedRoleId && <option value="" className={styles.option} readOnly>Оберіть спеціалізацію</option>}
             {roles &&
