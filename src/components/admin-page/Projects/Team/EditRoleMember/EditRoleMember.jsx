@@ -7,8 +7,8 @@ import MainButton from '@/src/components/shared/MainButton/MainButton';
 import CloseBtn from '@/src/components/shared/CloseBtn/CloseBtn';
 
 export default function EditRoleMember({roles, member, close }) {
-  const[ selectedRole, setSelectedRole ] = useState(member.teamMemberRole.name['ua'])
-  const [selectedRoleId, setSelectedRoleId] = useState('');
+  const[ selectedRole, setSelectedRole ] = useState(member.teamMemberRole.name['en'])
+  const [ selectedRoleId, setSelectedRoleId ] = useState('');
 
   // Контекст форми
   const{ 
@@ -17,7 +17,7 @@ export default function EditRoleMember({roles, member, close }) {
 
   const hendleUpdate=()=>{
     if(selectedRoleId && member.teamMemberRole._id!==selectedRoleId){
-      updTeamMemberRole(member.teamMember._id,member.teamMemberRole._id,selectedRole)
+      updTeamMemberRole(member.teamMember._id, member.teamMemberRole._id,selectedRole)
       setSelectedRoleId('')
       close()
     }
