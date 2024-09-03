@@ -17,8 +17,26 @@ const{ currentPage, totalPages } = pagination;
     }else return
   }
 
+  const firstPage=()=>{
+    hendleSetPage(1)
+  }
+
   return (
     <div className={styles.pagination}>
+      <button type='button' 
+        disabled={currentPage === 1} 
+        className={clsx(styles.btn)} 
+        onClick={firstPage}>  
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_prev} 
+          width={20} height={30}/>
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_prev} 
+          width={20} height={30}/>
+      </button>
+
       <button type='button' 
         disabled={currentPage === 1} 
         className={clsx(styles.btn)} 
