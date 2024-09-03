@@ -44,6 +44,20 @@ const{ currentPage, totalPages } = pagination;
           className={styles.icon_next} 
           width={30} height={30}/>
       </button>
+
+      <button type='button' 
+        disabled={currentPage === totalPages} 
+        className={styles.btn} 
+        onClick={nextPage}>  
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_next} 
+          width={30} height={30}/>
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_next} 
+          width={30} height={30}/>
+      </button>
     </div>
   )
 }
