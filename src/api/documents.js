@@ -8,7 +8,9 @@ export async function getDocuments(){
 }
 
 export async function updateDocuments(newDocuments){
-	const res = await instanceBaza2.patch(documentsEndpoint, newDocuments);
+	const res = await instanceBaza2.patch(documentsEndpoint, newDocuments, {
+		headers: { 'Content-Type': 'multipart/form-data' },
+    });
 		return res
 }
 
