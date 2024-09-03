@@ -20,8 +20,10 @@ export default function Team() {
   const[ pageName, setPageName ] = useState('list')
 
   // Отримуємо всі спеціальності
-  const getRoles = useQuery({ queryKey: ['roles'], 
-    queryFn:()=>{return getAllRoles({})}, keepPreviousData: true });
+  const getRoles = useQuery({ 
+    queryKey: ['roles'], 
+    queryFn:()=>{return getAllRoles({})}
+  });
 
 
   const hendleCancel = useCallback(()=>{
@@ -41,11 +43,17 @@ export default function Team() {
               {'Додати'}</MainButton >
           </div>
 
-          <TeamListList data={teamMemberData} hendleRemove={deleteMember} roles={getRoles.data?.results}/>
+          <TeamListList 
+            data={teamMemberData} 
+            hendleRemove={deleteMember} 
+            roles={getRoles.data?.results}/>
         </>
       }  
 
-      {pageName === 'add_member' && <AddTeamMember hendleCancel={hendleCancel} roles={getRoles.data?.results}/>}
+      {pageName === 'add_member' && <AddTeamMember 
+        hendleCancel={hendleCancel} 
+        roles={getRoles.data?.results}/>
+      }
     </>
   )
 }
