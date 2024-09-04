@@ -3,36 +3,28 @@ import MainLink from "../MainLink/MainLink";
 import styles from "./BlogCard.module.scss";
 import Image from "next/image";
 import linkTypes from "../MainLink/constants";
+import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 
-const BlogCard = ({ item, pathname }) => {
-  const { id,img, title, description, date } = item;
-  const t = useTranslations("Blog.blog_section");
+const BlogCard = ({ id, img, title, description, date, pathname }) => {
+  const t = useTranslations("Blog");
+  const formattedDate = formatDateToNumeric(date);
 
   return (
-    <li className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.wrapper}>
         <div className={styles.img}>
-          <Image
-            className={styles.image}
-            src={img}
-            fill
-            sizes="100%"
-            alt={t(title)}
-          />
-          <span className={styles.date}>{date}</span>
+          <Image src={img} fill sizes="100%" alt={title} />
+          <span className={styles.date}>{formattedDate}</span>
         </div>
         <div className={styles.content}>
-          <h3>{t(title)}</h3>
-          <p>{t(description)}</p>
+          <h3 className={styles.title}>{title}</h3>
+          <p className={styles.description}>{description}</p>
         </div>
       </div>
-      <MainLink
-        url={`${pathname.slice(3)}/${ id }`}
-        type={linkTypes.BLOG}
-      >
+      <MainLink url={`blog/${id}`} type={linkTypes.BLOG}>
         {t("btn_read_article")}
       </MainLink>
-    </li>
+    </article>
   );
 };
 
