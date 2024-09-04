@@ -4,10 +4,15 @@ import styles from "./BlogCard.module.scss";
 import Image from "next/image";
 import linkTypes from "../MainLink/constants";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
+import { usePathname } from "next/navigation";
 
-const BlogCard = ({ id, img, title, description, date, pathname }) => {
+const BlogCard = ({ id, img, title, description, date }) => {
   const t = useTranslations("Blog");
   const formattedDate = formatDateToNumeric(date);
+  const pathname = usePathname();
+  const isAdminPage =
+    pathname.split("/").includes("admin") ||
+    pathname.split("/").includes("login");
 
   return (
     <article className={styles.card}>
@@ -21,9 +26,15 @@ const BlogCard = ({ id, img, title, description, date, pathname }) => {
           <p className={styles.description}>{description}</p>
         </div>
       </div>
-      <MainLink url={`blog/${id}`} type={linkTypes.BLOG}>
-        {t("btn_read_article")}
-      </MainLink>
+      {isAdminPage ? (
+        <button type="button" className={styles.readArticle}>
+          {t("btn_read_article")}
+        </button>
+      ) : (
+        <MainLink url={`blog/${id}`} type={linkTypes.BLOG}>
+          {t("btn_read_article")}
+        </MainLink>
+      )}
     </article>
   );
 };
