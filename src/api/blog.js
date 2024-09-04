@@ -17,11 +17,17 @@ import instanceBaza2 from './config/instance-baza2';
 
 const blogEndpoint = '/blog'
 
-export async function  getAllBlogArticles({ page, search, limit }){
+export async function  getAllBlogArticles({ 
+	page, 
+	search, 
+	limit, 
+	isPresent = true, // Визначає чи отримувати статті з майбутньою датою "Відкладена публікація" !! Для admin-панелі передати isPresent: false !!
+}){
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
 	if (limit && limit < 25) params.append('limit', limit.toString());
+	if (isPresent) params.append('isPresent', isPresent.toString());
 
 	const res = await instanceBaza2.get(`${blogEndpoint}?${params.toString()}`)
 		return res.data
