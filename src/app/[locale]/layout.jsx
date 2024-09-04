@@ -17,7 +17,7 @@ export const metadata = {
 export default async function LocaleLayout({ children, params: { locale } }) {
   const messages = await getMessages();
   return (
-    <html lang={locale === "ua" ? "uk" : locale}>
+    <html lang={locale === "ua" ? "uk-UA" : locale}>
       <body>
         <QueryProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
