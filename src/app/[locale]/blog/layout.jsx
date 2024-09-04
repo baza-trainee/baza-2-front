@@ -7,11 +7,11 @@ const metadataBlogPage ={
     description : "Baza Trainee Ukraine Блог: Підпишись на останні новини про старт проєктів і не пропусти унікальну можливість долучитись" 
   }, 
   en:{ 
-    title: " Baza Trainee Ukraine  Blog: only useful and fresh themes about development and practice", 
+    title: "Baza Trainee Ukraine Blog: only useful and fresh themes about development and practice", 
     description : "Baza Trainee Ukraine Blog: Sign up to receive the latest news about the projects launch and don't miss this unique opportunity to get involved " 
   }, 
   pl:{ 
-    title: " Baza Trainee Ukraine  Blog: tylko i wyłącznie przydatne informacje na temat rozwoju i praktyki", 
+    title: "Baza Trainee Ukraine Blog: tylko i wyłącznie przydatne informacje na temat rozwoju i praktyki", 
     description : "Baza Trainee Ukraine Blog: Zapisz się, aby otrzymywać najnowsze informacje o start projektu i nie przegap tej wyjątkowej okazji, aby się zaangażować" 
   }, 
 }
