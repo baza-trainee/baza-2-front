@@ -60,3 +60,9 @@
     flex-direction: column;
   }
 }
+
+.loadMore {
+  &.hidden {
+    display: none;
+  }
+}
