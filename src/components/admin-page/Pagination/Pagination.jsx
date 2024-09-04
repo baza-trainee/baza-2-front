@@ -21,6 +21,10 @@ const{ currentPage, totalPages } = pagination;
     hendleSetPage(1)
   }
 
+  const lastPage=()=>{
+    hendleSetPage(totalPages)
+  }
+
   return (
     <div className={styles.pagination}>
       <button type='button' 
@@ -61,6 +65,20 @@ const{ currentPage, totalPages } = pagination;
           name={'carousel-arrow'} 
           className={styles.icon_next} 
           width={30} height={30}/>
+      </button>
+
+      <button type='button' 
+        disabled={currentPage === totalPages} 
+        className={styles.btn} 
+        onClick={lastPage}>  
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_next} 
+          width={20} height={30}/>
+        <Icon 
+          name={'carousel-arrow'} 
+          className={styles.icon_next} 
+          width={20} height={30}/>
       </button>
     </div>
   )
