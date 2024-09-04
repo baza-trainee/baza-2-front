@@ -6,11 +6,12 @@ import stateUseAlert from "@/src/state/stateUseAlert";
 import TeamForm from "../TeamForm/TeamForm";
 import Loader from "@/src/components/shared/loader/Loader";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
+import UseAlert from "@/src/components/shared/UseAlert/UseAlert";
 
 export default function AddTeamMember({hendleCancel, roles}) {
   const open = stateUseAlert(state => state.open);
   const[ modalOpen, setModalOpen ] = useState(false);
-
+  const[ modalSuccess, setSuccessModal ] = useState(false);
   const[ selectedRole, setSelectedRole ] = useState(null)
   const[ errorModal, setErrorModal ] = useState(false)
 
@@ -21,7 +22,7 @@ export default function AddTeamMember({hendleCancel, roles}) {
   } = useProjectFormContext()  
 
   // Додавання учасника до бази  
-  const createMember= useMutation({
+  const createMember = useMutation({
     mutationFn:(data) => {
       return createNewMember(data)
     },onSuccess: () => {
@@ -41,6 +42,7 @@ export default function AddTeamMember({hendleCancel, roles}) {
 
   const closeErrorModal=useCallback(()=>{
     setErrorModal(false)
+    setSuccessModal(false)
     hendleCancel()
   })
 
@@ -68,7 +70,7 @@ export default function AddTeamMember({hendleCancel, roles}) {
       }else{
         newData.teamMember = data
         addTeamMember(newData)
-        hendleCancel()
+        setSuccessModal(true)
       }
     }else{
       // Як що учасник новий - додаємо до бази - потім до проєкту 
@@ -86,9 +88,30 @@ export default function AddTeamMember({hendleCancel, roles}) {
 
       { createMember.isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Новий учасник успішно доданий до бази та проєкту'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalSuccess} 
+        handleCallback={closeErrorModal} 
+        title={'Учасник успішно доданий до проєкту'} 
+        btn={true}>
+      </AdminModal>
 
-      <AdminModal isOpen={errorModal} handleCallback={closeErrorModal} title={'Такий учасник вже є на проєкті'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Новий учасник успішно доданий до бази та проєкту'} 
+        btn={true}>
+      </AdminModal>
+
+      <AdminModal 
+        isOpen={errorModal} 
+        handleCallback={closeErrorModal} 
+        title={'Такий учасник вже є на проєкті'} 
+        btn={true}>
+      </AdminModal>
+
+      { createMember.error && <UseAlert 
+        title='Учасник з таким LinkedIn вже існує.' 
+        text={createMember.error && createMember.error.message}/> }
     </>
   )
 } 

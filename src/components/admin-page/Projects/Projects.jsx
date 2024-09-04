@@ -70,7 +70,7 @@ export default function Projects() {
       }
 
       {deleteProject.isPending && <Loader/>}
-      <UseAlert/>
+      {deleteProject.error && <UseAlert/>}
     </SectionAdmin>
   )
 }
