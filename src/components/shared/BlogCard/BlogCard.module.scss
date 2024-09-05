@@ -10,7 +10,7 @@
   border: 2px solid var.$primary-border;
   background-color: var.$primary-bg-card-blog;
   padding: 16px 8px;
-  max-width: 1061px;
+  max-width: 1060px;
 
   @media only screen and (min-width: 600px) {
     padding: 24px 16px;
@@ -27,23 +27,24 @@
 }
 
 .wrapper {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  display: flex;
   gap: 8px;
-
   @media only screen and (min-width: 600px) {
-    grid-template-columns: 30% 1fr;
-    grid-template-rows: 1fr;
     gap: 16px;
   }
 }
 
 .img {
+  flex: 1 0 30%;
   position: relative;
-}
-
-.image {
-  object-fit: cover;
+  min-height: 130px;
+  & > img {
+    object-fit: cover;
+  }
+  @media (min-width: 768px) {
+    min-height: 150px;
+  }
 }
 
 .date {
@@ -59,6 +60,7 @@
 }
 
 .content {
+  flex: 1 1 auto;
   max-width: 100%;
   @include mx.media-q("md") {
   }
@@ -85,3 +87,5 @@
   }
 }
 
+.readArticle {
+}
