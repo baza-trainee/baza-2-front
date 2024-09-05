@@ -7,7 +7,7 @@ import { ACCEPTED_DOCUMENTS_TYPES, ACCEPTED_IMAGE_TYPES, checkFileType, MAX_FILE
 
 export default function InputFile({
   id,
-  placeholder = "",
+  placeholder = "Завантажте зображення",
   registerOptions = {},
   isError,
   isValid,
@@ -32,6 +32,7 @@ export default function InputFile({
   },[isDirty])
 
   function sub(e) {
+    if(e.target.value ==''){return}
     if (!e.target.files || e.target.files.length === 0) {
       setValue('')
       return
@@ -44,6 +45,7 @@ export default function InputFile({
         setValue(file.name)
         getPrevImgUrl(URL.createObjectURL(file))
       }else{
+        setValue('')
         getPrevImgUrl(null)
       }
       setValue(file.name)

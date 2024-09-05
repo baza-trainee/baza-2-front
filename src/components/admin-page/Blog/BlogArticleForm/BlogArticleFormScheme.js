@@ -23,10 +23,13 @@ const strToArr = (str) => {
   const result = str.split(regul);
   return result.length ? result : [str]; 
 };
-
+const empriFile=(value)=>{
+  if(value === null){return false}else return true
+}
 export const ArticleScheme = z
 	.object({
     file: z.any()
+      .refine((file) => empriFile(file),"Це поле обов'язкове")
       .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
       .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
       .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),

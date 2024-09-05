@@ -30,7 +30,7 @@ export const PressFormScheme = z
       .trim()
       .min(1, { message: "Це поле обов'язкове" })
       .min(5, { message: 'Мінімум 5 символа' })
-      .max(100, { message: 'Максимум 100 символів' })
+      .max(50, { message: 'Максимум 50 символів' })
       .regex(patternText, { message: 'Введіть коректну назву' }),
 
     description: z.string()

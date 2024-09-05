@@ -76,7 +76,7 @@ export default function PressForm({
         <li className={clsx(styles.list_item, styles.grid1)}>
           <InputField
             id={"title"}
-            maxLength={105}
+            maxLength={55}
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
