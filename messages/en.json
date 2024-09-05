@@ -317,7 +317,8 @@
 	},
 	"Blog": {
 		"btn_read_article": "Read the material",
-		"load_more": "Show more"
+		"load_more": "Show more",
+		"placeholder": "Enter keyword"
 	},
 	"Projects": {
 		"title": "Projects",

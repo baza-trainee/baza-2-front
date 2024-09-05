@@ -6,7 +6,7 @@ import linkTypes from "../MainLink/constants";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 import { usePathname } from "next/navigation";
 
-const BlogCard = ({ id, img, title, description, date }) => {
+const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
   const t = useTranslations("Blog");
   const formattedDate = formatDateToNumeric(date);
   const pathname = usePathname();
@@ -27,7 +27,11 @@ const BlogCard = ({ id, img, title, description, date }) => {
         </div>
       </div>
       {isAdminPage ? (
-        <button type="button" className={styles.readArticle}>
+        <button
+          type="button"
+          className={styles.readArticle}
+          onClick={adminOnclick ?? null}
+        >
           {t("btn_read_article")}
         </button>
       ) : (
