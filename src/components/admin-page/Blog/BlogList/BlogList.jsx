@@ -78,7 +78,7 @@ export default function BlogList({ data, hendleRemove, hendleSetPage }) {
                   title={el.title}
                   description={el.text}
                   date={el.date}
-                  // adminOnclick={readFullArticle}
+                  adminOnclick={()=>{readFullArticle(el)}}
                 />
 
                 <div className={styles.btns}>

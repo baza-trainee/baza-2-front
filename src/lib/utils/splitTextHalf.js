@@ -36,5 +36,5 @@ export const splitTextHalf = (str, min = 300) => {
     return { strA, strB };
   }
   // Якщо не знайдено жодного знака, повертаємо
-  return str
+  return { strA: str }
 };
