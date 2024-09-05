@@ -3,9 +3,11 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MainLink from "../MainLink/MainLink";
 import linkTypes from "../MainLink/constants";
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 
 export const ArticleCard = ({ item }) => {
-  const { img, title, description, link, date } = item;
+  const { imageUrl, title, description, link, date } = item;
   const t = useTranslations("Main.press_about_section");
 
   return (
@@ -13,17 +15,17 @@ export const ArticleCard = ({ item }) => {
       <div className={styles.img}>
         <Image
           className={styles.image}
-          src={img}
+          src={createImageUrl(imageUrl)}
           fill
           sizes="100%"
-          alt={t(title)}
+          alt={title}
         />
-        <span className={styles.date}>{date}</span>
+        <span className={styles.date}>{formatDateToNumeric(date)}</span>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <h3>{t(title)}</h3>
-          <p>{t(description)}</p>
+          <h3 lang="uk-UA">{title}</h3>
+          <p lang="uk-UA">{description}</p>
         </div>
         <MainLink url={link} type={linkTypes.CARD} openInNewTab>
           {t("btn_read_article")}

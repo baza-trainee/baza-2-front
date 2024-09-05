@@ -32,11 +32,11 @@ export default function Blog() {
 
   const addBlogArticlePath = '/admin/blog/add'
 
-  // Запит на базу , isPresent: false
+  // Запит на базу 
   const { isError, data, refetch } = useQuery({ 
     queryKey: ['articles-blog',  params.search, params.page], 
     queryFn:()=>{
-      return getAllBlogArticles({...params, limit:4})
+      return getAllBlogArticles({...params, limit:4, isPresent: false})
     }, 
     keepPreviousData: true 
   });
