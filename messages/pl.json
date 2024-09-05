@@ -316,7 +316,8 @@
 	},
 	"Blog": {
 		"btn_read_article": "Przeczytaj materiał",
-		"load_more": "Pokaż więcej"
+		"load_more": "Pokaż więcej",
+		"placeholder": "Wpisz słowo kluczowe"
 	},
 	"Projects": {
 		"title": "Projekty",

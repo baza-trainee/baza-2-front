@@ -13,6 +13,9 @@ import { getAllBlogArticles } from "@/src/api/blog";
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import styles from "./BlogSection.module.scss";
 import clsx from "clsx";
+import Loader from "../../shared/loader/Loader";
+import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
+import SorryModal from "../../modals/SorryModal/SorryModal";
 
 const BlogSection = () => {
   const t = useTranslations("Blog");
@@ -31,7 +34,7 @@ const BlogSection = () => {
     queryKey: ["blog", searchQuery],
 
     queryFn: ({ pageParam = 1 }) =>
-      getAllBlogArticles({ page: pageParam, search: searchQuery, limit: 3 }),
+      getAllBlogArticles({ page: pageParam, search: searchQuery, limit: 4 }),
     getNextPageParam: (lastPage, allPages) => {
       const morePagesExist =
         lastPage?.pagination.currentPage < lastPage?.pagination.totalPages;
@@ -54,7 +57,13 @@ const BlogSection = () => {
 
   return (
     <section className={styles.section}>
-      <InputSearch defaultValue={searchQuery} onSubmit={handleSearchChange} />
+      <InputSearch
+        defaultValue={searchQuery}
+        onSubmit={handleSearchChange}
+        placeholder={t("placeholder")}
+      />
+      {isLoading && <Loader />}
+      {isError && <MessageErrorLoading />}
       <div className={styles.wrapper}>
         <SocialIcons classNameCustom={styles.icons} />
         <div className={styles.pages}>
@@ -80,6 +89,7 @@ const BlogSection = () => {
         text={t("load_more")}
         onClick={() => fetchNextPage()}
       />
+      <SorryModal handleCallback={handleSearchChange} />
     </section>
   );
 };

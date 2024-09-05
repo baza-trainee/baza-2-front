@@ -316,7 +316,8 @@
 	},
 	"Blog": {
 		"btn_read_article": "Читати матеріал",
-		"load_more": "Показати ще"
+		"load_more": "Показати ще",
+		"placeholder": "Введіть ключове слово"
 	},
 	"Projects": {
 		"title": "Проєкти",
