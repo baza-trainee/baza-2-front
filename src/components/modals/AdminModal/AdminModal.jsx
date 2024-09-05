@@ -18,12 +18,8 @@ export default function AdminModal(
 
   return (
     <LayoutModal isOpen={isOpen} handleClose={handleCallback}>
-      <div className={styles.wrapper} onClick={(e) => {
-        handleCallback()
-        e.stopPropagation()
-        }}>
-        <div className={styles.modal} onClick={(e) => e.stopPropagation()
-        }>
+      <div className={styles.wrapper}>
+        <div className={styles.modal}>
           <CloseBtn className={styles.closeButton}
           vaiant={'dark'}
           onClick={handleCallback}/>

@@ -9,7 +9,7 @@ import { Icon } from '../../shared/Icon/Icon';
 import Loader from '../../shared/loader/Loader';
 import stateUseAlert from '@/src/state/stateUseAlert';
 import PartnerList from './ProjectsList/ProjectsList';
-import { deleteProjectById, getAllProjects, getAllProjects2 } from '@/src/api/projects';
+import { deleteProjectById, getAllProjects } from '@/src/api/projects';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
 
@@ -33,7 +33,7 @@ export default function Projects() {
 
   const { isError, data, refetch } = useQuery({ 
     queryKey: ['projects', params.search, params.page], 
-    queryFn:()=>{return getAllProjects2({...params, limit:6})}, keepPreviousData: true 
+    queryFn:()=>{return getAllProjects({...params, limit:6})}, keepPreviousData: true 
   });
 
   const deleteProject = useMutation({
