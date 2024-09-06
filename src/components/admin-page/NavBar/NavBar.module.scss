@@ -165,7 +165,11 @@
   .btn_exit{
     width: 80%;
     margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 15px 0;
     & > svg{
+      min-width: 24px;
       width: 24px;
       height: 24px;
     }
