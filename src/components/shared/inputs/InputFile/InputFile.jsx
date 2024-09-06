@@ -32,7 +32,12 @@ export default function InputFile({
   },[isDirty])
 
   function sub(e) {
-    if(e.target.value ==''){return}
+    if(e.target.value =='' &&  required){
+      setValue('')
+      getPrevImgUrl(null)
+      return
+    }else if(e.target.value =='' && !required){return}
+
     if (!e.target.files || e.target.files.length === 0) {
       setValue('')
       return
@@ -55,7 +60,7 @@ export default function InputFile({
   return (
     <div className={clsx(styles.wrapper, className)}>
       {label && <label htmlFor={id}>
-          {label} {required && <span>*</span>}
+          {label}
         </label>
       }
         <label className={clsx(

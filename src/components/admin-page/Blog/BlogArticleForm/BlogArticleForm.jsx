@@ -10,17 +10,20 @@ import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { articleDefaultValues, ArticleScheme } from './BlogArticleFormScheme';
+import { ArticleAddScheme, articleDefaultValues, ArticleScheme } from './BlogArticleFormScheme';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
 import ImagePreview from '../../ImagePreview/ImagePreview';
 
 export default function BlogArticleForm({
   hendleMutate, 
-  data, 
+  data,
+  variant='edit', 
   submitBtnText= 'Додати'
 }) {
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
+
+  const scheme = variant === 'add' ? ArticleAddScheme : ArticleScheme
 
   const {
     register,
@@ -30,7 +33,7 @@ export default function BlogArticleForm({
     setValue,
   } = useForm({ 
     defaultValues: {...articleDefaultValues}, 
-    resolver: zodResolver(ArticleScheme), 
+    resolver: zodResolver(scheme), 
     mode: 'onChange'
   });
 
@@ -80,7 +83,7 @@ export default function BlogArticleForm({
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
-            registerOptions={register("title", { ...ArticleScheme.title })}
+            registerOptions={register("title", { ...scheme.title })}
             isError={errors.title}
             isValid={isValid}
             version={"input_admin"}
@@ -94,7 +97,7 @@ export default function BlogArticleForm({
             id={"date"}
             className={styles.item}
             required={false}
-            registerOptions={register("date", { ...ArticleScheme.date})}
+            registerOptions={register("date", { ...scheme.date})}
             isError={errors.date}
             isValid={isValid}
             version={"input_admin"}
@@ -108,17 +111,16 @@ export default function BlogArticleForm({
             className={styles.item}
             type={'file'}
             getPrevImgUrl={ setPrevUrl }
-            required={false}
+            required={variant === 'add'}
             accept="image/*"
             placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
-            registerOptions={register("file", { ...ArticleScheme.file })}
+            registerOptions={register("file", { ...scheme.file })}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
             version={"file"}
             label={'Зображення'}
           />
-            
         </li>
 
         <li className={clsx(styles.list_item, styles.item_prev, styles.grid4)}>
@@ -132,7 +134,7 @@ export default function BlogArticleForm({
             className={styles.item_text} 
             isError={errors.text}
             isValid={isValid}
-            registerOptions={register("text", { ...ArticleScheme.text })}
+            registerOptions={register("text", { ...scheme.text })}
             required={false}
             placeholder={"Введіть текст"} 
             label={'Текст'} 
