@@ -51,7 +51,7 @@ export default function PressAbout() {
 
   return(
     <SectionAdmin 
-      title={"Пресса про нас"} 
+      title={"Преса про нас"} 
       hendleSearch={hendleSetSearch} 
       defaultValue={params.search}>
 

@@ -48,6 +48,13 @@
     margin-bottom: 16px;
     font-weight: 700;
     color: var.$secondary-white;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 
   p {
@@ -56,12 +63,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
+    line-clamp: 5;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 
     color: var.$secondary-white;
 
     @include mx.media-q("md") {
+      line-clamp: 4;
       -webkit-line-clamp: 4;
     }
   }

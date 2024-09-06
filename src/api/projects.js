@@ -1,17 +1,6 @@
-import instance from './config/instance';
 import instanceBaza2 from './config/instance-baza2';
 
 const projectsEndpoint = '/projects'
-
-export async function  getAllProjects2({ page, search, limit }){
-	const params = new URLSearchParams();
-	if (page) params.append('page', page.toString());
-	if (search) params.append('search', search);
-	if (limit) params.append('limit', limit.toString());
-
-		const res = await instanceBaza2.get(`${projectsEndpoint}?${params.toString()}`)
-		return res.data
-}
 
 export async function  getAllProjects({ page, search, limit }){
 	const params = new URLSearchParams();
@@ -19,7 +8,7 @@ export async function  getAllProjects({ page, search, limit }){
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
-	const res = await instance.get(`${projectsEndpoint}?${params.toString()}`)
+	const res = await instanceBaza2.get(`${projectsEndpoint}?${params.toString()}`)
 		return res.data
 }
 

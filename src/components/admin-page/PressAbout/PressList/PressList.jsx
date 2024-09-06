@@ -3,12 +3,11 @@ import styles from './PressList.module.scss';
 import { useState } from 'react';
 import { useRouter } from '@/src/navigation';
 import { createKey } from '@/src/lib/utils/createKey';
-//import { ArticleCard } from '../../../shared/ArticleCard/ArticleCard';
+import { ArticleCard } from '../../../shared/ArticleCard/ArticleCard';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 import { Icon } from '@/src/components/shared/Icon/Icon';
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import Pagination from '../../Pagination/Pagination';
-import { ArticleCard } from './ArticleCard/ArticleCard';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 
 export default function PressList({ 
@@ -34,10 +33,10 @@ export default function PressList({
     <>
      {data?.results?.length ? <ul className={styles.list}>
         {data?.results && data.results.map((item) => {
+          console.log(item)
           return(
             <li key={createKey()} className={styles.item}>
-              {/* Замінити на крточку */}
-              <ArticleCard data={item}/>
+              <ArticleCard item={item}/>
               <div className={styles.btns}>
                 <MainButton 
                   variant='admin'
