@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PartakerSchema, partakerDefaultValues } from "./formPartakeScheme";
+import { useMutation } from '@tanstack/react-query';
+import { PartakerFormService } from '@/src/api/contact-form';
 import MainButton from "../../../shared/MainButton/MainButton";
 import InputField from "../../../shared/inputs/InputField/InputField";
 import { optionsQuestionnaire, optionsSpec } from "./options";
@@ -17,7 +19,6 @@ import { createKey } from "@/src/lib/utils/createKey";
 import stateModalDocumentPdf from "@/src/state/stateModalDocumentPdf";
 import TooltipText from "../../../shared/TooltipText/TooltipText";
 
-
 export default function FormPartaker({handleClose}) {
   const t = useTranslations("Modal_form");
   const openPdf = stateModalDocumentPdf(state => state.open);
@@ -28,16 +29,19 @@ export default function FormPartaker({handleClose}) {
     handleSubmit,
     formState: {  errors, isValid, isDirty },
     reset
-  } = useForm({ defaultValues: {...partakerDefaultValues}, resolver: zodResolver(PartakerSchema), mode: 'onBlur'});
+  } = useForm({ 
+    defaultValues: {...partakerDefaultValues}, 
+    resolver: zodResolver(PartakerSchema), 
+    mode: 'onBlur'
+  });
 
   const [ specialization, setSpecialization ] = useState('');
   const [ phone, setPhone ] = useState('');
-  const[ experience, setExperience ] = useState('')
-  const[ questionnaire, setQuestionnaire ] = useState('')
+  const [ experience, setExperience ] = useState('')
+  const [ questionnaire, setQuestionnaire ] = useState('')
   
   const [ conditions, setConditions ] = useState(false);
   const [ agree, setAgree ] = useState(false);
-  const [loader, setIsLoader ] = useState(false);
 
   const resetForm = () => {
     setSpecialization('')
@@ -46,28 +50,22 @@ export default function FormPartaker({handleClose}) {
     setQuestionnaire('')
     setConditions(false)
     setAgree(false)
-    setIsLoader(false)
     reset();
     handleClose()
   }
 
-  const isSubmitted = (res) => {
-    setIsLoader(false)
-    if(res === 'error'){
+  const { mutate, isPending } = useMutation({
+    mutationFn: (data) => {
+      return PartakerFormService(data)
+    },
+    onSuccess:()=>{
+      open('success')
+      resetForm()
+    },
+    onError: () => {
       open('error')
-    }
-    open('success')
-    resetForm()
-  }
-
-  const onSubmit = (data) => {
-    setIsLoader(true)
-    // Імітація відправки форми
-    setTimeout(()=>{
-      isSubmitted('success')
-      console.log(data);
-    },3000)
-  };
+    },
+  })
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
@@ -83,7 +81,7 @@ export default function FormPartaker({handleClose}) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.form_partaker}>
+    <form onSubmit={handleSubmit(mutate)} className={styles.form_partaker}>
       <h2>{t("title")}</h2>
 
       <ul className={styles.list}>
@@ -387,7 +385,7 @@ export default function FormPartaker({handleClose}) {
         {t("btn_send")}
       </MainButton>
 
-      {loader && <Loader/>}
+      {isPending && <Loader/>}
     </form>
   )
 }

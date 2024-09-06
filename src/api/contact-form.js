@@ -47,3 +47,45 @@ export async function MentorFormService(data){
 	const res = await instanceBaza2.post('/feedback/mentor', {...body(data)})
 		return res
 }
+
+export async function PartakerFormService(data){
+
+  const body =({ 
+    firstName, 
+    lastName, 
+    email, 
+    phone, 
+    city,
+    country,
+    discord, 
+    linkedin, 
+    experience,
+    specialization, 
+    motivation,
+    sawQuestionnaire
+  })=>{
+
+  const newBoody = {      
+    firstName: firstName,
+    lastName: lastName,
+    specialization: specialization,
+    email: email,
+    phone: phone,
+    discord: discord,
+    linkedin: linkedin,
+    experience: experience,
+    motivation: motivation,
+    sawQuestionnaire: sawQuestionnaire
+  }   
+  if(city){newBoody.city = city} 
+  if(country){newBoody.country = country}  
+    return newBoody
+  }
+
+  const res = setTimeout(()=>{
+    console.log({...body(data)});
+  },3000)
+  return res
+	// const res = await instanceBaza2.post('/feedback/mentor', {...body(data)})
+	// 	return res
+}
