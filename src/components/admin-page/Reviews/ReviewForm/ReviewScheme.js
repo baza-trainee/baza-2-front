@@ -58,7 +58,7 @@ export const ReviewScheme = z
       .transform(normalizeTextValue)
       .pipe(z.string()
       .max(250, { message: 'Текст максимум 250 знаків'})
-      .regex(patternText, { message: 'Присутні не коректні символи'})),
+      .regex(patternText, { message: 'Присутні некоректні символи'})),
 
     text_en: z.string()
       .trim()
@@ -67,7 +67,7 @@ export const ReviewScheme = z
       .transform(normalizeTextValue)
       .pipe(z.string()
       .max(250, { message: 'Текст максимум 250 знаків' })
-      .regex(patternText, { message: 'Присутні не коректні символи' })),
+      .regex(patternText, { message: 'Присутні некоректні символи' })),
 
     text_pl: z.string()
       .trim()
@@ -76,14 +76,14 @@ export const ReviewScheme = z
       .transform(normalizeTextValue)
       .pipe(z.string()
       .max(250, { message: 'Текст максимум 250 знаків' })
-      .regex(patternText, { message: 'Присутні не коректні символи' })),
+      .regex(patternText, { message: 'Присутні некоректні символи' })),
 
     role:z.string()
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .min(2, { message: 'Мінімум 2 символи' })
       .max(20, { message: 'Максимум 20 знаків' })
-      .regex(patternRole, { message: 'Не коректна назва' }),
+      .regex(patternRole, { message: 'Некоректна назва' }),
 
       date:z.string()
       .trim()
