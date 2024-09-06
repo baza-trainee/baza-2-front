@@ -4,7 +4,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 16px;
   max-width: 1680px;
   margin: 85px auto 0 auto;
@@ -48,7 +48,7 @@
 
 .socIcons {
   margin-top: 0 !important;
-  justify-content: start !important;
+  justify-content: flex-start !important;
   @media only screen and (min-width: 1220px) {
     flex-direction: column;
   }

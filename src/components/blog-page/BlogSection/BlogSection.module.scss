@@ -10,17 +10,17 @@
   padding: 32px 16px;
 
   @include mx.media-q("md") {
-    padding: 48px 40px;
+    padding: 48px 16px;
     gap: 24px;
   }
 
   @include mx.media-q("xl") {
-    padding: 60px 64px;
+    padding: 60px 16px;
     gap: 60px;
   }
 
   @include mx.media-q("xxxl") {
-    padding: 72px 120px;
+    padding: 72px 16px;
     gap: 56px;
   }
 }
@@ -43,14 +43,26 @@
   }
 }
 
-.list {
+.pages {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .icons {
   @include mx.media-q("xl") {
     flex-direction: column;
+  }
+}
+
+.loadMore {
+  &.hidden {
+    display: none;
   }
 }
