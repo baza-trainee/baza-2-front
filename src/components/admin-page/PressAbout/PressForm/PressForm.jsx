@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from '@/src/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { pressDefaultValues, PressFormScheme } from './PressFormScheme';
+import { PressAddFormScheme, pressDefaultValues, PressFormScheme } from './PressFormScheme';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
@@ -17,19 +17,24 @@ import ImagePreview from '../../ImagePreview/ImagePreview';
 export default function PressForm({
   hendleMutate, 
   data, 
+  variant='edit', 
   submitBtnText= 'Додати'
 }) {
   
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
-
+  const scheme = variant === 'add' ? PressAddFormScheme : PressFormScheme
   const {
     register,
     handleSubmit,
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
-  } = useForm({ defaultValues: {...pressDefaultValues}, resolver: zodResolver(PressFormScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues: {...pressDefaultValues}, 
+    resolver: zodResolver(scheme), 
+    mode: 'onChange'
+  });
 
   const resetForm = () => {
     router.replace('/admin/press-about')
@@ -76,11 +81,11 @@ export default function PressForm({
         <li className={clsx(styles.list_item, styles.grid1)}>
           <InputField
             id={"title"}
-            maxLength={105}
+            maxLength={55}
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
-            registerOptions={register("title", { ...PressFormScheme.title })}
+            registerOptions={register("title", { ...scheme.title })}
             isError={errors.title}
             isValid={isValid}
             version={"input_admin"}
@@ -94,7 +99,7 @@ export default function PressForm({
             id={"date"}
             className={styles.item}
             required={false}
-            registerOptions={register("date", { ...PressFormScheme.date})}
+            registerOptions={register("date", { ...scheme.date})}
             isError={errors.date}
             isValid={isValid}
             version={"input_admin"}
@@ -108,7 +113,7 @@ export default function PressForm({
             className={styles.item}
             required={false}
             placeholder={"Додайте посилання"}
-            registerOptions={register("link", { ...PressFormScheme.link })}
+            registerOptions={register("link", { ...scheme.link })}
             isError={errors.link}
             isValid={isValid}
             version={"input_admin"}
@@ -122,10 +127,10 @@ export default function PressForm({
             className={styles.item}
             type={'file'}
             getPrevImgUrl={ setPrevUrl }
-            required={false}
+            required={variant === 'add'}
             accept="image/*"
             placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
-            registerOptions={register("file", { ...PressFormScheme.file })}
+            registerOptions={register("file", { ...scheme.file })}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
@@ -142,7 +147,7 @@ export default function PressForm({
             className={styles.item_text} 
             isError={errors.description}
             isValid={isValid}
-            registerOptions={register("description", { ...PressFormScheme.description })}
+            registerOptions={register("description", { ...scheme.description })}
             required={false}
             placeholder={"Введіть текст"} 
             label={'Текст'} 

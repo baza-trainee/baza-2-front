@@ -32,7 +32,7 @@ export default function AddBlogArticle() {
 
  return( 
     <SectionAdmin title={'Додати статтю'}>
-      <BlogArticleForm hendleMutate={mutate}/>
+      <BlogArticleForm hendleMutate={mutate} variant='add'/>
 
       { isPending && <Loader/> }
 

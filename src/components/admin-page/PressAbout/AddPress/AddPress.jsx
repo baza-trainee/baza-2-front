@@ -36,7 +36,7 @@ export default function AddPress() {
 
   return (
     <SectionAdmin title={'Додати статтю'}>
-      <PressForm hendleMutate={mutate}/>
+      <PressForm hendleMutate={mutate} variant='add'/>
 
       {isPending && <Loader />}
 

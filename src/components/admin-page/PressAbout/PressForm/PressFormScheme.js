@@ -19,41 +19,54 @@ export const pressDefaultValues = {
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
 
-export const PressFormScheme = z
-	.object({
-    file: z.any()
-      .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
-      .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
-      .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
+const empryFile=(value)=>{
+  if(value && value.length){return true}else return false
+}
+// Базова схема
+const Base = 	z.object({
+  title: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(5, { message: 'Мінімум 5 символа' })
+    .max(50, { message: 'Максимум 50 символів' })
+    .regex(patternText, { message: 'Введіть коректну назву' }),
 
-		title: z.string()
-      .trim()
-      .min(1, { message: "Це поле обов'язкове" })
-      .min(5, { message: 'Мінімум 5 символа' })
-      .max(100, { message: 'Максимум 100 символів' })
-      .regex(patternText, { message: 'Введіть коректну назву' }),
+  description: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове" })
+    .min(50, { message: 'Мінімум 50 символів' })
+    .transform(normalizeTextValue)
+    .pipe(z.string()
+    .max(300, { message: 'Текст максимум 300 символів'})
+    .regex(patternText, { message: 'Присутні некоректні символи'})),
 
-    description: z.string()
-      .trim()
-      .min(1, { message: "Це поле обов'язкове" })
-      .min(50, { message: 'Мінімум 50 символів' })
-      .transform(normalizeTextValue)
-      .pipe(z.string()
-      .max(300, { message: 'Текст максимум 300 символів'})
-      .regex(patternText, { message: 'Присутні не коректні символи'})),
+  link: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .regex(patternLink, { message: 'Введіть дійсний URL'}),
 
-    link: z.string()
-      .trim()
-      .min(1, { message: "Це поле обов'язкове"})
-      .regex(patternLink, { message: 'Введіть дійсний URL'}),
-
-    date:z.string()
-      .trim()
-      .min(1, { message: "Це поле обов'язкове"})
-      .regex(patternDateValue, { message: 'Введіть коректну дату' })
-      .refine((value) => minDateValue(value),{ message: "Мінімальна дата 01-04-2023" })
-      .transform((value) => formatDateToNumericInputDate({dateString:value})),
-       
+  date:z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .regex(patternDateValue, { message: 'Введіть коректну дату' })
+    .refine((value) => minDateValue(value),{ message: "Мінімальна дата 01-04-2023" })
+    .transform((value) => formatDateToNumericInputDate({dateString:value})),
+     
+})
+// Схема "Редагувати контент"
+export const PressFormScheme = Base.extend({
+  file: z.any()
+    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
+    .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+    .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),   
+})
+// Схема "Додати контент"
+export const PressAddFormScheme = Base.extend({
+  file: z.any()
+    .refine((file) => empryFile(file),"Це поле обов'язкове")
+    .refine((file) => checkFileSize(file, MAX_SIZE_IMG),"Max.розмір 500КБ")
+    .refine((file) => validateFileTypes(file, ACCEPTED_IMAGE_TYPES),"Формат JPG, PNG, WEBP")
+    .transform((value) => transformFileValue(value, ACCEPTED_IMAGE_TYPES)),
 })
 
 //  Схема відправки на бекенд:{
