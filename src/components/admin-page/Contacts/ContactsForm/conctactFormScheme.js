@@ -1,3 +1,4 @@
+import { z } from "zod";
 import {
   patternEmail,
   patternFacebook,
@@ -6,7 +7,6 @@ import {
   patterTelegram,
 } from "@/src/constants/regulars";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
-import { z } from "zod";
 
 export const contactsDefaultValues = {
   phone1: "",

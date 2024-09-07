@@ -15,7 +15,8 @@ export default function DocumentsForm({
   hendleMutate, 
   submitBtnText='Зберегти зміни', 
   hendleSetPrev, 
-  isSuccess}){
+  isSuccess
+}){
 
   const router = useRouter();
   // Стан попереднього перегляду
