@@ -46,7 +46,7 @@
       width: 8px;
       height: 14px;
       fill: #fff;
-      transition: transform .5s;
+      transition: all .5s;
       @media (max-width: 1100px) {
         transform: rotate(0);
       }
