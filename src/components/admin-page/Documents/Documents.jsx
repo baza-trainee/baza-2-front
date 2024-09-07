@@ -17,7 +17,10 @@ export default function Documents() {
   const[ prevUrl, setPrevUrl ] = useState(null)
 
   // Запит на отримання данних
-  const documents = useQuery({ queryKey: ["documents"], queryFn: getDocuments });
+  const documents = useQuery({ 
+    queryKey: ["documents"], 
+    queryFn: getDocuments 
+  });
 
  // Запит на зміну данних
   const { mutate, isPending, error ,isSuccess} = useMutation({
@@ -39,7 +42,11 @@ export default function Documents() {
 
   return (
     <SectionAdmin title={"Документи"}>
-      <DocumentsForm data={documents.data} hendleMutate={mutate} hendleSetPrev={setPrevUrl} isSuccess={isSuccess}/>
+      <DocumentsForm 
+        data={documents.data} 
+        hendleMutate={mutate} 
+        hendleSetPrev={setPrevUrl} 
+        isSuccess={isSuccess}/>
 
       {isPending && <Loader />}
       

@@ -6,7 +6,7 @@ import { items } from "./items";
 import { useTranslations } from "next-intl";
 import { motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 
 export default function JoinProjectSection() {
   const t = useTranslations("Internship.join_project_section");
