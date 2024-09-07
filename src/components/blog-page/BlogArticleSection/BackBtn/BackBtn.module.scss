@@ -1,12 +1,12 @@
-@use "../../../styles/mixins" as mx;
-@use "../../../styles/variables" as var;
+@use "../../../../styles/mixins" as mx;
+@use "../../../../styles/variables" as var;
 
 .btn {
   display: flex;
   gap: 8px;
   justify-content: center;
   align-items: center;
-
+  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   span {
     @include mx.apply-font-styles(var.$h6-font);
 
@@ -17,10 +17,6 @@
       margin-bottom: 13px;
       margin-top: 13px;
     }
-
-    @include mx.media-q("xl") {
-      // line-height: 1.5; тимчасово
-    }
   }
 
   @include mx.media-q("md") {
@@ -30,6 +26,15 @@
   @include mx.media-q("xl") {
     gap: 24px;
   }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var.$primary-hover;
+      .goBackIcon {
+        fill: var.$primary-hover;
+      }
+    }
+  }
 }
 .goBackIcon {
   transform: rotate(180deg);
@@ -37,6 +42,7 @@
   width: 16px;
   margin: 3px 4px;
   fill: var.$secondary-white;
+  transition: all var.$transition-duration-base var.$transition-timing-base 0s;
 
   @include mx.media-q("md") {
     height: 30px;

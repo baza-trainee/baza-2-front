@@ -45,7 +45,7 @@ const Projects = () => {
 
   const handleSearchChange = (value = "") => {
     setSearchQuery(value);
-    if (value === "") {
+    if (value === "" && searchQuery) {
       queryClient.resetQueries(["projects"], { exact: true });
     }
   };
@@ -60,7 +60,7 @@ const Projects = () => {
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
         {isLoading && <Loader />}
-        {isError && <MessageErrorLoading/>}
+        {isError && <MessageErrorLoading />}
         <h1 className={styles.title}>{t("title")}</h1>
         <InputSearch
           className={styles.search}

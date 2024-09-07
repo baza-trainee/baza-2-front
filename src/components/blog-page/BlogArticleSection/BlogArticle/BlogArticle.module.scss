@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as var;
-@use "../../../styles/mixins" as mx;
+@use "../../../../styles/variables" as var;
+@use "../../../../styles/mixins" as mx;
 
 .article {
   display: flex;
@@ -9,7 +9,6 @@
 
   border-radius: 24px;
   padding: 16px 8px;
-  max-width: 1035px;
   background: var.$primary-bg-card-blog;
   color: var.$secondary-black;
 
@@ -62,25 +61,16 @@
   position: relative;
   height: 339px;
   width: 100%;
-}
-
-.img {
-  object-fit: cover;
+  & > img {
+    object-fit: cover;
+  }
 }
 
 .date {
   @include mx.apply-font-styles(var.$text-14-font);
-
-  margin: 4px 0;
   text-align: start;
   font-size: 12px;
-
   @media only screen and (min-width: 600px) {
     font-size: 20px;
-    margin: 12px 0;
-  }
-
-  @include mx.media-q("xl") {
-    margin: 12px 4px;
   }
 }
