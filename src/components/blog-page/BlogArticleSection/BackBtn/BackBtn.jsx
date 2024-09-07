@@ -2,7 +2,7 @@
 
 import { useRouter } from "@/src/navigation";
 import styles from "./BackBtn.module.scss";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "../../../shared/Icon/Icon";
 
 const BackBtn = () => {
   const router = useRouter();

@@ -1,7 +1,6 @@
 "use client";
 
 import { createKey } from "@/src/lib/utils/createKey";
-import BlogCard from "../../shared/BlogCard/BlogCard";
 import InputSearch from "../../shared/inputs/InputSearch/InputSearch";
 import SocialIcons from "../../shared/SocialIcons/SocialIcons";
 import LoadMore from "../../shared/LoadMore/LoadMore";
@@ -16,6 +15,7 @@ import clsx from "clsx";
 import Loader from "../../shared/loader/Loader";
 import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 import SorryModal from "../../modals/SorryModal/SorryModal";
+import BlogCard from "./BlogCard/BlogCard";
 
 const BlogSection = () => {
   const t = useTranslations("Blog");
@@ -44,8 +44,8 @@ const BlogSection = () => {
 
   const handleSearchChange = (value = "") => {
     setSearchQuery(value);
-    if (value === "") {
-      queryClient.resetQueries(["blog"], { exact: true });
+    if (value === "" && searchQuery) {
+      queryClient.resetQueries(["projects"], { exact: true });
     }
   };
 

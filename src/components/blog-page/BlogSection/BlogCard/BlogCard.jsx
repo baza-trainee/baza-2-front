@@ -1,18 +1,13 @@
 import { useTranslations } from "next-intl";
-import MainLink from "../MainLink/MainLink";
 import styles from "./BlogCard.module.scss";
 import Image from "next/image";
-import linkTypes from "../MainLink/constants";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
-import { usePathname } from "next/navigation";
+import MainLink from "@/src/components/shared/MainLink/MainLink";
+import linkTypes from "@/src/components/shared/MainLink/constants";
 
 const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
   const t = useTranslations("Blog");
   const formattedDate = formatDateToNumeric(date);
-  const pathname = usePathname();
-  const isAdminPage =
-    pathname.split("/").includes("admin") ||
-    pathname.split("/").includes("login");
 
   return (
     <article className={styles.card}>
@@ -26,11 +21,11 @@ const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
           <p className={styles.description}>{description}</p>
         </div>
       </div>
-      {isAdminPage ? (
+      {adminOnclick ? (
         <button
           type="button"
           className={styles.readArticle}
-          onClick={adminOnclick ?? null}
+          onClick={adminOnclick}
         >
           {t("btn_read_article")}
         </button>

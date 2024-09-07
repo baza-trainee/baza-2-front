@@ -8,8 +8,8 @@ import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import Pagination from "../../Pagination/Pagination";
 import BlogArticle from "./BlogArticle/BlogArticle";
 import MessageErrorLoading from "@/src/components/shared/MessageErrorLoading/MessageErrorLoading";
-import BlogCard from "@/src/components/shared/BlogCard/BlogCard";
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import BlogCard from "@/src/components/blog-page/BlogSection/BlogCard/BlogCard";
 
 export default function BlogList({ data, hendleRemove, hendleSetPage }) {
   const router = useRouter();
