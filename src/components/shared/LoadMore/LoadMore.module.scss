@@ -7,7 +7,6 @@
   border-radius: 8px;
   padding: 16px 30px;
   margin: 0 auto;
-  box-shadow: inset 3px 3px 4px 0 rgba(0, 0, 0, 0.25);
   transition: all var.$transition-duration-base var.$transition-timing-base 0s;
   &:disabled {
     cursor: not-allowed;
