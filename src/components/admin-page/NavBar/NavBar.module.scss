@@ -40,7 +40,6 @@
     min-height: 40px;
     border-radius: 4px 0 0 4px;
     padding: 13px 16px;
-
     .icon {
       transform: rotate(180deg);
       display: block;
@@ -69,7 +68,9 @@
     flex-direction: column;
     margin-bottom: 20px;
     gap: 10px;
-    
+    &>li{
+      height: 44px;
+    }
     @media (min-height: 850px) {
       padding-bottom: 40px;
     }
