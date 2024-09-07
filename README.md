@@ -86,3 +86,5 @@ npm run dev
 "tanstack/react-query", "axios" - Запити на сервер
 
 "js-cookie" - Курування cookies
+
+"lenis" - Анімація
