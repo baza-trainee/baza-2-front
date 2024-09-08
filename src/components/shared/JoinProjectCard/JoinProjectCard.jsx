@@ -40,14 +40,14 @@ export default function JoinProjectCard({ item = {}, i, progress, range, targetS
           />
         </div>
         <div className={styles.textCard}>
-          <span className={styles.titleWrapper}>
+          <h3 className={styles.titleWrapper}>
             {t(title)}
             <img
               className={styles.iconTitle}
               src={image}
               alt={t(title)}
             />
-          </span>
+          </h3>
           {texts.map((text) => (
             <ul key={createKey()} className={styles.text}>
               <div>

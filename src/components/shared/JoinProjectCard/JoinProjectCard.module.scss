@@ -91,13 +91,13 @@
   @include mixins.apply-font-styles(var.$h3-font);
 
   @include mixins.media-q("md") { 
-  @include mixins.apply-font-styles(var.$h2-font);
+    @include mixins.apply-font-styles(var.$h2-font);
+  }
 
+  @media (min-width: 990px) {
+  @include mixins.apply-font-styles(var.$h5-font);
 }
-  @include mixins.media-q("xl") { 
 
-
-}
 }
 
 .iconTitle {
