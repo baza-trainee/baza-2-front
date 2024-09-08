@@ -95,9 +95,7 @@
 
 }
   @include mixins.media-q("xl") { 
-  gap: 24px;
-  width: 907px;
-  @include mixins.apply-font-styles(var.$h1-font);
+
 
 }
 }
