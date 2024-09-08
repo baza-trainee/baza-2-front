@@ -10,7 +10,7 @@ const BackBtn = () => {
   const router = useRouter();
 
   return (
-    <button type="button" onClick={() => router.back()} className={styles.btn}>
+    <button type="button" onClick={() => router.replace('/blog')} className={styles.btn}>
       <Icon name="carousel-arrow" className={styles.goBackIcon} />
       <span>{t("back_btn")}</span>
     </button>
