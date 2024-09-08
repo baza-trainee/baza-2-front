@@ -12,6 +12,7 @@
   .skroll{
     max-height: 700px;
     overflow-y: auto;
+    
     &::-webkit-scrollbar {
       width: 5px;
     }
@@ -24,29 +25,6 @@
       border-radius: 12px;
       background: #4d0959;
     }
-
-
-    // -ms-overflow-style: none;
-    // scrollbar-width: none;
-
-    // &::-webkit-scrollbar {
-    //   width: 0;
-    //   height: 0;
-    
-    // }
-    //scrollbar-width: 3px;
-    // scrollbar-width: thin;
-    // scrollbar-color: #6b0c7c #8c10a1;
-    // &::-webkit-scrollbar {
-    //   color: #7c710c;
-
-    //   //scrollbar-color: red orange;
-    //   background-color: #8c10a1;
-    //   //width: 3px;
-    //  // height: 0;
-    
-    // }
-
     padding-bottom: 50px;
 
     @media (min-height: 850px) {
