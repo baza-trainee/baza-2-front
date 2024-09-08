@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-right: 16px;
 
   .srroll_wrapper{
     display: flex;
@@ -15,6 +16,20 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var.$secondary-white;
+      background: #5d447c;
+      border-radius: 12px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      background: #4d0959;
+    }
+
     padding: 32px 24px;
   }
 }
