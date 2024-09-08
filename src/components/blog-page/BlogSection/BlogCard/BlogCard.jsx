@@ -17,8 +17,12 @@ const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
           <span className={styles.date}>{formattedDate}</span>
         </div>
         <div className={styles.content}>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+          <h3 lang="uk-UA" className={styles.title}>
+            {title}
+          </h3>
+          <p lang="uk-UA" className={styles.description}>
+            {description}
+          </p>
         </div>
       </div>
       {adminOnclick ? (
