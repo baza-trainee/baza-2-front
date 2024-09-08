@@ -62,7 +62,9 @@ export default function NavBar() {
       <header className={styles.header}>
         <Logo className={styles.logo}/>
       </header>
-      <MainButton onClick={()=>{setHide(!hide)}} className={styles.btn}>
+      <MainButton 
+        onClick={()=>{setHide(!hide)}} 
+        className={styles.btn}>
         <Icon className={clsx(styles.icon, hide && styles._active)} name="carousel-arrow"/>
       </MainButton>
       <nav className={styles.skroll}>
@@ -75,8 +77,12 @@ export default function NavBar() {
             </li>)
           })}
         </ul>
-        <MainButton variant='admin' className={styles.btn_exit} onClick={removeToken}>
-          <Icon className={styles.icon} name="go_out"/> <span className={styles.text}>Вийти</span>
+        <MainButton 
+          variant='admin' 
+          className={styles.btn_exit} 
+          onClick={removeToken}>
+          <Icon className={styles.icon} name="go_out"/> 
+          <span className={styles.text}>Вийти</span>
         </MainButton>
       </nav>
     </div>

@@ -45,7 +45,7 @@ export default function ExampleProjects() {
     setSearchQuery(value);
     // Інвалідовуємо запит, щоб очистити кешовані сторінки
     // Як що не робити після очищення пошуку виведе всі попередні сторінки
-    if (value === '') {
+    if (value === '' && searchQuery) {
       queryClient.resetQueries(['projects'], { exact: true });
     }
   };

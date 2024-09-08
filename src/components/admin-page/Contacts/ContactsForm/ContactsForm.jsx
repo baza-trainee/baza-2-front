@@ -6,8 +6,11 @@ import { contactsDefaultValues, ContactsScheme } from "./conctactFormScheme";
 import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { useRouter } from "@/src/navigation";
 
 export default function ContactsForm({ defaultValues, handleMutate }) {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -18,6 +21,11 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
     resolver: zodResolver(ContactsScheme),
     mode: "onChange",
   });
+
+  const resetForm = () => {
+    reset();
+    router.replace('/admin')
+  }
 
   const onSubmit = (data) => {
     const updatedContacts = {
@@ -169,9 +177,7 @@ export default function ContactsForm({ defaultValues, handleMutate }) {
         <MainButton
           variant="admin"
           className={styles.btn_cancel}
-          onClick={() => {
-            reset();
-          }}
+          onClick={resetForm}
         >
           {"Скасувати"}
         </MainButton>
