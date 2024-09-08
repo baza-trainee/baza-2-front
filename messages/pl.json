@@ -317,6 +317,7 @@
 	"Blog": {
 		"btn_read_article": "Przeczytaj materiał",
 		"load_more": "Pokaż więcej",
+		"back_btn": "Wróć do artykułów",
 		"placeholder": "Wpisz słowo kluczowe"
 	},
 	"Projects": {

@@ -317,6 +317,7 @@
 	"Blog": {
 		"btn_read_article": "Читати матеріал",
 		"load_more": "Показати ще",
+		"back_btn": "Повернутись до статей",
 		"placeholder": "Введіть ключове слово"
 	},
 	"Projects": {
