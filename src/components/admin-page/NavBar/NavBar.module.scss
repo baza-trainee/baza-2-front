@@ -12,14 +12,41 @@
   .skroll{
     max-height: 700px;
     overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
     &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    
+      width: 5px;
     }
+    &::-webkit-scrollbar-track {
+      background: var.$secondary-white;
+      background: #5d447c;
+      border-radius: 12px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      background: #4d0959;
+    }
+
+
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
+
+    // &::-webkit-scrollbar {
+    //   width: 0;
+    //   height: 0;
+    
+    // }
+    //scrollbar-width: 3px;
+    // scrollbar-width: thin;
+    // scrollbar-color: #6b0c7c #8c10a1;
+    // &::-webkit-scrollbar {
+    //   color: #7c710c;
+
+    //   //scrollbar-color: red orange;
+    //   background-color: #8c10a1;
+    //   //width: 3px;
+    //  // height: 0;
+    
+    // }
+
     padding-bottom: 50px;
 
     @media (min-height: 850px) {
@@ -67,9 +94,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: 5px;
     &>li{
-      min-height: 44px;
+      min-height: 45px;
     }
     @media (min-height: 850px) {
       padding-bottom: 40px;
@@ -84,7 +111,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 5px 12px;
+    padding: 7px 12px;
+    border-radius: 4px;
     position: relative;
     &::before {
       content: "";
@@ -99,10 +127,7 @@
 
     &._active,
     &:hover  {
-      color: var.$primary-hover;
-      & > svg{
-        opacity: .5;
-      }
+      background: #5e2d50;
 
       &::before {
         width: 100%;
@@ -141,9 +166,13 @@
           height: 15px;
           fill: #fff;
           transform: rotate(-90deg);
+          transition: all .3s;
           &._active{
             transform: rotate(90deg);
           }
+        }
+        .btn_icon:hover{
+          opacity: .7;
         }
       }
     }
@@ -156,6 +185,9 @@
         background: #4d0959;
         border-radius: 4px;
         justify-content: center;
+      }
+      .link:hover{
+        background: #6d0d7d;
       }
 
       .link._active{

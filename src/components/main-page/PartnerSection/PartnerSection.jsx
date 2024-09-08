@@ -97,7 +97,7 @@ const PartnerSection = () => {
             renderItem={(item) => (
               <PartnerCard key={createKey()} item={item} />
             )}
-          />:<p className={styles.error}>Нажаль немає контенту</p>}
+          />: null}
 
           {isError && <MessageErrorLoading/>}
         </div>
