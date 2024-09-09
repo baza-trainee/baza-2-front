@@ -2,14 +2,15 @@ import styles from "./BlogList.module.scss";
 import { useState } from "react";
 import { useRouter } from "@/src/navigation";
 import { createKey } from "@/src/lib/utils/createKey";
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
 import Pagination from "../../Pagination/Pagination";
-import BlogArticle from "./BlogArticle/BlogArticle";
 import MessageErrorLoading from "@/src/components/shared/MessageErrorLoading/MessageErrorLoading";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import BlogCard from "@/src/components/blog-page/BlogSection/BlogCard/BlogCard";
+import CloseBtn from "@/src/components/shared/CloseBtn/CloseBtn";
+import BlogArticle from "@/src/components/blog-page/BlogArticleSection/BlogArticle/BlogArticle";
 
 export default function BlogList({ data, hendleRemove, hendleSetPage }) {
   const router = useRouter();
@@ -35,9 +36,20 @@ export default function BlogList({ data, hendleRemove, hendleSetPage }) {
   };
 
   if (fullArticle) {
+    const{ title, text, date, imageUrl } = fullArticle
+
     return (
       <div className={styles.item}>
-        <BlogArticle data={fullArticle} close={readFullArticle} />
+        <BlogArticle 
+          imgUrl={createImageUrl(imageUrl)} 
+          date={date} 
+          title={title} 
+          text={text}/>
+
+        <CloseBtn 
+          className={styles.closeBtn} 
+          vaiant={'dark'} 
+          onClick={()=>{readFullArticle(null)}}/>
 
         <div className={styles.btns}>
           <MainButton

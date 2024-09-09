@@ -1,6 +1,5 @@
 import styles from './TeamList.module.scss'
 import { useState } from 'react';
-import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import { createKey } from '@/src/lib/utils/createKey';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
@@ -8,8 +7,6 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import EditRoleMember from '../EditRoleMember/EditRoleMember';
 
 export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
-  // Мова сторінки.
-  const locale = switchLocaleAdmin(state => state.localeAdmin);
  
   const[ idMember, setIdIdMember] = useState(null)
   const[ idRole, setIdIdRole] = useState(null)
@@ -43,7 +40,7 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
           if(el.teamMember){ 
           return (
           <li key={createKey()} className={styles.item}>
-            <h3>{el.teamMember?.name[locale]}</h3>
+            <h3>{el.teamMember?.name['ua']}</h3>
             <p>{el.teamMemberRole?.name['en']}</p>
             <div className={styles.btns}>
               <MainButton variant='admin' 
