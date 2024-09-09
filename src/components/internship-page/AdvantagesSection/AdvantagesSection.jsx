@@ -18,11 +18,11 @@ const AdvantagesSection = () => {
           </li>
         ))}
       </ul>
-      <div className={styles.button}>
+      {/* <div className={styles.button}>
         <ControlBtnRegistrationFormModal type="partaker">
           {t("btn_text")}
         </ControlBtnRegistrationFormModal>
-      </div>
+      </div> */}
     </div>
   );
 };
