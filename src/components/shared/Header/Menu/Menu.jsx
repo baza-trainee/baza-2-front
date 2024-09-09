@@ -11,7 +11,7 @@ const Menu = () => {
     <ul className={styles.menu}>
       {navigationLinks.map(({ url, name, type }) => (
         <li key={createKey()}>
-          <MainLink url={url} type={type}>
+          <MainLink url={url} type={type} name={name}>
             {t(name)}
           </MainLink>
         </li>

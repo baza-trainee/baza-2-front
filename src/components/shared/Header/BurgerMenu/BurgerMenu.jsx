@@ -54,6 +54,7 @@ const BurgerMenu = () => {
                 url={link.href}
                 type={link.type}
                 handleClose={handleClose}
+                name={link.content}
               >
                 {t(link.content)}
               </MainLink>
