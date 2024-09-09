@@ -43,7 +43,7 @@ export default function TeamListList({data, hendleRemove=()=>{}, roles}) {
           if(el.teamMember){ 
           return (
           <li key={createKey()} className={styles.item}>
-            <h3>{el.teamMember?.name[locale]}</h3>
+            <h3>{el.teamMember?.name['ua']}</h3>
             <p>{el.teamMemberRole?.name['en']}</p>
             <div className={styles.btns}>
               <MainButton variant='admin' 

@@ -13,6 +13,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { ArticleAddScheme, articleDefaultValues, ArticleScheme } from './BlogArticleFormScheme';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
 import ImagePreview from '../../ImagePreview/ImagePreview';
+import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 
 export default function BlogArticleForm({
   hendleMutate, 
@@ -22,6 +23,7 @@ export default function BlogArticleForm({
 }) {
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
+  const[ tooltip, setTooltip ] = useState(null)
 
   const scheme = variant === 'add' ? ArticleAddScheme : ArticleScheme
 
@@ -31,6 +33,7 @@ export default function BlogArticleForm({
     formState: { errors, isValid, isError, isDirty },
     reset,
     setValue,
+    getValues,
   } = useForm({ 
     defaultValues: {...articleDefaultValues}, 
     resolver: zodResolver(scheme), 
@@ -73,10 +76,20 @@ export default function BlogArticleForm({
     else return false
   }
 
+  const validateTitle=(name, maxLength)=>{
+    if(getValues(name).length > maxLength){
+      setTooltip(name)
+    }else {
+      setTooltip(null)
+    }
+  }
+
+
+
   return(
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <ul className={styles.list}>
-        <li className={clsx(styles.list_item, styles.grid1)}>
+        <li className={clsx(styles.list_item, styles.grid1, styles.tooltip)}>
           <InputField
             id={"title"}
             maxLength={105}
@@ -84,12 +97,18 @@ export default function BlogArticleForm({
             required={false}
             placeholder={"Введіть назву"}
             registerOptions={register("title", { ...scheme.title })}
+            onInput={()=>{validateTitle("title", 50)}}
             isError={errors.title}
             isValid={isValid}
             version={"input_admin"}
             label={'Назва статті'}
             locale={'ua'}
           />
+
+          <TooltipText 
+            className={clsx(tooltip === "title" && styles._active)} 
+            text={'Рекомендована довжина до 50 символів. Максимальна 100 символів' } 
+            position='bottom'/>
         </li>
 
         <li className={clsx(styles.list_item,styles.grid2 )}>
