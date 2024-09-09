@@ -70,9 +70,9 @@ const RoleSection = () => {
             ))}
           </div>
         )}
-        <ControlBtnRegistrationFormModal className={styles.btn} type="partaker">
+        {/* <ControlBtnRegistrationFormModal className={styles.btn} type="partaker">
           {t("btn_text")}
-        </ControlBtnRegistrationFormModal>
+        </ControlBtnRegistrationFormModal> */}
       </div>
     </section>
   );

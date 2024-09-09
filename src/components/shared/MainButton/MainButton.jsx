@@ -12,7 +12,6 @@ export default function MainButton({
   className,
   onClick,
   disabled,
-  hiden=false,
   children,
   type = "button",
   ariaLabel,
@@ -31,7 +30,7 @@ export default function MainButton({
   return (
     <button
       onClick={onClick}
-      className={clsx(btnClass, className,hiden && styles._hiden)}
+      className={clsx(btnClass, className )}
       disabled={disabled}
       type={type}
       aria-label={ariaLabel}
