@@ -11,7 +11,7 @@ const Header = () => {
   const t = useTranslations("Header");
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
         <Logo variant="header" className={styles.logo} />
         <Menu />
         <div className={styles.actions}>
