@@ -5,7 +5,8 @@ import MainButton from "../MainButton/MainButton";
 export default function ControlBtnRegistrationFormModal({children, className, onClick, type='mentor'}) {
   const open = useStateModal((state) => state.open)
   return <MainButton 
-    className={className} 
+    className={className}
+    hiden={type!=='mentor'} //!! Прибрати коли буде готова форма реєстрації учасника !!
     onClick={()=>{
       open(type)
       onClick && onClick()
