@@ -19,7 +19,7 @@ export const addPartnerSchema = z
     name: z.string()
       .trim()
       .min(2, { message: 'Мінімум 2 символи' })
-      .max(30, { message: 'Максимум 30 символів' })
+      .max(50, { message: 'Максимум 50 символів' })
       .regex(patternName, { message: 'Введіть дійсну назву' }),
 
     homeUrl: z.string()
