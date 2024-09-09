@@ -1,5 +1,9 @@
-import WelcomeAdmin from '@/src/components/admin-page/WelcomeAdmin/WelcomeAdmin';
+'use client';
+import { redirect } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function AdminPage() {
-  return <WelcomeAdmin/>
+  useEffect(() => {
+    redirect('/admin/slider');
+  }, []);
 }
