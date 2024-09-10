@@ -7,6 +7,7 @@ import clsx from "clsx";
 
 const MainLink = ({
   url,
+  name,
   children,
   type = linkTypes.DEFAULT,
   className,
@@ -15,7 +16,13 @@ const MainLink = ({
   ...rest
 }) => {
   const pathname = usePathname();
-  const isCurrentPage = pathname === url;
+
+  const isActive = (name) => {
+    if (pathname === "/" && name === "main") {
+      return true;
+    }
+    return pathname.split("/").includes(name);
+  };
 
   const handleClick = (event) => {
     if (type === linkTypes.BURGER) handleClose();
@@ -36,7 +43,7 @@ const MainLink = ({
     className: clsx(
       styles.link,
       styles[`link--${type}`],
-      isCurrentPage && styles.active,
+      isActive(name) && styles.active,
       className
     ),
     onClick: handleClick,

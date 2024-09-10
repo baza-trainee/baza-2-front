@@ -7,20 +7,24 @@
   gap: 16px;
   max-width: 1680px;
   margin: 85px auto 0 auto;
-  padding: 32px 16px;
+  padding: 32px 15px;
 
   @include mx.media-q("md") {
-    padding: 48px 16px;
+    padding: 48px 15px;
     gap: 24px;
   }
 
+  @include mx.media-q("ml") {
+    padding: 48px 40px;
+  }
+
   @include mx.media-q("xl") {
-    padding: 60px 16px;
+    padding: 60px 40px;
     gap: 60px;
   }
 
   @include mx.media-q("xxxl") {
-    padding: 72px 16px;
+    padding: 72px 40px;
     gap: 56px;
   }
 }
