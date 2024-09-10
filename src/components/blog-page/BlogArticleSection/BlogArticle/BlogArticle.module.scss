@@ -22,7 +22,7 @@
     gap: 24px;
   }
 
-  h3 {
+  h1 {
     @include mx.apply-font-styles(var.$h6-font);
     margin-bottom: 8px;
 
