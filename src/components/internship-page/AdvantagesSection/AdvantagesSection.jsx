@@ -10,7 +10,7 @@ const AdvantagesSection = () => {
   const t = useTranslations("Internship.benefits_internship");
   return (
     <div className={styles.section}>
-      <h3 className={styles.title}>{t("title")}</h3>
+      <h2 className={styles.title}>{t("title")}</h2>
       <ul className={styles.list}>
         {items.map(({ img, text }) => (
           <li key={img}>
