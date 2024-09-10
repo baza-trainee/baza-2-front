@@ -7,7 +7,7 @@ export function truncateString(str, limit=300) {
   let truncated = str.slice(0, limit);
 
   // Визначаємо можливі розділові знаки, які слід враховувати
-  const punctuationMarks = ['.', '!', '?', ';', ':'];
+  const punctuationMarks = ['.', '!', '?', ';', ':', ',', ' '];
 
   // Перевіряємо, чи строка закінчується на розділовий знак
   let lastChar = truncated.slice(-1);
