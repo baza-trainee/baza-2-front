@@ -33,7 +33,6 @@ export default function PressList({
     <>
      {data?.results?.length ? <ul className={styles.list}>
         {data?.results && data.results.map((item) => {
-          console.log(item)
           return(
             <li key={createKey()} className={styles.item}>
               <ArticleCard item={item}/>
