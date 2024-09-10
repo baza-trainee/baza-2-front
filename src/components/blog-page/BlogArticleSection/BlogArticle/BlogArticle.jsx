@@ -11,12 +11,12 @@ const BlogArticle = ({ title, text, imgUrl, date }) => {
   return (
     <div className={styles.article}>
       <div className={styles.topInfo}>
-        <h3 lang="uk-UA">{title}</h3>
+        <h1 lang="uk-UA">{title}</h1>
         <span className={styles.date}>{formattedDate}</span>
       </div>
       <div className={styles.wrapperText}>
         {strA && (
-          <div className={styles.paragraphWrapper}>
+          <div lang="uk-UA" className={styles.paragraphWrapper}>
             {FormaterBlogText(strA)}
           </div>
         )}
@@ -24,7 +24,7 @@ const BlogArticle = ({ title, text, imgUrl, date }) => {
           <Image src={imgUrl} fill sizes="100%" alt={title} />
         </div>
         {strB && (
-          <div className={styles.paragraphWrapper}>
+          <div lang="uk-UA" className={styles.paragraphWrapper}>
             {FormaterBlogText(strB)}
           </div>
         )}
