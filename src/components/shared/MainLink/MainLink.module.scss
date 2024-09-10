@@ -143,8 +143,6 @@
   }
 
   &--blog {
-    font-size: 16px;
-    font-weight: 400;
     position: relative;
     padding: 11.5px 4px;
     display: block;
@@ -162,10 +160,6 @@
       transition: width var.$transition-duration-base
         var.$transition-timing-base 0s;
     }
-
-    @media only screen and (min-width: 600px) {
-      padding: 10px 4px;
-    }
     @media (any-hover: hover) {
       &:hover {
         &::before {
@@ -173,11 +167,5 @@
         }
       }
     }
-  }
-
-  @media (max-width: 696px) {
-    // font-size: 14px;
-    line-height: 140%;
-    letter-spacing: 0.01em;
   }
 }
