@@ -56,6 +56,7 @@ export default function DocumentsForm({
 
     if(data){
       const{report, statute, privacyPolicy, termsOfUse, rules } = data
+      console.log(privacyPolicy.ua)
       setValue('report', report ? '' : null)
       setValue('statute', statute ? '' : null)
       setValue('privacy_policy',privacyPolicy.ua ? '' : null)
