@@ -13,7 +13,6 @@ import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLo
 
 const BlogArticleSection = () => {
   const { id } = useParams();
-  console.log(id);
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blog", id],
