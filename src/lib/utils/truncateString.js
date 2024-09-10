@@ -1,5 +1,5 @@
 export function truncateString(str, limit=300) {
-  if (str.length <= limit) {
+  if (str && str.length <= limit) {
     return str;
   }
 
@@ -12,7 +12,7 @@ export function truncateString(str, limit=300) {
   // Перевіряємо, чи строка закінчується на розділовий знак
   let lastChar = truncated.slice(-1);
   if (punctuationMarks.includes(lastChar)) {
-    return truncated.trim() + ' . . .';
+    return truncated.trim() + '...';
   }
 
   // Якщо строка обірвалася на середині слова, шукаємо найближчий розділовий знак

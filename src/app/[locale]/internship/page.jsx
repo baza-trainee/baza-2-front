@@ -11,7 +11,7 @@ const metadataInternshipPage ={
     description : "Baza Trainee Ukraine: З нуля до джуна за 6 місяців - наша практика доступна в будь-який час" 
   }, 
   en:{ 
-    title: "Baza Trainee Ukraine Internship - the only practical internship in development ", 
+    title: "Baza Trainee Ukraine Internship - the only practical internship in development", 
     description : "Baza Trainee Ukraine Internship: From zero to junior in 6 months - our practice is available at any time" 
   }, 
   pl:{ 
