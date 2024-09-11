@@ -17,10 +17,13 @@ const metadataProjectsPage ={
 }
 
 export async function generateMetadata({ params }){
-
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/ua/projects`; 
   return {
     title: metadataProjectsPage[params.locale].title,
     description: metadataProjectsPage[params.locale].description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 };
 

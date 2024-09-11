@@ -1,4 +1,7 @@
+import { getLocale } from "next-intl/server";
+
 export default async function sitemap(){
+  const locale = await getLocale();
   let blogs = null;
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API2_URL}/blog`);
@@ -9,7 +12,7 @@ export default async function sitemap(){
 
   // Генеруємо карту сайту для кожного блогу
   const blogEntries = blogs?.results.map(({ _id }) => ({
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${_id}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/blog/${_id}`,
     lastModified: new Date(),
     alternates: {
       languages: {
@@ -23,7 +26,7 @@ export default async function sitemap(){
 
   return [
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -34,7 +37,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/internship`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/internship`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -45,7 +48,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/projects`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/projects`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -56,7 +59,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/${locale}/blog`,
       lastModified: new Date(),
       alternates: {
         languages: {
