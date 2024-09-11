@@ -15,10 +15,13 @@ const metadataBlogPage ={
 }
 
 export async function generateMetadata({ params }){
-
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog`;
   return {
     title: metadataBlogPage[params.locale].title,
     description: metadataBlogPage[params.locale].description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 };
 
