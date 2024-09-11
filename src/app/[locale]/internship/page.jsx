@@ -21,7 +21,7 @@ const metadataInternshipPage ={
 }
 
 export async function generateMetadata({ params }){
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/ua/internship`; 
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}/internship`; 
   return {
     title: metadataInternshipPage[params.locale].title,
     description: metadataInternshipPage[params.locale].description,
