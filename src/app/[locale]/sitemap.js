@@ -9,7 +9,7 @@ export default async function sitemap(){
 
   // Генеруємо карту сайту для кожного блогу
   const blogEntries = blogs?.results.map(({ _id }) => ({
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog/${_id}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog/${_id}`,
     lastModified: new Date(),
     alternates: {
       languages: {
@@ -23,7 +23,7 @@ export default async function sitemap(){
 
   return [
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/ua`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -34,7 +34,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/internship`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/internship`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -45,7 +45,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/projects`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/projects`,
       lastModified: new Date(),
       alternates: {
         languages: {
@@ -56,7 +56,7 @@ export default async function sitemap(){
       },
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blog`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog`,
       lastModified: new Date(),
       alternates: {
         languages: {
