@@ -7,7 +7,6 @@ import LayoutProvider from "@/src/components/providers/LayoutProvider";
 
 // Динамічне налаштування метаданих через Metadata API
 export async function generateMetadata() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   return {
     title: "Baza Trainee Ukraine: internships for trainee and junior",
@@ -15,13 +14,6 @@ export async function generateMetadata() {
     icons: {
       icon: ["/favicons/favicon.svg"],
     },
-    alternates: {
-      languages: {
-        'uk-UA': `${baseUrl}/ua`,
-        'en': `${baseUrl}/en`,
-        'pl': `${baseUrl}/pl`,
-      }
-    }
   };
 }
 
