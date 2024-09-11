@@ -15,18 +15,10 @@ const metadataBlogPage ={
 }
 
 export async function generateMetadata({ params }){
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  
+
   return {
     title: metadataBlogPage[params.locale].title,
     description: metadataBlogPage[params.locale].description,
-    alternates: {
-      languages: {
-        'uk-UA': `${baseUrl}/ua/blog`,
-        'en': `${baseUrl}/en/blog`,
-        'pl': `${baseUrl}/pl/blog`,
-      }
-    }
   };
 };
 

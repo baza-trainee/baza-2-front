@@ -17,18 +17,10 @@ const metadataProjectsPage ={
 }
 
 export async function generateMetadata({ params }){
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  
+
   return {
     title: metadataProjectsPage[params.locale].title,
     description: metadataProjectsPage[params.locale].description,
-    alternates: {
-      languages: {
-        'uk-UA': `${baseUrl}/ua/projects`,
-        'en': `${baseUrl}/en/projects`,
-        'pl': `${baseUrl}/pl/projects`,
-      }
-    }
   };
 };
 

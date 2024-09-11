@@ -13,7 +13,7 @@ export default async function sitemap(){
     lastModified: new Date(),
     alternates: {
       languages: {
-        uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog/${_id}`,
+        'uk-UA': `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog/${_id}`,
         en: `${process.env.NEXT_PUBLIC_BASE_URL}/en/blog/${_id}`,
         pl: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/blog/${_id}`,
       },
@@ -27,7 +27,7 @@ export default async function sitemap(){
       lastModified: new Date(),
       alternates: {
         languages: {
-          uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua`,
+          'uk-UA': `${process.env.NEXT_PUBLIC_BASE_URL}/ua`,
           en: `${process.env.NEXT_PUBLIC_BASE_URL}/en`,
           pl: `${process.env.NEXT_PUBLIC_BASE_URL}/pl`,
         },
@@ -38,7 +38,7 @@ export default async function sitemap(){
       lastModified: new Date(),
       alternates: {
         languages: {
-          uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/internship`,
+         'uk-UA': `${process.env.NEXT_PUBLIC_BASE_URL}/ua/internship`,
           en: `${process.env.NEXT_PUBLIC_BASE_URL}/en/internship`,
           pl: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/internship`,
         },
@@ -49,7 +49,7 @@ export default async function sitemap(){
       lastModified: new Date(),
       alternates: {
         languages: {
-          uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/projects`,
+          'uk-UA': `${process.env.NEXT_PUBLIC_BASE_URL}/ua/projects`,
           en: `${process.env.NEXT_PUBLIC_BASE_URL}/en/projects`,
           pl: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/projects`,
         },
@@ -60,7 +60,7 @@ export default async function sitemap(){
       lastModified: new Date(),
       alternates: {
         languages: {
-          uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog`,
+          'uk-UA': `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog`,
           en: `${process.env.NEXT_PUBLIC_BASE_URL}/en/blog`,
           pl: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/blog`,
         },
