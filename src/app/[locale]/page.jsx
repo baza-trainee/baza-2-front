@@ -14,23 +14,27 @@ import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTti
 // metadata
 const metadataMainPage ={ 
   ua:{ 
-    title: "Baza Trainee Ukraine – стажування для trainee і junior розробників", 
+    title: "Baza Trainee Ukraine – Стажування для Junior та Trainee розробників", 
     description : "Baza Trainee Ukraine – ми подбаємо, щоб ти отримав практику. Отримай унікальний досвід командної роботи" 
   }, 
   en:{ 
-    title: "Baza Trainee Ukraine: internships for trainee and junior developers", 
+    title: "Baza Trainee Ukraine – Internships for Trainee and Junior Developers", 
     description : "Baza Trainee Ukraine - we will make sure you get an internship. Get a unique experience of teamwork" 
   }, 
   pl:{ 
-    title: "Baza Trainee Ukraine: praktyka dla stażystów i junior programistów", 
+    title: "Baza Trainee Ukraine – Praktyka dla praktykantów i junior programistów", 
     description : "Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie"
   }, 
 }
 
 export  async function generateMetadata({ params }){
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}`; 
   return {
     title: metadataMainPage[params.locale].title,
     description: metadataMainPage[params.locale].description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 };
 

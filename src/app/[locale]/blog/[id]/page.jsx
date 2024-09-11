@@ -16,7 +16,7 @@ const metadataBlogArticlePage ={
 
 export async function generateMetadata({ params }) {
   const id = params.id;
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/ua/blog/${id}`;
+  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}/blog/${id}`;
   const defaultTitle = `${metadataBlogArticlePage[params.locale].title}-${params.id}`
   // fetch data
   const article = await fetch(`${process.env.NEXT_PUBLIC_API2_URL}/blog/${id}`)

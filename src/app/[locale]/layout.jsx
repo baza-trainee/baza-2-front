@@ -7,15 +7,11 @@ import LayoutProvider from "@/src/components/providers/LayoutProvider";
 
 // Динамічне налаштування метаданих через Metadata API
 export async function generateMetadata() {
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/ua`; 
   return {
     title: "Baza Trainee Ukraine: internships for trainee and junior",
     description: "Baza Trainee Ukraine - we will make sure you get an internship. Get a unique experience of teamwork",
     icons: {
       icon: ["/favicons/favicon.svg"],
-    },
-    alternates: {
-      canonical: canonicalUrl,
     },
   };
 }
