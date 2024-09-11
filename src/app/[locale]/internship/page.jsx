@@ -20,11 +20,19 @@ const metadataInternshipPage ={
   }, 
 }
 
+export async function generateMetadata({ params }){
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-export const generateMetadata = ({ params }) => {
   return {
     title: metadataInternshipPage[params.locale].title,
     description: metadataInternshipPage[params.locale].description,
+    alternates: {
+      languages: {
+        'uk-UA': `${baseUrl}/ua/internship`,
+        'en': `${baseUrl}/en/internship`,
+        'pl': `${baseUrl}/pl/internship`,
+      }
+    }
   };
 };
 

@@ -15,6 +15,7 @@ const metadataBlogArticlePage ={
 }
 
 export async function generateMetadata({ params }) {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   const id = params.id;
   const defaultTitle = `${metadataBlogArticlePage[params.locale].title}-${params.id}`
   // fetch data
@@ -33,6 +34,13 @@ export async function generateMetadata({ params }) {
   // Формуємо метадані
   const metadata = {
     title: truncateString(article?.title || defaultTitle, 60),
+    alternates: {
+      languages: {
+        'uk-UA': `${baseUrl}/ua/blog/${id}`,
+        'en': `${baseUrl}/en/blog/${id}`,
+        'pl': `${baseUrl}/pl/blog/${id}`,
+      }
+    }
   };
 
   // Додаємо description тільки якщо є текст
