@@ -18,7 +18,11 @@ export default function LoginForm({ handleMutate }) {
     setValue,
     formState: { errors, isValid },
     reset
-  } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
+  } = useForm({ 
+    defaultValues: {...loginDefaultValues}, 
+    resolver: zodResolver(loginSchema), 
+    mode: 'onBlur'
+  });
 
   const [ remember, setRemember ] = useState(false);
 
