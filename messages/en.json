@@ -10,7 +10,9 @@
 		"projects_description": "Baza Trainee Ukraine Projects: We help you grow professionally. More than 100 juniors are already working in their specialty.",
 
 		"blog_title": "Blog-only useful and fresh themes about development and practice",
-		"blog_description": "Baza Trainee Ukraine Blog - Sign up to receive the latest news about the projects launch and don't miss this unique opportunity to get involved"
+		"blog_description": "Baza Trainee Ukraine Blog - Sign up to receive the latest news about the projects launch and don't miss this unique opportunity to get involved",
+		
+		"article_title": "Article"
 	},
 	"TitlePage": {
 		"title_main": "Baza Trainee Ukraine: internships for trainee and junior developers",

@@ -10,7 +10,9 @@
 		"projects_description": "Baza Trainee Ukraine Проєкти - Допомагаємо твоєму професійному зростанню. Понад 100 джунів уже працюють за фахом.",
 
 		"blog_title": "Блог-тільки корисне і цікаве про розробку і практику",
-		"blog_description": "Baza Trainee Ukraine Блог - Підпишись на останні новини про старт проєктів і не пропусти унікальну можливість долучитись"
+		"blog_description": "Baza Trainee Ukraine Блог - Підпишись на останні новини про старт проєктів і не пропусти унікальну можливість долучитись",
+
+		"article_title": "Стаття"
 	},
 	"TitlePage": {
 		"title_main": "Baza Trainee Ukraine – стажування для trainee і junior розробників",
