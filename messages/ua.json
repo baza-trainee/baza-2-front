@@ -1,4 +1,19 @@
 {
+	"Metadata":{
+		"main_title": "Baza Trainee Ukraine – Стажування для Junior та Trainee розробників",
+		"main_description":"Baza Trainee Ukraine – ми подбаємо, щоб ти отримав практику. Отримай унікальний досвід командної роботи",
+
+		"internship_title": "Baza Trainee Ukraine Стажування – єдине практичне стажування в розробці",
+		"internship_description": "Baza Trainee Ukraine: З нуля до джуна за 6 місяців - наша практика доступна в будь-який час",
+
+		"projects_title": "Baza Trainee Ukraine Проєкти - непрості і корисні продукти для соціальної сфери",
+		"projects_description": "Baza Trainee Ukraine Проєкти - Допомагаємо твоєму професійному зростанню. Понад 100 джунів уже працюють за фахом.",
+
+		"blog_title": "Блог-тільки корисне і цікаве про розробку і практику",
+		"blog_description": "Baza Trainee Ukraine Блог - Підпишись на останні новини про старт проєктів і не пропусти унікальну можливість долучитись",
+
+		"article_title": "Стаття"
+	},
 	"TitlePage": {
 		"title_main": "Baza Trainee Ukraine – стажування для trainee і junior розробників",
 		"title_internship": "Baza Trainee Ukraine Стажування – єдине практичне стажування в розробці",
