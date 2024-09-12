@@ -1,4 +1,17 @@
 {
+	"Metadata":{
+		"main_title": "Baza Trainee Ukraine – Internships for Trainee and Junior Developers",
+		"main_description":"Baza Trainee Ukraine - we will make sure you get an internship. Get a unique experience of teamwork",
+
+		"internship_title": "Baza Trainee Ukraine Internship - the only practical internship in development",
+		"internship_description": "Baza Trainee Ukraine Internship: From zero to junior in 6 months - our practice is available at any time",
+
+		"projects_title": "Baza Trainee Ukraine Projects - complex and useful products for the social sphere",
+		"projects_description": "Baza Trainee Ukraine Projects: We help you grow professionally. More than 100 juniors are already working in their specialty.",
+
+		"blog_title": "Blog-only useful and fresh themes about development and practice",
+		"blog_description": "Baza Trainee Ukraine Blog - Sign up to receive the latest news about the projects launch and don't miss this unique opportunity to get involved"
+	},
 	"TitlePage": {
 		"title_main": "Baza Trainee Ukraine: internships for trainee and junior developers",
 		"title_internship": "Baza Trainee Ukraine Internship - the only practical internship in development",

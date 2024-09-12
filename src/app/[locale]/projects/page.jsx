@@ -1,26 +1,16 @@
 import Projects from "@/src/components/projects-page/Projects";
-// metadata
-
-const metadataProjectsPage ={ 
-  ua:{ 
-    title: " Baza Trainee Ukraine Проєкти - непрості і корисні продукти для соціальної сфери", 
-    description : "Baza Trainee Ukraine Проєкти: Допомагаємо твоєму професійному зростанню. Понад 100 джунів уже працюють за фахом." 
-  }, 
-  en:{ 
-    title: "Baza Trainee Ukraine Projects - complex and useful products for the social sphere", 
-    description : "Baza Trainee Ukraine Projects: We help you grow professionally. More than 100 juniors are already working in their specialty." 
-  }, 
-  pl:{ 
-    title: "Baza Trainee Ukraine Projektowanie - złożone i użyteczne produkty dla sfery społecznej ", 
-    description : "Baza Trainee Ukraine Projektowanie: Pomagamy rozwijać się zawodowo. Ponad 100 juniorów już pracuje w swojej dziedzinie " 
-  }, 
-}
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({ params }){
+  const t = await getTranslations({
+    locale:params.locale, 
+    namespace: 'Metadata'
+  });
+
   const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}/projects`; 
   return {
-    title: metadataProjectsPage[params.locale].title,
-    description: metadataProjectsPage[params.locale].description,
+    title: t('projects_title'),
+    description: t('projects_description'),
     alternates: {
       canonical: canonicalUrl,
     },
