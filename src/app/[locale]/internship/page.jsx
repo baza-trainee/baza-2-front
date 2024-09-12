@@ -10,6 +10,7 @@ export async function generateMetadata({ params }){
     locale:params.locale, 
     namespace: 'Metadata'
   });
+
   const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}/internship`; 
   return {
     title: t('internship_title'),
