@@ -1,4 +1,5 @@
 import BlogArticleSection from "@/src/components/blog-page/BlogArticleSection/BlogArticleSection";
+import { getTranslations } from "next-intl/server";
 import { truncateString } from "@/src/lib/utils/truncateString";
 
 export async function generateMetadata({ params }) {
