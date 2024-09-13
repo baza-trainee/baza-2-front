@@ -66,7 +66,8 @@
 			"paragraph_1": "A mentor is a colleague two levels above the mentee who oversees task execution and provides guidance or clarification when the participant is unsure about a decision.",
 			"paragraph_2": "Our mentors are practitioners from leading IT companies in Ukraine who aim to support newcomers with knowledge and enhance their own managerial skills.",
 			"paragraph_3": "At Baza Trainee Ukraine, a mentor directs a team of several people at once, contributing to their professional development.",
-			"btn_mentor": "Become a mentor"
+			"btn_mentor": "Become a mentor",
+			"alt_img": "The photo shows a girl mentor"
 		},
 		"our_structure_section": {
 			"title": "Our structure",
@@ -302,7 +303,8 @@
 				"title": "Accept the invitation",
 				"text_1": "Accept the invitation to the Baza Trainee Ukraine server, which will arrive after filling out the form within 48 hours",
 				"text_2": "Follow weekly announcements about the start of projects in the General channel",
-				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team",
+				"step2": "Крок другий"
 			},
 			"card_3": {
 				"title": "Get onboarded",
@@ -315,7 +317,11 @@
 				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
 				"text_2": "Complete the task, release the product, and declare the availability of practical experience",
 				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
-			}
+			},
+			"step1": "Step one",
+			"step2": "Step two",
+			"step3": "Step three",
+			"step4": "Step four"
 		},
 		"benefits_internship": {
 			"title": "Benefits of internship",
