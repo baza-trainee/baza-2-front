@@ -40,7 +40,7 @@ export default function StructureCard({ item }) {
         >
           {t(title)}
         </MainLink>
-        <h3 className={styles.text}>{t(text)}</h3>
+        <p className={styles.text}>{t(text)}</p>
       </div>
     </div>
   );
