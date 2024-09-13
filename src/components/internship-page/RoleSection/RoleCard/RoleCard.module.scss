@@ -1,5 +1,5 @@
-@use "../../../styles/mixins" as mixin;
-@use "../../../styles/variables" as var;
+@use "../../../../styles/mixins" as mixin;
+@use "../../../../styles/variables" as var;
 
 .article {
   width: 100%;
@@ -41,6 +41,7 @@
   @include mixin.apply-font-styles(var.$text-16-font);
   display: -webkit-box;
   -webkit-line-clamp: 4; /* Количество строк */
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
