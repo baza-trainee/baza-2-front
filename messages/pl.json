@@ -315,7 +315,11 @@
 				"text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
 				"text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
 				"text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
-			}
+			},
+			"step1": "Krok pierwszy",
+			"step2": "Krok drugi",
+			"step3": "Krok trzeci",
+			"step4": "Krok czwarty"
 		},
 		"benefits_internship": {
 			"title": "Korzyści ze stażu",

@@ -303,7 +303,8 @@
 				"title": "Accept the invitation",
 				"text_1": "Accept the invitation to the Baza Trainee Ukraine server, which will arrive after filling out the form within 48 hours",
 				"text_2": "Follow weekly announcements about the start of projects in the General channel",
-				"text_3": "Accept the invitation to the server of the selected project and get to know your new team"
+				"text_3": "Accept the invitation to the server of the selected project and get to know your new team",
+				"step2": "Крок другий"
 			},
 			"card_3": {
 				"title": "Get onboarded",
@@ -316,7 +317,11 @@
 				"text_1": "Agree with the team on the schedule of meetings and the volume of selected tasks",
 				"text_2": "Complete the task, release the product, and declare the availability of practical experience",
 				"text_3": "Submit your resume to the Baza Skill recruiting agency. More projects — more chances for an interview!"
-			}
+			},
+			"step1": "Step one",
+			"step2": "Step two",
+			"step3": "Step three",
+			"step4": "Step four"
 		},
 		"benefits_internship": {
 			"title": "Benefits of internship",
