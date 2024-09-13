@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "../../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
 import styles from "./RoleCard.module.scss";
 
@@ -14,12 +14,7 @@ const RoleCard = ({ imgSrc, desc1, desc2, title }) => {
     <article className={styles.article}>
       {imgSrc && (
         <div className={styles.imageContainer}>
-          <Image
-            sizes="100%"
-            fill
-            alt={title ?? "Описание отсутсвует"}
-            src={imgSrc}
-          />
+          <Image sizes="100%" fill alt={title} src={imgSrc} />
         </div>
       )}
       <div className={styles.content}>
