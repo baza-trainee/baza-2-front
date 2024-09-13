@@ -24,7 +24,7 @@ const MentorSection = () => {
               src={"/images/mentor_section/mentor.png"}
               fill
               sizes="100%"
-              alt={t("title")}
+              alt={t("alt_img")}
               quality={80}
             />
           </div>
