@@ -9,7 +9,7 @@ const Advantage = ({ img, text }) => {
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-        <Image src={img} sizes="100%" fill alt={text} />
+        <Image src={img} sizes="100%" fill alt={t(text)} />
       </div>
       <p className={styles.text}>{t(text)}</p>
     </div>

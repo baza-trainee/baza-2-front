@@ -34,15 +34,15 @@ const CounterComponent = () => {
         {data.map((item) => {
           return (
             <div className={styles.item} key={createKey()}>
-              <h2 className={styles.numbers}>
+              <p className={styles.numbers}>
                 <CountUp
                   start={0}
                   end={item.count}
                   duration={2}
                   formattingFn={(value) => `${value}+`}
                 />
-              </h2>
-              <p className={styles.title}>{t(item.title)}</p>
+              </p>
+              <h2 className={styles.title}>{t(item.title)}</h2>
             </div>
           );
         })}
