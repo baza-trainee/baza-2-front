@@ -38,7 +38,7 @@ export default function StructureCard({ item }) {
           type={type}
           onClick={handleClick}
         >
-         <h3>{t(title)}</h3>
+          <h3>{t(title)}</h3>
         </MainLink>
         <p className={styles.text}>{t(text)}</p>
       </div>
