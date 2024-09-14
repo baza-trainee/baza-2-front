@@ -1,23 +1,23 @@
 {
 	"Metadata":{
-		"main_title": "Baza Trainee Ukraine – Praktyka dla praktykantów i junior programistów",
+		"main_title": "Baza Trainee Ukraine - praktyka dla unior programistów",
 		"main_description":"Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie",
 
-		"internship_title": "Baza Trainee Ukraine Praktyka",
-		"internship_description": "Baza Trainee Ukraine Praktyka: Od zera do juniora w 6 miesięcy - nasza praktyka jest dostępna w każdej chwili",
+		"internship_title": "Baza Trainee Ukraine – staż developmentu",
+		"internship_description": "Baza Trainee Ukraine - Od zera do juniora w 6 miesięcy - nasza praktyka jest dostępna w każdej chwili",
 
-		"projects_title": "Baza Trainee Ukraine Projektowanie - złożone i użyteczne produkty dla sfery społecznej",
-		"projects_description": "Baza Trainee Ukraine Projektowanie: Pomagamy rozwijać się zawodowo. Ponad 100 juniorów już pracuje w swojej dziedzinie.",
+		"projects_title": "Projekty – jakościowe produkty dla non-profit",
+		"projects_description": "Baza Trainee Ukraine Projeky - Pomagamy rozwijać się zawodowo. Ponad 100 juniorów już pracuje w swojej dziedzinie",
 
-		"blog_title": "Blog-tylko i wyłącznie przydatne informacje na temat rozwoju i praktyki",
+		"blog_title": "Blog - najnowsze wiadomości o developmencie",
 		"blog_description": "Baza Trainee Ukraine Blog - Zapisz się, aby otrzymywać najnowsze informacje o start projektu i nie przegap tej wyjątkowej okazji, aby się zaangażować.",
 		
 		"article_title": "Artykuł"
 	},
 	"TitlePage": {
-		"title_main": "Baza Trainee Ukraine: praktyka dla stażystów i junior programistów",
-		"title_internship": "Baza Trainee Ukraine Praktyka",
-		"title_blog": "Blog: tylko i wyłącznie przydatne informacje na temat rozwoju i praktyki"
+		"title_main": "Baza Trainee Ukraine - praktyka dla unior programistów",
+		"title_internship": "Baza Trainee Ukraine – staż developmentu",
+		"title_blog": "Blog - najnowsze wiadomości o developmencie"
 	},
 	"Header": {
 		"main": "Strona główna",

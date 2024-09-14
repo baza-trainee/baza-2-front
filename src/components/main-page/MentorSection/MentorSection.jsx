@@ -5,7 +5,7 @@ import styles from "./MentorSection.module.scss";
 
 const MentorSection = () => {
   const t = useTranslations("Main.mentor_section");
-
+  
   return (
     <section className={styles.mentor}>
       <div className={styles.container}>

@@ -1,16 +1,22 @@
-export default function robots(){
+export default function robots(req){
+  const host = req?.headers?.host; // Отримання хоста з заголовка
+
+  const baseUrl = host ? 
+    `https://${host}` : 
+    process.env.NEXT_PUBLIC_BASE_URL;  
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin', '/api', '/public/', '/login'],
+        disallow: ['/admin', '/api', '/public', '/login'],
       },
     ],
     sitemap: [
-      `${process.env.NEXT_PUBLIC_BASE_URL}/ua/sitemap.xml`,
-      `${process.env.NEXT_PUBLIC_BASE_URL}/en/sitemap.xml`,
-      `${process.env.NEXT_PUBLIC_BASE_URL}/pl/sitemap.xml`,
+      `${baseUrl}/ua/sitemap.xml`,
+      `${baseUrl}/en/sitemap.xml`,
+      `${baseUrl}/pl/sitemap.xml`,
     ],
   };
 }
