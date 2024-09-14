@@ -3,16 +3,24 @@ import { getTranslations } from "next-intl/server";
 import { truncateString } from "@/src/lib/utils/truncateString";
 
 export async function generateMetadata({ params }) {
+  const baseUrl = process.env.VERCEL_URL ? 
+    `https://${process.env.VERCEL_URL}` : 
+    process.env.NEXT_PUBLIC_BASE_URL;
+
+  const baseApiUrl = process.env.NEXT_PUBLIC_API2_URL ? 
+    process.env.NEXT_PUBLIC_API2_URL : 
+    ''; 
+    
   const t = await getTranslations({
     locale:params.locale, 
     namespace: 'Metadata'
   });
 
   const id = params.id;
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}/blog/${id}`;
-  const defaultTitle = `${t('article_title')}-${params.id}`
+  const canonicalUrl = `${baseUrl}/${params.locale}/blog/${id}`;
+  const defaultTitle = `${t('article_title')}-${id}`
   // fetch data
-  const article = await fetch(`${process.env.NEXT_PUBLIC_API2_URL}/blog/${id}`)
+  const article = await fetch(`${baseApiUrl}/blog/${id}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error('Failed to fetch article');
@@ -26,7 +34,7 @@ export async function generateMetadata({ params }) {
 
   // Формуємо метадані
   const metadata = {
-    title: article?.title? truncateString(article?.title, 60) : defaultTitle,
+    title: article?.title? truncateString(article?.title, 57) : defaultTitle,
     alternates: {
       canonical: canonicalUrl,
     },
