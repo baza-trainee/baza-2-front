@@ -8,6 +8,7 @@ import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import Pagination from '../../Pagination/Pagination';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
 
 export default function MembersList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function MembersList({data, hendleRemove, hendleSetPage}) {
       {data?.results?.length ? <ul className={styles.list}>
         {data.results.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-           <h3>{el.name[locale]}</h3>
+           <h3>{el.name[localeUkToUa(locale)]}</h3>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 

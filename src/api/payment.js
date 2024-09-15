@@ -20,9 +20,7 @@ export async function PaymentService(paymentAmount="0", locale="ua"){
 	try {
 		const res = await instance.post('/payment', {...paymentData})
     if (res.data?.invoiceUrl) {
-			//window.location.href = response.data.invoiceUrl;
 			window.open(res.data.invoiceUrl);
-			//callback('ok')
 		}
 		return res.data
 	} catch (error) {

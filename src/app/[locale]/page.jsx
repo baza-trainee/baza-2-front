@@ -13,23 +13,14 @@ import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTti
 import { getTranslations } from "next-intl/server";
 
 export  async function generateMetadata({ params }){
-  const baseUrl = process.env.VERCEL_URL ? 
-    `https://${process.env.VERCEL_URL}` : 
-    process.env.NEXT_PUBLIC_BASE_URL;
-
   const t = await getTranslations({
     locale:params.locale, 
     namespace: 'Metadata'
   });
 
-  const canonicalUrl = `${baseUrl}/${params.locale}`; 
-  
   return {
     title: t('main_title'),
     description: t('main_description'),
-    alternates: {
-      canonical: canonicalUrl,
-    },
   };
 };
 

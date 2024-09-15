@@ -8,6 +8,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
 
 export default function SliderList({data, hendleRemove}) {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function SliderList({data, hendleRemove}) {
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-            <HeroCard title={el.title[locale]} desc={el.subtitle[locale]} className={styles.heroCard} img={el.imageUrl}/>
+            <HeroCard title={el.title[localeUkToUa(locale)]} desc={el.subtitle[localeUkToUa(locale)]} className={styles.heroCard} img={el.imageUrl}/>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 

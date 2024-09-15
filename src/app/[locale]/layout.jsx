@@ -20,7 +20,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale === "ua" ? "uk-UA" : locale}>
+    <html lang={locale}>
       <body>
         <QueryProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>

@@ -14,7 +14,7 @@ export default function robots(req){
       },
     ],
     sitemap: [
-      `${baseUrl}/ua/sitemap.xml`,
+      `${baseUrl}/uk/sitemap.xml`,
       `${baseUrl}/en/sitemap.xml`,
       `${baseUrl}/pl/sitemap.xml`,
     ],

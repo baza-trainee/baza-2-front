@@ -10,6 +10,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import ProjectCard from '@/src/components/projects-page/ProjectCard/ProjectCard'
 import Pagination from '../../Pagination/Pagination'
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading'
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa'
 
 export default function PartnerList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
         return <li key={createKey()} className={styles.item}>
           <ProjectCard 
             project={el}
-            coverImgUrl={createImageUrl(el.imageUrl)} locale={locale}/>
+            coverImgUrl={createImageUrl(el.imageUrl)} locale={localeUkToUa(locale)}/>
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 
