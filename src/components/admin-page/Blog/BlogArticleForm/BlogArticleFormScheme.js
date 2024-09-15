@@ -35,7 +35,7 @@ const Base = z.object({
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Мінімум 5 символа' })
     .max(100, { message: 'Максимум 100 знаків' })
-    .regex(patternText, { message: 'Введіть коректну назву' }),
+    .regex(patternText, { message: 'Присутні некоректні символи' }),
 
   text: z.string()
     .trim()
