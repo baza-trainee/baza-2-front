@@ -67,7 +67,9 @@ export default function FormPayment({handleSubmit}) {
    }else renderError(value)
   }
  // Перемикач стилів кнопок.
-  const activeStyle = id => (readOnly && amount === id) || (!readOnly && id === 'another');
+  const activeStyle = (id )=> {
+    return readOnly && amount === id || !readOnly && id === 'another'
+  };
 
   return <form className={styles.form} 
     onSubmit={(e)=>{
