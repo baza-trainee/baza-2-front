@@ -88,3 +88,5 @@ npm run dev
 "js-cookie" - Керування cookies
 
 "lenis" - Анімація
+
+"react-device-detect" - Визначення device користувача
