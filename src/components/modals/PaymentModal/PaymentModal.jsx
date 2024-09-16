@@ -23,8 +23,7 @@ export default function PaymentModal() {
       return PaymentService(data, localeUkToUa(locale))
     },
     onSuccess:()=>{
-      //isMobile && close()
-      close()
+      isMobile && close()
       sessionStorage.setItem('isThanks', true)
     }
   })
