@@ -60,21 +60,21 @@ export const ProjectScheme = z
       .min(1, { message: "Це поле обов'язкове"})
       .min(5, { message: 'Мінімум 5 символів'})
       .max(100, { message: 'Максимум 100 символів' })
-      .regex(patternText, { message: 'Введіть коректний заголовок' }),
+      .regex(patternText, { message: 'Присутні некоректні символи' }),
 
 		title_en: z.string()
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .min(5, { message: 'Мінімум 5 символів'})
       .max(100, { message: 'Максимум 100 символів' })
-      .regex(patternText, { message: 'Введіть коректний заголовок' }),
+      .regex(patternText, { message: 'Присутні некоректні символи' }),
 
 		title_pl: z.string()
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .min(5, { message: 'Мінімум 5 символів'})
       .max(100, { message: 'Максимум 100 символів' })
-      .regex(patternText, { message: 'Введіть коректний заголовок' }),
+      .regex(patternText, { message: 'Присутні некоректні символи' }),
 
     creationDate: z.string()
       .trim()

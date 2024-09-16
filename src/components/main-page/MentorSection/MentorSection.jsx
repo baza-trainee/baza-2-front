@@ -5,7 +5,7 @@ import styles from "./MentorSection.module.scss";
 
 const MentorSection = () => {
   const t = useTranslations("Main.mentor_section");
-
+  
   return (
     <section className={styles.mentor}>
       <div className={styles.container}>
@@ -24,7 +24,7 @@ const MentorSection = () => {
               src={"/images/mentor_section/mentor.png"}
               fill
               sizes="100%"
-              alt="About mentor team"
+              alt={t("alt_img")}
               quality={80}
             />
           </div>

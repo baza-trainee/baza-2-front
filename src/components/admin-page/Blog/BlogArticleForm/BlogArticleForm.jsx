@@ -48,17 +48,17 @@ export default function BlogArticleForm({
   useEffect(()=>{
     if(data){
       const{imageUrl, title, text, date } = data
-      setValue('title',title )
-      setValue('text',text )
-      setValue('date',formatDateToNumericInputDate({timestamp:date}))
+      setValue('title', title )
+      setValue('text', text )
+      setValue('date', formatDateToNumericInputDate({timestamp:date}))
       setValue('file', '')
       setPrevUrl(imageUrl)
-    }else setValue('date',formatDateToNumericInputDate({timestamp:Date.now()}))
+    }else setValue('date', formatDateToNumericInputDate({timestamp:Date.now()}))
   },[data])
 
   const onSubmit = (data) => {
     const newData = {
-      title:data.title,
+      title: data.title,
       text: data.text,
       date: data.date,
       file: data.file,
@@ -83,8 +83,6 @@ export default function BlogArticleForm({
       setTooltip(null)
     }
   }
-
-
 
   return(
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

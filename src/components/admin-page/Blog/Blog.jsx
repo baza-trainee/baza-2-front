@@ -17,7 +17,7 @@ export default function Blog() {
   const router = useRouter();
   const open = stateUseAlert(state => state.open);
 
-  const [ params, setParams] = useState({
+  const [ params, setParams ] = useState({
     search:'',
     page:1
   })
@@ -56,7 +56,10 @@ export default function Blog() {
   return (
     <SectionAdmin 
       title={'Блог'} hendleSearch={hendleSetSearch}> 
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+        <MainButton  
+          variant='admin' 
+          className={styles.btn} 
+          onClick={()=>{
             router.push(addBlogArticlePath)
           }}>
             <Icon name={'plus_icon'} width={24} height={24} />

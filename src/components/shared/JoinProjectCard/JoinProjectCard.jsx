@@ -36,7 +36,7 @@ export default function JoinProjectCard({ item = {}, i, progress, range, targetS
           <img
             className={styles.iconNumber}
             src={icon}
-            alt={name}
+            alt={t(name)}
           />
         </div>
         <div className={styles.textCard}>

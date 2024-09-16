@@ -35,21 +35,21 @@ export const ReviewScheme = z
       .min(1, { message: "Це поле обов'язкове"})
       .min(2, { message: 'Мінімум 2 символа' })
       .max(18, { message: 'Максимум 18 знаків' })
-      .regex(patternName, { message: 'Введіть коректне ім’я' }),
+      .regex(patternName, { message: 'Присутні некоректні символи' }),
 
 		name_en: z.string()
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .min(2, { message: 'Мінімум 2 символа' })
       .max(18, { message: 'Максимум 18 знаків' })
-      .regex(patternName, { message: 'Введіть коректне ім’я' }),
+      .regex(patternName, { message: 'Присутні некоректні символи' }),
 
 		name_pl: z.string()
       .trim()
       .min(1, { message: "Це поле обов'язкове"})
       .min(2, { message: 'Мінімум 2 символа' })
       .max(18, { message: 'Максимум 18 знаків' })
-      .regex(patternName, { message: 'Введіть коректне ім’я'}),
+      .regex(patternName, { message: 'Присутні некоректні символи'}),
 
     text_ua: z.string()
       .trim()
@@ -83,7 +83,7 @@ export const ReviewScheme = z
       .min(1, { message: "Це поле обов'язкове"})
       .min(2, { message: 'Мінімум 2 символи' })
       .max(20, { message: 'Максимум 20 знаків' })
-      .regex(patternRole, { message: 'Некоректна назва' }),
+      .regex(patternRole, { message: 'Присутні некоректні символи' }),
 
       date:z.string()
       .trim()

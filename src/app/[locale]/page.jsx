@@ -10,31 +10,17 @@ import StructureSection from "@/src/components/main-page/StructureSection/Struct
 import ArticlesSection from "@/src/components/main-page/ArticlesSection/ArticlesSection";
 import RegistrationFormModal from "@/src/components/modals/RegistrationFormModal/RegistrationFormModal";
 import HiddenTtitlePage from "@/src/components/shared/HiddenTtitlePage/HiddenTtitlePage";
-
-// metadata
-const metadataMainPage ={ 
-  ua:{ 
-    title: "Baza Trainee Ukraine – Стажування для Junior та Trainee розробників", 
-    description : "Baza Trainee Ukraine – ми подбаємо, щоб ти отримав практику. Отримай унікальний досвід командної роботи" 
-  }, 
-  en:{ 
-    title: "Baza Trainee Ukraine – Internships for Trainee and Junior Developers", 
-    description : "Baza Trainee Ukraine - we will make sure you get an internship. Get a unique experience of teamwork" 
-  }, 
-  pl:{ 
-    title: "Baza Trainee Ukraine – Praktyka dla praktykantów i junior programistów", 
-    description : "Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie"
-  }, 
-}
+import { getTranslations } from "next-intl/server";
 
 export  async function generateMetadata({ params }){
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/${params.locale}`; 
+  const t = await getTranslations({
+    locale:params.locale, 
+    namespace: 'Metadata'
+  });
+
   return {
-    title: metadataMainPage[params.locale].title,
-    description: metadataMainPage[params.locale].description,
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    title: t('main_title'),
+    description: t('main_description'),
   };
 };
 

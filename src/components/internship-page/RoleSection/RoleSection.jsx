@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { items } from "./items";
-import RoleCard from "../../shared/RoleCard/RoleCard";
+import RoleCard from "./RoleCard/RoleCard";
 import ControlBtnRegistrationFormModal from "../../shared/controlButtons/ControlBtnRegistrationFormModal";
 import { useTranslations } from "next-intl";
 import { createKey } from "@/src/lib/utils/createKey";

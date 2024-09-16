@@ -8,6 +8,7 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import FeedbackCard from '@/src/components/shared/FeedbackCard/FeedbackCard';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
 
 export default function ReviewList({data, hendleRemove}) {
   const router = useRouter();
@@ -33,7 +34,7 @@ export default function ReviewList({data, hendleRemove}) {
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-            <FeedbackCard {...el} locale={locale}/>
+            <FeedbackCard {...el} locale={localeUkToUa(locale)}/>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 

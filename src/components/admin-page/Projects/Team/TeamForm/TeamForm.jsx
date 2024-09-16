@@ -9,7 +9,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { teamDefaultValues, TeamScheme } from './teamFormScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import { createKey } from '@/src/lib/utils/createKey';
 
 export default function TeamForm({
@@ -19,8 +18,7 @@ export default function TeamForm({
   roles,
   submitBtnText= 'Додати'
 }) {
-  // Мова сторінки.
-  const locale = switchLocaleAdmin(state => state.localeAdmin);
+
   const [ search, setSearch ] = useState('')
   const [ member, setMember ] = useState(null)
   const [selectedRoleId, setSelectedRoleId] = useState('');
