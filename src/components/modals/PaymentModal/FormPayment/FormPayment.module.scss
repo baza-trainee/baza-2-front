@@ -180,6 +180,15 @@
       inset -1px -1px var.$primary-border;
     }
   }
+  .btn._active{
+    background: var.$secondary-hover;
+    color: var.$secondary-black;
+    border: 1px solid var.$primary-border;
+    box-shadow:
+    inset 1px 1px var.$primary-border,
+    inset -1px -1px var.$primary-border;
+  }
+
   .btn._hide{
     display: none;
 
