@@ -12,17 +12,12 @@ const AdvantagesSection = () => {
     <div className={styles.section}>
       <h2 className={styles.title}>{t("title")}</h2>
       <ul className={styles.list}>
-        {items.map(({ img, text }) => (
+        {items.map(({ img, text, altText }) => (
           <li key={img}>
-            <Advantage img={img} text={text} />
+            <Advantage img={img} text={text} altText={altText} />
           </li>
         ))}
       </ul>
-      {/* <div className={styles.button}>
-        <ControlBtnRegistrationFormModal type="partaker">
-          {t("btn_text")}
-        </ControlBtnRegistrationFormModal>
-      </div> */}
     </div>
   );
 };
