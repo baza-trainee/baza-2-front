@@ -3,10 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { truncateString } from "@/src/lib/utils/truncateString";
 
 export async function generateMetadata({ params }) {
-  const baseUrl = process.env.VERCEL_URL ? 
-    `https://${process.env.VERCEL_URL}` : 
-    process.env.NEXT_PUBLIC_BASE_URL;
-
   const baseApiUrl = process.env.NEXT_PUBLIC_API2_URL ? 
     process.env.NEXT_PUBLIC_API2_URL : 
     ''; 
@@ -17,7 +13,6 @@ export async function generateMetadata({ params }) {
   });
 
   const id = params.id;
-  const canonicalUrl = `${baseUrl}/${params.locale}/blog/${id}`;
   const defaultTitle = `${t('article_title')}-${id}`
   // fetch data
   const article = await fetch(`${baseApiUrl}/blog/${id}`)
@@ -35,9 +30,6 @@ export async function generateMetadata({ params }) {
   // Формуємо метадані
   const metadata = {
     title: article?.title? truncateString(article?.title, 57) : defaultTitle,
-    alternates: {
-      canonical: canonicalUrl,
-    },
   };
 
   // Додаємо description тільки якщо є текст

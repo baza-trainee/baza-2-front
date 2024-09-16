@@ -1,20 +1,12 @@
 import { getLocale } from "next-intl/server";
 
-// const baseUrl = process.env.VERCEL_URL ? 
-//   `https://${process.env.VERCEL_URL}` : 
-//   process.env.NEXT_PUBLIC_BASE_URL;
-
-
-
-export default async function sitemap(req){
-  const host = req?.headers?.host; // Отримання хоста з заголовка
-
+export default async function sitemap(){
   const baseApiUrl = process.env.NEXT_PUBLIC_API2_URL ? 
     process.env.NEXT_PUBLIC_API2_URL : 
   '';  
  
-  const baseUrl = host ? 
-    `https://${host}` : 
+  const baseUrl = process.env.VERCEL_URL ? 
+    `https://${process.env.VERCEL_URL}` : 
     process.env.NEXT_PUBLIC_BASE_URL;
 
   const locale = await getLocale();
@@ -34,7 +26,7 @@ export default async function sitemap(req){
     lastModified: new Date(),
     alternates: {
       languages: {
-        'uk-UA': `${baseUrl}/ua/blog/${_id}`,
+        uk: `${baseUrl}/uk/blog/${_id}`,
         en: `${baseUrl}/en/blog/${_id}`,
         pl: `${baseUrl}/pl/blog/${_id}`,
       },
@@ -48,7 +40,7 @@ export default async function sitemap(req){
       lastModified: new Date(),
       alternates: {
         languages: {
-          'uk-UA': `${baseUrl}/ua`,
+          uk: `${baseUrl}/uk`,
           en: `${baseUrl}/en`,
           pl: `${baseUrl}/pl`,
         },
@@ -59,7 +51,7 @@ export default async function sitemap(req){
       lastModified: new Date(),
       alternates: {
         languages: {
-         'uk-UA': `${baseUrl}/ua/internship`,
+          uk: `${baseUrl}/uk/internship`,
           en: `${baseUrl}/en/internship`,
           pl: `${baseUrl}/pl/internship`,
         },
@@ -70,7 +62,7 @@ export default async function sitemap(req){
       lastModified: new Date(),
       alternates: {
         languages: {
-          'uk-UA': `${baseUrl}/ua/projects`,
+          uk: `${baseUrl}/uk/projects`,
           en: `${baseUrl}/en/projects`,
           pl: `${baseUrl}/pl/projects`,
         },
@@ -81,7 +73,7 @@ export default async function sitemap(req){
       lastModified: new Date(),
       alternates: {
         languages: {
-          'uk-UA': `${baseUrl}/ua/blog`,
+          uk: `${baseUrl}/uk/blog`,
           en: `${baseUrl}/en/blog`,
           pl: `${baseUrl}/pl/blog`,
         },

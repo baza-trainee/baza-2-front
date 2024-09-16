@@ -11,14 +11,15 @@ import { useParams } from 'next/navigation';
 import Loader from '../../shared/loader/Loader';
 import { useMutation } from '@tanstack/react-query';
 import { PaymentService } from '@/src/api/payment';
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
 
 export default function PaymentModal() {
   // Мова сторінки.
   const { locale } = useParams();
 
   const { mutate, isPending, isError, isSuccess,reset } = useMutation({
-    mutationFn: (data,locale) => {
-      return PaymentService(data, locale)
+    mutationFn: (data, locale) => {
+      return PaymentService(data, localeUkToUa(locale))
     },
   })
 
