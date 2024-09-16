@@ -19,6 +19,7 @@ export default function PaymentModal() {
   const { locale } = useParams();
 
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
+  const { mutate, isPending, isError, isSuccess, reset } = useMutation({
     mutationFn: (data, locale) => {
       return PaymentService(data, localeUkToUa(locale))
     },
@@ -29,7 +30,6 @@ export default function PaymentModal() {
   })
 
   // Отримуємо стан.
-  const open = stateModalPayment(state => state.open);
   const isOpen = stateModalPayment(state => state.isOpen);
   const close = stateModalPayment(state => state.close);
   const [ isThanks, setIsThanks ] = useState(false)
@@ -46,6 +46,8 @@ export default function PaymentModal() {
   const t = useTranslations("Modal_support");
 
   const handleClose = useCallback(() => {
+    setIsThanks(false)
+    sessionStorage.removeItem('isThanks')
     setIsThanks(false)
     sessionStorage.removeItem('isThanks')
     reset()
