@@ -1,370 +1,376 @@
 {
-	"Metadata":{
-		"main_title": "Baza Trainee Ukraine - praktyka dla unior programistów",
-		"main_description":"Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie",
+  "Metadata": {
+    "main_title": "Baza Trainee Ukraine - praktyka dla unior programistów",
+    "main_description": "Baza Trainee Ukraine - upewnimy się, że dostaniesz się na staż. Zdobądź unikalne doświadczenie pracy w zespolie",
 
-		"internship_title": "Baza Trainee Ukraine – staż developmentu",
-		"internship_description": "Baza Trainee Ukraine - Od zera do juniora w 6 miesięcy - nasza praktyka jest dostępna w każdej chwili",
+    "internship_title": "Baza Trainee Ukraine – staż developmentu",
+    "internship_description": "Baza Trainee Ukraine - Od zera do juniora w 6 miesięcy - nasza praktyka jest dostępna w każdej chwili",
 
-		"projects_title": "Projekty – jakościowe produkty dla non-profit",
-		"projects_description": "Baza Trainee Ukraine Projeky - Pomagamy rozwijać się zawodowo. Ponad 100 juniorów już pracuje w swojej dziedzinie",
+    "projects_title": "Projekty – jakościowe produkty dla non-profit",
+    "projects_description": "Baza Trainee Ukraine Projeky - Pomagamy rozwijać się zawodowo. Ponad 100 juniorów już pracuje w swojej dziedzinie",
 
-		"blog_title": "Blog - najnowsze wiadomości o developmencie",
-		"blog_description": "Baza Trainee Ukraine Blog - Zapisz się, aby otrzymywać najnowsze informacje o start projektu i nie przegap tej wyjątkowej okazji, aby się zaangażować.",
-		
-		"article_title": "Artykuł"
-	},
-	"TitlePage": {
-		"title_main": "Baza Trainee Ukraine - praktyka dla unior programistów",
-		"title_internship": "Baza Trainee Ukraine – staż developmentu",
-		"title_blog": "Blog - najnowsze wiadomości o developmencie"
-	},
-	"Header": {
-		"main": "Strona główna",
-		"internship": "Praktyka",
-		"projects": "Projekty",
-		"blog": "Blog",
-		"contacts": "Kontakty",
-		"btn_support_project": "Wspierać projekt"
-	},
-	"Main": {
-		"history_project_section": {
-			"title": "Historia projektu",
-			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
-			"text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
-			"history": {
-				"item1": {
-					"date": "Kwiecień 2023:",
-					"text": "Start projektu Baza Trainee Ukraine"
-				},
-				"item2": {
-					"date": "Sierpień 2023:",
-					"text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
-				},
-				"item3": {
-					"date": "Listopad 2023:",
-					"text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
-				},
-				"item4": {
-					"date": "Grudzień 2023:",
-					"text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
-				},
-				"item5": {
-					"date": "Marzec 2024:",
-					"text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
-				}
-			}
-		},
-		"counter_section": {
-			"title": "Nasze postępy",
-			"active_projects": "aktywnych projektów",
-			"involved_participants": "zaangażowanych uczestników",
-			"employed": "zatrudniono"
-		},
-		"mentor_section": {
-			"title": "Mentorowi",
-			"paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
-			"paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
-			"paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
-			"btn_mentor": "Zostać mentorem",
-			"alt_img": "Na zdjęciu dziewczyna-mentorka"
-		},
-		"our_structure_section": {
-			"title": "Nasza struktura",
-			"item_1": {
-				"title": "BAZA TRAINEE UKRAINE",
-				"text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
-			},
-			"item_2": {
-				"title": "BAZA SKILL",
-				"text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
-			},
-			"item_3": {
-				"title": "BAZA EDUCAT",
-				"text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
-			},
-			"item_4": {
-				"title": "BAZA POLIGON",
-				"text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
-			}
-		},
-		"FAQ_section": {
-			"title": "FAQ",
-			"question_1": {
-				"title": "Jakie projekty realizujemy?",
-				"text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
-			},
-			"question_2": {
-				"title": "Jak aplikować?",
-				"text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
-			},
-			"question_3": {
-				"title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
-				"text": "Szczegóły na stronie ",
-				"link": "Staż."
-			},
-			"question_4": {
-				"title": "Czy można zobaczyć projekty organizacji?",
-				"text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
-			},
-			"question_5": {
-				"title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
-				"text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
-			},
-			"btn_support_project": "Wesprzyj projekt"
-		},
-		"reviews_section": {
-			"title": "Opinie"
-		},
-		"press_about_section": {
-			"title": "Prasa o nas",
-			"btn_read_article": "Przeczytaj materiał"
-		},
-		"partners_section": {
-			"title": "Partnerzy"
-		},
-		"feedback_form": {
-			"title": "Formularz zwrotny",
-			"name": "Imię",
-			"email": "E-mail",
-			"message": "Wiadomość",
-			"message_placeholder": "Twoja wiadomość",
-			"btn_send": "Wyślać",
-			"error_message": {
-				"name": "Wpisz imię",
-				"name_min": "Nazwa musi mieć co najmniej 2 znaki",
-				"name_max": "Nazwa nie może przekraczać 30 znaków",
-				"incorrect_name": "Proszę podać poprawny adres e-mail",
-				"email": "Wprowadź swój email",
-				"incorrect_email": "Proszę podać poprawny adres e-mail",
-				"invalid_ru": "Domeny .ru i .by są niedozwolone",
-				"message": "Wpisz wiadomość",
-				"message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
-				"message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
-				"incorrect_message": "Proszę wprowadzić poprawną wiadomość"
-			}
-		}
-	},
-	"Footer": {
-		"main": "Strona główna",
-		"internship": "Praktyka",
-		"projects": "Projekty",
-		"blog": "Blog",
-		"privacy_policy": "Polityka prywatności",
-		"site_use_policy": "Zasady korzystania ze strony internetowej",
-		"regulations": "Statut",
-		"reporting": "Raporty",
-		"development": "tworzenie ",
-		"rights": "Wszelkie prawa zastrzeżone"
-	},
-	"Page_404": {
-		"title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
-		"btn_home": "Powrót do strony głównej"
-	},
-	"Alert": {
-		"title_error": "Przepraszam, coś poszło nie tak",
-		"title_success": "Twoje dane zostały pomyślnie przesłane",
-		"title_info": "Przepraszamy, strona w fazie rozwoju",
-		"text_error": "Spróbuj ponownie później",
-		"title_infoMiui": "Ta przeglądarka nie obsługuje niektórych funkcji.",
-		"text_infoMiui": "Do poprawnego działania strony użyj innej przeglądarki.",
-		"btn_home": "Spróbuj ponownie"
-	},
-	"Modal_support": {
-		"amount": "Kwota doładowania",
-		"placeholder": "Wprowadź żądaną kwotę",
-		"UAH": "UAN",
-		"another_amount": "Inna kwota",
-		"btn_support": "Wspierać",
-		"thanks_support": "Dziękujemy za wsparcie!",
-		"btn_home": "Powrót do strony głównej",
-		"ariaLabel_btn_close_1": "zamyka okno modalne płatności",
-		"ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
-		"ariaLabel_btn_close_3": "zamyka okno modalne błędu",
-		"error_message": "Max 4 signs!",
-		"error_message_pay": "Przepraszamy, pojawił się błąd"
-	},
-	"Modal_form": {
-		"title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
-		"title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
-		"firstName": "Imię",
-		"lastName": "Nazwisko",
-		"specialization": "Specjalizacja",
-		"email": "E-mail",
-		"city": "Miasto",
-		"city_placeholder": "Kijów",
-		"country": "Kraj",
-		"country_placeholder": "Ukraina",
-		"your_answer": "Twoja odpowiedź",
-		"experience": "Dostępność doświadczenia",
-		"yes": "Więc",
-		"no": "Nie",
-		"motivation": "Jaka jest motywacja do stworzenia produktu?",
-		"saw_questionnaire": "Widziałem ankietę:",
-		"questionnaire_options": {
-			"option_1": "Na stronie Bazy Trainee Ukraina",
-			"option_2": "Na stronie Bazy Educat na Instagramie",
-			"option_3": "Na stronie Bazy Edukacyjnej na Facebooku",
-			"option_4": "na kanale Baza Go Telegram",
-			"option_5": "w poście na LinkedIn"
-		},
-		"rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
-		"read_here": "przeczytaj tutaj",
-		"acquainted": "Zapoznano się z warunkami udziału w projekcie",
-		"agree": "Zgadzam się",
-		"phone": "Telefon",
-		"discord": "Nazwa użytkownika Discord",
-		"discord_tooltip_text": "OSTRZEŻENIE! Skopiuj nazwę użytkownika discord i wyślij w poprawnym formularzu",
-		"discord_tooltip_example": "Przykład:",
-		"linkedin": "Profil na Linkedinie",
-		"linkedin_placeholder": "Link do profilu",
-		"convenient_time": "Dogodny termin konsultacji",
-		"anytime": "kiedykolwiek",
-		"permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
-		"btn_send": "Wysłać",
-		"error_message": {
-			"firstName": "Wpisz swoje imię",
-			"firstName_min": "Nazwa musi mieć co najmniej 2 znaki",
-			"firstName_max": "Nazwa nie może przekraczać 30 znaków",
-			"incorrect_firstName": "Proszę wpisać prawidłowe imię",
-			"lastName": "Wpisz swoje nazwisko",
-			"lastName_min": "Nazwisko musi mieć co najmniej 2 znaki",
-			"lastName_max": "Nazwisko nie może przekraczać 50 znaków",
-			"incorrect_lastName": "Wpisz poprawne nazwisko",
-			"specialization": "Wybierz specjalizację",
-			"email": "Wprowadź swój email",
-			"incorrect_email": "Proszę podać poprawny adres e-mail",
-			"invalid_ru": "Domeny .ru i .by są niedozwolone",
-			"phone": "Wprowadź numer telefonu",
-			"incorrect_phone": "Proszę wpisać poprawny numer telefonu",
-			"discord": "Wpisz swoją nazwę użytkownika Discord",
-			"incorrect_discord": "Wprowadź prawidłową nazwę użytkownika Discord",
-			"linkedin": "Wprowadź swój profil na Linkedin",
-			"invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
-			"convenient_time": "Wybierz dogodny termin konsultacji",
-			"country_max": "Nazwa kraju nie powinna przekraczać 30 znaków",
-			"incorrect_country": "Wprowadź poprawną nazwę kraju",
-			"city_max": "Nazwa miasta nie powinna przekraczać 30 znaków",
-			"incorrect_city": "Wpisz poprawną nazwę miasta",
-			"experience": "Wybierz dostępność doświadczenia",
-			"motivation": "Podaj swoją motywację",
-			"motivation_min": "Tekst musi mieć co najmniej 5 znaków",
-			"motivation_max": "Tekst nie powinien przekraczać 50 znaków",
-			"incorrect_motivation": "Wpisz poprawny tekst",
-			"saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
-			"agree": "Zapoznaj się z warunkami uczestnictwa",
-			"permit": "Wyraź zgodę na przetwarzanie danych osobowych"
-		}
-	},
-	"cookies": {
-		"text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
-		"privacy_policy": "Polityka prywatności."
-	},
-	"Internship": {
-		"invite_participate": {
-			"title": "Zapraszamy do udziału",
-			"card_1": {
-				"text1": "Projektanci UI\\UX specjalizują się w użyteczności i wyglądzie aplikacji oraz stron. To oni tworzą wygodny, atrakcyjny i intuicyjny design, który pozwala jasno i efektywnie korzystać z produktu.",
-				"text2": "Web designer to specjalista, który tworzy wizualną oprawę marki w internecie. Projektuje interfejsy stron, sklepów online, landing page'y i aplikacje dla klienta. Opiekuję się logiczną i wizualną częścią produktu."
-			},
-			"card_2": {
-				"text1": "Frontend developer to programista, który tworzy zewnętrzną część produktu - elementy stron, programów i aplikacji, umożliwiające interakcję z użytkownikiem. Odpowiada za tworzenie wygodnego i estetycznego wyglądu strony na różnych urządzeniach, a także implementuje animacje i inne efekty.",
-				"text2": "Frontend developer pisze kod i tworzy tę część strony, którą widzi i z którą wchodzi w interakcję użytkownik. Na przykład, każdy obrazek, przycisk i litekę na tej stronie stworzył Frontend developer według projektu designera. To ciekawa praca, bo każda nowa linia kodu poprawia wygląd i funkcjonalność strony."
-			},
-			"card_3": {
-				"text1": "Backend developer odpowiada za tworzenie i konfigurację serwerowej części aplikacji, w tym logikę przetwarzania danych, interakcję z bazami danych, rozwój API i zapewnienie bezpieczeństwa informacji.",
-				"text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
-			},
-			"card_4": {
-				"text1": "Fullstack developers posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
-				"text2": "Fullstack developers tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
-			},
-			"card_5": {
-				"text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
-				"text2": "Tester ulepsza programy, ale nie pisze kodu. Znajduje błędy (bugi), opisuje je i przekazuje deweloperom. Mówiąc prosto, tester dba o to, aby wszystko działało poprawnie i spełniało wymagania."
-			},
-			"card_6": {
-				"text1": "Project manager zarządza procesem rozwoju produktu od początku do wydania, odpowiadając zarówno za pracę zespołu, jak i za kontakty z klientem.",
-				"text2": "Ta złożona rola wymaga wielu umiejętności: rozumienia procesu rozwoju i technicznych detali projektu, umiejętności zarządzania ryzykami, komunikacji z różnymi grupami zaangażowanymi w tworzenie produktu. W tej dziedzinie nie ma granic doskonalenia, ponieważ można rozwijać się zarówno w zakresie złożoności produktów, jak i w zarządzaniu."
-			},
-			"card_link": "Czytaj więcej",
-			"btn_text": "Dołącz do projektu"
-		},
-		"join_project_section": {
-			"main_title": "Jak dołączyć do projektu",
-			"card_1": {
-				"title": "Wypełnienie ankiety",
-				"text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
-				"text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
-				"text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
-			},
-			"card_2": {
-				"title": "Przyjąć zaproszenie",
-				"text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
-				"text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_3": {
-				"title": "Dołącz do nas",
-				"text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
-				"text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
-				"text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
-			},
-			"card_4": {
-				"title": "Komunikacja z zespołem",
-				"text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
-				"text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
-				"text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
-			},
-			"step1": "Krok pierwszy",
-			"step2": "Krok drugi",
-			"step3": "Krok trzeci",
-			"step4": "Krok czwarty"
-		},
-		"benefits_internship": {
-			"title": "Korzyści ze stażu",
-			"cards": {
-				"item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
-				"item_2": "Doświadczenie zdobywamy pracując w zespole",
-				"item_3": "Pozbywamy się niepewności i redukujemy stres",
-				"item_4": "Rozumiemy, czemu ma służyć ten projekt",
-				"item_5": "Tworzymy portfolio realnych projektów",
-				"item_6": "Wybieramy pracodawcę świadomie"
-			},
-			"btn_text": "Dołącz do projektu"
-		}
-	},
-	"Blog": {
-		"btn_read_article": "Przeczytaj materiał",
-		"load_more": "Pokaż więcej",
-		"back_btn": "Wróć do artykułów",
-		"placeholder": "Wpisz słowo kluczowe"
-	},
-	"Projects": {
-		"title": "Projekty",
-		"card": {
-			"status": {
-				"done": "Ukończone",
-				"in_progress": "W trakcie opracowywania",
-				"team_formation": "Tworzenie zespołu"
-			},
-			"info": {
-				"start": "Start projektu",
-				"duration": "Czas trwania",
-				"weeks": "{count, plural, =1 {# tydzień} =2 {# tygodnie} =3 {# tygodnie} =4 {# tygodnie} other {# tygodni}}",
-				"complexity": "Złożoność"
-			},
-			"team": "Zespół"
-		},
-		"load_more": "Więcej projektów",
-		"placeholder": "Wpisz słowo kluczowe"
-	},
-	"sorryModal": {
-		"title": "Przepraszamy, nie znaleziono żadnych informacji.",
-		"text": "Określ żądanie"
-	},
-	"ErrorMessageLoading": {
-		"title": "Błąd ładowania treści.",
-		"text": "Odśwież stronę lub spróbuj ponownie później."
-	}
+    "blog_title": "Blog - najnowsze wiadomości o developmencie",
+    "blog_description": "Baza Trainee Ukraine Blog - Zapisz się, aby otrzymywać najnowsze informacje o start projektu i nie przegap tej wyjątkowej okazji, aby się zaangażować.",
+
+    "article_title": "Artykuł"
+  },
+  "TitlePage": {
+    "title_main": "Baza Trainee Ukraine - praktyka dla unior programistów",
+    "title_internship": "Baza Trainee Ukraine – staż developmentu",
+    "title_blog": "Blog - najnowsze wiadomości o developmencie"
+  },
+  "Header": {
+    "main": "Strona główna",
+    "internship": "Praktyka",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "contacts": "Kontakty",
+    "btn_support_project": "Wspierać projekt"
+  },
+  "Main": {
+    "history_project_section": {
+      "title": "Historia projektu",
+      "text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
+      "text1": "W ciągu roku osiągnęliśmy znaczący sukces:",
+      "history": {
+        "item1": {
+          "date": "Kwiecień 2023:",
+          "text": "Start projektu Baza Trainee Ukraine"
+        },
+        "item2": {
+          "date": "Sierpień 2023:",
+          "text": "Pierwszy tysiąc wniosków od uczestników na 17 różnych projektów oraz 8 mentorów"
+        },
+        "item3": {
+          "date": "Listopad 2023:",
+          "text": "Cztery lendingu? dla zgromadzeń wojskowych zebrały ponad 200 000 UAH, ponad 50 zatrudnionych juniorzów"
+        },
+        "item4": {
+          "date": "Grudzień 2023:",
+          "text": "Liczba uczestników wzrosła do 1700. Pomyślnie ukończono 35 projektów"
+        },
+        "item5": {
+          "date": "Marzec 2024:",
+          "text": "Podczas naszej pracy obserwujemy złożoność poziomu projektu — od prostych stron лендінгів do tworzenia pełnoprawnych stron internetowych ze złożonymi blokami wewnętrznymi"
+        }
+      }
+    },
+    "counter_section": {
+      "title": "Nasze postępy",
+      "active_projects": "aktywnych projektów",
+      "involved_participants": "zaangażowanych uczestników",
+      "employed": "zatrudniono"
+    },
+    "mentor_section": {
+      "title": "Mentorowi",
+      "paragraph_1": "Mentor to kolega stojący o dwa poziomy wyżej od mentora, który monitoruje wykonanie zadań i pomaga doradzić lub wyjaśnić, gdy uczestnik nie jest pewien decyzji.",
+      "paragraph_2": "Nasi mentorzy to praktycy wiodących ukraińskich firm IT, którzy starają się wspierać nowicjuszy wiedzą i poszerzać własne umiejętności menadżerskie.",
+      "paragraph_3": "W Baza Trainee Ukraina mentor kieruje kilkuosobowym zespołem jednocześnie przyczyniając się do ich rozwoju zawodowego.",
+      "btn_mentor": "Zostać mentorem",
+      "alt_img": "Na zdjęciu dziewczyna-mentorka"
+    },
+    "our_structure_section": {
+      "title": "Nasza struktura",
+      "item_1": {
+        "title": "BAZA TRAINEE UKRAINE",
+        "text": "Projekt publiczny dla juniorów IT i swetrów, który opiera się na tworzeniu projektów cyfrowych dla sfery społecznej Ukrainy."
+      },
+      "item_2": {
+        "title": "BAZA SKILL",
+        "text": "Własna agencja rekrutacyjna dla naszych absolwentów. Baza sprawdzonych junów z doświadczeniem w rozwoju zespołu."
+      },
+      "item_3": {
+        "title": "BAZA EDUCAT",
+        "text": "Kursy edukacyjne o różnym stopniu trudności dla programistów, uczące pracy zespołowej i rozwoju zespołu. Dodaj umiejętności oprogramowania do wiedzy technicznej i uzyskaj dodatkowe wsparcie na rynku pracy."
+      },
+      "item_4": {
+        "title": "BAZA POLIGON",
+        "text": "Agencja internetowa dla małych i średnich firm. Stworzony w 2023 roku na Ukrainie i dla Ukrainy."
+      }
+    },
+    "FAQ_section": {
+      "title": "FAQ",
+      "question_1": {
+        "title": "Jakie projekty realizujemy?",
+        "text": "Tworzymy prawdziwe projekty cyfrowe o tematyce społecznościowej dla konkretnych klientów lub wewnętrznie. Wszystkie będą dostępne online przez cały rok i możesz je zaprezentować w swoim portfolio. To nie są abstrakcyjne bloki, ale realne produkty, które mają wpływ społeczny."
+      },
+      "question_2": {
+        "title": "Jak aplikować?",
+        "text": "Na naszej stronie internetowej, w zakładce Staże, pod przyciskiem Dołącz do społeczności, znajduje się ankieta dotycząca udziału w pracach organizacji. Aby wziąć udział, potrzebujesz konta w sieci społecznościowej Discord. Jeśli go tam nie ma, otwórz go i skontaktuj się z nami."
+      },
+      "question_3": {
+        "title": "Gdzie mogę zapoznać się z warunkami uczestnictwa?",
+        "text": "Szczegóły na stronie ",
+        "link": "Staż."
+      },
+      "question_4": {
+        "title": "Czy można zobaczyć projekty organizacji?",
+        "text": "Wszystkie projekty, na etapie kompletowania zespołu, w trakcie realizacji lub wydane, umieszczane są na stronie Projekty. Tam też możesz zobaczyć skład zespołu, który go wykonał."
+      },
+      "question_5": {
+        "title": "Czy mogę wybrać język programowania, w którym chcę uczestniczyć?",
+        "text": "Więc. Jeśli jest dwóch lub więcej programistów chcących poćwiczyć Vue.js, Angular lub Flask, wybierzemy projekt dla wybranej technologii. Przyjdźcie ze znajomymi, będzie fajnie!"
+      },
+      "btn_support_project": "Wesprzyj projekt"
+    },
+    "reviews_section": {
+      "title": "Opinie"
+    },
+    "press_about_section": {
+      "title": "Prasa o nas",
+      "btn_read_article": "Przeczytaj materiał"
+    },
+    "partners_section": {
+      "title": "Partnerzy"
+    },
+    "feedback_form": {
+      "title": "Formularz zwrotny",
+      "name": "Imię",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "message_placeholder": "Twoja wiadomość",
+      "btn_send": "Wyślać",
+      "error_message": {
+        "name": "Wpisz imię",
+        "name_min": "Nazwa musi mieć co najmniej 2 znaki",
+        "name_max": "Nazwa nie może przekraczać 30 znaków",
+        "incorrect_name": "Proszę podać poprawny adres e-mail",
+        "email": "Wprowadź swój email",
+        "incorrect_email": "Proszę podać poprawny adres e-mail",
+        "invalid_ru": "Domeny .ru i .by są niedozwolone",
+        "message": "Wpisz wiadomość",
+        "message_min": "Wiadomość musi zawierać co najmniej 10 znaków",
+        "message_max": "Prosimy o ograniczenie wiadomości do 300 znaków",
+        "incorrect_message": "Proszę wprowadzić poprawną wiadomość"
+      }
+    }
+  },
+  "Footer": {
+    "main": "Strona główna",
+    "internship": "Praktyka",
+    "projects": "Projekty",
+    "blog": "Blog",
+    "privacy_policy": "Polityka prywatności",
+    "site_use_policy": "Zasady korzystania ze strony internetowej",
+    "regulations": "Statut",
+    "reporting": "Raporty",
+    "development": "tworzenie ",
+    "rights": "Wszelkie prawa zastrzeżone"
+  },
+  "Page_404": {
+    "title": "Przepraszamy, strona, której szukasz, została przeniesiona lub usunięta.",
+    "btn_home": "Powrót do strony głównej"
+  },
+  "Alert": {
+    "title_error": "Przepraszam, coś poszło nie tak",
+    "title_success": "Twoje dane zostały pomyślnie przesłane",
+    "title_info": "Przepraszamy, strona w fazie rozwoju",
+    "text_error": "Spróbuj ponownie później",
+    "title_infoMiui": "Ta przeglądarka nie obsługuje niektórych funkcji.",
+    "text_infoMiui": "Do poprawnego działania strony użyj innej przeglądarki.",
+    "btn_home": "Spróbuj ponownie"
+  },
+  "Modal_support": {
+    "amount": "Kwota doładowania",
+    "placeholder": "Wprowadź żądaną kwotę",
+    "UAH": "UAN",
+    "another_amount": "Inna kwota",
+    "btn_support": "Wspierać",
+    "thanks_support": "Dziękujemy za wsparcie!",
+    "btn_home": "Powrót do strony głównej",
+    "ariaLabel_btn_close_1": "zamyka okno modalne płatności",
+    "ariaLabel_btn_close_2": "zamyka okno modalne z podziękowaniami",
+    "ariaLabel_btn_close_3": "zamyka okno modalne błędu",
+    "error_message": "Max 4 signs!",
+    "error_message_pay": "Przepraszamy, pojawił się błąd"
+  },
+  "Modal_form": {
+    "title": "Rejestracja do udziału w projekcie Baza Trainee Ukraine",
+    "title_mentor": "Rejestracja mentora na Baza Trainee Ukraine",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "specialization": "Specjalizacja",
+    "email": "E-mail",
+    "city": "Miasto",
+    "city_placeholder": "Kijów",
+    "country": "Kraj",
+    "country_placeholder": "Ukraina",
+    "your_answer": "Twoja odpowiedź",
+    "experience": "Dostępność doświadczenia",
+    "yes": "Więc",
+    "no": "Nie",
+    "motivation": "Jaka jest motywacja do stworzenia produktu?",
+    "saw_questionnaire": "Widziałem ankietę:",
+    "questionnaire_options": {
+      "option_1": "Na stronie Bazy Trainee Ukraina",
+      "option_2": "Na stronie Bazy Educat na Instagramie",
+      "option_3": "Na stronie Bazy Edukacyjnej na Facebooku",
+      "option_4": "na kanale Baza Go Telegram",
+      "option_5": "w poście na LinkedIn"
+    },
+    "rules_participation": "Regulamin udziału w projekcie Baza Trainee Ukraina",
+    "read_here": "przeczytaj tutaj",
+    "acquainted": "Zapoznano się z warunkami udziału w projekcie",
+    "agree": "Zgadzam się",
+    "phone": "Telefon",
+    "discord": "Nazwa użytkownika Discord",
+    "discord_tooltip_text": "OSTRZEŻENIE! Skopiuj nazwę użytkownika discord i wyślij w poprawnym formularzu",
+    "discord_tooltip_example": "Przykład:",
+    "linkedin": "Profil na Linkedinie",
+    "linkedin_placeholder": "Link do profilu",
+    "convenient_time": "Dogodny termin konsultacji",
+    "anytime": "kiedykolwiek",
+    "permit": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą Ukrainy «O ochronie danych osobowych»",
+    "btn_send": "Wysłać",
+    "error_message": {
+      "firstName": "Wpisz swoje imię",
+      "firstName_min": "Nazwa musi mieć co najmniej 2 znaki",
+      "firstName_max": "Nazwa nie może przekraczać 30 znaków",
+      "incorrect_firstName": "Proszę wpisać prawidłowe imię",
+      "lastName": "Wpisz swoje nazwisko",
+      "lastName_min": "Nazwisko musi mieć co najmniej 2 znaki",
+      "lastName_max": "Nazwisko nie może przekraczać 50 znaków",
+      "incorrect_lastName": "Wpisz poprawne nazwisko",
+      "specialization": "Wybierz specjalizację",
+      "email": "Wprowadź swój email",
+      "incorrect_email": "Proszę podać poprawny adres e-mail",
+      "invalid_ru": "Domeny .ru i .by są niedozwolone",
+      "phone": "Wprowadź numer telefonu",
+      "incorrect_phone": "Proszę wpisać poprawny numer telefonu",
+      "discord": "Wpisz swoją nazwę użytkownika Discord",
+      "incorrect_discord": "Wprowadź prawidłową nazwę użytkownika Discord",
+      "linkedin": "Wprowadź swój profil na Linkedin",
+      "invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",
+      "convenient_time": "Wybierz dogodny termin konsultacji",
+      "country_max": "Nazwa kraju nie powinna przekraczać 30 znaków",
+      "incorrect_country": "Wprowadź poprawną nazwę kraju",
+      "city_max": "Nazwa miasta nie powinna przekraczać 30 znaków",
+      "incorrect_city": "Wpisz poprawną nazwę miasta",
+      "experience": "Wybierz dostępność doświadczenia",
+      "motivation": "Podaj swoją motywację",
+      "motivation_min": "Tekst musi mieć co najmniej 5 znaków",
+      "motivation_max": "Tekst nie powinien przekraczać 50 znaków",
+      "incorrect_motivation": "Wpisz poprawny tekst",
+      "saw_questionnaire": "Wybierz, gdzie widziałeś kwestionariusz",
+      "agree": "Zapoznaj się z warunkami uczestnictwa",
+      "permit": "Wyraź zgodę na przetwarzanie danych osobowych"
+    }
+  },
+  "cookies": {
+    "text": "Ta strona korzysta z plików cookies w celu prawidłowego działania i doskonalenia usług. Jeżeli wyrażasz zgodę na ich używanie kliknij OK. Więcej informacji w",
+    "privacy_policy": "Polityka prywatności."
+  },
+  "Internship": {
+    "invite_participate": {
+      "title": "Zapraszamy do udziału",
+      "card_1": {
+        "text1": "Projektanci UI\\UX specjalizują się w użyteczności i wyglądzie aplikacji oraz stron. To oni tworzą wygodny, atrakcyjny i intuicyjny design, który pozwala jasno i efektywnie korzystać z produktu.",
+        "text2": "Web designer to specjalista, który tworzy wizualną oprawę marki w internecie. Projektuje interfejsy stron, sklepów online, landing page'y i aplikacje dla klienta. Opiekuję się logiczną i wizualną częścią produktu."
+      },
+      "card_2": {
+        "text1": "Frontend developer to programista, który tworzy zewnętrzną część produktu - elementy stron, programów i aplikacji, umożliwiające interakcję z użytkownikiem. Odpowiada za tworzenie wygodnego i estetycznego wyglądu strony na różnych urządzeniach, a także implementuje animacje i inne efekty.",
+        "text2": "Frontend developer pisze kod i tworzy tę część strony, którą widzi i z którą wchodzi w interakcję użytkownik. Na przykład, każdy obrazek, przycisk i litekę na tej stronie stworzył Frontend developer według projektu designera. To ciekawa praca, bo każda nowa linia kodu poprawia wygląd i funkcjonalność strony."
+      },
+      "card_3": {
+        "text1": "Backend developer odpowiada za tworzenie i konfigurację serwerowej części aplikacji, w tym logikę przetwarzania danych, interakcję z bazami danych, rozwój API i zapewnienie bezpieczeństwa informacji.",
+        "text2": "Backend developer jest również odpowiedzialny za rozwój i integrację komponentów jak systemy uwierzytelniania, autoryzacji, buforowania, kolejki wiadomości i inne, które zapewniają funkcjonalność i wydajność całej aplikacji. Tworzy 'wnętrze' projektu - pisze kod, dzięki którym wszystko zaczyna działać."
+      },
+      "card_4": {
+        "text1": "Fullstack developers posiadają umiejętności programowania zarówno frontendu (strona klienta), jak i backendu (strona serwera). Mogą oni stworzyć pełnowartościowy produkt od początku do końca i są cenieni na rynku jako wszechstronni specjaliści.",
+        "text2": "Fullstack developers tworzą strony i aplikacje webowe - odpowiadają za ich frontend i backend. Frontend to część strony lub aplikacji, którą użytkownicy widzą w przeglądarce. To system nagłówków i podtytułów, obrazy, linki i przyciski. Backend to logika i funkcjonowanie strony lub aplikacji. To wszystko, co ukryte pod maską - mechanika działań, przechowywanie danych itp."
+      },
+      "card_5": {
+        "text1": "Inżynier QA odpowiada za opracowanie planów testowania aplikacji i stron internetowych. Tester wykrywa wady w działaniu produktu, a co najważniejsze - pomaga uniknąć ich w przyszłości.",
+        "text2": "Tester ulepsza programy, ale nie pisze kodu. Znajduje błędy (bugi), opisuje je i przekazuje deweloperom. Mówiąc prosto, tester dba o to, aby wszystko działało poprawnie i spełniało wymagania."
+      },
+      "card_6": {
+        "text1": "Project manager zarządza procesem rozwoju produktu od początku do wydania, odpowiadając zarówno za pracę zespołu, jak i za kontakty z klientem.",
+        "text2": "Ta złożona rola wymaga wielu umiejętności: rozumienia procesu rozwoju i technicznych detali projektu, umiejętności zarządzania ryzykami, komunikacji z różnymi grupami zaangażowanymi w tworzenie produktu. W tej dziedzinie nie ma granic doskonalenia, ponieważ można rozwijać się zarówno w zakresie złożoności produktów, jak i w zarządzaniu."
+      },
+      "card_link": "Czytaj więcej",
+      "btn_text": "Dołącz do projektu"
+    },
+    "join_project_section": {
+      "main_title": "Jak dołączyć do projektu",
+      "card_1": {
+        "title": "Wypełnienie ankiety",
+        "text_1": "Wypełnij ankietę znajdującą się na stronie klikając przycisk Dołącz do projektu",
+        "text_2": "Zaakceptuj zaproszenie do dołączenia do serwera w Discord",
+        "text_3": "Dodaj specjalizację do swojego pseudonimu, aby zespół mógł zidentyfikować Twoją rolę"
+      },
+      "card_2": {
+        "title": "Przyjąć zaproszenie",
+        "text_1": "Zaakceptuj zaproszenie na serwer Baza Trainee Ukraine, które nadejdzie po wypełnieniu formularza w ciągu 48 godzin",
+        "text_2": "Śledź cotygodniowe ogłoszenia o rozpoczęciu projektów w kanale Ogólne",
+        "text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+      },
+      "card_3": {
+        "title": "Dołącz do nas",
+        "text_1": "Nakręć film wprowadzający na temat zasad uczestnictwa i pracy w programie do zarządzania projektami",
+        "text_2": "Potwierdź zgodę na udział w projekcie oraz umowę NDA",
+        "text_3": "Zaakceptuj zaproszenie na serwer wybranego projektu i poznaj swój nowy zespół"
+      },
+      "card_4": {
+        "title": "Komunikacja z zespołem",
+        "text_1": "Uzgodnij z zespołem harmonogram spotkań i zakres wybranych zadań",
+        "text_2": "Wykonaj zadanie, wypuść produkt i zadeklaruj dostępność doświadczenia praktycznego",
+        "text_3": "Prześlij swoje CV do agencji rekrutacyjnej Baza Skill. Więcej projektów - więcej szans na rozmowę kwalifikacyjną!"
+      },
+      "step1": "Krok pierwszy",
+      "step2": "Krok drugi",
+      "step3": "Krok trzeci",
+      "step4": "Krok czwarty"
+    },
+    "benefits_internship": {
+      "title": "Korzyści ze stażu",
+      "cards": {
+        "item_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
+        "alt_1": "Stosujemy i potwierdzamy wiedzę teoretyczną",
+        "item_2": "Doświadczenie zdobywamy pracując w zespole",
+        "alt_2": "Doświadczenie zdobywamy pracując w zespole",
+        "item_3": "Pozbywamy się niepewności i redukujemy stres",
+        "alt_3": "Pozbywamy się niepewności i redukujemy stres",
+        "item_4": "Rozumiemy, czemu ma służyć ten projekt",
+        "alt_4": "Rozumiemy, czemu ma służyć ten projekt",
+        "item_5": "Tworzymy portfolio realnych projektów",
+        "alt_5": "Tworzymy portfolio realnych projektów",
+        "item_6": "Wybieramy pracodawcę świadomie",
+        "alt_6": "Wybieramy pracodawcę świadomie"
+      },
+      "btn_text": "Dołącz do projektu"
+    }
+  },
+  "Blog": {
+    "btn_read_article": "Przeczytaj materiał",
+    "load_more": "Pokaż więcej",
+    "back_btn": "Wróć do artykułów",
+    "placeholder": "Wpisz słowo kluczowe"
+  },
+  "Projects": {
+    "title": "Projekty",
+    "card": {
+      "status": {
+        "done": "Ukończone",
+        "in_progress": "W trakcie opracowywania",
+        "team_formation": "Tworzenie zespołu"
+      },
+      "info": {
+        "start": "Start projektu",
+        "duration": "Czas trwania",
+        "weeks": "{count, plural, =1 {# tydzień} =2 {# tygodnie} =3 {# tygodnie} =4 {# tygodnie} other {# tygodni}}",
+        "complexity": "Złożoność"
+      },
+      "team": "Zespół"
+    },
+    "load_more": "Więcej projektów",
+    "placeholder": "Wpisz słowo kluczowe"
+  },
+  "sorryModal": {
+    "title": "Przepraszamy, nie znaleziono żadnych informacji.",
+    "text": "Określ żądanie"
+  },
+  "ErrorMessageLoading": {
+    "title": "Błąd ładowania treści.",
+    "text": "Odśwież stronę lub spróbuj ponownie później."
+  }
 }
