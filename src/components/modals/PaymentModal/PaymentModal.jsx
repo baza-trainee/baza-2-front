@@ -19,12 +19,12 @@ export default function PaymentModal() {
   const { locale } = useParams();
 
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
-  const { mutate, isPending, isError, isSuccess, reset } = useMutation({
     mutationFn: (data, locale) => {
       return PaymentService(data, localeUkToUa(locale))
     },
     onSuccess:()=>{
-      isMobile && close()
+      //isMobile && close()
+      close()
       sessionStorage.setItem('isThanks', true)
     }
   })
