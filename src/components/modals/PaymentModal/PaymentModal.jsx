@@ -23,7 +23,7 @@ export default function PaymentModal() {
       return PaymentService(data, localeUkToUa(locale))
     },
     onSuccess:()=>{
-      isMobile && close()
+      //isMobile && close()
       sessionStorage.setItem('isThanks', true)
     }
   })
@@ -40,7 +40,7 @@ export default function PaymentModal() {
       setIsThanks(true)
       open()
     }
-  },[])
+  })
 
   // контент.
   const t = useTranslations("Modal_support");
