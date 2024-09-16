@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
 
 // Можна імпортувати зі спільної конфігурації
-export const locales = ["ua", "en", "pl"];
+export const locales = ["uk", "en", "pl"];
 
 export default getRequestConfig(async ({ locale }) => {
   //Переконайтеся, що вхідний параметр `locale` дійсний
