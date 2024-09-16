@@ -17,15 +17,15 @@ export default function PaymentModal() {
   // Мова сторінки.
   const { locale } = useParams();
 
+  // Отримуємо стан.
+  const isOpen = stateModalPayment(state => state.isOpen);
+  const close = stateModalPayment(state => state.close);
+
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
     mutationFn: (data, locale) => {
       return PaymentService(data, localeUkToUa(locale))
     }
   })
-
-  // Отримуємо стан.
-  const isOpen = stateModalPayment(state => state.isOpen);
-  const close = stateModalPayment(state => state.close);
 
   // контент.
   const t = useTranslations("Modal_support");
