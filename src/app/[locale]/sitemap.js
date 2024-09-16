@@ -1,14 +1,12 @@
 import { getLocale } from "next-intl/server";
 
-export default async function sitemap(req){
-  const host = req?.headers?.host; // Отримання хоста з заголовка
-
+export default async function sitemap(){
   const baseApiUrl = process.env.NEXT_PUBLIC_API2_URL ? 
     process.env.NEXT_PUBLIC_API2_URL : 
   '';  
  
-  const baseUrl = host ? 
-    `https://${host}` : 
+  const baseUrl = process.env.VERCEL_URL ? 
+    `https://${process.env.VERCEL_URL}` : 
     process.env.NEXT_PUBLIC_BASE_URL;
 
   const locale = await getLocale();
