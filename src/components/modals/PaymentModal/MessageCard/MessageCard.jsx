@@ -6,7 +6,10 @@ import { isMobile } from 'react-device-detect';
 export default function MessageCard({handleClose, isError, isThanks}){
   const t = useTranslations("Modal_support");
 
-  if(isMobile && !isError){return null}
+  if(isMobile && !isError){
+    handleClose()
+    return null
+  }
 
   return <div className={styles.thanks}>
     {isThanks && <h2>{t('thanks_support')}</h2>}
