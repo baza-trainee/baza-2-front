@@ -72,7 +72,10 @@ export default function LangDropdown({type}) {
         type="button"
         aria-label={ariaLabelsText(currentLocale).btn_lang}
       >
-        <span>{currentLocale.toUpperCase()}</span>
+        <span>{currentLocale ==='uk'? 
+          'ua'.toUpperCase() : 
+          currentLocale.toUpperCase()}
+        </span>
         <span className={clsx(style.btn_icon, isOpen && style.btn_icon_up)}>
           <Icon name="intl-select-arrow" />
         </span>
@@ -88,7 +91,7 @@ export default function LangDropdown({type}) {
                 type="button"
                 aria-label={ariaLabelsText(currentLocale).btn_item}
               >
-                {item.toUpperCase()}
+                {item==='uk'? 'ua'.toUpperCase() : item.toUpperCase()}
               </button>
             ) : null
           )}
