@@ -45,8 +45,6 @@ if(variant === logoConfig.FOOTER){
     </button>
   );
 }
-
-
   return (
     <Link
       href={logoConfig.URL}
