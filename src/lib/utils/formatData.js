@@ -3,7 +3,7 @@ import { useFormatter } from "next-intl";
 export const formatDate = (timestamp, locale, variant = 'default') => {
 	const date = new Date(timestamp);
 
-	const currentLocale = locale === 'ua' ? 'uk-UA' : locale
+	const currentLocale = locale === 'uk' ? 'uk-UA' : locale
 
 	if (variant === 'default') {
 		const formattedDate = new Intl.DateTimeFormat(currentLocale, {
@@ -38,9 +38,9 @@ export const formatDateToNumeric = (timestamp) => {
 	return formattedDate
 }
 
-export const formatDateToNumericInputDate = ({timestamp, dateString}) => {
+export const formatDateToNumericInputDate = ({ timestamp, dateString }) => {
 
-	if(timestamp){
+	if (timestamp) {
 		const dateTime = new Date(timestamp);
 		const options = {
 			year: 'numeric',
@@ -50,7 +50,7 @@ export const formatDateToNumericInputDate = ({timestamp, dateString}) => {
 		const formattedDate = dateTime.toLocaleDateString('uk', options)
 		return formattedDate.split('.').reverse().join('-')
 	}
-	if(dateString){
+	if (dateString) {
 		const timestamp = Date.parse(dateString)
 		return timestamp
 	}

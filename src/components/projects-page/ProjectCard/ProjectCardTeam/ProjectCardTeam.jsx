@@ -5,6 +5,7 @@ import React from "react";
 import styles from "./ProjectCardTeam.module.scss";
 import { createKey } from "@/src/lib/utils/createKey";
 import { useTranslations } from "next-intl";
+import { localeUkToUa } from "@/src/lib/utils/localeUkToUa";
 
 const orderList = [
   "Product Owner",
@@ -35,9 +36,15 @@ const ProjectCardTeam = ({ project, handleClose, isShowed }) => {
     rolesAndMembers[roleName].push(member.teamMember);
   });
 
-  const sortedRoles = Object.keys(rolesAndMembers).sort(
-    (a, b) => orderList.indexOf(a) - orderList.indexOf(b)
-  );
+  const sortedRoles = Object.keys(rolesAndMembers).sort((a, b) => {
+    const indexA = orderList.indexOf(a);
+    const indexB = orderList.indexOf(b);
+
+    const sortA = indexA === -1 ? Infinity : indexA;
+    const sortB = indexB === -1 ? Infinity : indexB;
+
+    return sortA - sortB;
+  });
 
   return (
     <div className={clsx(styles.projectTeam, isShowed && styles.showed)}>
@@ -56,16 +63,22 @@ const ProjectCardTeam = ({ project, handleClose, isShowed }) => {
             <div className={styles.members} key={createKey()}>
               <h4 className={styles.titleRole}>{role}</h4>
 
-              {rolesAndMembers[role].map((teamMember) => (
-                <Link
-                  key={createKey()}
-                  className={styles.member}
-                  href={teamMember?.profileUrl}
-                  target="_blank"
-                >
-                  {teamMember.name[locale]}
-                </Link>
-              ))}
+              {rolesAndMembers[role]
+                .sort((a, b) =>
+                  a.name[localeUkToUa(locale)].localeCompare(
+                    b.name[localeUkToUa(locale)]
+                  )
+                )
+                .map((teamMember) => (
+                  <Link
+                    key={createKey()}
+                    className={styles.member}
+                    href={teamMember?.profileUrl}
+                    target="_blank"
+                  >
+                    {teamMember.name[localeUkToUa(locale)]}
+                  </Link>
+                ))}
             </div>
           ))}
         </div>
