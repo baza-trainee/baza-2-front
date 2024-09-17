@@ -34,6 +34,19 @@ export default function Logo({
     });
   };
 
+if(variant === logoConfig.FOOTER){
+  return (
+    <button
+      className={clsx(logoClass, className)}
+      onClick={scrollToTop}
+      aria-label={ariaLabel}
+    >
+      <Icon className={styles.logo} name="logo" />
+    </button>
+  );
+}
+
+
   return (
     <Link
       href={logoConfig.URL}

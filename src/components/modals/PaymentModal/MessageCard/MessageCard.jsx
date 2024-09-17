@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 import styles from './MessageCard.module.scss';
+import { useTranslations } from 'next-intl';
 import ButtonLink from '@/src/components/shared/ButtonLink/ButtonLink';
 
 export default function MessageCard({handleClose, isError, isThanks}){

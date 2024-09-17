@@ -1,18 +1,18 @@
 "use client";
-import { useCallback, useEffect, useState } from 'react';
+import styles from './PaymentModal.module.scss';
+import { useCallback, useState } from 'react';
 import { useTranslations } from "next-intl";
 import { isMobile } from 'react-device-detect';
-import LayoutModal from '../LayoutModal/LayoutModal';
-import stateModalPayment from '@/src/state/stateModalPayment';
-import styles from './PaymentModal.module.scss';
-import FormPayment from './FormPayment/FormPayment';
-import MessageCard from './MessageCard/MessageCard';
-import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import { useParams } from 'next/navigation';
-import Loader from '../../shared/loader/Loader';
 import { useMutation } from '@tanstack/react-query';
 import { PaymentService } from '@/src/api/payment';
 import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
+import LayoutModal from '../LayoutModal/LayoutModal';
+import stateModalPayment from '@/src/state/stateModalPayment';
+import FormPayment from './FormPayment/FormPayment';
+import MessageCard from './MessageCard/MessageCard';
+import CloseBtn from '../../shared/CloseBtn/CloseBtn';
+import Loader from '../../shared/loader/Loader';
 
 export default function PaymentModal() {
   // Мова сторінки.
