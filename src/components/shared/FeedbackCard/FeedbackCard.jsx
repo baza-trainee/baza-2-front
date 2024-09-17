@@ -3,6 +3,7 @@ import styles from "./FeedbackCard.module.scss";
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import clsx from "clsx";
 import { formatDate } from "@/src/lib/utils/formatData";
+import { localeUkToUa } from "@/src/lib/utils/localeUkToUa";
 
 const FeedbackCard = ({
   imageUrl,
