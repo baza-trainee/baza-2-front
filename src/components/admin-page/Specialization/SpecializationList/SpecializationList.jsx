@@ -7,6 +7,7 @@ import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
+import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
 
 export default function SpecializationList({data, hendleRemove}) {
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function SpecializationList({data, hendleRemove}) {
       {data?.length ? <ul className={styles.list}>
         {data.map((el)=>{
           return <li key={createKey()} className={styles.item}>
-           <h3>{el.name[locale]}</h3>
+           <h3>{el.name[localeUkToUa(locale)]}</h3>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 

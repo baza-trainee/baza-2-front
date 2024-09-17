@@ -47,7 +47,7 @@ export default function LangDropdown({type}) {
 
   const ariaLabelsText = (locale) => {
     const labels = {
-      ua: {
+      uk: {
         btn_lang: "для зміни мови сторінки. вибрана мова",
         btn_item: "обрати мову",
       },

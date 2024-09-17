@@ -85,9 +85,9 @@ const Timeline = () => {
               style={{ gridRow: index + 1 }}
               key={item.id}
             >
-              <h2 className={clsx(styles.title, styles.marker)}>
+              <h3 className={clsx(styles.title, styles.marker)}>
                 {t(`${item.id}.${item.title}`)}
-              </h2>
+              </h3>
               <p className={styles.text}>{t(`${item.id}.${item.text}`)}</p>
             </li>
           ))}

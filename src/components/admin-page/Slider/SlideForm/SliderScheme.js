@@ -30,42 +30,42 @@ export const SliderScheme = z
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Заголовок мінімум 5 знаків' })
     .max(40, { message: 'Заголовок максимум 40 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .regex(patternText, { message: 'Присутні некоректні символи' }),
 
 		title_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Заголовок мінімум 5 знаків'})
     .max(40, { message: 'Заголовок максимум 40 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .regex(patternText, { message: 'Присутні некоректні символи' }),
 
 		title_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Заголовок мінімум 5 знаків' })
     .max(40, { message: 'Заголовок максимум 40 знаків' })
-    .regex(patternText, { message: 'Присутні не коректні символи' }),
+    .regex(patternText, { message: 'Присутні некоректні символи' }),
 
     text_ua: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків'})
     .transform(normalizeTextValue)
-    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні некоректні символи' })),
  
     text_en: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(5, { message: 'Текст мінімум 5 знаків' }) 
     .transform(normalizeTextValue)
-    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні некоректні символи' })),
 
     text_pl: z.string()
     .trim()
     .min(1, { message: "Це поле обов'язкове" })
     .min(5, { message: 'Текст мінімум 5 знаків' })
     .transform(normalizeTextValue)
-    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні не коректні символи' })),
+    .pipe(z.string().max(360, { message: 'Текст максимум 360 знаків' }).regex(patternText, { message: 'Присутні некоректні символи' })),
 
 })
 

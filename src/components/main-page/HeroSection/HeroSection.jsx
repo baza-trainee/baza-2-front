@@ -3,6 +3,8 @@ import styles from "./HeroSection.module.scss";
 import clsx from "clsx";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { isMIUI} from 'react-device-detect';
+import { useParams } from "next/navigation";
+import { localeUkToUa } from "@/src/lib/utils/localeUkToUa";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSliders } from "@/src/api/hero-slider";
 import Carousel from "../../shared/Carousel/Carousel";
@@ -10,7 +12,6 @@ import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton"
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import { useParams } from "next/navigation";
 import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
 export default function HeroSection() {
@@ -38,7 +39,7 @@ export default function HeroSection() {
             },
           }}
           renderItem={(item) => (
-            <HeroCard title={item.title[locale]} desc={item.subtitle[locale]} img={item.imageUrl} />
+            <HeroCard title={item.title[localeUkToUa(locale)]} desc={item.subtitle[localeUkToUa(locale)]} img={item.imageUrl} />
           )}
         />
 

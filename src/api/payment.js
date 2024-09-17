@@ -1,7 +1,8 @@
 import instance from "./config/instance"
+import { isMobile } from 'react-device-detect';
 
 export async function PaymentService(paymentAmount="0", locale="ua"){
-
+	
 	const paymentData = {
 		transactionType: 'CREATE_INVOICE',
 		merchantDomainName: window.location.hostname,
@@ -20,9 +21,9 @@ export async function PaymentService(paymentAmount="0", locale="ua"){
 	try {
 		const res = await instance.post('/payment', {...paymentData})
     if (res.data?.invoiceUrl) {
-			//window.location.href = response.data.invoiceUrl;
-			window.open(res.data.invoiceUrl);
-			//callback('ok')
+			if(isMobile){
+				window.location.assign(res.data.invoiceUrl)
+			}else window.open(res.data.invoiceUrl);
 		}
 		return res.data
 	} catch (error) {
