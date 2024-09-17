@@ -1,6 +1,7 @@
 "use client";
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from "next-intl";
+import { isMobile } from 'react-device-detect';
 import LayoutModal from '../LayoutModal/LayoutModal';
 import stateModalPayment from '@/src/state/stateModalPayment';
 import styles from './PaymentModal.module.scss';
@@ -20,10 +21,24 @@ export default function PaymentModal() {
   // Отримуємо стан.
   const isOpen = stateModalPayment(state => state.isOpen);
   const close = stateModalPayment(state => state.close);
+  const [ processing, setProcessing ]= useState(false)
+  const [ isThanks, setIsThanks ]= useState(false)
+
+  function thanks() {
+    if(isMobile){
+      setProcessing(true)
+      setTimeout(()=>{
+        setProcessing(false)
+        setIsThanks(true)
+      },3000)
+    }
+  }
 
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
-    mutationFn: (data, locale) => {
-      return PaymentService(data, localeUkToUa(locale))
+    mutationFn: (amount, locale) => {
+      return PaymentService(amount, locale)
+    },onSuccess:()=>{
+      thanks()
     }
   })
 
@@ -31,23 +46,40 @@ export default function PaymentModal() {
   const t = useTranslations("Modal_support");
 
   const handleClose = useCallback(() => {
+    setProcessing(false)
+    setIsThanks(false)
     reset()
     close()
   })
 
   const handleSubmit = (amount) => {
-    mutate(amount, locale)
+    mutate(amount, localeUkToUa(locale))
   };
+
+  function renderContent() {
+    if(isError){
+      return <MessageCard handleClose={handleClose} isError={isError}/>
+    }else if(isSuccess){
+      if(isMobile){
+        if(processing){
+          return <FormPayment handleSubmit={handleSubmit}/>
+        }
+        if(isThanks){
+          return <MessageCard handleClose={handleClose} isThanks={isThanks}/>
+        }
+      }else return <MessageCard handleClose={handleClose} isThanks={isSuccess}/>
+    }
+    else return <FormPayment handleSubmit={handleSubmit}/>
+  }
+
+
 
   return <LayoutModal isOpen={isOpen} handleClose={handleClose}>
     <div className={styles.wrapper}>
       <div className={styles.card}>
         {isPending && <Loader/>}
-        
-        {isError | isSuccess ?
-        <MessageCard handleClose={handleClose} isError={isError} isThanks={isSuccess}/>:
-        <FormPayment handleSubmit={handleSubmit}/>
-        }
+        {processing && <Loader/>}
+        { renderContent() }
 
         <CloseBtn className={styles.close_btn}
           ariaLabel={ isSuccess ? 

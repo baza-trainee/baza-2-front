@@ -22,7 +22,7 @@ export async function PaymentService(paymentAmount="0", locale="ua"){
 		const res = await instance.post('/payment', {...paymentData})
     if (res.data?.invoiceUrl) {
 			if(isMobile){
-				window.location.href = res.data.invoiceUrl
+				window.location.assign(res.data.invoiceUrl)
 			}else window.open(res.data.invoiceUrl);
 		}
 		return res.data
