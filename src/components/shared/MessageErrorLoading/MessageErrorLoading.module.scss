@@ -12,7 +12,7 @@
   .error{
     @include mix.apply-font-styles(var.$h2-font);
     font-size: 20px;
-
+    text-align: center;
     @include mix.media-q("md") {
       font-size: 24px;
     }
