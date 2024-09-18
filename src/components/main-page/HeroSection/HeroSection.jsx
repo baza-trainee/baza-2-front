@@ -53,7 +53,7 @@ export default function HeroSection() {
         /></>
       }
 
-      {isError && <MessageErrorLoading/>}
+      {isError && <MessageErrorLoading className={styles.messageError}/>}
     </section>
   );
 }
