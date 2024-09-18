@@ -1,6 +1,6 @@
-import { Icon } from "../Icon/Icon";
 import styles from './CloseBtn.module.scss'
 import clsx from "clsx";
+import { Icon } from "../Icon/Icon";
 
 export default function CloseBtn({ ariaLabel, onClick, className, vaiant }) {
   return <button 

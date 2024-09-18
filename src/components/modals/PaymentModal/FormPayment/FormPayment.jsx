@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
-import { useTranslations } from "next-intl";
 import styles from './FormPayment.module.scss';
 import clsx from "clsx";
+import { useRef, useState } from 'react';
+import { useTranslations } from "next-intl";
 import { Icon } from '@/src/components/shared/Icon/Icon';
 import MainButton from '@/src/components/shared/MainButton/MainButton';
 
