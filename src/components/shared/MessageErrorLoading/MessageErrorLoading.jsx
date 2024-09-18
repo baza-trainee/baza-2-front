@@ -1,7 +1,8 @@
-import { useTranslations } from 'next-intl';
 import styles from './MessageErrorLoading.module.scss'
+import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
 
-export default function MessageErrorLoading({variant='main'}) {
+export default function MessageErrorLoading({variant='main', className}) {
   // main | admin | search
   const t = useTranslations("ErrorMessageLoading");
 
@@ -26,7 +27,7 @@ export default function MessageErrorLoading({variant='main'}) {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={clsx(styles.wrapper,className)}>
       <p className={styles.error}>{getMessage(variant).text1}</p>
       <p className={styles.error}>{getMessage(variant).text2}</p>
     </div>

@@ -27,6 +27,6 @@ export async function PaymentService(paymentAmount="0", locale="ua"){
 		}
 		return res.data
 	} catch (error) {
-		throw new Error(error?.response?.data?.message)
+		throw new Error(error)
 	}
 }
