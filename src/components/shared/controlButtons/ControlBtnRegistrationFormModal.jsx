@@ -10,7 +10,7 @@ export default function ControlBtnRegistrationFormModal({
   type='mentor'
 }) {
   const open = useStateModal((state) => state.open)
-  // >>> !! Прибрати коли буде готовий СРМ роутер для форми учасника
+  // >>> !! Прибрати коли буде готовий СРМ роут для форми учасника
   const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/edit'
 
   const hendleClick=(type)=>{
@@ -22,7 +22,7 @@ export default function ControlBtnRegistrationFormModal({
       }else window.open(url);
     }
   }
-// <<<!! Прибрати коли буде готовий СРМ роутер для форми учасника
+// <<<!! Прибрати коли буде готовий СРМ роут для форми учасника
   return <MainButton 
     className={className}
     onClick={()=>{
