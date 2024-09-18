@@ -1,6 +1,5 @@
 import { z } from "zod";
-import { patternEmail, patternEmailNonRu, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
-import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin } from "@/src/constants/regulars";
 
 export const mentorDefaultValues= {
   firstName: "",
@@ -13,13 +12,6 @@ export const mentorDefaultValues= {
   convenient_time:"",
   agree: false,
 }
-
-const validatePhone=(value)=>{
-  if(value === '+380'){
-    return false
-  }else true
-}
-
 
 export const MentorSchema = z
 	.object({

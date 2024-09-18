@@ -5,8 +5,8 @@ import styles from './AdminModal.module.scss';
 import CloseBtn from '../../shared/CloseBtn/CloseBtn';
 import MainButton from '../../shared/MainButton/MainButton';
 
-export default function AdminModal(
-  {handleCallback=()=>{}, 
+export default function AdminModal({
+  handleCallback=()=>{}, 
   handleOkCallback=()=>{}, 
   isOpen, 
   title, 

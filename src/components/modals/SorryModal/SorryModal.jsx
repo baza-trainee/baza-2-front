@@ -1,10 +1,10 @@
 "use client";
+import styles from "./SorryModal.module.scss";
+import { useTranslations } from "next-intl";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import LayoutModal from "../LayoutModal/LayoutModal";
-import styles from "./SorryModal.module.scss";
 import CloseBtn from "../../shared/CloseBtn/CloseBtn";
 import MainButton from "../../shared/MainButton/MainButton";
-import { useTranslations } from "next-intl";
 
 export default function SorryModal({ handleCallback }) {
   // контент.
