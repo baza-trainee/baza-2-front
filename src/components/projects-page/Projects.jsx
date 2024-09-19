@@ -61,9 +61,8 @@ const Projects = () => {
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
         {isLoading && <Loader />}
-        {isError ? (
-          <MessageErrorLoading />
-        ) : (
+        {isError && <MessageErrorLoading className={styles.fullHeight} />}
+        {!isError && !isLoading && (
           <>
             <h1 className={styles.title}>{t("title")}</h1>
             <InputSearch
