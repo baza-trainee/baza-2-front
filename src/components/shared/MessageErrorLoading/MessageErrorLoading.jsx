@@ -27,7 +27,7 @@ export default function MessageErrorLoading({variant='main', className}) {
   }
 
   return (
-    <div className={clsx(styles.wrapper,className)}>
+    <div className={clsx(styles.wrapper, className)}>
       <p className={styles.error}>{getMessage(variant).text1}</p>
       <p className={styles.error}>{getMessage(variant).text2}</p>
     </div>
