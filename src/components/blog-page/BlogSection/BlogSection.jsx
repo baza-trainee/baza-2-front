@@ -57,32 +57,36 @@ const BlogSection = () => {
 
   return (
     <section className={styles.section}>
-      <InputSearch
-        defaultValue={searchQuery}
-        onSubmit={handleSearchChange}
-        placeholder={t("placeholder")}
-      />
       {isLoading && <Loader />}
-      {isError && <MessageErrorLoading />}
-      <div className={styles.wrapper}>
-        <SocialIcons classNameCustom={styles.icons} />
-        <div className={styles.pages}>
-          {data?.pages.map((page) => (
-            <div key={createKey()} className={styles.page}>
-              {page.results.map((item) => (
-                <BlogCard
-                  key={createKey()}
-                  id={item._id}
-                  img={createImageUrl(item.imageUrl)}
-                  title={item.title}
-                  description={item.text}
-                  date={item.date}
-                />
+      {isError && <MessageErrorLoading className={styles.fullHeight} />}
+      {!isError && !isLoading && (
+        <>
+          <InputSearch
+            defaultValue={searchQuery}
+            onSubmit={handleSearchChange}
+            placeholder={t("placeholder")}
+          />
+          <div className={styles.wrapper}>
+            <SocialIcons classNameCustom={styles.icons} />
+            <div className={styles.pages}>
+              {data?.pages.map((page) => (
+                <div key={createKey()} className={styles.page}>
+                  {page.results.map((item) => (
+                    <BlogCard
+                      key={createKey()}
+                      id={item._id}
+                      img={createImageUrl(item.imageUrl)}
+                      title={item.title}
+                      description={item.text}
+                      date={item.date}
+                    />
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
       <LoadMore
         className={clsx(styles.loadMore, !hasNextPage && styles.hidden)}
         disabled={isFetchingNextPage}
