@@ -13,6 +13,7 @@ import CarouselPagination from "../../shared/Carousel/CarouselPagination/Carouse
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
+import Loader from "../../shared/loader/Loader";
 
 export default function HeroSection() {
   const open = stateUseAlert(state => state.open);
@@ -20,7 +21,7 @@ export default function HeroSection() {
    const { locale } = useParams();
   if(isMIUI){ open('infoMiui',false) }
 
-  const { isError, data } = useQuery({ queryKey: ['slider'], 
+  const {isLoading, isError, data } = useQuery({ queryKey: ['slider'], 
     queryFn:()=>{return getAllSliders()}});
 
   return (
@@ -52,7 +53,7 @@ export default function HeroSection() {
           className={clsx("custom-pagination-hero", styles.pagination)}
         /></>
       }
-
+      {isLoading && <Loader />}
       {isError && <MessageErrorLoading className={styles.messageError}/>}
     </section>
   );
