@@ -1,9 +1,11 @@
+@use "sass:math";
 @use "../../styles/variables" as var;
 @use "../../styles/mixins" as mx;
 
 .section {
   margin-top: 120px;
   padding-bottom: 48px;
+  min-height: calc(100vh - 120px);
 }
 
 .projectsContainer {
@@ -65,4 +67,8 @@
   &.hidden {
     display: none;
   }
+}
+
+.fullHeight {
+  min-height: calc(100vh - 160px);
 }
