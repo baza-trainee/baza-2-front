@@ -163,11 +163,11 @@
   },
   "Alert": {
     "title_error": "Sorry, something went wrong",
-    "title_errorUser": "User with this Email already exists",
+    "title_errorUser": "A user with this email address is already registered.",
     "title_success": "Your data has been sent successfully",
     "title_info": "Sorry, site under development",
     "text_error": "Try again later",
-    "text_errorUser": "Check your Email and try again",
+    "text_errorUser": "Use a different email address.",
     "title_infoMiui": "This browser does not support some features.",
     "text_infoMiui": "Use a different browser for the correct operation of the site.",
     "btn_home": "Try again"

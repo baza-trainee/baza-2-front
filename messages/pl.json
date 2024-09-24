@@ -163,11 +163,11 @@
   },
   "Alert": {
     "title_error": "Przepraszam, coś poszło nie tak",
-    "title_errorUser": "Użytkownik z tym adresem e-mail już istnieje",
+    "title_errorUser": "Użytkownik o tym adresie e-mail jest już zarejestrowany.",
     "title_success": "Twoje dane zostały pomyślnie przesłane",
     "title_info": "Przepraszamy, strona w fazie rozwoju",
     "text_error": "Spróbuj ponownie później",
-    "text_errorUser": "Sprawdź swoją pocztę e-mail i spróbuj ponownie",
+    "text_errorUser": "Użyj innego adresu e-mail.",
     "title_infoMiui": "Ta przeglądarka nie obsługuje niektórych funkcji.",
     "text_infoMiui": "Do poprawnego działania strony użyj innej przeglądarki.",
     "btn_home": "Spróbuj ponownie"
