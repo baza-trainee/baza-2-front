@@ -1,6 +1,6 @@
 import axios from 'axios'
 //const baseURL = 'https://baza2.crabdance.com/api/v1';
-// baza-trainee 2
+// baza-trainee 2 instance-baza-crm
 
 const instanceBaza2 = axios.create({
 	baseURL: process.env.NEXT_PUBLIC_API2_URL,
