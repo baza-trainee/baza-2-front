@@ -2,37 +2,38 @@ import instanceBaza2 from './config/instance-baza2';
 
 const projectsEndpoint = '/projects'
 
-export async function  getAllProjects({ page, search, limit }){
+export async function getAllProjects({ page, search, limit }) {
 	const params = new URLSearchParams();
 	if (page) params.append('page', page.toString());
 	if (search) params.append('search', search);
 	if (limit) params.append('limit', limit.toString());
 
 	const res = await instanceBaza2.get(`${projectsEndpoint}?${params.toString()}`)
-		return res.data
+	return res.data
 }
 
-export async function  createNewProject(newProject){
+export async function createNewProject(newProject) {
 	const res = await instanceBaza2.post(projectsEndpoint, newProject, {
-		headers: { 'Content-Type': 'multipart/form-data' }})
-		return res
+		headers: { 'Content-Type': 'multipart/form-data' }
+	})
+	return res
 }
 
-export async function  getProjectById(id){
+export async function getProjectById(id) {
 	const res = await instanceBaza2.get(`${projectsEndpoint}/${id}`)
-		return res.data
+	return res.data
 }
 
-export async function  deleteProjectById(id){
+export async function deleteProjectById(id) {
 	const res = await instanceBaza2.delete(`${projectsEndpoint}/${id}`)
-		return res
+	return res
 }
 
-export async function  updateProjectById(id, updProject){
+export async function updateProjectById(id, updProject) {
 	const res = await instanceBaza2.put(`${projectsEndpoint}/${id}`, updProject, {
-		  headers: { 'Content-Type': 'multipart/form-data' },
-     })
-		return res.data
+		headers: { 'Content-Type': 'multipart/form-data' },
+	})
+	return res.data
 }
 
 // Example Value Schema
