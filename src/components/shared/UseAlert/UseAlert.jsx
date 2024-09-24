@@ -7,7 +7,7 @@ import stateUseAlert from '@/src/state/stateUseAlert';
 import { useEffect } from 'react';
 import { createPortal } from "react-dom";
 
-export default function UseAlert({title='',text='',handleClose=()=>{}}){
+export default function UseAlert({title='', text='', handleClose=()=>{}}){
   const t = useTranslations("Alert");
   const isOpen = stateUseAlert(state => state.isOpen);
   const type = stateUseAlert(state => state.type);

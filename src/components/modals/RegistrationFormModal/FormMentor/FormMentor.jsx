@@ -28,7 +28,8 @@ export default function FormMentor({handleClose}) {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-    reset
+    reset,
+    getValues
   } = useForm({ defaultValues: {...mentorDefaultValues}, resolver: zodResolver(MentorSchema), mode: 'onBlur'});
 
   const [ specialization, setSpecialization ] = useState('');
@@ -70,6 +71,12 @@ export default function FormMentor({handleClose}) {
   const inputValidPhone = (event) =>{
     setPhone(formatPhoneNumber(event.target.value))
   };
+ // Перевірка чи потрібна підказка для поля discord
+  const isTooltipText = ()=>{
+    if(getValues("discord") && !errors.discord){
+      return false
+    }else return true
+  }
 
   return (
     <form onSubmit={handleSubmit(mutate)} className={styles.form_mtntor}>
@@ -181,7 +188,7 @@ export default function FormMentor({handleClose}) {
             label={t("discord")}
           />
 
-          <TooltipText className={styles._active}/>
+         {isTooltipText() &&  <TooltipText className={styles._active}/>}
         </li>
 
         <li>

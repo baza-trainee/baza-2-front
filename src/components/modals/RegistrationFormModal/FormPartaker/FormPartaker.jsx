@@ -1,7 +1,7 @@
 "use client";
 import styles from './FormPartaker.module.scss';
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -28,7 +28,8 @@ export default function FormPartaker({handleClose}) {
     register,
     handleSubmit,
     formState: {  errors, isValid, isDirty },
-    reset
+    reset,
+    getValues
   } = useForm({ 
     defaultValues: {...partakerDefaultValues}, 
     resolver: zodResolver(PartakerSchema), 
@@ -54,7 +55,7 @@ export default function FormPartaker({handleClose}) {
     handleClose()
   }
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, error } = useMutation({
     mutationFn: (data) => {
       return PartakerFormService(data)
     },
@@ -62,10 +63,16 @@ export default function FormPartaker({handleClose}) {
       open('success')
       resetForm()
     },
-    onError: () => {
-      open('error')
-    },
   })
+
+  // Визначення текст помилки
+  useEffect(()=>{
+    if(error){
+      if(error?.response?.data?.message === "Request with this email exists"){
+        open('errorUser', false)
+      }else open('error')
+    }else return
+  },[error])
 
   const isDisabled = () => {
     if (Object.keys(errors).length > 0) {
@@ -79,6 +86,13 @@ export default function FormPartaker({handleClose}) {
   const inputValidPhone = (event) =>{
     setPhone(formatPhoneNumber(event.target.value))
   };
+
+ // Перевірка чи потрібна підказка для поля discord
+  const isTooltipText = ()=>{
+    if(getValues("discord") && !errors.discord){
+      return false
+    }else return true
+  }
 
   return (
     <form onSubmit={handleSubmit(mutate)} className={styles.form_partaker}>
@@ -181,7 +195,6 @@ export default function FormPartaker({handleClose}) {
           <InputField
             id={"city"}
             maxLength={35}
-            required={false}
             className={styles.item}
             placeholder={t("city_placeholder")}
             registerOptions={register("city", { ...PartakerSchema.city })}
@@ -197,7 +210,6 @@ export default function FormPartaker({handleClose}) {
           <InputField
             id={"country"}
             maxLength={35}
-            required={false}
             className={styles.item}
             placeholder={t("country_placeholder")}
             registerOptions={register("country", { ...PartakerSchema.country })}
@@ -223,7 +235,7 @@ export default function FormPartaker({handleClose}) {
             label={t("discord")}
           />
 
-          <TooltipText className={styles._active}/>
+          {isTooltipText() && <TooltipText className={styles._active}/>}
         </li>
 
         <li>

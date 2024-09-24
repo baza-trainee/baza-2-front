@@ -34,6 +34,10 @@
     &.error{
       color: var.$secondary-error;
     }
+
+    &.errorUser{
+      color: var.$secondary-error;
+    }
     
     &.success{
       color: var.$secondary-positive;

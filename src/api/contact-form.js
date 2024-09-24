@@ -1,8 +1,10 @@
+import instanceBazaCrm from "./config/instance-baza-crm";
 import instanceBaza2 from "./config/instance-baza2";
 // Пошта адміністратора !! змінити на актуальну .env !!
 // export const EMAIL_ADMIN ='brodich_vlad@ukr.net';
 const EMAIL_ADMIN = process.env.NEXT_PUBLIC_EMAIL_ADMIN
 
+// Форма фідбек
 export async function ContactFormService(data){
 
   const body =({ firstName, email, message })=>{
@@ -17,7 +19,9 @@ export async function ContactFormService(data){
 	const res = await instanceBaza2.post('/feedback/sendFeedback', {...body(data)})
 		return res.data
 }
-// {
+
+// Форма ментора
+//  Схема {
 //   "firstName": "Alex",
 //   "lastName": "Popovich",
 //   "email": "admin@gmail.com",
@@ -30,23 +34,49 @@ export async function ContactFormService(data){
 // }
 export async function MentorFormService(data){
 
-  const body =({ firstName, lastName, email, phone, discord, linkedin, specialization, convenient_time})=>{
+  const body =({ 
+    firstName, 
+    lastName, 
+    email, 
+    phone, 
+    discord, 
+    linkedin, 
+    specialization, 
+    convenient_time
+  })=>{
     return {
-      "firstName": firstName,
-      "lastName": lastName,
-      "email": email,
-      "phone": phone,
-      "discord": discord,
-      "linkedin": linkedin,
-      "specialization": specialization,
-      "convenient_time": convenient_time,
-      "to": EMAIL_ADMIN
+      firstName,
+      lastName,
+      email,
+      phone,
+      discord,
+      linkedin,
+      specialization,
+      convenient_time,
+      to: EMAIL_ADMIN
     }
   }
 
 	const res = await instanceBaza2.post('/feedback/mentor', {...body(data)})
 		return res
 }
+
+// Форма учасника
+// Схема {
+//   "city": "Lviv" *,
+//   "country": "Ukraine" *,
+//   "discord": "admin#4536" *,
+//   "email": "admin@gmail.com" *,
+//   "firstName": "Adam" *,
+//   "lastName": "Smasher" *,
+//   "linkedin": "link" *,
+//   "phone": "+380 565 454 352" *,
+//   "specialization": "Backend" *
+
+//    experience: 'string',
+//    motivation: 'string',
+//    sawQuestionnaire: 'string'
+// }
 
 export async function PartakerFormService(data){
 
@@ -66,26 +96,23 @@ export async function PartakerFormService(data){
   })=>{
 
   const newBoody = {      
-    firstName: firstName,
-    lastName: lastName,
-    specialization: specialization,
-    email: email,
-    phone: phone,
-    discord: discord,
-    linkedin: linkedin,
-    experience: experience,
-    motivation: motivation,
-    sawQuestionnaire: sawQuestionnaire
-  }   
-  if(city){newBoody.city = city} 
-  if(country){newBoody.country = country}  
+    firstName, 
+    lastName, 
+    email, 
+    phone, 
+    city,
+    country,
+    discord, 
+    linkedin, 
+    specialization, 
+
+    experience,
+    motivation,
+    sawQuestionnaire
+  }    
     return newBoody
   }
 
-  const res = setTimeout(()=>{
-    console.log({...body(data)});
-  },3000)
-  return res
-	// const res = await instanceBaza2.post('/feedback/mentor', {...body(data)})
-	// 	return res
+	const res = await instanceBazaCrm.post('/userRequest', {...body(data)})
+		return res
 }
