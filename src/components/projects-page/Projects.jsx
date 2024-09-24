@@ -60,11 +60,11 @@ const Projects = () => {
   return (
     <section className={styles.section}>
       <div className={styles.projectsContainer}>
+        <h1 className={styles.title}>{t("title")}</h1>
         {isLoading && <Loader />}
         {isError && <MessageErrorLoading className={styles.fullHeight} />}
         {!isError && !isLoading && (
           <>
-            <h1 className={styles.title}>{t("title")}</h1>
             <InputSearch
               className={styles.search}
               onSubmit={handleSearchChange}
