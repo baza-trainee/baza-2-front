@@ -2,7 +2,6 @@
 import styles from './PaymentModal.module.scss';
 import { useCallback, useState } from 'react';
 import { useTranslations } from "next-intl";
-//import { isMobile } from 'react-device-detect';
 import { useParams } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
 import { PaymentService } from '@/src/api/payment';
@@ -30,14 +29,6 @@ export default function PaymentModal() {
       setProcessing(false)
       setIsThanks(true)
     },3000)
-
-    // if(isMobile){
-    //   setProcessing(true)
-    //   setTimeout(()=>{
-    //     setProcessing(false)
-    //     setIsThanks(true)
-    //   },3000)
-    // }
   }
 
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
@@ -72,15 +63,6 @@ export default function PaymentModal() {
       if(isThanks){
         return <MessageCard handleClose={handleClose} isThanks={isThanks}/>
       }
-
-      // if(isMobile){
-      //   if(processing){
-      //     return <FormPayment handleSubmit={handleSubmit}/>
-      //   }
-      //   if(isThanks){
-      //     return <MessageCard handleClose={handleClose} isThanks={isThanks}/>
-      //   }
-      // }else return <MessageCard handleClose={handleClose} isThanks={isSuccess}/>
     }
     else return <FormPayment handleSubmit={handleSubmit}/>
   }

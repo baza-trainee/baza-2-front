@@ -32,15 +32,18 @@
     bottom: 16px;
     left: 50%;
     transform: translate(-50%, 0%);
-    z-index: 8;
+    z-index: 100;
     gap: 8px;
     @include mx.media-q("md") {
+      padding: 20px;
       gap: 16px;
-      bottom: 40px;
+      //bottom: 40px;
+      bottom: 20px;
     }
 
     @include mx.media-q("xl") {
-      bottom: 12%;
+      //bottom: 12%;
+      bottom: 6%;
     }
   }
   .messageError{

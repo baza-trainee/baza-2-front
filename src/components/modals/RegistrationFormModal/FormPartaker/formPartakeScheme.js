@@ -54,6 +54,11 @@ export const PartakerSchema = z
       {
         message: 'invalid_ru',
       }),
+      // .refine(
+      //   (value) => patternEmail.test(value),
+      //   {
+      //     message: 'invalid_ru',
+      //   }),
 
     phone: z.string()
     .trim()
@@ -78,6 +83,8 @@ export const PartakerSchema = z
     discord: z.string()
     .trim()
     .min(1, { message: 'discord' })
+    .min(2, { message: 'discord_min' })
+    .max(30, { message: 'discord_max' })
     .regex(patternNikDiscord, { message: 'incorrect_discord' }),
 
     linkedin: z.string()
