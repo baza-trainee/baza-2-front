@@ -49,7 +49,10 @@ export default function HeroSection() {
           <CarouselButton className="nextElHero" />
         </div>
 
-        <CarouselPagination
+        <CarouselPagination onClick={(e)=>{
+          e.stopPropagation()
+          }
+        }
           className={clsx("custom-pagination-hero", styles.pagination)}
         /></>
       }
