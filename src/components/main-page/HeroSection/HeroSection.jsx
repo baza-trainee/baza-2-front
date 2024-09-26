@@ -26,38 +26,41 @@ export default function HeroSection() {
 
   return (
     <section className={styles.section}>
-      {!isError && data && <>
-        <Carousel
-          modules={[Navigation, Pagination, Autoplay]}
-          paginationEl={".custom-pagination-hero"}
-          items={data?.results}
-          prevEl={".prevElHero"}
-          nextEl={".nextElHero"}
-          delay={10000}
-          breakpoints={{
-            992: {
-              sped:100,
-            },
-          }}
-          renderItem={(item) => (
-            <HeroCard title={item.title[localeUkToUa(locale)]} desc={item.subtitle[localeUkToUa(locale)]} img={item.imageUrl} />
-          )}
-        />
+      { !isError && data && 
+        <>
+          <Carousel
+            modules={[Navigation, Pagination, Autoplay]}
+            paginationEl={".custom-pagination-hero"}
+            items={data?.results}
+            prevEl={".prevElHero"}
+            nextEl={".nextElHero"}
+            delay={10000}
+            breakpoints={{
+              992: {
+                sped:100,
+              },
+            }}
+            renderItem={(item) => (
+              <HeroCard title={item.title[localeUkToUa(locale)]} desc={item.subtitle[localeUkToUa(locale)]} img={item.imageUrl} />
+            )}
+          />
 
-        <div className={styles.buttons}>
-          <CarouselButton className={clsx("prevElHero", styles.prevEl)} />
-          <CarouselButton className="nextElHero" />
-        </div>
+          <div className={styles.buttons}>
+            <CarouselButton className={clsx("prevElHero", styles.prevEl)} />
+            <CarouselButton className="nextElHero" />
+          </div>
+
           <div className={styles.wrapper_pagination}>
             <CarouselPagination
               className={clsx("custom-pagination-hero", styles.pagination)}
             />
-        </div>
+          </div>
         </>
-
       }
-      {isLoading && <Loader />}
-      {isError && <MessageErrorLoading className={styles.messageError}/>}
+
+      { isLoading && <Loader /> }
+
+      { isError && <MessageErrorLoading className={styles.messageError}/> }
     </section>
   );
 }
