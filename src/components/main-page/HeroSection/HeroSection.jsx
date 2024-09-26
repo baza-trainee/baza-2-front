@@ -48,13 +48,13 @@ export default function HeroSection() {
           <CarouselButton className={clsx("prevElHero", styles.prevEl)} />
           <CarouselButton className="nextElHero" />
         </div>
+          <div className={styles.wrapper_pagination}>
+            <CarouselPagination
+              className={clsx("custom-pagination-hero", styles.pagination)}
+            />
+        </div>
+        </>
 
-        <CarouselPagination onClick={(e)=>{
-          e.stopPropagation()
-          }
-        }
-          className={clsx("custom-pagination-hero", styles.pagination)}
-        /></>
       }
       {isLoading && <Loader />}
       {isError && <MessageErrorLoading className={styles.messageError}/>}
