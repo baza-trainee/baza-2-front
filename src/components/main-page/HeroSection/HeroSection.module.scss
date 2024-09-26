@@ -27,27 +27,31 @@
       padding: 0 6.25%;
     }
   }
+
   .wrapper_pagination{
     position: absolute;
     bottom: 16px;
     left: 50%;
     transform: translate(-50%, 0%);
     z-index: 8;
+
     .pagination {
       gap: 8px;
+
       @include mx.media-q("md") {
         gap: 16px;
       }
     }
+
     @include mx.media-q("md") {
       padding: 20px 30px;
       bottom: 20px;
     }
+    
     @include mx.media-q("xl") {
       bottom: 6%;
     }
   }
-
 
   .messageError{
     background: linear-gradient(90deg,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('/images/placeholder-image/slide_1.jpg');
@@ -55,7 +59,6 @@
     background-size: cover;
     height: 90vh;
   }
-
 }
 .prevEl {
   transform: rotate(180deg);
