@@ -17,12 +17,16 @@ export default function PaymentModal() {
   // Мова сторінки.
   const { locale } = useParams();
 
+  // контент.
+  const t = useTranslations("Modal_support");
+
   // Отримуємо стан.
   const isOpen = stateModalPayment(state => state.isOpen);
   const close = stateModalPayment(state => state.close);
-  const [ processing, setProcessing ] = useState(false)
-  const [ isThanks, setIsThanks ] = useState(false)
+  const [ processing, setProcessing ] = useState(false);
+  const [ isThanks, setIsThanks ] = useState(false);
 
+  // Вікно подяки через 3 секунди.
   function thanks() {
     setProcessing(true)
     setTimeout(()=>{
@@ -31,6 +35,7 @@ export default function PaymentModal() {
     },3000)
   }
 
+  // Запит отримання посилання на платіжну сторінку.
   const { mutate, isPending, isError, isSuccess, reset } = useMutation({
     mutationFn: (amount, locale) => {
       return PaymentService(amount, locale)
@@ -38,9 +43,6 @@ export default function PaymentModal() {
       thanks()
     }
   })
-
-  // контент.
-  const t = useTranslations("Modal_support");
 
   const handleClose = useCallback(() => {
     setProcessing(false)
@@ -67,22 +69,22 @@ export default function PaymentModal() {
     else return <FormPayment handleSubmit={handleSubmit}/>
   }
 
+  return (
+    <LayoutModal isOpen={isOpen} handleClose={handleClose}>
+      <div className={styles.wrapper}>
+        <div className={styles.card}>
+          {isPending && <Loader/>}
+          {processing && <Loader/>}
+          { renderContent() }
 
-
-  return <LayoutModal isOpen={isOpen} handleClose={handleClose}>
-    <div className={styles.wrapper}>
-      <div className={styles.card}>
-        {isPending && <Loader/>}
-        {processing && <Loader/>}
-        { renderContent() }
-
-        <CloseBtn className={styles.close_btn}
-          ariaLabel={ isSuccess ? 
-            t('ariaLabel_btn_close_2') : 
-            t('ariaLabel_btn_close_1')
-          }
-          onClick={handleClose}/>
+          <CloseBtn className={styles.close_btn}
+            ariaLabel={ isSuccess ? 
+              t('ariaLabel_btn_close_2') : 
+              t('ariaLabel_btn_close_1')
+            }
+            onClick={handleClose}/>
+        </div>
       </div>
-    </div>
-  </LayoutModal>
+    </LayoutModal>
+  )
 }
