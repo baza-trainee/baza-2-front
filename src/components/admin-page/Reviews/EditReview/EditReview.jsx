@@ -42,7 +42,13 @@ export default function EditReview() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
+      
       <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )

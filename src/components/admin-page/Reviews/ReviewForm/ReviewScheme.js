@@ -27,59 +27,59 @@ const MAX_SIZE_IMG = 512000
 // Базова схема
 const Base = z.object({
   name_ua: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(2, { message: 'Мінімум 2 символа' })
-  .max(18, { message: 'Максимум 18 знаків' })
-  .regex(patternName, { message: 'Присутні некоректні символи' }),
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(2, { message: 'Мінімум 2 символа' })
+    .max(18, { message: 'Максимум 18 знаків' })
+    .regex(patternName, { message: 'Присутні некоректні символи' }),
 
-name_en: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(2, { message: 'Мінімум 2 символа' })
-  .max(18, { message: 'Максимум 18 знаків' })
-  .regex(patternName, { message: 'Присутні некоректні символи' }),
+  name_en: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(2, { message: 'Мінімум 2 символа' })
+    .max(18, { message: 'Максимум 18 знаків' })
+    .regex(patternName, { message: 'Присутні некоректні символи' }),
 
-name_pl: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(2, { message: 'Мінімум 2 символа' })
-  .max(18, { message: 'Максимум 18 знаків' })
-  .regex(patternName, { message: 'Присутні некоректні символи'}),
+  name_pl: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(2, { message: 'Мінімум 2 символа' })
+    .max(18, { message: 'Максимум 18 знаків' })
+    .regex(patternName, { message: 'Присутні некоректні символи'}),
 
-text_ua: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(50, { message: 'Мінімум 50 знаків'})
-  .transform(normalizeTextValue)
-  .pipe(z.string()
-  .max(250, { message: 'Текст максимум 250 знаків'})
-  .regex(patternText, { message: 'Присутні некоректні символи'})),
+  text_ua: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(50, { message: 'Мінімум 50 знаків'})
+    .transform(normalizeTextValue)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків'})
+    .regex(patternText, { message: 'Присутні некоректні символи'})),
 
-text_en: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(50, { message: 'Мінімум 50 знаків' })
-  .transform(normalizeTextValue)
-  .pipe(z.string()
-  .max(250, { message: 'Текст максимум 250 знаків' })
-  .regex(patternText, { message: 'Присутні некоректні символи' })),
+  text_en: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(50, { message: 'Мінімум 50 знаків' })
+    .transform(normalizeTextValue)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків' })
+    .regex(patternText, { message: 'Присутні некоректні символи' })),
 
-text_pl: z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(50, { message: 'Мінімум 50 знаків' })
-  .transform(normalizeTextValue)
-  .pipe(z.string()
-  .max(250, { message: 'Текст максимум 250 знаків' })
-  .regex(patternText, { message: 'Присутні некоректні символи' })),
+  text_pl: z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(50, { message: 'Мінімум 50 знаків' })
+    .transform(normalizeTextValue)
+    .pipe(z.string()
+    .max(250, { message: 'Текст максимум 250 знаків' })
+    .regex(patternText, { message: 'Присутні некоректні символи' })),
 
-role:z.string()
-  .trim()
-  .min(1, { message: "Це поле обов'язкове"})
-  .min(2, { message: 'Мінімум 2 символи' })
-  .max(20, { message: 'Максимум 20 знаків' })
-  .regex(patternRole, { message: 'Присутні некоректні символи' }),
+  role:z.string()
+    .trim()
+    .min(1, { message: "Це поле обов'язкове"})
+    .min(2, { message: 'Мінімум 2 символи' })
+    .max(20, { message: 'Максимум 20 знаків' })
+    .regex(patternRole, { message: 'Присутні некоректні символи' }),
 
   date:z.string()
     .trim()
