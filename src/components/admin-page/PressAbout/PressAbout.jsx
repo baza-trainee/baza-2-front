@@ -55,7 +55,10 @@ export default function PressAbout() {
       hendleSearch={hendleSetSearch} 
       defaultValue={params.search}>
 
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+        <MainButton  
+          variant='admin' 
+          className={styles.btn} 
+          onClick={()=>{
           router.push(addPressPath)
         }}>
           <Icon name={'plus_icon'} width={24} height={24} />

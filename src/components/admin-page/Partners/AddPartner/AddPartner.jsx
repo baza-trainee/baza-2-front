@@ -45,7 +45,13 @@ export default function AddPartner() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Партнера успішно додано'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Партнера успішно додано'} 
+        btn={true}>
+      </AdminModal>
+      
       <UseAlert text={error && error.message}/>
 
     </SectionAdmin>

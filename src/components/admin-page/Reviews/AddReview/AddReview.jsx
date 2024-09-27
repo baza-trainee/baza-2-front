@@ -29,14 +29,18 @@ export default function AddReview() {
       open('error', false)
     }})
 
-
  return( 
     <SectionAdmin title={'Додати відгук'} lang={true}>
       <ReviewForm hendleMutate={mutate} variant='add'/>
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Відгук успішно додано'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Відгук успішно додано'} 
+        btn={true}> 
+      </AdminModal>
 
       <UseAlert text={error && error.message}/>
     </SectionAdmin>
