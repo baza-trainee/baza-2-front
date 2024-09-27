@@ -32,7 +32,7 @@ export default function AddReview() {
 
  return( 
     <SectionAdmin title={'Додати відгук'} lang={true}>
-      <ReviewForm hendleMutate={mutate}/>
+      <ReviewForm hendleMutate={mutate} variant='add'/>
 
       { isPending && <Loader/> }
 

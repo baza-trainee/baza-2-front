@@ -2,7 +2,6 @@ import styles from './ProjectForm.module.scss'
 import clsx from 'clsx'
 
 import { useProjectFormContext } from '../ProjectFormProvider/ProjectFormProvider'
-import { ProjectScheme } from '../ProjectFormProvider/projectFormScheme'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate'
@@ -25,7 +24,8 @@ export default function ProjectForm( {submitBtnText}) {
     isError,
     isDirty,
     prevUrl, 
-    setPrevUrl, 
+    setPrevUrl,
+    scheme, 
     resetForm} = useProjectFormContext()
 
   // Стан кнопки submit
@@ -60,7 +60,7 @@ export default function ProjectForm( {submitBtnText}) {
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
-            registerOptions={register("title_ua", { ...ProjectScheme.title_ua })}
+            registerOptions={register("title_ua", { ...scheme.title_ua })}
             isError={errors.title_ua}
             isValid={isValid}
             version={"input_admin"}
@@ -77,7 +77,7 @@ export default function ProjectForm( {submitBtnText}) {
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
-            registerOptions={register("title_en", { ...ProjectScheme.title_en })}
+            registerOptions={register("title_en", { ...scheme.title_en })}
             isError={errors.title_en}
             isValid={isValid}
             version={"input_admin"}
@@ -93,7 +93,7 @@ export default function ProjectForm( {submitBtnText}) {
             className={styles.item}
             required={false}
             placeholder={"Введіть назву"}
-            registerOptions={register("title_pl", { ...ProjectScheme.title_pl })}
+            registerOptions={register("title_pl", { ...scheme.title_pl })}
             isError={errors.title_pl}
             isValid={isValid}
             version={"input_admin"}
@@ -109,7 +109,7 @@ export default function ProjectForm( {submitBtnText}) {
             control={control}
             className={styles.item}
             required={false}
-            registerOptions={register("creationDate", { ...ProjectScheme.creationDate})}
+            registerOptions={register("creationDate", { ...scheme.creationDate})}
             isError={errors.creationDate}
             isValid={isValid}
             label={'Дата старту'}
@@ -123,7 +123,7 @@ export default function ProjectForm( {submitBtnText}) {
             className={styles.item}
             control={control}
             required={false}
-            registerOptions={register("launchDate", { ...ProjectScheme.launchDate})}
+            registerOptions={register("launchDate", { ...scheme.launchDate})}
             isError={errors.launchDate}
             isValid={isValid}
             label={'Дата завершення'}
@@ -168,7 +168,7 @@ export default function ProjectForm( {submitBtnText}) {
             control={control}
             required={false}
             placeholder={"Введіть адресу"}
-            registerOptions={register("deployUrl", { ...ProjectScheme.deployUrl })}
+            registerOptions={register("deployUrl", { ...scheme.deployUrl })}
             isError={errors.deployUrl}
             isValid={isValid}
             version={"input_admin"}
@@ -186,7 +186,7 @@ export default function ProjectForm( {submitBtnText}) {
             required={false}
             accept="image/*"
             placeholder={ prevUrl ? prevUrl: "Завантажте зображення"}
-            registerOptions={register("file", { ...ProjectScheme.file })}
+            registerOptions={register("file", { ...scheme.file })}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
