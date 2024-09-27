@@ -35,7 +35,10 @@ export default function AddPartner() {
   return (
     <SectionAdmin title={'Додати партнерів'}>
       <div className={styles.wrapper}>
-        <PartnerForm hendleMutate={mutate} handlePrevImg={setPrevImg}/>
+        <PartnerForm 
+          hendleMutate={mutate} 
+          handlePrevImg={setPrevImg} 
+          variant='add'/>
 
         <PartnerPreview imageUrl={prevImg}/>
       </div>

@@ -6,6 +6,7 @@ import { checkFileSize } from "@/src/lib/hooks/checkFileSize";
 import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
 import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
 import { minDateValue } from "@/src/lib/hooks/minMaxDate";
+import { empryFile } from "@/src/lib/utils/empryFile";
 
 export const articleDefaultValues = {
   file: null,
@@ -23,10 +24,6 @@ const strToArr = (str) => {
   const result = str.split(regul);
   return result.length ? result : [str]; 
 };
-
-const empryFile=(value)=>{
-  if(value && value.length){return true}else return false
-}
 
 // Базова схема
 const Base = z.object({
