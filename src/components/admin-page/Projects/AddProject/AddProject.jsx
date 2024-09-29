@@ -43,7 +43,7 @@ export default function AddProject() {
 
 
   return (
-    <ProjectFormProvider hendleMutate={mutate}>
+    <ProjectFormProvider hendleMutate={mutate} variant="add">
       {tabName=='description'&& <ProjectForm submitBtnText="Додати"/>}
 
       {tabName=='team'&& <Team/>}

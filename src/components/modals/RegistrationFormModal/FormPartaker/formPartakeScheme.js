@@ -1,6 +1,14 @@
 import { z } from "zod";
-import { patternEmail, patternName, patternNikDiscord, patternPhone, patternUrlLinkedin, patternText, patternCountry, patternСity} from "@/src/constants/regulars";
-//import { formatPhoneNumber } from "@/src/lib/utils/formatPhoneNumber";
+import { 
+  patternEmail, 
+  patternName, 
+  patternNikDiscord, 
+  patternPhone, 
+  patternUrlLinkedin, 
+  patternText, 
+  patternCountry, 
+  patternСity
+} from "@/src/constants/regulars";
 
 export const partakerDefaultValues= {
   firstName: "",
@@ -22,89 +30,86 @@ export const partakerDefaultValues= {
 export const PartakerSchema = z
 	.object({
 		firstName: z.string()
-    .trim()
-    .min(1, { message: 'firstName' })
-    .min(2, { message: 'firstName_min' })
-    .max(30, { message: 'firstName_max' })
-    .regex(patternName, { message: 'incorrect_firstName' }),
+      .trim()
+      .min(1, { message: 'firstName' })
+      .min(2, { message: 'firstName_min' })
+      .max(30, { message: 'firstName_max' })
+      .regex(patternName, { message: 'incorrect_firstName' }),
 
 		lastName: z.string()
-    .trim()
-    .min(1, { message: 'lastName' })
-    .min(2, { message: 'lastName_min' })
-    .max(50, { message: 'lastName_max' })
-    .regex(patternName, { message: 'incorrect_lastName' }),
+      .trim()
+      .min(1, { message: 'lastName' })
+      .min(2, { message: 'lastName_min' })
+      .max(50, { message: 'lastName_max' })
+      .regex(patternName, { message: 'incorrect_lastName' }),
 
 		specialization: z.string()
-    .trim()
-    .min(1, { message: 'specialization' }),
+      .trim()
+      .min(1, { message: 'specialization' }),
 
 		email: z.string()
-    .trim()
-    .min(2, { message: 'email' })
-    .email({ message: 'incorrect_email' })
-    .regex(patternEmail, { message: 'incorrect_email' })
-    .refine(
-      (value) => value.split('@')[0].length > 1,
-      {
-        message: 'incorrect_email',
-      })
-    .refine(
-      (value) => !/(.ru|.by)$/.test(value.split('@')[1]),
-      {
-        message: 'invalid_ru',
-      }),
+      .trim()
+      .min(2, { message: 'email' })
+      .email({ message: 'incorrect_email' })
+      .regex(patternEmail, { message: 'incorrect_email' })
+      .refine((value) => value.split('@')[0].length > 1,
+        {message: 'incorrect_email',})
+      .refine((value) => !/(.ru|.by)$/.test(value.split('@')[1]),
+        {message: 'invalid_ru',}),
 
     phone: z.string()
-    .trim()
-    .min(1, { message: 'phone' })
-    .regex(patternPhone, { message: 'incorrect_phone' }),
-    // .transform(value=>  formatPhoneNumber(value, true)),
+      .trim()
+      .min(1, { message: 'phone' })
+      .regex(patternPhone, { message: 'incorrect_phone' }),
 
     city: z.string()
-    .trim()
-    .min(1, { message: 'city' })
-    .min(2, { message: 'city_min' })
-    .max(30, { message: 'city_max' })
-    .regex(patternСity, { message: 'incorrect_city' }),
+      .trim()
+      .min(1, { message: 'city' })
+      .min(2, { message: 'city_min' })
+      .max(30, { message: 'city_max' })
+      .regex(patternСity, { message: 'incorrect_city' }),
 
     country: z.string()
-    .trim()
-    .min(1, { message: 'country' })
-    .min(4, { message: 'country_min' })
-    .max(30, { message: 'country_max' })
-    .regex(patternCountry, { message: 'incorrect_country' }),
+      .trim()
+      .min(1, { message: 'country' })
+      .min(4, { message: 'country_min' })
+      .max(30, { message: 'country_max' })
+      .regex(patternCountry, { message: 'incorrect_country' }),
 
     discord: z.string()
-    .trim()
-    .min(1, { message: 'discord' })
-    .regex(patternNikDiscord, { message: 'incorrect_discord' }),
+      .trim()
+      .min(1, { message: 'discord' })
+      .min(2, { message: 'discord_min' })
+      .max(30, { message: 'discord_max' })
+      .regex(patternNikDiscord, { message: 'incorrect_discord' }),
 
     linkedin: z.string()
-    .trim()
-    .min(1, { message: 'linkedin' })
-    .url({ message: "invalid_url" })
-    .regex(patternUrlLinkedin, { message: 'invalid_url' }),
+      .trim()
+      .min(1, { message: 'linkedin' })
+      .url({ message: "invalid_url" })
+      .regex(patternUrlLinkedin, { message: 'invalid_url' }),
 
     experience: z.string()
-    .trim()
-    .min(1, { message: 'experience' })
-    .transform(value => value==='true'),
+      .trim()
+      .min(1, { message: 'experience' })
+      .transform(value => value==='true'),
 
     motivation: z.string()
-    .trim()
-    .min(1, { message: 'motivation' })
-    .min(5, { message: 'motivation_min' })
-    .max(50, { message: 'motivation_max' })
-    .regex(patternText, { message: 'incorrect_motivation'}),
+      .trim()
+      .min(1, { message: 'motivation' })
+      .min(5, { message: 'motivation_min' })
+      .max(50, { message: 'motivation_max' })
+      .regex(patternText, { message: 'incorrect_motivation'}),
 
     sawQuestionnaire: z.string()
-    .trim()
-    .min(1, { message: 'experience' }),
+      .trim()
+      .min(1, { message: 'experience' }),
 
-    agree_conditions: z.boolean().refine(value => value === true, "You must agree to the terms and conditions"),
+    agree_conditions: z.boolean()
+      .refine(value => value === true, "You must agree to the terms and conditions"),
 
-    agree: z.boolean().refine(value => value === true, "You must agree to the terms and conditions")
+    agree: z.boolean()
+      .refine(value => value === true, "You must agree to the terms and conditions")
 	})
 
 // Форма учасника {

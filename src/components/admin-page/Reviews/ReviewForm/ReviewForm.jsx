@@ -9,7 +9,11 @@ import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
 import TextArea from '@/src/components/shared/inputs/TextArea/TextArea';
 import MainButton from '@/src/components/shared/MainButton/MainButton'
-import { ReviewDefaultValues, ReviewScheme } from './ReviewScheme';
+import { 
+  ReviewAddScheme,
+  ReviewDefaultValues, 
+  ReviewEditScheme 
+} from './ReviewScheme';
 import InputDate from '@/src/components/shared/inputs/InputDate/InputDate';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
 import ImagePreview from '../../ImagePreview/ImagePreview';
@@ -18,8 +22,10 @@ import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
 export default function ReviewForm({
   hendleMutate, 
   data, 
+  variant='edit', 
   submitBtnText= 'Додати'
 }) {
+  const scheme = variant === 'add' ? ReviewAddScheme : ReviewEditScheme
   const router = useRouter();
 
   const[ prevUrl, setPrevUrl ] = useState(null)
@@ -37,7 +43,7 @@ export default function ReviewForm({
     getValues,
   } = useForm({ 
     defaultValues: {...ReviewDefaultValues}, 
-    resolver: zodResolver(ReviewScheme), 
+    resolver: zodResolver(scheme), 
     mode: 'onChange'
   });
 
@@ -111,7 +117,7 @@ export default function ReviewForm({
             className={styles.item}
             required={false}
             placeholder={"Ім’я"}
-            registerOptions={register("name_ua", { ...ReviewScheme.name_ua })}
+            registerOptions={register("name_ua", { ...scheme.name_ua })}
             onInput={()=>{validateTitle("name_ua", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_ua}
@@ -131,7 +137,7 @@ export default function ReviewForm({
             className={styles.item}
             required={false}
             placeholder={"Ім’я"}
-            registerOptions={register("name_en", { ...ReviewScheme.name_en })}
+            registerOptions={register("name_en", { ...scheme.name_en })}
             onInput={()=>{validateTitle("name_en", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_en}
@@ -150,7 +156,7 @@ export default function ReviewForm({
             className={styles.item}
             required={false}
             placeholder={"Ім’я"}
-            registerOptions={register("name_pl", { ...ReviewScheme.name_pl})}
+            registerOptions={register("name_pl", { ...scheme.name_pl})}
             onInput={()=>{validateTitle("name_pl", 16)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.name_pl}
@@ -169,7 +175,7 @@ export default function ReviewForm({
             className={styles.item}
             required={false}
             placeholder={"Введіть дані"}
-            registerOptions={register("role", { ...ReviewScheme.role})}
+            registerOptions={register("role", { ...scheme.role})}
             onInput={()=>{validateTitle("role", 18)}}
             onFocus={()=>{setTooltip(null)}}
             isError={errors.role}
@@ -188,7 +194,7 @@ export default function ReviewForm({
             id={"date"}
             className={styles.item}
             required={false}
-            registerOptions={register("date", { ...ReviewScheme.date})}
+            registerOptions={register("date", { ...scheme.date})}
             onClick={()=>{setTooltip(null)}}
             isError={errors.date}
             isValid={isValid}
@@ -206,7 +212,7 @@ export default function ReviewForm({
             required={false}
             accept="image/*"
             placeholder={ prevUrl ? prevUrl: "Завантажте фото"}
-            registerOptions={register("file", { ...ReviewScheme.file })}
+            registerOptions={register("file", { ...scheme.file })}
             onClick={()=>{setTooltip(null)}}
             isDirty={isDirty}
             isError={errors.file}
@@ -224,7 +230,7 @@ export default function ReviewForm({
             className={styles.item_text} 
             isError={errors.text_ua}
             isValid={isValid}
-            registerOptions={register("text_ua", { ...ReviewScheme.text_ua })}
+            registerOptions={register("text_ua", { ...scheme.text_ua })}
             onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"} 
@@ -239,7 +245,7 @@ export default function ReviewForm({
             className={styles.item_text} 
             isError={errors.text_en}
             isValid={isValid}
-            registerOptions={register("text_en", { ...ReviewScheme.text_en })}
+            registerOptions={register("text_en", { ...scheme.text_en })}
             onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"} 
@@ -252,7 +258,7 @@ export default function ReviewForm({
             className={styles.item_text} 
             isError={errors.text_pl}
             isValid={isValid}
-            registerOptions={register("text_pl", { ...ReviewScheme.text_pl })}
+            registerOptions={register("text_pl", { ...scheme.text_pl })}
             onFocus={()=>{setTooltip(null)}}
             required={false}
             placeholder={"Текст"}  

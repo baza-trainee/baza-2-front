@@ -7,6 +7,7 @@ import { validateFileTypes } from "@/src/lib/hooks/validateFileTypes";
 import { transformFileValue } from "@/src/lib/hooks/transformFileValue";
 import { minDateValue } from "@/src/lib/hooks/minMaxDate";
 import { normalizeTextValue } from "@/src/lib/utils/normalizeTextValue";
+import { empryFile } from "@/src/lib/utils/empryFile";
 
 export const pressDefaultValues = {
   file: null,
@@ -19,9 +20,6 @@ export const pressDefaultValues = {
 // максимальний розмір файла 500КБ
 const MAX_SIZE_IMG = 512000
 
-const empryFile=(value)=>{
-  if(value && value.length){return true}else return false
-}
 // Базова схема
 const Base = 	z.object({
   title: z.string()

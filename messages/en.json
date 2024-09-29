@@ -240,6 +240,8 @@
       "phone": "Enter a phone number",
       "incorrect_phone": "Please enter a valid phone number",
       "discord": "Enter your Discord username",
+      "discord_min": "Username must have at least 2 characters",
+      "discord_max": "Username must not exceed 30 characters",
       "incorrect_discord": "Enter a valid Discord username",
       "linkedin": "Enter your Linkedin profile",
       "invalid_url": "Enter a valid Linkedin profile link",

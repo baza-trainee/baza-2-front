@@ -2,7 +2,11 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ProjectDefaultValues, ProjectScheme } from './projectFormScheme';
+import { 
+  ProjectAddScheme, 
+  ProjectDefaultValues, 
+  ProjectEditScheme
+} from './projectFormScheme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from '@/src/navigation';
 import { formatDateToNumericInputDate } from '@/src/lib/utils/formatData';
@@ -11,7 +15,14 @@ const ProjectFormContext = createContext();
 
 export const useProjectFormContext = () => useContext(ProjectFormContext);
 
-export const ProjectFormProvider = ({hendleMutate, children, data}) => {
+export const ProjectFormProvider = ({
+  hendleMutate, 
+  children, 
+  data, 
+  variant='edit', 
+}) => {
+  const scheme = variant === 'add' ? ProjectAddScheme : ProjectEditScheme;
+
   const router = useRouter();
   const[ prevUrl, setPrevUrl ] = useState(null)
   const [ teamMemberData, setTeamMemberData ] = useState([]);
@@ -56,7 +67,11 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     trigger,
     register,
     formState: { errors, isValid, isError, isDirty },
-  } = useForm({ defaultValues:{...ProjectDefaultValues},  resolver: zodResolver(ProjectScheme), mode: 'onChange'});
+  } = useForm({ 
+    defaultValues:{...ProjectDefaultValues},  
+    resolver: zodResolver(scheme), 
+    mode: 'onChange'
+  });
 
   // Очищення форми
   const resetForm = () => {
@@ -139,6 +154,7 @@ export const ProjectFormProvider = ({hendleMutate, children, data}) => {
     deleteMember,
     register,
     control,
+    scheme,
     isError,
     isValid,
     isDirty,

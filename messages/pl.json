@@ -240,6 +240,8 @@
       "phone": "Wprowadź numer telefonu",
       "incorrect_phone": "Proszę wpisać poprawny numer telefonu",
       "discord": "Wpisz swoją nazwę użytkownika Discord",
+      "discord_min": "Nazwa użytkownika musi mieć co najmniej 2 znaki",
+      "discord_max": "Nazwa użytkownika nie może przekraczać 30 znaków",
       "incorrect_discord": "Wprowadź prawidłową nazwę użytkownika Discord",
       "linkedin": "Wprowadź swój profil na Linkedin",
       "invalid_url": "Wprowadź prawidłowy link do profilu Linkedin",

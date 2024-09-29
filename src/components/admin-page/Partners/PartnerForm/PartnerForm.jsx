@@ -4,7 +4,11 @@ import { useEffect } from 'react';
 import { useRouter } from '@/src/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { addPartnerDefaultValues, addPartnerSchema } from './addPartnerScheme';
+import { 
+  addPartnerDefaultValues, 
+  PartnerAddScheme, 
+  PartnerEditScheme 
+} from './addPartnerScheme';
 import InputField from '@/src/components/shared/inputs/InputField/InputField'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import InputFile from '@/src/components/shared/inputs/InputFile/InputFile';
@@ -13,10 +17,14 @@ export default function PartnerForm({
   hendleMutate, 
   handlePrevImg, 
   data,
+  variant='edit', 
   submitBtnText= 'Додати', 
   prevImg
 }) {
+  const scheme = variant === 'add' ? PartnerAddScheme : PartnerEditScheme;
+
   const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -25,7 +33,7 @@ export default function PartnerForm({
     setValue,
   } = useForm({ 
     defaultValues: {...addPartnerDefaultValues}, 
-    resolver: zodResolver(addPartnerSchema), 
+    resolver: zodResolver(scheme), 
     mode: 'onChange'
   });
 
@@ -73,7 +81,7 @@ export default function PartnerForm({
             className={styles.item}
             required={false}
             placeholder={"Назва"}
-            registerOptions={register("name", { ...addPartnerSchema.name })}
+            registerOptions={register("name", { ...scheme.name })}
             isError={errors.name}
             isValid={isValid}
             version={"input_admin"}
@@ -90,7 +98,7 @@ export default function PartnerForm({
             required={false}
             accept="image/*"
             placeholder={prevImg ? prevImg : "Оберіть фото"}
-            registerOptions={register("file", { ...addPartnerSchema.file })}
+            registerOptions={register("file", { ...scheme.file })}
             isDirty={isDirty}
             isError={errors.file}
             isValid={isValid}
@@ -104,7 +112,7 @@ export default function PartnerForm({
             className={styles.item}
             required={false}
             placeholder={"Посилання на сайт"}
-            registerOptions={register("homeUrl", { ...addPartnerSchema.homeUrl })}
+            registerOptions={register("homeUrl", { ...scheme.homeUrl })}
             isError={errors.homeUrl}
             isValid={isValid}
             version={"input_admin"}
