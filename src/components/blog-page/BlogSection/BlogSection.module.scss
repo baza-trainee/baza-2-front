@@ -41,9 +41,8 @@
     justify-content: space-between;
     padding: 24px 0;
   }
-  @include mx.media-q("xl") {
-    flex-direction: row;
-    flex-flow: row-reverse;
+  @media (min-width: 1281px) {
+    flex-direction: row-reverse;
     padding: 0;
   }
 }
@@ -61,7 +60,7 @@
 }
 
 .icons {
-  @include mx.media-q("xl") {
+  @media (min-width: 1281px) {
     flex-direction: column;
   }
 }
