@@ -11,23 +11,23 @@ export default function ControlBtnRegistrationFormModal({
 }) {
   const open = useStateModal((state) => state.open)
   // >>> !! Прибрати коли буде готовий СРМ роут для форми учасника
-  // const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/edit'
+  const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/edit'
 
-  // const hendleClick=(type)=>{
-  //   if(type==='mentor'){
-  //     open(type)
-  //   }else {
-  //     if(isMobile){
-  //       window.location.assign(url)
-  //     }else window.open(url);
-  //   }
-  // }
+  const hendleClick=(type)=>{
+    if(type==='mentor'){
+      open(type)
+    }else {
+      if(isMobile){
+        window.location.assign(url)
+      }else window.open(url);
+    }
+  }
 // <<<!! Прибрати коли буде готовий СРМ роут для форми учасника
   return <MainButton 
     className={className}
     onClick={()=>{
-      open(type) // <<<!! Розкоментувати
-      //hendleClick(type)// <<<!! Прибрати 
+      //open(type) // <<<!! Розкоментувати
+      hendleClick(type)// <<<!! Прибрати 
       onClick && onClick()
     }}>
       {children}
