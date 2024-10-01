@@ -19,6 +19,7 @@ const nextConfig = {
 				})
 			);
 		}
+		
 		return config;
 	},
   images: {
@@ -31,6 +32,7 @@ const nextConfig = {
       },
     ],
   },
+	output: 'standalone',
 };
 
 module.exports = withNextIntl(nextConfig);
