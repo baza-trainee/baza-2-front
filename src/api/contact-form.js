@@ -1,8 +1,5 @@
 import instanceBazaCrm from "./config/instance-baza-crm";
 import instanceBaza2 from "./config/instance-baza2";
-// Пошта адміністратора !! змінити на актуальну .env !!
-// export const EMAIL_ADMIN ='brodich_vlad@ukr.net';
-const EMAIL_ADMIN = process.env.NEXT_PUBLIC_EMAIL_ADMIN
 
 // Форма фідбек
 export async function ContactFormService(data){
@@ -12,7 +9,6 @@ export async function ContactFormService(data){
       "name": firstName,
       "email": email,
       "text": message,
-      "to": EMAIL_ADMIN
     }
   }
 
@@ -30,7 +26,6 @@ export async function ContactFormService(data){
 //   "linkedin": "https://ua.linkedin.com/company/baza-trainee-ukraine",
 //   "specialization": "Frontend",
 //   "convenient_time": "00-24",
-//   "to": "admin@gmail.com"
 // }
 export async function MentorFormService(data){
 
@@ -53,7 +48,6 @@ export async function MentorFormService(data){
       linkedin,
       specialization,
       convenient_time,
-      to: EMAIL_ADMIN
     }
   }
 
