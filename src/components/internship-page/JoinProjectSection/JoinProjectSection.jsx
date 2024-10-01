@@ -4,9 +4,10 @@ import JoinProjectCard from "../../shared/JoinProjectCard/JoinProjectCard";
 import styles from "./JoinProjectSection.module.scss";
 import { items } from "./items";
 import { useTranslations } from "next-intl";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Lenis from "lenis";
+import { isMobile} from 'react-device-detect';
 
 export default function JoinProjectSection() {
   const t = useTranslations("Internship.join_project_section");
@@ -17,6 +18,8 @@ export default function JoinProjectSection() {
   });
 
   useEffect(() => {
+    if(isMobile){return}
+    else{
     const lenis = new Lenis();
     function raf(time) {
       lenis.raf(time);
@@ -24,6 +27,7 @@ export default function JoinProjectSection() {
     }
     requestAnimationFrame(raf);
     return ()=> lenis.destroy()
+    }
   }, []);
 
   return (
