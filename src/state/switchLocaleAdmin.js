@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-//ua | en | pl
+//uk | en | pl
 const switchLocaleAdmin = create((set) => ({
   localeAdmin: 'uk',
   switchLocale: (locale) => set({ localeAdmin: locale }),
