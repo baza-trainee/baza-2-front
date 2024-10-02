@@ -13,7 +13,7 @@ export const patternPhone = /^\+380[\s]?\d{2}[\s]?\d{3}[\s]?\d{2}[\s]?\d{2}$/;
 
 export const patternMessage = /^(?!.*[\u0401\u0451\u042B\u044B\u042D\u044D\u042A\u044A])[\p{L}\d\s.,!?—'-\[\]{}()_~₴#$%^&|”’`\\]{5,}$/giu;
 
-export const patternUrlLinkedin = /^https?:\/\/(www\.)?linkedin\.com\/(in|company|school|groups)\/[a-zA-Z0-9-]+\/?$/;
+export const patternUrlLinkedin = /^https?:\/\/(www\.)?linkedin\.com\/(in|company|school|groups)\/[a-zA-Z0-9-%/]+\/?$/;
 
 export const patternNikDiscord = /^[a-z][a-z0-9_.]{1,31}$/;
 

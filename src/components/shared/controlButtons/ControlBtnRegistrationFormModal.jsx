@@ -4,8 +4,7 @@ import MainButton from "../MainButton/MainButton";
 import { isMobile } from 'react-device-detect'; // <<<!! Прибрати 
 
 export default function ControlBtnRegistrationFormModal({
-  children, 
-  className, 
+  children,  
   onClick, 
   type='mentor'
 }) {
@@ -24,7 +23,6 @@ export default function ControlBtnRegistrationFormModal({
   }
 // <<<!! Прибрати коли буде готовий СРМ роут для форми учасника
   return <MainButton 
-    className={className}
     onClick={()=>{
       //open(type) // <<<!! Розкоментувати
       hendleClick(type)// <<<!! Прибрати 

@@ -147,7 +147,7 @@ export default function BlogArticleForm({
         <li className={clsx(styles.list_item, styles.grid5)}>
           <TextArea 
             id={"text"}   
-            maxLength={2005}
+            maxLength={4005}
             className={styles.item_text} 
             isError={errors.text}
             isValid={isValid}
