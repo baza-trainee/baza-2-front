@@ -13,13 +13,7 @@ export const ArticleCard = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.img}>
-        <Image
-          className={styles.image}
-          src={createImageUrl(imageUrl)}
-          fill
-          sizes="100%"
-          alt={title}
-        />
+        <Image src={createImageUrl(imageUrl)} fill sizes="100%" alt={title} />
         <span className={styles.date}>{formatDateToNumeric(date)}</span>
       </div>
       <div className={styles.wrapper}>

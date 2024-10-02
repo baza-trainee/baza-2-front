@@ -40,9 +40,7 @@
 }
 
 .title {
-  @include mx.apply-font-styles(var.$h2-font);
-  font-family: "Open Sans", sans-serif;
-  font-size: 26px;
+  @include mx.apply-font-styles(var.$h7-font);
   font-weight: 700;
 
   text-align: center;
