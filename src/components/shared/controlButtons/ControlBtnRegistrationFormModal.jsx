@@ -4,14 +4,13 @@ import MainButton from "../MainButton/MainButton";
 import { isMobile } from 'react-device-detect'; // <<<!! Прибрати 
 
 export default function ControlBtnRegistrationFormModal({
-  children, 
-  className, 
+  children,  
   onClick, 
   type='mentor'
 }) {
   const open = useStateModal((state) => state.open)
   // >>> !! Прибрати коли буде готовий СРМ роут для форми учасника
-  const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/edit'
+  const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/viewform?edit_requested=true'
 
   const hendleClick=(type)=>{
     if(type==='mentor'){
@@ -24,7 +23,6 @@ export default function ControlBtnRegistrationFormModal({
   }
 // <<<!! Прибрати коли буде готовий СРМ роут для форми учасника
   return <MainButton 
-    className={className}
     onClick={()=>{
       //open(type) // <<<!! Розкоментувати
       hendleClick(type)// <<<!! Прибрати 

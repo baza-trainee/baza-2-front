@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: baza-2-frontend
+    build:
+      context: ./
+      target: production
+      dockerfile: dockerfile
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - '${LOCAL_PORT}:${PORT}'

@@ -12,7 +12,7 @@ export default function StructureCard({ item }) {
   const { img, title, text, width, height, url, openInNewTab, type } = item;
   
   const handleClick = (e) => {
-    if (url === "https://baza-poligon.com.ua" || url === "https://baza-educate.com.ua") {
+    if (url === "https://baza-poligon.com.ua") {
       e.preventDefault(); 
       open("info");
     }

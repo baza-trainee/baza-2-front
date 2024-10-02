@@ -3,6 +3,7 @@
 
 .btn_main {
   @include mx.apply-font-styles(var.$button);
+  font-size: 20px;
   position: relative;
   overflow: hidden;
   color: var.$secondary-white;
