@@ -6,6 +6,10 @@
     width: 60px;
     height: 60px;
     fill: var.$secondary-white;
+    @media (min-width: 1025px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 
