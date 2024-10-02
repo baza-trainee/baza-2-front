@@ -3,10 +3,12 @@
 
 .section {
   //компенсує висоту хедер
-  margin-top: 80px;
+  margin-top: 85px;
   position: relative;
   min-height: 450px;
-
+  @media (min-width: 1025px) {
+    margin-top: 105px;
+  }
   .buttons {
     width: 100%;
     position: absolute;
@@ -28,7 +30,7 @@
     }
   }
 
-  .wrapper_pagination{
+  .wrapper_pagination {
     position: absolute;
     bottom: 16px;
     left: 50%;
@@ -47,14 +49,15 @@
       padding: 20px 30px;
       bottom: 20px;
     }
-    
+
     @include mx.media-q("xl") {
       bottom: 6%;
     }
   }
 
-  .messageError{
-    background: linear-gradient(90deg,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('/images/placeholder-image/slide_1.jpg');
+  .messageError {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("/images/placeholder-image/slide_1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
