@@ -15,12 +15,12 @@ import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLo
 const ArticlesSection = () => {
   const t = useTranslations("Main.press_about_section");
 
-  // Запит на базу 
-  const { isError, data} = useQuery({ 
-    queryKey: ['articles'], 
-    queryFn:()=>{
-      return getAllArticles({ limit: 10})
-    }
+  // Запит на базу
+  const { isError, data } = useQuery({
+    queryKey: ["articles"],
+    queryFn: () => {
+      return getAllArticles({ limit: 10 });
+    },
   });
 
   return (
@@ -28,7 +28,7 @@ const ArticlesSection = () => {
       <div className={styles.wrapperAll}>
         <h2 className={styles.title}>{t("title")}</h2>
 
-        {!isError && data && 
+        {!isError && data && (
           <div className={styles.navigationButtons}>
             <CarouselButton
               className={clsx("prevElArticle", styles.prevElArticle)}
@@ -37,40 +37,42 @@ const ArticlesSection = () => {
               className={clsx("nextElArticle", styles.nextElArticle)}
             />
           </div>
-        }
+        )}
       </div>
 
-      {!isError && data && <>
-        <Carousel
-          slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
-          modules={[Navigation, Pagination]}
-          paginationEl={".custom-pagination-article"}
-          prevEl={".prevElArticle"}
-          nextEl={".nextElArticle"}
-          className={clsx("swiper-wrapper", styles.mySwiperWrapper)}
-          slidesPerView={1}
-          spaceBetween={16}
-          breakpoints={{
-            768: {
-              spaceBetween: 24,
-              slidesPerView: 2,
-            },
-            1366: { slidesPerView: 3 },
-            1800: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-            },
-          }}
-          items={data?.results}
-          renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
-        />
+      {!isError && data && (
+        <>
+          <Carousel
+            slideClassName={clsx("swiper-slide", styles.mySwiperItem)}
+            modules={[Navigation, Pagination]}
+            paginationEl={".custom-pagination-article"}
+            prevEl={".prevElArticle"}
+            nextEl={".nextElArticle"}
+            className={clsx("swiper-wrapper", styles.mySwiperWrapper)}
+            slidesPerView={1}
+            spaceBetween={16}
+            breakpoints={{
+              768: {
+                spaceBetween: 24,
+                slidesPerView: 2,
+              },
+              1366: { slidesPerView: 3 },
+              1800: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            }}
+            items={data?.results.sort((a, b) => b.date - a.date)}
+            renderItem={(item) => <ArticleCard key={createKey()} item={item} />}
+          />
 
-        <CarouselPagination
-          className={clsx("custom-pagination-article", styles.pagination)}
-        /></>
-      }
+          <CarouselPagination
+            className={clsx("custom-pagination-article", styles.pagination)}
+          />
+        </>
+      )}
 
-      {isError && <MessageErrorLoading/>}
+      {isError && <MessageErrorLoading />}
     </section>
   );
 };
