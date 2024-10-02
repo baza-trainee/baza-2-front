@@ -12,12 +12,12 @@
 }
 .img {
   position: relative;
-  height: 242px;
+  padding-bottom: 62%;
+  & > img {
+    object-fit: cover;
+  }
 }
 
-.image {
-  object-fit: cover;
-}
 .wrapper {
   padding: 24px 16px;
   display: flex;
@@ -37,24 +37,11 @@
 
 .content {
   max-width: 100%;
-  height: 184px;
-
-  @include mx.media-q("md") {
-    height: 148px;
-  }
-
   h3 {
     @include mx.apply-font-styles(var.$h2-font);
     margin-bottom: 16px;
     font-weight: 700;
     color: var.$secondary-white;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    line-clamp: 1;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
   }
 
   p {
