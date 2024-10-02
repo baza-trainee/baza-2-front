@@ -29,7 +29,7 @@ export const items = [
     img: "/images/structure/educate.svg",
     width: "300px",
     height: "157px",
-    url: "https://baza-educate.com.ua",
+    url: "https://baza-educat.com.ua/",
     openInNewTab: true,
     type: linkTypes.STRUCTURE,
     

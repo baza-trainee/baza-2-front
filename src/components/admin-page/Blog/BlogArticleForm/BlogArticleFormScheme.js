@@ -38,7 +38,7 @@ const Base = z.object({
     .trim()
     .min(1, { message: "Це поле обов'язкове"})
     .min(50, { message: 'Мінімум 50 знаків'})
-    .max(2000, { message: 'Текст максимум 2000 символів'})
+    .max(4000, { message: 'Текст максимум 4000 символів'})
     .transform(strToArr) // Перетворюємо рядок на масив рядків
     .pipe(z.array(
       z.string()
