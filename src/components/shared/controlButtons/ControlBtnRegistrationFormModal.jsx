@@ -10,7 +10,7 @@ export default function ControlBtnRegistrationFormModal({
 }) {
   const open = useStateModal((state) => state.open)
   // >>> !! Прибрати коли буде готовий СРМ роут для форми учасника
-  const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/edit'
+  const url = 'https://docs.google.com/forms/d/1QsjBjv90-GNkMN_fm2-Nsn0ROlx-yHiyYyou2_oyH2Q/viewform?edit_requested=true'
 
   const hendleClick=(type)=>{
     if(type==='mentor'){

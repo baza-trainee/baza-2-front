@@ -2,6 +2,5 @@ node_modules
 .dockerignore
 .git
 .gitignore
-.next
 out
 public
