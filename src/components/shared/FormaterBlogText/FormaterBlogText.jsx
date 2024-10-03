@@ -13,9 +13,6 @@ export default function FormaterBlogText(text, className){
           }else{ 
             return <p key={createKey()} className={className}>{el}</p>
           }
-          // if(el.length){
-          //   return <p key={createKey()} className={className}>{el}</p>
-          // }else return <div key={createKey()} className={styles.paragraph}></div>
         })
       }
     </>
