@@ -12,8 +12,6 @@ import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton"
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
-import Loader from "../../shared/loader/Loader";
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import { useTranslations } from "next-intl";
 
