@@ -1,7 +1,7 @@
 import styles from './PartnerPreview.module.scss'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { createImageUrl, imageLoader } from '@/src/lib/hooks/createImageUrl'
+import { imageLoader } from '@/src/lib/hooks/createImageUrl'
 
 export default function PartnerPreview({imageUrl}) {
   return (
