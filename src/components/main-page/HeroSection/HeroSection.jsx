@@ -12,21 +12,22 @@ import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton"
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
-import Loader from "../../shared/loader/Loader";
+import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("Main.hero_section");
   const open = stateUseAlert(state => state.open);
    // Мова сторінки.
    const { locale } = useParams();
   if(isMIUI){ open('infoMiui',false) }
 
-  const {isLoading, isError, data } = useQuery({ queryKey: ['slider'], 
+  const { isLoading, isError, data } = useQuery({ queryKey: ['slider'], 
     queryFn:()=>{return getAllSliders()}});
 
   return (
     <section className={styles.section}>
-      { !isError && data && 
+      { !isLoading && !isError && data ? 
         <>
           <Carousel
             modules={[Navigation, Pagination, Autoplay]}
@@ -41,7 +42,11 @@ export default function HeroSection() {
               },
             }}
             renderItem={(item) => (
-              <HeroCard title={item.title[localeUkToUa(locale)]} desc={item.subtitle[localeUkToUa(locale)]} img={item.imageUrl} />
+              <HeroCard 
+                title={item.title[localeUkToUa(locale)]} 
+                desc={item.subtitle[localeUkToUa(locale)]} 
+                img={createImageUrl(item.imageUrl)} 
+              />
             )}
           />
 
@@ -55,12 +60,13 @@ export default function HeroSection() {
               className={clsx("custom-pagination-hero", styles.pagination)}
             />
           </div>
-        </>
+        </> : 
+        <HeroCard 
+          title={t("title")} 
+          desc={t("text")} 
+          img={'/images/placeholder-image/slide_1.jpg'} 
+        />
       }
-
-      { isLoading && <Loader /> }
-
-      { isError && <MessageErrorLoading className={styles.messageError}/> }
     </section>
   );
 }
