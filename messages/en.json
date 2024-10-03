@@ -24,6 +24,10 @@
 		"btn_support_project": "Donate"
 	},
 	"Main": {
+		"hero_section":{
+			"title": "Baza Trainee Ukraine",
+			"text": "A public organization that provides initial work experience to those who are just starting their journey in IT."
+		},
 		"history_project_section": {
 			"title": "Project history",
 			"text": "Our project started in April 2023 with the aim of supporting and providing professional development for juniors and career switchers in the IT field.",

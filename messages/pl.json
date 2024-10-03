@@ -24,6 +24,10 @@
 		"btn_support_project": "Wspierać projekt"
 	},
 	"Main": {
+		"hero_section":{
+			"title": "Baza Trainee Ukraine",
+			"text": "Organizacja publiczna, której celem jest zapewnienie pierwszego doświadczenia zawodowego osobom rozpoczynającym pracę w branży IT."
+		},
 		"history_project_section": {
 			"title": "Historia projektu",
 			"text": "Nasz projekt rozpoczął się w kwietniu 2023 roku, a jego celem jest wsparcie i rozwój zawodowy juniorzów i swicherów w tej branży.",
