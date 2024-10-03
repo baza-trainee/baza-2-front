@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { isMIUI} from 'react-device-detect';
 import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { localeUkToUa } from "@/src/lib/utils/localeUkToUa";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSliders } from "@/src/api/hero-slider";
@@ -13,7 +14,6 @@ import CarouselPagination from "../../shared/Carousel/CarouselPagination/Carouse
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
 import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
-import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
   const t = useTranslations("Main.hero_section");
