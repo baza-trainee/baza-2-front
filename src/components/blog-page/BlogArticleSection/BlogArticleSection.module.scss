@@ -7,7 +7,7 @@
   align-items: flex-start;
   gap: 16px;
   max-width: 1680px;
-  margin: 85px auto 0 auto;
+  margin: 80px auto 0 auto;
   padding: 32px 16px;
 
   @include mx.media-q("md") {
@@ -16,6 +16,7 @@
   }
 
   @include mx.media-q("xl") {
+    margin-top: 125px;
     padding: 60px 64px;
     gap: 60px;
   }

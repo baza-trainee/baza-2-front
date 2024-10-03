@@ -3,8 +3,11 @@
 @use "../../../styles/mixins" as mx;
 
 .section {
-  margin-top: 120px;
+  margin-top: 125px;
   padding-bottom: 48px;
+  @media (min-width: 1025px) {
+    margin-top: 145px;
+  }
 }
 .BlogContainer {
   display: flex;
