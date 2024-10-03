@@ -72,16 +72,18 @@ const BlogSection = () => {
               <div className={styles.pages}>
                 {data?.pages.map((page) => (
                   <div key={createKey()} className={styles.page}>
-                    {page.results.map((item) => (
-                      <BlogCard
-                        key={createKey()}
-                        id={item._id}
-                        img={createImageUrl(item.imageUrl)}
-                        title={item.title}
-                        description={item.text}
-                        date={item.date}
-                      />
-                    ))}
+                    {page.results
+                      .sort((a, b) => b.date - a.date)
+                      .map((item) => (
+                        <BlogCard
+                          key={createKey()}
+                          id={item._id}
+                          img={createImageUrl(item.imageUrl)}
+                          title={item.title}
+                          description={item.text}
+                          date={item.date}
+                        />
+                      ))}
                   </div>
                 ))}
               </div>
