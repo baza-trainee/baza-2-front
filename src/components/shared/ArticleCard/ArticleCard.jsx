@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MainLink from "../MainLink/MainLink";
 import linkTypes from "../MainLink/constants";
-import { createImageUrl, imageLoader } from "@/src/lib/hooks/createImageUrl";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 
 export const ArticleCard = ({ item }) => {

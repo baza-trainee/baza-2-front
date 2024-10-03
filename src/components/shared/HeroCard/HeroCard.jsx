@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import styles from "./HeroCard.module.scss";
 import Image from "next/image";
-import { createImageUrl, imageLoader } from "@/src/lib/hooks/createImageUrl";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 
 const HeroCard = ({ title, desc, img, className }) => {
 

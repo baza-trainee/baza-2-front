@@ -13,7 +13,7 @@ import CarouselButton from "../../shared/Carousel/CarouselButton/CarouselButton"
 import CarouselPagination from "../../shared/Carousel/CarouselPagination/CarouselPagination";
 import HeroCard from "../../shared/HeroCard/HeroCard";
 import stateUseAlert from "@/src/state/stateUseAlert";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+//import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 
 export default function HeroSection() {
   const t = useTranslations("Main.hero_section");

@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import stateSorryModal from "@/src/state/stateSorryModal";
 import { getAllBlogArticles } from "@/src/api/blog";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+//import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import styles from "./BlogSection.module.scss";
 import clsx from "clsx";
 import Loader from "../../shared/loader/Loader";
