@@ -9,6 +9,7 @@ import ProjectCardTeam from "./ProjectCardTeam/ProjectCardTeam";
 import { Icon } from "../../shared/Icon/Icon";
 import { useTranslations } from "next-intl";
 import ProjectStatus from "./ProjectStatus/ProjectStatus";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 
 const ProjectCard = ({ project, coverImgUrl, locale = "ua" }) => {
   const {
@@ -34,7 +35,12 @@ const ProjectCard = ({ project, coverImgUrl, locale = "ua" }) => {
           className={clsx(styles.article, isTeamShowed && styles.hideBg)}
         >
           <div className={styles.imgContainer}>
-            <Image src={coverImgUrl} fill sizes="100%" alt={title[locale]} />
+            <Image
+              loader={imageLoader}
+              src={coverImgUrl}
+              fill sizes="100%"
+              alt={title[locale]}
+            />
           </div>
           <div className={clsx(styles.content, isTeamShowed && styles.hidden)}>
             <ProjectStatus

@@ -13,3 +13,8 @@ export const createImageUrl = (url) => {
   if(isValidUrl(url)){return url }
   else return `${BASE_API_URL}/files/${url}`
 }
+
+export const imageLoader = ({ src, width, quality }) => {
+  if(isValidUrl(src)){return src }
+  return `${BASE_API_URL}/files/${src}?w=${width}&q=${quality || 75}`
+}

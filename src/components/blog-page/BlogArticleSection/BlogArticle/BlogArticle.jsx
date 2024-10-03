@@ -3,6 +3,7 @@ import styles from "./BlogArticle.module.scss";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 import { splitTextHalf } from "@/src/lib/utils/splitTextHalf";
 import FormaterBlogText from "@/src/components/shared/FormaterBlogText/FormaterBlogText";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 
 const BlogArticle = ({ title, text, imgUrl, date }) => {
   const formattedDate = formatDateToNumeric(date);
@@ -21,7 +22,11 @@ const BlogArticle = ({ title, text, imgUrl, date }) => {
           </div>
         )}
         <div className={styles.wrapperImg}>
-          <Image src={imgUrl} fill sizes="100%" alt={title} />
+          <Image
+            loader={imageLoader}
+            src={imgUrl}
+            fill sizes="100%"
+            alt={title} />
         </div>
         {strB && (
           <div lang="uk-UA" className={styles.paragraphWrapper}>

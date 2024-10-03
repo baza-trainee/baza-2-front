@@ -39,7 +39,7 @@ export default function SliderList({data, hendleRemove}) {
               title={el.title[localeUkToUa(locale)]} 
               desc={el.subtitle[localeUkToUa(locale)]} 
               className={styles.heroCard} 
-              img={createImageUrl(el.imageUrl)}/>
+              img={el.imageUrl}/>
             <div className={styles.btns}>
               <MainButton variant='admin' 
                 className={styles.btn} 

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MainLink from "../MainLink/MainLink";
 import linkTypes from "../MainLink/constants";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import { createImageUrl, imageLoader } from "@/src/lib/hooks/createImageUrl";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 
 export const ArticleCard = ({ item }) => {
@@ -13,7 +13,11 @@ export const ArticleCard = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.img}>
-        <Image src={createImageUrl(imageUrl)} fill sizes="100%" alt={title} />
+        <Image
+          loader={imageLoader}
+          src={imageUrl}
+          fill sizes="100%"
+          alt={title} />
         <span className={styles.date}>{formatDateToNumeric(date)}</span>
       </div>
       <div className={styles.wrapper}>

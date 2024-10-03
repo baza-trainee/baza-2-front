@@ -79,7 +79,7 @@ const Projects = () => {
                       key={createKey()}
                       project={project}
                       locale={localeUkToUa(locale)}
-                      coverImgUrl={createImageUrl(project.imageUrl)}
+                      coverImgUrl={project.imageUrl}
                     />
                   ))}
                 </div>
