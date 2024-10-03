@@ -12,14 +12,18 @@
   margin: 0 auto 32px auto;
   width: 268px;
   @include apply-font-styles($h3-font);
-  font-size: 14px;
+  font-size: 12px;
 
   @media (min-width: 481px) {
     width: auto;
     margin: 0 0 24px 0;
+    font-size: 16px;
+    font-weight: 400;
   }
 
   @media (min-width: 697px) {
     @include apply-font-styles($h3-font);
+    font-size: 16px;
+    font-weight: 400;
   }
 }
