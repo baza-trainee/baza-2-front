@@ -2,7 +2,7 @@ import styles from './ImagePreview.module.scss'
 import clsx from 'clsx'
 import { useState } from 'react'
 import Image from 'next/image'
-import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
+import { imageLoader } from '@/src/lib/hooks/createImageUrl'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 
 export default function ImagePreview({imageUrl, variant=''}) {
@@ -17,8 +17,9 @@ export default function ImagePreview({imageUrl, variant=''}) {
         </button>
         <div className={styles.img_wrap}>
           <Image
-            className={clsx(styles.img , !imageUrl && styles._no_image )}
-            src={imageUrl ? createImageUrl(imageUrl) :'/images/placeholder-image/no-image.png'}
+            className={clsx(styles.img, !imageUrl && styles._no_image)}
+            loader={imageLoader}
+            src={imageUrl ? imageUrl :'/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill
             sizes="100%"
