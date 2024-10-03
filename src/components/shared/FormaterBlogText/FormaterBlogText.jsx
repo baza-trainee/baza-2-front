@@ -1,3 +1,4 @@
+import styles from './FormaterBlogText.module.scss'
 import { createKey } from "@/src/lib/utils/createKey";
 
 export default function FormaterBlogText(text, className){
@@ -7,9 +8,14 @@ export default function FormaterBlogText(text, className){
     <>
       {
         rows.map((el)=>{
-          if(el.length){
+          if(el.length==1){
+            return <div key={createKey()} className={styles.paragraph}>{el}</div>
+          }else{ 
             return <p key={createKey()} className={className}>{el}</p>
-          }else return null
+          }
+          // if(el.length){
+          //   return <p key={createKey()} className={className}>{el}</p>
+          // }else return <div key={createKey()} className={styles.paragraph}></div>
         })
       }
     </>

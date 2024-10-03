@@ -21,11 +21,11 @@ export const helpLinks = [
   {
     name: "regulations",
     url: "statut",
-    type: linkTypes.DOCS,
+    type: linkTypes.HELP,
   },
   {
     name: "reporting",
     url: "report",
-    type: linkTypes.DOCS,
+    type: linkTypes.HELP,
   },
 ];

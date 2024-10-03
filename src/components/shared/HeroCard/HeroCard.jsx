@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import styles from "./HeroCard.module.scss";
 import Image from "next/image";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 
 const HeroCard = ({ title, desc, img, className }) => {
 
@@ -10,7 +9,7 @@ const HeroCard = ({ title, desc, img, className }) => {
       <Image
         fill
         sizes="100%"
-        src={createImageUrl(img)}
+        src={img}
         alt={title}
         className={styles.image}
         quality={60}
