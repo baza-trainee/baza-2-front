@@ -1,12 +1,14 @@
 import clsx from "clsx";
 import styles from "./HeroCard.module.scss";
 import Image from "next/image";
+import { createImageUrl, imageLoader } from "@/src/lib/hooks/createImageUrl";
 
 const HeroCard = ({ title, desc, img, className }) => {
 
   return (
     <div className={clsx(styles.card, className)}>
       <Image
+        loader={imageLoader}
         fill
         sizes="100%"
         src={img}

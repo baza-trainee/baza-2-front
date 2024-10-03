@@ -78,7 +78,7 @@ const BlogSection = () => {
                         <BlogCard
                           key={createKey()}
                           id={item._id}
-                          img={createImageUrl(item.imageUrl)}
+                          img={item.imageUrl}
                           title={item.title}
                           description={item.text}
                           date={item.date}

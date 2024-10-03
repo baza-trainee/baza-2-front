@@ -45,7 +45,7 @@ export default function HeroSection() {
               <HeroCard 
                 title={item.title[localeUkToUa(locale)]} 
                 desc={item.subtitle[localeUkToUa(locale)]} 
-                img={createImageUrl(item.imageUrl)} 
+                img={item.imageUrl} 
               />
             )}
           />

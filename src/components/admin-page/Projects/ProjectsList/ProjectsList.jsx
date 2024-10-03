@@ -35,7 +35,7 @@ export default function PartnerList({data, hendleRemove, hendleSetPage}) {
         return <li key={createKey()} className={styles.item}>
           <ProjectCard 
             project={el}
-            coverImgUrl={createImageUrl(el.imageUrl)} locale={localeUkToUa(locale)}/>
+            coverImgUrl={el.imageUrl} locale={localeUkToUa(locale)}/>
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 

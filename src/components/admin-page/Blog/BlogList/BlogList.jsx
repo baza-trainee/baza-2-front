@@ -41,7 +41,7 @@ export default function BlogList({ data, hendleRemove, hendleSetPage }) {
     return (
       <div className={styles.item}>
         <BlogArticle 
-          imgUrl={createImageUrl(imageUrl)} 
+          imgUrl={imageUrl} 
           date={date} 
           title={title} 
           text={text}/>

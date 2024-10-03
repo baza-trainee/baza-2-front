@@ -30,7 +30,7 @@ const BlogArticleSection = () => {
             <SocialIcons classNameCustom={styles.socIcons} />
             <div className={styles.articleWrapper}>
               <BlogArticle
-                imgUrl={createImageUrl(data.imageUrl)}
+                imgUrl={data.imageUrl}
                 title={data.title}
                 text={data.text}
                 date={data.date}
