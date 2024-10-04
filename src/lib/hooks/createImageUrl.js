@@ -15,6 +15,5 @@ export const createImageUrl = (url) => {
 }
 // Використовується для завантаження картинок з сервера
 export const imageLoader = ({ src, width, quality }) => {
-  if(isValidUrl(src)){return src }
   return `${BASE_API_URL}/files/${src}?w=${width}&q=${quality || 75}`
 }
