@@ -7,7 +7,6 @@ import styles from "./BlogArticleSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { getBlogArticleById } from "@/src/api/blog";
 import { useParams } from "next/navigation";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import Loader from "../../shared/loader/Loader";
 import MessageErrorLoading from "../../shared/MessageErrorLoading/MessageErrorLoading";
 
