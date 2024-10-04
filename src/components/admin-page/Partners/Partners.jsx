@@ -45,7 +45,9 @@ export default function Partners() {
         <MessageErrorLoading variant='admin'/> :
         <>
           {data?.results && 
-            <PartnerList data={data?.results} hendleRemove={deletePartner.mutate}/>
+            <PartnerList 
+              data={data?.results} 
+              hendleRemove={deletePartner.mutate}/>
           }
         </>
       }

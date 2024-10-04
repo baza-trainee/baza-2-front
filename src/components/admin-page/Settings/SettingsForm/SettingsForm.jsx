@@ -20,13 +20,12 @@ export default function SettingsForm() {
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isValid, isDirty },
-    reset
+    formState: { errors, isValid },
   } = useForm({ defaultValues: {...loginDefaultValues}, resolver: zodResolver(loginSchema), mode: 'onBlur'});
 
-  const resetForm = () => {
-    reset();
-  }
+  // const resetForm = () => {
+  //   reset();
+  // }
 
   useEffect(() => {
     const credentials = credentialsSessionStorage.get()
@@ -51,16 +50,16 @@ export default function SettingsForm() {
   };
 
 
-  const isDisabled = () => {
-    if (Object.keys(errors).length > 0) {
-      return true;
-    } else 
-    if (!isDirty) {
-      return true;
-    } else if(!isValid){
-      return true
-    }else return false
-  }
+  // const isDisabled = () => {
+  //   if (Object.keys(errors).length > 0) {
+  //     return true;
+  //   } else 
+  //   if (!isDirty) {
+  //     return true;
+  //   } else if(!isValid){
+  //     return true
+  //   }else return false
+  // }
 
   const closeModal = useCallback(()=>{
     setmodalOpen(false)
@@ -128,7 +127,12 @@ export default function SettingsForm() {
         </div > */}
       </form>
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
     </>
   )
 }

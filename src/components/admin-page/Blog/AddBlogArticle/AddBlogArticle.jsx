@@ -19,7 +19,7 @@ export default function AddBlogArticle() {
     setmodalOpen(false)
     router.replace('/admin/blog')
   })
-
+  // Запит на створення нової статті
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return createNewBlogArticle(data)

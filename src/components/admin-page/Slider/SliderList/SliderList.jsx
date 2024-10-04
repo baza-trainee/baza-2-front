@@ -9,7 +9,6 @@ import HeroCard from '@/src/components/shared/HeroCard/HeroCard';
 import switchLocaleAdmin from '@/src/state/switchLocaleAdmin';
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading';
 import { localeUkToUa } from '@/src/lib/utils/localeUkToUa';
-import { createImageUrl } from '@/src/lib/hooks/createImageUrl';
 
 export default function SliderList({data, hendleRemove}) {
   const router = useRouter();
@@ -57,7 +56,13 @@ export default function SliderList({data, hendleRemove}) {
         <MessageErrorLoading variant='search'/>
       }
 
-      <AdminModal isOpen={idSlide} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити слайд?'} btnBlok={true}></AdminModal>
+      <AdminModal 
+        isOpen={idSlide} 
+        handleCallback={closeModal} 
+        handleOkCallback={okRemove} 
+        title={'Ви впевнені, що хочете видалити слайд?'} 
+        btnBlok={true}>
+      </AdminModal>
     </>
   )
 }

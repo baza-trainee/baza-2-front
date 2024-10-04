@@ -27,7 +27,9 @@ export default function PartnerList({data, hendleRemove}) {
     {data?.length ? <ul className={styles.list}>
       {data.map((el)=>{
         return <li key={createKey()} className={styles.item}>
-          <PartnerCard item={el} className={styles.card}/>
+          <PartnerCard 
+            item={el} 
+            className={styles.card}/>
           <div className={styles.btns}>
             <MainButton variant='admin' 
               className={styles.btn} 
@@ -35,7 +37,10 @@ export default function PartnerList({data, hendleRemove}) {
               <Icon  width={24} height={24} name='edit'/>
             </MainButton>
 
-            <MainButton variant='admin' onClick={()=>{setIdPartner(el._id)}} className={styles.btn}>
+            <MainButton 
+              variant='admin' 
+              onClick={()=>{setIdPartner(el._id)}} 
+              className={styles.btn}>
               <Icon width={24} height={24} name='remove'/>
             </MainButton>
           </div>
@@ -45,7 +50,13 @@ export default function PartnerList({data, hendleRemove}) {
     <MessageErrorLoading variant='search'/> 
     }
 
-    <AdminModal isOpen={idPartner} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити партнера?'} btnBlok={true}></AdminModal>
+    <AdminModal 
+      isOpen={idPartner} 
+      handleCallback={closeModal} 
+      handleOkCallback={okRemove} 
+      title={'Ви впевнені, що хочете видалити партнера?'} 
+      btnBlok={true}>
+    </AdminModal>
   </>
   )
 }

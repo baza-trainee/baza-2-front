@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useRouter } from '@/src/navigation'
 import { useParams } from 'next/navigation'
 import { createKey } from '@/src/lib/utils/createKey'
-import { createImageUrl } from '@/src/lib/hooks/createImageUrl'
 import MainButton from '@/src/components/shared/MainButton/MainButton'
 import { Icon } from '@/src/components/shared/Icon/Icon'
 import AdminModal from '@/src/components/modals/AdminModal/AdminModal'
@@ -12,7 +11,7 @@ import Pagination from '../../Pagination/Pagination'
 import MessageErrorLoading from '@/src/components/shared/MessageErrorLoading/MessageErrorLoading'
 import { localeUkToUa } from '@/src/lib/utils/localeUkToUa'
 
-export default function PartnerList({data, hendleRemove, hendleSetPage}) {
+export default function ProjectsList({data, hendleRemove, hendleSetPage}) {
   const router = useRouter();
   // Мова сторінки.
   const { locale } = useParams();

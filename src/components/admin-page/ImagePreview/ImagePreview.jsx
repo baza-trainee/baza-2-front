@@ -13,13 +13,15 @@ export default function ImagePreview({imageUrl, variant=''}) {
       <div className={styles.slideCardItem}>
 
         <button type='button' onClick={()=>{setFull(!full)}}>
-          <Icon name={full?'normal_screen':'full_screen'} width={30} height={30}/>
+          <Icon name={full?'normal_screen':'full_screen'} 
+            width={30} 
+            height={30}/>
         </button>
         <div className={styles.img_wrap}>
           <Image
             className={clsx(styles.img, !imageUrl && styles._no_image)}
             loader={imageLoader}
-            src={imageUrl ? imageUrl :'/images/placeholder-image/no-image.png'}
+            src={imageUrl ? imageUrl : '/images/placeholder-image/no-image.png'}
             alt={'Попередній перегляд'}
             fill
             sizes="100%"

@@ -32,7 +32,6 @@ export default function EditPartner() {
   });
 
   const { mutate, isPending, error} = useMutation({
-
     mutationFn:(data) => {
       return updatePartnerById(id, data)
     },onSuccess: () => {
@@ -44,16 +43,26 @@ export default function EditPartner() {
   return (
     <SectionAdmin title={'Редагувати партнера'}>
       <div className={styles.wrapper}>
-        <PartnerForm hendleMutate={mutate} handlePrevImg={setPrevImg} data={partnerById.data} prevImg={prevImg} submitBtnText='Зберегти зміни' />
+        <PartnerForm 
+          hendleMutate={mutate} 
+          handlePrevImg={setPrevImg} 
+          data={partnerById.data} 
+          prevImg={prevImg} 
+          submitBtnText='Зберегти зміни' />
 
         <PartnerPreview imageUrl={prevImg}/>
       </div>
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
-      <UseAlert text={error && error.message}/>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
 
+      <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )
 }

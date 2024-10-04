@@ -14,7 +14,7 @@ import PressForm from '../PressForm/PressForm';
 export default function AddPress() {
   const router = useRouter();
   const open = stateUseAlert((state) => state.open);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [ modalOpen, setModalOpen ] = useState(false);
 
   const closeModal = useCallback(() => {
     setModalOpen(false);

@@ -36,7 +36,10 @@ export default function Slider() {
     <SectionAdmin title={'Слайдер'} lang={true}>
       {data?.results.length < 5 ? 
         <div className={styles.wrapper}>
-          <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+          <MainButton  
+            variant='admin' 
+            className={styles.btn} 
+            onClick={()=>{
               router.push(addSlidePath)
             }}>
               <Icon name={'plus_black'} width={24} height={24} />

@@ -8,7 +8,7 @@ import MainButton from '../../shared/MainButton/MainButton';
 import { Icon } from '../../shared/Icon/Icon';
 import Loader from '../../shared/loader/Loader';
 import stateUseAlert from '@/src/state/stateUseAlert';
-import PartnerList from './ProjectsList/ProjectsList';
+import ProjectsList from './ProjectsList/ProjectsList';
 import { deleteProjectById, getAllProjects } from '@/src/api/projects';
 import UseAlert from '../../shared/UseAlert/UseAlert';
 import MessageErrorLoading from '../../shared/MessageErrorLoading/MessageErrorLoading';
@@ -64,7 +64,7 @@ export default function Projects() {
         <MessageErrorLoading variant='admin'/> :
         <>
           {data?.results && 
-            <PartnerList data={data} hendleRemove={deleteProject.mutate} hendleSetPage={hendleSetPage}/>
+            <ProjectsList data={data} hendleRemove={deleteProject.mutate} hendleSetPage={hendleSetPage}/>
           }
         </>
       }

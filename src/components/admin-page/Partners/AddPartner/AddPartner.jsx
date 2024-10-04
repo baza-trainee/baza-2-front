@@ -53,7 +53,6 @@ export default function AddPartner() {
       </AdminModal>
       
       <UseAlert text={error && error.message}/>
-
     </SectionAdmin>
   )
 }

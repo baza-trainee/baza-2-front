@@ -4,7 +4,10 @@ import { useCallback, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from '@/src/navigation';
-import { changePasswordDefaultValues, changePasswordScheme } from './ChangePasswordScheme';
+import { 
+  changePasswordDefaultValues, 
+  changePasswordScheme 
+} from './ChangePasswordScheme';
 import { changePassword } from '@/src/api/auth';
 import { useMutation } from '@tanstack/react-query';
 import Loader from '@/src/components/shared/loader/Loader';
@@ -14,7 +17,10 @@ import AdminModal from '@/src/components/modals/AdminModal/AdminModal';
 import InputField from '../../../shared/inputs/InputField/InputField';
 import MainButton from '../../../shared/MainButton/MainButton';
 import TooltipText from '@/src/components/shared/TooltipText/TooltipText';
-import { credentialslocalStorage, credentialsSessionStorage } from '@/src/state/stateCredentials';
+import { 
+  credentialslocalStorage, 
+  credentialsSessionStorage 
+} from '@/src/state/stateCredentials';
 
 export default function ChangePasswordForm() {
   const router = useRouter()
