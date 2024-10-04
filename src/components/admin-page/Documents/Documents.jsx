@@ -58,7 +58,7 @@ export default function Documents() {
       />
 
        <ModalDocumentPdf 
-        url={prevUrl?createImageUrl(prevUrl):null} 
+        url={ prevUrl ? createImageUrl(prevUrl) : null } 
         hedleClose={()=>{
           setPrevUrl(null)
         }}/>

@@ -50,7 +50,13 @@ export default function SpecializationList({data, hendleRemove}) {
         <MessageErrorLoading variant='search'/> 
       }
 
-      <AdminModal isOpen={ idRole} handleCallback={closeModal} handleOkCallback={okRemove} title={'Ви впевнені, що хочете видалити спеціалізацію?'} btnBlok={true}></AdminModal>
+      <AdminModal 
+        isOpen={ idRole} 
+        handleCallback={closeModal} 
+        handleOkCallback={okRemove} 
+        title={'Ви впевнені, що хочете видалити спеціалізацію?'} 
+        btnBlok={true}>
+      </AdminModal>
     </>
   )
 }

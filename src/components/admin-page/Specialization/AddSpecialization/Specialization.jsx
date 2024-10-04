@@ -35,7 +35,12 @@ export default function AddSpecialization() {
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Спеціалізацію успішно додано'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Спеціалізацію успішно додано'} 
+        btn={true}>
+      </AdminModal>
 
       <UseAlert text={error && error.message}/>
     </SectionAdmin>

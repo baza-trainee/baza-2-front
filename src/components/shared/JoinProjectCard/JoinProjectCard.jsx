@@ -2,7 +2,7 @@
 
 import styles from './JoinProjectCard.module.scss';
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useTransform } from 'framer-motion';
 import React, { useRef, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Icon } from '../Icon/Icon';

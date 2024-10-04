@@ -40,18 +40,24 @@ export default function Specialization() {
 
       <div className={styles.wrapper}>
         <h2>Назва</h2>
-        <MainButton  variant='admin' className={styles.btn} onClick={()=>{
+        <MainButton  
+          variant='admin' 
+          className={styles.btn} 
+          onClick={()=>{
             router.push(addMembePath)
           }}>
             <Icon name={'plus_icon'} width={24} height={24} />
-          {'Додати'}</MainButton >
+          {'Додати'}
+        </MainButton >
       </div>
 
       
       {isError ?
         <MessageErrorLoading variant='admin'/> :
         <>
-          {data && <SpecializationList data={data.results} hendleRemove={ deleteRole.mutate }/>}
+          {data && <SpecializationList 
+            data={data.results} 
+            hendleRemove={ deleteRole.mutate }/>}
         </>
       }
 

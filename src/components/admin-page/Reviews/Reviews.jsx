@@ -48,7 +48,10 @@ export default function Reviews() {
       {isError ?
         <MessageErrorLoading variant='admin'/> :
         <>
-          {data && <ReviewList data={reverseData(data)} hendleRemove={ deleteReview.mutate }/>}
+          {data && <ReviewList 
+            data={reverseData(data)} 
+            hendleRemove={ deleteReview.mutate }/>
+          }
         </>
       }
 

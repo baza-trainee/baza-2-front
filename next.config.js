@@ -23,8 +23,15 @@ const nextConfig = {
 		return config;
 	},
 	images: {
-		domains: ['baza-trainee.tech'],
-		},
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'baza-trainee.tech',
+				port: '',
+				pathname: '**',
+			},
+		],
+	},	
 };
 
 module.exports = withNextIntl(nextConfig);

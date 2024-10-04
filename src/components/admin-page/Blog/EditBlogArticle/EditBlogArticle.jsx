@@ -21,13 +21,13 @@ export default function EditBlogArticle() {
     setmodalOpen(false)
     router.replace('/admin/blog')
   })
-
+  // Запит отримання статті по Id
   const articleById = useQuery({ 
     queryKey: ['article', id], 
     queryFn:()=>{return getBlogArticleById(id)}, 
     keepPreviousData: true 
   });
-
+  //  Запит редагування статті по Id
   const { mutate, isPending, error } = useMutation({
     mutationFn:(data) => {
       return updateBlogArticleById(id,data)

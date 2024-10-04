@@ -31,10 +31,18 @@ export default function AddSlide() {
 
  return( 
     <SectionAdmin title={'Додати слайд'} lang={true}>
-      <SlideForm hendleMutate={mutate} isSuccess={isSuccess}/>
+      <SlideForm 
+        hendleMutate={mutate} 
+        isSuccess={isSuccess}/>
+
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Слайд успішно додано'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Слайд успішно додано'} 
+        btn={true}>
+      </AdminModal>
 
       <UseAlert/>
     </SectionAdmin>

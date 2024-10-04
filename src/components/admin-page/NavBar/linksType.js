@@ -1,5 +1,4 @@
-
-export const links=[
+export const links = [
   { name: "slider", 
     content: "Слайдер", 
     href: '/admin/slider', 
