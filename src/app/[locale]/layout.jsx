@@ -1,6 +1,8 @@
 import "@/src/styles/global.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import Script from "next/script";
+import {  GoogleTagManager } from '@next/third-parties/google'
 import NextTopLoader from "nextjs-toploader";
 import QueryProvider from "@/src/components/providers/queryProvider";
 import LayoutProvider from "@/src/components/providers/LayoutProvider";
@@ -21,7 +23,31 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale}>
+      {/* <!-- Google Tag Manager --> */}
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
+      ></Script>
+
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ${process.env.GOOGLE_TAG_MANAGER_ID});`}
+      </Script>
+
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID}/>
+      {/* <!-- Google Tag Manager --> */}
       <body>
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
+            height="0" 
+            width="0" 
+            style={{
+              display: 'none',
+              visibility: 'hidden',
+            }}>
+          </iframe>
+        </noscript>
+
         <QueryProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <LayoutProvider>
