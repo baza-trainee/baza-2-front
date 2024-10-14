@@ -21,7 +21,9 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale}>
+
       <body>
+      
         <QueryProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <LayoutProvider>
