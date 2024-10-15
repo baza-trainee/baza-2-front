@@ -24,18 +24,10 @@ export default function Logo({
     ]
   }`;
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  };
-
   return (
     <Link
       href={logoConfig.URL}
       className={clsx(logoClass, className)}
-      onClick={scrollToTop}
       aria-label={ariaLabel}
     >
       <Icon className={styles.logo} name="logo" />
