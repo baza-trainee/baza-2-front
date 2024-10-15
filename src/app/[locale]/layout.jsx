@@ -23,30 +23,41 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale}>
-      {/* <!-- Google Tag Manager --> */}
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
-      ></Script>
+      {/*  Якщо GOOGLE_TAG_MANAGER_ID - null - Script не додаємо 
+        <!-- Google Tag Manager --> >>>>*/
+      }
+      { process.env.GOOGLE_TAG_MANAGER_ID &&
+        <> 
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
+          ></Script>
 
-      <Script id="google-analytics">
-        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ${process.env.GOOGLE_TAG_MANAGER_ID});`}
-      </Script>
+          <Script id="google-analytics">
+            {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ${process.env.GOOGLE_TAG_MANAGER_ID});`}
+          </Script>
 
-      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID}/>
-      {/* <!-- Google Tag Manager --> */}
+          <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID}/>
+        </>
+      }
+      {/*<<<< <!-- Google Tag Manager --> */}
+      
       <body>
-        {/* <!-- Google Tag Manager (noscript) --> */}
-        <noscript>
-          <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
-            height="0" 
-            width="0" 
-            style={{
-              display: 'none',
-              visibility: 'hidden',
-            }}>
-          </iframe>
-        </noscript>
+        {/* Якщо GOOGLE_TAG_MANAGER_ID - null - скрипт не додаємо
+         <!-- Google Tag Manager (noscript) --> >>>> */}
+        {process.env.GOOGLE_TAG_MANAGER_ID &&
+          <noscript>
+            <iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.GOOGLE_TAG_MANAGER_ID}`}
+              height="0" 
+              width="0" 
+              style={{
+                display: 'none',
+                visibility: 'hidden',
+              }}>
+            </iframe>
+          </noscript>
+        }
+        {/*<<<< <!-- Google Tag Manager (noscript) --> */}
 
         <QueryProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
