@@ -34,7 +34,7 @@ export default function HeroSection() {
             items={data?.results}
             prevEl={".prevElHero"}
             nextEl={".nextElHero"}
-            delay={10000}
+            delay={15000}
             breakpoints={{
               992: {
                 sped:100,
