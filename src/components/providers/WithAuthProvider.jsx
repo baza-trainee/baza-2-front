@@ -11,9 +11,6 @@ export default function WithAuthProvider({
   const pathname = usePathname()
   const [isShow, setIsShow] = useState();
 
-    // Розкоментувати під час розробки
-    //return <>{ children }</>
-
   useEffect(() => {
     const  getAdmin = async () => {
       if (!token.get()) {
