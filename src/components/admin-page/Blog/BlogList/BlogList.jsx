@@ -2,7 +2,6 @@ import styles from "./BlogList.module.scss";
 import { useState } from "react";
 import { useRouter } from "@/src/navigation";
 import { createKey } from "@/src/lib/utils/createKey";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import { Icon } from "@/src/components/shared/Icon/Icon";
 import MainButton from "@/src/components/shared/MainButton/MainButton";
 import AdminModal from "@/src/components/modals/AdminModal/AdminModal";
@@ -41,7 +40,7 @@ export default function BlogList({ data, hendleRemove, hendleSetPage }) {
     return (
       <div className={styles.item}>
         <BlogArticle 
-          imgUrl={createImageUrl(imageUrl)} 
+          imgUrl={imageUrl} 
           date={date} 
           title={title} 
           text={text}/>
@@ -86,7 +85,7 @@ export default function BlogList({ data, hendleRemove, hendleSetPage }) {
               <li key={createKey()} className={styles.item}>
                 <BlogCard
                   id={el._id}
-                  img={createImageUrl(el.imageUrl)}
+                  img={el.imageUrl}
                   title={el.title}
                   description={el.text}
                   date={el.date}

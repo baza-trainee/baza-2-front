@@ -24,32 +24,10 @@ export default function Logo({
     ]
   }`;
 
-  const scrollToTop = (event) => {
-    if (variant === logoConfig.FOOTER) {
-      event.preventDefault();
-    }
-    window.scrollTo({
-      top: 0,
-      behavior: variant === logoConfig.HEADER ? "instant" : "smooth",
-    });
-  };
-
-if(variant === logoConfig.FOOTER){
-  return (
-    <button
-      className={clsx(logoClass, className)}
-      onClick={scrollToTop}
-      aria-label={ariaLabel}
-    >
-      <Icon className={styles.logo} name="logo" />
-    </button>
-  );
-}
   return (
     <Link
       href={logoConfig.URL}
       className={clsx(logoClass, className)}
-      onClick={scrollToTop}
       aria-label={ariaLabel}
     >
       <Icon className={styles.logo} name="logo" />

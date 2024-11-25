@@ -39,11 +39,19 @@ export default function EditSlide() {
   
   return (
     <SectionAdmin title={'Редагувати слайд'}>
-      <SlideForm hendleMutate={mutate} isSuccess={isSuccess} data={slideById.data}/>
+      <SlideForm 
+        hendleMutate={mutate} 
+        isSuccess={isSuccess} 
+        data={slideById.data}/>
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
       <UseAlert/>
     </SectionAdmin>
   )

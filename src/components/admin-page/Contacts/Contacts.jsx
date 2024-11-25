@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import AdminModal from "../../modals/AdminModal/AdminModal";
 import UseAlert from "../../shared/UseAlert/UseAlert";
 import SectionAdmin from "../SectionAdmin/SectionAdmin";

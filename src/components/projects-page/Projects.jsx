@@ -4,7 +4,6 @@ import { createKey } from "@/src/lib/utils/createKey";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import LoadMore from "../shared/LoadMore/LoadMore";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
 import { getAllProjects } from "@/src/api/projects";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import InputSearch from "../shared/inputs/InputSearch/InputSearch";
@@ -79,7 +78,7 @@ const Projects = () => {
                       key={createKey()}
                       project={project}
                       locale={localeUkToUa(locale)}
-                      coverImgUrl={createImageUrl(project.imageUrl)}
+                      coverImgUrl={project.imageUrl}
                     />
                   ))}
                 </div>

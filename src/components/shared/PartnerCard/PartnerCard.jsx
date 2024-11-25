@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from './PartnerCard.module.scss'
 import clsx from "clsx";
 import { useSwiperSlide } from 'swiper/react';
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 
 export default function PartnerCard({ item, className }) {
   const { homeUrl={}, imageUrl, name } = item;
@@ -17,8 +17,9 @@ export default function PartnerCard({ item, className }) {
       target="_blank">
       <div className={styles.img_wrap}>
         <Image
+          loader={imageLoader}
           className={styles.img}
-          src={createImageUrl(imageUrl)}
+          src={imageUrl}
           alt={name}
           fill
           sizes="100%"

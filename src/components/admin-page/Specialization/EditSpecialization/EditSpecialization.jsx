@@ -39,11 +39,19 @@ export default function EditSpecialization() {
 
   return (
     <SectionAdmin title={'Редагувати спеціалізацію'}>
-      <SpecializationForm hendleMutate={mutate} data={roleById.data} submitBtnText='Зберегти зміни'/>
+      <SpecializationForm 
+        hendleMutate={mutate} 
+        data={roleById.data} 
+        submitBtnText='Зберегти зміни'/>
 
       { isPending && <Loader/> }
 
-      <AdminModal isOpen={modalOpen} handleCallback={closeModal} title={'Дані успішно збережено'} btn={true}></AdminModal>
+      <AdminModal 
+        isOpen={modalOpen} 
+        handleCallback={closeModal} 
+        title={'Дані успішно збережено'} 
+        btn={true}>
+      </AdminModal>
       <UseAlert text={error && error.message}/>
     </SectionAdmin>
   )

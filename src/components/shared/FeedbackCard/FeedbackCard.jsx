@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./FeedbackCard.module.scss";
-import { createImageUrl } from "@/src/lib/hooks/createImageUrl";
+import { imageLoader } from "@/src/lib/hooks/createImageUrl";
 import clsx from "clsx";
 import { formatDate } from "@/src/lib/utils/formatData";
 import { localeUkToUa } from "@/src/lib/utils/localeUkToUa";
@@ -19,9 +19,10 @@ const FeedbackCard = ({
       <div className={styles.person}>
         <div className={styles.imageContainer}>
           <Image
+            loader={imageLoader}
             fill
             sizes="100%"
-            src={createImageUrl(imageUrl)}
+            src={imageUrl}
             alt={name[localeUkToUa(locale)]}
           />
         </div>
