@@ -1,23 +1,29 @@
-import styles from './FormaterBlogText.module.scss'
+import styles from "./FormaterBlogText.module.scss";
 import { createKey } from "@/src/lib/utils/createKey";
+import { ReplaceLinks } from "../ReplaceLinks/ReplaceLinks";
 
-export default function FormaterBlogText(text, className){
+export default function FormaterBlogText(text, className) {
   const rows = text.split(/\r\n|\r|\n/g);
 
   return (
     <>
-      {
-        rows.map((el)=>{
-          if(el.length==1){
-            return <div key={createKey()} className={styles.paragraph}>{el}</div>
-          }else{ 
-            return <p key={createKey()} className={className}>{el}</p>
-          }
-          // if(el.length){
-          //   return <p key={createKey()} className={className}>{el}</p>
-          // }else return <div key={createKey()} className={styles.paragraph}></div>
-        })
-      }
+      {rows.map((row) => {
+        const formattedRow = ReplaceLinks(row);
+
+        if (row.length == 1) {
+          return (
+            <div key={createKey()} className={styles.paragraph}>
+              {formattedRow.map((el) => el)}
+            </div>
+          );
+        } else {
+          return (
+            <p key={createKey()} className={className}>
+              {formattedRow.map((el) => el)}
+            </p>
+          );
+        }
+      })}
     </>
-  )
+  );
 }

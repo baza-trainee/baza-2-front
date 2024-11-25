@@ -4,10 +4,12 @@ import Image from "next/image";
 import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 import MainLink from "@/src/components/shared/MainLink/MainLink";
 import linkTypes from "@/src/components/shared/MainLink/constants";
+import { ReplaceLinks } from "@/src/components/shared/ReplaceLinks/ReplaceLinks";
 
 const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
   const t = useTranslations("Blog");
   const formattedDate = formatDateToNumeric(date);
+  const formattedDesc = ReplaceLinks(description);
 
   return (
     <article className={styles.card}>
@@ -21,7 +23,7 @@ const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
             {title}
           </h2>
           <p lang="uk-UA" className={styles.description}>
-            {description}
+            {formattedDesc.map((el) => el)}
           </p>
         </div>
       </div>
