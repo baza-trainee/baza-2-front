@@ -1,5 +1,7 @@
+@use "../../../styles/variables" as *;
+
 .link {
   text-decoration: underline;
-  color: blue;
+  color: $primary-hover;
   padding: 0 5px;
 }
