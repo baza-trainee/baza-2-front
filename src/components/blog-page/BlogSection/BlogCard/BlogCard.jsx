@@ -5,6 +5,7 @@ import { formatDateToNumeric } from "@/src/lib/utils/formatData";
 import MainLink from "@/src/components/shared/MainLink/MainLink";
 import linkTypes from "@/src/components/shared/MainLink/constants";
 import { imageLoader } from "@/src/lib/hooks/createImageUrl";
+import { ReplaceLinks } from "@/src/components/shared/ReplaceLinks/ReplaceLinks";
 
 const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
   const t = useTranslations("Blog");
