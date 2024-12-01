@@ -25,8 +25,10 @@ const BlogArticle = ({ title, text, imgUrl, date }) => {
           <Image
             loader={imageLoader}
             src={imgUrl}
-            fill sizes="100%"
-            alt={title} />
+            fill
+            sizes="100%"
+            alt={title}
+          />
         </div>
         {strB && (
           <div lang="uk-UA" className={styles.paragraphWrapper}>
