@@ -10,7 +10,11 @@ import { ReplaceLinks } from "@/src/components/shared/ReplaceLinks/ReplaceLinks"
 const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
   const t = useTranslations("Blog");
   const formattedDate = formatDateToNumeric(date);
-  const formattedDesc = ReplaceLinks(description);
+
+  const removeLinks = (text) => {
+    const urlRegex = /https?:\/\/[^\s/$.?#].[^\s]*/g;
+    return text.replace(urlRegex, ""); // Удаляем все совпадения
+  };
 
   return (
     <article className={styles.card}>
@@ -24,7 +28,7 @@ const BlogCard = ({ id, img, title, description, date, adminOnclick }) => {
             {title}
           </h2>
           <p lang="uk-UA" className={styles.description}>
-            {formattedDesc.map((el) => el)}
+            {removeLinks(description)}
           </p>
         </div>
       </div>
